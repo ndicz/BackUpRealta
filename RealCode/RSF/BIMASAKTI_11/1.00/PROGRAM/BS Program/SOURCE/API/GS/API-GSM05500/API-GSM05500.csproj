@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>API_GSM05500</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Realta.BackCollectionNuGet" Version="1.0.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SERVICE\GS\GSM05500Services\GSM05500Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="R_APIBackEnd">
+      <HintPath>..\..\..\Library\Back\R_APIBackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="R_APICommon">
+      <HintPath>..\..\..\Library\Back\R_APICommon.dll</HintPath>
+    </Reference>
+    <Reference Include="R_APICommonDTO">
+      <HintPath>..\..\..\Library\Back\R_APICommonDTO.dll</HintPath>
+    </Reference>
+    <Reference Include="R_APIStartUp">
+      <HintPath>..\..\..\Library\Back\R_APIStartUp.dll</HintPath>
+    </Reference>
+    <Reference Include="R_AuthenticationBack">
+      <HintPath>..\..\..\Library\Back\R_AuthenticationBack.dll</HintPath>
+    </Reference>
+    <Reference Include="R_AuthenticationEnumAndInterface">
+      <HintPath>..\..\..\Library\Back\R_AuthenticationEnumAndInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="R_CommonFrontBackAPI">
+      <HintPath>..\..\..\Library\Back\R_CommonFrontBackAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="R_ContextAPIMiddleware">
+      <HintPath>..\..\..\Library\Back\R_ContextAPIMiddleware.dll</HintPath>
+    </Reference>
+    <Reference Include="R_ContextBackEnd">
+      <HintPath>..\..\..\Library\Back\R_ContextBackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="R_ContextEnumAndInterface">
+      <HintPath>..\..\..\Library\Back\R_ContextEnumAndInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="R_ControllerPlugins">
+      <HintPath>..\..\..\Library\Back\R_ControllerPlugins.dll</HintPath>
+    </Reference>
+    <Reference Include="R_CrossPlatformSecurity">
+      <HintPath>..\..\..\Library\Back\R_CrossPlatformSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="R_ExceptionAPIMiddleware">
+      <HintPath>..\..\..\Library\Back\R_ExceptionAPIMiddleware.dll</HintPath>
+    </Reference>
+    <Reference Include="R_HelperController">
+      <HintPath>..\..\..\Library\Back\R_HelperController.dll</HintPath>
+    </Reference>
+    <Reference Include="R_LogHeaderMiddleware">
+      <HintPath>..\..\..\Library\Back\R_LogHeaderMiddleware.dll</HintPath>
+    </Reference>
+    <Reference Include="R_PluginsCommon">
+      <HintPath>..\..\..\Library\Back\R_PluginsCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="R_Security">
+      <HintPath>..\..\..\Library\Back\R_Security.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

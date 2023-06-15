@@ -1,0 +1,224 @@
+﻿@using LMM02000Common.DTO
+@using LMM02000Model
+@using R_BlazorFrontEnd.Controls.Enums
+@inherits R_Page
+
+@page "/LMM02000"
+
+<R_StackLayout Row="Enabled" Spacing="4">
+    <R_ItemLayout>
+        <R_Label FontColor="red" Class="fw-bold">PROPERTY</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_ComboBox Data="@_viewModel.PropertyList"
+                    @bind-Value="_viewModel.propertyValue"
+                    ValueField="@nameof(LMM02000PropertyDTO.CPROPERTY_ID)"
+                    TextField="@nameof(LMM02000PropertyDTO.CPROPERTY_NAME)"
+                    R_ConductorSource="@_conductorRef" OnChanged="@OnChanged" />
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+<R_StackLayout Spacing="3" Class="mb-4">
+    <R_StackLayout>
+        <R_Grid @ref="@_gridRef"
+                DataSource="@_viewModel.loGridList"
+                Pageable="true"
+                R_ConductorSource="@_conductorRef"
+                R_GridType="@R_eGridType.Navigator"
+                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
+
+            <R_GridColumns>
+                <R_GridCheckBoxColumn FieldName="LACTIVE" HeaderText="Active" />
+                <R_GridTextColumn FieldName="CSALESMAN_ID" HeaderText="Salesman ID" />
+                <R_GridTextColumn FieldName="CSALESMAN_NAME" HeaderText="Salesman Name" />
+                <R_GridTextColumn FieldName="CGENDER_DESCR" HeaderText="Gender" />
+                <R_GridTextColumn FieldName="CMOBILE_PHONE1" HeaderText="Mobile Pehone 1" />
+                <R_GridTextColumn FieldName="CMOBILE_PHONE2" HeaderText="Mobile Phone 2" />
+                <R_GridTextColumn FieldName="CEMAIL" HeaderText="Email" />
+                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Update By" />
+                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Update Date" />
+                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By" />
+                <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Create Date" />
+            </R_GridColumns>
+        </R_Grid>
+    </R_StackLayout>
+</R_StackLayout>
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Salesman ID*</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_ID"
+                   R_ConductorSource="@_conductorRef"
+                   R_EnableAdd="true"
+                   R_EnableEdit="true"/>
+    </R_ItemLayout>
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_NAME"
+                   R_ConductorSource="@_conductorRef"
+                   R_EnableAdd="true"
+                   R_EnableEdit="true"/>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_CheckBox @bind-Value="@_viewModel.Data.LACTIVE"
+                    R_ConductorSource="@_conductorRef"/>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Address*</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout Class="col-2">
+        <R_TextArea @bind-Value="@_viewModel.Data.CADDRESS"
+                    R_ConductorSource="@_conductorRef"
+                    R_EnableAdd="true"
+                    R_EnableEdit="true"  />
+    </R_ItemLayout>
+
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+    <R_Label Class="fw-bold">Email Address*</R_Label>
+</R_ItemLayout>
+    <R_ItemLayout Class="col-2">
+    <R_TextBox @bind-Value="@_viewModel.Data.CEMAIL"
+               R_ConductorSource="@_conductorRef"
+               R_EnableAdd="true"
+               R_EnableEdit="true"  />
+</R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Mobile Phone (1)*</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE1"
+                          R_ConductorSource="@_conductorRef"
+                          R_EnableAdd="true"
+                          R_EnableEdit="true"
+                          Min="0"
+                          Max="100"
+                          Decimals="2"/>
+    </R_ItemLayout>
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Mobile Phone (2)*</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE2"
+                          R_ConductorSource="@_conductorRef"
+                          R_EnableAdd="true"
+                          R_EnableEdit="true"
+                          Min="0"
+                          Max="100"
+                          Decimals="2"/>
+    </R_ItemLayout>
+  
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">NIK</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CID_NO"
+                   R_ConductorSource="@_conductorRef"
+                   R_EnableAdd="true"
+                   R_EnableEdit="true"  />
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Gender</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_RadioGroup Data="@_viewModel.GenderList"
+                      @bind-Value="@_viewModel.Data.CGENDER"
+                      ValueField="@nameof(LMM02000GenderTypeDTO.CCODE)"
+                      TextField="@nameof(LMM02000GenderTypeDTO.CDESCRIPTION)"
+                      R_ConductorSource="@_conductorRef"
+                      R_EnableAdd="true"
+                      R_EnableEdit="true">
+        </R_RadioGroup>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Salesman Type</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_RadioGroup Data="@_viewModel.SalesmanTypeList"
+                      @bind-Value="@_viewModel.Data.CSALESMAN_TYPE"
+                      ValueField="@nameof(LMM02000SalesmanTypeDTO.CCODE)"
+                      TextField="@nameof(LMM02000SalesmanTypeDTO.CDESCRIPTION)"
+                      R_ConductorSource="@_conductorRef"
+                      R_EnableAdd="true"
+                      R_EnableEdit="true">
+        </R_RadioGroup>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-1">
+        <R_Label Class="fw-bold">Company Name*</R_Label>
+    </R_ItemLayout>
+
+    <R_ItemLayout Class="col-2">
+        <R_TextBox @bind-Value="@_viewModel.Data.CEXT_COMPANY_NAME"
+                   R_ConductorSource="@_conductorRef"
+                   R_EnableAdd="true"
+                   R_EnableEdit="true"/>
+    </R_ItemLayout>
+</R_StackLayout>
+<R_StackLayout Row="true" Spacing="3">
+    <R_ItemLayout xs="1">
+        <R_AddButton R_Conductor="@_conductorRef"></R_AddButton>
+    </R_ItemLayout>
+
+    <R_ItemLayout xs="1">
+        <R_EditButton R_Conductor="@_conductorRef"></R_EditButton>
+    </R_ItemLayout>
+
+    <R_ItemLayout xs="1">
+        <R_DeleteButton R_Conductor="@_conductorRef"></R_DeleteButton>
+    </R_ItemLayout>
+
+    
+    <R_ItemLayout xs="1">
+        <R_Popup R_After_Open_Popup="@R_After_Open_Popup_ActivateInactive" R_Before_Open_Popup="@R_Before_Open_Popup_ActivateInactive">Active/Inacvtive</R_Popup>
+    </R_ItemLayout>
+        
+    <R_ItemLayout xs="1">
+        <R_SaveButton R_Conductor="@_conductorRef"></R_SaveButton>
+    </R_ItemLayout>
+
+    <R_ItemLayout xs="1">
+        <R_CancelButton R_Conductor="@_conductorRef"></R_CancelButton>
+    </R_ItemLayout>
+
+
+</R_StackLayout>
+
+
+<R_Conductor @ref="@_conductorRef"
+             R_ViewModel="@_viewModel"
+             R_IsHeader="true"
+             R_ServiceGetRecord="@Conductor_ServiceGetRecord"
+             R_ServiceSave="@Conductor_ServiceSave"
+             R_ServiceDelete="@Conductor_ServiceDelete"
+             R_ConvertToGridEntity="@R_ConvertToGridEntity"
+          
+        
+             />

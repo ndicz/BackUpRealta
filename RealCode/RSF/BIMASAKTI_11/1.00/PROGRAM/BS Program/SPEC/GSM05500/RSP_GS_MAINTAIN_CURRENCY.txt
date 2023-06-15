@@ -1,0 +1,4 @@
+5501= Error process, please contact your administrator!
+5502= Duplicate Currency Code!
+5503= Cannot Delete, Currency Already in used!
+

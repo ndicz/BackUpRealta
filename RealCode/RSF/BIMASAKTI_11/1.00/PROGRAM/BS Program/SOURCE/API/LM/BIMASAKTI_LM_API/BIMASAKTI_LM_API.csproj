@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+	 <PackageReference Include="Realta.BackCollectionNuGet" Version="1.0.0" />
+	 <PackageReference Include="Realta.CommonCollectionNuGet" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\..\BS Shared Form\SOURCE\SERVICES\GFF00900SERVICES\GFF00900SERVICES.csproj" />
+		<ProjectReference Include="..\..\..\SERVICE\GS\BlazorMenuService\BlazorMenuService.csproj" />
+		<ProjectReference Include="..\..\..\SERVICE\GS\R_SecurityPolicyService\R_SecurityPolicyService.csproj" />
+		<ProjectReference Include="..\..\..\SERVICE\GS\R_SecurityTokenService\R_SecurityTokenService.csproj" />
+		<ProjectReference Include="..\..\..\SERVICE\LM\LMM02000Service\LMM02000Service.csproj" />
+  </ItemGroup>
+
+
+	<ItemGroup>
+		<Reference Include="R_APIStartUp">
+			<HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APIStartUp.dll</HintPath>
+		</Reference>
+		<Reference Include="R_CrossPlatformSecurity">
+			<HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_CrossPlatformSecurity.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+
+</Project>

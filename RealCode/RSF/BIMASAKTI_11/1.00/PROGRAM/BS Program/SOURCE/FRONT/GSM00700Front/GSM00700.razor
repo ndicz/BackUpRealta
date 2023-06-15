@@ -1,0 +1,120 @@
+@page "/GSM00700"
+@using GSM00700Common.DTO
+@inherits R_Page
+<R_TabStrip OnActiveTabIndexChanged="@ChangeTab">
+    <R_TabStripTab Title="Transaction">
+        <R_StackLayout>
+            @*//this is the stacklayout that contains the grid*@
+
+            <R_Grid @ref="@_gridRef00700"
+                    DataSource="GSM00700ViewModel.loGridList"
+                    Pageable="true"
+                    R_ConductorGridSource="@_conGridGSM00700Ref"
+                    R_GridType="@R_eGridType.Original"
+                    AllowAddNewRow="true"
+                    AllowEditRow="true"
+                    AllowDeleteRow="true"
+                    R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlowGroup">
+                <R_GridColumns>
+
+                    <R_GridTextColumn FieldName="CCASH_FLOW_GROUP_CODE" HeaderText="Cash Flow Group Code" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CCASH_FLOW_GROUP_NAME" HeaderText="Cash Flow Group Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+               
+                    
+                    <R_GridDropDownListColumn Data="@GSM00700ViewModel.loCashFlowGroupType"
+                                              FieldName="@nameof(GSM00700DTO.CCASH_FLOW_GROUP_TYPE)"
+                                              ValueField="@nameof(GSM00700CashFlowGroupTypeDTO.CCODE)"
+                                              TextField="@nameof(GSM00700CashFlowGroupTypeDTO.CDESCRIPTION)"
+                                              HeaderText="Cash Flow Group Type" R_EnableAdd R_EnableEdit />
+            
+
+                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="last Updated Date" />  
+                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Create By" />
+                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
+                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+
+
+
+
+                </R_GridColumns>
+            </R_Grid>
+
+            <R_ItemLayout xs="1">
+                <R_Popup>Print</R_Popup>
+            </R_ItemLayout>
+
+        </R_StackLayout>
+        <R_ConductorGrid @ref="@_conGridGSM00700Ref"
+                         R_ViewModel="@GSM00700ViewModel"
+                         R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlowGroup"
+                         R_ServiceSave="@Grid_ServiceSaveRecordCashFlowGroup"
+                         R_ServiceDelete="@Grid_DeleteRecordCashFlowGroup"
+                         R_Validation="@Grid_ValidationCashFlowGroup"
+                         R_Display="@Grid_R_DisplaytListCashFlow"
+                         @* R_AfterDelete="@Grid_AfterDelete" *@ 
+                         R_IsHeader="true"/>
+    </R_TabStripTab>
+
+    @*  CASH FLOW*@
+
+    <R_TabStripTab Title="Cash Flow" Id="tabCashFlow">
+
+        <R_StackLayout Row="true">
+
+            <R_ItemLayout Class="col-1">
+                <R_Label Class="fw-bold">Cash Flow Group</R_Label>
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-1">
+                <R_TextBox @bind-value="GSM00710ViewModel.CashFlowGroupCode"
+                           R_ConductorSource="@R_conduct" Enabled="false" />
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-3">
+                <R_TextBox @bind-value="GSM00710ViewModel.CashFlowGroupName"
+                           R_ConductorSource="@R_conduct" Enabled="false" />
+            </R_ItemLayout>
+        </R_StackLayout>
+
+        <R_StackLayout>
+            <R_Grid @ref="@_gridRef00710"
+                    DataSource="GSM00710ViewModel.loGridList"
+                    Pageable="true"
+                    R_ConductorGridSource="@_conGridGSM00710Ref"
+                    R_GridType="@R_eGridType.Original"
+                    AllowAddNewRow="true"
+                    AllowEditRow="true"
+                    AllowDeleteRow="true"
+                    R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
+                <R_GridColumns>
+
+                    <R_GridNumericColumn FieldName="CSEQUENCE" HeaderText="Display Seq"/>
+                    <R_GridTextColumn FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+
+                    <R_GridDropDownListColumn Data="@GSM00700ViewModel.loCashFlowGroupType"
+                                              FieldName="@nameof(GSM00710DTO.CCASH_FLOW_TYPE)"
+                                              ValueField="@nameof(GSM00710CashFlowTypeDTO.CCODE)"
+                                              TextField="@nameof(GSM00710CashFlowTypeDTO.CDESCRIPTION)"
+                                              HeaderText="Cash Flow Group Type" R_EnableAdd R_EnableEdit />
+                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="last Updated Date" />
+                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Create By" />
+                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created Date" />
+                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+
+                </R_GridColumns>
+            </R_Grid>
+        </R_StackLayout>
+
+        <R_ConductorGrid @ref="@_conGridGSM00710Ref"
+                         R_ViewModel="@GSM00710ViewModel"
+                         R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlow"
+                         R_ServiceSave="@Grid_ServiceSaveRecordCashFlow"
+                         R_ServiceDelete="@Grid_DeleteRecordCashFlow"
+                         @*R_AfterSave="@Grid_AfterSaveCashFlow" *@
+                         @* R_Display="@Grid_R_DisplaytListCashFlow" *@
+                         @* R_Validation="@Grid_ValidationCashFlow" *@
+                         @* R_AfterDelete="@Grid_AfterDelete" *@ 
+                         R_IsHeader="true"/>
+
+
+    </R_TabStripTab>
+</R_TabStrip>

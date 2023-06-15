@@ -1,0 +1,4 @@
+5511= Error process, please contact your administrator!
+5512= Duplicate Rate Type Code!
+5513= Cannot Delete, Rate Type Already in used!
+

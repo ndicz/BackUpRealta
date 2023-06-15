@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using GSM00700Common.DTO;
+using R_CommonFrontBackAPI;
+
+namespace GSM00700Common
+{
+    public interface IGSM00720 : R_IServiceCRUDBase<GSM00720DTO>
+
+    {
+     GSM00720ListDTO GetAllCashFlowPlan();
+     GSM00720YearListDTO GetYearList();
+    }
+}
