@@ -1,0 +1,9 @@
+@import '_content/GFF00900FRONT/GFF00900FRONT.bundle.scp.css';
+
+/* _content/LMM02000Front/LMM02000.razor.rz.scp.css */
+.my-component[b-ar1w5yayvl] {
+    border: 2px dashed red;
+    padding: 1em;
+    margin: 1em 0;
+    background-image: url('background.png');
+}
