@@ -49,8 +49,8 @@ namespace GSM00700Back
             EndBlock:
             loException.ThrowExceptionIfErrors();
             return loReturn;
-        }ss
-        pub
+        }
+        
         public List<GSM00710CashFlowTypeDTO> CashFlowType(GSM00700DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
