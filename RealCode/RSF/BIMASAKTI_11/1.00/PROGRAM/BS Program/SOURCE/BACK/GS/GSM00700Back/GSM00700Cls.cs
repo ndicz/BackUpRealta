@@ -78,7 +78,7 @@ namespace GSM00700Back
             return loReturn;
         }
 
-
+      
         protected override GSM00700DTO R_Display(GSM00700DTO poEntity)
         {
             R_Exception loException = new R_Exception();
