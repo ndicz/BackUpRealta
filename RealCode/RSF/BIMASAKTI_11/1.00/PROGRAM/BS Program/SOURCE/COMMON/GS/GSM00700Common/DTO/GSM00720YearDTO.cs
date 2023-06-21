@@ -5,7 +5,7 @@ using R_APICommonDTO;
 
 namespace GSM00700Common.DTO
 {
-    public class GSM00720YearDTO
+    public class GSM00720YearDTO : R_APIResultBaseDTO
     {
         public string CYEAR { get; set; }
 

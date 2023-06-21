@@ -22,12 +22,13 @@ namespace GSM00700Service
         {
             var loEx = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00700DTO>();
+            GSM00700DBParameter loDbPar = new GSM00700DBParameter();
             try
             {
                 var loCls = new GSM00700Cls();
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
-
+                loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
                 //poParameter.Entity.CCOMPANY_ID = "RCD";
                 //poParameter.Entity.CUSER_ID = "Admin";
 

@@ -27,6 +27,10 @@ namespace GSM00700Front
         private R_Grid<GSM00710DTO> _gridRef00710;
         private R_Conductor R_conduct;
 
+        private GSM00720ViewModel GSM00720ViewModel = new();
+        private R_ConductorGrid _conGridGSM00720Ref;
+        private R_Grid<GSM00720DTO> _gridRef00720;
+
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
@@ -148,9 +152,9 @@ namespace GSM00700Front
             loException.ThrowExceptionIfErrors();
         }
 
+#region GSM00710
 
-        
-     
+
         private async Task ChangeTab(R_TabStripTab arg)
         {
             var loEx = new R_Exception();
@@ -282,6 +286,12 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+#endregion
+        #region GSM00720
+
       
+
+        #endregion
+
     }
 }

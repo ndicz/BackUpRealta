@@ -41,7 +41,7 @@ namespace GFF00900BACK
 
             return loResult;
         }
-
+        
         public void RSP_CREATE_ACTIVITY_APPROVAL_LOGMethod(GFF00900DTO poEntity)
         {
             R_Exception loException = new R_Exception();

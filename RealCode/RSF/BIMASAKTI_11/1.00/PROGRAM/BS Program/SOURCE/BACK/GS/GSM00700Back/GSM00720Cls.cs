@@ -37,7 +37,7 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 10, poParameter.CCASH_FLOW_GROUP_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 10, poParameter.CCASH_FLOW_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
-                loDb.R_AddCommandParameter(loCmd, "@CYEAR", DbType.String, 10, poParameter.CYEAR);
+                loDb.R_AddCommandParameter(loCmd, "@CYEAR", DbType.String, 10, poParameter.CCYEAR);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM00720DTO>(loReturnTemp).ToList();

@@ -1,4 +1,4 @@
-﻿using R_CommonFrontBackAPI;
+﻿    using R_CommonFrontBackAPI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -112,6 +112,36 @@ namespace GSM00700Model
             loEx.ThrowExceptionIfErrors();
         }
 
+        //public async Task SaveCashFlow(GSM00710DTO poNewEntity, R_eConductorMode peConductorMode, string cashFlowGroupCode)
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM00710DTO loResult = null;
+        //    try
+        //    {
+        //        poNewEntity.CCASH_FLOW_GROUP_CODE = CashFlowGroupCode;
+
+        //        // Mendapatkan nilai paling terakhir dari loGridList
+        //        var lastDto = loGridList.LastOrDefault();
+        //        int currentSequence = 1;
+
+        //        if (lastDto != null)
+        //        {
+        //            // Mengambil nilai CSEQUENCE dari dto terakhir dan menambahkan 1
+        //            currentSequence = int.Parse(lastDto.CSEQUENCE) + 1;
+        //        }
+
+        //        poNewEntity.CSEQUENCE = currentSequence.ToString(); // Mengubah nilai CSEQUENCE menjadi string
+
+        //        loResult = await _GSM00710Model.R_ServiceSaveAsync(poNewEntity, (eCRUDMode)peConductorMode);
+        //        loEntity = loResult;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+        //    loEx.ThrowExceptionIfErrors();
+        //}
+
         public async Task SaveCashFlow(GSM00710DTO poNewEntity, R_eConductorMode peConductorMode, string cashFlowGroupCode)
         {
             var loEx = new R_Exception();
@@ -120,14 +150,14 @@ namespace GSM00700Model
             {
                 poNewEntity.CCASH_FLOW_GROUP_CODE = CashFlowGroupCode;
 
-                // Mendapatkan nilai paling terakhir dari loGridList
-                var lastDto = loGridList.LastOrDefault();
+                // Mendapatkan nilai paling terbesar dari loGridList berdasarkan CSEQUENCE
+                var maxDto = loGridList.OrderByDescending(dto => int.Parse(dto.CSEQUENCE)).FirstOrDefault();
                 int currentSequence = 1;
 
-                if (lastDto != null)
+                if (maxDto != null)
                 {
-                    // Mengambil nilai CSEQUENCE dari dto terakhir dan menambahkan 1
-                    currentSequence = int.Parse(lastDto.CSEQUENCE) + 1;
+                    // Mengambil nilai CSEQUENCE dari dto terbesar dan menambahkan 1
+                    currentSequence = int.Parse(maxDto.CSEQUENCE) + 1;
                 }
 
                 poNewEntity.CSEQUENCE = currentSequence.ToString(); // Mengubah nilai CSEQUENCE menjadi string
@@ -141,6 +171,7 @@ namespace GSM00700Model
             }
             loEx.ThrowExceptionIfErrors();
         }
+
 
         public async Task DeleteCashFlow(GSM00710DTO poNewEntity)
         {
