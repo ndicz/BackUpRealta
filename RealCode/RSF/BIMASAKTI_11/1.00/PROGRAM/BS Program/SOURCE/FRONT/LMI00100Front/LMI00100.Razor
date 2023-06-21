@@ -1,0 +1,49 @@
+@using LMI00100Common.DTO
+@using LMI00100Model
+@using R_BlazorFrontEnd.Controls.Enums
+@inherits R_Page
+
+@page "/LMI00100"
+
+
+<R_StackLayout Row="true" Spacing="4">
+    <R_ItemLayout>
+        <R_Label FontColor="red" Class="fw-bold">PROPERTY</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_ComboBox Data="@_viewModel.PropertyList"
+                    @bind-Value="_viewModel.PropertyValue"
+                    ValueField="@nameof(LMI00100PropertyDTO.CPROPERTY_ID)"
+                    TextField="@nameof(LMI00100PropertyDTO.CPROPERTY_NAME)"
+                    R_ConductorSource="@_conductorRef" OnChanged="@OnChanged" />
+    </R_ItemLayout>
+</R_StackLayout>
+    
+
+<R_StackLayout Spacing="3" Class="mb-4">
+    <R_StackLayout>
+   
+        <R_Grid @ref="@_gridRef00100"
+                DataSource="@_viewModel.loGridList"
+                Pageable="true"
+                R_ConductorSource="@_conductorRef"
+                R_GridType="@R_eGridType.Navigator"
+                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
+
+            <R_GridColumns>
+
+                <R_GridTextColumn FieldName="CBANK_CODE" HeaderText="Bank Code"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CBANK_NAME" HeaderText="Bank Name"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
+                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date" />
+                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By"/>
+                <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+
+            </R_GridColumns>
+        </R_Grid>
+
+    </R_StackLayout>
+</R_StackLayout>
+
+    <R_ConductorGrid @ref="@_conGridLMI00100Ref"
+                     R_ViewModel="@_viewModel"/>

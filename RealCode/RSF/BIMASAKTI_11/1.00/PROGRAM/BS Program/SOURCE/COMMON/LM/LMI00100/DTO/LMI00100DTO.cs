@@ -1,8 +1,9 @@
-﻿using System;
+﻿using R_APICommonDTO;
+using System;
 
 namespace LMI00100Common.DTO
 {
-    public class LMI00100DTO
+    public class LMI00100DTO : R_APIResultBaseDTO
     {
         public string CCOMPANY_ID { get; set; }
         public string CUSER_ID { get; set; }
