@@ -1270,6 +1270,8 @@
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
           "GSM05500Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {
@@ -1367,6 +1369,44 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "Lookup_GSCOMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        }
+      },
+      "Lookup_GSFRONT/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSModel": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        }
+      },
+      "Lookup_GSModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
         }
       }
     },
@@ -2743,6 +2783,8 @@
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
           "GSM05500Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {
@@ -2840,6 +2882,44 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "Lookup_GSCOMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        }
+      },
+      "Lookup_GSFRONT/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSModel": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        }
+      },
+      "Lookup_GSModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
         }
       }
     }
@@ -5980,6 +6060,21 @@
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj"
+    },
+    "Lookup_GSCOMMON/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/BACK/Lookup_GSCOMMON/Lookup_GSCOMMON.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/BACK/Lookup_GSCOMMON/Lookup_GSCOMMON.csproj"
+    },
+    "Lookup_GSFRONT/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_GSFRONT/Lookup_GSFRONT.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_GSFRONT/Lookup_GSFRONT.csproj"
+    },
+    "Lookup_GSModel/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_GSModel/Lookup_GSModel.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_GSModel/Lookup_GSModel.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -9,6 +9,7 @@
       "GFF00900BACK/1.0.0": {
         "dependencies": {
           "GFF00900COMMON": "1.0.0",
+          "RSP_GS_VALIDATE_USER_ACT_APPRResources": "1.0.0",
           "R_APIBackEnd": "1.0.0.0",
           "R_APICommon": "1.0.0.0",
           "R_CommonFrontBackAPI": "1.0.0.0"
@@ -20,6 +21,11 @@
       "GFF00900COMMON/1.0.0": {
         "runtime": {
           "GFF00900COMMON.dll": {}
+        }
+      },
+      "RSP_GS_VALIDATE_USER_ACT_APPRResources/1.0.0": {
+        "runtime": {
+          "RSP_GS_VALIDATE_USER_ACT_APPRResources.dll": {}
         }
       },
       "R_APIBackEnd/1.0.0.0": {
@@ -95,6 +101,11 @@
       "sha512": ""
     },
     "GFF00900COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RSP_GS_VALIDATE_USER_ACT_APPRResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

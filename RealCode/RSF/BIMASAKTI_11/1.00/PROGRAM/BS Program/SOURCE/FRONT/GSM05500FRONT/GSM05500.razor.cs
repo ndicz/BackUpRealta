@@ -4,14 +4,17 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BlazorClientHelper;
 using GSM05500Common.DTO;
 using GSM05500Model;
 using GSM05500Model.ViewModel;
+using Lookup_GSCOMMON.DTOs;
+using Lookup_GSFRONT;
 using Microsoft.AspNetCore.Components;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
+using R_BlazorFrontEnd.Controls.Grid.Columns;
 using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
@@ -34,9 +37,9 @@ namespace GSM05500Front
         private GSM05520ViewModel GSM05520ViewModel = new();
         private R_ConductorGrid _conGridGSM05520Ref;
         private R_Grid<GSM05520DTO> _gridRef5520;
-        private R_Conductor R_conduct;
+        private R_Conductor _conductorRef;
 
-
+        [Inject] private IClientHelper _clientHelper { get; set; }
 
         protected override async Task R_Init_From_Master(object poParameter)
         {
@@ -45,7 +48,7 @@ namespace GSM05500Front
             {
                 await _gridRef5500.R_RefreshGrid(null);
                 await RateTypeGet(null);
-
+                await GSM05520ViewModel.GetLcCurrency();
             }
             catch (Exception ex)
             {
@@ -153,7 +156,7 @@ namespace GSM05500Front
                 }
                 else if (arg.Id == "tabCurrencyRate")
                 {
-
+                    await GSM05520ViewModel.GetLcCurrency();
                     //await GSM05520ViewModel.GetRateListP();
                     await GSM05520ViewModel.GetRateList();
                     //await GSM05520ViewModel.GetLcCurrency();
@@ -256,6 +259,7 @@ namespace GSM05500Front
             {
                 GSM05520ViewModel.RateTypeCode = poParam.ToString();
                 await _gridRef5520.R_RefreshGrid(null);
+                await GSM05520ViewModel.GetLcCurrency();
 
 
             }
@@ -304,6 +308,47 @@ namespace GSM05500Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
+
+        #region Lookup Button
+
+        private R_AddButton R_AddBtn;
+        private R_Button R_ActiveInActiveBtn;
+        private R_Lookup R_LookupBtn;
+
+        private void Before_Open_Lookup(R_BeforeOpenGridLookupColumnEventArgs eventArgs)
+        {
+            var param = new GSL00300ParameterDTO
+            {
+                CCOMPANY_ID = "",
+            };
+            eventArgs.Parameter = param;
+            eventArgs.TargetPageType = typeof(GSL00300);
+        }
+
+        private void After_Open_Lookup(R_AfterOpenGridLookupColumnEventArgs eventArgs)
+        {
+            var loTempResult = (GSL00300DTO)eventArgs.Result;
+            if (loTempResult == null)
+                return;
+            var loGetData = (GSM05520DTO)eventArgs.ColumnData;
+            loGetData.CCURRENCY_CODE = loTempResult.CCURRENCY_CODE;
+           
+        }
+
+        private void R_SetAdd(R_SetEventArgs eventArgs)
+        {
+            if (R_LookupBtn != null)
+                R_LookupBtn.Enabled = eventArgs.Enable;
+        }
+
+        private void R_SetEdit(R_SetEventArgs eventArgs)
+        {
+            if (R_LookupBtn != null)
+                R_LookupBtn.Enabled = eventArgs.Enable;
+        }
+
+        #endregion
 
         private async Task Grid_R_ServiceGetListRecordRate(R_ServiceGetListRecordEventArgs eventArgs)
         {
@@ -357,7 +402,7 @@ namespace GSM05500Front
 
                 eventArgs.Result = GSM05520ViewModel.loEntity;
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 loEx.Add(ex);
             }

@@ -18,10 +18,10 @@
 
                     <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridTextColumn>
                     <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By"/>
-                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Last Updated Date"/>
-                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By"/>
-                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Created Date"/>
+                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
+                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Last Updated Date" />
+                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By" />
+                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Created Date" />
 
                 </R_GridColumns>
             </R_Grid>
@@ -33,7 +33,7 @@
                          R_ServiceSave="@Grid_ServiceSaveCurrency"
                          R_ServiceDelete="@Grid_ServiceDeleteCurrency"
                          R_AfterDelete="@Grid_AfterDelete"
-                         R_IsHeader="true"/>
+                         R_IsHeader="true" />
     </R_TabStripTab>
 
     @*Tab Rate Type*@
@@ -58,10 +58,10 @@
 
                     <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="Rate Type Code" R_EnableAdd></R_GridTextColumn>
                     <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By"/>
-                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date"/>
-                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By"/>
-                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
+                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date" />
+                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By" />
+                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
 
                 </R_GridColumns>
             </R_Grid>
@@ -73,7 +73,7 @@
                          R_ServiceSave="@Grid_ServiceSaveRateType"
                          R_ServiceDelete="@Grid_ServiceDeleteRateType"
                          R_AfterDelete="@Grid_AfterDelete"
-                         R_IsHeader="true"/>
+                         R_IsHeader="true" />
     </R_TabStripTab>
 
     @*Tab Currency Rate*@
@@ -89,9 +89,8 @@
 
             <R_ItemLayout Class="col-2">
                 <R_DatePicker @bind-Value="GSM05520ViewModel.CrateTime"
-                              R_ConductorSource="@R_conduct"
-                              OnChanged="@OnChangedDate"
-                              />
+                              R_ConductorSource="@_conductorRef"
+                              OnChanged="@OnChangedDate" />
             </R_ItemLayout>
 
             <R_ItemLayout Class="col-5">
@@ -104,11 +103,11 @@
             </R_ItemLayout>
             <R_ItemLayout Class="col-1">
                 <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY"
-                           R_ConductorSource="@R_conduct" Enabled="false" />
+                           R_ConductorSource="@_conductorRef" Enabled="false" />
             </R_ItemLayout>
             <R_ItemLayout Class="col-3">
                 <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY_NAME"
-                           R_ConductorSource="@R_conduct"/>
+                           R_ConductorSource="@_conductorRef" Enabled="false"/>
             </R_ItemLayout>
         </R_StackLayout>
 
@@ -118,15 +117,16 @@
                 <R_Label Class="fw-bold">Rate Type</R_Label>
             </R_ItemLayout>
 
-            <R_ItemLayout Class="col-2">
-                <R_ComboBox Data="@GSM05520ViewModel.loGridListRate"
-                            @bind-Value="GSM05520ViewModel.Data.CRATETYPE_CODE"
-                            ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
-                            TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
-                            R_ConductorSource="@R_conduct" OnChanged="@OnChanged"
-                          />
+                      <R_ItemLayout Class="col-2">
+            <R_ComboBox Data="@GSM05520ViewModel.loGridListRate"
+            @bind-Value="GSM05520ViewModel.Data.CRATETYPE_CODE"
+            ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
+            TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
+            R_ConductorSource="@_conductorRef" OnChanged="@OnChanged"
+            />
             </R_ItemLayout>
-
+            
+         
             <R_ItemLayout Class="col-5">
                 <R_Label Class="fw-bold"></R_Label>
             </R_ItemLayout>
@@ -137,15 +137,15 @@
             </R_ItemLayout>
             <R_ItemLayout Class="col-1">
                 <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY"
-                           R_ConductorSource="@R_conduct"/>
+                           R_ConductorSource="@_conductorRef" Enabled="false"/>
             </R_ItemLayout>
             <R_ItemLayout Class="col-3">
                 <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY_NAME"
-                           R_ConductorSource="@R_conduct"/>
+                           R_ConductorSource="@_conductorRef" Enabled="false"/>
             </R_ItemLayout>
         </R_StackLayout>
 
-     
+
 
         <R_StackLayout>
 
@@ -158,11 +158,13 @@
                     AllowAddNewRow="true"
                     AllowEditRow="true"
                     AllowDeleteRow="true"
-                    R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate">
+                    R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate"
+                    R_Before_Open_Grid_Lookup="Before_Open_Lookup"
+                    R_After_Open_Grid_Lookup="After_Open_Lookup">
 
                 <R_GridColumns>
 
-                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridTextColumn>
+                    <R_GridLookupColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridLookupColumn>
                     <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name"/>
                     <R_GridNumericColumn FieldName="NLBASE_RATE_AMOUNT" HeaderText="Local Curr. Base Rate" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
                     <R_GridNumericColumn FieldName="NLCURRENCY_RATE_AMOUNT" HeaderText="Local Currency Rate" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
@@ -186,7 +188,7 @@
                          R_AfterSave="@Conductor_Display"
                          R_Saving="@Conductor_Saving"
                          R_AfterDelete="Grid_AfterDelete"
-                         R_IsHeader="true"/>
+                         R_IsHeader="true" />
 
     </R_TabStripTab>
 </R_TabStrip>

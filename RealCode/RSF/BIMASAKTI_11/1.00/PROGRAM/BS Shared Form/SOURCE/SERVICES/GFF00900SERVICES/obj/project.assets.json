@@ -1215,7 +1215,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "GFF00900COMMON": "1.0.0"
+          "GFF00900COMMON": "1.0.0",
+          "RSP_GS_VALIDATE_USER_ACT_APPRResources": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GFF00900BACK.dll": {}
@@ -1232,6 +1233,16 @@
         },
         "runtime": {
           "bin/placeholder/GFF00900COMMON.dll": {}
+        }
+      },
+      "RSP_GS_VALIDATE_USER_ACT_APPRResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/RSP_GS_VALIDATE_USER_ACT_APPRResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RSP_GS_VALIDATE_USER_ACT_APPRResources.dll": {}
         }
       }
     }
@@ -4049,6 +4060,11 @@
       "type": "project",
       "path": "../../BACK/GFF00900COMMON/GFF00900COMMON.csproj",
       "msbuildProject": "../../BACK/GFF00900COMMON/GFF00900COMMON.csproj"
+    },
+    "RSP_GS_VALIDATE_USER_ACT_APPRResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/BACK/GS/GS_SPR/RSP_GS_VALIDATE_USER_ACT_APPRResources/RSP_GS_VALIDATE_USER_ACT_APPRResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/BACK/GS/GS_SPR/RSP_GS_VALIDATE_USER_ACT_APPRResources/RSP_GS_VALIDATE_USER_ACT_APPRResources.csproj"
     }
   },
   "projectFileDependencyGroups": {

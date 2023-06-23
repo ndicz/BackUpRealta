@@ -69,8 +69,7 @@ namespace GSM05500Back
                                 C.CCURRENCY_NAME AS CBASE_CURRENCY_NAME FROM SAM_COMPANIES A (NOLOCK)
                                 LEFT JOIN GSM_CURRENCY B (NOLOCK) ON  A.CLOCAL_CURRENCY = B.CCURRENCY_CODE
                                 LEFT JOIN GSM_CURRENCY C (NOLOCK) ON A.CBASE_CURRENCY = C.CCURRENCY_CODE
-                                WHERE A.CCOMPANY_ID = @CCOMPANY_ID
-";
+                                WHERE A.CCOMPANY_ID = @CCOMPANY_ID";
                 loCmd.CommandType = CommandType.Text;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);

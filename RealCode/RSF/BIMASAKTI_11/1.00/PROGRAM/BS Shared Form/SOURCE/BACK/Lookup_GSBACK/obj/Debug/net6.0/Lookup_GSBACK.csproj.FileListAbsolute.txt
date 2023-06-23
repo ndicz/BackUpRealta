@@ -1,0 +1,73 @@
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.deps.json
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.pdb
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\BackHelper.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommon.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_Security.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.pdb
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.AssemblyReference.cache
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.GeneratedMSBuildEditorConfig.editorconfig
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfoInputs.cache
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfo.cs
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CoreCompileInputs.cache
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CopyComplete
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\refint\Lookup_GSBACK.dll
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.pdb
+D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\ref\Lookup_GSBACK.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.deps.json
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.pdb
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommon.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_Security.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.pdb
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.AssemblyReference.cache
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.GeneratedMSBuildEditorConfig.editorconfig
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfoInputs.cache
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfo.cs
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CoreCompileInputs.cache
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CopyComplete
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\refint\Lookup_GSBACK.dll
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.pdb
+D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\ref\Lookup_GSBACK.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.deps.json
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSBACK.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommon.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_Security.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\Lookup_GSCOMMON.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\refint\Lookup_GSBACK.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\Lookup_GSBACK.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBACK\obj\Debug\net6.0\ref\Lookup_GSBACK.dll

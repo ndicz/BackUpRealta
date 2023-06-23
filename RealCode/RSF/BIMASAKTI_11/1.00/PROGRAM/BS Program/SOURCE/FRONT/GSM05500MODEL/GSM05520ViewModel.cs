@@ -112,6 +112,7 @@ namespace GSM05500Model
 
              try
              {
+
                  loGridListLc = await _GSM05520Model.GetLccCurrency();
 
             }
