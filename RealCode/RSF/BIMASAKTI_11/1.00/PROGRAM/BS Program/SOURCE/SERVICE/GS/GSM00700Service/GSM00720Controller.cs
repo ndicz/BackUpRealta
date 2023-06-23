@@ -81,8 +81,8 @@ namespace GSM00700Service
             {
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-           
 
+                loDbPar.CCOMPANY_ID = "RCD";
                 loCls = new GSM00720Cls();
                 loResult = loCls.GetYearList(loDbPar);
                 loRtn = new GSM00720YearListDTO() { Data = loResult };

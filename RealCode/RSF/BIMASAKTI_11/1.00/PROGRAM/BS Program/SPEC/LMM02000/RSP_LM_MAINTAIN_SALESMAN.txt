@@ -1,0 +1,6 @@
+2001 = Error process, please contact your administrator!
+2002 = Duplicate Salesman Id!
+2003 = Cannot Delete, Salesman already in used!
+
+
+

@@ -18,6 +18,8 @@ namespace GSM00700Common.DTO
         public DateTime DUPDATE_DATE { get; set; }
         public string CCREATE_BY { get; set; }
         public DateTime DCREATE_DATE { get; set; }
+        public string CCASH_FLOW_CODE { get; set; }
+        public string CCASH_FLOW_NAME { get; set; }
 
       
 

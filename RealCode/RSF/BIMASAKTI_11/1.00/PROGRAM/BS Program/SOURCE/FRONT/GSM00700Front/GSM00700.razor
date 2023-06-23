@@ -57,9 +57,6 @@
 
     @*  CASH FLOW*@
 
-
-
-
     <R_TabStripTab Title="Cash Flow" Id="tabCashFlow">
         <R_StackLayout Row="true">
 
@@ -76,8 +73,8 @@
             </R_ItemLayout>
         </R_StackLayout>
 
-        <R_TabStrip Title="Cash Flow2">
-            <R_TabStripTab Title="Cash Flow" Id="tabCashFlow">
+        <R_TabStrip OnActiveTabIndexChanged="@ChangeTab">
+            <R_TabStripTab Title="Cash Flow">
 
 
                 <R_StackLayout>
@@ -116,16 +113,76 @@
                                  R_ServiceSave="@Grid_ServiceSaveRecordCashFlow"
                                  R_ServiceDelete="@Grid_DeleteRecordCashFlow"
                                  @*R_AfterSave="@Grid_AfterSaveCashFlow" *@
-                                 @* R_Display="@Grid_R_DisplaytListCashFlow" *@
+                                 R_Display="@Grid_R_DisplaytListCashFlowPlan"
                                  @* R_Validation="@Grid_ValidationCashFlow" *@
                                  @* R_AfterDelete="@Grid_AfterDelete" *@
                                  R_IsHeader="true" />
             </R_TabStripTab>
-            <R_TabStripTab Title="Cash Flow Plan">
+            <R_TabStripTab Title="Cash Flow Plan" Id="tabCashFlowPlan">
 
                 <R_StackLayout>
+                    <R_StackLayout Row="true">
 
+                        <R_ItemLayout Class="col-1">
+                            <R_Label Class="fw-bold">Cash Flow Plan</R_Label>
+                        </R_ItemLayout>
+                        <R_ItemLayout Class="col-1">
+                            <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanName"
+                                       R_ConductorSource="@R_conduct" Enabled="false" />
+                        </R_ItemLayout>
+                        <R_ItemLayout Class="col-3">
+                            <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"
+                                       R_ConductorSource="@R_conduct" Enabled="false" />
+                        </R_ItemLayout>
+                    </R_StackLayout>
                 </R_StackLayout>
+
+
+                <R_StackLayout Row="true">
+                    <R_StackLayout Class="col-2">
+
+                        <R_Grid @ref="@_gridRef00720"
+                                DataSource="@GSM00720ViewModel.loYearList"
+                                Pageable="true"
+                                R_ConductorSource="@R_conduct"
+                                R_GridType="@R_eGridType.Navigator"
+                                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
+
+                            <R_GridColumns>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Year Period"></R_GridTextColumn>
+                            </R_GridColumns>
+
+                        </R_Grid>
+
+                    </R_StackLayout>
+                    <R_StackLayout Class="col-10">
+
+                        <R_Grid @ref="@_gridRef00720"
+                                DataSource="@GSM00720ViewModel.loYearList"
+                                Pageable="true"
+                                R_ConductorSource="@R_conduct"
+                                R_GridType="@R_eGridType.Navigator"
+                                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
+
+                            <R_GridColumns>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Period No"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Local Amount"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Base Amount"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Update By"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Update Date"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Created By"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Create Date"></R_GridTextColumn>
+                            </R_GridColumns>
+
+                        </R_Grid>
+
+                    </R_StackLayout>
+                </R_StackLayout>
+
+                <R_ConductorGrid @ref="@_conGridGSM00720Ref"
+                                 R_ViewModel="@GSM00720ViewModel"
+                                 R_IsHeader="true" />
+
 
             </R_TabStripTab>
         </R_TabStrip>

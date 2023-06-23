@@ -261,6 +261,7 @@ namespace LMM02000Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
 
                 lcQuery = "RSP_LM_MAINTAIN_SALESMAN";
                 loCommand.CommandType = CommandType.StoredProcedure;
@@ -283,12 +284,23 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 50, poEntity.CUSER_ID);
 
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
             }
+
             loException.ThrowExceptionIfErrors();
         }
 
@@ -309,7 +321,7 @@ namespace LMM02000Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
-
+                R_ExternalException.R_SP_Init_Exception(loConn);
 
                 if (poCRUDMode == eCRUDMode.AddMode)
                 {
@@ -338,8 +350,17 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CEXT_COMPANY_NAME", System.Data.DbType.String, 100, poEntity.CEXT_COMPANY_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 50, poEntity.CUSER_ID);
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
@@ -357,7 +378,7 @@ namespace LMM02000Back
                     loConn.Dispose();
                 }
             }
-        EndBlock:
+            EndBlock:
             loException.ThrowExceptionIfErrors();
         }
     }

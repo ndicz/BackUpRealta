@@ -16,6 +16,8 @@ namespace GSM00700Model
         public ObservableCollection<GSM00720DTO> loGridList = new ObservableCollection<GSM00720DTO>();
         public ObservableCollection<GSM00720YearDTO> loYearList = new ObservableCollection<GSM00720YearDTO>();
         public GSM00720DTO loEntity = new GSM00720DTO();
+        public string CashFlowPlanCode = ""; // for filter
+        public string CashFlowPlanName = ""; // for filter
 
 
         public async Task GetCashFlowPlanList()
