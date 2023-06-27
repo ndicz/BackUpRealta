@@ -171,8 +171,7 @@ namespace GSM05500Front
 
         public async Task Popup_BeforeEdit(R_BeforeOpenPopupEventArgs eventArgs)
         {
-            eventArgs.Parameter = "LMM02001";
-            eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+     
         }
 
         //public asy

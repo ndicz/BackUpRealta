@@ -9,6 +9,7 @@
             <R_Grid @ref="@_gridRef00700"
                     DataSource="GSM00700ViewModel.loGridList"
                     Pageable="true"
+                    Width="1050px"
                     R_ConductorGridSource="@_conGridGSM00700Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
@@ -84,6 +85,7 @@
                             R_ConductorGridSource="@_conGridGSM00710Ref"
                             R_GridType="@R_eGridType.Original"
                             AllowAddNewRow="true"
+                            Width="1050px"
                             AllowEditRow="true"
                             AllowDeleteRow="true"
                             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
@@ -138,12 +140,13 @@
                 </R_StackLayout>
 
 
-                <R_StackLayout Row="true">
-                    <R_StackLayout Class="col-2">
+                <R_StackLayout Row="true" Class="xs-3">
+                    <R_StackLayout xs="2">
 
                         <R_Grid @ref="@_gridRef00720"
                                 DataSource="@GSM00720ViewModel.loYearList"
                                 Pageable="true"
+                                Width="130px"
                                 R_ConductorSource="@R_conduct"
                                 R_GridType="@R_eGridType.Navigator"
                                 R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
@@ -155,13 +158,15 @@
                         </R_Grid>
 
                     </R_StackLayout>
-                    <R_StackLayout Class="col-10">
+                    <R_StackLayout xs="10">
 
                         <R_Grid @ref="@_gridRef00720"
                                 DataSource="@GSM00720ViewModel.loYearList"
-                                Pageable="true"
+                                Pageable="false"
                                 R_ConductorSource="@R_conduct"
                                 R_GridType="@R_eGridType.Navigator"
+                                PageSize="2"
+                                Width="850px"
                                 R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                             <R_GridColumns>

@@ -4,107 +4,109 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+	<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
+    <PackageReference Include="EPPlus" Version="6.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="6.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.14" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.14" PrivateAssets="all" />
+	<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.23.1" />
-    <PackageReference Include="Telerik.UI.for.Blazor" Version="3.7.0" />
+    <PackageReference Include="Telerik.UI.for.Blazor" Version="4.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00100Front\GSM00100Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00110Front\GSM00110Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM03000Front\GSM03000Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM05500FRONT\GSM05500Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00700Front\GSM00700Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\LMI00100Front\LMI00100Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\LMM02000Front\LMM02000Front.csproj" />
-    <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\GFF00900FRONT.csproj" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="BlazorClientHelper">
-      <HintPath>..\..\LIBRARY\Menu\BlazorClientHelper.dll</HintPath>
-    </Reference>
-    <Reference Include="BlazorMenuCommon">
-      <HintPath>..\..\LIBRARY\Menu\BlazorMenuCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="BlazorMenuModel">
-      <HintPath>..\..\LIBRARY\Menu\BlazorMenuModel.dll</HintPath>
-    </Reference>
-    <Reference Include="R_APIClient">
-      <HintPath>..\..\LIBRARY\Front\R_APIClient.dll</HintPath>
-    </Reference>
-    <Reference Include="R_APICommonDTO">
-      <HintPath>..\..\LIBRARY\Front\R_APICommonDTO.dll</HintPath>
-    </Reference>
-    <Reference Include="R_AuthenticationEnumAndInterface">
-      <HintPath>..\..\LIBRARY\Front\R_AuthenticationEnumAndInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="R_AuthenticationFront">
-      <HintPath>..\..\LIBRARY\Front\R_AuthenticationFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BlazorFrontEnd">
-      <HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BlazorFrontEnd.Authentication">
-      <HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Authentication.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BlazorFrontEnd.Controls">
-      <HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BlazorFrontEnd.Excel">
-      <HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Excel.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BlazorStartup">
-      <HintPath>..\..\LIBRARY\Front\R_BlazorStartup.dll</HintPath>
-    </Reference>
-    <Reference Include="R_BusinessObjectFront">
-      <HintPath>..\..\LIBRARY\Front\R_BusinessObjectFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_CommonFrontBackAPI">
-      <HintPath>..\..\LIBRARY\Front\R_CommonFrontBackAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="R_ContextEnumAndInterface">
-      <HintPath>..\..\LIBRARY\Front\R_ContextEnumAndInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="R_ContextFrontEnd">
-      <HintPath>..\..\LIBRARY\Front\R_ContextFrontEnd.dll</HintPath>
-    </Reference>
-    <Reference Include="R_CrossPlatformSecurity">
-      <HintPath>..\..\LIBRARY\Front\R_CrossPlatformSecurity.dll</HintPath>
-    </Reference>
-    <Reference Include="R_EmailEngineFront">
-      <HintPath>..\..\LIBRARY\Front\R_EmailEngineFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_LockingFront">
-      <HintPath>..\..\LIBRARY\Front\R_LockingFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_ProcessAndUploadFront">
-      <HintPath>..\..\LIBRARY\Front\R_ProcessAndUploadFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_Security">
-      <HintPath>..\..\LIBRARY\Front\R_Security.dll</HintPath>
-    </Reference>
-    <Reference Include="R_SecurityPolicyCommon">
-      <HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="R_SecurityPolicyFront">
-      <HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyFront.dll</HintPath>
-    </Reference>
-    <Reference Include="R_SecurityTokenCommon">
-      <HintPath>..\..\LIBRARY\Menu\R_SecurityTokenCommon.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00100Front\GSM00100Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00110Front\GSM00110Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM03000Front\GSM03000Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM05500FRONT\GSM05500Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\GSM00700Front\GSM00700Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\LMI00100Front\LMI00100Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Program\SOURCE\FRONT\LMM02000Front\LMM02000Front.csproj" />
+		<ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\GFF00900FRONT.csproj" />
+	</ItemGroup>
 
-  <!--<ItemGroup>
-	    <BlazorWebAssemblyLazyLoad Include="SAB00600Front.dll" />
+	<ItemGroup>
+		<Reference Include="BlazorClientHelper">
+			<HintPath>..\..\LIBRARY\Menu\BlazorClientHelper.dll</HintPath>
+		</Reference>
+		<Reference Include="BlazorMenuCommon">
+			<HintPath>..\..\LIBRARY\Menu\BlazorMenuCommon.dll</HintPath>
+		</Reference>
+		<Reference Include="BlazorMenuModel">
+			<HintPath>..\..\LIBRARY\Menu\BlazorMenuModel.dll</HintPath>
+		</Reference>
+		<Reference Include="R_APIClient">
+			<HintPath>..\..\LIBRARY\Front\R_APIClient.dll</HintPath>
+		</Reference>
+		<Reference Include="R_APICommonDTO">
+			<HintPath>..\..\LIBRARY\Front\R_APICommonDTO.dll</HintPath>
+		</Reference>
+		<Reference Include="R_AuthenticationEnumAndInterface">
+			<HintPath>..\..\LIBRARY\Front\R_AuthenticationEnumAndInterface.dll</HintPath>
+		</Reference>
+		<Reference Include="R_AuthenticationFront">
+			<HintPath>..\..\LIBRARY\Front\R_AuthenticationFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BlazorFrontEnd">
+			<HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BlazorFrontEnd.Authentication">
+			<HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Authentication.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BlazorFrontEnd.Controls">
+			<HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Controls.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BlazorFrontEnd.Excel">
+			<HintPath>..\..\LIBRARY\Front\R_BlazorFrontEnd.Excel.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BlazorStartup">
+			<HintPath>..\..\LIBRARY\Front\R_BlazorStartup.dll</HintPath>
+		</Reference>
+		<Reference Include="R_BusinessObjectFront">
+			<HintPath>..\..\LIBRARY\Front\R_BusinessObjectFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_CommonFrontBackAPI">
+			<HintPath>..\..\LIBRARY\Front\R_CommonFrontBackAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="R_ContextEnumAndInterface">
+			<HintPath>..\..\LIBRARY\Front\R_ContextEnumAndInterface.dll</HintPath>
+		</Reference>
+		<Reference Include="R_ContextFrontEnd">
+			<HintPath>..\..\LIBRARY\Front\R_ContextFrontEnd.dll</HintPath>
+		</Reference>
+		<Reference Include="R_CrossPlatformSecurity">
+			<HintPath>..\..\LIBRARY\Front\R_CrossPlatformSecurity.dll</HintPath>
+		</Reference>
+		<Reference Include="R_EmailEngineFront">
+			<HintPath>..\..\LIBRARY\Front\R_EmailEngineFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_LockingFront">
+			<HintPath>..\..\LIBRARY\Front\R_LockingFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_ProcessAndUploadFront">
+			<HintPath>..\..\LIBRARY\Front\R_ProcessAndUploadFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_Security">
+			<HintPath>..\..\LIBRARY\Front\R_Security.dll</HintPath>
+		</Reference>
+		<Reference Include="R_SecurityPolicyCommon">
+			<HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyCommon.dll</HintPath>
+		</Reference>
+		<Reference Include="R_SecurityPolicyFront">
+			<HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyFront.dll</HintPath>
+		</Reference>
+		<Reference Include="R_SecurityTokenCommon">
+			<HintPath>..\..\LIBRARY\Menu\R_SecurityTokenCommon.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<!--<ItemGroup>
+	    <BlazorWebAssemblyLazyLoad Include="SAB00700Front.dll" />
     </ItemGroup>-->
 </Project>

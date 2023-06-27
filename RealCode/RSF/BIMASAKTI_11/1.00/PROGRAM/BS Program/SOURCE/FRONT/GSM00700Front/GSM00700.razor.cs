@@ -37,9 +37,10 @@ namespace GSM00700Front
             try
             {
                 await GSM00700ViewModel.GetCashFlowGroupTypeList();
-                await GSM00710ViewModel.GetCashFlowTypeList();
-              
                 await _gridRef00700.R_RefreshGrid(null);
+                await GSM00710ViewModel.GetCashFlowTypeList();
+                await _gridRef00700.AutoFitAllColumnsAsync();
+               
             }
             catch (Exception ex)
             {
@@ -165,13 +166,18 @@ namespace GSM00700Front
                 {
                     await GSM00710ViewModel.GetCashFlowList();
               
+                    _gridRef00710.AutoFitAllColumnsAsync();
                     //await _gridRef00710.R_RefreshGrid(null);
                 }
                 else if (arg.Id == "tabCashFlowPlan")
                 {
                     await GSM00720ViewModel.GetYearList();
+                    _gridRef00720.AutoFitAllColumnsAsync();
+                 
+
                     //await _gridRef00720.R_RefreshGrid(null);
                 }
+                  
             }
             catch (Exception ex)
             {
