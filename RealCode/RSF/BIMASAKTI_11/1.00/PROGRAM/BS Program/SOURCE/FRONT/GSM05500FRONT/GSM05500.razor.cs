@@ -427,6 +427,13 @@ namespace GSM05500Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        //private void R_Before_Open_Popup_ActivateInactive(R_BeforeEditEventArgs eventArgs)
+        //{
+        //    eventArgs.Parameter = "LMM02001";
+        //    eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+        //}
+
+
         public void Conductor_AfterAdd(R_AfterAddEventArgs eventArgs)
         {
             var loEntity = (GSM05520DTO)eventArgs.Data;

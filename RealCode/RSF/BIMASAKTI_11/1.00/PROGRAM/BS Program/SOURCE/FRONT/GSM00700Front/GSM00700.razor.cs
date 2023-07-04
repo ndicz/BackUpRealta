@@ -29,7 +29,8 @@ namespace GSM00700Front
 
         private GSM00720ViewModel GSM00720ViewModel = new();
         private R_ConductorGrid _conGridGSM00720Ref;
-        private R_Grid<GSM00720YearDTO> _gridRef00720;
+        private R_Grid<GSM00720YearDTO> _gridRef00720Year;
+        private R_Grid<GSM00720DTO> _gridRef00720;
 
         protected override async Task R_Init_From_Master(object poParameter)
         {
@@ -172,10 +173,11 @@ namespace GSM00700Front
                 else if (arg.Id == "tabCashFlowPlan")
                 {
                     await GSM00720ViewModel.GetYearList();
-                    _gridRef00720.AutoFitAllColumnsAsync();
+                    await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
+                    _gridRef00720Year.AutoFitAllColumnsAsync();
                  
 
-                    //await _gridRef00720.R_RefreshGrid(null);
+                    //await _gridRef00720Year.R_RefreshGrid(null);
                 }
                   
             }

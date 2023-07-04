@@ -143,13 +143,12 @@
                 <R_StackLayout Row="true" Class="xs-3">
                     <R_StackLayout xs="2">
 
-                        <R_Grid @ref="@_gridRef00720"
+                        <R_Grid @ref="@_gridRef00720Year"
                                 DataSource="@GSM00720ViewModel.loYearList"
                                 Pageable="true"
                                 Width="130px"
                                 R_ConductorSource="@R_conduct"
-                                R_GridType="@R_eGridType.Navigator"
-                                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
+                                R_GridType="@R_eGridType.Navigator">
 
                             <R_GridColumns>
                                 <R_GridTextColumn FieldName="CYEAR" HeaderText="Year Period"></R_GridTextColumn>
@@ -158,10 +157,13 @@
                         </R_Grid>
 
                     </R_StackLayout>
+                    <R_ConductorGrid @ref="@_conGridGSM00720Ref"
+                                     R_ViewModel="@GSM00720ViewModel"
+                                     R_IsHeader="true" />
                     <R_StackLayout xs="10">
 
                         <R_Grid @ref="@_gridRef00720"
-                                DataSource="@GSM00720ViewModel.loYearList"
+                                DataSource="@GSM00720ViewModel.loGridList"
                                 Pageable="false"
                                 R_ConductorSource="@R_conduct"
                                 R_GridType="@R_eGridType.Navigator"
@@ -170,13 +172,13 @@
                                 R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                             <R_GridColumns>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Period No"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Local Amount"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Base Amount"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Update By"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Update Date"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Created By"></R_GridTextColumn>
-                                <R_GridTextColumn FieldName="CYEAR" HeaderText="Create Date"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CPERIOD_NO" HeaderText="Period No"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="NBASE_AMOUNT" HeaderText="Base Amount"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Update By"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Update Date"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By"></R_GridTextColumn>
+                                <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Create Date"></R_GridTextColumn>
                             </R_GridColumns>
 
                         </R_Grid>
