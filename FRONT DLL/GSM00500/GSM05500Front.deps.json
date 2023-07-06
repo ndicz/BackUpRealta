@@ -8,6 +8,9 @@
     ".NETCoreApp,Version=v6.0": {
       "GSM05500Front/1.0.0": {
         "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900FRONT": "1.0.0",
+          "GFF00900Model": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -149,6 +152,29 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "GFF00900COMMON/1.0.0": {
+        "runtime": {
+          "GFF00900COMMON.dll": {}
+        }
+      },
+      "GFF00900FRONT/1.0.0": {
+        "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "runtime": {
+          "GFF00900FRONT.dll": {}
+        }
+      },
+      "GFF00900Model/1.0.0": {
+        "dependencies": {
+          "GFF00900COMMON": "1.0.0"
+        },
+        "runtime": {
+          "GFF00900Model.dll": {}
+        }
+      },
       "GSM05500Common/1.0.0": {
         "runtime": {
           "GSM05500Common.dll": {}
@@ -225,6 +251,14 @@
       "R_APICommonDTO/1.0.0.0": {
         "runtime": {
           "R_APICommonDTO.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "R_CrossPlatformSecurity/1.0.0.0": {
+        "runtime": {
+          "R_CrossPlatformSecurity.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -376,6 +410,21 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
+    "GFF00900COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GFF00900FRONT/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GFF00900Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "GSM05500Common/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -422,6 +471,11 @@
       "sha512": ""
     },
     "R_APICommonDTO/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "R_CrossPlatformSecurity/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

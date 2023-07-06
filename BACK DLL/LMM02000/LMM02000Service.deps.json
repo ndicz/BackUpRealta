@@ -21,7 +21,8 @@
       },
       "LMM02000Back/1.0.0": {
         "dependencies": {
-          "LMM02000Common": "1.0.0"
+          "LMM02000Common": "1.0.0",
+          "RSP_LM_MAINTAIN_SALESMANResources": "1.0.0"
         },
         "runtime": {
           "LMM02000Back.dll": {}
@@ -30,6 +31,11 @@
       "LMM02000Common/1.0.0": {
         "runtime": {
           "LMM02000Common.dll": {}
+        }
+      },
+      "RSP_LM_MAINTAIN_SALESMANResources/1.0.0": {
+        "runtime": {
+          "RSP_LM_MAINTAIN_SALESMANResources.dll": {}
         }
       },
       "R_APIBackEnd/1.0.0.0": {
@@ -110,6 +116,11 @@
       "sha512": ""
     },
     "LMM02000Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RSP_LM_MAINTAIN_SALESMANResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

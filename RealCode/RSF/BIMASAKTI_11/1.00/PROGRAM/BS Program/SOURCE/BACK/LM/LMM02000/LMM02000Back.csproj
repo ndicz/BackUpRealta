@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\COMMON\LM\LMM02000Common\LMM02000Common.csproj" />
+    <ProjectReference Include="..\LM_SPR\RSP_LM_MAINTAIN_SALESMANResources\RSP_LM_MAINTAIN_SALESMANResources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
