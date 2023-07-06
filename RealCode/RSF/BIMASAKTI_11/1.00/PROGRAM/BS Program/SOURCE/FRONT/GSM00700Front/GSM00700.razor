@@ -91,7 +91,7 @@
                             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                         <R_GridColumns>
 
-                            <R_GridNumericColumn FieldName="CSEQUENCE" HeaderText="Display Seq" />
+                            <R_GridTextColumn FieldName="CSEQUENCE" HeaderText="Display Seq" />
                             <R_GridTextColumn FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
                             <R_GridTextColumn FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
@@ -166,9 +166,9 @@
                                 DataSource="@GSM00720ViewModel.loGridList"
                                 Pageable="false"
                                 R_ConductorSource="@R_conduct"
-                                R_GridType="@R_eGridType.Navigator"
+                                R_GridType="@R_eGridType.Original"
                                 PageSize="2"
-                                Width="850px"
+                                Width="1000px"
                                 R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                             <R_GridColumns>

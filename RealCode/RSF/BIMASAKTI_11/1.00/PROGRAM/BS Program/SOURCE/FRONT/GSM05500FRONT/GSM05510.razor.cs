@@ -22,19 +22,15 @@ namespace GSM05500Front
     {
         private GSM05510ViewModel GSM05510ViewModel = new();
         private R_ConductorGrid _conGridGSM05510Ref;
-        private R_Grid<GSM05510DTO> _gridRef;
-        private R_Conductor R_conduct;
-
-        private string lcPropertyId = "Admin";
-        private string lcCompany = "RCD";
-      
+        private R_Grid<GSM05510DTO> _gridRef5510;
 
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
             try
             {
-                await _gridRef.R_RefreshGrid(null);
+              
+                await _gridRef5510.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {
@@ -43,10 +39,13 @@ namespace GSM05500Front
 
             loEx.ThrowExceptionIfErrors();
         }
-        public async Task Grid_AfterDelete()
+
+
+        public async Task Grid_AfterDelete5510()
         {
             await R_MessageBox.Show("", "Delete Success", R_eMessageBoxButtonType.OK);
         }
+
         private async Task Grid_R_ServiceGetListRecordRateType(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -77,14 +76,11 @@ namespace GSM05500Front
             {
                 loEx.Add(ex);
             }
+
             loEx.ThrowExceptionIfErrors();
         }
 
 
-        private void Grid_ValidationRateType(R_ValidationEventArgs eventArgs)
-        {
-
-        }
 
         private async Task Grid_ServiceSaveRateType(R_ServiceSaveEventArgs eventArgs)
         {
@@ -123,24 +119,8 @@ namespace GSM05500Front
             loEx.ThrowExceptionIfErrors();
         }
 
-        private void PropertyDropdown_OnChange(Object poParam)
-        {
-            var loEx = new R_Exception();
 
-            try
-            {
-               
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
 
-            loEx.ThrowExceptionIfErrors();
-        }
     }
-
-
-
 }
 

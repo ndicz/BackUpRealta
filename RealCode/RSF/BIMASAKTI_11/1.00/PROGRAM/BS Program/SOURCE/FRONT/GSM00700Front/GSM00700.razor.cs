@@ -41,7 +41,7 @@ namespace GSM00700Front
                 await _gridRef00700.R_RefreshGrid(null);
                 await GSM00710ViewModel.GetCashFlowTypeList();
                 await _gridRef00700.AutoFitAllColumnsAsync();
-               
+
             }
             catch (Exception ex)
             {
@@ -167,14 +167,14 @@ namespace GSM00700Front
                 {
                     await GSM00710ViewModel.GetCashFlowList();
               
-                    _gridRef00710.AutoFitAllColumnsAsync();
+                    //_gridRef00710.AutoFitAllColumnsAsync();
                     //await _gridRef00710.R_RefreshGrid(null);
                 }
                 else if (arg.Id == "tabCashFlowPlan")
                 {
                     await GSM00720ViewModel.GetYearList();
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
-                    _gridRef00720Year.AutoFitAllColumnsAsync();
+                   
                  
 
                     //await _gridRef00720Year.R_RefreshGrid(null);
@@ -199,6 +199,7 @@ namespace GSM00700Front
                 await GSM00710ViewModel.GetCashFlowList();
                 GSM00710ViewModel.csquence = GSM00710ViewModel.csquence.ToString();
                 eventArgs.ListEntityResult = GSM00710ViewModel.loGridList;
+                await _gridRef00710.AutoFitAllColumnsAsync();
             }
             catch (Exception ex)
             {
@@ -211,7 +212,7 @@ namespace GSM00700Front
         private async Task Grid_R_DisplaytListCashFlow(R_DisplayEventArgs eventArgs)
         {
             var loEx = new R_Exception();
-
+          
             try
             {
                 if (eventArgs.ConductorMode == R_eConductorMode.Normal)
@@ -298,7 +299,6 @@ namespace GSM00700Front
         private async Task Grid_R_DisplaytListCashFlowPlan(R_DisplayEventArgs eventArgs)
         {
             var loEx = new R_Exception();
-
             try
             {
                 if (eventArgs.ConductorMode == R_eConductorMode.Normal)
@@ -328,6 +328,8 @@ namespace GSM00700Front
             {
                 //await GSM00720ViewModel.GetYearList();
                 eventArgs.ListEntityResult = GSM00720ViewModel.loGridList;
+                await _gridRef00720.AutoFitAllColumnsAsync();
+
             }
             catch (Exception ex)
             {

@@ -20,12 +20,12 @@ namespace GSM05500Common.DTO
         public Decimal NLCURRENCY_RATE_AMOUNT { get; set; }
         public Decimal NBBASE_RATE_AMOUNT { get; set; }
         public Decimal NBCURRENCY_RATE_AMOUNT { get; set; }
-        public DateTime DUPDATE_DATE { get; set; }
+        public DateTime DUPDATE_DATE { get; set; } = DateTime.Now;
         public string CUPDATE_BY { get; set; }
         public string CCREATE_BY { get; set; }
-        public string CRATE_DATE { get; set; } = DateTime.Now.ToString("yyyyMMdd");
+        public string CRATE_DATE { get; set; }
 
 
 
-    } 
+    }
 }

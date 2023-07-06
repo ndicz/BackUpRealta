@@ -1,8 +1,8 @@
 ﻿@page "/GSM05500"
 @using GSM05500Common.DTO
 @inherits R_Page
-<R_TabStrip OnActiveTabIndexChanged="@ChangeTab">
-    <R_TabStripTab Title="Transaction">
+@attribute [R_Page(Title = "Currency")]
+ 
         <R_StackLayout>
             <R_Grid @ref="@_gridRef5500"
                     DataSource="GSM05500ViewModel.loGridList"
@@ -28,18 +28,22 @@
             </R_Grid>
 
         </R_StackLayout>
-        <R_ConductorGrid @ref="@_conGridGSM05500Ref"
-                         R_ViewModel="@GSM05500ViewModel"
-                         R_ServiceGetRecord="@Grid_ServiceGetRecordCurrency"
-                         R_ServiceSave="@Grid_ServiceSaveCurrency"
-                         R_ServiceDelete="@Grid_ServiceDeleteCurrency"
-                         R_AfterDelete="@Grid_AfterDelete"
-                         R_IsHeader="true" />
-    </R_TabStripTab>
+<R_ConductorGrid @ref="@_conGridGSM05500Ref"
+                 R_ViewModel="@GSM05500ViewModel"
+                 R_ServiceGetRecord="@Grid_ServiceGetRecordCurrency"
+                 R_ServiceSave="@Grid_ServiceSaveCurrency"
+                 R_ServiceDelete="@Grid_ServiceDeleteCurrency"
+                 R_AfterDelete="@Grid_AfterDelete"
+                 R_IsHeader="true" />
 
+
+<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailRateType" Title="Rate Type"></R_PredefinedDock>
+<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailCurrencyRate" Title="Currency Rate"></R_PredefinedDock>
+ 
+@*
     @*Tab Rate Type*@
 
-    <R_TabStripTab Title="Rate Type" Id="tabRateType">
+  @*  <R_TabStripTab Title="Rate Type" Id="tabRateType">
 
         <R_StackLayout>
 
@@ -76,10 +80,10 @@
                          R_ServiceDelete="@Grid_ServiceDeleteRateType"
                          R_AfterDelete="@Grid_AfterDelete"
                          R_IsHeader="true" />
-    </R_TabStripTab>
+    </R_TabStripTab>*@
 
     @*Tab Currency Rate*@
-
+@*
     <R_TabStripTab Title="Currency Rate Type" Id="tabCurrencyRate">
 
 
@@ -183,16 +187,19 @@
         </R_StackLayout>
         <R_ConductorGrid @ref="@_conGridGSM05520Ref"
                          R_ViewModel="@GSM05520ViewModel"
-                         @*R_BeforeEdit="@Popup_BeforeEdit" *@
+                    
                          R_ServiceGetRecord="@Grid_ServiceGetRecordRate"
                          R_ServiceSave="@Grid_ServiceSaveRate"
                          R_ServiceDelete="@Grid_ServiceDeleteRate"
                          R_AfterAdd="@Conductor_AfterAdd"
                          R_AfterSave="@Conductor_Display"
                          R_Saving="@Conductor_Saving"
-                         R_AfterDelete="Grid_AfterDelete"
+                         R_AfterDelete="@Grid_AfterDelete"
+                         R_BeforeEdit="@Conductor_BeforeEdit"
+                         R_BeforeAdd="@Conductor_BeforeAdd"
                          R_IsHeader="true" />
 
     </R_TabStripTab>
 </R_TabStrip>
 
+*@

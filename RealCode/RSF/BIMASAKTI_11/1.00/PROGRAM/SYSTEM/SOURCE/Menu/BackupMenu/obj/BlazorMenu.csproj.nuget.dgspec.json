@@ -1457,6 +1457,10 @@
               "target": "Package",
               "version": "[4.2.0, )"
             },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.4, )"
+            },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
               "version": "[6.0.14, )"
@@ -1484,7 +1488,7 @@
             },
             "Telerik.UI.for.Blazor": {
               "target": "Package",
-              "version": "[3.7.0, )"
+              "version": "[4.0.1, )"
             }
           },
           "imports": [

@@ -83,17 +83,8 @@
 		<Reference Include="R_CrossPlatformSecurity">
 			<HintPath>..\..\LIBRARY\Front\R_CrossPlatformSecurity.dll</HintPath>
 		</Reference>
-		<Reference Include="R_EmailEngineFront">
-			<HintPath>..\..\LIBRARY\Front\R_EmailEngineFront.dll</HintPath>
-		</Reference>
-		<Reference Include="R_LockingFront">
-			<HintPath>..\..\LIBRARY\Front\R_LockingFront.dll</HintPath>
-		</Reference>
 		<Reference Include="R_ProcessAndUploadFront">
 			<HintPath>..\..\LIBRARY\Front\R_ProcessAndUploadFront.dll</HintPath>
-		</Reference>
-		<Reference Include="R_Security">
-			<HintPath>..\..\LIBRARY\Front\R_Security.dll</HintPath>
 		</Reference>
 		<Reference Include="R_SecurityPolicyCommon">
 			<HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyCommon.dll</HintPath>
@@ -101,12 +92,8 @@
 		<Reference Include="R_SecurityPolicyFront">
 			<HintPath>..\..\LIBRARY\Menu\R_SecurityPolicyFront.dll</HintPath>
 		</Reference>
-		<Reference Include="R_SecurityTokenCommon">
-			<HintPath>..\..\LIBRARY\Menu\R_SecurityTokenCommon.dll</HintPath>
-		</Reference>
 	</ItemGroup>
-
-	<!--<ItemGroup>
+    <!--<ItemGroup>
 	    <BlazorWebAssemblyLazyLoad Include="SAB00700Front.dll" />
     </ItemGroup>-->
 </Project>

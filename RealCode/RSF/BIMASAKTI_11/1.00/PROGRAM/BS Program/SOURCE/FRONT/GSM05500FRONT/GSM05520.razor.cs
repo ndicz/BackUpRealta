@@ -16,6 +16,10 @@ using System.Threading.Tasks;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Controls.MessageBox;
 using System.Diagnostics.Tracing;
+using Lookup_GSCOMMON.DTOs;
+using Lookup_GSFRONT;
+using R_BlazorFrontEnd.Controls.Popup;
+using BlazorClientHelper;
 
 namespace GSM05500Front
 {
@@ -23,23 +27,20 @@ namespace GSM05500Front
     {
         private GSM05520ViewModel GSM05520ViewModel = new();
         private R_ConductorGrid _conGridGSM05520Ref;
-        private R_Grid<GSM05520DTO> _gridRef;
-        private R_Conductor R_conduct;
-    
+        private R_Grid<GSM05520DTO> _gridRef5520;
+        private R_Conductor _conductorRef;
 
-  
-
-        private string lcPropertyId = "Admin";
-        private string lcCompany = "RCD";
-
+        [Inject] private IClientHelper _clientHelper { get; set; }
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
             try
             {
-                await _gridRef.R_RefreshGrid(null);
-                await GSM05520ViewModel.GetRateListP();
+                await RateTypeGet(null);
                 await GSM05520ViewModel.GetLcCurrency();
+
+                await _gridRef5520.R_RefreshGrid(null);
+
             }
             catch (Exception ex)
             {
@@ -49,12 +50,181 @@ namespace GSM05500Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        #region GSM05200
+        private void R_Before_Open_Popup(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+            eventArgs.Parameter = "GSM5502";
+            eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+
+        }
+
+
+        private async Task R_After_Open_Popup(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef5520.R_RefreshGrid(null);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+            await _gridRef5520.R_RefreshGrid(null);
+
+        }
+        [Inject] public R_PopupService PopupService { get; set; }
+
+
+        public async Task Conductor_BeforeEdit(R_BeforeEditEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), "GSM5502");
+
+
+
+                eventArgs.Cancel = !(bool)loResult.Result;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task Conductor_BeforeAdd(R_BeforeAddEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                if (GSM05520ViewModel.CrateTime < DateTime.Today)
+                {
+                    var loResult = await PopupServiceAdd.Show(typeof(GFF00900FRONT.GFF00900), "GSM5501");
+                    eventArgs.Cancel = !(bool)loResult.Result;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+
+        private async Task OnChanged(object poParam)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                GSM05520ViewModel.RateTypeCode = poParam.ToString();
+                await _gridRef5520.R_RefreshGrid(null);
+                await GSM05520ViewModel.GetLcCurrency();
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            R_DisplayException(loEx);
+        }
+
+        private void OnChangedDate(object poParam)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                DateTime dateValue = DateTime.Parse(poParam.ToString());
+                string formattedDate = dateValue.ToString("yyyyMMdd");
+                GSM05520ViewModel.CrateDate = formattedDate;
+
+                _gridRef5520.R_RefreshGrid(null);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            R_DisplayException(loEx);
+        }
+
+        private async Task RateTypeGet(R_ServiceGetListRecordEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                await GSM05520ViewModel.GetRateListP();
+                //eventArgs.ListEntityResult = _viewModel.loGridListProperty;
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+
+        #region Lookup Button
+
+        private R_AddButton R_AddBtn;
+        private R_Button R_ActiveInActiveBtn;
+        private R_Lookup R_LookupBtn;
+
+        private void Before_Open_Lookup(R_BeforeOpenGridLookupColumnEventArgs eventArgs)
+        {
+            var param = new GSL00300ParameterDTO
+            {
+                CCOMPANY_ID = "",
+            };
+            eventArgs.Parameter = param;
+            eventArgs.TargetPageType = typeof(GSL00300);
+        }
+
+        private void After_Open_Lookup(R_AfterOpenGridLookupColumnEventArgs eventArgs)
+        {
+            var loTempResult = (GSL00300DTO)eventArgs.Result;
+            if (loTempResult == null)
+                return;
+            var loGetData = (GSM05520DTO)eventArgs.ColumnData;
+            loGetData.CCURRENCY_CODE = loTempResult.CCURRENCY_CODE;
+
+        }
+
+        private void R_SetAdd(R_SetEventArgs eventArgs)
+        {
+            if (R_LookupBtn != null)
+                R_LookupBtn.Enabled = eventArgs.Enable;
+        }
+
+        private void R_SetEdit(R_SetEventArgs eventArgs)
+        {
+            if (R_LookupBtn != null)
+                R_LookupBtn.Enabled = eventArgs.Enable;
+        }
+
+        #endregion
+
         private async Task Grid_R_ServiceGetListRecordRate(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
 
             try
             {
+
                 await GSM05520ViewModel.GetRateList();
                 eventArgs.ListEntityResult = GSM05520ViewModel.loGridList;
             }
@@ -93,7 +263,8 @@ namespace GSM05500Front
             {
 
                 var loParam = (GSM05520DTO)eventArgs.Data;
-                loParam.CRATETYPE_CODE = GSM05520ViewModel.Data.CRATETYPE_CODE;
+                loParam.CRATETYPE_CODE = GSM05520ViewModel.RateTypeCode;
+                //loParam.CCURRENCY_CODE = GSM05520ViewModel.CurrencyCode;
                 loParam.CRATE_DATE = GSM05520ViewModel.CrateTime.ToString("yyyyMMdd");
                 await GSM05520ViewModel.SaveRateType(loParam, eventArgs.ConductorMode);
 
@@ -118,62 +289,60 @@ namespace GSM05500Front
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);   
-            }
-
-            loEx.ThrowExceptionIfErrors();
-        }
-
-        public void Conductor_AfterAdd(R_AfterAddEventArgs eventArgs)
-        {
-            var loEntity = (GSM05520DTO)eventArgs.Data;
-
-            GSM05520ViewModel.CrateTime = DateTime.Now;
-        }
-
-        private async Task DropDwonRate (R_ServiceGetListRecordEventArgs eventArgs)
-        {
-            var loEx = new R_Exception();
-
-            try
-            {
-                await GSM05520ViewModel.GetRateListP();
-            }
-            catch (Exception ex)
-            {
                 loEx.Add(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
         }
 
+        //private void R_Before_Open_Popup_ActivateInactive(R_BeforeEditEventArgs eventArgs)
+        //{
+        //    eventArgs.Parameter = "LMM02001";
+        //    eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+        //}
+
+        [Inject] public R_PopupService PopupServiceAdd { get; set; }
+
+        public async Task Conductor_AfterAdd(R_AfterAddEventArgs eventArgs)
+        {
+            var loEntity = (GSM05520DTO)eventArgs.Data;
+            //GSM05520ViewModel.RateTypeCode = "";
+            //GSM05520ViewModel.CrateTime = DateTime.Now;
+
+
+        }
+
+
         private async Task Conductor_Display(R_AfterSaveEventArgs eventArgs)
         {
             if (eventArgs.ConductorMode == R_eConductorMode.Normal)
             {
-                var data =(GSM05520DTO) eventArgs.Data;
-                GSM05520ViewModel.CrateTime =
-                    DateTime.ParseExact(data.CRATE_DATE, "yyyyMMdd", CultureInfo.InvariantCulture);
-                await _gridRef.R_RefreshGrid((GSM05520DTO)eventArgs.Data);
+                var data = (GSM05520DTO)eventArgs.Data;
+                data.CRATE_DATE = GSM05520ViewModel.CrateTime.ToString("yyyyMMdd");
+                GSM05520ViewModel.CrateTime = DateTime.ParseExact(data.CRATE_DATE, "yyyyMMdd", CultureInfo.InvariantCulture);
+                await _gridRef5520.R_RefreshGrid((GSM05520DTO)eventArgs.Data);
             }
         }
 
-        public async Task Conductor_Saving(R_SavingEventArgs eventArgs)
+        public void Conductor_Saving(R_SavingEventArgs eventArgs)
         {
             ((GSM05520DTO)eventArgs.Data).CRATE_DATE = GSM05520ViewModel.CrateTime.ToString("yyyyMMdd");
         }
 
-        public async Task Grid_AfterDelete()
+
+        public async Task Grid_AfterDelete5520()
         {
             await R_MessageBox.Show("", "Delete Success", R_eMessageBoxButtonType.OK);
         }
+        #endregion
+        //private void R_Before_Open_Form(R_BeforeOpenDetailEventArgs eventArgs)
+        //{
+        //    eventArgs.TargetPageType = typeof(GSM05510);
+        //    eventArgs.Parameter = "ea";
+        //}
 
 
-        public async Task Popup_BeforeEdit(R_BeforeOpenPopupEventArgs eventArgs)
-        {
-     
-        }
 
-        //public asy
     }
 }
+

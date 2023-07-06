@@ -173,19 +173,15 @@ namespace GSM05500Back
             R_Db loDb;
             DbCommand loCommand;
             DbConnection loConn = null;
-            string lcAction = "";
+            string lcAction = "ADD";
             try
             {
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
-                R_ExternalException.R_SP_Init_Exception(loConn);
-
-                if (poCRUDMode == eCRUDMode.AddMode)
-                {
-                    lcAction = "ADD";
-                }
-                else if (poCRUDMode == eCRUDMode.EditMode)
+                R_ExternalException.R_SP_Init_Exception(loConn); 
+                
+                if (poCRUDMode == eCRUDMode.EditMode)
                 {
                     lcAction = "EDIT";
                 }

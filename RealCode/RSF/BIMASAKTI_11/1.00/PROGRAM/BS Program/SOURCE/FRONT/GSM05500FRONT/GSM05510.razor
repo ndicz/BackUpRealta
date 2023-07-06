@@ -1,59 +1,41 @@
-@page "/GSM05510"
+     @page "/GSM05510"
 @using GSM05500Common.DTO
 @inherits R_Page
 
 
 
-@*<R_StackLayout>
-    <R_StackLayout Row>
-        <R_ItemLayout xs="3">
-            <R_ComboBox Data="@GSM05510ViewModel.loRateTypeList"
-                        @bind-Value="GSM05510ViewModel.PropertyValueContext"
-                        ValueField="@nameof(GSM05510DTO.CRATE_TYPE_CODE)"
-                        TextField="@nameof(GSM05510DTO.CRATETYPE_DESCRIPTION)"
-                        R_ConductorSource="@R_conduct" 
-                        ="@PropertyDropdown_OnChange">
-            </R_ComboBox>
-        </R_ItemLayout>
-        <R_ItemLayout xs="3">
-            <R_Label>"kjaksdj"</R_Label>
-        </R_ItemLayout>
-    </R_StackLayout>
-   
-</R_StackLayout>*@
+         <R_StackLayout>
 
+                
 
+             <R_Grid @ref="@_gridRef5510"
+                     DataSource="GSM05510ViewModel.loGridList"
+                     Pageable="true"
+                     R_ConductorGridSource="@_conGridGSM05510Ref"
+                     R_GridType="@R_eGridType.Original"
+                     AllowAddNewRow="true"
+                     Width="1080px"
+                     AllowEditRow="true"
+                     AllowDeleteRow="true"
+                     R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
 
-<R_StackLayout>
-   
-    
-   
-    <R_Grid @ref="@_gridRef"
-            DataSource="GSM05510ViewModel.loGridList"
-            Pageable="true"
-            R_ConductorGridSource="@_conGridGSM05510Ref"
-            R_GridType="@R_eGridType.Original"
-            AllowAddNewRow="true"
-            AllowEditRow="true"
-            AllowDeleteRow="true"
-            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
+                 <R_GridColumns>
 
-        <R_GridColumns>
+                     <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="Rate Type Code" R_EnableAdd></R_GridTextColumn>
+                     <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                     <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
+                     <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date" />
+                     <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By" />
+                     <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
 
-            <R_GridTextColumn FieldName="CRATE_TYPE_CODE" HeaderText="Rate Type Code" R_EnableAdd></R_GridTextColumn>
-            <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By"/>
-            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date"/>
-            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By"/>
-            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+                 </R_GridColumns>
+             </R_Grid>
 
-        </R_GridColumns>
-    </R_Grid>
-
-</R_StackLayout>
-<R_ConductorGrid @ref="@_conGridGSM05510Ref"
-                 R_ViewModel="@GSM05510ViewModel"
-                 R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
-                 R_ServiceSave="@Grid_ServiceSaveRateType"
-                 R_ServiceDelete="@Grid_ServiceDeleteRateType"
-                 R_AfterDelete="@Grid_AfterDelete"/>
+         </R_StackLayout>
+         <R_ConductorGrid @ref="@_conGridGSM05510Ref"
+                          R_ViewModel="@GSM05510ViewModel"
+                          R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
+                          R_ServiceSave="@Grid_ServiceSaveRateType"
+                          R_ServiceDelete="@Grid_ServiceDeleteRateType"
+                          @*R_AfterDelete="@Grid_AfterDelete"*@
+                          R_IsHeader="true" />

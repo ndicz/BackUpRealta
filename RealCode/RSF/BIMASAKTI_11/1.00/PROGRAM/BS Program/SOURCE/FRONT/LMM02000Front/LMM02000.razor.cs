@@ -34,9 +34,10 @@ namespace LMM02000Front
 
             try
             {
+
                 await PropertyListData(null);
                 await _gridRef.R_RefreshGrid(null);
-              
+                //await _gridRef.AutoFitAllColumnsAsync();
             }
             catch (Exception ex)
             {
@@ -151,6 +152,7 @@ namespace LMM02000Front
                 await _viewModel.GetGenderList();
                 await _viewModel.GetSalesmanType();
                 eventArgs.ListEntityResult = _viewModel.loGridList;
+                await _gridRef.AutoFitAllColumnsAsync();
             }
             catch (Exception ex)
             {

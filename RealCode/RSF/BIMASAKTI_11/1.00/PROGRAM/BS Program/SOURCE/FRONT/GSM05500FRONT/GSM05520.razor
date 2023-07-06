@@ -1,20 +1,19 @@
 @page "/GSM05520"
 @using GSM05500Common.DTO
-@using R_BlazorFrontEnd.Helpers
 @inherits R_Page
 
-
 <R_StackLayout Row="true">
-    
+
     <R_ItemLayout Class="col-1">
         <R_Label Class="fw-bold">Rate date</R_Label>
     </R_ItemLayout>
 
     <R_ItemLayout Class="col-2">
         <R_DatePicker @bind-Value="GSM05520ViewModel.CrateTime"
-                     R_ConductorSource="@R_conduct"/>
+                      R_ConductorSource="@_conductorRef"
+                      OnChanged="@OnChangedDate" />
     </R_ItemLayout>
-    
+
     <R_ItemLayout Class="col-5">
         <R_Label Class="fw-bold"></R_Label>
     </R_ItemLayout>
@@ -25,11 +24,11 @@
     </R_ItemLayout>
     <R_ItemLayout Class="col-1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY"
-                   R_ConductorSource="@R_conduct"/>
+                   R_ConductorSource="@_conductorRef" Enabled="false" />
     </R_ItemLayout>
     <R_ItemLayout Class="col-3">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY_NAME"
-                   R_ConductorSource="@R_conduct"/>
+                   R_ConductorSource="@_conductorRef" Enabled="false" />
     </R_ItemLayout>
 </R_StackLayout>
 
@@ -44,8 +43,9 @@
                     @bind-Value="GSM05520ViewModel.Data.CRATETYPE_CODE"
                     ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
                     TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
-                    R_ConductorSource="@R_conduct" />
+                    R_ConductorSource="@_conductorRef" OnChanged="@OnChanged" />
     </R_ItemLayout>
+
 
     <R_ItemLayout Class="col-5">
         <R_Label Class="fw-bold"></R_Label>
@@ -57,38 +57,35 @@
     </R_ItemLayout>
     <R_ItemLayout Class="col-1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY"
-                   R_ConductorSource="@R_conduct"/>
+                   R_ConductorSource="@_conductorRef" Enabled="false" />
     </R_ItemLayout>
     <R_ItemLayout Class="col-3">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY_NAME"
-                   R_ConductorSource="@R_conduct"/>
+                   R_ConductorSource="@_conductorRef" Enabled="false" />
     </R_ItemLayout>
 </R_StackLayout>
-
-
-
-
-
-
 
 
 
 <R_StackLayout>
 
 
-    <R_Grid @ref="@_gridRef"
+    <R_Grid @ref="@_gridRef5520"
             DataSource="GSM05520ViewModel.loGridList"
             Pageable="true"
             R_ConductorGridSource="@_conGridGSM05520Ref"
             R_GridType="@R_eGridType.Original"
             AllowAddNewRow="true"
             AllowEditRow="true"
+            Width="1080px"
             AllowDeleteRow="true"
-            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate">
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate"
+            R_Before_Open_Grid_Lookup="Before_Open_Lookup"
+            R_After_Open_Grid_Lookup="After_Open_Lookup">
 
         <R_GridColumns>
 
-            <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridTextColumn>
+            <R_GridLookupColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridLookupColumn>
             <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name" />
             <R_GridNumericColumn FieldName="NLBASE_RATE_AMOUNT" HeaderText="Local Curr. Base Rate" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
             <R_GridNumericColumn FieldName="NLCURRENCY_RATE_AMOUNT" HeaderText="Local Currency Rate" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
@@ -104,11 +101,13 @@
 </R_StackLayout>
 <R_ConductorGrid @ref="@_conGridGSM05520Ref"
                  R_ViewModel="@GSM05520ViewModel"
-                 @*R_BeforeEdit="@Popup_BeforeEdit" *@
                  R_ServiceGetRecord="@Grid_ServiceGetRecordRate"
                  R_ServiceSave="@Grid_ServiceSaveRate"
                  R_ServiceDelete="@Grid_ServiceDeleteRate"
                  R_AfterAdd="@Conductor_AfterAdd"
                  R_AfterSave="@Conductor_Display"
                  R_Saving="@Conductor_Saving"
-                 R_AfterDelete="Grid_AfterDelete" />
+                 @*R_AfterDelete="@Grid_AfterDelete"*@
+                 R_BeforeEdit="@Conductor_BeforeEdit"
+                 R_BeforeAdd="@Conductor_BeforeAdd"
+                 R_IsHeader="true" />

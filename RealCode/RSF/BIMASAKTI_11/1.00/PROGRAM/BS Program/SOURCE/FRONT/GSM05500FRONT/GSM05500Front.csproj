@@ -21,6 +21,11 @@
     <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\Lookup_GSCOMMON.csproj" />
 
     <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\Lookup_GSFRONT\Lookup_GSFRONT.csproj" />
+    <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\BACK\GFF00900COMMON\GFF00900COMMON.csproj" />
+
+    <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\GFF00900FRONT.csproj" />
+
+    <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900Model\GFF00900Model.csproj" />
 	
     <ProjectReference Include="..\GSM05500MODEL\GSM05500Model.csproj" />
   </ItemGroup>
