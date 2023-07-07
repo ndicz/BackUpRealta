@@ -50,7 +50,7 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
-     
+
         private async Task Grid_R_ServiceGetListCashFlowGroup(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -58,7 +58,7 @@ namespace GSM00700Front
             try
             {
                 await GSM00700ViewModel.GetCashFlowGroupList();
-               
+
                 GSM00710ViewModel.csquence = GSM00710ViewModel.loGridList.Count.ToString();
                 eventArgs.ListEntityResult = GSM00700ViewModel.loGridList;
             }
@@ -79,9 +79,9 @@ namespace GSM00700Front
                 var loParam = (GSM00700DTO)eventArgs.Data;
                 GSM00710ViewModel.CashFlowGroupCode = loParam.CCASH_FLOW_GROUP_CODE;
                 GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_GROUP_NAME;
-                
 
-                await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE,loParam.CCASH_FLOW_GROUP_NAME);
+
+                await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE, loParam.CCASH_FLOW_GROUP_NAME);
 
                 eventArgs.Result = GSM00700ViewModel.loEntity;
             }
@@ -154,7 +154,7 @@ namespace GSM00700Front
             loException.ThrowExceptionIfErrors();
         }
 
-#region GSM00710
+        #region GSM00710
 
 
         private async Task ChangeTab(R_TabStripTab arg)
@@ -166,7 +166,7 @@ namespace GSM00700Front
                 if (arg.Id == "tabCashFlow")
                 {
                     await GSM00710ViewModel.GetCashFlowList();
-              
+
                     //_gridRef00710.AutoFitAllColumnsAsync();
                     //await _gridRef00710.R_RefreshGrid(null);
                 }
@@ -174,12 +174,12 @@ namespace GSM00700Front
                 {
                     await GSM00720ViewModel.GetYearList();
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
-                   
-                 
+
+
 
                     //await _gridRef00720Year.R_RefreshGrid(null);
                 }
-                  
+
             }
             catch (Exception ex)
             {
@@ -188,14 +188,14 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
-       
+
         private async Task Grid_R_ServiceGetListCashFlow(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
 
             try
             {
-              
+
                 await GSM00710ViewModel.GetCashFlowList();
                 GSM00710ViewModel.csquence = GSM00710ViewModel.csquence.ToString();
                 eventArgs.ListEntityResult = GSM00710ViewModel.loGridList;
@@ -212,7 +212,7 @@ namespace GSM00700Front
         private async Task Grid_R_DisplaytListCashFlow(R_DisplayEventArgs eventArgs)
         {
             var loEx = new R_Exception();
-          
+
             try
             {
                 if (eventArgs.ConductorMode == R_eConductorMode.Normal)
@@ -222,8 +222,8 @@ namespace GSM00700Front
                     GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_GROUP_NAME;
                     //GSM00710ViewModel.csquence = loParam.CSEQUENCE.ToString();
 
-                    await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE,loParam.CCASH_FLOW_GROUP_NAME);
-                
+                    await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE, loParam.CCASH_FLOW_GROUP_NAME);
+
                 }
             }
             catch (Exception ex)
@@ -306,7 +306,7 @@ namespace GSM00700Front
                     var loParam = R_FrontUtility.ConvertObjectToObject<GSM00720DTO>(eventArgs.Data);
                     GSM00720ViewModel.CashFlowPlanCode = loParam.CCASH_FLOW_CODE;
                     GSM00720ViewModel.CashFlowPlanName = loParam.CCASH_FLOW_NAME;
-                  
+
 
                     await GSM00710ViewModel.GetCashFlowId(loParam.CCASH_FLOW_CODE, loParam.CCASH_FLOW_NAME);
 

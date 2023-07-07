@@ -1,0 +1,5 @@
+2301	= Error process, please contact your administrator!
+2302	= Duplicate Property Type!
+2303	= Cannot Delete, Property Type Already in used!
+
+

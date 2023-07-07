@@ -123,33 +123,33 @@ namespace GSM00700Back
             DbConnection loConn = null;
 
 
-            try
-            {
-                loDb = new R_Db();
-                loConn = loDb.GetConnection();
-                loCommand = loDb.GetCommand();
+                try
+                {
+                    loDb = new R_Db();
+                    loConn = loDb.GetConnection();
+                    loCommand = loDb.GetCommand();
 
 
-                lcQuery = "RSP_GS_MAINTAIN_CASHFLOW_GROUP";
-                loCommand.CommandType = CommandType.StoredProcedure;
-                loCommand.CommandText = lcQuery;
+                    lcQuery = "RSP_GS_MAINTAIN_CASHFLOW_GROUP";
+                    loCommand.CommandType = CommandType.StoredProcedure;
+                    loCommand.CommandText = lcQuery;
 
-                loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 10, poEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_NAME", DbType.String, 60, poEntity.CCASH_FLOW_GROUP_NAME);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_TYPE", DbType.String, 60, poEntity.CCASH_FLOW_GROUP_TYPE);
-                loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
+                    loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
+                    loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 10, poEntity.CCASH_FLOW_GROUP_CODE);
+                    loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_NAME", DbType.String, 60, poEntity.CCASH_FLOW_GROUP_NAME);
+                    loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_TYPE", DbType.String, 60, poEntity.CCASH_FLOW_GROUP_TYPE);
+                    loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
+                    loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                    loDb.SqlExecNonQuery(loConn, loCommand, true);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+
+                loException.ThrowExceptionIfErrors();
             }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
-
-            loException.ThrowExceptionIfErrors();
-        }
 
 
         protected override void R_Saving(GSM00700DTO poNewEntity, eCRUDMode poCRUDMode)

@@ -38,7 +38,6 @@ namespace GSM05500Front
             {
                 await RateTypeGet(null);
                 await GSM05520ViewModel.GetLcCurrency();
-
                 await _gridRef5520.R_RefreshGrid(null);
 
             }
