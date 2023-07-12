@@ -51,11 +51,11 @@ namespace GSM00700Service
                 loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
                 loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
 
-                loDbPar.CCOMPANY_ID = "RCD";
-                loDbPar.CUSER_ID = "Admin";
-                loDbPar.CCASH_FLOW_GROUP_CODE = "CF0012";
-                loDbPar.CCASH_FLOW_CODE = "F001";
-                loDbPar.CCYEAR = "2023";
+                //loDbPar.CCOMPANY_ID = "RCD";
+                //loDbPar.CUSER_ID = "Admin";
+                //loDbPar.CCASH_FLOW_GROUP_CODE = "CF0012";
+                //loDbPar.CCASH_FLOW_CODE = "F001";
+                //loDbPar.CCYEAR = "2023";
                 loCls = new GSM00720Cls();
                 loResult = loCls.GetCashFlowPlan(loDbPar);
                 loRtn = new GSM00720ListDTO() { Data = loResult };

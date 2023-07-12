@@ -20,9 +20,13 @@ namespace GSM00700Common.DTO
         public DateTime DCREATE_DATE { get; set; }
         public string CCASH_FLOW_CODE { get; set; }
         public string CCASH_FLOW_NAME { get; set; }
+        public string CFROM_CASH_FLOW_FLAG { get; set; }
 
-      
 
 
+    }
+    public class GSM00720ListDTO : R_APIResultBaseDTO
+    {
+        public List<GSM00720DTO> Data { get; set; }
     }
 }

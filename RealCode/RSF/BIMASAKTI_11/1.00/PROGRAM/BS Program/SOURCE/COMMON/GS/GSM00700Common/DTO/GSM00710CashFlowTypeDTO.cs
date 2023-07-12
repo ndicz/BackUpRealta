@@ -11,4 +11,8 @@ namespace GSM00700Common.DTO
         public string CDESCRIPTION { get; set; }
 
     }
+    public class GSM00710CashFlowTypeListDTO : R_APIResultBaseDTO
+    {
+        public List<GSM00710CashFlowTypeDTO> Data { get; set; }
+    }
 }

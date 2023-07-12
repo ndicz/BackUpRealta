@@ -77,7 +77,7 @@ namespace GSM02300Model.Model
             throw new NotImplementedException();
         }
 
-        public GSM02300ListPropertyType GetPropertyType()
+        public GSM02300ListPropertyTypeDTO GetPropertyType()
         {
             throw new NotImplementedException();
         }

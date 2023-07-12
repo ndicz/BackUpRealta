@@ -66,7 +66,7 @@ namespace GSM02300Service
                 loException.Add(ex);
             };
         EndBlock:
-            loException.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();   
 
             return loRtn;
         }

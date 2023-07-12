@@ -1,0 +1,52 @@
+﻿@page "/GSM02300"
+@using GSM02300Common.DTO
+@inherits R_Page
+@attribute [R_Page(Title = "Property Type")]
+
+<R_StackLayout>
+    <R_Grid @ref="@_gridRef02300"
+            DataSource="_GSM02300iewModel.loGridList"
+            Pageable="true"
+            R_ConductorGridSource="@_conGridGSM02300Ref"
+            R_GridType="@R_eGridType.Original"
+            AllowAddNewRow="true"
+            Width="1080px"
+            AllowEditRow="true"
+            AllowDeleteRow="true"
+            R_ServiceGetListRecord="@Grid_Get_Record_GSM02300">
+
+        <R_GridColumns>
+
+
+            <R_GridDropDownListColumn 
+                Data="@_GSM02300iewModel.loGridListPropertyType"
+
+                                      FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
+                                      ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
+                                      TextField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
+                                      HeaderText="Cash Flow Group Type" R_EnableAdd/>
+
+            @*<R_GridTextColumn FieldName="CPROPERTY_TYPE_CODE" HeaderText="Property Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>*@
+            <R_GridTextColumn FieldName="CPROPERTY_TYPE_NAME"
+                              
+                              HeaderText="Property Type Name" R_EnableAdd R_EnableEdit ></R_GridTextColumn>
+          
+
+            <R_GridCheckBoxColumn FieldName="LSINGLE_UNIT" HeaderText="Single Unit" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
+            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
+            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Update Date" />
+
+            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By" />
+            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Create Date" />
+
+        </R_GridColumns>
+    </R_Grid>
+
+</R_StackLayout>
+<R_ConductorGrid @ref="@_conGridGSM02300Ref"
+                 R_ViewModel="@_GSM02300iewModel"
+                 R_ServiceGetRecord="@Grid_Service_Get_Record_GSM02300"
+                 R_ServiceSave="@Grid_SaveGSM02300"
+                  R_ServiceDelete="@Grid_DeleteProperty"
+                 @*R_AfterDelete="@Grid_AfterDelete" *@
+                 R_IsHeader="true" />

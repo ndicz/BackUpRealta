@@ -117,6 +117,7 @@ namespace LMM02000Model
                 var loResult = await _LMM02000Model.GetProperty();
 
                 PropertyList = loResult.Data;
+                propertyValue = PropertyList[0].CPROPERTY_ID;
             }
             catch (Exception ex)
             {

@@ -85,6 +85,36 @@ namespace GSM00700Back
             return loReturn;
         }
 
+        public List<GSM00720DTO> CopyFromYear()
+        {
+            R_Exception loException = new R_Exception();
+            List<GSM00720DTO> loResult = null;
+
+            try
+            {
+                R_Db loDb = new R_Db();
+                DbConnection loConn = loDb.GetConnection("R_DefaultConnectionString");
+
+                string lcQuery = @"SELECT A.CCOMPANY_ID, B.CCOMPANY_NAME FROM GSM_COMPANY A (NOLOCK) 
+                                   INNER JOIN SAM_COMPANIES B (NOLOCK) ON A.CCOMPANY_ID = B.CCOMPANY_ID 
+                                   WHERE A.LPRIMARY_ACCOUNT = 1 --[TRUE] ";
+                DbCommand loCmd = loDb.GetCommand();
+                loCmd.CommandText = lcQuery;
+
+                var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loResult = R_Utility.R_ConvertTo<GSM00720DTO>(loDataTable).ToList();
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+    }
         //public List<GSM00720DTO> GetCashFlowPlanList(GSM00700DBParameter poParameter)
         //{
         //    R_Exception loException = new R_Exception();

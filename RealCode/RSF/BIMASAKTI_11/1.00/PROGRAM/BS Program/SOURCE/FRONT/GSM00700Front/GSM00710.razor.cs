@@ -36,42 +36,18 @@ namespace GSM00700Front
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
-            try
-            {
-
-               GSM00710ViewModel.loEntity = R_FrontUtility.ConvertObjectToObject<GSM00710DTO>(poParameter);
-
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-
-            loEx.ThrowExceptionIfErrors();
-        }
-        private async Task ChangeTab(R_TabStripTab arg)
-        {
-            var loEx = new R_Exception();
 
             try
             {
-                if (arg.Id == "tabCashFlow")
-                {
-                    await GSM00710ViewModel.GetCashFlowList();
+                var param = (GSM00700DTO)poParameter;
+                GSM00710ViewModel.CashFlowGroupCode = param.CCASH_FLOW_GROUP_CODE;
+                GSM00710ViewModel.CashFlowGroupName = param.CCASH_FLOW_GROUP_NAME;
+                await GSM00710ViewModel.GetCashFlowList();
+                await GSM00710ViewModel.GetCashFlowTypeList();
+        
+               
 
-                    //_gridRef00710.AutoFitAllColumnsAsync();
-                    //await _gridRef00710.R_RefreshGrid(null);
-                }
-                else if (arg.Id == "tabCashFlowPlan")
-                {
-                    await GSM00720ViewModel.GetYearList();
-                    await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
-
-
-
-                    //await _gridRef00720Year.R_RefreshGrid(null);
-                }
-
+                await _gridRef00710.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {
@@ -101,7 +77,7 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
-      
+
         public async Task Grid_ServiceGetRecordCashFlow(R_ServiceGetRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -162,8 +138,6 @@ namespace GSM00700Front
         }
 
         #endregion
-        #region GSM00720
-
         private async Task Grid_R_DisplaytListCashFlowPlan(R_DisplayEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -187,7 +161,6 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
-
         private async Task Grid_R_ServiceGetListRecordCashFlowPlan(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -207,7 +180,53 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        private async Task Grid_R_Display_Year(R_DisplayEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                if (eventArgs.ConductorMode == R_eConductorMode.Normal)
+                {
+                    var loParam = R_FrontUtility.ConvertObjectToObject<GSM00720YearDTO>(eventArgs.Data);
+                    GSM00720ViewModel.Year = loParam.CYEAR;
+                    //await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
+                    await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
+                    await GSM00720ViewModel.GetYearList();
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
 
-        #endregion
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        private async Task ChangeTab(R_TabStripTab arg)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                
+                if (arg.Id == "tabCashFlowPlan")
+                {
+                    await GSM00720ViewModel.GetYearList();
+                    await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
+
+
+
+                    //await _gridRef00720Year.R_RefreshGrid(null);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
     }
 }

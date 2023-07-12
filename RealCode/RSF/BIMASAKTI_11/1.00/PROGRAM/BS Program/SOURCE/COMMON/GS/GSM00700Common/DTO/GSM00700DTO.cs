@@ -22,4 +22,9 @@ namespace GSM00700Common.DTO
         public string CCASH_FLOW_GROUP_TYPE { get; set; }
 
     }
+    public class GSM00700ListDTO : R_APIResultBaseDTO
+    {
+        public List<GSM00700DTO> Data { get; set; }
+
+    }
 }

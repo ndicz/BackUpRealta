@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\COMMON\GS\GSM02300Common\GSM02300Common.csproj" />
+    <ProjectReference Include="..\GS_SPR\RSP_GS_MAINTAIN_PROPERTY_TYPEResources\RSP_GS_MAINTAIN_PROPERTY_TYPEResources.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -19,9 +19,10 @@ namespace GSM00700Model
         public GSM00720DTO loEntity = new GSM00720DTO();
         public string CashFlowPlanCode = ""; // for filter
         public string CashFlowPlanName = ""; // for filter  
+        public string Year = ""; // for filter
 
 
-        public async Task GetCashFlowPlanList(string CashFlowGroupCode) 
+        public async Task GetCashFlowPlanList(string CashFlowGroupCode, string CashFlowPlanCode) 
         {
             var loEx = new R_Exception();
 
@@ -31,7 +32,7 @@ namespace GSM00700Model
 
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, CashFlowPlanCode);
 
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, CashFlowPlanCode);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
                 var loReturn = await _GSM00720Model.GetCashFlowPlanAsync();
                 loGridList = new ObservableCollection<GSM00720DTO>(loReturn.Data);
             }
