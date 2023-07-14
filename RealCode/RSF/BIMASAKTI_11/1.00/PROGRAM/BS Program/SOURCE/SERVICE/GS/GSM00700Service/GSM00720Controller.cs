@@ -82,7 +82,7 @@ namespace GSM00700Service
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
 
-                loDbPar.CCOMPANY_ID = "RCD";
+                //loDbPar.CCOMPANY_ID = "RCD";
                 loCls = new GSM00720Cls();
                 loResult = loCls.GetYearList(loDbPar);
                 loRtn = new GSM00720YearListDTO() { Data = loResult };
@@ -94,6 +94,36 @@ namespace GSM00700Service
 
             loEx.ThrowExceptionIfErrors();
 
+            return loRtn;
+        }
+
+        [HttpPost]
+        public GSM00720CopyFromYearListDTO GetCopyFromYearList()
+        {
+            R_Exception loEx = new R_Exception();
+            GSM00720CopyFromYearListDTO loRtn = null;
+            List<GSM00720CopyFromYearDTO> loResult;
+            GSM00700DBParameter loDbPar;
+        
+            GSM00720Cls loCls;
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CFROM_CASH_FOW_FLAG = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG);
+                loDbPar.CFROM_CASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE);
+                loDbPar.CFROM_YEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_YEAR);
+
+                loCls = new GSM00720Cls();
+                loResult = loCls.CopyFromYear(loDbPar);
+                loRtn = new GSM00720CopyFromYearListDTO() { Data = loResult };
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            loEx.ThrowExceptionIfErrors();
             return loRtn;
         }
     }

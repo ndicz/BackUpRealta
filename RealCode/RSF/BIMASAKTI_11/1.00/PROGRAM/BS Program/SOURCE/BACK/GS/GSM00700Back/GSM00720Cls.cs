@@ -47,7 +47,7 @@ namespace GSM00700Back
                 loException.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loReturn;
@@ -79,42 +79,56 @@ namespace GSM00700Back
                 loException.Add(ex);
             }
 
+        EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
+
+        public List<GSM00720CopyFromYearDTO> CopyFromYear(GSM00700DBParameter poParameter)
+        {
+            R_Exception loException = new R_Exception();
+            List<GSM00720CopyFromYearDTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuerry = @"RSP_GS_COPY_FROM_CASHFLOW
+	                              @CCOMPANY_ID				
+	                            , @CFROM_CASH_FOW_FLAG		
+	                            , @CFROM_CASH_FLOW_CODE		
+	                            , @CFROM_YEAR				
+	                            , @CTO_CASH_FLOW_CODE		
+	                            , @CTO_YEAR					
+	                            , @CUSER_LOGIN_ID";
+                loCmd.CommandType = System.Data.CommandType.Text;
+                loCmd.CommandText = lcQuerry;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CFROM_CASH_FOW_FLAG", System.Data.DbType.String, 2, poParameter.CFROM_CASH_FOW_FLAG);
+                loDb.R_AddCommandParameter(loCmd, "@CFROM_CASH_FLOW_CODE", System.Data.DbType.String, 20, poParameter.CFROM_CASH_FLOW_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CFROM_YEAR", System.Data.DbType.String, 4, poParameter.CFROM_YEAR);
+                loDb.R_AddCommandParameter(loCmd, "@CTO_CASH_FLOW_CODE", System.Data.DbType.String, 20, poParameter.CTO_CASH_FLOW_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CTO_YEAR", System.Data.DbType.String, 4, poParameter.CTO_YEAR);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_LOGIN_ID", System.Data.DbType.String, 10, poParameter.CUSER_LOGIN_ID);
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+                loReturn = R_Utility.R_ConvertTo<GSM00720CopyFromYearDTO>(loReturnTemp).ToList();
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
             EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loReturn;
         }
 
-        public List<GSM00720DTO> CopyFromYear()
-        {
-            R_Exception loException = new R_Exception();
-            List<GSM00720DTO> loResult = null;
-
-            try
-            {
-                R_Db loDb = new R_Db();
-                DbConnection loConn = loDb.GetConnection("R_DefaultConnectionString");
-
-                string lcQuery = @"SELECT A.CCOMPANY_ID, B.CCOMPANY_NAME FROM GSM_COMPANY A (NOLOCK) 
-                                   INNER JOIN SAM_COMPANIES B (NOLOCK) ON A.CCOMPANY_ID = B.CCOMPANY_ID 
-                                   WHERE A.LPRIMARY_ACCOUNT = 1 --[TRUE] ";
-                DbCommand loCmd = loDb.GetCommand();
-                loCmd.CommandText = lcQuery;
-
-                var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
-
-                loResult = R_Utility.R_ConvertTo<GSM00720DTO>(loDataTable).ToList();
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
-
-            loException.ThrowExceptionIfErrors();
-
-            return loResult;
-        }
-    }
         //public List<GSM00720DTO> GetCashFlowPlanList(GSM00700DBParameter poParameter)
         //{
         //    R_Exception loException = new R_Exception();

@@ -13,6 +13,12 @@ namespace GSM00700Back
         public string CUSER_ID { get; set; }
         public string CCASH_FLOW_CODE { get; set; }
         public string CCYEAR { get; set; }
-
+	
+        public string CFROM_CASH_FOW_FLAG { get; set; }
+        public string CFROM_CASH_FLOW_CODE { get; set; }
+        public string CFROM_YEAR { get; set; }
+        public string CTO_CASH_FLOW_CODE { get; set; }
+        public string CTO_YEAR { get; set; }
+        public string CUSER_LOGIN_ID { get; set; }
     }
 }

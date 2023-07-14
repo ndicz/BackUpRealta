@@ -11,6 +11,8 @@ using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
+using Microsoft.AspNetCore.Components;
+using R_BlazorFrontEnd.Controls.Popup;
 
 namespace GSM00700Front
 {
@@ -227,6 +229,32 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
+        #region POPUP
+        [Inject] public R_PopupService PopupService { get; set; }
+        private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+            eventArgs.TargetPageType = typeof(GSM00720CopyFrom);
+            eventArgs.Parameter = "Dari Find";
+        }
+
+        private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef00720.R_RefreshGrid(null);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+           
+
+        }
+
+        #endregion
 
     }
 }

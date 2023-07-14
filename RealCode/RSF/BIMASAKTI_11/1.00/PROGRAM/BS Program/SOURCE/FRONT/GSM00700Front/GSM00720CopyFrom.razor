@@ -1,0 +1,97 @@
+@page "/GSM00720CopyFromYear"
+@using GSM00700Common.DTO
+@inherits R_Page
+@attribute [R_BlazorFrontEnd.Controls.Attributes.R_Page(Title = "Company List")]
+
+<R_StackLayout>
+    <R_StackLayout Row="true">
+        <R_ItemLayout xs="1">
+            <R_Label Class="fw-bold">From</R_Label>
+        </R_ItemLayout>
+
+    </R_StackLayout>
+    <R_StackLayout Row="true">
+        <R_ItemLayout xs="3">
+            <R_RadioGroup Data="@_GSM00720ViewModel.RadioButtonCopyFrom"
+                          @bind-Value="@_GSM00720ViewModel.CFromCashFlowFlag"
+                          ValueField="@nameof(GSM00720CopyFromYearDTO.Code)"
+                          TextField="@nameof(GSM00720CopyFromYearDTO.Desc)"
+                          R_ConductorSource="@_conductorRef">
+            </R_RadioGroup>
+        </R_ItemLayout>
+    </R_StackLayout>
+
+
+    <R_StackLayout Row="true">
+
+
+        <R_StackLayout Row="true">
+            <R_ItemLayout xs="2">
+                <R_TextBox @bind-Value="@_GSM00720ViewModel.CFromCashFlowCode"
+                           R_ConductorSource="@_conductorRef"/>
+            </R_ItemLayout>
+        
+            <R_ItemLayout xs="3">
+                <R_TextBox @bind-Value="@_GSM00720ViewModel.CFromCashFlowName"
+                           R_ConductorSource="@_conductorRef"/>
+            </R_ItemLayout>
+
+
+        </R_StackLayout>
+    
+
+    </R_StackLayout>
+    
+    
+    <R_StackLayout Row="true">
+
+
+        <R_StackLayout Row="true">
+            <R_ItemLayout>
+                <R_Label>Year</R_Label>
+               
+                           
+            </R_ItemLayout>
+        
+            <R_ItemLayout>
+                <R_DropDownList Data="@_GSM00720ViewModel.RadioButtonCopyFrom"
+                              @bind-Value="@_GSM00720ViewModel.Data.CFROM_CASH_FLOW_FLAG"
+                              ValueField="@nameof(GSM00720CopyFromYearDTO.Code)"
+                              TextField="@nameof(GSM00720CopyFromYearDTO.Desc)"
+                              R_ConductorSource="@_conductorRef">
+                </R_DropDownList>
+            </R_ItemLayout>
+
+        </R_StackLayout>
+    
+
+    </R_StackLayout>
+
+    
+  
+    <R_ItemLayout xs="1">
+        <R_Label Class="fw-bold">To</R_Label>
+    </R_ItemLayout>
+
+</R_StackLayout>
+
+
+
+<R_StackLayout Row="true">
+
+
+    <R_StackLayout Row="true">
+        <R_ItemLayout xs="2">
+            <R_TextBox @bind-Value="@_GSM00720ViewModel.CToCashFlowCode"
+                       R_ConductorSource="@_conductorRef" />
+        </R_ItemLayout>
+
+        <R_ItemLayout xs="3">
+            <R_TextBox @bind-Value="@_GSM00720ViewModel.Data.CCASH_FLOW_NAME"
+                       R_ConductorSource="@_conductorRef" />
+        </R_ItemLayout>
+
+
+    </R_StackLayout>
+</R_StackLayout>
+

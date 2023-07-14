@@ -70,12 +70,40 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
+        public async Task<GSM00720CopyFromYearListDTO> GetCopyFromYearListAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720CopyFromYearListDTO loResult = null;
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyFromYearListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetCopyFromYearList), DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
         public GSM00720ListDTO GetAllCashFlowPlan()
         {
             throw new NotImplementedException();
         }
 
         public GSM00720YearListDTO GetYearList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GSM00720CopyFromYearListDTO GetCopyFromYearList()
         {
             throw new NotImplementedException();
         }
