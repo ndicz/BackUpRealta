@@ -14,7 +14,7 @@ using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
 using R_CommonFrontBackAPI;
 
-namespace GSM00700Front
+namespace GSM00700Front uhuy
 {
     public partial class GSM00700 : R_Page
     {
