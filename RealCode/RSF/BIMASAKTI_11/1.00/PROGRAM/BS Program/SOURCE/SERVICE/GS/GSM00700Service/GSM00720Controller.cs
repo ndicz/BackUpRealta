@@ -13,7 +13,7 @@ using R_Common;
 
 namespace GSM00700Service
 {
-    
+
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class GSM00720Controller : ControllerBase, IGSM00720
@@ -36,7 +36,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720ListDTO GetAllCashFlowPlan()
         {
-            R_Exception loEx = new R_Exception();   
+            R_Exception loEx = new R_Exception();
             GSM00720ListDTO loRtn = null;
             List<GSM00720DTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -104,7 +104,7 @@ namespace GSM00700Service
             GSM00720CopyFromYearListDTO loRtn = null;
             List<GSM00720CopyFromYearDTO> loResult;
             GSM00700DBParameter loDbPar;
-        
+
             GSM00720Cls loCls;
             try
             {
@@ -125,6 +125,79 @@ namespace GSM00700Service
             }
             loEx.ThrowExceptionIfErrors();
             return loRtn;
+        }
+        [HttpPost]
+        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList()
+        {
+            R_Exception loEx = new R_Exception();
+            GSM00720CopyBaseAmountListDTO loRtn = null;
+            List<GSM00720CopyBaseLocalAmountDTO> loResult;
+            GSM00700DBParameter loDbPar;
+            GSM00720Cls loCls;
+
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
+                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
+                loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
+                loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
+                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_FROM);
+                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_TO);
+
+                loCls = new GSM00720Cls();
+                loResult = loCls.UpdateBaseAmount(loDbPar);
+                loRtn = new GSM00720CopyBaseAmountListDTO() { Data = loResult };
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+            return loRtn;
+        }
+        [HttpPost]
+        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList()
+        {
+            R_Exception loEx = new R_Exception();
+            GSM00720CopyLocalAmountListDTO loRtn = null;
+            List<GSM00720CopyBaseLocalAmountDTO> loResult;
+            GSM00700DBParameter loDbPar;
+            GSM00720Cls loCls;
+
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
+                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
+                loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
+                loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
+                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_FROM);
+                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_TO);
+
+                loCls = new GSM00720Cls();
+                loResult = loCls.UpdateBaseAmount(loDbPar);
+                loRtn = new GSM00720CopyLocalAmountListDTO() { Data = loResult };
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+            return loRtn;
+        }
+
+        public GSM00720CurrencyListDTO GetCurrencyList()
+        {
+            throw new NotImplementedException();
         }
     }
 }

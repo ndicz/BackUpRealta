@@ -17,6 +17,13 @@ namespace GSM00700Common
         public const string CTO_CASH_FLOW_CODE = "CTO_CASH_FLOW_CODE";
         public const string CTO_YEAR = "CTO_YEAR";
 
+        public const string CCASH_FLOW_GROUP = "CCASH_FLOW_GROUP";
+        public const string CCURRENCY_CODE = "CCURRENCY_CODE";
+        public const string CCURRENCY_RATE  = "CCURRENCY_RATE";
+        public const string INO_PERIOD_FROM = "INO_PERIOD_FROM";
+        public const string INO_PERIOD_TO = "INO_PERIOD_TO";
+
+
 
     }
 }

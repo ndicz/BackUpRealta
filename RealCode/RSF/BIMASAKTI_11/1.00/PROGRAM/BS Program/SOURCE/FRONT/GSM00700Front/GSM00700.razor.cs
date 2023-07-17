@@ -14,8 +14,8 @@ using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
 using R_CommonFrontBackAPI;
 
-namespace GSM00700Front uhuy
-{sss
+namespace GSM00700Front
+{
     public partial class GSM00700 : R_Page
     {
         private GSM00700ViewModel GSM00700ViewModel = new();

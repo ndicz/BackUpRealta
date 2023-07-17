@@ -93,6 +93,53 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
+        public async Task<GSM00720CopyBaseAmountListDTO> GetCopyBaseAmountListAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720CopyBaseAmountListDTO loResult = null;
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyBaseAmountListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetCopyBaseAmountList), DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00720CopyLocalAmountListDTO> GetCopyLocalAmountListAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720CopyLocalAmountListDTO loResult = null;
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyLocalAmountListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetCopyLocalAmountList), DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
         public GSM00720ListDTO GetAllCashFlowPlan()
         {
             throw new NotImplementedException();
@@ -107,5 +154,16 @@ namespace GSM00700Model.Model
         {
             throw new NotImplementedException();
         }
+
+        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList()
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

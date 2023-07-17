@@ -234,8 +234,16 @@ namespace GSM00700Front
         [Inject] public R_PopupService PopupService { get; set; }
         private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         {
-            eventArgs.TargetPageType = typeof(GSM00720CopyFrom);
-            eventArgs.Parameter = "Dari Find";
+            eventArgs.TargetPageType = typeof(GSM00720LocalAmount);
+
+            var param = new GSM00720CopyBaseLocalAmountDTO()
+            {
+                CCASH_FLOW_CODE = GSM00710ViewModel.CashFlowGroupCode,
+                CCASH_FLOW_NAME = GSM00710ViewModel.CashFlowGroupName,
+                CYEAR = GSM00720ViewModel.Year,
+            };
+
+            eventArgs.Parameter = param;
         }
 
         private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
@@ -256,5 +264,6 @@ namespace GSM00700Front
 
         #endregion
 
+      
     }
 }

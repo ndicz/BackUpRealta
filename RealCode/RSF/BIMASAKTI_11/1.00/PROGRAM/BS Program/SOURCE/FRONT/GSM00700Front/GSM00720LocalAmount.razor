@@ -1,0 +1,63 @@
+@page "/GSM00720LocalAmount"
+@using GSM00700Common.DTO
+@using GSM00700Model
+@inherits R_Page
+@attribute [R_BlazorFrontEnd.Controls.Attributes.R_Page(Title = "Update Local Amount")]
+
+
+
+<R_StackLayout Row="true">
+
+    <R_ItemLayout xs="2">
+        <R_Label>Cash Flow Group</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+    <R_ItemLayout xs="3">
+        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupName"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+
+    <R_ItemLayout xs="2">
+        <R_Label>Year</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_GSM00720ViewModel.Year"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+  
+</R_StackLayout>
+<R_StackLayout Row="true">
+    <R_ItemLayout xs="1">
+        <R_Label Class="fw-bold"> </R_Label>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+
+    <R_ItemLayout xs="2">
+        <R_Label>Rate</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+
+    <R_ItemLayout xs="2">
+        <R_Label>Period</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+
+</R_StackLayout>
