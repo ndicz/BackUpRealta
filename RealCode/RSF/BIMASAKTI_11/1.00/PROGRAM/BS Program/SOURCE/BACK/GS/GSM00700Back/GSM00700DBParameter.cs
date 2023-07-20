@@ -26,8 +26,8 @@ namespace GSM00700Back
         public string CYEAR { get; set; }
         public string CCURRENCY_CODE { get; set; }
         public string CCURRENCY_RATE { get; set; }
-        public string INO_PERIOD_FROM { get; set; }
-        public string INO_PERIOD_TO { get; set; }
+        public Int32 INO_PERIOD_FROM { get; set; }
+        public Int32 INO_PERIOD_TO { get; set; }
 
     }
 }

@@ -11,6 +11,7 @@ using R_BlazorFrontEnd;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
+using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
 using R_CommonFrontBackAPI;
@@ -138,6 +139,7 @@ namespace LMM02000Front
             {
                 loEx.Add(ex);
             }
+           
 
             R_DisplayException(loEx);
         }

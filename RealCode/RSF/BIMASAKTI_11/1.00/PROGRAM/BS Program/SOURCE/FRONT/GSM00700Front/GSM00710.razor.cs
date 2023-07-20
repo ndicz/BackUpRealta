@@ -46,7 +46,7 @@ namespace GSM00700Front
                 GSM00710ViewModel.CashFlowGroupName = param.CCASH_FLOW_GROUP_NAME;
                 await GSM00710ViewModel.GetCashFlowList();
                 await GSM00710ViewModel.GetCashFlowTypeList();
-        
+             
                
 
                 await _gridRef00710.R_RefreshGrid(null);
@@ -88,7 +88,7 @@ namespace GSM00700Front
             {
                 var loParam = (GSM00710DTO)eventArgs.Data;
                 //GSM00710ViewModel.CashFlowGroupCode = loParam.CCASH_FLOW_GROUP_CODE;
-                //GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_NAME;
+                //GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_GROUP;
                 GSM00710ViewModel.csquence = loParam.CSEQUENCE.ToString();
                 await GSM00710ViewModel.GetCashFlowId(loParam.CCASH_FLOW_CODE, loParam.CCASH_FLOW_GROUP_CODE); // belum ditest karena belum ada data
                 eventArgs.Result = GSM00710ViewModel.loEntity;
@@ -214,6 +214,7 @@ namespace GSM00700Front
                 if (arg.Id == "tabCashFlowPlan")
                 {
                     await GSM00720ViewModel.GetYearList();
+                    await GSM00720ViewModel.GetCurrencyList();
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
 
 
@@ -232,26 +233,30 @@ namespace GSM00700Front
 
         #region POPUP
         [Inject] public R_PopupService PopupService { get; set; }
-        private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
+        private void R_BeforeLocalMount(R_BeforeOpenPopupEventArgs eventArgs)
         {
+           
             eventArgs.TargetPageType = typeof(GSM00720LocalAmount);
 
             var param = new GSM00720CopyBaseLocalAmountDTO()
             {
-                CCASH_FLOW_CODE = GSM00710ViewModel.CashFlowGroupCode,
-                CCASH_FLOW_NAME = GSM00710ViewModel.CashFlowGroupName,
+                CCASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
+                CCASH_FLOW_GROUP = GSM00710ViewModel.CashFlowGroupCode,
                 CYEAR = GSM00720ViewModel.Year,
+                CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
             };
-
             eventArgs.Parameter = param;
+           
         }
 
-        private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
+        private async Task R_AfterLocalAmount(R_AfterOpenPopupEventArgs eventArgs)
         {
             R_Exception loException = new R_Exception();
             try
             {
                 await _gridRef00720.R_RefreshGrid(null);
+                //await _gridRef00710.R_RefreshGrid(null);
+                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
             }
             catch (Exception ex)
             {
@@ -262,8 +267,43 @@ namespace GSM00700Front
 
         }
 
+        private void R_BeforeBaseMount(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+
+            eventArgs.TargetPageType = typeof(GSM00720BaseAmount);
+
+            var param = new GSM00720CopyBaseLocalAmountDTO()
+            {
+                CCASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
+                CCASH_FLOW_GROUP = GSM00710ViewModel.CashFlowGroupCode,
+                CYEAR = GSM00720ViewModel.Year,
+                CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
+            };
+            eventArgs.Parameter = param;
+
+        }
+
+        private async Task R_AfterBaseAmount(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef00720.R_RefreshGrid(null);
+                //await _gridRef00710.R_RefreshGrid(null);
+                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+
+
+        }
+
+
         #endregion
 
-      
+
     }
 }

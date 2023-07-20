@@ -14,6 +14,6 @@ namespace GSM00700Common
         GSM00720CopyFromYearListDTO GetCopyFromYearList();
         GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList();
         GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList();
-        GSM00720CurrencyListDTO GetCurrencyList();
+        GSM00720CurrencyDTO GetCurrencyList();
     }
 }

@@ -142,18 +142,8 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"RSP_GS_UPDATE_BASE_AMOUNT_CASHFLOW_PLAN 
-                                  CCOMPANY_ID
-                                , CCASH_FLOW_GROUP
-                                , CCASH_FLOW_CODE 
-                                , CYEAR
-                                , CCURRENCY_CODE
-                                , CCURRENCY_RATE
-                                , INO_PERIOD_FROM
-                                , INO_PERIOD_TO
-                                , CUSER_LOGIN_ID
-                                ";
-                loCmd.CommandType = System.Data.CommandType.Text;
+                var lcQuerry = @"RSP_GS_UPDATE_BASE_AMOUNT_CASHFLOW_PLAN";
+                loCmd.CommandType = System.Data.CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP", System.Data.DbType.String, 20, poParameter.CCASH_FLOW_GROUP);
@@ -161,8 +151,8 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CYEAR", System.Data.DbType.String, 4, poParameter.CYEAR);
                 loDb.R_AddCommandParameter(loCmd, "@CCURRENCY_CODE", System.Data.DbType.String, 20, poParameter.CCURRENCY_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CCURRENCY_RATE", System.Data.DbType.String, 20, poParameter.CCURRENCY_RATE);
-                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_FROM", System.Data.DbType.String, 10, poParameter.INO_PERIOD_FROM);
-                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_TO", System.Data.DbType.String, 10, poParameter.INO_PERIOD_TO);
+                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_FROM", System.Data.DbType.Int32, 10, poParameter.INO_PERIOD_FROM);
+                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_TO", System.Data.DbType.Int32, 10, poParameter.INO_PERIOD_TO);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_LOGIN_ID", System.Data.DbType.String, 10, poParameter.CUSER_LOGIN_ID);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -192,18 +182,8 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"RSP_GS_UPDATE_LOCAL_AMOUNT_CASHFLOW_PLAN 
-                                  CCOMPANY_ID
-                                , CCASH_FLOW_GROUP
-                                , CCASH_FLOW_CODE 
-                                , CYEAR
-                                , CCURRENCY_CODE
-                                , CCURRENCY_RATE
-                                , INO_PERIOD_FROM
-                                , INO_PERIOD_TO
-                                , CUSER_LOGIN_ID
-                                ";
-                loCmd.CommandType = System.Data.CommandType.Text;
+                var lcQuerry = @"RSP_GS_UPDATE_LOCAL_AMOUNT_CASHFLOW_PLAN";
+                loCmd.CommandType = System.Data.CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP", System.Data.DbType.String, 20, poParameter.CCASH_FLOW_GROUP);
@@ -211,9 +191,9 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CYEAR", System.Data.DbType.String, 4, poParameter.CYEAR);
                 loDb.R_AddCommandParameter(loCmd, "@CCURRENCY_CODE", System.Data.DbType.String, 20, poParameter.CCURRENCY_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CCURRENCY_RATE", System.Data.DbType.String, 20, poParameter.CCURRENCY_RATE);
-                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_FROM", System.Data.DbType.String, 10, poParameter.INO_PERIOD_FROM);
-                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_TO", System.Data.DbType.String, 10, poParameter.INO_PERIOD_TO);
-                loDb.R_AddCommandParameter(loCmd, "@CUSER_LOGIN_ID", System.Data.DbType.String, 10, poParameter.CUSER_LOGIN_ID);
+                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_FROM", System.Data.DbType.Int32, 10, poParameter.INO_PERIOD_FROM);
+                loDb.R_AddCommandParameter(loCmd, "@INO_PERIOD_TO", System.Data.DbType.Int32, 10, poParameter.INO_PERIOD_TO);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_LOGIN_ID", System.Data.DbType.String, 10, poParameter.CUSER_ID);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00720CopyBaseLocalAmountDTO>(loReturnTemp).ToList();
@@ -231,10 +211,10 @@ namespace GSM00700Back
         }
 
 
-        public List<GSM00720CurrencyDTO> GetCurrency(GSM00700DBParameter poParameter)
+        public GSM00720CurrencyDTO GetCurrency(GSM00700DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
-            List<GSM00720CurrencyDTO> loReturn = null;
+            GSM00720CurrencyDTO loReturn = null;
             R_Db loDb;
             DbCommand loCmd;
 
@@ -244,11 +224,14 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CLOCAL_CURRENCY, CBASE_CURRENCY FROM SAM_COMPANIES (NOLOCK)
-                                    WHERE CCOMPANY_ID = @CCOMPANY_ID";
+                var lcQuerry = @"SELECT CLOCAL_CURRENCY, CBASE_CURRENCY FROM SAM_COMPANIES (NOLOCK) WHERE CCOMPANY_ID = @CCOMPANY_ID";
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<GSM00720CurrencyDTO>(loReturnTemp).FirstOrDefault();
 
             }
             catch (Exception ex)

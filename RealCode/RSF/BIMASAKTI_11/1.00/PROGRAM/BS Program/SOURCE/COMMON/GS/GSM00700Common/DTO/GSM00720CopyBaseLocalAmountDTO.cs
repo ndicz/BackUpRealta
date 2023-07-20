@@ -10,11 +10,14 @@ namespace GSM00700Common.DTO
         public string CCOMPANY_ID { get; set; }
         public string CUSER_ID { get; set; }
         public string CCASH_FLOW_CODE { get; set; }
-        public string CCASH_FLOW_NAME { get; set; }
+        public string CCASH_FLOW_GROUP { get; set; }
         public string CYEAR { get; set; }
+        public string CCURRENCY_CODE { get; set; }
         public string CCURENCY_RATE { get; set; }
-        public string INO_PERIOD_FROM { get; set; }
-        public string INO_PERIOD_TO { get; set; }
+        public Int32 INO_PERIOD_FROM { get; set; }
+        public Int32 INO_PERIOD_TO { get; set; }
+        public string CCASH_FLOW_NAME { get; set; }
+        public Int32 Code { get; set; }
     }
 
     public class GSM00720CopyBaseAmountListDTO : R_APIResultBaseDTO

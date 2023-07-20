@@ -9,14 +9,14 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout xs="2">
-        <R_Label>Cash Flow Group</R_Label>
+        <R_Label>Cash Flow </R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
-        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
-                   R_ConductorSource="@R_conduct" Enabled="false" />
+        <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanCode"
+                   R_ConductorSource="@R_conduct" Enabled="false"/>
     </R_ItemLayout>
     <R_ItemLayout xs="3">
-        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupName"
+        <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanName"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
 </R_StackLayout>
@@ -44,7 +44,14 @@
         <R_Label>Rate</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
-        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
+        <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURRENCY_CODE"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+    <R_ItemLayout>
+        <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp"> </R_Lookup>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURENCY_RATE"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
 
@@ -56,8 +63,34 @@
         <R_Label>Period</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
-        <R_TextBox @bind-value="_GSM00710ViewModel.CashFlowGroupCode"
-                   R_ConductorSource="@R_conduct" Enabled="false" />
+        <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
+                        @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM"
+                        ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
+                        TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
+                        R_ConductorSource="@_conductorRef">
+        </R_DropDownList>
     </R_ItemLayout>
-
+    
+    <R_ItemLayout xs="2">
+        <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
+                        @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO"
+                        ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
+                        TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
+                        R_ConductorSource="@_conductorRef" OnChanged="OnChanged">
+        </R_DropDownList>
+    </R_ItemLayout>
+    
+    <R_StackLayout Row Class="justify-content-end">
+        <R_ItemLayout xs="2">
+            <R_Button OnClick="Button_OnClickProcessAsync">
+                Process
+            </R_Button>
+        </R_ItemLayout>
+        <R_ItemLayout xs="2">
+            <R_Button OnClick="Button_OnClickCloseAsync">
+                Cancel
+            </R_Button>
+        </R_ItemLayout>
+    </R_StackLayout>
 </R_StackLayout>
+

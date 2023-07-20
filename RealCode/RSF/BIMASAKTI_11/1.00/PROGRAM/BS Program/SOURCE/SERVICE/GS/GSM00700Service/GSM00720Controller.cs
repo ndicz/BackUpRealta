@@ -140,13 +140,14 @@ namespace GSM00700Service
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
                 loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
                 loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
                 loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
                 loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
                 loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
-                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_FROM);
-                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_TO);
+                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_FROM);
+                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_TO);
 
                 loCls = new GSM00720Cls();
                 loResult = loCls.UpdateBaseAmount(loDbPar);
@@ -174,16 +175,17 @@ namespace GSM00700Service
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
                 loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
                 loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
                 loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
                 loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
                 loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
-                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_FROM);
-                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.INO_PERIOD_TO);
+                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_FROM);
+                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_TO);
 
                 loCls = new GSM00720Cls();
-                loResult = loCls.UpdateBaseAmount(loDbPar);
+                loResult = loCls.UpdateLocalAmount(loDbPar);
                 loRtn = new GSM00720CopyLocalAmountListDTO() { Data = loResult };
             }
             catch (Exception ex)
@@ -194,10 +196,33 @@ namespace GSM00700Service
             loEx.ThrowExceptionIfErrors();
             return loRtn;
         }
-
-        public GSM00720CurrencyListDTO GetCurrencyList()
+        [HttpPost]
+        public GSM00720CurrencyDTO GetCurrencyList()
         {
-            throw new NotImplementedException();
+
+            R_Exception loEx = new R_Exception();
+            GSM00720CurrencyDTO loRtn = null;
+            GSM00720CurrencyDTO loResult;
+            GSM00700DBParameter loDbPar;
+            GSM00720Cls loCls;
+
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+
+                loCls = new GSM00720Cls();
+                loResult = loCls.GetCurrency(loDbPar);
+                loRtn = new GSM00720CurrencyDTO();
+                loRtn = loResult;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+            return loRtn;
         }
     }
 }
