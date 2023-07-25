@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" DoublePass="true" ReportInfo.Created="07/04/2023 14:32:29" ReportInfo.Modified="07/11/2023 17:26:07" ReportInfo.CreatorVersion="2023.2.18.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
+      <Column Name="BaseHeaderData" DataType="FastReportCommon.BaseHeader.BaseHeaderDTO, FastReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="CompanyId" DataType="System.String"/>
+        <Column Name="CompanyName" DataType="System.String"/>
+        <Column Name="UserId" DataType="System.String"/>
+        <Column Name="UserName" DataType="System.String"/>
+      </Column>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="28.35">
+      <TextObject Name="Text1" Left="519.75" Width="94.5" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" HorzAlign="Right" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="623.7" Width="94.5" Height="18.9" Text="[PageNofM]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="274.05" Width="207.9" Height="18.9" Text="[ResponseDataModel.BaseHeaderData.CompanyName]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Width="189" Height="18.9" Text="[ResponseDataModel.BaseHeaderData.UserId]/[ResponseDataModel.BaseHeaderData.UserName]" Font="Arial, 10pt">
+        <Formats>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </TextObject>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

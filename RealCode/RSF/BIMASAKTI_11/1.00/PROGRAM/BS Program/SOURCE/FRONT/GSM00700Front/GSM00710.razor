@@ -36,7 +36,7 @@
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
 
-                    <R_GridTextColumn FieldName="CSEQUENCE" HeaderText="Display SeSASq" />
+                    <R_GridTextColumn FieldName="CSEQUENCE" HeaderText="Display Seq" />
                     <R_GridTextColumn FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
                     <R_GridTextColumn FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
@@ -110,7 +110,8 @@
                         Pageable="true"
                         Width="130px"
                         R_ConductorGridSource="@_conGridGSM00720Ref"
-                        R_GridType="@R_eGridType.Original">
+                        R_GridType="@R_eGridType.Original"
+                        AllowAddNewRow="false">
 
                     <R_GridColumns>
                         <R_GridTextColumn FieldName="CYEAR" HeaderText="Year Period"></R_GridTextColumn>
@@ -119,7 +120,7 @@
                 </R_Grid>
                 <R_StackLayout Row="true" Class="xs-4">
                     <R_ItemLayout xs="6">
-                        <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount">Copy From Year</R_Popup>
+                        <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">Copy From Year</R_Popup>
                     </R_ItemLayout>
                 </R_StackLayout>
             </R_StackLayout>

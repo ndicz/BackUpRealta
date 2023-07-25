@@ -1,0 +1,45 @@
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.deps.json
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.pdb
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\bin\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.AssemblyReference.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.GenerateResource.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfoInputs.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfo.cs
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.CoreCompileInputs.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.pdb
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.resources
+D:\VS2022\Library\TestMicroService\TestReport\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.id.resources
+D:\VS2022\Training\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.deps.json
+D:\VS2022\Training\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.dll
+D:\VS2022\Training\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.pdb
+D:\VS2022\Training\Report\FastReportBackResources\bin\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.AssemblyReference.cache
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.resources
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.id.resources
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.GenerateResource.cache
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfoInputs.cache
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfo.cs
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.CoreCompileInputs.cache
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.dll
+D:\VS2022\Training\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.deps.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\bin\Debug\netstandard2.1\FastReportBackResources.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\bin\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.resources
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.FastReportBackResources_msgrsc.id.resources
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.GenerateResource.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\id\FastReportBackResources.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportBackResources\obj\Debug\netstandard2.1\FastReportBackResources.pdb

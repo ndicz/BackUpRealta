@@ -217,7 +217,7 @@ namespace GSM00700Front
                     await GSM00720ViewModel.GetCurrencyList();
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
 
-
+                    GSM00720ViewModel.GetYearForCopyFrom();
 
                     //await _gridRef00720Year.R_RefreshGrid(null);
                 }
@@ -301,7 +301,37 @@ namespace GSM00700Front
 
         }
 
+        private void R_BeforeOpenCopyFromYear(R_BeforeOpenPopupEventArgs eventArgs)
+        {
 
+            eventArgs.TargetPageType = typeof(GSM00720CopyFrom);
+            GSM00720ViewModel.GetYearForCopyFrom();
+            var param = new GSM00720CopyFromYearDTO
+            {
+                CTO_YEAR = GSM00720ViewModel.Year,
+                CashFlowName = GSM00720ViewModel.CashFlowPlanName,
+                CFROM_CASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
+            };
+            eventArgs.Parameter = param;
+
+        }
+
+        private async Task R_AfterCOpyFromYear(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef00720.R_RefreshGrid(null);
+            
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+
+
+        }
         #endregion
 
 

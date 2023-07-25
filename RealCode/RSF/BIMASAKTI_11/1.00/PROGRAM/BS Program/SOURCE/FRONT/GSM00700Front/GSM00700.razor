@@ -16,6 +16,7 @@
             AllowAddNewRow="true"
             AllowEditRow="true"
             AllowDeleteRow="true"
+
             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlowGroup">
         <R_GridColumns>
 
@@ -54,6 +55,7 @@
                  R_Validation="@Grid_ValidationCashFlowGroup"
                  R_Display="@Grid_R_DisplaytListCashFlow"
                  @* R_AfterDelete="@Grid_AfterDelete" *@
+                 R_AfterAdd="AfterAdd"
                  R_IsHeader="true" />
                  
                  

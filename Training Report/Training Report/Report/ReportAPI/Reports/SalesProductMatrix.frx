@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/04/2023 17:48:58" ReportInfo.Modified="07/20/2023 15:31:26" ReportInfo.CreatorVersion="2023.2.21.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
+      <Column Name="Header" DataType="System.String"/>
+      <Column Name="Footer" DataType="System.String"/>
+      <BusinessObjectDataSource Name="Datas" DataType="System.Collections.Generic.List`1[[ReportCommon.SalesProduct.SalesProductRawDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="SalesmanId" DataType="System.String"/>
+        <Column Name="SalesmanName" DataType="System.String"/>
+        <Column Name="ProductId" DataType="System.String"/>
+        <Column Name="ProductName" DataType="System.String"/>
+        <Column Name="SalesValue" DataType="System.Int32"/>
+      </BusinessObjectDataSource>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="28.35">
+      <TextObject Name="Text1" Left="510.3" Width="207.9" Height="18.9" Text="[ResponseDataModel.Header]" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="32.35" Width="718.2" Height="80.11" CanGrow="true" KeepTogether="true">
+      <MatrixObject Name="Matrix1" Left="9.45" Top="9.45" Width="255.78" Height="58.68" FixedRows="1" FixedColumns="1" DataSource="Datas">
+        <MatrixColumns>
+          <Header Expression="[ResponseDataModel.Datas.SalesmanName]"/>
+        </MatrixColumns>
+        <MatrixRows>
+          <Header Expression="[ResponseDataModel.Datas.ProductName]"/>
+        </MatrixRows>
+        <MatrixCells>
+          <Cell Expression="[ResponseDataModel.Datas.SalesValue]"/>
+        </MatrixCells>
+        <TableColumn Name="Column1" Width="101.03" AutoSize="true"/>
+        <TableColumn Name="Column2" Width="114.77" AutoSize="true"/>
+        <TableColumn Name="Column3" Width="39.98" AutoSize="true"/>
+        <TableRow Name="Row1" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell1" Text="ProductName" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell2" Text="[SalesmanName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell5" Text="Total" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell3" Text="[ProductName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell4" Text="[SalesValue]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell6" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell7" Text="Total" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell8" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+          <TableCell Name="Cell9" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        </TableRow>
+      </MatrixObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="116.46" Width="718.2" Height="18.9">
+      <TextObject Name="Text2" Left="510.3" Width="207.9" Height="18.9" Text="[ResponseDataModel.Footer]" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -178,6 +178,25 @@ namespace GSM00700Front
             eventArgs.TargetPageType = typeof(GSM00710);
             eventArgs.Parameter = R_FrontUtility.ConvertObjectToObject<GSM00700DTO>(GSM00700ViewModel.loEntity);
         }
-    }
 
+        private async Task AfterAdd(R_AfterAddEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                GSM00700ViewModel.loEntity.CCASH_FLOW_GROUP_TYPE = "I";
+                await GSM00700ViewModel.GetCashFlowGroupTypeList();
+                await _gridRef00700.R_RefreshGrid(null);
+                await _gridRef00700.AutoFitAllColumnsAsync();
+            }   
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+    }
 }
+

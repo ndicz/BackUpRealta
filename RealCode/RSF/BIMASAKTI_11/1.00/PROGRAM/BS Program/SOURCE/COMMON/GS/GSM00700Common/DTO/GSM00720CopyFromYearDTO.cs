@@ -9,6 +9,7 @@ namespace GSM00700Common.DTO
     {
 
         public string CCOMPANY_ID { get; set; }
+        public string CUSER_ID { get; set; }
         public string CFROM_CASH_FLOW_FLAG { get; set; }
         public string CFROM_CASH_FLOW_CODE { get; set; }
         public string CFROM_YEAR { get; set; }
@@ -17,6 +18,7 @@ namespace GSM00700Common.DTO
         public string CUSER_LOGIN_ID { get; set; }
         public string Desc { get; set; }
         public string Code { get; set; }
+        public string CashFlowName { get; set; }
 
     }
 

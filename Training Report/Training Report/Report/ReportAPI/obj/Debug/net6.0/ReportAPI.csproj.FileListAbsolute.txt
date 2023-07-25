@@ -1,0 +1,292 @@
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\appsettings.json
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.exe
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.deps.json
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.runtimeconfig.json
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\FastReport.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\log4net.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Mindbox.Data.Linq.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Mindbox.Expressions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\BackCollectionNuGet.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\CommonCollectionNuGet.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Scrutor.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\StackExchange.Redis.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Diagnostics.PerformanceCounter.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\any\lib\netcoreapp3.0\FastReport.Compat.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\FastReport.Compat.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\FastReport.DataVisualization.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportCommon.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportService.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APICommon.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APIStartUp.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationBack.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationEnumAndInterface.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_Cache.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextAPIMiddleware.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ControllerPlugins.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ExceptionAPIMiddleware.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_HelperController.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_LogHeaderMiddleware.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_PluginsCommon.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ReportFastReportBack.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_Security.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_StorageCommon.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportService.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ReportCommon.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APIBackEnd.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APICommon.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APICommonDTO.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_APIStartUp.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationBack.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationEnumAndInterface.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_Cache.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_CommonFrontBackAPI.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextAPIMiddleware.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextBackEnd.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ContextEnumAndInterface.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ControllerPlugins.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ExceptionAPIMiddleware.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_HelperController.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_LogHeaderMiddleware.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_PluginsCommon.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_ReportFastReportBack.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_Security.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\R_StorageCommon.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.AssemblyReference.cache
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.AssemblyInfoInputs.cache
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.AssemblyInfo.cs
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.CoreCompileInputs.cache
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\scopedcss\bundle\ReportAPI.styles.css
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.CopyComplete
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.dll
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\refint\ReportAPI.dll
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.pdb
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.genruntimeconfig.cache
+D:\VS2022\Training\Report\ReportAPI\obj\Debug\net6.0\ref\ReportAPI.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Reports\ProductObject.frx
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\FastReportBackResources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\FastReportBackResources.pdb
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\id\FastReportBackResources.resources.dll
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Reports\BaseHeader1.frx
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Reports\ProductObjectInherit.frx
+D:\VS2022\Training\Report\ReportAPI\bin\Debug\net6.0\Reports\HeaderDetail.frx
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\appsettings.Development.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\appsettings.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.exe
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Reports\BaseHeader1.frx
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Reports\HeaderDetail.frx
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Reports\ProductObject.frx
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Reports\ProductObjectInherit.frx
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.deps.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.runtimeconfig.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Castle.Core.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\log4net.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Mindbox.Data.Linq.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Mindbox.Expressions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\BackCollectionNuGet.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\CommonCollectionNuGet.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Scrutor.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\FastReport.Compat.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\FastReport.DataVisualization.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\FastReportBackResources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportService.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APICommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APIStartUp.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationBack.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationEnumAndInterface.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_Cache.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextAPIMiddleware.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ControllerPlugins.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ExceptionAPIMiddleware.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_HelperController.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_LogHeaderMiddleware.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_PluginsCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ReportFastReportBack.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_Security.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_StorageCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportService.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\FastReportBackResources.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ReportCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APIBackEnd.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APICommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_APIStartUp.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationBack.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_AuthenticationEnumAndInterface.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_Cache.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_CommonFrontBackAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextAPIMiddleware.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextBackEnd.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ContextEnumAndInterface.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ControllerPlugins.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ExceptionAPIMiddleware.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_HelperController.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_LogHeaderMiddleware.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_PluginsCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_ReportFastReportBack.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_Security.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\R_StorageCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\id\FastReportBackResources.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets\msbuild.ReportAPI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.ReportAPI.props
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ReportAPI.props
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ReportAPI.props
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets.pack.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets.build.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\staticwebassets.development.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\scopedcss\bundle\ReportAPI.styles.css
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\refint\ReportAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ReportAPI.genruntimeconfig.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportAPI\obj\Debug\net6.0\ref\ReportAPI.dll

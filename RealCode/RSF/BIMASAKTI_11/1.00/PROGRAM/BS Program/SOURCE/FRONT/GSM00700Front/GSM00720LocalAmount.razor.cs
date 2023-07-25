@@ -122,9 +122,9 @@ namespace GSM00700Front
                 if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM < _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
                 {
 
-                    loEx.Add(new Exception("PeriodFrom must be greater than PeriodTo."));
+                    R_MessageBox.Show("asdasd", "asdasd", R_eMessageBoxButtonType.OK);
                 }
-                R_MessageBox.Show("asdasd", "asdasd", R_eMessageBoxButtonType.OK);
+               
 
             }
             catch (Exception ex)

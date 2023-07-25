@@ -16,8 +16,7 @@ namespace GSM00700Model
         public ObservableCollection<GSM00700DTO> loGridList = new ObservableCollection<GSM00700DTO>();
         public GSM00700DTO loEntity = new GSM00700DTO();
 
-        public List<GSM00700CashFlowGroupTypeDTO> loCashFlowGroupType { get; set; } =
-            new List<GSM00700CashFlowGroupTypeDTO>();
+        public List<GSM00700CashFlowGroupTypeDTO> loCashFlowGroupType { get; set; } = new List<GSM00700CashFlowGroupTypeDTO>();
         //{
         //    new GSM00700CashFlowGroupTypeDTO() { CCODE = "I", CDESCRIPTION = "Investing"},
         //    new GSM00700CashFlowGroupTypeDTO() { CCODE = "O", CDESCRIPTION = "Operating"},
@@ -25,6 +24,7 @@ namespace GSM00700Model
         // };
 
         //COMBO BOX
+        public string CashFlowTyp = ""; // for filter
 
 
     public async Task GetCashFlowGroupTypeList()
@@ -34,6 +34,7 @@ namespace GSM00700Model
             {
                 var loResult = await _GSM00700Model.GetCashFlowGroupTypeAsync();
                 loCashFlowGroupType = loResult.Data;
+                CashFlowTyp = loCashFlowGroupType[0].CCODE;
             }
             catch (Exception ex)
             {

@@ -1,0 +1,336 @@
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.exe
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.deps.json
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.runtimeconfig.json
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Compat.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.DataVisualization.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Bars.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Editor.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.VSDesign.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.Odbc.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\any\lib\netcoreapp3.0\FastReport.Compat.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportCommon.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\bin\Debug\net6.0-windows\FastReportCommon.pdb
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.AssemblyReference.cache
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.GenerateResource.cache
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfoInputs.cache
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfo.cs
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CoreCompileInputs.cache
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CopyComplete
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\refint\FastReportDesigner.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.genruntimeconfig.cache
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\ref\FastReportDesigner.dll
+D:\VS2022\FastReport\Object DataSource\TestSimpleObject\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.DesignForm.resources
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.exe
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.deps.json
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.runtimeconfig.json
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Compat.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.DataVisualization.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Bars.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Editor.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.VSDesign.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.Odbc.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\any\lib\netcoreapp3.0\FastReport.Compat.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportCommon.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\bin\Debug\net6.0-windows\FastReportCommon.pdb
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.AssemblyReference.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.DesignForm.resources
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.GenerateResource.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfoInputs.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfo.cs
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CoreCompileInputs.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CopyComplete
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\refint\FastReportDesigner.dll
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.genruntimeconfig.cache
+D:\VS2022\Library\TestMicroService\TestReport\FastReportDesigner\obj\Debug\net6.0-windows\ref\FastReportDesigner.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.exe
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.deps.json
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.runtimeconfig.json
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Compat.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.DataVisualization.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Bars.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Editor.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.VSDesign.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.Odbc.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\any\lib\netcoreapp3.0\FastReport.Compat.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ReportCommon.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\ReportCommon.pdb
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.AssemblyReference.cache
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.DesignForm.resources
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.GenerateResource.cache
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfoInputs.cache
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfo.cs
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CoreCompileInputs.cache
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CopyComplete
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.dll
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\refint\FastReportDesigner.dll
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.genruntimeconfig.cache
+D:\VS2022\Training\Report\FastReportDesigner\obj\Debug\net6.0-windows\ref\FastReportDesigner.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_CommonFrontBackAPI.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_APICommonDTO.dll
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_CommonFrontBackAPI.pdb
+D:\VS2022\Training\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.exe
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.deps.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.runtimeconfig.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Compat.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.DataVisualization.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Bars.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.Editor.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.VSDesign.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\FastReport.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.Odbc.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\any\lib\netcoreapp3.0\FastReport.Compat.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\freebsd\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\linux\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\osx\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.0\System.Data.Odbc.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ReportCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_CommonFrontBackAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_APICommonDTO.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\ReportCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_CommonFrontBackAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\bin\Debug\net6.0-windows\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.DesignForm.resources
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.GenerateResource.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\refint\FastReportDesigner.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\FastReportDesigner.genruntimeconfig.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\FastReportDesigner\obj\Debug\net6.0-windows\ref\FastReportDesigner.dll

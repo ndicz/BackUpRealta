@@ -23,12 +23,15 @@ namespace GSM00700Model
         public ObservableCollection<GSM00720CopyBaseLocalAmountDTO> loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>();
         public ObservableCollection<GSM00720CurrencyDTO> loCurrencyList = new ObservableCollection<GSM00720CurrencyDTO>();
         
+
         public GSM00720CurrencyDTO loCurrency = new GSM00720CurrencyDTO();
         public GSM00720DTO loEntity = new GSM00720DTO();
         public GSM00720CopyFromYearDTO loCopyFromEntity = new GSM00720CopyFromYearDTO();
         public GSM00720CopyBaseLocalAmountDTO loCopyBaseAmountEntity = new GSM00720CopyBaseLocalAmountDTO();
 
 
+        public List<GSM00720YearDTO> YearComboBox { get; set; } = new List<GSM00720YearDTO>();
+   
         public List<GSM00720CopyFromYearDTO> RadioButtonCopyFrom { get; set; } = new List<GSM00720CopyFromYearDTO>()
         {
             new GSM00720CopyFromYearDTO() { Code = "01", Desc = "Same"},
@@ -108,6 +111,21 @@ namespace GSM00700Model
         }
 
 
+        public async Task GetYearForCopyFrom()
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                var loResult = await _GSM00720Model.GetYearListAsync();
+                YearComboBox = loResult.Data;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            loEx.ThrowExceptionIfErrors();
+        }
+
         //testing copyfrom 
         public async Task CopyFrom()
         {
@@ -115,12 +133,11 @@ namespace GSM00700Model
 
             try
             {
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG, CFromCashFlowFlag);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE, CFromCashFlowCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_YEAR, CFromYear);
-
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_CASH_FLOW_CODE, CToCashFlowCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_YEAR, CToYear);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG, loCopyFromEntity.CFROM_CASH_FLOW_FLAG);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE, loCopyFromEntity.CFROM_CASH_FLOW_CODE);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_YEAR, loCopyFromEntity.CFROM_YEAR);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_CASH_FLOW_CODE, CashFlowPlanCode);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_YEAR, Year);
                 var loReturn = await _GSM00720Model.GetCopyFromYearListAsync();
 
                 loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
@@ -145,7 +162,7 @@ namespace GSM00700Model
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_CODE, CurrencyCode);
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_RATE, CurrencyRate);
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_FROM, loCopyBaseAmountEntity.INO_PERIOD_FROM);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, PeriodTo);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, loCopyBaseAmountEntity.INO_PERIOD_TO);
                 var loReturn = await _GSM00720Model.GetCopyLocalAmountListAsync();
 
                 loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>(loReturn.Data);
@@ -167,8 +184,8 @@ namespace GSM00700Model
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_CODE, CurrencyCode);
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_RATE, CurrencyRate);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_FROM, PeriodFrom);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, PeriodTo);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_FROM, loCopyBaseAmountEntity.INO_PERIOD_FROM);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, loCopyBaseAmountEntity.INO_PERIOD_TO);
                 var loReturn = await _GSM00720Model.GetCopyBaseAmountListAsync();
 
                 loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>(loReturn.Data);

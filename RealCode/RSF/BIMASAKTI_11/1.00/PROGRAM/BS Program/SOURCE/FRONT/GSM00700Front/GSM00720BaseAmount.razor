@@ -73,7 +73,7 @@
 
     <R_ItemLayout xs="2">
         <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
-                        @bind-Value="@_GSM00720ViewModel.PeriodTo"
+                        @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         R_ConductorSource="@_conductorRef">

@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using GSM00700Common.DTO;
 using GSM00700Model;
+using Lookup_GSCOMMON.DTOs;
+using Lookup_GSFRONT;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
+using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Exceptions;
 
 namespace GSM00700Front
@@ -15,7 +18,9 @@ namespace GSM00700Front
     public partial class GSM00720CopyFrom : R_Page
     {
         private GSM00720ViewModel _GSM00720ViewModel = new();
+        private GSM00700ViewModel _GSM00700ViewModel = new();
         private R_Conductor _conductorRef;
+        public R_Lookup CashFlow { get; set; }
 
         protected override async Task R_Init_From_Master(object poParameter)
         {
@@ -23,6 +28,12 @@ namespace GSM00700Front
             try
             {
                 _GSM00720ViewModel.loCopyFromEntity = (GSM00720CopyFromYearDTO)poParameter;
+                _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
+                _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
+                _GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
+                
+
+                _GSM00720ViewModel.GetYearForCopyFrom();
 
             }
             catch (Exception ex)
@@ -33,26 +44,103 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
-        private Task Before_Open_Lookup(R_BeforeOpenLookupEventArgs eventArgs)
+        private Task R_BeforeOpenLookUp(R_BeforeOpenLookupEventArgs eventArgs)
         {
-            eventArgs.Parameter = _GSM00720ViewModel.loCopyFromEntity;
-            eventArgs.TargetPageType = typeof(GSM00720CopyFromYearDTO);
+            var loEx = new R_Exception();
+
+            try
+            {
+                eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+
+                {
+
+                    CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
+                    CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+                    //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+
+                };
+                eventArgs.TargetPageType = typeof(GSL01500);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
             return Task.CompletedTask;
         }
 
-        private Task After_Open_Lookup(R_AfterOpenLookupEventArgs eventArgs)
+        private Task R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
         {
-            var loData = (GSM00720CopyFromYearDTO)eventArgs.Result;
-            _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CFROM_CASH_FLOW_CODE;
-            _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG = loData.CFROM_CASH_FLOW_FLAG;
-            _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR = loData.CFROM_YEAR;
-            _GSM00720ViewModel.loCopyFromEntity.CTO_CASH_FLOW_CODE = loData.CTO_CASH_FLOW_CODE;
-            _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR = loData.CTO_YEAR;
+            var loData = (GSL01500DTO)eventArgs.Result;
+            _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
+            _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;
+
 
             return Task.CompletedTask;
         }
 
 
+        public async Task OnChanged()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loData = _GSM00720ViewModel.RadioButtonCopyFrom;
+                if (_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG == "00")
+                {
+                    CashFlow.Enabled = true;
+                   
+
+                }
+
+                else
+                {
+                    CashFlow.Enabled = false;
+                    //_GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task Button_OnClickProcessAsync()
+        {
+            var loEx = new R_Exception();
+            var loData = _GSM00720ViewModel.loCopyFromEntity;
+            try
+            {
+
+                _GSM00720ViewModel.CFromCashFlowFlag = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
+              _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
+
+
+                await _GSM00720ViewModel.CopyFrom();
+                await this.Close(true, loData);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+
+
+            await this.Close(true, loData);
+        }
+
+
+        public async Task Button_OnClickCloseAsync()
+        {
+            await this.Close(true, null);
+        }
     }
 
 }

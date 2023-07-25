@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/27/2023 15:11:36" ReportInfo.Modified="07/20/2023 15:02:01" ReportInfo.CreatorVersion="2023.2.21.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
+      <Column Name="Header" DataType="System.String"/>
+      <Column Name="ColumnCategory" DataType="ReportCommon.ReportHeaderDetail.CategoryColumnDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="ColCategoryId" DataType="System.String"/>
+        <Column Name="ColCategoryName" DataType="System.String"/>
+      </Column>
+      <Column Name="ColumnProduct" DataType="ReportCommon.ReportHeaderDetail.ProductColumnDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="ColProductId" DataType="System.String"/>
+        <Column Name="ColProductName" DataType="System.String"/>
+      </Column>
+      <Column Name="Footer" DataType="System.String"/>
+      <BusinessObjectDataSource Name="Categories" DataType="System.Collections.Generic.List`1[[ReportCommon.ReportHeaderDetail.CategoryDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+        <Column Name="CategoryId" DataType="System.String"/>
+        <Column Name="CategoryName" DataType="System.String"/>
+        <BusinessObjectDataSource Name="Products" DataType="System.Collections.Generic.List`1[[ReportCommon.ReportHeaderDetail.ProductDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+          <Column Name="ProductId" DataType="System.String"/>
+          <Column Name="ProductName" DataType="System.String"/>
+        </BusinessObjectDataSource>
+      </BusinessObjectDataSource>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Left="198.45" Top="9.45" Width="283.5" Height="37.8" Text="Report Product by Category" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="89.05" Width="718.2" Height="18.9">
+      <TextObject Name="Text12" Left="510.3" Width="207.9" Height="18.9" Text="[ResponseDataModel.Header]" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="75.6" StartNewPage="true" DataSource="Categories" KeepDetail="true">
+      <TextObject Name="Text2" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.ColumnCategory.ColCategoryId]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="113.4" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.Categories.CategoryId]" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="311.85" Top="9.45" Width="321.3" Height="18.9" Text="[ResponseDataModel.Categories.CategoryName]" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="9.45" Top="47.25" Width="94.5" Height="18.9" Text="[ResponseDataModel.ColumnProduct.ColProductId]" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="151.2" Top="47.25" Width="274.05" Height="18.9" Text="[ResponseDataModel.ColumnProduct.ColProductName]" Font="Arial, 12pt, style=Bold"/>
+      <DataBand Name="Data2" Top="191.55" Width="718.2" Height="37.8" DataSource="Products">
+        <TextObject Name="Text6" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.Categories.Products.ProductId]" Font="Arial, 10pt"/>
+        <TextObject Name="Text7" Left="151.2" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.Categories.Products.ProductName]" Font="Arial, 10pt"/>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="233.35" Width="718.2" Height="18.9">
+      <TextObject Name="Text11" Left="510.3" Width="207.9" Height="18.9" Text="[ResponseDataModel.Footer]" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

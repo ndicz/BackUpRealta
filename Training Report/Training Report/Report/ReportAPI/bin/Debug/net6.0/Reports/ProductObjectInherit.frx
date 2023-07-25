@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<inherited BaseReport="BaseHeader1.frx" BaseReportAbsolutePath="D:\VS2022\Training\Report\ReportAPI\Reports\BaseHeader1.frx" ScriptLanguage="CSharp" ReportInfo.Created="07/04/2023 14:32:29" ReportInfo.Modified="07/20/2023 11:28:39" ReportInfo.CreatorVersion="2023.2.21.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
+      <Column Name="ProductObjectData" DataType="ReportCommon.ProductObject.ProductResult, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="Title" DataType="System.String"/>
+        <Column Name="Header" DataType="System.String"/>
+        <Column Name="ColumnProduct" DataType="ReportCommon.ProductObject.ProductColumnDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Column Name="ColId" DataType="System.String"/>
+          <Column Name="ColQuantity" DataType="System.String"/>
+          <Column Name="ColPrice" DataType="System.String"/>
+        </Column>
+        <Column Name="Footer" DataType="System.String"/>
+        <BusinessObjectDataSource Name="Products" DataType="System.Collections.Generic.List`1[[ReportCommon.ProductObject.ProductDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+          <Column Name="Id" DataType="System.String"/>
+          <Column Name="Quantity" DataType="System.Int32"/>
+          <Column Name="Price" DataType="System.Decimal"/>
+        </BusinessObjectDataSource>
+      </Column>
+      <Column Name="BaseHeaderData" DataType="ReportCommon.BaseHeader.BaseHeaderDTO, ReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="CompanyId" DataType="System.String"/>
+        <Column Name="CompanyName" DataType="System.String"/>
+        <Column Name="UserId" DataType="System.String"/>
+        <Column Name="UserName" DataType="System.String"/>
+      </Column>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <inherited Name="Page1">
+    <inherited Name="PageHeader1">
+      <inherited Name="Text1"/>
+      <inherited Name="Text3"/>
+      <inherited Name="Text4"/>
+      <inherited Name="Text5">
+        <Formats>
+          <GeneralFormat/>
+          <GeneralFormat/>
+        </Formats>
+      </inherited>
+      <ChildBand Name="Child1" ZOrder="-1" Top="32.35" Width="718.2" Height="37.8">
+        <TextObject Name="Text9" Width="226.8" Height="18.9" Text="[ResponseDataModel.ProductObjectData.ColumnProduct.ColId]" Font="Arial, 10pt"/>
+        <TextObject Name="Text10" Left="245.7" Width="207.9" Height="18.9" Text="[ResponseDataModel.ProductObjectData.ColumnProduct.ColQuantity]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" Font="Arial, 10pt"/>
+        <TextObject Name="Text11" Left="472.5" Width="207.9" Height="18.9" Text="[ResponseDataModel.ProductObjectData.ColumnProduct.ColPrice]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" Font="Arial, 10pt"/>
+      </ChildBand>
+    </inherited>
+    <DataBand Name="Data1" ZOrder="0" Top="74.15" Width="718.2" Height="37.8" DataSource="Products">
+      <TextObject Name="Text6" Width="226.8" Height="18.9" Text="[ResponseDataModel.ProductObjectData.Products.Id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="245.7" Width="207.9" Height="18.9" Text="[ResponseDataModel.ProductObjectData.Products.Quantity]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="472.5" Width="207.9" Height="18.9" Text="[ResponseDataModel.ProductObjectData.Products.Price]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="" Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+  </inherited>
+</inherited>

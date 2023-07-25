@@ -23,8 +23,7 @@ namespace GSM00700Model
         public string CashFlowGroupCode = ""; // for filter
         public string CashFlowGroupName = ""; // for filter
         public string csquence = ""; // for squence
-        public List<GSM00710CashFlowTypeDTO> loCashFlowType { get; set; } =
-            new List<GSM00710CashFlowTypeDTO>();
+        public List<GSM00710CashFlowTypeDTO> loCashFlowType { get; set; } = new List<GSM00710CashFlowTypeDTO>();
 
 
 

@@ -1,0 +1,80 @@
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ReportService.deps.json
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ReportService.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ReportService.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ReportCommon.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APICommon.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_Cache.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ReportFastReportBack.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_StorageCommon.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_Security.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ReportCommon.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APIBackEnd.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APICommon.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_Cache.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_CommonFrontBackAPI.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ReportFastReportBack.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ContextBackEnd.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_StorageCommon.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_APICommonDTO.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_Security.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\R_ContextEnumAndInterface.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.AssemblyReference.cache
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.AssemblyInfoInputs.cache
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.AssemblyInfo.cs
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.CoreCompileInputs.cache
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.CopyComplete
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.dll
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\refint\ReportService.dll
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ReportService.pdb
+D:\VS2022\Training\Report\ReportService\obj\Debug\net6.0\ref\ReportService.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\FastReportBackResources.dll
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\FastReportBackResources.pdb
+D:\VS2022\Training\Report\ReportService\bin\Debug\net6.0\id\FastReportBackResources.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ReportService.deps.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ReportService.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ReportService.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\FastReportBackResources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ReportCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APIBackEnd.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APICommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_Cache.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ReportFastReportBack.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_StorageCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APICommonDTO.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_Security.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\FastReportBackResources.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ReportCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APIBackEnd.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APICommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_Cache.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_CommonFrontBackAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ReportFastReportBack.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ContextBackEnd.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_StorageCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_Security.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\R_ContextEnumAndInterface.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\id\FastReportBackResources.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\refint\ReportService.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ReportService.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportService\obj\Debug\net6.0\ref\ReportService.dll

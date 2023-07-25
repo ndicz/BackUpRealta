@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -68,6 +69,45 @@ namespace GSM05500Front
             {
                 await GSM05500ViewModel.GetCurrencyList();
                 eventArgs.ListEntityResult = GSM05500ViewModel.loGridList;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task R_Validation(R_ValidationEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loParam = (GSM05500DTO)eventArgs.Data;
+                var Condition1 = loParam.CCURRENCY_CODE == null;
+                var Condition2 = loParam.CCURRENCY_NAME == null;
+                var Condition3 = loParam.CCURRENCY_CODE == null && loParam.CCURRENCY_NAME == null;
+                //check loparam currency code = null or empty
+
+                if (Condition1)
+                {
+                    await R_MessageBox.Show("Error", "You must fill1 ", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
+                if (Condition2)
+                {
+                    await R_MessageBox.Show("Error", "You must fill2 ", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
+                if (Condition3)
+                {
+                    await R_MessageBox.Show("Error", "You must fill3 ", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
             }
             catch (Exception ex)
             {

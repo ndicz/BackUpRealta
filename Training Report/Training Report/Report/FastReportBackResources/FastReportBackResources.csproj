@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="FastReportBackResources_msgrsc.id.Designer.cs">
+      <DependentUpon>FastReportBackResources_msgrsc.id.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="FastReportBackResources_msgrsc.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FastReportBackResources_msgrsc.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FastReportBackResources_msgrsc.id.resx">
+      <LastGenOutput>FastReportBackResources_msgrsc.id.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FastReportBackResources_msgrsc.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FastReportBackResources_msgrsc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

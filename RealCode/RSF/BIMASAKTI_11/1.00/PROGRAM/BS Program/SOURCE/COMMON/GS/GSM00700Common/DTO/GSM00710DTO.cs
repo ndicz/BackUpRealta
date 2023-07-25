@@ -7,7 +7,7 @@ namespace GSM00700Common.DTO
 {
     public class GSM00710DTO : R_APIResultBaseDTO
     {
-        public string CCOMPANY_ID { get; set; }
+        public string CCOMPANY_ID { get; set; } 
         public string CUSER_ID { get; set; }
 
         public string CSEQUENCE { get; set; }
@@ -23,7 +23,7 @@ namespace GSM00700Common.DTO
         //this for combo box
 
         public string CCASH_FLOW_TYPE_DESCR { get; set; }
-        public string CCASH_FLOW_TYPE { get; set; }
+        public string CCASH_FLOW_TYPE { get; set; } = "I";
     }
     public class GSM00710ListDTO : R_APIResultBaseDTO
     {

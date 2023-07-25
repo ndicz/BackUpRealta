@@ -13,10 +13,11 @@
     <R_StackLayout Row="true">
         <R_ItemLayout xs="3">
             <R_RadioGroup Data="@_GSM00720ViewModel.RadioButtonCopyFrom"
-                          @bind-Value="@_GSM00720ViewModel.CFromCashFlowFlag"
+                          @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG"
                           ValueField="@nameof(GSM00720CopyFromYearDTO.Code)"
                           TextField="@nameof(GSM00720CopyFromYearDTO.Desc)"
-                          R_ConductorSource="@_conductorRef">
+                          R_ConductorSource="@_conductorRef"
+                          OnChanged="@OnChanged">
             </R_RadioGroup>
         </R_ItemLayout>
     </R_StackLayout>
@@ -27,13 +28,18 @@
 
         <R_StackLayout Row="true">
             <R_ItemLayout xs="2">
-                <R_TextBox @bind-Value="@_GSM00720ViewModel.CFromCashFlowCode"
-                           R_ConductorSource="@_conductorRef"/>
+                <R_TextBox @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE"
+                           R_ConductorSource="@_conductorRef"
+                           Enabled="false"
+                           />
             </R_ItemLayout>
-        
+            <R_ItemLayout>
+                <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp" @ref="CashFlow"> </R_Lookup>
+            </R_ItemLayout>
             <R_ItemLayout xs="3">
-                <R_TextBox @bind-Value="@_GSM00720ViewModel.CFromCashFlowName"
-                           R_ConductorSource="@_conductorRef"/>
+                <R_TextBox @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CashFlowName"
+                           R_ConductorSource="@_conductorRef"
+                           Enabled="false"/>
             </R_ItemLayout>
 
 
@@ -54,10 +60,10 @@
             </R_ItemLayout>
         
             <R_ItemLayout>
-                <R_DropDownList Data="@_GSM00720ViewModel.RadioButtonCopyFrom"
-                              @bind-Value="@_GSM00720ViewModel.Data.CFROM_CASH_FLOW_FLAG"
-                              ValueField="@nameof(GSM00720CopyFromYearDTO.Code)"
-                              TextField="@nameof(GSM00720CopyFromYearDTO.Desc)"
+                <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
+                                @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR"
+                                ValueField="@nameof(GSM00720YearDTO.CYEAR)"
+                                TextField="@nameof(GSM00720YearDTO.CYEAR)"
                               R_ConductorSource="@_conductorRef">
                 </R_DropDownList>
             </R_ItemLayout>
@@ -81,17 +87,56 @@
 
 
     <R_StackLayout Row="true">
+        <R_ItemLayout>
+            <R_Label>Cash Flow</R_Label>
+               
+                           
+        </R_ItemLayout>
         <R_ItemLayout xs="2">
-            <R_TextBox @bind-Value="@_GSM00720ViewModel.CToCashFlowCode"
-                       R_ConductorSource="@_conductorRef" />
+            <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanCode"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false"/>
         </R_ItemLayout>
 
         <R_ItemLayout xs="3">
-            <R_TextBox @bind-Value="@_GSM00720ViewModel.Data.CCASH_FLOW_NAME"
-                       R_ConductorSource="@_conductorRef" />
+            <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanName"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false"/>
         </R_ItemLayout>
 
 
+    </R_StackLayout>
+</R_StackLayout>
+
+<R_StackLayout Row="true">
+
+
+    <R_StackLayout Row="true">
+        <R_ItemLayout>
+            <R_Label>Year</R_Label>
+
+
+        </R_ItemLayout>
+        <R_ItemLayout xs="3 ">
+            <R_TextBox @bind-Value="@_GSM00720ViewModel.Year"
+                       R_ConductorSource="@_conductorRef" />
+        </R_ItemLayout>
+
+      
+
+    </R_StackLayout>
+    
+    <R_StackLayout Row Class="justify-content-end">
+        <R_ItemLayout xs="2">
+            <R_Button OnClick="Button_OnClickProcessAsync">
+                Process
+            </R_Button>
+        </R_ItemLayout>
+        <R_ItemLayout xs="2">
+            <R_Button OnClick="Button_OnClickCloseAsync">
+                Cancel
+            </R_Button>
+        </R_ItemLayout>
     </R_StackLayout>
 </R_StackLayout>
 

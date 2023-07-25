@@ -114,6 +114,8 @@ namespace GSM00700Service
                 loDbPar.CFROM_CASH_FOW_FLAG = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG);
                 loDbPar.CFROM_CASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE);
                 loDbPar.CFROM_YEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_YEAR);
+                loDbPar.CTO_CASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CTO_CASH_FLOW_CODE);
+                loDbPar.CTO_YEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CTO_YEAR);
 
                 loCls = new GSM00720Cls();
                 loResult = loCls.CopyFromYear(loDbPar);

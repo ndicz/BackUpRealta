@@ -1,0 +1,30 @@
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.AssemblyReference.cache
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.AssemblyInfoInputs.cache
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.AssemblyInfo.cs
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.CoreCompileInputs.cache
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.deps.json
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.dll
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.pdb
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.dll
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.pdb
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.pdb
+D:\VS2022\Training\Report\ReportCommon\bin\Debug\netstandard2.1\R_APICommonDTO.pdb
+D:\VS2022\Training\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.deps.json
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\ReportCommon.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\bin\Debug\netstandard2.1\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.csproj.CopyComplete
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.dll
+D:\REALTA\RealCode Lokasl\Training Report\Training Report\Report\ReportCommon\obj\Debug\netstandard2.1\ReportCommon.pdb
