@@ -8,6 +8,7 @@ using R_CommonFrontBackAPI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +28,10 @@ namespace GSM05500Model
         public List<GSM05520DTO> loRateTypeList { get; set; } = new List<GSM05520DTO>();
 
         public List<GSM05520DTOGetRateType> loRateType { get; set; } = new List<GSM05520DTOGetRateType>();
-        public string RateTypeCode = "";
-        public string CrateDate = "";
+        public string RateTypeCode = "IDR";
+        public string CrateDate = DateTime.Now.ToString("yyyymmdd");
         public string CurrencyCode = "";
-
+        public string CreateCode = "";
 
         public DateTime CrateTime = DateTime.Now;
 
@@ -67,6 +68,8 @@ namespace GSM05500Model
             {
                 var loReturn = await _GSM05520Model.GetRateList();
                 loGridListRate = new ObservableCollection<GSM05520DTOGetRateType>(loReturn.Data);
+
+                //CreateCode = loGridListRate[0].CRATETYPE_CODE;
 
             }
             catch (Exception ex)
@@ -193,4 +196,6 @@ namespace GSM05500Model
             loEx.ThrowExceptionIfErrors();
         }
     }
+
+  
 }

@@ -44,6 +44,7 @@ namespace GSM05500Front
             try
             {
                 await _gridRef5500.R_RefreshGrid(null);
+             ;
               
             }
             catch (Exception ex)
@@ -92,19 +93,19 @@ namespace GSM05500Front
 
                 if (Condition1)
                 {
-                    await R_MessageBox.Show("Error", "You must fill1 ", R_eMessageBoxButtonType.OK);
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
                     eventArgs.Cancel = true;
                     return;
                 }
                 if (Condition2)
                 {
-                    await R_MessageBox.Show("Error", "You must fill2 ", R_eMessageBoxButtonType.OK);
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
                     eventArgs.Cancel = true;
                     return;
                 }
                 if (Condition3)
                 {
-                    await R_MessageBox.Show("Error", "You must fill3 ", R_eMessageBoxButtonType.OK);
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
                     eventArgs.Cancel = true;
                     return;
                 }
@@ -192,7 +193,7 @@ namespace GSM05500Front
 
         #region GSM05100
 
-
+      
 
 
         #endregion

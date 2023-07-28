@@ -10,6 +10,7 @@ using R_CommonFrontBackAPI;
 using GSM00700Back;
 using R_BackEnd;
 using R_Common;
+using System.Reflection;
 
 namespace GSM00700Service
 {
@@ -226,5 +227,96 @@ namespace GSM00700Service
             loEx.ThrowExceptionIfErrors();
             return loRtn;
         }
+        [HttpPost]
+        public GSM00720InitialProsesListDTO GetInitialProses()
+        {
+            R_Exception loEx = new R_Exception();
+            GSM00720InitialProsesListDTO loRtn = null;
+            List<GSM00720InitialProsesDTO> loResult;
+            GSM00700DBParameter loDbPar;
+            GSM00720Cls loCls;
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+
+                //loDbPar.CCOMPANY_ID = "RCD";
+                loCls = new GSM00720Cls();
+                loResult = loCls.InitialProses(loDbPar);
+                loRtn = new GSM00720InitialProsesListDTO() { Data = loResult };
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
+        [HttpPost]
+
+            public GSM00710TemplateCashFlowUserInterface GetTemplate()
+        {
+            var loEx = new R_Exception();
+            var loRtn = new GSM00710TemplateCashFlowUserInterface();
+
+            try
+            {
+                Assembly loAsm = Assembly.Load("BIMASAKTI_GS_API");
+                var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Parameter.xlsx";
+
+                using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
+                {
+                    var ms = new MemoryStream();
+                    resFilestream.CopyTo(ms);
+                    var bytes = ms.ToArray();
+
+                    loRtn.FileBytes = bytes;
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
+
+        }
+
+            [HttpPost]
+
+            public GSM00720TemplateCashFlowPlan GetTemplate720()
+            {
+                var loEx = new R_Exception();
+                var loRtn = new GSM00720TemplateCashFlowPlan();
+
+                try
+                {
+                    Assembly loAsm = Assembly.Load("BIMASAKTI_GS_API");
+                    var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Parameter.xlsx";
+
+                    using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
+                    {
+                        var ms = new MemoryStream();
+                        resFilestream.CopyTo(ms);
+                        var bytes = ms.ToArray();
+
+                        loRtn.FileBytes = bytes;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    loEx.Add(ex);
+                }
+
+                loEx.ThrowExceptionIfErrors();
+
+                return loRtn;
+
+            }
     }
 }

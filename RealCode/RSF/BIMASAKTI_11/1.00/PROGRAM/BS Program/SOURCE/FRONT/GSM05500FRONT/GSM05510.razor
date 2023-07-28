@@ -13,7 +13,7 @@
                      R_ConductorGridSource="@_conGridGSM05510Ref"
                      R_GridType="@R_eGridType.Original"
                      AllowAddNewRow="true"
-                     Width="1080px"
+                     Width="100%"
                      AllowEditRow="true"
                      AllowDeleteRow="true"
                      R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
@@ -37,4 +37,5 @@
                           R_ServiceSave="@Grid_ServiceSaveRateType"
                           R_ServiceDelete="@Grid_ServiceDeleteRateType"
                           @*R_AfterDelete="@Grid_AfterDelete"*@
-                          R_IsHeader="true" />
+                          R_IsHeader="true" 
+                          R_Validation="R_Validation"/>

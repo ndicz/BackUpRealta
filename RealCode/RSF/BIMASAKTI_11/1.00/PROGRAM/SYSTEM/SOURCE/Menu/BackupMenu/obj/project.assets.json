@@ -2330,6 +2330,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GSM00700Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
+          "Lookup_GSModel": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {
@@ -2350,6 +2353,43 @@
         },
         "runtime": {
           "bin/placeholder/GSM00700Model.dll": {}
+        }
+      },
+      "GSM02300Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM02300Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Common.dll": {}
+        }
+      },
+      "GSM02300Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GSM02300Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM02300Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Front.dll": {}
+        }
+      },
+      "GSM02300Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM02300Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM02300Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Model.dll": {}
         }
       },
       "GSM03000Front/1.0.0": {
@@ -2379,6 +2419,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900FRONT": "1.0.0",
+          "GFF00900Model": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -4839,6 +4882,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GSM00700Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
+          "Lookup_GSModel": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {
@@ -4859,6 +4905,43 @@
         },
         "runtime": {
           "bin/placeholder/GSM00700Model.dll": {}
+        }
+      },
+      "GSM02300Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM02300Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Common.dll": {}
+        }
+      },
+      "GSM02300Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GSM02300Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM02300Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Front.dll": {}
+        }
+      },
+      "GSM02300Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM02300Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM02300Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300Model.dll": {}
         }
       },
       "GSM03000Front/1.0.0": {
@@ -4888,6 +4971,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900FRONT": "1.0.0",
+          "GFF00900Model": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -10383,6 +10469,21 @@
       "path": "../../../../BS Program/SOURCE/FRONT/GSM00700Model/GSM00700Model.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM00700Model/GSM00700Model.csproj"
     },
+    "GSM02300Common/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/COMMON/GS/GSM02300Common/GSM02300Common.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/GSM02300Common/GSM02300Common.csproj"
+    },
+    "GSM02300Front/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM02300Front/GSM02300Front.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM02300Front/GSM02300Front.csproj"
+    },
+    "GSM02300Model/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM02300Model/GSM02300Model.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM02300Model/GSM02300Model.csproj"
+    },
     "GSM03000Front/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/GSM03000Front/GSM03000Front.csproj",
@@ -10457,6 +10558,7 @@
       "GSM00100Front >= 1.0.0",
       "GSM00110Front >= 1.0.0",
       "GSM00700Front >= 1.0.0",
+      "GSM02300Front >= 1.0.0",
       "GSM03000Front >= 1.0.0",
       "GSM05500Front >= 1.0.0",
       "LMI00100Front >= 1.0.0",
@@ -10511,6 +10613,9 @@
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00700Front\\GSM00700Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00700Front\\GSM00700Front.csproj"
+            },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM02300Front\\GSM02300Front.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM02300Front\\GSM02300Front.csproj"
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM03000Front\\GSM03000Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM03000Front\\GSM03000Front.csproj"

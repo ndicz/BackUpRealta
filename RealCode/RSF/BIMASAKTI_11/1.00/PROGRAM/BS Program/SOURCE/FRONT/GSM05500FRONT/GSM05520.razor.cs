@@ -39,7 +39,9 @@ namespace GSM05500Front
                 await RateTypeGet(null);
                 await GSM05520ViewModel.GetLcCurrency();
                 await _gridRef5520.R_RefreshGrid(null);
-
+                await GSM05520ViewModel.GetRateList();
+                
+                 
             }
             catch (Exception ex)
             {
@@ -125,10 +127,10 @@ namespace GSM05500Front
             try
             {
                 GSM05520ViewModel.RateTypeCode = poParam.ToString();
-                await _gridRef5520.R_RefreshGrid(null);
                 await GSM05520ViewModel.GetLcCurrency();
 
-
+                await GSM05520ViewModel.GetRateList();
+                await _gridRef5520.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {
@@ -147,7 +149,7 @@ namespace GSM05500Front
                 DateTime dateValue = DateTime.Parse(poParam.ToString());
                 string formattedDate = dateValue.ToString("yyyyMMdd");
                 GSM05520ViewModel.CrateDate = formattedDate;
-
+                GSM05520ViewModel.GetRateList();
                 _gridRef5520.R_RefreshGrid(null);
             }
             catch (Exception ex)
@@ -341,6 +343,23 @@ namespace GSM05500Front
         //}
 
 
+        public async Task R_Validation(R_ValidationEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            var loParam = (GSM05520DTO)eventArgs.Data;
+            var emptyFieldCondition = loParam.NLBASE_RATE_AMOUNT == 0 || loParam.NLCURRENCY_RATE_AMOUNT == 0 ||
+                                      loParam.NBBASE_RATE_AMOUNT == 0 || loParam.NBCURRENCY_RATE_AMOUNT == 0 ||
+                                      loParam.CCURRENCY_CODE == null;
+
+            if (emptyFieldCondition)
+            {
+                await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
+                eventArgs.Cancel = true;
+                return;
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
 
     }
 }

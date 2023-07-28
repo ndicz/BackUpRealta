@@ -23,7 +23,6 @@ namespace GSM00700Common.DTO
         public string CFROM_CASH_FLOW_FLAG { get; set; }
 
 
-
     }
     public class GSM00720ListDTO : R_APIResultBaseDTO
     {

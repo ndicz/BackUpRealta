@@ -34,7 +34,7 @@ namespace GSM00700Front
             {
                 await GSM00700ViewModel.GetCashFlowGroupTypeList();
                 await _gridRef00700.R_RefreshGrid(null);
-                await _gridRef00700.AutoFitAllColumnsAsync();
+                //await _gridRef00700.AutoFitAllColumnsAsync();
 
             }
             catch (Exception ex)

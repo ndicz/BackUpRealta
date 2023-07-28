@@ -4,15 +4,19 @@ using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlazorClientHelper;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
 using Microsoft.AspNetCore.Components;
 using R_BlazorFrontEnd.Controls.Popup;
+using R_BlazorFrontEnd.Controls.MessageBox;
+using Microsoft.JSInterop;
 
 namespace GSM00700Front
 {
@@ -31,6 +35,7 @@ namespace GSM00700Front
         private R_ConductorGrid _conGridGSM00720Ref;
         private R_Grid<GSM00720YearDTO> _gridRef00720Year;
         private R_Grid<GSM00720DTO> _gridRef00720;
+        [Inject] private IClientHelper ClientHelper { get; set; }
 
 
         #region GSM00710
@@ -46,8 +51,8 @@ namespace GSM00700Front
                 GSM00710ViewModel.CashFlowGroupName = param.CCASH_FLOW_GROUP_NAME;
                 await GSM00710ViewModel.GetCashFlowList();
                 await GSM00710ViewModel.GetCashFlowTypeList();
-             
-               
+                await GSM00720ViewModel.InitialProcess();
+                //await _gridRef00710.AutoFitAllColumnsAsync();
 
                 await _gridRef00710.R_RefreshGrid(null);
             }
@@ -69,7 +74,7 @@ namespace GSM00700Front
                 await GSM00710ViewModel.GetCashFlowList();
                 GSM00710ViewModel.csquence = GSM00710ViewModel.csquence.ToString();
                 eventArgs.ListEntityResult = GSM00710ViewModel.loGridList;
-                await _gridRef00710.AutoFitAllColumnsAsync();
+                //await _gridRef00710.AutoFitAllColumnsAsync();
             }
             catch (Exception ex)
             {
@@ -171,7 +176,7 @@ namespace GSM00700Front
             {
                 //await GSM00720ViewModel.GetYearList();
                 eventArgs.ListEntityResult = GSM00720ViewModel.loGridList;
-                await _gridRef00720.AutoFitAllColumnsAsync();
+                //await _gridRef00720.AutoFitAllColumnsAsync();
 
             }
             catch (Exception ex)
@@ -216,11 +221,27 @@ namespace GSM00700Front
                     await GSM00720ViewModel.GetYearList();
                     await GSM00720ViewModel.GetCurrencyList();
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
-
+                    //await _gridRef00720.AutoFitAllColumnsAsync();
+                    await GSM00720ViewModel.DownloadTemplate720();
+                 
                     GSM00720ViewModel.GetYearForCopyFrom();
-
+                    var GSM00720InitialProsesDTO = new GSM00720InitialProsesDTO();
                     //await _gridRef00720Year.R_RefreshGrid(null);
+
+                    if (GSM00720InitialProsesDTO.NUM == 0)
+                    {
+                        BaseAmount.Enabled = false;
+                        LocalAmount.Enabled = false;
+                    }
+                    else
+                    {
+                        BaseAmount.Enabled = true;
+                        LocalAmount.Enabled = true;
+                    }
+
+                  
                 }
+
 
             }
             catch (Exception ex)
@@ -233,6 +254,9 @@ namespace GSM00700Front
 
         #region POPUP
         [Inject] public R_PopupService PopupService { get; set; }
+        public R_Popup BaseAmount { get; set; }
+        public R_Popup LocalAmount { get; set; }
+
         private void R_BeforeLocalMount(R_BeforeOpenPopupEventArgs eventArgs)
         {
            
@@ -333,7 +357,57 @@ namespace GSM00700Front
 
         }
         #endregion
+        [Inject] private IJSRuntime JS { get; set; }
+
+        private async Task DownloadTemplate()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?", R_eMessageBoxButtonType.YesNo);
+
+                if (loValidate == R_eMessageBoxResult.Yes)
+                {
+                    var loByteFile = await GSM00720ViewModel.DownloadTemplate();
+
+                    var saveFileName = $"CASH_FLOW_PARAMETER-{ClientHelper.CompanyId}.xlsx";
+
+                    await JS.downloadFileFromStreamHandler(saveFileName, loByteFile.FileBytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
 
 
+        private async Task DownloadTemplate720()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?", R_eMessageBoxButtonType.YesNo);
+
+                if (loValidate == R_eMessageBoxResult.Yes)
+                {
+                    var loByteFile = await GSM00720ViewModel.DownloadTemplate();
+
+                    var saveFileName = $"CASH_FLOW_PARAMETER-{ClientHelper.CompanyId}.xlsx";
+
+                    await JS.downloadFileFromStreamHandler(saveFileName, loByteFile.FileBytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
     }
 }

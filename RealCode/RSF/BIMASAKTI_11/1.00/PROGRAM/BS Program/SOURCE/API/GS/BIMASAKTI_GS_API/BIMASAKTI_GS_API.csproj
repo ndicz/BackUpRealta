@@ -4,8 +4,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <RootNamespace>BIMASAKTI_GS_API</RootNamespace>
+	  <AssemblyName>BIMASAKTI_GS_API</AssemblyName>
   </PropertyGroup>
+	<ItemGroup>
+		<None Remove="Template\Cash Flow Parameter.xlsx" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<EmbeddedResource Include="Template\Cash Flow Parameter.xlsx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		  
+	</ItemGroup>
   <ItemGroup>
     <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>

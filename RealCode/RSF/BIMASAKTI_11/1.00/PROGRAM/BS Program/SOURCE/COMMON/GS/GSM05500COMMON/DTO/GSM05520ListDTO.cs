@@ -24,7 +24,7 @@ namespace GSM05500Common.DTO
         public decimal NBCURRENCY_RATE_AMOUNT { get; set; }
         public string CUPDATE_BY { get; set; }
         public DateTime CCREATE_BY { get; set; }
-        public string CRATE_DATE { get; set; }
+        public string CRATE_DATE { get; set; } = DateTime.Now.ToString("yyyyMMdd");
 
     }
 }

@@ -22,8 +22,10 @@ namespace GSM00700Model
         public ObservableCollection<GSM00720CopyFromYearDTO> loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>();
         public ObservableCollection<GSM00720CopyBaseLocalAmountDTO> loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>();
         public ObservableCollection<GSM00720CurrencyDTO> loCurrencyList = new ObservableCollection<GSM00720CurrencyDTO>();
-        
+        public ObservableCollection<GSM00720InitialProsesDTO> loInitialProsesList = new ObservableCollection<GSM00720InitialProsesDTO>();
 
+
+        public GSM00720InitialProsesListDTO LoInitialProses = new GSM00720InitialProsesListDTO();
         public GSM00720CurrencyDTO loCurrency = new GSM00720CurrencyDTO();
         public GSM00720DTO loEntity = new GSM00720DTO();
         public GSM00720CopyFromYearDTO loCopyFromEntity = new GSM00720CopyFromYearDTO();
@@ -73,6 +75,22 @@ namespace GSM00700Model
 
         public string CashFlowGroupCode = ""; // for filter
 
+
+        public async Task InitialProcess()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loReturn = await _GSM00720Model.GetInitialProsesAsync();
+                loInitialProsesList = new ObservableCollection<GSM00720InitialProsesDTO>(loReturn.Data);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            loEx.ThrowExceptionIfErrors();
+        }
         public async Task GetCashFlowPlanList(string CashFlowGroupCode, string CashFlowPlanCode)
         {
             var loEx = new R_Exception();
@@ -211,6 +229,44 @@ namespace GSM00700Model
                 loEx.Add(ex);
             }
             loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task<GSM00710TemplateCashFlowUserInterface> DownloadTemplate()
+        {
+            var loEx = new R_Exception();
+            GSM00710TemplateCashFlowUserInterface loResult = null;
+
+            try
+            {
+                loResult = await _GSM00720Model.TemplateGSM00710CashFlowPlan();
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00720TemplateCashFlowPlan> DownloadTemplate720()
+        {
+            var loEx = new R_Exception();
+            GSM00720TemplateCashFlowPlan loResult = null;
+
+            try
+            {
+                loResult = await _GSM00720Model.TemplatCashFlowInterface();
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
         }
     }
 }

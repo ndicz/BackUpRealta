@@ -16,6 +16,42 @@ namespace GSM00700Back
 {
     public class GSM00720Cls : R_BusinessObject<GSM00700DTO>
     {
+        public List<GSM00720InitialProsesDTO> InitialProses(GSM00700DBParameter poParameter)
+        {
+            R_Exception loException = new R_Exception();
+            List<GSM00720InitialProsesDTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuerry = @"SELECT TOP 1 1 AS NUM FROM GSM_COMPANY (NOLOCK)
+                                 WHERE CCOMPANY_ID = @CCOMPANY_ID
+                                 AND CBASE_CURRENCY_CODE <> CLOCAL_CURRENCY_CODE";
+
+                loCmd.CommandType = System.Data.CommandType.Text;
+                loCmd.CommandText = lcQuerry;
+
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+                loReturn = R_Utility.R_ConvertTo<GSM00720InitialProsesDTO>(loReturnTemp).ToList();
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+        EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
 
         public List<GSM00720DTO> GetCashFlowPlan(GSM00700DBParameter poParameter)
         {
@@ -195,7 +231,7 @@ namespace GSM00700Back
             {
                 loException.Add(ex);
             }
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loReturn;
@@ -231,7 +267,7 @@ namespace GSM00700Back
             {
                 loException.Add(ex);
             }
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loReturn;

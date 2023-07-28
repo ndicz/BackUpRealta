@@ -19,7 +19,7 @@
 
 <R_TabStrip OnActiveTabIndexChanged="@ChangeTab">
     <R_TabStripTab Title="Cash Flow">
-       
+
 
 
 
@@ -30,28 +30,34 @@
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
-                    Width="1050px"
+                    Width="1100px"
                     AllowEditRow="true"
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
 
-                    <R_GridTextColumn FieldName="CSEQUENCE" HeaderText="Display Seq" />
-                    <R_GridTextColumn FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                    <R_GridTextColumn Width="100px" FieldName="CSEQUENCE" HeaderText="Display Seq" />
+                    <R_GridTextColumn Width="150px" FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
-                    <R_GridDropDownListColumn Data="@GSM00710ViewModel.loCashFlowType"
+                    <R_GridDropDownListColumn Width="150px" Data="@GSM00710ViewModel.loCashFlowType"
                                               FieldName="@nameof(GSM00710DTO.CCASH_FLOW_TYPE)"
                                               ValueField="@nameof(GSM00710CashFlowTypeDTO.CCODE)"
                                               TextField="@nameof(GSM00710CashFlowTypeDTO.CDESCRIPTION)"
                                               HeaderText="Cash Flow Group Type" R_EnableAdd R_EnableEdit />
-                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="last Updated Date" />
-                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Create By" />
-                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created Date" />
-                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+                    <R_GridTextColumn Width="150" FieldName="CUPDATE_BY" HeaderText="Update By" />
+                    <R_GridTextColumn Width="150" FieldName="DUPDATE_DATE" HeaderText="Update Date" />
+                    <R_GridTextColumn Width="150" FieldName="CCREATE_BY" HeaderText="Created By" />
+                    <R_GridTextColumn Width="150" FieldName="DCREATE_DATE" HeaderText="Created Date" />
 
                 </R_GridColumns>
             </R_Grid>
+        <R_StackLayout Row="true" Class="xs-4">
+            <R_ItemLayout xs="2">
+                <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">Template</R_Button>
+            </R_ItemLayout>
+            
+        </R_StackLayout>
         </R_StackLayout>
 
         <R_ConductorGrid @ref="@_conGridGSM00710Ref"
@@ -65,7 +71,7 @@
                          @* R_AfterDelete="@Grid_AfterDelete" *@
                          R_IsHeader="true" />
     </R_TabStripTab>
-
+@*
     <R_StackLayout Row="true">
 
         <R_ItemLayout xs="1">
@@ -80,9 +86,9 @@
                        R_ConductorSource="@R_conduct" Enabled="false" />
         </R_ItemLayout>
     </R_StackLayout>
-    sss
+    sss*@
     <R_TabStripTab Title="Cash Flow Plan" Id="tabCashFlowPlan">
-        
+
         <R_StackLayout>
             <R_StackLayout Row="true" Class="mb-2">
 
@@ -92,11 +98,11 @@
                 </R_ItemLayout>
                 <R_ItemLayout Class="col-1">
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"
-                               R_ConductorSource="@R_conduct" Enabled="false"/>
+                               R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
                 <R_ItemLayout Class="col-3">
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanName"
-                               R_ConductorSource="@R_conduct" Enabled="false"/>
+                               R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
             </R_StackLayout>
         </R_StackLayout>
@@ -119,15 +125,16 @@
 
                 </R_Grid>
                 <R_StackLayout Row="true" Class="xs-4">
-                    <R_ItemLayout xs="6">
+                    <R_ItemLayout xs="9">
                         <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">Copy From Year</R_Popup>
                     </R_ItemLayout>
+
                 </R_StackLayout>
             </R_StackLayout>
             <R_ConductorGrid @ref="@_conGridGSM00720Ref"
                              R_ViewModel="@GSM00720ViewModel"
                              R_Display="@Grid_R_Display_Year"
-                             R_IsHeader="true"/>
+                             R_IsHeader="true" />
             <R_StackLayout xs="10">
 
                 <R_Grid @ref="@_gridRef00720"
@@ -136,7 +143,7 @@
                         R_ConductorSource="@R_conduct"
                         R_GridType="@R_eGridType.Original"
                         PageSize="2"
-                        Width="1000px"
+                        Width="900px"
                         R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                     <R_GridColumns>
@@ -158,7 +165,7 @@
 
                     <R_ItemLayout Class="col-3">
                         <R_TextBox @bind-value="GSM00720ViewModel.loCurrency.CBASE_CURRENCY"
-                                   R_ConductorSource="@R_conduct" Enabled="false"/>
+                                   R_ConductorSource="@R_conduct" Enabled="false" />
                     </R_ItemLayout>
 
                     <R_ItemLayout Class="col-1">
@@ -168,27 +175,31 @@
 
                     <R_ItemLayout Class="col-3">
                         <R_TextBox @bind-value="GSM00720ViewModel.loCurrency.CBASE_CURRENCY"
-                                   R_ConductorSource="@R_conduct" Enabled="false"/>
+                                   R_ConductorSource="@R_conduct" Enabled="false" />
                     </R_ItemLayout>
                 </R_StackLayout>
 
                 <R_StackLayout Row="true" Class="xs-4">
                     <R_ItemLayout xs="2">
-                        <R_Popup R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount">Update Local Amount</R_Popup>
+                        <R_Popup R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount" @ref="BaseAmount">Update Local Amount </R_Popup>
                     </R_ItemLayout>
                     <R_ItemLayout xs="2">
-                        <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount">Update Base Amount</R_Popup>
+                        <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount" @ref="LocalAmount">Update Base Amount</R_Popup>
                     </R_ItemLayout>
-              
+                    
+                    
+                    <R_ItemLayout xs="2">
+                        <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate720">Template</R_Button>
+                    </R_ItemLayout>
                 </R_StackLayout>
 
-                
+
             </R_StackLayout>
 
         </R_StackLayout>
 
         <R_ConductorGrid @ref="@_conGridGSM00720Ref"
                          R_ViewModel="@GSM00720ViewModel"
-                         R_IsHeader="true"/>
+                         R_IsHeader="true" />
     </R_TabStripTab>
 </R_TabStrip>

@@ -1,7 +1,7 @@
 7001 = Error process, please contact your administrator!
 7102 = Duplicate Cash Flow Code!
 7103 = annot Delete, Cash Flow Already in used!
-7104 = ash Flow Code cannot be empty!
+7104 = Cash Flow Code cannot be empty!
 7105 = Cash Flow Name cannot be empty!
 7106 = Cash Flow Code cannot be greater than 20 character!
 7107 = Cash Flow Name cannot be greater than 100 character!

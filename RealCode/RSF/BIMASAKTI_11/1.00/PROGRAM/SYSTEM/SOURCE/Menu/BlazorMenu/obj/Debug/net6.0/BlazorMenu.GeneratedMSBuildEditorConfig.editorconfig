@@ -28,16 +28,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFxIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Pages/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/MenuLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1lbnVMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/Tabs/MenuTabSet.razor]
@@ -55,10 +55,6 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/MainBody.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5Cb2R5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-cg252p0773
-
-[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-0bn6m2xx2m
 
 [D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/SYSTEM/SOURCE/Menu/BlazorMenu/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=

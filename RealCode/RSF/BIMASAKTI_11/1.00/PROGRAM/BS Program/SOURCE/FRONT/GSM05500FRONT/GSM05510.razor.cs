@@ -119,7 +119,44 @@ namespace GSM05500Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        public async Task R_Validation(R_ValidationEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
 
+            try
+            {
+                var loParam = (GSM05510DTO)eventArgs.Data;
+                var Condition1 = loParam.CRATETYPE_CODE == null;
+                var Condition2 = loParam.CRATETYPE_DESCRIPTION == null;
+                var Condition3 = loParam.CRATETYPE_CODE == null && loParam.CRATETYPE_DESCRIPTION == null;
+                //check loparam currency code = null or emptyCCURRENCY_CODE
+
+                if (Condition1)
+                {
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
+                if (Condition2)
+                {
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
+                if (Condition3)
+                {
+                    await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
+                    eventArgs.Cancel = true;
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
 
     }
 }

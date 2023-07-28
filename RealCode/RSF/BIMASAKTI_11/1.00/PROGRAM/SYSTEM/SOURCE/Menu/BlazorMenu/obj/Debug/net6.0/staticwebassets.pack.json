@@ -21,12 +21,16 @@
       "PackagePath": "staticwebassets\\appsettings.json"
     },
     {
-      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\R_BlazorControlStyle.css",
-      "PackagePath": "staticwebassets\\css\\R_BlazorControlStyle.css"
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\avatar.png",
+      "PackagePath": "staticwebassets\\assets\\img\\avatar.png"
     },
     {
-      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\R_BlazorControlStyle.min.css",
-      "PackagePath": "staticwebassets\\css\\R_BlazorControlStyle.min.css"
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\building.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\building.jpg"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\all.css",
+      "PackagePath": "staticwebassets\\css\\all.css"
     },
     {
       "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\app.css",
@@ -77,12 +81,8 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\test-bootstrap.css",
-      "PackagePath": "staticwebassets\\css\\test-bootstrap.css"
-    },
-    {
-      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\test-default.css",
-      "PackagePath": "staticwebassets\\css\\test-default.css"
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\theme.min.css",
+      "PackagePath": "staticwebassets\\css\\theme.min.css"
     },
     {
       "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\favicon.ico",
@@ -99,6 +99,50 @@
     {
       "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\js\\aes-js-3.1.2.js",
       "PackagePath": "staticwebassets\\js\\aes-js-3.1.2.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\js\\config.js",
+      "PackagePath": "staticwebassets\\js\\config.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\js\\theme.js",
+      "PackagePath": "staticwebassets\\js\\theme.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\anchorjs\\anchor.min.js",
+      "PackagePath": "staticwebassets\\vendors\\anchorjs\\anchor.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\bootstrap\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\vendors\\bootstrap\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\fontawesome\\all.min.js",
+      "PackagePath": "staticwebassets\\vendors\\fontawesome\\all.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\is\\is.min.js",
+      "PackagePath": "staticwebassets\\vendors\\is\\is.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\list.js\\list.min.js",
+      "PackagePath": "staticwebassets\\vendors\\list.js\\list.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\lodash\\lodash.min.js",
+      "PackagePath": "staticwebassets\\vendors\\lodash\\lodash.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\overlayscrollbars\\OverlayScrollbars.min.css",
+      "PackagePath": "staticwebassets\\vendors\\overlayscrollbars\\OverlayScrollbars.min.css"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\overlayscrollbars\\OverlayScrollbars.min.js",
+      "PackagePath": "staticwebassets\\vendors\\overlayscrollbars\\OverlayScrollbars.min.js"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\vendors\\popper\\popper.min.js",
+      "PackagePath": "staticwebassets\\vendors\\popper\\popper.min.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BlazorMenu.Microsoft.AspNetCore.StaticWebAssets.props",

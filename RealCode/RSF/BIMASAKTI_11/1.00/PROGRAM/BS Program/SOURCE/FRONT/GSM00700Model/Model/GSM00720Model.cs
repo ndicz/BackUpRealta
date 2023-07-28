@@ -163,6 +163,80 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
+        public async Task<GSM00720InitialProsesListDTO> GetInitialProsesAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720InitialProsesListDTO loResult = null;
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720InitialProsesListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetInitialProses), DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00710TemplateCashFlowUserInterface> TemplateGSM00710CashFlowPlan()
+        {
+            var loEx = new R_Exception();
+            GSM00710TemplateCashFlowUserInterface loResult = new GSM00710TemplateCashFlowUserInterface();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00710TemplateCashFlowUserInterface>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetTemplate),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00720TemplateCashFlowPlan> TemplatCashFlowInterface()
+        {
+            var loEx = new R_Exception();
+            GSM00720TemplateCashFlowPlan loResult = new GSM00720TemplateCashFlowPlan();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720TemplateCashFlowPlan>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetTemplate720),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
         public GSM00720ListDTO GetAllCashFlowPlan()
         {
             throw new NotImplementedException();
@@ -189,6 +263,21 @@ namespace GSM00700Model.Model
         }
 
         public GSM00720CurrencyDTO GetCurrencyList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GSM00720InitialProsesListDTO GetInitialProses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GSM00710TemplateCashFlowUserInterface GetTemplate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public GSM00720TemplateCashFlowPlan GetTemplate720()
         {
             throw new NotImplementedException();
         }
