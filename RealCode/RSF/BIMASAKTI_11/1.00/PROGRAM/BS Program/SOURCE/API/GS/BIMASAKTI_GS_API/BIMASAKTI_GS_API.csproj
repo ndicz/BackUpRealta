@@ -9,10 +9,15 @@
   </PropertyGroup>
 	<ItemGroup>
 		<None Remove="Template\Cash Flow Parameter.xlsx" />
+		<None Remove="Template\Cash Flow Plan.xlsx" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Include="Template\Cash Flow Parameter.xlsx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+
+		<EmbeddedResource Include="Template\Cash Flow Plan.xlsx">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
 		  

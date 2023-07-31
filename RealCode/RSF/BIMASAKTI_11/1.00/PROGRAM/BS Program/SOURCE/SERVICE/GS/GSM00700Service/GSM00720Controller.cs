@@ -297,7 +297,7 @@ namespace GSM00700Service
                 try
                 {
                     Assembly loAsm = Assembly.Load("BIMASAKTI_GS_API");
-                    var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Parameter.xlsx";
+                    var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Plan.xlsx";
 
                     using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
                     {

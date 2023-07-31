@@ -28,8 +28,8 @@ namespace GSM05500Model
         public List<GSM05520DTO> loRateTypeList { get; set; } = new List<GSM05520DTO>();
 
         public List<GSM05520DTOGetRateType> loRateType { get; set; } = new List<GSM05520DTOGetRateType>();
-        public string RateTypeCode = "IDR";
-        public string CrateDate = DateTime.Now.ToString("yyyymmdd");
+        public string RateTypeCode = "";
+        public string CrateDate = DateTime.MinValue.ToString("yyyymmdd");
         public string CurrencyCode = "";
         public string CreateCode = "";
 

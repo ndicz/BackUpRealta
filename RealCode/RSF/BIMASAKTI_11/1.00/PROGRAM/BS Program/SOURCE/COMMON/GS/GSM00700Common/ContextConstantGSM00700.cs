@@ -24,6 +24,10 @@ namespace GSM00700Common
         public const string INO_PERIOD_TO = "INO_PERIOD_TO";
 
 
+        public const string IS_OVERWRITE_CONTEXT = "IS_OVERWRITE_CONTEXT";
+        public const string UPLOAD_CASHFLOW_STREAMING_CONTEXT = "UPLOAD_CASHFLOW_STREAMING_CONTEXT";
+       public const string UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT = "UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT"
+
 
     }
 }

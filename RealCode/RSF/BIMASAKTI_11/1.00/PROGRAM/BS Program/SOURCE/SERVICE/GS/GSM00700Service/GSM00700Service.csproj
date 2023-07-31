@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\BACK\GS\GSM00700Back\GSM00700Back.csproj" />
     <ProjectReference Include="..\..\..\COMMON\GS\GSM00700Common\GSM00700Common.csproj" />
+    <ProjectReference Include="..\..\..\COMMON\GS\GSM05500Common\GSM05500Common.csproj" />
   </ItemGroup>
 
 

@@ -397,7 +397,7 @@ namespace GSM00700Front
                 {
                     var loByteFile = await GSM00720ViewModel.DownloadTemplate();
 
-                    var saveFileName = $"CASH_FLOW_PARAMETER-{ClientHelper.CompanyId}.xlsx";
+                    var saveFileName = $"CASH_FLOW_PLAN-{ClientHelper.CompanyId}.xlsx";
 
                     await JS.downloadFileFromStreamHandler(saveFileName, loByteFile.FileBytes);
                 }

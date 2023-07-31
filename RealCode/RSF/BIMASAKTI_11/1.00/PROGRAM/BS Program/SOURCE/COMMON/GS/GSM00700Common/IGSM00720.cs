@@ -18,5 +18,6 @@ namespace GSM00700Common
         GSM00720InitialProsesListDTO GetInitialProses();
         GSM00710TemplateCashFlowUserInterface GetTemplate();
         GSM00720TemplateCashFlowPlan GetTemplate720();
+
     }
 }

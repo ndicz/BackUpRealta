@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GSM00700Common\GSM00700Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="R_APICommonDTO">
       <HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APICommonDTO.dll</HintPath>
     </Reference>

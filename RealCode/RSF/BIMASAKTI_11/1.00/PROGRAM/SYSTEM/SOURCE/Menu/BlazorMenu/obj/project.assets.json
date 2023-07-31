@@ -2408,6 +2408,9 @@
       "GSM05500Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM00700Common": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GSM05500Common.dll": {}
         },
@@ -4960,6 +4963,9 @@
       "GSM05500Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM00700Common": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GSM05500Common.dll": {}
         },
