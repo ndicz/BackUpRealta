@@ -31,7 +31,13 @@ namespace GSM00700Service
             {
                 loParam = R_Utility.R_GetStreamingContext<List<GSM00710UploadCashFlowDTO>>(ContextConstantGSM00700.UPLOAD_CASHFLOW_STREAMING_CONTEXT);
 
+                foreach (var iten in loParam)
+                {
+                    iten.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                }
+                {                                }
                 loTempRtn = loCls.GetGSM00710UploadCashFlowList(loParam);
+
 
                 loRtn = GetUploadFloorStream(loTempRtn);
             }

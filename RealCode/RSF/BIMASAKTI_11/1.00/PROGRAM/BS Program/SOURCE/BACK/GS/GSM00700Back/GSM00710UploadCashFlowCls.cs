@@ -82,6 +82,8 @@ namespace GSM00700Back
                         $"CSEQ VARCHAR(50), " +
                         $"CCASHFLOW_GROUP_CODE VARCHAR(50), " +
                         $"CCASHFLOW_CODE VARCHAR(20), " +
+                        $"CCASHFLOW_GROUP_NAME VARCHAR(50)," +
+                        $"NOTES_ VARCHAR(20)," +
                         $"CCASH_FLOW_NAME VARCHAR(100), " +
                         $"CCASHFLOW_TYPE NVARCHAR(MAX), " +
                         $"LEXIST BIT, " +
@@ -91,12 +93,12 @@ namespace GSM00700Back
 
                 loDb.R_BulkInsert<GSM00710UploadCashFlowDTO>((SqlConnection)loConn, "#CASHFLOW", poEntity);
 
-                lcQuery = $"UPDATE A SET A.Var_Exists = 1 " +
+                lcQuery = $"UPDATE A SET A.LEXIST = 1 " +
                     $"FROM #CASHFLOW A WHERE EXISTS " +
                     $"(SELECT TOP 1 1 FROM GSM_CASH_FLOW B " +
                     $"WHERE B.CCOMPANY_ID = A.CCOMPANY_ID " +
-                    $"AND B.CCASHFLOW_CODE = A.CCASHFLOW_CODE " +
-                    $"AND B.CCASH_FLOW_GROUP_CODE  = A.CCASH_FLOW_GROUP_CODE)";
+                    $"AND B.CCASH_FLOW_CODE = A.CCASHFLOW_CODE " +
+                    $"AND B.CCASH_FLOW_GROUP_CODE  = A.CCASHFLOW_GROUP_CODE)";
 
 
                 loDb.SqlExecNonQuery(lcQuery, loConn, false);
@@ -144,6 +146,7 @@ namespace GSM00700Back
                     loParam.Add(new GSM00710UploadCashFlowSaveDTO()
                     {
                         NO = count,
+                        CCOMPANY_ID = poAttachFile.Key.COMPANY_ID,
                         CSEQ =item.CSEQ,
                         CCASHFLOW_CODE = item.CCASHFLOW_CODE,
                         CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
@@ -259,6 +262,7 @@ namespace GSM00700Back
                         loParam.Add(new GSM00710UploadCashFlowSaveDTO()
                         {
                             NO = count,
+                            CCOMPANY_ID = poBatchProcessPar.Key.COMPANY_ID,
                             CSEQ = item.CSEQ,
                             CCASHFLOW_CODE = item.CCASHFLOW_CODE,
                             CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,

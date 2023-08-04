@@ -6,9 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using BlazorClientHelper;
+using GSM00700Common.DTO.Upload_DTO;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
@@ -215,7 +217,7 @@ namespace GSM00700Front
 
             try
             {
-                
+
                 if (arg.Id == "tabCashFlowPlan")
                 {
                     await GSM00720ViewModel.GetYearList();
@@ -223,7 +225,7 @@ namespace GSM00700Front
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
                     //await _gridRef00720.AutoFitAllColumnsAsync();
                     await GSM00720ViewModel.DownloadTemplate720();
-                 
+
                     GSM00720ViewModel.GetYearForCopyFrom();
                     var GSM00720InitialProsesDTO = new GSM00720InitialProsesDTO();
                     //await _gridRef00720Year.R_RefreshGrid(null);
@@ -231,15 +233,24 @@ namespace GSM00700Front
                     if (GSM00720InitialProsesDTO.NUM == 0)
                     {
                         BaseAmount.Enabled = false;
-                        LocalAmount.Enabled = false;
+                    
                     }
                     else
                     {
                         BaseAmount.Enabled = true;
+                   
+                    }
+
+                    if (GSM00720InitialProsesDTO.NUM ==0)
+                    {
+                        LocalAmount.Enabled = false;
+                    }
+                    else
+                    {
                         LocalAmount.Enabled = true;
                     }
 
-                  
+
                 }
 
 
@@ -259,7 +270,7 @@ namespace GSM00700Front
 
         private void R_BeforeLocalMount(R_BeforeOpenPopupEventArgs eventArgs)
         {
-           
+
             eventArgs.TargetPageType = typeof(GSM00720LocalAmount);
 
             var param = new GSM00720CopyBaseLocalAmountDTO()
@@ -270,7 +281,7 @@ namespace GSM00700Front
                 CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
             };
             eventArgs.Parameter = param;
-           
+
         }
 
         private async Task R_AfterLocalAmount(R_AfterOpenPopupEventArgs eventArgs)
@@ -287,7 +298,7 @@ namespace GSM00700Front
                 loException.Add(ex);
             }
             loException.ThrowExceptionIfErrors();
-           
+
 
         }
 
@@ -346,7 +357,7 @@ namespace GSM00700Front
             try
             {
                 await _gridRef00720.R_RefreshGrid(null);
-            
+
             }
             catch (Exception ex)
             {
@@ -358,6 +369,36 @@ namespace GSM00700Front
         }
         #endregion
         [Inject] private IJSRuntime JS { get; set; }
+        private void R_BeforeOpenUpload(R_BeforeOpenPopupEventArgs evenaArgs)
+        {
+            evenaArgs.TargetPageType = typeof(GSM00710Upload);
+            var param = new GSM00710UploadCashFlowDTO
+            {
+                CCASHFLOW_GROUP_CODE = GSM00710ViewModel.CashFlowGroupCode,
+                CCASHFLOW_GROUP_NAME = GSM00710ViewModel.CashFlowGroupName
+
+            };
+            evenaArgs.Parameter = param;
+        }
+
+        private async Task R_AfterOpenUpload(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef00710.R_RefreshGrid(null);
+                //await _gridRef00710.R_RefreshGrid(null);
+                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode,
+                    GSM00720ViewModel.CashFlowPlanCode);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+        }
+
 
         private async Task DownloadTemplate()
         {
@@ -395,7 +436,7 @@ namespace GSM00700Front
 
                 if (loValidate == R_eMessageBoxResult.Yes)
                 {
-                    var loByteFile = await GSM00720ViewModel.DownloadTemplate();
+                    var loByteFile = await GSM00720ViewModel.DownloadTemplate720();
 
                     var saveFileName = $"CASH_FLOW_PLAN-{ClientHelper.CompanyId}.xlsx";
 

@@ -13,7 +13,7 @@ namespace GSM00700Model.Model
     public class GSM00710UploadModel : R_BusinessObjectServiceClientBase<GSM00710UploadCashFlowDTO>, IUPLOAD00710
     {
         private const string DEFAULT_HTTP_NAME = "R_DefaultServiceUrl";
-        private const string DEFAULT_SERVICEPOINT_NAME = "api/UploadFloor";
+        private const string DEFAULT_SERVICEPOINT_NAME = "api/GSM00710Upload";
         private const string DEFAULT_MODULE = "gs";
 
         public GSM00710UploadModel(string pcHttpClientName = DEFAULT_HTTP_NAME,

@@ -563,6 +563,12 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -1707,7 +1713,7 @@
             },
             "Telerik.UI.for.Blazor": {
               "target": "Package",
-              "version": "[4.0.1, )"
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

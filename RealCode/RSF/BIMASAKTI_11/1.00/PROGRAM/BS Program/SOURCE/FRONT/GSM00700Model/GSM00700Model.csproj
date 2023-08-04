@@ -5,7 +5,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="6.0.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
     <ProjectReference Include="..\..\COMMON\GS\GSM00700Common\GSM00700Common.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -19,6 +24,9 @@
     </Reference>
     <Reference Include="R_BlazorFrontEnd">
       <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_BlazorFrontEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="R_BlazorFrontEnd.Excel">
+      <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_BlazorFrontEnd.Excel.dll</HintPath>
     </Reference>
     <Reference Include="R_BusinessObjectFront">
       <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_BusinessObjectFront.dll</HintPath>
