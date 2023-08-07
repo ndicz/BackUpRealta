@@ -19,6 +19,11 @@
           "GSM05500Service.dll": {}
         }
       },
+      "GSM00700Common/1.0.0": {
+        "runtime": {
+          "GSM00700Common.dll": {}
+        }
+      },
       "GSM05500Back/1.0.0": {
         "dependencies": {
           "GSM05500Common": "1.0.0",
@@ -31,6 +36,9 @@
         }
       },
       "GSM05500Common/1.0.0": {
+        "dependencies": {
+          "GSM00700Common": "1.0.0"
+        },
         "runtime": {
           "GSM05500Common.dll": {}
         }
@@ -98,6 +106,14 @@
           }
         }
       },
+      "R_StorageCommon/1.0.0.0": {
+        "runtime": {
+          "R_StorageCommon.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "R_Security/1.0.0.0": {
         "runtime": {
           "R_Security.dll": {
@@ -118,6 +134,11 @@
   },
   "libraries": {
     "GSM05500Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GSM00700Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -168,6 +189,11 @@
       "sha512": ""
     },
     "R_ContextBackEnd/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "R_StorageCommon/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

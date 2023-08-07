@@ -18,3 +18,4 @@ namespace GSM00700Common.DTO.Upload_DTO
         public bool LOVER_WRITE { get; set; }
     }
 }
+    

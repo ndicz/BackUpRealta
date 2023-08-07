@@ -16,7 +16,8 @@
           "BlazorClientHelper": "1.0.0.0",
           "R_BlazorFrontEnd.Controls": "1.0.0.0",
           "R_BlazorFrontEnd": "1.0.0.0",
-          "R_CommonFrontBackAPI": "1.0.0.0"
+          "R_CommonFrontBackAPI": "1.0.0.0",
+          "R_ProcessAndUploadFront": "1.0.0.0"
         },
         "runtime": {
           "GSM00700Front.dll": {}
@@ -150,6 +151,17 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Text.Encodings.Web/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "System.Text.Json/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "System.Text.Encodings.Web": "6.0.0"
+        }
+      },
       "GSM00700Common/1.0.0": {
         "runtime": {
           "GSM00700Common.dll": {}
@@ -157,7 +169,8 @@
       },
       "GSM00700Model/1.0.0": {
         "dependencies": {
-          "GSM00700Common": "1.0.0"
+          "GSM00700Common": "1.0.0",
+          "System.Text.Json": "6.0.0"
         },
         "runtime": {
           "GSM00700Model.dll": {}
@@ -223,6 +236,14 @@
           }
         }
       },
+      "R_ProcessAndUploadFront/1.0.0.0": {
+        "runtime": {
+          "R_ProcessAndUploadFront.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "R_APICommonDTO/1.0.0.0": {
         "runtime": {
           "R_APICommonDTO.dll": {
@@ -242,6 +263,14 @@
       "R_APIClient/1.0.0.0": {
         "runtime": {
           "R_APIClient.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "R_BlazorFrontEnd.Excel/1.0.0.0": {
+        "runtime": {
+          "R_BlazorFrontEnd.Excel.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -377,6 +406,20 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
+    "System.Text.Encodings.Web/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
+      "path": "system.text.encodings.web/6.0.0",
+      "hashPath": "system.text.encodings.web.6.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zaJsHfESQvJ11vbXnNlkrR46IaMULk/gHxYsJphzSF+07kTjPHv+Oc14w6QEOfo3Q4hqLJgStUaYB9DBl0TmWg==",
+      "path": "system.text.json/6.0.0",
+      "hashPath": "system.text.json.6.0.0.nupkg.sha512"
+    },
     "GSM00700Common/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -422,6 +465,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "R_ProcessAndUploadFront/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "R_APICommonDTO/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -433,6 +481,11 @@
       "sha512": ""
     },
     "R_APIClient/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "R_BlazorFrontEnd.Excel/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

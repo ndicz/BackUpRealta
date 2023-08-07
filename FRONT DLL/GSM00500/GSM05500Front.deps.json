@@ -175,7 +175,15 @@
           "GFF00900Model.dll": {}
         }
       },
+      "GSM00700Common/1.0.0": {
+        "runtime": {
+          "GSM00700Common.dll": {}
+        }
+      },
       "GSM05500Common/1.0.0": {
+        "dependencies": {
+          "GSM00700Common": "1.0.0"
+        },
         "runtime": {
           "GSM05500Common.dll": {}
         }
@@ -421,6 +429,11 @@
       "sha512": ""
     },
     "GFF00900Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GSM00700Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
