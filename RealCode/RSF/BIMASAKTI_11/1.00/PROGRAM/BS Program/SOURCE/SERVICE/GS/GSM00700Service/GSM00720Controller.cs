@@ -56,7 +56,7 @@ namespace GSM00700Service
                 //loDbPar.CUSER_ID = "Admin";
                 //loDbPar.CCASH_FLOW_GROUP_CODE = "CF0012";
                 //loDbPar.CCASH_FLOW_CODE = "F001";
-                //loDbPar.CCYEAR = "2023";
+                //loDbPar.CCYEAR = "2023";y
                 loCls = new GSM00720Cls();
                 loResult = loCls.GetCashFlowPlan(loDbPar);
                 loRtn = new GSM00720ListDTO() { Data = loResult };
@@ -99,7 +99,7 @@ namespace GSM00700Service
         }
 
         [HttpPost]
-        public GSM00720CopyFromYearListDTO GetCopyFromYearList()
+        public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
             R_Exception loEx = new R_Exception();
             GSM00720CopyFromYearListDTO loRtn = null;
@@ -112,11 +112,11 @@ namespace GSM00700Service
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-                loDbPar.CFROM_CASH_FOW_FLAG = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG);
-                loDbPar.CFROM_CASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE);
-                loDbPar.CFROM_YEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_YEAR);
-                loDbPar.CTO_CASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CTO_CASH_FLOW_CODE);
-                loDbPar.CTO_YEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CTO_YEAR);
+                loDbPar.CFROM_CASH_FOW_FLAG = poParamDto.CFROM_CASH_FOW_FLAG;
+                loDbPar.CFROM_CASH_FLOW_CODE = poParamDto.CFROM_CASH_FLOW_CODE;
+                loDbPar.CFROM_YEAR = poParamDto.CFROM_YEAR;
+                loDbPar.CTO_CASH_FLOW_CODE = poParamDto.CTO_CASH_FLOW_CODE;
+                loDbPar.CTO_YEAR = poParamDto.CTO_YEAR;
 
                 loCls = new GSM00720Cls();
                 loResult = loCls.CopyFromYear(loDbPar);
@@ -130,7 +130,7 @@ namespace GSM00700Service
             return loRtn;
         }
         [HttpPost]
-        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList()
+        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParameter)
         {
             R_Exception loEx = new R_Exception();
             GSM00720CopyBaseAmountListDTO loRtn = null;
@@ -143,14 +143,15 @@ namespace GSM00700Service
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                //loDbPar.CFROM_CASH_FOW_FLAG = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG);
 
-                loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
-                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
-                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
-                loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
-                loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
-                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_FROM);
-                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_TO);
+                loDbPar.CCASH_FLOW_GROUP = poParameter.CCASH_FLOW_GROUP;
+                loDbPar.CCASH_FLOW_CODE = poParameter.CCASH_FLOW_CODE;
+                loDbPar.CYEAR = poParameter.CYEAR;
+                loDbPar.CCURRENCY_CODE = poParameter.CCURRENCY_CODE;
+                loDbPar.CCURRENCY_RATE = poParameter.CCURRENCY_RATE;
+                loDbPar.INO_PERIOD_FROM = poParameter.INO_PERIOD_FROM;
+                loDbPar.INO_PERIOD_TO = poParameter.INO_PERIOD_TO;
 
                 loCls = new GSM00720Cls();
                 loResult = loCls.UpdateBaseAmount(loDbPar);
@@ -165,7 +166,7 @@ namespace GSM00700Service
             return loRtn;
         }
         [HttpPost]
-        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList()
+        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto)
         {
             R_Exception loEx = new R_Exception();
             GSM00720CopyLocalAmountListDTO loRtn = null;
@@ -179,13 +180,13 @@ namespace GSM00700Service
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                loDbPar.CCASH_FLOW_GROUP = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP);
-                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
-                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
-                loDbPar.CCURRENCY_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_CODE);
-                loDbPar.CCURRENCY_RATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCURRENCY_RATE);
-                loDbPar.INO_PERIOD_FROM = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_FROM);
-                loDbPar.INO_PERIOD_TO = R_Utility.R_GetStreamingContext<Int32>(ContextConstantGSM00700.INO_PERIOD_TO);
+                loDbPar.CCASH_FLOW_GROUP = poParamDto.CCASH_FLOW_GROUP;
+                loDbPar.CCASH_FLOW_CODE = poParamDto.CCASH_FLOW_CODE;
+                loDbPar.CYEAR = poParamDto.CYEAR;
+                loDbPar.CCURRENCY_CODE = poParamDto.CCURRENCY_CODE;
+                loDbPar.CCURRENCY_RATE = poParamDto.CCURRENCY_RATE;
+                loDbPar.INO_PERIOD_FROM = poParamDto.INO_PERIOD_FROM;
+                loDbPar.INO_PERIOD_TO = poParamDto.INO_PERIOD_TO;
 
                 loCls = new GSM00720Cls();
                 loResult = loCls.UpdateLocalAmount(loDbPar);
@@ -257,7 +258,7 @@ namespace GSM00700Service
 
         [HttpPost]
 
-            public GSM00710TemplateCashFlowUserInterface GetTemplate()
+        public GSM00710TemplateCashFlowUserInterface GetTemplate()
         {
             var loEx = new R_Exception();
             var loRtn = new GSM00710TemplateCashFlowUserInterface();
@@ -287,36 +288,36 @@ namespace GSM00700Service
 
         }
 
-            [HttpPost]
+        [HttpPost]
 
-            public GSM00720TemplateCashFlowPlan GetTemplate720()
+        public GSM00720TemplateCashFlowPlan GetTemplate720()
+        {
+            var loEx = new R_Exception();
+            var loRtn = new GSM00720TemplateCashFlowPlan();
+
+            try
             {
-                var loEx = new R_Exception();
-                var loRtn = new GSM00720TemplateCashFlowPlan();
+                Assembly loAsm = Assembly.Load("BIMASAKTI_GS_API");
+                var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Plan.xlsx";
 
-                try
+                using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
                 {
-                    Assembly loAsm = Assembly.Load("BIMASAKTI_GS_API");
-                    var lcResourceFile = "BIMASAKTI_GS_API.Template.Cash Flow Plan.xlsx";
+                    var ms = new MemoryStream();
+                    resFilestream.CopyTo(ms);
+                    var bytes = ms.ToArray();
 
-                    using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
-                    {
-                        var ms = new MemoryStream();
-                        resFilestream.CopyTo(ms);
-                        var bytes = ms.ToArray();
-
-                        loRtn.FileBytes = bytes;
-                    }
+                    loRtn.FileBytes = bytes;
                 }
-                catch (Exception ex)
-                {
-                    loEx.Add(ex);
-                }
-
-                loEx.ThrowExceptionIfErrors();
-
-                return loRtn;
-
             }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
+
+        }
     }
 }

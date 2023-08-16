@@ -4,8 +4,20 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>BIMASAKTI_LM_API</RootNamespace>
+		<AssemblyName>BIMASAKTI_LM_API</AssemblyName>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<None Remove="Template\Salesman.xlsx" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Template\Salesman.xlsx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		  
+	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Realta.BackCollectionNuGet" Version="1.0.0" />
 		<PackageReference Include="Realta.CommonCollectionNuGet" Version="1.0.0" />

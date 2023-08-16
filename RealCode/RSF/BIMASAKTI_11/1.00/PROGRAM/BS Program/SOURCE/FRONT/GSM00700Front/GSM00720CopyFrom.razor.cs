@@ -31,9 +31,8 @@ namespace GSM00700Front
                 _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
                 _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
                 _GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
-                
-
-                _GSM00720ViewModel.GetYearForCopyFrom();
+              await  _GSM00720ViewModel.GetYearForCopyFrom();
+                  
 
             }
             catch (Exception ex)
@@ -72,6 +71,12 @@ namespace GSM00700Front
 
         private Task R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
         {
+            if (eventArgs.Result == null)
+            {
+                return Task.CompletedTask;
+            }
+
+
             var loData = (GSL01500DTO)eventArgs.Result;
             _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
             _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;
@@ -88,10 +93,10 @@ namespace GSM00700Front
             try
             {
                 var loData = _GSM00720ViewModel.RadioButtonCopyFrom;
-                if (_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG == "00")
+                if (_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG == "01")
                 {
                     CashFlow.Enabled = true;
-                   
+
 
                 }
 
@@ -118,11 +123,11 @@ namespace GSM00700Front
             {
 
                 _GSM00720ViewModel.CFromCashFlowFlag = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
-              _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
+                _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
 
 
                 await _GSM00720ViewModel.CopyFrom();
-                await this.Close(true, loData);
+                //await this.Close(true, loData);
             }
             catch (Exception ex)
             {

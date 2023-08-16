@@ -32,7 +32,7 @@ namespace GSM00700Front
                 _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyBaseAmountEntity.CCASH_FLOW_NAME;
                 _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyBaseAmountEntity.CYEAR;
 
-                await _gridRef00710.R_RefreshGrid(null);
+                //await _gridRef00710.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {
@@ -91,7 +91,6 @@ namespace GSM00700Front
 
 
                 await _GSM00720ViewModel.BaseAmount();
-                await this.Close(true, loData);
             }
             catch (Exception ex)
             {
@@ -99,10 +98,7 @@ namespace GSM00700Front
             }
 
             loEx.ThrowExceptionIfErrors();
-
-
-
-            await this.Close(true, loData);
+            await this.Close(true, false);
         }
 
 

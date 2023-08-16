@@ -21,7 +21,7 @@ namespace GSM05500Model
         private GSM05520Model _GSM05520Model = new GSM05520Model();
 
         public ObservableCollection<GSM05520DTO> loGridList = new ObservableCollection<GSM05520DTO>();
-        public ObservableCollection<GSM05520DTOGetRateType> loGridListRate = new ObservableCollection<GSM05520DTOGetRateType>();
+        public ObservableCollection<GSM05520DTOGetRateType>loGridListRate = new ObservableCollection<GSM05520DTOGetRateType>();
         public GSM05520DTOLocalBaseCurrency loGridListLc = new GSM05520DTOLocalBaseCurrency();
 
         public GSM05520DTO loEntity = new GSM05520DTO();
@@ -29,7 +29,7 @@ namespace GSM05500Model
 
         public List<GSM05520DTOGetRateType> loRateType { get; set; } = new List<GSM05520DTOGetRateType>();
         public string RateTypeCode = "";
-        public string CrateDate = DateTime.MinValue.ToString("yyyymmdd");
+        public string CrateDate = DateTime.Now.ToString("yyyyMMdd");
         public string CurrencyCode = "";
         public string CreateCode = "";
 

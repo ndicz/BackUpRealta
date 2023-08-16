@@ -33,11 +33,11 @@ namespace GSM00700Model
 
 
         public List<GSM00720YearDTO> YearComboBox { get; set; } = new List<GSM00720YearDTO>();
-   
+
         public List<GSM00720CopyFromYearDTO> RadioButtonCopyFrom { get; set; } = new List<GSM00720CopyFromYearDTO>()
         {
-            new GSM00720CopyFromYearDTO() { Code = "01", Desc = "Same"},
-            new GSM00720CopyFromYearDTO() {  Code = "00", Desc = "Other" }
+            new GSM00720CopyFromYearDTO() { Code = "00", Desc = "Same"},
+            new GSM00720CopyFromYearDTO() {  Code = "01", Desc = "Other" }
         };
 
         public List<GSM00720CopyBaseLocalAmountDTO> YearDropDown { get; set; } = new List<GSM00720CopyBaseLocalAmountDTO>()
@@ -105,7 +105,7 @@ namespace GSM00700Model
                 var loReturn = await _GSM00720Model.GetCashFlowPlanAsync();
                 loGridList = new ObservableCollection<GSM00720DTO>(loReturn.Data);
             }
-            catch (Exception ex)    
+            catch (Exception ex)
             {
                 loEx.Add(ex);
             }
@@ -151,12 +151,13 @@ namespace GSM00700Model
 
             try
             {
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG, loCopyFromEntity.CFROM_CASH_FLOW_FLAG);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_CASH_FLOW_CODE, loCopyFromEntity.CFROM_CASH_FLOW_CODE);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CFROM_YEAR, loCopyFromEntity.CFROM_YEAR);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_CASH_FLOW_CODE, CashFlowPlanCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CTO_YEAR, Year);
-                var loReturn = await _GSM00720Model.GetCopyFromYearListAsync();
+                var poParam = new GSM00700ParameterDTO();
+                poParam.CFROM_CASH_FOW_FLAG = loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
+                poParam.CFROM_CASH_FLOW_CODE = loCopyFromEntity.CFROM_CASH_FLOW_CODE;
+                poParam.CFROM_YEAR = loCopyFromEntity.CFROM_YEAR;
+                poParam.CTO_CASH_FLOW_CODE = CashFlowPlanCode;
+                poParam.CTO_YEAR = Year;
+                var loReturn = await _GSM00720Model.GetCopyFromYearListAsync(poParam);
 
                 loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
             }
@@ -174,14 +175,15 @@ namespace GSM00700Model
             var loEx = new R_Exception();
             try
             {
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_GROUP, CashFlowGroupCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, CashFlowPlanCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_CODE, CurrencyCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_RATE, CurrencyRate);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_FROM, loCopyBaseAmountEntity.INO_PERIOD_FROM);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, loCopyBaseAmountEntity.INO_PERIOD_TO);
-                var loReturn = await _GSM00720Model.GetCopyLocalAmountListAsync();
+                var poParam = new GSM00700ParameterDTO();
+                poParam.CCASH_FLOW_GROUP = CashFlowGroupCode;
+                poParam.CCASH_FLOW_CODE = CashFlowPlanCode;
+                poParam.CYEAR = Year;
+                poParam.CCURRENCY_CODE = CurrencyCode;
+                poParam.CCURRENCY_RATE = CurrencyRate;
+                poParam.INO_PERIOD_FROM = loCopyBaseAmountEntity.INO_PERIOD_FROM;
+                poParam.INO_PERIOD_TO = loCopyBaseAmountEntity.INO_PERIOD_TO;
+                var loReturn = await _GSM00720Model.GetCopyLocalAmountListAsync(poParam);
 
                 loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>(loReturn.Data);
             }
@@ -197,14 +199,15 @@ namespace GSM00700Model
             var loEx = new R_Exception();
             try
             {
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_GROUP, CashFlowGroupCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, CashFlowPlanCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_CODE, CurrencyCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCURRENCY_RATE, CurrencyRate);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_FROM, loCopyBaseAmountEntity.INO_PERIOD_FROM);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.INO_PERIOD_TO, loCopyBaseAmountEntity.INO_PERIOD_TO);
-                var loReturn = await _GSM00720Model.GetCopyBaseAmountListAsync();
+                var poParam = new GSM00700ParameterDTO();
+                poParam.CCASH_FLOW_GROUP = CashFlowGroupCode;
+                poParam.CCASH_FLOW_CODE = CashFlowPlanCode;
+                poParam.CYEAR = Year;
+                poParam.CCURRENCY_CODE = CurrencyCode;
+                poParam.CCURRENCY_RATE = CurrencyRate;
+                poParam.INO_PERIOD_FROM = loCopyBaseAmountEntity.INO_PERIOD_FROM;
+                poParam.INO_PERIOD_TO = loCopyBaseAmountEntity.INO_PERIOD_TO;
+                var loReturn = await _GSM00720Model.GetCopyBaseAmountListAsync(poParam);
 
                 loCopyBaseAmountList = new ObservableCollection<GSM00720CopyBaseLocalAmountDTO>(loReturn.Data);
             }
@@ -221,8 +224,8 @@ namespace GSM00700Model
 
             try
             {
-               loCurrency = await _GSM00720Model.GetCurrencyListAsync();
-                
+                loCurrency = await _GSM00720Model.GetCurrencyListAsync();
+
             }
             catch (Exception ex)
             {

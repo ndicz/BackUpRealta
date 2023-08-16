@@ -115,7 +115,7 @@ namespace GSM05500Back
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
-                loReturn = R_Utility.R_ConvertTo<GSM05520DTO>(loReturnTemp).ToList();
+                loReturn = R_Utility.R_ConvertTo<GSM05520DTO>(loReturnTemp).ToList();   
             }
             catch (Exception ex)
             {

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BlazorClientHelper;
 using LMM02000Common.DTO;
 using LMM02000Model;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using R_BlazorFrontEnd;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
@@ -26,7 +27,7 @@ namespace LMM02000Front
         private R_AddButton R_AddBtn;
         private R_Button R_ActiveInActiveBtn;
         private R_Grid<LMM02000DTO> _gridRef;
-    
+        [Inject] private IClientHelper ClientHelper { get; set; }
 
 
         protected override async Task R_Init_From_Master(object poParameter)
@@ -130,9 +131,10 @@ namespace LMM02000Front
         private async Task OnChanged(object poParam)
         {
             var loEx = new R_Exception();
-
+            string lsProperty = (string)poParam;
             try
             {
+                _viewModel.propertyValue = lsProperty;
                 await _gridRef.R_RefreshGrid(null);
             }
             catch (Exception ex)
@@ -154,7 +156,7 @@ namespace LMM02000Front
                 await _viewModel.GetGenderList();
                 await _viewModel.GetSalesmanType();
                 eventArgs.ListEntityResult = _viewModel.loGridList;
-                await _gridRef.AutoFitAllColumnsAsync();
+                //await _gridRef.AutoFitAllColumnsAsync();
             }
             catch (Exception ex)
             {
@@ -214,6 +216,30 @@ namespace LMM02000Front
             {
                 var loParam = (LMM02000DTO)eventArgs.Data;
                 await _viewModel.Delete(loParam);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+        [Inject] private IJSRuntime JS { get; set; }
+        private async Task DownloadTemplate()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?", R_eMessageBoxButtonType.YesNo);
+
+                if (loValidate == R_eMessageBoxResult.Yes)
+                {
+                    var loByteFile = await _viewModel.DownloadTemplate();
+                    var saveFileName = $"Salesman-{ClientHelper.CompanyId}.xlsx";
+
+                    await JS.downloadFileFromStreamHandler(saveFileName, loByteFile.FileBytes);
+                }
             }
             catch (Exception ex)
             {

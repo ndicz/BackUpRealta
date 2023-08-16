@@ -169,7 +169,31 @@ namespace LMM02000Model.Model
             loEx.ThrowExceptionIfErrors();
 
         }
-    
+
+        public async Task<LMM02000Template> GetTemplateAsync()
+        {
+            var loEx = new R_Exception();
+            LMM02000Template loResult = new LMM02000Template();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<LMM02000Template>(
+                    _RequestServiceEndPoint,
+                    nameof(ILMM02000.GetTemplate),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
 
 
 
@@ -178,9 +202,7 @@ namespace LMM02000Model.Model
 
 
 
-
-
-    public IAsyncEnumerable<LMM02000DTO> GetAllLMM02000Stream()
+        public IAsyncEnumerable<LMM02000DTO> GetAllLMM02000Stream()
         {
             throw new NotImplementedException();
         }
@@ -211,6 +233,11 @@ namespace LMM02000Model.Model
         }
 
         public LMM02000ActiveInactiveDTO GetActiveInactive()
+        {
+            throw new NotImplementedException();
+        }
+
+        public LMM02000Template GetTemplate()
         {
             throw new NotImplementedException();
         }

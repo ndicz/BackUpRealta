@@ -11,17 +11,17 @@
             DataSource="GSM00700ViewModel.loGridList"
             Pageable="true"
             Width="100%"
+            Height="500px"
             R_ConductorGridSource="@_conGridGSM00700Ref"
             R_GridType="@R_eGridType.Original"
             AllowAddNewRow="true"
             AllowEditRow="true"
             AllowDeleteRow="true"
-
             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlowGroup">
         <R_GridColumns>
 
             <R_GridTextColumn Width="201px" FieldName="CCASH_FLOW_GROUP_CODE" HeaderText="Cash Flow Group Code" R_EnableAdd></R_GridTextColumn>
-            <R_GridTextColumn Width="207px" FieldName="CCASH_FLOW_GROUP_NAME" HeaderText="Cash Flow Group Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridTextColumn Width="230px" FieldName="CCASH_FLOW_GROUP_NAME" HeaderText="Cash Flow Group Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
 
             <R_GridDropDownListColumn Width="210px" Data="@GSM00700ViewModel.loCashFlowGroupType"
@@ -57,6 +57,6 @@
                  @* R_AfterDelete="@Grid_AfterDelete" *@
                  R_AfterAdd="AfterAdd"
                  R_IsHeader="true" />
-                 
-                 
+
+
 <R_PredefinedDock R_InstantiateDock="BeforeOpenTabCashFlow" Title="Cash Flow"></R_PredefinedDock>

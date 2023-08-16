@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BlazorClientHelper;
 using GSM00700Common.DTO.Upload_DTO;
+using GSM00700Common.DTO.Upload_DTO_GSM00720;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
@@ -49,11 +50,11 @@ namespace GSM00700Front
             try
             {
                 var param = (GSM00700DTO)poParameter;
+                await GSM00720ViewModel.InitialProcess();
                 GSM00710ViewModel.CashFlowGroupCode = param.CCASH_FLOW_GROUP_CODE;
                 GSM00710ViewModel.CashFlowGroupName = param.CCASH_FLOW_GROUP_NAME;
                 await GSM00710ViewModel.GetCashFlowList();
                 await GSM00710ViewModel.GetCashFlowTypeList();
-                await GSM00720ViewModel.InitialProcess();
                 //await _gridRef00710.AutoFitAllColumnsAsync();
 
                 await _gridRef00710.R_RefreshGrid(null);
@@ -211,6 +212,8 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        public R_Popup BaseAmount { get; set; }
+        public R_Popup LocalAmount { get; set; }
         private async Task ChangeTab(R_TabStripTab arg)
         {
             var loEx = new R_Exception();
@@ -232,7 +235,7 @@ namespace GSM00700Front
 
                     if (GSM00720InitialProsesDTO.NUM == 0)
                     {
-                        BaseAmount.Enabled = false;
+                        BaseAmount.Enabled = true;
                     
                     }
                     else
@@ -241,9 +244,9 @@ namespace GSM00700Front
                    
                     }
 
-                    if (GSM00720InitialProsesDTO.NUM ==0)
+                    if (GSM00720InitialProsesDTO.NUM == 0)
                     {
-                        LocalAmount.Enabled = false;
+                        LocalAmount.Enabled = true;
                     }
                     else
                     {
@@ -265,8 +268,6 @@ namespace GSM00700Front
 
         #region POPUP
         [Inject] public R_PopupService PopupService { get; set; }
-        public R_Popup BaseAmount { get; set; }
-        public R_Popup LocalAmount { get; set; }
 
         private void R_BeforeLocalMount(R_BeforeOpenPopupEventArgs eventArgs)
         {
@@ -323,9 +324,10 @@ namespace GSM00700Front
             R_Exception loException = new R_Exception();
             try
             {
+                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
                 await _gridRef00720.R_RefreshGrid(null);
                 //await _gridRef00710.R_RefreshGrid(null);
-                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
+
             }
             catch (Exception ex)
             {
@@ -346,6 +348,7 @@ namespace GSM00700Front
                 CTO_YEAR = GSM00720ViewModel.Year,
                 CashFlowName = GSM00720ViewModel.CashFlowPlanName,
                 CFROM_CASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
+             
             };
             eventArgs.Parameter = param;
 
@@ -379,6 +382,22 @@ namespace GSM00700Front
 
             };
             evenaArgs.Parameter = param;
+        }
+
+        private void R_BeforeOpenUpload720(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+            eventArgs.TargetPageType = typeof(GSM00720Upload);
+            var param = new GSM00720UploadCashFlowPlanDTO
+            {
+                CCASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
+                CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
+                CCASHFLOW_GROUP_CODE = GSM00710ViewModel.CashFlowGroupCode,
+                CCASHFLOW_GROUP_NAME = GSM00710ViewModel.CashFlowGroupName,
+
+                CCYEAR = GSM00720ViewModel.Year,
+                //CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
+            };
+            eventArgs.Parameter = param;
         }
 
         private async Task R_AfterOpenUpload(R_AfterOpenPopupEventArgs eventArgs)

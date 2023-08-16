@@ -12,6 +12,7 @@ using R_CommonFrontBackAPI;
 using R_BackEnd;
 using R_Common;
 using System.Data.Common;
+using System.Reflection;
 
 namespace LMM02000Services
 {
@@ -291,6 +292,35 @@ namespace LMM02000Services
 
             return loRtn;
 
+        }
+        [HttpPost]
+        public LMM02000Template GetTemplate()
+        {
+            var loEx = new R_Exception();
+            var loRtn = new LMM02000Template();
+
+            try
+            {
+                Assembly loAsm = Assembly.Load("BIMASAKTI_LM_API");
+                var lcResourceFile = "BIMASAKTI_LM_API.Template.Salesman.xlsx";
+
+                using (Stream resFilestream = loAsm.GetManifestResourceStream(lcResourceFile))
+                {
+                    var ms = new MemoryStream();
+                    resFilestream.CopyTo(ms);
+                    var bytes = ms.ToArray();
+
+                    loRtn.FileBytes = bytes;
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
         }
 
 

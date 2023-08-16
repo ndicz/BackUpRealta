@@ -71,16 +71,16 @@ namespace GSM00700Model.Model
             return loResult;
         }
 
-        public async Task<GSM00720CopyFromYearListDTO> GetCopyFromYearListAsync()
+        public async Task<GSM00720CopyFromYearListDTO> GetCopyFromYearListAsync(GSM00700ParameterDTO poParamDto)
         {
             var loEx = new R_Exception();
             GSM00720CopyFromYearListDTO loResult = null;
             try
             {
                 R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyFromYearListDTO>(
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyFromYearListDTO, GSM00700ParameterDTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetCopyFromYearList), DEFAULT_MODULE,
+                    nameof(IGSM00720.GetCopyFromYearList), poParamDto, DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
             }
@@ -94,16 +94,17 @@ namespace GSM00700Model.Model
             return loResult;
         }
 
-        public async Task<GSM00720CopyBaseAmountListDTO> GetCopyBaseAmountListAsync()
+        public async Task<GSM00720CopyBaseAmountListDTO> GetCopyBaseAmountListAsync(GSM00700ParameterDTO poParamDto)
         {
             var loEx = new R_Exception();
             GSM00720CopyBaseAmountListDTO loResult = null;
             try
             {
                 R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyBaseAmountListDTO>(
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyBaseAmountListDTO, GSM00700ParameterDTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetCopyBaseAmountList), DEFAULT_MODULE,
+                    nameof(IGSM00720.GetCopyBaseAmountList), poParamDto,
+                    DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
             }
@@ -117,16 +118,16 @@ namespace GSM00700Model.Model
             return loResult;
         }
 
-        public async Task<GSM00720CopyLocalAmountListDTO> GetCopyLocalAmountListAsync()
+        public async Task<GSM00720CopyLocalAmountListDTO> GetCopyLocalAmountListAsync(GSM00700ParameterDTO poParamDto)
         {
             var loEx = new R_Exception();
             GSM00720CopyLocalAmountListDTO loResult = null;
             try
             {
                 R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyLocalAmountListDTO>(
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720CopyLocalAmountListDTO, GSM00700ParameterDTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetCopyLocalAmountList), DEFAULT_MODULE,
+                    nameof(IGSM00720.GetCopyLocalAmountList),poParamDto, DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
             }
@@ -190,27 +191,27 @@ namespace GSM00700Model.Model
 
         public async Task<GSM00710TemplateCashFlowUserInterface> TemplateGSM00710CashFlowPlan()
         {
-            var loEx = new R_Exception();
-            GSM00710TemplateCashFlowUserInterface loResult = new GSM00710TemplateCashFlowUserInterface();
+                var loEx = new R_Exception();
+                GSM00710TemplateCashFlowUserInterface loResult = new GSM00710TemplateCashFlowUserInterface();
 
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00710TemplateCashFlowUserInterface>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetTemplate),
-                    DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+                try
+                {
+                    R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                    loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00710TemplateCashFlowUserInterface>(
+                        _RequestServiceEndPoint,
+                        nameof(IGSM00720.GetTemplate),
+                        DEFAULT_MODULE,
+                        _SendWithContext,
+                        _SendWithToken);
+                }
+                catch (Exception ex)
+                {
+                    loEx.Add(ex);
+                }
 
-            loEx.ThrowExceptionIfErrors();
+                loEx.ThrowExceptionIfErrors();
 
-            return loResult;
+                return loResult;
         }
 
         public async Task<GSM00720TemplateCashFlowPlan> TemplatCashFlowInterface()
@@ -247,20 +248,21 @@ namespace GSM00700Model.Model
             throw new NotImplementedException();
         }
 
-        public GSM00720CopyFromYearListDTO GetCopyFromYearList()
+        public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
             throw new NotImplementedException();
         }
 
-        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList()
+        public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParamDto)
         {
             throw new NotImplementedException();
         }
 
-        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList()
+        public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto)
         {
             throw new NotImplementedException();
         }
+
 
         public GSM00720CurrencyDTO GetCurrencyList()
         {

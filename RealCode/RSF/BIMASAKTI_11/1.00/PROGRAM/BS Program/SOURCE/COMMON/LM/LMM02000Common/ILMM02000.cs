@@ -21,5 +21,7 @@ namespace LMM02000Common
         LMM02000ListSalesmanTypeDTO GetSalesmanType();
 
         LMM02000ActiveInactiveDTO GetActiveInactive();
+
+        LMM02000Template GetTemplate();
     }
 }

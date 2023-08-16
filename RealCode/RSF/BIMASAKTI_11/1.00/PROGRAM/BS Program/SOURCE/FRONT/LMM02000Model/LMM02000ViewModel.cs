@@ -190,5 +190,24 @@ namespace LMM02000Model
             }
             loEx.ThrowExceptionIfErrors();
         }
+
+        public async Task<LMM02000Template> DownloadTemplate()
+        {
+            var loEx = new R_Exception();
+            LMM02000Template loResult = null;
+
+            try
+            {
+                loResult = await _LMM02000Model.GetTemplateAsync();
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
     }
 }

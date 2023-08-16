@@ -25,8 +25,36 @@
       "PackagePath": "staticwebassets\\assets\\img\\avatar.png"
     },
     {
-      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\building.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\building.jpg"
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\bag.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bag.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\bg-home.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-home.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\bg-illustration.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-illustration.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\bg-theme-dark.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-theme-dark.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\bg-theme.png",
+      "PackagePath": "staticwebassets\\assets\\img\\bg-theme.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\box.png",
+      "PackagePath": "staticwebassets\\assets\\img\\box.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\logo-bimasakti.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo-bimasakti.png"
+    },
+    {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\program.png",
+      "PackagePath": "staticwebassets\\assets\\img\\program.png"
     },
     {
       "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\css\\all.css",

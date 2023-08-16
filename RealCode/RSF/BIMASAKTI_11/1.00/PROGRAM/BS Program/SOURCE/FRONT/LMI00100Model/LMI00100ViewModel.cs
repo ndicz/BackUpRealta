@@ -27,6 +27,7 @@ namespace LMI00100Model
                 var loResult = await _LMI00100Model.GetAllPropertyAsync();
 
                 PropertyList = loResult.Data;
+                PropertyValue = PropertyList[0].CPROPERTY_ID;
             }
             catch (Exception ex)
             {

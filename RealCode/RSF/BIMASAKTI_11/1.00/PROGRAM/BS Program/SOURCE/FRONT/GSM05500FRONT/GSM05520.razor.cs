@@ -36,12 +36,14 @@ namespace GSM05500Front
             var loEx = new R_Exception();
             try
             {
-                await RateTypeGet(null);
                 await GSM05520ViewModel.GetLcCurrency();
-                await _gridRef5520.R_RefreshGrid(null);
-                await GSM05520ViewModel.GetRateList();
+                await GSM05520ViewModel.GetRateListP();
+
+                await RateTypeGet(null);
                 
-                 
+                await GSM05520ViewModel.GetRateList();
+                await _gridRef5520.R_RefreshGrid(null);
+
             }
             catch (Exception ex)
             {
@@ -123,13 +125,13 @@ namespace GSM05500Front
         private async Task OnChanged(object poParam)
         {
             var loEx = new R_Exception();
-
+            string lsCrated = (string)poParam;
             try
             {
-                GSM05520ViewModel.RateTypeCode = poParam.ToString();
-                await GSM05520ViewModel.GetLcCurrency();
+                GSM05520ViewModel.RateTypeCode = lsCrated;
 
                 await GSM05520ViewModel.GetRateList();
+                //await GSM05520ViewModel.GetLcCurrency();
                 await _gridRef5520.R_RefreshGrid(null);
             }
             catch (Exception ex)
@@ -140,17 +142,21 @@ namespace GSM05500Front
             R_DisplayException(loEx);
         }
 
-        private void OnChangedDate(object poParam)
+        private async Task OnChangedDate(object poParam)
         {
             var loEx = new R_Exception();
-
+            DateTime lsDate = (DateTime)poParam;
             try
             {
+                GSM05520ViewModel.CrateTime = lsDate;
+
+
                 DateTime dateValue = DateTime.Parse(poParam.ToString());
                 string formattedDate = dateValue.ToString("yyyyMMdd");
                 GSM05520ViewModel.CrateDate = formattedDate;
                 GSM05520ViewModel.GetRateList();
-                _gridRef5520.R_RefreshGrid(null);
+
+                await _gridRef5520.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {

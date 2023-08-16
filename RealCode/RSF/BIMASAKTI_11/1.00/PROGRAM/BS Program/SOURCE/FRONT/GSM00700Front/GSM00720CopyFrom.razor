@@ -5,13 +5,13 @@
 
 <R_StackLayout>
     <R_StackLayout Row="true">
-        <R_ItemLayout xs="1">
+        <R_ItemLayout col="2">
             <R_Label Class="fw-bold">From</R_Label>
         </R_ItemLayout>
 
     </R_StackLayout>
     <R_StackLayout Row="true">
-        <R_ItemLayout xs="3">
+        <R_ItemLayout col="1">
             <R_RadioGroup Data="@_GSM00720ViewModel.RadioButtonCopyFrom"
                           @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG"
                           ValueField="@nameof(GSM00720CopyFromYearDTO.Code)"
@@ -27,7 +27,7 @@
 
 
         <R_StackLayout Row="true">
-            <R_ItemLayout xs="2">
+            <R_ItemLayout col="2">
                 <R_TextBox @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE"
                            R_ConductorSource="@_conductorRef"
                            Enabled="false"
@@ -36,7 +36,7 @@
             <R_ItemLayout>
                 <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp" @ref="CashFlow"> </R_Lookup>
             </R_ItemLayout>
-            <R_ItemLayout xs="3">
+            <R_ItemLayout col="5">
                 <R_TextBox @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CashFlowName"
                            R_ConductorSource="@_conductorRef"
                            Enabled="false"/>
@@ -75,7 +75,7 @@
 
     
   
-    <R_ItemLayout xs="1">
+    <R_ItemLayout col="1">
         <R_Label Class="fw-bold">To</R_Label>
     </R_ItemLayout>
 
@@ -92,13 +92,13 @@
                
                            
         </R_ItemLayout>
-        <R_ItemLayout xs="2">
+        <R_ItemLayout col="2">
             <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanCode"
                        R_ConductorSource="@_conductorRef"
                        Enabled="false"/>
         </R_ItemLayout>
 
-        <R_ItemLayout xs="3">
+        <R_ItemLayout col="3">
             <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanName"
                        R_ConductorSource="@_conductorRef"
                        Enabled="false"/>
@@ -117,9 +117,9 @@
 
 
         </R_ItemLayout>
-        <R_ItemLayout xs="3 ">
+        <R_ItemLayout col="4">
             <R_TextBox @bind-Value="@_GSM00720ViewModel.Year"
-                       R_ConductorSource="@_conductorRef" />
+                       R_ConductorSource="@_conductorRef" Enabled="false"/>
         </R_ItemLayout>     
 
       
@@ -127,12 +127,12 @@
     </R_StackLayout>
     
     <R_StackLayout Row Class="justify-content-end">
-        <R_ItemLayout xs="4">
+        <R_ItemLayout col="6">
             <R_Button OnClick="Button_OnClickProcessAsync">
                 Process
             </R_Button>
         </R_ItemLayout>
-        <R_ItemLayout xs="4">   
+        <R_ItemLayout col="4">   
             <R_Button OnClick="Button_OnClickCloseAsync">
                 Cancel
             </R_Button>

@@ -1713,7 +1713,7 @@
             },
             "Telerik.UI.for.Blazor": {
               "target": "Package",
-              "version": "[4.0.1, )"
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

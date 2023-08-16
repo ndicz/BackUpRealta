@@ -1,0 +1,134 @@
+@page "/GSM00720Upload"
+@using GSM00700Common.DTO
+@using GSM00700Model
+@using R_BlazorFrontEnd.Controls.Events
+@inherits R_Page
+@attribute [R_Page(Title = "Upload")]
+
+<R_StackLayout Style="width: 1000px">
+
+    <R_StackLayout Row="true">
+
+        <R_ItemLayout xs="2">
+            <R_Label>Source File </R_Label>
+        </R_ItemLayout>
+
+        <R_InputFile OnChange="OnChangeInputFile" Accepts="@accepts"></R_InputFile>
+    </R_StackLayout>
+
+
+
+    <R_StackLayout Row="true">
+        <R_ItemLayout xs="2">
+            <R_Label>Cash Flow Group</R_Label>
+        </R_ItemLayout>
+        <R_ItemLayout xs="2">
+            <R_TextBox @bind-value="_ViewModelUpload.CashFlowPlanGroupCode"
+                       R_ConductorSource="@R_conduct" Enabled="false" />
+        </R_ItemLayout>
+        <R_ItemLayout xs="3">
+            <R_TextBox @bind-value="_ViewModelUpload.CashFlowPlanGroupName"
+                       R_ConductorSource="@R_conduct" Enabled="false" />
+        </R_ItemLayout>
+    </R_StackLayout>
+    </R_StackLayout>
+    
+<R_StackLayout Row="true">
+    <R_ItemLayout xs="2">
+        <R_Label>Cash Flow</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_ViewModelUpload.CashFlowPlanCode"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+    <R_ItemLayout xs="3">
+        <R_TextBox @bind-value="_ViewModelUpload.CashFlowPlanName"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+</R_StackLayout>
+
+    <R_StackLayout Row="true">
+
+    <R_ItemLayout xs="2">
+        <R_Label>Year</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout xs="2">
+        <R_TextBox @bind-value="_ViewModelUpload.CashFlowPlanYear"
+                   R_ConductorSource="@R_conduct" Enabled="false" />
+    </R_ItemLayout>
+    </R_StackLayout>
+
+
+    <R_StackLayout Row="true">
+
+        <R_Grid @ref="@_ConGriedRef"
+                DataSource="_ViewModelUpload.loUploadCashFlowPlanDisplayList"
+                Pageable="true"
+                R_ConductorGridSource="@R_ConductorGrid"
+                R_GridType="@R_eGridType.Batch"
+                AllowAddNewRow="true"
+                R_RowRender="@((R_GridRowRenderEventArgs args) => R_RowRender(args))"
+                Width="100%"
+                Height="100%"
+                AllowEditRow="true"
+                AllowDeleteRow="true"
+                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
+            <R_GridColumns>
+
+                <R_GridTextColumn Width="100px" FieldName="CPERIOD_NO" HeaderText="Period No" />
+                <R_GridTextColumn Width="150px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableAdd></R_GridTextColumn>
+                <R_GridTextColumn Width="250px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                <R_GridTextColumn Width="150px" FieldName="CNOTES" HeaderText="Notes" />
+
+
+            </R_GridColumns>
+        </R_Grid>
+    </R_StackLayout>
+    <R_StackLayout Row="true" hidden="@_ViewModelUpload.VisibleError">
+        <R_StackLayout Class="col-8">
+            <R_StackLayout Row>
+                <R_ItemLayout>
+                    <R_Label>
+                        Note:Red color indicate the record already exist in master Floor
+                    </R_Label>
+                </R_ItemLayout>
+            </R_StackLayout>
+            <R_StackLayout Row>
+                <R_ItemLayout>
+                    <R_CheckBox @bind-Value="@_ViewModelUpload.IsOverWrite"></R_CheckBox>
+                    <R_Label>
+                        Overwrite existing record
+                    </R_Label>
+                </R_ItemLayout>
+            </R_StackLayout>
+        </R_StackLayout>
+
+        <R_ItemLayout Class="col-2">
+            <R_Button R_ConductorGridSource="@R_ConductorGrid" R_EnableOther OnClick="OnCancel">Cancel</R_Button>
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-2">
+            <R_Button R_ConductorGridSource="@R_ConductorGrid" R_EnableOther OnClick="OnProcess" Enabled="@IsFileExist">Process</R_Button>
+            </R_ItemLayout>
+
+            </R_StackLayout>
+
+            <R_StackLayout Row hidden="@(!_ViewModelUpload.VisibleError)">
+        <R_StackLayout Class="col-8">
+        </R_StackLayout>
+        <R_ItemLayout Class="col-2">
+            <R_Button R_ConductorGridSource="@R_ConductorGrid" R_EnableOther OnClick="OnCancel">Cancel</R_Button>
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-2">
+            <R_Button R_ConductorGridSource="@R_ConductorGrid" R_EnableOther OnClick="OnSaveToExcel">Save to Excel</R_Button>
+            </R_ItemLayout>
+            </R_StackLayout>
+
+
+            <R_ConductorGrid @ref="@R_ConductorGrid"
+                     R_ViewModel="@_ViewModelUpload"
+                          R_IsHeader
+                     R_BeforeSaveBatch="@R_BeforeSaveBatch"
+                     R_ServiceSaveBatch="@R_ServiceSaveBatch"
+                     R_AfterSaveBatch="@R_AfterSaveBatch">
+    </R_ConductorGrid>
+  

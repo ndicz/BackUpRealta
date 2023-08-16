@@ -82,9 +82,11 @@ namespace LMI00100Front
         private async Task OnChanged(object poParam)
         {
             var loEx = new R_Exception();
+            string lsProperty = (string)poParam;
 
             try
             {
+                _viewModel.PropertyValue = lsProperty;
                 await _gridRef00100.R_RefreshGrid(null);
             }
             catch (Exception ex)

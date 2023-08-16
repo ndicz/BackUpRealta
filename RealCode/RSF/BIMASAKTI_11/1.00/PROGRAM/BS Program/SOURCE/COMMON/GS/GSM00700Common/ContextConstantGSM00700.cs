@@ -19,14 +19,18 @@ namespace GSM00700Common
 
         public const string CCASH_FLOW_GROUP = "CCASH_FLOW_GROUP";
         public const string CCURRENCY_CODE = "CCURRENCY_CODE";
-        public const string CCURRENCY_RATE  = "CCURRENCY_RATE";
+        public const string CCURRENCY_RATE = "CCURRENCY_RATE";
         public const string INO_PERIOD_FROM = "INO_PERIOD_FROM";
         public const string INO_PERIOD_TO = "INO_PERIOD_TO";
 
 
         public const string IS_OVERWRITE_CONTEXT = "IS_OVERWRITE_CONTEXT";
         public const string UPLOAD_CASHFLOW_STREAMING_CONTEXT = "UPLOAD_CASHFLOW_STREAMING_CONTEXT";
-       public const string UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT = "UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT";
+        public const string UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT = "UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT";
+
+        public const string UPLOAD_CashFlowPlan_STREAMING_CONTEXT = "UPLOAD_CashFlowPlan_STREAMING_CONTEXT";
+        public const string UPLOAD_CashFlowPlan_CHECK_IS_CashFlowPlan_USED_CONTEXT =
+            "UPLOAD_CashFlowPlan_CHECK_IS_CashFlowPlan_USED_CONTEXT";
 
 
     }

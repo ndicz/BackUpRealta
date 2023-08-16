@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oPkPhAX6pGAoo1zrs0ntsoLnehoI03LTu46Xjd5f4l4=",
+  "Hash": "UEHpBnWzk+R1ldckOc9scyenA3fsdtPa683ANgRC4/g=",
   "Source": "BlazorMenu",
   "BasePath": "/",
   "Mode": "Root",
@@ -2661,6 +2661,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\LIBRARY\\Front\\R_BlazorFrontEnd.FileConverter.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\R_BlazorFrontEnd.Report.dll",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/R_BlazorFrontEnd.Report.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\LIBRARY\\Front\\R_BlazorFrontEnd.Report.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\R_BlazorStartup.dll",
@@ -8101,6 +8118,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\IgmcxW6W.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/R_BlazorFrontEnd.Report.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\R_BlazorFrontEnd.Report.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\R_BlazorFrontEnd.Report.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\iJYomZSt.gz",

@@ -235,8 +235,8 @@ namespace GSM00700Front
 
             try
             {
-                await this.Close(true, false);
-
+                 await this.Close(true, true);
+              
             }
             catch (Exception ex)
             {

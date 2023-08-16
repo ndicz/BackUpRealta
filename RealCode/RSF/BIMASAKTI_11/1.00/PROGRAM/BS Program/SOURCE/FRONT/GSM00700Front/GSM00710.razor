@@ -27,11 +27,11 @@
             <R_Grid @ref="@_gridRef00710"
                     DataSource="GSM00710ViewModel.loGridList"
                     Pageable="true"
-                    PageSize="6"
+                    Height="450px"
+                    Width="100%"
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
-                    Width="100%"
                     AllowEditRow="true"
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
@@ -41,11 +41,11 @@
                     <R_GridTextColumn Width="150px" FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
                     <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
-                    <R_GridDropDownListColumn Width="150px" Data="@GSM00710ViewModel.loCashFlowType"
+                    <R_GridDropDownListColumn Width="160px" Data="@GSM00710ViewModel.loCashFlowType"
                                               FieldName="@nameof(GSM00710DTO.CCASH_FLOW_TYPE)"
                                               ValueField="@nameof(GSM00710CashFlowTypeDTO.CCODE)"
                                               TextField="@nameof(GSM00710CashFlowTypeDTO.CDESCRIPTION)"
-                                              HeaderText="Cash Flow Group Type" R_EnableAdd R_EnableEdit />
+                                              HeaderText="Cash Flow Type" R_EnableAdd R_EnableEdit />
                     <R_GridTextColumn Width="150px" FieldName="CUPDATE_BY" HeaderText="Update By" />
                     <R_GridTextColumn Width="150px" FieldName="DUPDATE_DATE" HeaderText="Update Date" />
                     <R_GridTextColumn Width="150px" FieldName="CCREATE_BY" HeaderText="Created By" />
@@ -104,7 +104,7 @@
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"
                                R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
-                <R_ItemLayout Class="col-3">
+                <R_ItemLayout Class="col-2">
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanName"
                                R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
@@ -118,7 +118,7 @@
                 <R_Grid @ref="@_gridRef00720Year"
                         DataSource="@GSM00720ViewModel.loYearList"
                         Pageable="true"
-                        PageSize="6"
+                        Height="390px"
                         Width="100%"
                         R_ConductorGridSource="@_conGridGSM00720Ref"
                         R_GridType="@R_eGridType.Original"
@@ -130,7 +130,7 @@
 
                 </R_Grid>
                 <R_StackLayout Row="true" Class="col-4">
-                  
+
 
                 </R_StackLayout>
             </R_StackLayout>
@@ -145,8 +145,9 @@
                         Pageable="true"
                         R_ConductorSource="@R_conduct"
                         R_GridType="@R_eGridType.Original"
-                        PageSize="6"
                         Width="745px"
+                        Height="380px"
+                        PageSize="12"
                         R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                     <R_GridColumns>
@@ -183,9 +184,9 @@
                 </R_StackLayout>
 
                 <R_StackLayout Row="true">
-                 
-                  
-                   
+
+
+
                 </R_StackLayout>
 
 
@@ -199,24 +200,26 @@
         </R_StackLayout>
         <R_StackLayout Row="true">
 
-            <R_ItemLayout col="2">
+            <R_ItemLayout>
                 <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate720">Template</R_Button>
             </R_ItemLayout>
-
-            <R_ItemLayout col="2">
+            <R_ItemLayout>
+                <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload720">Upload</R_Popup>
+            </R_ItemLayout>
+            <R_ItemLayout>
                 <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">Copy From Year</R_Popup>
             </R_ItemLayout>
 
-            <R_ItemLayout col="3">
+            <R_ItemLayout>
                 <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount" @ref="BaseAmount">Update Base Amount</R_Popup>
             </R_ItemLayout>
 
-            <R_ItemLayout col="3">
+            <R_ItemLayout>
                 <R_Popup R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount" @ref="LocalAmount">Update Local Amount </R_Popup>
             </R_ItemLayout>
 
         </R_StackLayout>
-          
+
 
         <R_ConductorGrid @ref="@_conGridGSM00720Ref"
                          R_ViewModel="@GSM00720ViewModel"
