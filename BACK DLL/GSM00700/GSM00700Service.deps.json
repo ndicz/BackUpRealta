@@ -10,7 +10,6 @@
         "dependencies": {
           "GSM00700Back": "1.0.0",
           "GSM00700Common": "1.0.0",
-          "GSM05500Common": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
           "R_APIBackEnd": "1.0.0.0",
           "R_APICommon": "1.0.0.0",
@@ -671,14 +670,6 @@
           "GSM00700Common.dll": {}
         }
       },
-      "GSM05500Common/1.0.0": {
-        "dependencies": {
-          "GSM00700Common": "1.0.0"
-        },
-        "runtime": {
-          "GSM05500Common.dll": {}
-        }
-      },
       "R_APIBackEnd/1.0.0.0": {
         "runtime": {
           "R_APIBackEnd.dll": {
@@ -1332,11 +1323,6 @@
       "sha512": ""
     },
     "GSM00700Common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "GSM05500Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

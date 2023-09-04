@@ -52,7 +52,7 @@ namespace GSM00700Model
             {
                 
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE, CashFlowGroupCode);
-                var loReturn = await _GSM00710Model.GetAllCashFlowListAsync();
+                var loReturn = await _GSM00710Model.GetAllCashFlowStreamAsync();
                 loGridList = new ObservableCollection<GSM00710DTO>(loReturn.Data);
             }
             catch (Exception ex)

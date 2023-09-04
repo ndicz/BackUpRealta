@@ -93,70 +93,147 @@ namespace GSM02300Service
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+                
             return loRtn;
         }
+        //[HttpPost]
+        //public GSM02300ListDTO GetAllProperty()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM02300ListDTO loRtn = null;
+        //    List<GSM02300DTO> loResult;
+        //    GSM02300DBParaneter loDbPar;
+        //    GSM02300Cls loCls;
+
+        //    try
+        //    {
+        //        loDbPar = new GSM02300DBParaneter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+
+        //        loCls = new GSM02300Cls();
+        //        loResult = loCls.GetAllProperty(loDbPar);
+        //        loRtn = new GSM02300ListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
+        //[HttpPost]
+        //public GSM02300ListPropertyTypeDTO GetPropertyType()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM02300ListPropertyTypeDTO loRtn = null;
+        //    List<GSM02300PropertyTypeDTO> loResult;
+        //    GSM02300DBParaneter loDbPar;
+        //    GSM02300Cls loCls;
+
+        //    try
+        //    {
+        //        loDbPar = new GSM02300DBParaneter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+
+        //        loCls = new GSM02300Cls();
+        //        loResult = loCls.GetPropertyType(loDbPar);
+        //        loRtn = new GSM02300ListPropertyTypeDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
         [HttpPost]
-        public GSM02300ListDTO GetAllProperty()
+        public IAsyncEnumerable<GSM02300DTO> GetAllPropertyStream()
         {
-            R_Exception loEx = new R_Exception();
-            GSM02300ListDTO loRtn = null;
-            List<GSM02300DTO> loResult;
+            R_Exception loException = new R_Exception();
             GSM02300DBParaneter loDbPar;
             GSM02300Cls loCls;
-
+            List<GSM02300DTO> loRtnTmp;
+            IAsyncEnumerable<GSM02300DTO> loRtn = null;
             try
             {
+
                 loDbPar = new GSM02300DBParaneter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
-
                 loCls = new GSM02300Cls();
-                loResult = loCls.GetAllProperty(loDbPar);
-                loRtn = new GSM02300ListDTO() { Data = loResult };
+                loRtnTmp = loCls.GetAllProperty(loDbPar);
+
+                loRtn = GetProperty(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }
         [HttpPost]
-        public GSM02300ListPropertyTypeDTO GetPropertyType()
+        public IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyTypeStream()
         {
-            R_Exception loEx = new R_Exception();
-            GSM02300ListPropertyTypeDTO loRtn = null;
-            List<GSM02300PropertyTypeDTO> loResult;
+            R_Exception loException = new R_Exception();
             GSM02300DBParaneter loDbPar;
+            List<GSM02300PropertyTypeDTO> loRtnTmp;
             GSM02300Cls loCls;
-
+            IAsyncEnumerable<GSM02300PropertyTypeDTO> loRtn = null;
             try
             {
+
                 loDbPar = new GSM02300DBParaneter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
-
                 loCls = new GSM02300Cls();
-                loResult = loCls.GetPropertyType(loDbPar);
-                loRtn = new GSM02300ListPropertyTypeDTO() { Data = loResult };
+                loRtnTmp = loCls.GetPropertyType(loDbPar);
+
+                loRtn = GetPropertyType(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
+        }
+
+
+
+        private async IAsyncEnumerable<GSM02300DTO> GetProperty(List<GSM02300DTO> poParameter)
+        {
+            foreach (GSM02300DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+        private async IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyType(List<GSM02300PropertyTypeDTO> poParameter)
+        {
+            foreach (GSM02300PropertyTypeDTO item in poParameter)
+            {
+                yield return item;
+            }
         }
     }
 }

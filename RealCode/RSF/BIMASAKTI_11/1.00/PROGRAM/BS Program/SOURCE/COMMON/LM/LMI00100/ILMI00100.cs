@@ -10,5 +10,8 @@ namespace LMI00100Common
     {
         LMI00100ListDTO GetAllLMI00100List();
         LMI00100ListPropertyDTO GetLMI00100Property();
+
+        IAsyncEnumerable<LMI00100DTO> GetAllLMI00100Stream();
+        IAsyncEnumerable<LMI00100PropertyDTO> GetLMI00100PropertyStream();
     }
 }

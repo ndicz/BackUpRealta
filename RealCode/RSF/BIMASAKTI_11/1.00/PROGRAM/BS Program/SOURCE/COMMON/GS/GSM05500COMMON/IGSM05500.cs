@@ -11,6 +11,5 @@ namespace GSM05500Common
     {
       IAsyncEnumerable<GSM05500DTO> GetAllCurrencyStream();
 
-      GSM05500ListDTO GetAllCurrencyList();
     }
 }

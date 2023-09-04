@@ -8,7 +8,7 @@
 
 <R_StackLayout Row="true" Spacing="4">
     <R_ItemLayout>
-        <R_Label FontColor="red" Class="fw-bold">PROPERTY</R_Label>
+        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">PROPERTY</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_ComboBox Data="@_viewModel.PropertyList"
@@ -35,9 +35,9 @@
 
                 <R_GridTextColumn FieldName="CBANK_CODE" HeaderText="Bank Code"></R_GridTextColumn>
                 <R_GridTextColumn FieldName="CBANK_NAME" HeaderText="Bank Name"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Last Updated By" />
-                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="last Updated Date" />
-                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Create By"/>
+                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
+                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
+                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By"/>
                 <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
 
             </R_GridColumns>

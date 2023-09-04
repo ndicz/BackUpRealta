@@ -103,7 +103,36 @@ namespace LMM02000Services
         [HttpPost]
         public IAsyncEnumerable<LMM02000DTO> GetAllLMM02000Stream()
         {
-            throw new NotImplementedException();
+            R_Exception loException = new R_Exception();
+            LMM02000DBParameter loDbPar;
+            List<LMM02000DTO> loRtnTmp;
+            LMM02000Cls loCls;
+            IAsyncEnumerable<LMM02000DTO> loRtn = null;
+
+            try
+            {
+
+                loDbPar = new LMM02000DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMM02000.CPROPERTY_ID);
+                //loDbPar.CCOMPANY_ID = "RCD";
+                //loDbPar.CUSER_ID = "Admin";
+
+                loCls = new LMM02000Cls();
+                loRtnTmp = loCls.GetListSalesman(loDbPar);
+
+                loRtn = GetSalesman(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
         }
         [HttpPost]
         public LMM02000ListDTO GetAllLMM02000List()
@@ -203,6 +232,41 @@ namespace LMM02000Services
 
             return loRtn;
         }
+        [HttpPost]
+        public IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream()
+        {
+            R_Exception loException = new R_Exception();
+            LMM02000DBParameter loDbPar;
+            List<LMM02000PropertyDTO> loRtnTmp;
+            LMM02000Cls loCls;
+            IAsyncEnumerable<LMM02000PropertyDTO> loRtn = null;
+
+            try
+            {
+
+                loDbPar = new LMM02000DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMM02000.CPROPERTY_ID);
+                //loDbPar.CCOMPANY_ID = "RCD";
+                //loDbPar.CUSER_ID = "Admin";
+
+                loCls = new LMM02000Cls();
+                loRtnTmp = loCls.GetAllPropertyList(loDbPar);
+
+                loRtn = GetProperty(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
         [HttpPost]
         public LMM02000ListGenderTypeDTO GetGender()
         {
@@ -324,9 +388,17 @@ namespace LMM02000Services
         }
 
 
-        private async IAsyncEnumerable<LMM02000DTO> GetRateType(List<LMM02000DTO> poParameter)
+        private async IAsyncEnumerable<LMM02000DTO> GetSalesman(List<LMM02000DTO> poParameter)
         {
             foreach (LMM02000DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<LMM02000PropertyDTO> GetProperty(List<LMM02000PropertyDTO> poParameter)
+        {
+            foreach (LMM02000PropertyDTO item in poParameter)
             {
                 yield return item;
             }

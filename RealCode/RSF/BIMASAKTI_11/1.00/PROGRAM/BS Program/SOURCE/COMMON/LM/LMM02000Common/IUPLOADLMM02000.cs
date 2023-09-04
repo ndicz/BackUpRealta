@@ -8,6 +8,7 @@ namespace LMM02000Common
     public interface IUPLOADLMM02000
     {
         IAsyncEnumerable<LMM02000UploadSalesmanDTO> GetUploadListLMM02000();
+        IAsyncEnumerable<LMM02000UploadSalesmanErrorDTO> GetErrorListLMM02000();
         LMM02000UploadSalesmanCheckResultDTO CheckUploadLMM02000();
     }
 }

@@ -23,12 +23,12 @@ namespace GSM05500Model.ViewModel
 
         public async Task GetCurrencyList()
         {
-
+                
             var loEx = new R_Exception();
 
             try
             {
-                var loReturn = await _GSM05500Model.GetAllAsync();
+                var loReturn = await _GSM05500Model.GetAllStreamAsync();
                 loGridList = new ObservableCollection<GSM05500DTO>(loReturn.Data);
 
             }

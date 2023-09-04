@@ -125,7 +125,6 @@ namespace GSM00700Front
         private void Grid_ValidationCashFlowGroup(R_ValidationEventArgs eventArgs)
         {
             var loException = new R_Exception();
-
             try
             {
                 var loData = (GSM00700DTO)eventArgs.Data;
@@ -157,12 +156,16 @@ namespace GSM00700Front
                 if (eventArgs.ConductorMode == R_eConductorMode.Normal)
                 {
                     var loParam = R_FrontUtility.ConvertObjectToObject<GSM00710DTO>(eventArgs.Data);
-                    GSM00710ViewModel.CashFlowGroupCode = loParam.CCASH_FLOW_GROUP_CODE;
-                    GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_GROUP_NAME;
-                    //GSM00710ViewModel.csquence = loParam.CSEQUENCE.ToString();
+                    if (loParam != null)
+                    {
+                        GSM00710ViewModel.CashFlowGroupCode = loParam.CCASH_FLOW_GROUP_CODE;
+                        GSM00710ViewModel.CashFlowGroupName = loParam.CCASH_FLOW_GROUP_NAME;
+                        //GSM00710ViewModel.csquence = loParam.CSEQUENCE.ToString();
 
-                    await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE, loParam.CCASH_FLOW_GROUP_NAME);
+                        await GSM00700ViewModel.GetCashFlowGroupId(loParam.CCASH_FLOW_GROUP_CODE, loParam.CCASH_FLOW_GROUP_NAME);
 
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -189,7 +192,7 @@ namespace GSM00700Front
                 await GSM00700ViewModel.GetCashFlowGroupTypeList();
                 await _gridRef00700.R_RefreshGrid(null);
                 await _gridRef00700.AutoFitAllColumnsAsync();
-            }   
+            }
             catch (Exception ex)
             {
                 loEx.Add(ex);

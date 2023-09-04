@@ -34,15 +34,77 @@ namespace GSM00700Service
         {
             throw new NotImplementedException();
         }
-        [HttpPost]
-        public GSM00720ListDTO GetAllCashFlowPlan()
-        {
-            R_Exception loEx = new R_Exception();
-            GSM00720ListDTO loRtn = null;
-            List<GSM00720DTO> loResult;
-            GSM00700DBParameter loDbPar;
-            GSM00720Cls loCls;
+        //[HttpPost]
+        //public GSM00720ListDTO GetAllCashFlowPlan()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM00720ListDTO loRtn = null;
+        //    List<GSM00720DTO> loResult;
+        //    GSM00700DBParameter loDbPar;
+        //    GSM00720Cls loCls;
 
+        //    try
+        //    {
+        //        loDbPar = new GSM00700DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        //        loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
+        //        loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+        //        loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
+
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+        //        //loDbPar.CCASH_FLOW_GROUP_CODE = "CF0012";
+        //        //loDbPar.CCASH_FLOW_CODE = "F001";
+        //        //loDbPar.CCYEAR = "2023";y
+        //        loCls = new GSM00720Cls();
+        //        loResult = loCls.GetCashFlowPlan(loDbPar);
+        //        loRtn = new GSM00720ListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
+        //[HttpPost]
+        //public GSM00720YearListDTO GetYearList()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM00720YearListDTO loRtn = null;
+        //    List<GSM00720YearDTO> loResult;
+        //    GSM00700DBParameter loDbPar;
+        //    GSM00720Cls loCls;
+        //    try
+        //    {
+        //        loDbPar = new GSM00700DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        loCls = new GSM00720Cls();
+        //        loResult = loCls.GetYearList(loDbPar);
+        //        loRtn = new GSM00720YearListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
+        [HttpPost]
+        public IAsyncEnumerable<GSM00720DTO> GetAllCashFlowPlanStream()
+        {
+            R_Exception loException = new R_Exception();
+            GSM00700DBParameter loDbPar;
+            List<GSM00720DTO> loRtnTmp;
+            GSM00720Cls loCls;
+            IAsyncEnumerable<GSM00720DTO> loRtn = null;
             try
             {
                 loDbPar = new GSM00700DBParameter();
@@ -52,52 +114,47 @@ namespace GSM00700Service
                 loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
                 loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
 
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
-                //loDbPar.CCASH_FLOW_GROUP_CODE = "CF0012";
-                //loDbPar.CCASH_FLOW_CODE = "F001";
-                //loDbPar.CCYEAR = "2023";y
                 loCls = new GSM00720Cls();
-                loResult = loCls.GetCashFlowPlan(loDbPar);
-                loRtn = new GSM00720ListDTO() { Data = loResult };
+                loRtnTmp = loCls.GetCashFlowPlan(loDbPar);
+                loRtn = GetAllCashFlowPlanStream(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }
         [HttpPost]
-        public GSM00720YearListDTO GetYearList()
+        public IAsyncEnumerable<GSM00720YearDTO> GetYearStream()
         {
-            R_Exception loEx = new R_Exception();
-            GSM00720YearListDTO loRtn = null;
-            List<GSM00720YearDTO> loResult;
+            R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
+            List<GSM00720YearDTO> loRtnTmp;
             GSM00720Cls loCls;
+            IAsyncEnumerable<GSM00720YearDTO> loRtn = null;
             try
             {
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
 
-                //loDbPar.CCOMPANY_ID = "RCD";
                 loCls = new GSM00720Cls();
-                loResult = loCls.GetYearList(loDbPar);
-                loRtn = new GSM00720YearListDTO() { Data = loResult };
+                loRtnTmp = loCls.GetYearList(loDbPar);
+                loRtn = GetYearStream(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }
-
         [HttpPost]
         public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
@@ -255,9 +312,7 @@ namespace GSM00700Service
 
             return loRtn;
         }
-
         [HttpPost]
-
         public GSM00710TemplateCashFlowUserInterface GetTemplate()
         {
             var loEx = new R_Exception();
@@ -287,9 +342,7 @@ namespace GSM00700Service
             return loRtn;
 
         }
-
         [HttpPost]
-
         public GSM00720TemplateCashFlowPlan GetTemplate720()
         {
             var loEx = new R_Exception();
@@ -319,5 +372,21 @@ namespace GSM00700Service
             return loRtn;
 
         }
+        private async IAsyncEnumerable<GSM00720DTO> GetAllCashFlowPlanStream(List<GSM00720DTO> poParameter)
+        {
+            foreach (GSM00720DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<GSM00720YearDTO> GetYearStream(List<GSM00720YearDTO> poParameter)
+        {
+            foreach (GSM00720YearDTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
     }
 }

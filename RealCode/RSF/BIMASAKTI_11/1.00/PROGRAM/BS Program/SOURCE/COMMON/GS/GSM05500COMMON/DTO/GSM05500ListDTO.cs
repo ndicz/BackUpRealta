@@ -5,11 +5,7 @@ using R_APICommonDTO;
 
 namespace GSM05500Common.DTO
 {
-    public class GSM05500ListDTO : R_APIResultBaseDTO
-    {
-        public List<GSM05500DTO> Data { get; set; }
-
-    }
+   
 
     public class GSM05500GridDTO
     {

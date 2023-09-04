@@ -98,43 +98,37 @@ namespace GSM05500Service
            
         }
 
-        [HttpPost]
-        public GSM05510ListDTO GetAllRateTypeList()
-        {
-            R_Exception loEx = new R_Exception();
-            GSM05510ListDTO loRtn = null;
-            List<GSM05510DTO> loResult;
-            GSM05500DBParameter loDbPar;
-            GSM05510Cls loCls;
+        //[HttpPost]
+        //public GSM05510ListDTO GetAllRateTypeList()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM05510ListDTO loRtn = null;
+        //    List<GSM05510DTO> loResult;
+        //    GSM05500DBParameter loDbPar;
+        //    GSM05510Cls loCls;
 
-            try
-            {
-                loDbPar = new GSM05500DBParameter();
-                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        //    try
+        //    {
+        //        //loDbPar = new GSM05500DBParameter();
+        //        //loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        //loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
 
-                loCls = new GSM05510Cls();
-                loResult = loCls.GetAllRateType(loDbPar);
-                loRtn = new GSM05510ListDTO { Data = loResult };
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //        //loCls = new GSM05510Cls();
+        //        //loResult = loCls.GetAllRateType(loDbPar);
+        //        //loRtn = new GSM05510ListDTO { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loRtn;
-        }
-
-
-
-
-
-
+        //    return loRtn;
+        //}
 
         [HttpPost]
         public IAsyncEnumerable<GSM05510DTO> GetAllRateTypeStream()

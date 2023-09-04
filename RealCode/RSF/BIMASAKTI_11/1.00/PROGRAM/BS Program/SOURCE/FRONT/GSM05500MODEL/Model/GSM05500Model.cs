@@ -27,46 +27,22 @@ namespace GSM05500Model.Model
         }
 
 
-
-
-        public async Task<List<GSM05500DTO>> GetAllStreamAsync()
+        public async Task<GSM05500ListDTO> GetAllStreamAsync()
         {
             var loEx = new R_Exception();
-            List<GSM05500DTO> loResult = null;
+            GSM05500ListDTO loResult = new GSM05500ListDTO();
 
             try
             {
+           
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
-                loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05500DTO>(
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05500DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM05500.GetAllCurrencyStream), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken,
-                    null);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-
-            loEx.ThrowExceptionIfErrors();
-
-            return loResult;
-        }
-
-        public async Task<GSM05500ListDTO> GetAllAsync()
-        {
-            var loEx = new R_Exception();
-            GSM05500ListDTO loResult = null;
-
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05500ListDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM05500.GetAllCurrencyList), DEFAULT_MODULE,
+                    nameof(IGSM05500.GetAllCurrencyStream),
+                    DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
+                loResult.Data = loTemp;
             }
             catch (Exception ex)
             {
@@ -77,6 +53,30 @@ namespace GSM05500Model.Model
 
             return loResult;
         }
+
+        //public async Task<GSM05500ListDTO> GetAllAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM05500ListDTO loResult = null;
+
+        //    try
+        //    {
+        //        //R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        //loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05500ListDTO>(
+        //        //    _RequestServiceEndPoint,
+        //        //    nameof(IGSM05500.GetAllCurrencyList), DEFAULT_MODULE,
+        //        //    _SendWithContext,
+        //        //    _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();        
+
+        //    return loResult;
+        //}
 
 
         public IAsyncEnumerable<GSM05500DTO> GetAllCurrencyStream()

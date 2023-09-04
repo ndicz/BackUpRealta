@@ -103,37 +103,37 @@ namespace GSM05500Service
             return loRtn;
         }
 
-        [HttpPost]
-        public GSM05500ListDTO GetAllCurrencyList()
-        {
-            R_Exception loEx = new R_Exception();
-            GSM05500ListDTO loRtn = null;
-            List<GSM05500DTO> loResult;
-            GSM05500DBParameter loDbPar;
-            GSM05500Cls loCls;
+        //[HttpPost]
+        //public GSM05500ListDTO GetAllCurrencyList()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM05500ListDTO loRtn = null;
+        //    List<GSM05500DTO> loResult;
+        //    GSM05500DBParameter loDbPar;
+        //    GSM05500Cls loCls;
 
-            try
-            {
-                loDbPar = new GSM05500DBParameter();
-                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
+        //    try
+        //    {
+        //        //loDbPar = new GSM05500DBParameter();
+        //        //loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        //loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        //        ////loDbPar.CCOMPANY_ID = "RCD";
+        //        ////loDbPar.CUSER_ID = "Admin";
 
 
-                loCls = new GSM05500Cls();
-                loResult = loCls.GetAllCurrency(loDbPar);
-                loRtn = new GSM05500ListDTO() { Data = loResult };
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //        //loCls = new GSM05500Cls();
+        //        //loResult = loCls.GetAllCurrency(loDbPar);
+        //        //loRtn = new GSM05500ListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loRtn;
-        }
+        //    return loRtn;
+        //}
 
 
 
@@ -179,6 +179,6 @@ namespace GSM05500Service
             }
         }
 
-    }
+    }   
 }
     

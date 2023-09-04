@@ -5,19 +5,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Update="RSP_LM_MAINTAIN_USER_PARAMResources_msgsrc.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RSP_LM_MAINTAIN_USER_PARAMResources_msgsrc.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="RSP_LM_MAINTAIN_USER_PARAMResources_msgsrc.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RSP_LM_MAINTAIN_USER_PARAMResources_msgsrc.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-
 </Project>

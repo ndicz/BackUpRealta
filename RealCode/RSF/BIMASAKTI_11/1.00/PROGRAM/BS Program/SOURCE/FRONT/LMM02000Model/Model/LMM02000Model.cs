@@ -37,7 +37,7 @@ namespace LMM02000Model.Model
                 R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
                 loResult = await R_HTTPClientWrapper.R_APIRequestObject<LMM02000ListDTO>(
                     _RequestServiceEndPoint,
-                    nameof(ILMM02000.GetAllLMM02000List),DEFAULT_MODULE,
+                    nameof(ILMM02000.GetAllLMM02000List), DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
             }
@@ -75,6 +75,58 @@ namespace LMM02000Model.Model
             return loResult;
         }
 
+        public async Task<LMM02000ListDTO> GetSalesmanStreamAsync(string lcPropertyId)
+        {
+            var loEx = new R_Exception();
+            LMM02000ListDTO loResult = new LMM02000ListDTO();
+
+            try
+            {
+                R_BlazorFrontEnd.R_FrontContext.R_SetStreamingContext(ContextConstantLMM02000.CPROPERTY_ID, lcPropertyId);
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<LMM02000DTO>(
+                    _RequestServiceEndPoint,
+                    nameof(ILMM02000.GetAllLMM02000Stream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<LMM02000ListPropertyDTO> GetPropertyStreamAsync()
+        {
+            var loEx = new R_Exception();
+            LMM02000ListPropertyDTO loResult = new LMM02000ListPropertyDTO();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<LMM02000PropertyDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(ILMM02000.GetAllLMM02000PropertyStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
 
         public async Task<LMM02000ListPropertyDTO> GetProperty()
         {
@@ -165,7 +217,7 @@ namespace LMM02000Model.Model
                 loEx.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
             loEx.ThrowExceptionIfErrors();
 
         }
@@ -218,6 +270,11 @@ namespace LMM02000Model.Model
         }
 
         public LMM02000ListPropertyDTO GetLMM02000Property() //done
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream()
         {
             throw new NotImplementedException();
         }

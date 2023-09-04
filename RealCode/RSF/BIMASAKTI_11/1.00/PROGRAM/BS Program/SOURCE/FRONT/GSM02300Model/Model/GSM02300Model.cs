@@ -24,19 +24,95 @@ namespace GSM02300Model.Model
         {
         }
 
-        public async Task<GSM02300ListDTO> GetAllPropertyAsync()
+        //public async Task<GSM02300ListDTO> GetAllPropertyAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM02300ListDTO loResult = null;
+
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM02300ListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM02300.GetAllProperty), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loResult;
+        //}
+
+        //public async Task<GSM02300ListPropertyTypeDTO> GetAllPropertyTypeAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM02300ListPropertyTypeDTO loResult = null;
+
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM02300ListPropertyTypeDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM02300.GetPropertyType), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loResult;
+        //}
+
+        public async Task<GSM02300ListDTO> GetAllPropertyStreamAsync()
         {
             var loEx = new R_Exception();
-            GSM02300ListDTO loResult = null;
+            GSM02300ListDTO loResult = new GSM02300ListDTO();
 
             try
             {
                 R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM02300ListDTO>(
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM02300DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM02300.GetAllProperty), DEFAULT_MODULE,
+                    nameof(IGSM02300.GetAllPropertyStream),
+                    DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+                
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM02300ListPropertyTypeDTO> GetAllPropertyTypeStreamAsync()
+        {
+            var loEx = new R_Exception();
+            GSM02300ListPropertyTypeDTO loResult = new GSM02300ListPropertyTypeDTO();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM02300PropertyTypeDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM02300.GetPropertyTypeStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
             }
             catch (Exception ex)
             {
@@ -48,36 +124,25 @@ namespace GSM02300Model.Model
             return loResult;
         }
 
-        public async Task<GSM02300ListPropertyTypeDTO> GetAllPropertyTypeAsync()
-        {
-            var loEx = new R_Exception();
-            GSM02300ListPropertyTypeDTO loResult = null;
 
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM02300ListPropertyTypeDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM02300.GetPropertyType), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
 
-            loEx.ThrowExceptionIfErrors();
-
-            return loResult;
-        }
-
+        //Not Used
         public GSM02300ListDTO GetAllProperty()
         {
             throw new NotImplementedException();
         }
 
         public GSM02300ListPropertyTypeDTO GetPropertyType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM02300DTO> GetAllPropertyStream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyTypeStream()
         {
             throw new NotImplementedException();
         }

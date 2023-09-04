@@ -45,8 +45,8 @@ namespace BlazorMenu.Pages.Authentication
                 var loPolicyParameter = await loClientWrapper.R_GetSecurityPolicyParameterAsync();
 
                 _loginModel.CompanyId = "rcd";
-                _loginModel.UserId = "cp";
-                _loginModel.Password = "cp";
+                _loginModel.UserId = "";
+                _loginModel.Password = "";
             }
             catch (R_Exception rex)
             {

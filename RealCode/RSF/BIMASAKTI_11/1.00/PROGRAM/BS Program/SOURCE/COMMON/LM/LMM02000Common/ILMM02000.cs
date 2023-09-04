@@ -16,6 +16,8 @@ namespace LMM02000Common
 
         LMM02000ListPropertyDTO GetLMM02000Property();
 
+        IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream();
+
         LMM02000ListGenderTypeDTO GetGender();
 
         LMM02000ListSalesmanTypeDTO GetSalesmanType();

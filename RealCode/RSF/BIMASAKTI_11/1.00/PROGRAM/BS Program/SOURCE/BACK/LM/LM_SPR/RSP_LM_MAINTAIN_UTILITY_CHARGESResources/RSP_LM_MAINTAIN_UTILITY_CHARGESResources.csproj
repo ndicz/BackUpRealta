@@ -9,12 +9,12 @@
     <Compile Update="RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgsrc.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgsrc.resx</DependentUpon>
+      <DependentUpon>RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgrsc.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgsrc.resx">
+    <EmbeddedResource Update="RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgrsc.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RSP_LM_MAINTAIN_UTILITY_CHARGESResources_msgsrc.Designer.cs</LastGenOutput>
     </EmbeddedResource>

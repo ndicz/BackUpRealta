@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlazorClientHelper;
+using GFF00900COMMON.DTOs;
 using LMM02000Common.DTO;
 using LMM02000Model;
 using Microsoft.AspNetCore.Components;
@@ -50,22 +51,57 @@ namespace LMM02000Front
         }
 
 
-        private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
-        {
-            eventArgs.Parameter = "LMM02001";
-            eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
-        }
+        //private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
+        //{
+        //    eventArgs.Parameter = "LMM02001";
+        //    eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+        //}
 
-        private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
+        //private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
+        //{
+        //    R_Exception loException = new R_Exception();
+        //    try
+        //    {
+        //        bool result = (bool)eventArgs.Result;
+              
+        //        if (result)
+        //        {
+        //            await _viewModel.ActiveInactiveProcessAsync();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loException.Add(ex);
+        //    }
+        //    loException.ThrowExceptionIfErrors();
+        //    await _gridRef.R_RefreshGrid(null);
+
+        //}
+
+        private async Task R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         {
             R_Exception loException = new R_Exception();
             try
             {
-                bool result = (bool)eventArgs.Result;
-              
-                if (result)
+                var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
+                loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
+                await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
+
+                //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
+                if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
                 {
-                    await _viewModel.ActiveInactiveProcessAsync();
+                    await _viewModel.ActiveInactiveProcessAsync(); //Ganti jadi method ActiveInactive masing masing
+                    await _gridRef.R_RefreshGrid(null);
+                    return;
+                }
+                else //Disini Approval Code yang didapat adalah 2, yang berarti Active Inactive akan dijalankan jika User yang diinput ada di RSP_ACTIVITY_VALIDITY
+                {
+                    eventArgs.Parameter = new GFF00900ParameterDTO()
+                    {
+                        Data = loValidateViewModel.loRspActivityValidityList,
+                        IAPPROVAL_CODE = "LMM02001" //Uabh Approval Code sesuai Spec masing masing
+                    };
+                    eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
                 }
             }
             catch (Exception ex)
@@ -73,10 +109,30 @@ namespace LMM02000Front
                 loException.Add(ex);
             }
             loException.ThrowExceptionIfErrors();
-            await _gridRef.R_RefreshGrid(null);
-
         }
 
+        private async Task R_After_Open_Popup_ActivateInactive(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                if (eventArgs.Success == false)
+                {
+                    return;
+                }
+                bool result = (bool)eventArgs.Result;
+                if (result == true)
+                {
+                    await _viewModel.ActiveInactiveProcessAsync();
+                    await _gridRef.R_RefreshGrid(null);
+                }
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+        }
 
         private async Task GenderList()
         {

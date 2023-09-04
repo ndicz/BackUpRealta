@@ -12,6 +12,5 @@ namespace GSM05500Common
     {
         IAsyncEnumerable<GSM05510DTO> GetAllRateTypeStream();
 
-        GSM05510ListDTO GetAllRateTypeList();
     }
 }

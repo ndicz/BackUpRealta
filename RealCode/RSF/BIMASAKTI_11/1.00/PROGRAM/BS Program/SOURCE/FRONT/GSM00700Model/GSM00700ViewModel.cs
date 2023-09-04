@@ -51,7 +51,7 @@ namespace GSM00700Model
             var loEx = new R_Exception();
             try
             {
-                var loReturn = await _GSM00700Model.GetAllAsync();
+                var loReturn = await _GSM00700Model.GetAllCashFlowGroupStreamAsync();
                 loGridList = new ObservableCollection<GSM00700DTO>(loReturn.Data);
             }
             catch (Exception ex)

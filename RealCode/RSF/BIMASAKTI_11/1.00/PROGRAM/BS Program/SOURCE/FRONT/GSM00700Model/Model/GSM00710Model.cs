@@ -25,18 +25,45 @@ namespace GSM00700Model.Model
         {
         }
 
-        public async Task<GSM00710ListDTO> GetAllCashFlowListAsync()
+        //public async Task<GSM00710ListDTO> GetAllCashFlowListAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM00710ListDTO loResult = null;
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00710ListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM00710.GetAllCashFlowList), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loResult;
+        //}
+
+        public async Task<GSM00710ListDTO> GetAllCashFlowStreamAsync()
         {
             var loEx = new R_Exception();
-            GSM00710ListDTO loResult = null;
+            GSM00710ListDTO loResult = new GSM00710ListDTO();
+
             try
             {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00710ListDTO>(
+
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM00710DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IGSM00710.GetAllCashFlowList), DEFAULT_MODULE,
+                    nameof(IGSM00710.GetAllCashFlowStream),
+                    DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
+                loResult.Data = loTemp;
             }
             catch (Exception ex)
             {
@@ -47,6 +74,7 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
 
         public async Task<GSM00710CashFlowTypeListDTO> GetListCashFlowTypeAsync()
         {
@@ -76,6 +104,11 @@ namespace GSM00700Model.Model
         }
 
         public GSM00710CashFlowTypeListDTO GetListCashFlowType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00710DTO> GetAllCashFlowStream()
         {
             throw new NotImplementedException();
         }

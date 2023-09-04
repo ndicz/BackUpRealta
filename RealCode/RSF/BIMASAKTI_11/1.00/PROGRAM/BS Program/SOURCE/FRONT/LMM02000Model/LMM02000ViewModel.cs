@@ -31,10 +31,10 @@ namespace LMM02000Model
         //    new LMM02000GenderSalesmanTypeDTO() {CCODE = "I", CDESCRIPTION = "Internal"},
         //    new LMM02000GenderSalesmanTypeDTO() {CCODE = "E", CDESCRIPTION = "Eksternal"}
         //};
-     
+
         public string propertyValue = "";
         public bool SelectedActiveInactiveLACTIVE;
-       
+
 
 
 
@@ -97,7 +97,7 @@ namespace LMM02000Model
             try
             {
                 var loResult = await _LMM02000Model.GetSalesmanTypeAll();
-               SalesmanTypeList = loResult.Data;
+                SalesmanTypeList = loResult.Data;
             }
             catch (Exception ex)
             {
@@ -114,7 +114,7 @@ namespace LMM02000Model
 
             try
             {
-                var loResult = await _LMM02000Model.GetProperty();
+                var loResult = await _LMM02000Model.GetPropertyStreamAsync();
 
                 PropertyList = loResult.Data;
                 propertyValue = PropertyList[0].CPROPERTY_ID;
@@ -132,7 +132,7 @@ namespace LMM02000Model
             try
             {
 
-                var loReturn = await _LMM02000Model.GetAllSalesman(propertyValue);
+                var loReturn = await _LMM02000Model.GetSalesmanStreamAsync(propertyValue);
                 loGridList = new ObservableCollection<LMM02000DTO>(loReturn.Data);
             }
             catch (Exception ex)
@@ -166,7 +166,7 @@ namespace LMM02000Model
             try
             {
                 poEntity.CPROPERTY_ID = propertyValue;
-              loEntity = await _LMM02000Model.R_ServiceSaveAsync(poEntity, peCRUDMode);
+                loEntity = await _LMM02000Model.R_ServiceSaveAsync(poEntity, peCRUDMode);
             }
             catch (Exception ex)
             {
@@ -185,7 +185,7 @@ namespace LMM02000Model
             }
             catch (Exception ex)
             {
-               loEx.Add(ex);
+                loEx.Add(ex);
 
             }
             loEx.ThrowExceptionIfErrors();

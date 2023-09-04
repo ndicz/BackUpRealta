@@ -55,11 +55,12 @@
             <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
             <R_GridTextColumn Width="150px" FieldName="CCASHFLOW_TYPE" HeaderText="Cash Flow Type" />
             <R_GridTextColumn Width="150px" FieldName="NOTES_" HeaderText="Notes" />
-      
-
         </R_GridColumns>
     </R_Grid>
 </R_StackLayout>
+                    <R_ItemLayout col="12">
+                        <R_ProgressBar Label="@_ViewModelUpload.Message" MaxValue="100" Value="@_ViewModelUpload.Percentage"></R_ProgressBar>
+                    </R_ItemLayout>
   <R_StackLayout Row="true" hidden="@_ViewModelUpload.VisibleError">
         <R_StackLayout Class="col-8">
             <R_StackLayout Row>
@@ -105,6 +106,7 @@
                       R_IsHeader
                  R_BeforeSaveBatch="@R_BeforeSaveBatch"
                  R_ServiceSaveBatch="@R_ServiceSaveBatch"
+               
                  R_AfterSaveBatch="@R_AfterSaveBatch">
 </R_ConductorGrid>
     </R_StackLayout>

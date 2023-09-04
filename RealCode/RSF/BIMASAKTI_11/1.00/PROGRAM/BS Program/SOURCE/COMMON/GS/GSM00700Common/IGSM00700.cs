@@ -10,7 +10,7 @@ namespace GSM00700Common
     {
         IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream();
 
-        GSM00700ListDTO GetAllCashFlowGroupList();
+        //GSM00700ListDTO GetAllCashFlowGroupList();
         GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType();
     }
 }

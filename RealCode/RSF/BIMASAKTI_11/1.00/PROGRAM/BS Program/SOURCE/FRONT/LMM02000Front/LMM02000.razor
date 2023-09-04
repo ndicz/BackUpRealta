@@ -7,7 +7,7 @@
 
 <R_StackLayout Row="true" Spacing="4">
     <R_ItemLayout col="1">
-        <R_Label FontColor="red" Class="fw-bold">PROPERTY</R_Label>
+        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">PROPERTY</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_ComboBox Data="@_viewModel.PropertyList"
@@ -38,10 +38,10 @@
                 <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE1" HeaderText="Mobile Phone 1" />
                 <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE2" HeaderText="Mobile Phone 2" />
                 <R_GridTextColumn Width="130px" FieldName="CEMAIL" HeaderText="Email" />
-                <R_GridTextColumn Width="105px" FieldName="CUPDATE_BY" HeaderText="Update By" />
-                <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="Update Date" />
-                <R_GridTextColumn Width="105px" FieldName="CCREATE_BY" HeaderText="Create By" />
-                <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="Create Date" />
+                <R_GridTextColumn Width="105px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
+                <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
+                <R_GridTextColumn Width="105px" FieldName="CCREATE_BY" HeaderText="Created By" />
+                <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
             </R_GridColumns>
         </R_Grid>
     </R_StackLayout>

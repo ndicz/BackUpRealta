@@ -46,7 +46,7 @@ namespace GSM05500Model
             try
             {
 
-                var loReturn = await _GSM05520Model.GetAllAsync(RateTypeCode, CrateDate);
+                var loReturn = await _GSM05520Model.GetAllStreamingAsync(RateTypeCode, CrateDate);
                 loGridList = new ObservableCollection<GSM05520DTO>(loReturn.Data);
 
             }
@@ -66,7 +66,7 @@ namespace GSM05500Model
 
             try
             {
-                var loReturn = await _GSM05520Model.GetRateList();
+                var loReturn = await _GSM05520Model.GetRateTypeStreamingAsync();
                 loGridListRate = new ObservableCollection<GSM05520DTOGetRateType>(loReturn.Data);
 
                 //CreateCode = loGridListRate[0].CRATETYPE_CODE;

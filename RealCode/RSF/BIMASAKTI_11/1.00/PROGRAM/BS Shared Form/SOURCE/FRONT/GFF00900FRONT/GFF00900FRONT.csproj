@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -21,6 +21,9 @@
   </ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="BlazorClientHelper">
+		  <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Menu\BlazorClientHelper.dll</HintPath>
+		</Reference>
 		<Reference Include="R_BlazorFrontEnd">
 			<HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_BlazorFrontEnd.dll</HintPath>
 		</Reference>

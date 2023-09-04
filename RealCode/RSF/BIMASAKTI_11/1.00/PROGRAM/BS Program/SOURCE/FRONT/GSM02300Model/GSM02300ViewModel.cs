@@ -15,7 +15,7 @@ namespace GSM02300Model
     {
         private Model.GSM02300Model _GSM02300Model = new Model.GSM02300Model();
         public ObservableCollection<GSM02300DTO> loGridList = new ObservableCollection<GSM02300DTO>();
-        public List<GSM02300PropertyTypeDTO> loGridListPropertyType { get; set; }  = new List<GSM02300PropertyTypeDTO>();
+        public ObservableCollection<GSM02300PropertyTypeDTO> loGridListPropertyType = new ObservableCollection<GSM02300PropertyTypeDTO>();
 
         //public List<GSM00710CashFlowTypeDTO> loCashFlowType { get; set; } = new List<GSM00710CashFlowTypeDTO>();
 
@@ -28,7 +28,7 @@ namespace GSM02300Model
 
             try
             {
-                var loReturn = await _GSM02300Model.GetAllPropertyAsync();
+                var loReturn = await _GSM02300Model.GetAllPropertyStreamAsync();
                 loGridList = new ObservableCollection<GSM02300DTO>(loReturn.Data);
 
             }
@@ -45,8 +45,8 @@ namespace GSM02300Model
             var loEx = new R_Exception();
             try
             {
-                var loResult = await _GSM02300Model.GetAllPropertyTypeAsync();
-                loGridListPropertyType = loResult.Data;
+                var loResult = await _GSM02300Model.GetAllPropertyTypeStreamAsync();
+                loGridListPropertyType = new ObservableCollection<GSM02300PropertyTypeDTO>(loResult.Data);
             }
             catch (Exception ex)
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GSM00700Common.DTO.Upload_DTO;
+using R_APICommonDTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,5 +17,9 @@ namespace GSM00700Common.DTO.Upload_DTO_GSM00720
         public decimal NBASE_AMOUNT { get; set; }
         public bool LEXIST { get; set; }
         public string ErrorMessage { get; set; }
+    }
+    public class GSM00720UploadCashFlowPlanErrorResultDTO : R_APIResultBaseDTO
+    {
+        public List<GSM00720UploadCashFlowPlanErrorDTO> Data { get; set; }
     }
 }

@@ -32,6 +32,8 @@ namespace GSM00700Common
         public const string UPLOAD_CashFlowPlan_CHECK_IS_CashFlowPlan_USED_CONTEXT =
             "UPLOAD_CashFlowPlan_CHECK_IS_CashFlowPlan_USED_CONTEXT";
 
+        public const string UPLOAD_CENTER_ERROR_GUID_STREAMING_CONTEXT = "UPLOAD_CENTER_ERROR_GUID_STREAMING_CONTEXT";
+
 
     }
 }

@@ -255,8 +255,8 @@ namespace GSM00700Back
         public void R_BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
             var loDb = new R_Db();
-            var loConn = loDb.GetConnection();
-            var loCmd = loDb.GetCommand();
+            DbConnection loConn = null;
+            DbCommand loCmd = null;
             var loEx = new R_Exception();
             var lcQuery = "";
             int count = 1;
@@ -265,6 +265,8 @@ namespace GSM00700Back
             {
                 using (var transScope = new TransactionScope(TransactionScopeOption.Required))
                 {
+                    loConn = loDb.GetConnection();
+                    loCmd = loDb.GetCommand();
                     var liFinishFlag = 1; //0=Process, 1=Success, 9=Fail
                     var loObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00720UploadCashFlowPlanDTO>>(poBatchProcessPar.BigObject);
 
@@ -293,15 +295,16 @@ namespace GSM00700Back
 
                     lcQuery = $"CREATE TABLE #CASHFLOW_PLAN " +
                               $"(CCOMPANY_ID VARCHAR(50)," +
-                              $"NO INT " +
+                              $"NO INT, " +
                               $"CCASHFLOW_GROUP_CODE VARCHAR(50), " +
+                              $"CCASH_FLOW_CODE VARCHAR(50), " +
                               $"CCYEAR VARCHAR(50), " +
                               $"CPERIOD_NO VARCHAR(20), " +
                               $"NLOCAL_AMOUNT NUMERIC(18,2)," +
                               $"NBASE_AMOUNT NUMERIC(18,2), " +
                               $"NOTES_ VARCHAR(20)," +
                               $"LEXIST BIT, " +
-                              $"LOVER_WRITE BIT);";
+                              $"LOVERWRITE BIT);";
 
                     loDb.SqlExecNonQuery(lcQuery, loConn, false);
 

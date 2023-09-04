@@ -59,31 +59,34 @@
     </R_StackLayout>
 
 
-    <R_StackLayout Row="true">
+<R_StackLayout Row="true">
 
-        <R_Grid @ref="@_ConGriedRef"
-                DataSource="_ViewModelUpload.loUploadCashFlowPlanDisplayList"
-                Pageable="true"
-                R_ConductorGridSource="@R_ConductorGrid"
-                R_GridType="@R_eGridType.Batch"
-                AllowAddNewRow="true"
-                R_RowRender="@((R_GridRowRenderEventArgs args) => R_RowRender(args))"
-                Width="100%"
-                Height="100%"
-                AllowEditRow="true"
-                AllowDeleteRow="true"
-                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
-            <R_GridColumns>
+    <R_Grid @ref="@_ConGriedRef"
+            DataSource="_ViewModelUpload.loUploadCashFlowPlanDisplayList"
+            Pageable="true"
+            R_ConductorGridSource="@R_ConductorGrid"
+            R_GridType="@R_eGridType.Batch"
+            AllowAddNewRow="true"
+            R_RowRender="@((R_GridRowRenderEventArgs args) => R_RowRender(args))"
+            Width="100%"
+            Height="100%"
+            AllowEditRow="true"
+            AllowDeleteRow="true"
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
+        <R_GridColumns>
 
-                <R_GridTextColumn Width="100px" FieldName="CPERIOD_NO" HeaderText="Period No" />
-                <R_GridTextColumn Width="150px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableAdd></R_GridTextColumn>
-                <R_GridTextColumn Width="250px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                <R_GridTextColumn Width="150px" FieldName="CNOTES" HeaderText="Notes" />
+            <R_GridTextColumn Width="100px" FieldName="CPERIOD_NO" HeaderText="Period No" />
+            <R_GridTextColumn Width="150px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn Width="250px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridTextColumn Width="150px" FieldName="CNOTES" HeaderText="Notes" />
 
 
-            </R_GridColumns>
-        </R_Grid>
-    </R_StackLayout>
+        </R_GridColumns>
+    </R_Grid>
+</R_StackLayout>
+<R_ItemLayout col="12" Class="mb-4 mt-2">
+    <R_ProgressBar Label="@_ViewModelUpload.Message" MaxValue="100" Value="@_ViewModelUpload.Percentage"></R_ProgressBar>
+</R_ItemLayout>
     <R_StackLayout Row="true" hidden="@_ViewModelUpload.VisibleError">
         <R_StackLayout Class="col-8">
             <R_StackLayout Row>

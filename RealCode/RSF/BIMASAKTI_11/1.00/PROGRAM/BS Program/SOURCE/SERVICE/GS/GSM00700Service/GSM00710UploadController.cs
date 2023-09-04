@@ -35,7 +35,7 @@ namespace GSM00700Service
                 {
                     iten.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 }
-                {                                }
+                { }
                 loTempRtn = loCls.GetGSM00710UploadCashFlowList(loParam);
 
 
@@ -50,6 +50,33 @@ namespace GSM00700Service
 
             return loRtn;
         }
+
+        [HttpPost]
+        public IAsyncEnumerable<GSM00710UploadCashFlowErrorDTO> GetErrorListGSM00710()
+        {
+            R_Exception loException = new R_Exception();
+            IAsyncEnumerable<GSM00710UploadCashFlowErrorDTO> loRtn = null;
+            GSM00710UploadCashFlowValidateCls loCls = new GSM00710UploadCashFlowValidateCls();
+            List<GSM00710UploadCashFlowErrorDTO> loTempRtn = null;
+
+            try
+            {
+                string lcKeyGuid = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.UPLOAD_CENTER_ERROR_GUID_STREAMING_CONTEXT);
+
+                loTempRtn = loCls.GetErrorProcess(R_BackGlobalVar.COMPANY_ID, R_BackGlobalVar.USER_ID, lcKeyGuid);
+
+                loRtn = GetErrorProcessStream(loTempRtn);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
         [HttpPost]
         public GSM00710UploadCashFlowCheckRessultDTO CheckUploadGSM00710()
         {
@@ -60,6 +87,7 @@ namespace GSM00700Service
 
             try
             {
+            
                 loParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loParam = R_Utility.R_GetContext<GSM00710UploadCashFlowCheckUsedParameterDTO>(ContextConstantGSM00700.UPLOAD_CASHFLOW_CHECK_IS_CASHFLOW_USED_CONTEXT);
 
@@ -78,6 +106,14 @@ namespace GSM00700Service
         private async IAsyncEnumerable<GSM00710UploadCashFlowDTO> GetUploadFloorStream(List<GSM00710UploadCashFlowDTO> poParameter)
         {
             foreach (GSM00710UploadCashFlowDTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<GSM00710UploadCashFlowErrorDTO> GetErrorProcessStream(List<GSM00710UploadCashFlowErrorDTO> poParameter)
+        {
+            foreach (GSM00710UploadCashFlowErrorDTO item in poParameter)
             {
                 yield return item;
             }

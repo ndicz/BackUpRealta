@@ -111,6 +111,38 @@ namespace GSM00700Front
         B:
             loEx.ThrowExceptionIfErrors();
         }
+        public void ReadExcelFile()
+        {
+            var loEx = new R_Exception();
+            List<GSM00720UploadCashFlowPlanExcelDTO> loExtract = new List<GSM00720UploadCashFlowPlanExcelDTO>();
+            try
+            {
+                var loDataSet = Excel.R_ReadFromExcel(_ViewModelUpload.fileByte, new string[] { "CashFlowPlan" });
+
+                var loResult = R_FrontUtility.R_ConvertTo<GSM00720UploadCashFlowPlanExcelDTO>(loDataSet.Tables[0]);
+
+                loExtract = new List<GSM00720UploadCashFlowPlanExcelDTO>(loResult);
+
+                _ViewModelUpload.loUploadCashFlowPlanList = loExtract.Select(x => new GSM00720UploadCashFlowPlanDTO
+                {
+                    CPERIOD_NO = x.PeriodNo,
+                    NLOCAL_AMOUNT = x.LocalAmount,
+                    NBASE_AMOUNT = x.BaseAmount,
+                    CCASHFLOW_GROUP_CODE = _ViewModelUpload.CashFlowPlanGroupCode,
+                    CCASH_FLOW_CODE = _ViewModelUpload.CashFlowPlanCode,
+                    CCYEAR = _ViewModelUpload.CashFlowPlanYear,
+                    CNOTES = "",
+                    LEXIST = false,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+                var MatchingError = loEx.ErrorList.FirstOrDefault(x => x.ErrDescp == "SkipNumberOfRowsStart was out of range: 0");
+                _ViewModelUpload.IsErrorEmptyFile = MatchingError != null;
+            }
+            loEx.ThrowExceptionIfErrors();
+        }
 
         private async Task OnChangeInputFile(InputFileChangeEventArgs eventArgs)
         {
@@ -122,7 +154,7 @@ namespace GSM00700Front
                 await eventArgs.File.OpenReadStream().CopyToAsync(loMS);
                 _ViewModelUpload.fileByte = loMS.ToArray();
 
-                _ViewModelUpload.ReadExcelFile();
+               ReadExcelFile();
 
                 if (eventArgs.File.Name.Contains(".xlsx") == false)
                 {
@@ -160,7 +192,7 @@ namespace GSM00700Front
             try
             {
                 await _ViewModelUpload.AttachFile();
-
+                await _ViewModelUpload.ValidateUpload();
                 await _ViewModelUpload.GetUploadCashFlowPlanListStreamAsync();
                 IsUploadSuccesful = !_ViewModelUpload.VisibleError;
                 eventArgs.ListEntityResult = _ViewModelUpload.loUploadCashFlowPlanDisplayList;

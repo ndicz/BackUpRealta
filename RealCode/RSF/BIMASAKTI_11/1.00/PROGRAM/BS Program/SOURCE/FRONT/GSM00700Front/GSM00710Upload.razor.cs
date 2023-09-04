@@ -41,7 +41,10 @@ namespace GSM00700Front
 
         private bool IsFileExist = false;
 
-
+        public void StateChangeInvoke()
+        {
+            StateHasChanged();
+        }
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
@@ -50,7 +53,7 @@ namespace GSM00700Front
             {
                 _ViewModelUpload.CashFlowGroupCode = param.CCASHFLOW_GROUP_CODE;
                 _ViewModelUpload.CashFlowGroupName = param.CCASHFLOW_GROUP_NAME;
-                
+                _ViewModelUpload.StateChangeAction = StateChangeInvoke;
                 _ViewModelUpload.SelectedCompanyId = loClientHelper.CompanyId;
                 _ViewModelUpload.SelectedUserId = loClientHelper.UserId;
             }
@@ -110,6 +113,38 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        public void ReadExcelFile()
+        {
+            var loEx = new R_Exception();
+            List<GSM00710UploadCashFlowExcelDTO> loExtract = new List<GSM00710UploadCashFlowExcelDTO>();
+            try
+            {
+                var loDataSet = Excel.R_ReadFromExcel(_ViewModelUpload.fileByte, new string[] { "CashFlow" });
+
+                var loResult = R_FrontUtility.R_ConvertTo<GSM00710UploadCashFlowExcelDTO>(loDataSet.Tables[0]);
+
+                loExtract = new List<GSM00710UploadCashFlowExcelDTO>(loResult);
+
+                _ViewModelUpload.loUploadCashFlowList = loExtract.Select(x => new GSM00710UploadCashFlowDTO
+                {
+
+                    CSEQ = x.DisplaySeq,
+                    CCASHFLOW_CODE = x.CashFlowCode,
+                    CCASHFLOW_GROUP_CODE = _ViewModelUpload.CashFlowGroupCode,
+                    CCASH_FLOW_NAME = x.CashFlowName,
+                    CCASHFLOW_TYPE = x.CashFlowType,
+                    NOTES_ = "",
+                    LEXIST = false,
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+                var MatchingError = loEx.ErrorList.FirstOrDefault(x => x.ErrDescp == "SkipNumberOfRowsStart was out of range: 0");
+                _ViewModelUpload.IsErrorEmptyFile = MatchingError != null;
+            }
+            loEx.ThrowExceptionIfErrors();
+        }
         private async Task OnChangeInputFile(InputFileChangeEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -120,7 +155,7 @@ namespace GSM00700Front
                 await eventArgs.File.OpenReadStream().CopyToAsync(loMS);
                 _ViewModelUpload.fileByte = loMS.ToArray();
 
-                _ViewModelUpload.ReadExcelFile();
+                ReadExcelFile();
 
                 if (eventArgs.File.Name.Contains(".xlsx") == false)
                 {
@@ -147,7 +182,7 @@ namespace GSM00700Front
                     loEx.Add(ex);
                 }
             }
-        
+
             //loEx.ThrowExceptionIfErrors();
         }
 
@@ -157,9 +192,9 @@ namespace GSM00700Front
 
             try
             {
-                await _ViewModelUpload.AttachFile();
+                //await _ViewModelUpload.AttachFile();
+                await _ViewModelUpload.ValidateUpload();
 
-                await _ViewModelUpload.GetUploadCashFlowListStreamAsync();
                 IsUploadSuccesful = !_ViewModelUpload.VisibleError;
                 eventArgs.ListEntityResult = _ViewModelUpload.loUploadCashFlowDisplayList;
             }
@@ -176,6 +211,19 @@ namespace GSM00700Front
             R_Exception loException = new R_Exception();
             try
             {
+                //await _ViewModelUpload.CheckIsCashFlowUsedAsync();
+                if (_ViewModelUpload.IsUsed)
+                {
+                  return;  
+                }
+                if (_ViewModelUpload.loCheckIsCashFlowUsed.LRESULT == true)
+                {
+                    _ViewModelUpload.Message = string.Format("Cannot Load Cash Flow, existing Cash Flow already in use");
+                }
+                else
+                {
+                    _ViewModelUpload.Message = string.Format("Cannot Load Cash Flow");
+                }
                 await R_ConductorGrid.R_SaveBatch();
             }
             catch (Exception ex)
@@ -218,7 +266,7 @@ namespace GSM00700Front
                 _ViewModelUpload.loUploadCashFlowList = (List<GSM00710UploadCashFlowDTO>)eventArgs.Data;
                 await _ViewModelUpload.SaveUploadCashFlowAsync();
 
-               
+
 
             }
             catch (Exception ex)
@@ -235,8 +283,8 @@ namespace GSM00700Front
 
             try
             {
-                 await this.Close(true, true);
-              
+                await this.Close(true, true);
+
             }
             catch (Exception ex)
             {

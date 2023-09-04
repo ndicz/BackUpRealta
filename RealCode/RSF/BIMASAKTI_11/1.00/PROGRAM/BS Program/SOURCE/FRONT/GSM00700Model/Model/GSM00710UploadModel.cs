@@ -30,11 +30,45 @@ namespace GSM00700Model.Model
             throw new NotImplementedException();
         }
 
+        public IAsyncEnumerable<GSM00710UploadCashFlowErrorDTO> GetErrorListGSM00710()
+        {
+            throw new NotImplementedException();
+        }
+
         public GSM00710UploadCashFlowCheckRessultDTO CheckUploadGSM00710()
         {
             throw new NotImplementedException();
         }
 
+        public async Task<GSM00710UploadCashFlowErrorResultDTO> GetErrorProcessListAsync()
+        {
+            var loEx = new R_Exception();
+            List<GSM00710UploadCashFlowErrorDTO> loResult = null;
+            GSM00710UploadCashFlowErrorResultDTO loRtn = new GSM00710UploadCashFlowErrorResultDTO();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+
+                loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM00710UploadCashFlowErrorDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IUPLOAD00710.GetErrorListGSM00710),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+
+                loRtn.Data = loResult;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            EndBlock:
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
         public async Task<GSM00710UploadCashFlowCheckRessultDTO> CheckResultUpload()
         {
             var loEx = new R_Exception();

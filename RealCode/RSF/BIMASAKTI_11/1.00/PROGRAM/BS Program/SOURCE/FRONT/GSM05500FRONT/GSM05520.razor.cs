@@ -20,6 +20,7 @@ using Lookup_GSCOMMON.DTOs;
 using Lookup_GSFRONT;
 using R_BlazorFrontEnd.Controls.Popup;
 using BlazorClientHelper;
+using GFF00900COMMON.DTOs;
 
 namespace GSM05500Front
 {
@@ -40,7 +41,7 @@ namespace GSM05500Front
                 await GSM05520ViewModel.GetRateListP();
 
                 await RateTypeGet(null);
-                
+
                 await GSM05520ViewModel.GetRateList();
                 await _gridRef5520.R_RefreshGrid(null);
 
@@ -83,14 +84,33 @@ namespace GSM05500Front
         public async Task Conductor_BeforeEdit(R_BeforeEditEventArgs eventArgs)
         {
             var loEx = new R_Exception();
+            GFF00900ParameterDTO loParam = null;
+            R_PopupResult loResult = null;
 
             try
             {
-                var loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), "GSM5502");
+                var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
+                loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "GSM05502"; //Uabh Approval Code sesuai Spec masing masing
+                await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
 
+                //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
+                if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
+                {
+                    eventArgs.Cancel = false;
+                }
+                else //Disini Approval Code yang didapat adalah 2, yang berarti Active Inactive akan dijalankan jika User yang diinput ada di RSP_ACTIVITY_VALIDITY
+                {
+                    loParam = new GFF00900ParameterDTO()
+                    {
+                        Data = loValidateViewModel.loRspActivityValidityList,
+                        IAPPROVAL_CODE = "GSM05502" //Uabh Approval Code sesuai Spec masing masing
+                    };
+                    loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), loParam);
+                    eventArgs.Cancel = !(bool)loResult.Result;
+                }
 
-
-                eventArgs.Cancel = !(bool)loResult.Result;
+                //loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), "GSM05502");
+                //eventArgs.Cancel = !(bool)loResult.Result;
             }
             catch (Exception ex)
             {
@@ -100,15 +120,36 @@ namespace GSM05500Front
             loEx.ThrowExceptionIfErrors();
         }
 
+
+
         public async Task Conductor_BeforeAdd(R_BeforeAddEventArgs eventArgs)
         {
             var loEx = new R_Exception();
+            GFF00900ParameterDTO loParam = null;
+            R_PopupResult loResult = null;
             try
             {
                 if (GSM05520ViewModel.CrateTime < DateTime.Today)
                 {
-                    var loResult = await PopupServiceAdd.Show(typeof(GFF00900FRONT.GFF00900), "GSM5501");
-                    eventArgs.Cancel = !(bool)loResult.Result;
+                    var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
+                    loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "GSM05501"; //Uabh Approval Code sesuai Spec masing masing
+                    await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
+
+                    //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
+                    if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
+                    {
+                        eventArgs.Cancel = false;
+                    }
+                    else //Disini Approval Code yang didapat adalah 2, yang berarti Active Inactive akan dijalankan jika User yang diinput ada di RSP_ACTIVITY_VALIDITY
+                    {
+                        loParam = new GFF00900ParameterDTO()
+                        {
+                            Data = loValidateViewModel.loRspActivityValidityList,
+                            IAPPROVAL_CODE = "GSM05501" //Uabh Approval Code sesuai Spec masing masing
+                        };
+                        loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), loParam);
+                        eventArgs.Cancel = !(bool)loResult.Result;
+                    }
 
                 }
 

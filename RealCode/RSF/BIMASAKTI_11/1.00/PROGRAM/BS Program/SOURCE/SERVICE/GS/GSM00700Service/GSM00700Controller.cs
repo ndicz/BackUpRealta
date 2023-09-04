@@ -99,42 +99,67 @@ namespace GSM00700Service
 
             return loRtn;
         }
+        //streaming
         [HttpPost]
         public IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream()
         {
-            throw new NotImplementedException();
-        }
-        [HttpPost]
-        public GSM00700ListDTO GetAllCashFlowGroupList()
-        {
-            R_Exception loEx = new R_Exception();
-            GSM00700ListDTO loRtn = null;
-            List<GSM00700DTO> loResult;
+            R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
+            List<GSM00700DTO> loRtnTmp;
             GSM00700Cls loCls;
-
+            IAsyncEnumerable<GSM00700DTO> loRtn = null;
             try
             {
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
-
                 loCls = new GSM00700Cls();
-                loResult = loCls.GetCashFlowGroupList(loDbPar);
-                loRtn = new GSM00700ListDTO() { Data = loResult };
+
+                loRtnTmp = loCls.GetCashFlowGroupList(loDbPar);
+                loRtn = GetAllCashFlowGroupStream(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }
+        //list
+        //[HttpPost]
+        //public GSM00700ListDTO GetAllCashFlowGroupList()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM00700ListDTO loRtn = null;
+        //    List<GSM00700DTO> loResult;
+        //    GSM00700DBParameter loDbPar;
+        //    GSM00700Cls loCls;
+
+        //    try
+        //    {
+        //        loDbPar = new GSM00700DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+
+        //        loCls = new GSM00700Cls();
+        //        loResult = loCls.GetCashFlowGroupList(loDbPar);
+        //        loRtn = new GSM00700ListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
         [HttpPost]
         public GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType()
         {
@@ -165,7 +190,7 @@ namespace GSM00700Service
             return loRtn;
         }
 
-        private async IAsyncEnumerable<GSM00700DTO> GetAllCashFlowStream(List<GSM00700DTO> poParameter)
+        private async IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream(List<GSM00700DTO> poParameter)
         {
             foreach (GSM00700DTO item in poParameter)
             {

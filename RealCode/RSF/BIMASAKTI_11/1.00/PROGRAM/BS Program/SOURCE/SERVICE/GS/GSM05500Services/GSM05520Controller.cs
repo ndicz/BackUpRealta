@@ -113,7 +113,8 @@ namespace GSM05500Service
                 loDbPar = new GSM05500DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-
+                loDbPar.CRATETYPE_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATETYPE_CODE);
+                loDbPar.CRATE_DATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATE_DATE);
                 //loDbPar.CCOMPANY_ID = "RCD";
                 //loDbPar.CUSER_ID = "Admin";
 
@@ -133,39 +134,39 @@ namespace GSM05500Service
             return loRtn;
         }
 
-        [HttpPost]
-        public GSM05520ListDTO GetAllRateList()
-        {
-            R_Exception loEx = new R_Exception();
-            GSM05520ListDTO loRtn = null;
-            List<GSM05520DTO> loResult;
-            GSM05500DBParameter loDbPar;
-            GSM05520Cls loCls;
+        //[HttpPost]
+        //public GSM05520ListDTO GetAllRateList()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM05520ListDTO loRtn = null;
+        //    List<GSM05520DTO> loResult;
+        //    GSM05500DBParameter loDbPar;
+        //    GSM05520Cls loCls;
 
-            try
-            {
-                loDbPar = new GSM05500DBParameter();
-                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-                loDbPar.CRATETYPE_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATETYPE_CODE);
-                loDbPar.CRATE_DATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATE_DATE);
-                //loDbPar.CCOMPANY_ID = "RCD";
-                //loDbPar.CUSER_ID = "Admin";
+        //    try
+        //    {
+        //        loDbPar = new GSM05500DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        //        loDbPar.CRATETYPE_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATETYPE_CODE);
+        //        loDbPar.CRATE_DATE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM05500.CRATE_DATE);
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
 
 
-                loCls = new GSM05520Cls();
-                loResult = loCls.GetAllCurrencyRate(loDbPar);
-                loRtn = new GSM05520ListDTO() { Data = loResult };
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //        loCls = new GSM05520Cls();
+        //        loResult = loCls.GetAllCurrencyRate(loDbPar);
+        //        loRtn = new GSM05520ListDTO() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loRtn;
-        }
+        //    return loRtn;
+        //}
 
 
         [HttpPost]
@@ -201,41 +202,114 @@ namespace GSM05500Service
 
             return loRtn;
         }
-
         [HttpPost]
-        public GSM05520ListDTOGetRateType GetListRateType()
+        public IAsyncEnumerable<GSM05520DTOGetRateType> GetAllRateTypeStream()
         {
-            R_Exception loEx = new R_Exception();
-            GSM05520ListDTOGetRateType loRtn = null;
-            List<GSM05520DTOGetRateType> loResult;
+            R_Exception loException = new R_Exception();
             GSM05500DBParameter loDbPar;
+            List<GSM05520DTOGetRateType> loRtnTmp;
             GSM05520Cls loCls;
-
+            IAsyncEnumerable<GSM05520DTOGetRateType> loRtn = null;
             try
             {
                 loDbPar = new GSM05500DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        
                 //loDbPar.CCOMPANY_ID = "RCD";
                 //loDbPar.CUSER_ID = "Admin";
 
-
                 loCls = new GSM05520Cls();
-                loResult = loCls.GetRateType(loDbPar);
-                loRtn = new GSM05520ListDTOGetRateType() { Data = loResult };
+                loRtnTmp = loCls.GetRateType(loDbPar);
+                loRtn = GetRateType(loRtnTmp);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }
+        //public IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> GwtAllLcCurrencyStream()
+        //{
+        //    R_Exception loException = new R_Exception();
+        //    GSM05500DBParameter loDbPar;
+        //    List<GSM05520DTOLocalBaseCurrency> loRtnTmp;
+        //    GSM05520Cls loCls;
+        //    IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> loRtn = null;
+        //    try
+        //    {
+        //        loDbPar = new GSM05500DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        //loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+
+        //        loCls = new GSM05520Cls();
+        //        loRtnTmp = loCls.GetLocalCurrency(loDbPar);
+        //        loRtn = GetLocalCurrency(loRtnTmp);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loException.Add(ex);
+        //    }
+
+        //    EndBlock:
+        //    loException.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
+        //[HttpPost]
+        //public GSM05520ListDTOGetRateType GetListRateType()
+        //{
+        //    R_Exception loEx = new R_Exception();
+        //    GSM05520ListDTOGetRateType loRtn = null;
+        //    List<GSM05520DTOGetRateType> loResult;
+        //    GSM05500DBParameter loDbPar;
+        //    GSM05520Cls loCls;
+
+        //    try
+        //    {
+        //        loDbPar = new GSM05500DBParameter();
+        //        loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+        //        //loDbPar.CCOMPANY_ID = "RCD";
+        //        //loDbPar.CUSER_ID = "Admin";
+
+
+        //        loCls = new GSM05520Cls();
+        //        loResult = loCls.GetRateType(loDbPar);
+        //        loRtn = new GSM05520ListDTOGetRateType() { Data = loResult };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+        //    return loRtn;
+        //}
 
         private async IAsyncEnumerable<GSM05520DTO> GetCurrencyStream(List<GSM05520DTO> poParameter)
         {
             foreach (GSM05520DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+        private async IAsyncEnumerable<GSM05520DTOGetRateType> GetRateType(List<GSM05520DTOGetRateType> poParameter)
+        {
+            foreach (GSM05520DTOGetRateType item in poParameter)
+            {
+                yield return item;
+            }
+        }
+        private async IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> GetLocalCurrency(List<GSM05520DTOLocalBaseCurrency> poParameter)
+        {
+            foreach (GSM05520DTOLocalBaseCurrency item in poParameter)
             {
                 yield return item;
             }

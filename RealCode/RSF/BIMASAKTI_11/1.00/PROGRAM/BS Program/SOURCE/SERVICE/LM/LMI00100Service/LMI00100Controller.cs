@@ -90,5 +90,84 @@ namespace LMI00100Service
 
             return loRtn;
         }
+        [HttpPost]
+        public IAsyncEnumerable<LMI00100DTO> GetAllLMI00100Stream()
+        {
+            R_Exception loException = new R_Exception();
+            LMI00100DBParameter loDbPar;
+            List<LMI00100DTO> loRtnTmp;
+            LMI00100Cls loCls;
+            IAsyncEnumerable<LMI00100DTO> loRtn = null;
+            try
+            {
+
+                loDbPar = new LMI00100DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMI00100.CPROPERTY_ID);
+
+                loCls = new LMI00100Cls();
+                loRtnTmp = loCls.GetAllBankChannelList(loDbPar);
+
+                loRtn = GetBankChannel(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
+        
+        [HttpPost]
+        public IAsyncEnumerable<LMI00100PropertyDTO> GetLMI00100PropertyStream()
+        {
+            R_Exception loException = new R_Exception();
+            LMI00100DBParameter loDbPar;
+            List<LMI00100PropertyDTO> loRtnTmp;
+            LMI00100Cls loCls;
+            IAsyncEnumerable<LMI00100PropertyDTO> loRtn = null;
+            try
+            {
+
+                loDbPar = new LMI00100DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+
+                loCls = new LMI00100Cls();
+                loRtnTmp = loCls.GetAllPropertyList(loDbPar);
+
+                loRtn = GetProperty(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
+        private async IAsyncEnumerable<LMI00100DTO> GetBankChannel(List<LMI00100DTO> poParameter)
+        {
+            foreach (LMI00100DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<LMI00100PropertyDTO> GetProperty(List<LMI00100PropertyDTO> poParameter)
+        {
+            foreach (LMI00100PropertyDTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
     }
 }

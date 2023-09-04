@@ -32,7 +32,7 @@ namespace GSM05500Model
 
             try
             {
-                var loReturn = await _GSM05510Model.GetAllAsync();
+                var loReturn = await _GSM05510Model.GetAllStreamAsync();
                 loGridList = new ObservableCollection<GSM05510DTO>(loReturn.Data);
 
             }

@@ -16,7 +16,7 @@ using GSM00700Common.DTO.Upload_DTO;
 
 namespace GSM00700Back
 {
-    public class GSM00710UploadCashFlowCls : R_IBatchProcess, R_IAttachFile
+    public class GSM00710UploadCashFlowCls : R_IBatchProcess
     {
         public GSM00710UploadCashFlowCheckUsedDTO CheckIsCashFlowUsed(GSM00710UploadCashFlowCheckUsedParameterDTO poEntity)
         {
@@ -33,7 +33,7 @@ namespace GSM00700Back
                                  $"SELECT TOP 1 1 FROM GSM_CASH_FLOW (NOLOCK) WHERE NOT EXISTS (SELECT TOP 1 1 FROM GSM_COA " +
                                  $"(NOLOCK) WHERE CCOMPANY_ID = @CCOMPANY_ID" +
                                  $" AND CCASH_FLOW_GROUP_CODE = @CCASH_FLOW_GROUP_CODE" +
-                                 $" AND CCASH_FLOW_CODE = @CCASH_FLOW_CODE)" +
+                                 $" AND CCASH_FLOW_CODE = @CCASH_FLOW_CODE))" +
                                  $"SET @Result = 1; -- Condition is true, set @Result to true " +
                                  $"ELSE " +
                                  $"SET @Result = 0; -- Condition is false, set @Result to false " +
@@ -45,13 +45,13 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poEntity.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 50, poEntity.CCASH_FLOW_GROUP_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 50, poEntity.CCASH_FLOW_CODE);
-         
 
-                loDb.SqlExecNonQuery(loConn, loCmd, false);
 
-                lcQuery = $"SELECT @Result AS LRESULT";
+                //loDb.SqlExecNonQuery(loConn, loCmd, false);
 
-                loCmd.CommandText = lcQuery;
+                //lcQuery = $"SELECT @Result AS LRESULT";
+
+                //loCmd.CommandText = lcQuery;
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -93,17 +93,16 @@ namespace GSM00700Back
 
                 loDb.R_BulkInsert<GSM00710UploadCashFlowDTO>((SqlConnection)loConn, "#CASHFLOW", poEntity);
 
-                lcQuery = $"UPDATE A SET A.LEXIST = 1 " +
-                    $"FROM #CASHFLOW A WHERE EXISTS " +
-                    $"(SELECT TOP 1 1 FROM GSM_CASH_FLOW B " +
-                    $"WHERE B.CCOMPANY_ID = A.CCOMPANY_ID " +
-                    $"AND B.CCASH_FLOW_CODE = A.CCASHFLOW_CODE " +
-                    $"AND B.CCASH_FLOW_GROUP_CODE  = A.CCASHFLOW_GROUP_CODE)";
+                //lcQuery = $"UPDATE A SET A.LEXIST = 1 " +
+                //    $"FROM #CASHFLOW A WHERE EXISTS " +
+                //    $"(SELECT TOP 1 1 FROM GSM_CASH_FLOW B " +
+                //    $"WHERE B.CCOMPANY_ID = A.CCOMPANY_ID " +
+                //    $"AND B.CCASH_FLOW_CODE = A.CCASHFLOW_CODE " +
 
 
-                loDb.SqlExecNonQuery(lcQuery, loConn, false);
+                //loDb.SqlExecNonQuery(lcQuery, loConn, false);
 
-                lcQuery = $"SELECT * FROM #CASHFLOW";
+                //lcQuery = $"SELECT * FROM #CASHFLOW";
 
                 DbCommand loCmd = loDb.GetCommand();
                 loCmd.CommandText = lcQuery;
@@ -122,124 +121,124 @@ namespace GSM00700Back
             return loResult;
         }
 
-        public void R_AttachFile(R_AttachFilePar poAttachFile)
-        {
-            R_Exception loException = new R_Exception();
-            string lcCmd;
-            string lcQuery = "";
-            var loDb = new R_Db();
-            DbConnection loConn = loDb.GetConnection();
-            var loCmd = loDb.GetCommand();
-            Dictionary<string, string> loMapping = new Dictionary<string, string>();
-            List<GSM00710UploadCashFlowDTO> loResult = null;
-            int count = 1;
+        //public void R_AttachFile(R_AttachFilePar poAttachFile)
+        //{
+        //    R_Exception loException = new R_Exception();
+        //    string lcCmd;
+        //    string lcQuery = "";
+        //    var loDb = new R_Db();
+        //    DbConnection loConn = loDb.GetConnection();
+        //    var loCmd = loDb.GetCommand();
+        //    Dictionary<string, string> loMapping = new Dictionary<string, string>();
+        //    List<GSM00710UploadCashFlowDTO> loResult = null;
+        //    int count = 1;
 
-            try
-            {
-                var loTempObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00710UploadCashFlowDTO>>(poAttachFile.BigObject);
-
-
-                List<GSM00710UploadCashFlowSaveDTO> loParam = new List<GSM00710UploadCashFlowSaveDTO>();
-
-                foreach (var item in loTempObject)
-                {
-                    loParam.Add(new GSM00710UploadCashFlowSaveDTO()
-                    {
-                        NO = count,
-                        CCOMPANY_ID = poAttachFile.Key.COMPANY_ID,
-                        CSEQ =item.CSEQ,
-                        CCASHFLOW_CODE = item.CCASHFLOW_CODE,
-                        CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
-                        CCASHFLOW_TYPE = item.CCASHFLOW_TYPE,
-                        CCASHFLOW_GROUP_CODE = item.CCASHFLOW_GROUP_CODE,
-                        LEXIST = item.LEXIST
-                    });
-                    count++;
-                };
-
-             
-
-                using (var TransScope = new TransactionScope(TransactionScopeOption.Required))
-                {
-
-                    lcQuery = "CREATE TABLE #CASHFLOW ( " +
-                              "    NO INT, " +
-                              "    CCOMPANY_ID VARCHAR(8), " +
-                              "    CCASHFLOW_GROUP_CODE VARCHAR(100), " +
-                              "    CSEQ VARCHAR(3), " +
-                              "    CCASHFLOW_CODE VARCHAR(100), " +
-                              "    CCASH_FLOW_NAME NVARCHAR(100), " +
-                              "    CCASHFLOW_TYPE VARCHAR(10), " +
-                              "    LEXIST BIT " +
-                              ")";
+        //    try
+        //    {
+        //        var loTempObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00710UploadCashFlowDTO>>(poAttachFile.BigObject);
 
 
-                    loDb.SqlExecNonQuery(lcQuery, loConn, false);
+        //        List<GSM00710UploadCashFlowSaveDTO> loParam = new List<GSM00710UploadCashFlowSaveDTO>();
 
-                    loDb.R_BulkInsert<GSM00710UploadCashFlowSaveDTO>((SqlConnection)loConn, "#CASHFLOW", loParam);
+        //        foreach (var item in loTempObject)
+        //        {
+        //            loParam.Add(new GSM00710UploadCashFlowSaveDTO()
+        //            {
+        //                NO = count,
+        //                CCOMPANY_ID = poAttachFile.Key.COMPANY_ID,
+        //                CSEQ =item.CSEQ,
+        //                CCASHFLOW_CODE = item.CCASHFLOW_CODE,
+        //                CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
+        //                CCASHFLOW_TYPE = item.CCASHFLOW_TYPE,
+        //                CCASHFLOW_GROUP_CODE = item.CCASHFLOW_GROUP_CODE,
+        //                LEXIST = item.LEXIST
+        //            });
+        //            count++;
+        //        };
 
-                    lcQuery = $"EXEC RSP_GS_VALIDATE_UPLOAD_CASHFLOW " +
-                        $"@CCOMPANY_ID, " +
-                        $"@CUSER_ID, " +
-                        $"@KEY_GUID";
-
-                    loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poAttachFile.Key.COMPANY_ID);
-                    loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 50, poAttachFile.Key.USER_ID);
-                    loDb.R_AddCommandParameter(loCmd, "@KEY_GUID", DbType.String, 50, poAttachFile.Key.KEY_GUID);
-
-                    loCmd.CommandText = lcQuery;
-
-                    loDb.SqlExecNonQuery(loConn, loCmd, false);
 
 
-                    lcQuery = $"SELECT CCOMPANY_ID FROM GST_XML_RESULT WHERE CCOMPANY_ID = @CCOMPANY_ID AND CUSER_ID = @CUSER_ID AND CKEY_GUID = @KEY_GUID ";
-                    loCmd.CommandText = lcQuery;
+        //        using (var TransScope = new TransactionScope(TransactionScopeOption.Required))
+        //        {
 
-                    var loDataTable = loDb.SqlExecQuery(loConn, loCmd, false);
+        //            lcQuery = "CREATE TABLE #CASHFLOW ( " +
+        //                      "    NO INT, " +
+        //                      "    CCOMPANY_ID VARCHAR(8), " +
+        //                      "    CCASHFLOW_GROUP_CODE VARCHAR(100), " +
+        //                      "    CSEQ VARCHAR(3), " +
+        //                      "    CCASHFLOW_CODE VARCHAR(100), " +
+        //                      "    CCASH_FLOW_NAME NVARCHAR(100), " +
+        //                      "    CCASHFLOW_TYPE VARCHAR(10), " +
+        //                      "    LEXIST BIT " +
+        //                      ")";
 
-                    var loDataErrorValidate = R_Utility.R_ConvertTo<GSM00710UploadCashFlowDTO>(loDataTable).ToList();
 
-                    if (loDataErrorValidate.Count > 0)
-                    {
-                        lcQuery = "EXECUTE RSP_ConvertXMLToTable @CCOMPANY_ID, @CUSER_ID, @KEY_GUID";
-                        loCmd.CommandText = lcQuery;
+        //            loDb.SqlExecNonQuery(lcQuery, loConn, false);
 
-                        var loDataTableResult = loDb.SqlExecQuery(loConn, loCmd, false);
+        //            loDb.R_BulkInsert<GSM00710UploadCashFlowSaveDTO>((SqlConnection)loConn, "#CASHFLOW", loParam);
 
-                        var loTempResult = R_Utility.R_ConvertTo<GSM00710UploadCashFlowErrorDTO>(loDataTableResult).ToList();
+        //            lcQuery = $"EXEC RSP_GS_VALIDATE_UPLOAD_CASHFLOW " +
+        //                $"@CCOMPANY_ID, " +
+        //                $"@CUSER_ID, " +
+        //                $"@KEY_GUID";
 
-                        var loConvertJson = JsonSerializer.Serialize(loTempResult);
+        //            loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poAttachFile.Key.COMPANY_ID);
+        //            loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 50, poAttachFile.Key.USER_ID);
+        //            loDb.R_AddCommandParameter(loCmd, "@KEY_GUID", DbType.String, 50, poAttachFile.Key.KEY_GUID);
 
-                        throw new Exception(loConvertJson);
-                    }
+        //            loCmd.CommandText = lcQuery;
 
-                    TransScope.Complete();
-                }
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
-            finally
-            {
-                if (loConn != null)
-                {
-                    if (loConn.State != ConnectionState.Closed)
-                        loConn.Close();
+        //            loDb.SqlExecNonQuery(loConn, loCmd, false);
 
-                    loConn.Dispose();
-                    loConn = null;
-                }
-            }
 
-            loException.ThrowExceptionIfErrors();
-        }
+        //            lcQuery = $"SELECT CCOMPANY_ID FROM GST_XML_RESULT WHERE CCOMPANY_ID = @CCOMPANY_ID AND CUSER_ID = @CUSER_ID AND CKEY_GUID = @KEY_GUID ";
+        //            loCmd.CommandText = lcQuery;
+
+        //            var loDataTable = loDb.SqlExecQuery(loConn, loCmd, false);
+
+        //            var loDataErrorValidate = R_Utility.R_ConvertTo<GSM00710UploadCashFlowDTO>(loDataTable).ToList();
+
+        //            if (loDataErrorValidate.Count > 0)
+        //            {
+        //                lcQuery = "EXECUTE RSP_ConvertXMLToTable @CCOMPANY_ID, @CUSER_ID, @KEY_GUID";
+        //                loCmd.CommandText = lcQuery;
+
+        //                var loDataTableResult = loDb.SqlExecQuery(loConn, loCmd, false);
+
+        //                var loTempResult = R_Utility.R_ConvertTo<GSM00710UploadCashFlowErrorDTO>(loDataTableResult).ToList();
+
+        //                var loConvertJson = JsonSerializer.Serialize(loTempResult);
+
+        //                throw new Exception(loConvertJson);
+        //            }
+
+        //            TransScope.Complete();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loException.Add(ex);
+        //    }
+        //    finally
+        //    {
+        //        if (loConn != null)
+        //        {
+        //            if (loConn.State != ConnectionState.Closed)
+        //                loConn.Close();
+
+        //            loConn.Dispose();
+        //            loConn = null;
+        //        }
+        //    }
+
+        //    loException.ThrowExceptionIfErrors();
+        //}
 
         public void R_BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
             var loDb = new R_Db();
-            var loConn = loDb.GetConnection();
-            var loCmd = loDb.GetCommand();
+            DbConnection loConn = null;
+            DbCommand loCmd = null;
             var loEx = new R_Exception();
             var lcQuery = "";
             int count = 1;
@@ -248,6 +247,8 @@ namespace GSM00700Back
             {
                 using (var transScope = new TransactionScope(TransactionScopeOption.Required))
                 {
+                    loConn = loDb.GetConnection(); // UNTUK CONNECTION TRASCOPE GUNAKAN DISINI 
+                    loCmd = loDb.GetCommand();
                     var liFinishFlag = 1; //0=Process, 1=Success, 9=Fail
                     var loObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00710UploadCashFlowDTO>>(poBatchProcessPar.BigObject);
 
@@ -308,7 +309,7 @@ namespace GSM00700Back
                     loCmd.CommandText = lcQuery;
                     loDb.SqlExecNonQuery(loConn, loCmd, false);
 
-                    transScope.Complete();
+                    transScope.Complete(); // UNTUK ROLLBACK 
                 }
             }
             catch (Exception ex)
@@ -324,6 +325,12 @@ namespace GSM00700Back
 
                     loConn.Dispose();
                     loConn = null;
+                }
+
+                if (loCmd != null)
+                {
+                    loCmd.Dispose();
+                    loCmd = null;
                 }
             }
 

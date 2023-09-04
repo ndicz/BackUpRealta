@@ -25,51 +25,51 @@ namespace GSM00700Model.Model
         {
         }
 
-        public async Task<GSM00720ListDTO> GetCashFlowPlanAsync()
-        {
-            var loEx = new R_Exception();
-            GSM00720ListDTO loResult = null;
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720ListDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetAllCashFlowPlan), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //public async Task<GSM00720ListDTO> GetCashFlowPlanAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM00720ListDTO loResult = null;
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720ListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM00720.GetAllCashFlowPlan), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loResult;
-        }
+        //    return loResult;
+        //}
 
-        public async Task<GSM00720YearListDTO> GetYearListAsync()
-        {
-            var loEx = new R_Exception();
-            GSM00720YearListDTO loResult = null;
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720YearListDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM00720.GetYearList), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //public async Task<GSM00720YearListDTO> GetYearListAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM00720YearListDTO loResult = null;
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00720YearListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM00720.GetYearList), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loResult;
-        }
+        //    return loResult;
+        //}
 
         public async Task<GSM00720CopyFromYearListDTO> GetCopyFromYearListAsync(GSM00700ParameterDTO poParamDto)
         {
@@ -238,7 +238,77 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
+        public async Task<GSM00720ListDTO> GetCashFlowPlanStreamAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720ListDTO loResult = new GSM00720ListDTO();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM00720DTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetAllCashFlowPlanStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00720YearListDTO> GetYearStreamAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00720YearListDTO loResult = new GSM00720YearListDTO();
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM00720YearDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00720.GetYearStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+
+        //Not Used
         public GSM00720ListDTO GetAllCashFlowPlan()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00720CurrencyDTO> GetCurrencyStream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00720DTO> GetAllCashFlowPlanStream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00720YearDTO> GetYearStream()
         {
             throw new NotImplementedException();
         }

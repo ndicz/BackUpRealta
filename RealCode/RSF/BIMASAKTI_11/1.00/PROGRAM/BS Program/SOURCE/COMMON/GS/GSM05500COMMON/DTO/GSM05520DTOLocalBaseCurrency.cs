@@ -12,4 +12,10 @@ namespace GSM05500Common.DTO
         public string CBASE_CURRENCY { get; set; }
         public string CBASE_CURRENCY_NAME { get; set; }
     }
+
+    public class GSM00520DTOLocalBaseListCurrency : R_APIResultBaseDTO
+    {
+        public List<GSM05520DTOLocalBaseCurrency> Data { get; set; }
+    }
+
 }

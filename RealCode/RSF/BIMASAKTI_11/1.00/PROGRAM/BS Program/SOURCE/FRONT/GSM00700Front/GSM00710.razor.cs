@@ -156,11 +156,14 @@ namespace GSM00700Front
                 if (eventArgs.ConductorMode == R_eConductorMode.Normal)
                 {
                     var loParam = R_FrontUtility.ConvertObjectToObject<GSM00720DTO>(eventArgs.Data);
-                    GSM00720ViewModel.CashFlowPlanCode = loParam.CCASH_FLOW_CODE;
-                    GSM00720ViewModel.CashFlowPlanName = loParam.CCASH_FLOW_NAME;
+                    if (loParam != null)
+                    {
+                        GSM00720ViewModel.CashFlowPlanCode = loParam.CCASH_FLOW_CODE;
+                        GSM00720ViewModel.CashFlowPlanName = loParam.CCASH_FLOW_NAME;
+                        await GSM00710ViewModel.GetCashFlowId(loParam.CCASH_FLOW_CODE, loParam.CCASH_FLOW_NAME);
 
+                    }
 
-                    await GSM00710ViewModel.GetCashFlowId(loParam.CCASH_FLOW_CODE, loParam.CCASH_FLOW_NAME);
 
                 }
             }

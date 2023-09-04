@@ -16,23 +16,25 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using GSM00700Common.DTO.Upload_DTO_GSM00720;
+using GSM00700Common.DTO;
 
 namespace GSM00700Model
 {
     public class GSM00720UploadViewModel : R_ViewModel<GSM00720UploadCashFlowPlanDTO>, R_IProcessProgressStatus
     {
         private GSM00720UploadModel loModel = new GSM00720UploadModel();
+        private GSM00720Model loCashflowPlanModel = new GSM00720Model();
+
+        public GSM00720UploadCashFlowPlanErrorResultDTO loErrorRtn = new GSM00720UploadCashFlowPlanErrorResultDTO();
+        public GSM00720UploadCashFlowPlanResultDTO loRtn = new GSM00720UploadCashFlowPlanResultDTO();
+        public GSM00720UploadCashFlowPlanCheckUsedDTO loCheckIsCashFlowPlanUsed = new GSM00720UploadCashFlowPlanCheckUsedDTO();
+        public GSM00720UploadCashFlowPlanCheckResultDTO loCheckIsCashFlowPlanUsedRtn = new GSM00720UploadCashFlowPlanCheckResultDTO();
+        public GSM00720UploadCashFlowPlanParameterDTO loParameter = new GSM00720UploadCashFlowPlanParameterDTO();
+
         public ObservableCollection<GSM00720UploadCashFlowPlanDTO> loUploadCashFlowPlanDisplayList = new ObservableCollection<GSM00720UploadCashFlowPlanDTO>();
 
         public List<GSM00720UploadCashFlowPlanDTO> loUploadCashFlowPlanList = new List<GSM00720UploadCashFlowPlanDTO>();
-
-        public GSM00720UploadCashFlowPlanResultDTO loRtn = new GSM00720UploadCashFlowPlanResultDTO();
-
-        public GSM00720UploadCashFlowPlanCheckUsedDTO loCheckIsCashFlowPlanUsed = new GSM00720UploadCashFlowPlanCheckUsedDTO();
-
-        public GSM00720UploadCashFlowPlanCheckResultDTO loCheckIsCashFlowPlanUsedRtn = new GSM00720UploadCashFlowPlanCheckResultDTO();
-
-        public GSM00720UploadCashFlowPlanParameterDTO loParameter = new GSM00720UploadCashFlowPlanParameterDTO();
+        public List<GSM00720UploadCashFlowPlanErrorDTO> loErrorList = new List<GSM00720UploadCashFlowPlanErrorDTO>();
 
         public string SelectedCompanyId = "";
         public string SelectedUserId = "";
@@ -45,7 +47,7 @@ namespace GSM00700Model
         public string CashFlowPlanName = "";
         public string CashFlowPlanYear = "";
 
-
+        public bool IsUploadSuccesful = true;
         public string Message = "";
         public int Percentage = 0;
         public bool OverwriteData = false;
@@ -53,6 +55,47 @@ namespace GSM00700Model
 
         public bool VisibleError = false;
         public bool IsErrorEmptyFile = false;
+
+        public async Task ValidateUpload()
+        {
+            var loEx = new R_Exception();
+            R_BatchParameter loBatchValidatePar;
+            R_ProcessAndUploadClient loCls;
+            List<GSM00720UploadCashFlowPlanErrorDTO> Bigobject;
+            List<R_KeyValue> loUserParam;
+
+            try
+            {
+                loUserParam = new List<R_KeyValue>();
+                loUserParam.Add(new R_KeyValue() { Key = ContextConstantGSM00700.IS_OVERWRITE_CONTEXT, Value = IsOverWrite });
+
+                //Instantiate ProcessClient
+                loCls = new R_ProcessAndUploadClient(
+                    pcModuleName: "GS",
+                    plSendWithContext: true,
+                    plSendWithToken: true,
+                    pcHttpClientName: "R_DefaultServiceUrl",
+                    poProcessProgressStatus: this);
+
+                //preapare Batch Parameter
+                loBatchValidatePar = new R_BatchParameter();
+                loBatchValidatePar.COMPANY_ID = SelectedCompanyId;
+                loBatchValidatePar.USER_ID = SelectedUserId;
+                loBatchValidatePar.UserParameters = loUserParam;
+                loBatchValidatePar.ClassName = "GSM00700Back.GSM00720UploadCashFlowPlanValidateCls";
+                loBatchValidatePar.BigObject = loUploadCashFlowPlanList;
+
+                await loCls.R_BatchProcess<List<GSM00720UploadCashFlowPlanDTO>>(loBatchValidatePar, 6);
+
+                VisibleError = false;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            loEx.ThrowExceptionIfErrors();
+        }
+
 
         public void ReadExcelFile()
         {
@@ -152,15 +195,36 @@ namespace GSM00700Model
             }
         }
 
-        public async Task GetUploadCashFlowPlanListStreamAsync()
+        public async Task GetUploadCashFlowPlanListStreamAsync() //fiks
         {
             R_Exception loException = new R_Exception();
             try
             {
 
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.UPLOAD_CashFlowPlan_STREAMING_CONTEXT, loUploadCashFlowPlanList);
-                loRtn = await loModel.GetUploadList();
-                loUploadCashFlowPlanDisplayList = new ObservableCollection<GSM00720UploadCashFlowPlanDTO>(loRtn.Data);
+                //R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.UPLOAD_CashFlowPlan_STREAMING_CONTEXT, loUploadCashFlowPlanList);
+                //loRtn = await loModel.GetUploadList();
+                //loUploadCashFlowPlanDisplayList = new ObservableCollection<GSM00720UploadCashFlowPlanDTO>(loRtn.Data);
+
+                GSM00720ListDTO loResult = new GSM00720ListDTO();
+                loResult = await loCashflowPlanModel.GetCashFlowPlanStreamAsync();
+                List<GSM00720UploadCashFlowPlanDTO> loTemp = new List<GSM00720UploadCashFlowPlanDTO>();
+                loTemp = loUploadCashFlowPlanList.Select(x => new GSM00720UploadCashFlowPlanDTO()
+                {
+                    CCOMPANY_ID = x.CCOMPANY_ID,
+                    CCASHFLOW_GROUP_CODE = x.CCASHFLOW_GROUP_CODE,
+                    CCASHFLOW_GROUP_NAME = x.CCASHFLOW_GROUP_NAME,
+                    CCASH_FLOW_NAME = x.CCASH_FLOW_NAME,
+                    CCASH_FLOW_CODE = x.CCASH_FLOW_CODE,
+                    CCYEAR = x.CCYEAR,
+                    CPERIOD_NO = x.CPERIOD_NO,
+                    NLOCAL_AMOUNT = x.NLOCAL_AMOUNT,
+                    NBASE_AMOUNT = x.NBASE_AMOUNT,
+                    CNOTES = x.CNOTES,
+                    LOVERWRITE = x.LOVERWRITE,
+                    LEXIST = loResult.Data.Any(y => x.CCASH_FLOW_CODE == y.CCASH_FLOW_CODE),
+                }).ToList();
+
+                loUploadCashFlowPlanDisplayList = new ObservableCollection<GSM00720UploadCashFlowPlanDTO>(loTemp);
             }
             catch (Exception ex)
             {
@@ -218,11 +282,11 @@ namespace GSM00700Model
 
                 loBatchPar.COMPANY_ID = SelectedCompanyId;
                 loBatchPar.USER_ID = SelectedUserId;
-                loBatchPar.ClassName = "GSM00700Back.GSM00720UploadCashFlowPlanCls";
+                loBatchPar.ClassName = "GSM00700Back.GSM00720UploadCashFlowPlanPlanCls";
                 loBatchPar.UserParameters = loUserParam;
                 loBatchPar.BigObject = Bigobject;
 
-                lcGuid = await loCls.R_BatchProcess<List<GSM00720UploadCashFlowPlanDTO>>(loBatchPar, Bigobject.Count);
+                lcGuid = await loCls.R_BatchProcess<List<GSM00720UploadCashFlowPlanDTO>>(loBatchPar, 6);
             }
             catch (Exception ex)
             {
@@ -237,6 +301,7 @@ namespace GSM00700Model
             if (poProcessResultMode == eProcessResultMode.Success)
             {
                 Message = string.Format("Process Complete and success with GUID {0}", pcKeyGuid);
+                await GetUploadCashFlowPlanListStreamAsync();
             }
 
             if (poProcessResultMode == eProcessResultMode.Fail)
@@ -260,6 +325,53 @@ namespace GSM00700Model
             Message = string.Format("Process Progress {0} with status {1}", pnProgress, pcStatus);
 
             await Task.CompletedTask;
+        }
+        private async Task GetError(string pcKeyGuid)
+        {
+            //R_APIException loException;
+            //R_ProcessAndUploadClient loCls;
+            //List<R_ErrorStatusReturn> loErrRtn;
+
+            try
+            {
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.UPLOAD_CENTER_ERROR_GUID_STREAMING_CONTEXT, pcKeyGuid);
+
+                loErrorRtn = await loModel.GetErrorProcessListAsync();
+                loErrorList = loErrorRtn.Data;
+
+
+                loUploadCashFlowPlanList = loErrorList.Select(x => new GSM00720UploadCashFlowPlanDTO()
+                {
+                    CCASHFLOW_GROUP_CODE = x.CCASH_FLOW_GROUP_CODE,
+                    CCASH_FLOW_CODE = x.CCASH_FLOW_CODE,
+                    CCASH_FLOW_NAME = x.CYEAR,
+                    CPERIOD_NO = x.CPERIOD_NO,
+                    NLOCAL_AMOUNT = x.NLOCAL_AMOUNT,
+                    NBASE_AMOUNT = x.NBASE_AMOUNT,
+                    CNOTES = x.ErrorMessage,
+                    LEXIST = x.LEXIST,
+                    CCOMPANY_ID = SelectedCompanyId
+                }).ToList();
+
+                loUploadCashFlowPlanDisplayList = new ObservableCollection<GSM00720UploadCashFlowPlanDTO>(loUploadCashFlowPlanList);
+
+                VisibleError = true;
+                IsUploadSuccesful = !VisibleError;
+
+                //DO SOMETHING WITH ERROR
+
+                //loErrRtn = await loCls.R_GetErrorProcess(new R_UploadAndProcessKey() { KEY_GUID = pcKeyGuid });
+                //foreach (R_ErrorStatusReturn item in loErrRtn)
+                //{
+                //    Message = $"Error SeqNo {item.SeqNo} with msg {item.ErrorMessage}";
+                //}
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+
         }
     }
 }

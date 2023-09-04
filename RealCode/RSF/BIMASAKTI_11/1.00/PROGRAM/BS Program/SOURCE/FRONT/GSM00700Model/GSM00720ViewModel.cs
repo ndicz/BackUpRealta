@@ -102,7 +102,7 @@ namespace GSM00700Model
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, CashFlowPlanCode);
 
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
-                var loReturn = await _GSM00720Model.GetCashFlowPlanAsync();
+                var loReturn = await _GSM00720Model.GetCashFlowPlanStreamAsync();
                 loGridList = new ObservableCollection<GSM00720DTO>(loReturn.Data);
             }
             catch (Exception ex)
@@ -118,7 +118,7 @@ namespace GSM00700Model
 
             try
             {
-                var loReturn = await _GSM00720Model.GetYearListAsync();
+                var loReturn = await _GSM00720Model.GetYearStreamAsync();
                 loYearList = new ObservableCollection<GSM00720YearDTO>(loReturn.Data);
             }
             catch (Exception ex)
@@ -134,7 +134,7 @@ namespace GSM00700Model
             var loEx = new R_Exception();
             try
             {
-                var loResult = await _GSM00720Model.GetYearListAsync();
+                var loResult = await _GSM00720Model.GetYearStreamAsync();
                 YearComboBox = loResult.Data;
             }
             catch (Exception ex)

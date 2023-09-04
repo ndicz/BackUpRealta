@@ -8,6 +8,7 @@ namespace GSM00700Common
     public interface IUPLOAD00710
     {
         IAsyncEnumerable<GSM00710UploadCashFlowDTO> GetUploadListGSM00710();
+        IAsyncEnumerable<GSM00710UploadCashFlowErrorDTO> GetErrorListGSM00710();
         GSM00710UploadCashFlowCheckRessultDTO CheckUploadGSM00710();
     }
 }

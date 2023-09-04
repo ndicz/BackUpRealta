@@ -5,17 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Transactions;
+using LMM02000Common;
 using LMM02000Common.DTO.UPLOAD_DTO_LMM02000;
 
 namespace LMM02000Back
 {
     public class LMM02000UploadSalesmanCls : R_IBatchProcess, R_IAttachFile
     {
+        //ga kepake
         public LMM02000UploadSalesmanCheckUsedDTO CheckIsSalesmanUsed(LMM02000UploadSalesmanCheckUsedParameterDTO poEntity)
         {
             R_Exception loException = new R_Exception();
@@ -41,8 +44,8 @@ namespace LMM02000Back
                 loCmd.CommandText = lcQuery;
 
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 50, poEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 50, poEntity.CCASH_FLOW_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 50, poEntity.CPROPERTY_ID);
+
 
 
                 loDb.SqlExecNonQuery(loConn, loCmd, false);
@@ -75,33 +78,38 @@ namespace LMM02000Back
                 R_Db loDb = new R_Db();
                 DbConnection loConn = loDb.GetConnection("R_DefaultConnectionString");
 
-                string lcQuery = $"CREATE TABLE #Salesman " +
-                        $"(CCOMPANY_ID VARCHAR(50), " +
-                        $"CSEQ VARCHAR(50), " +
-                        $"CSalesman_GROUP_CODE VARCHAR(50), " +
-                        $"CSalesman_CODE VARCHAR(20), " +
-                        $"CSalesman_GROUP_NAME VARCHAR(50)," +
-                        $"NOTES_ VARCHAR(20)," +
-                        $"CCASH_FLOW_NAME VARCHAR(100), " +
-                        $"CSalesman_TYPE NVARCHAR(MAX), " +
-                        $"LEXIST BIT, " +
-                        $"LOVER_WRITE BIT);";
+                string lcQuery = $"CREATE TABLE #SALESMAN ( " +
+                           $"NO INT, " +
+                          $"SalesmanId  VARCHAR(8)," +
+                          $"SalesmanName NVARCHAR(100)," +
+                          $"Active BIT," +
+                          $"NonActiveDate    VARCHAR(8)," +
+                          $"Address NVARCHAR(255)," +
+                          $"EmailAddress VARCHAR(100)," +
+                          $"MobileNo1 VARCHAR(30)," +
+                          $"MobileNo2 VARCHAR(30)," +
+                          $"NIK NVARCHAR(40)," +
+                          $"Gender VARCHAR(2)," +
+                          $"SalesmanType VARCHAR(2)," +
+                          $"CompanyName VARCHAR(20)," +
+                          $"LEXIST BIT " + 
+                          $")";
+
 
                 loDb.SqlExecNonQuery(lcQuery, loConn, false);
 
-                loDb.R_BulkInsert<LMM02000UploadSalesmanDTO>((SqlConnection)loConn, "#Salesman", poEntity);
+                loDb.R_BulkInsert<LMM02000UploadSalesmanDTO>((SqlConnection)loConn, "#SALESMAN", poEntity);
 
                 lcQuery = $"UPDATE A SET A.LEXIST = 1 " +
-                    $"FROM #Salesman A WHERE EXISTS " +
-                    $"(SELECT TOP 1 1 FROM GSM_CASH_FLOW B " +
-                    $"WHERE B.CCOMPANY_ID = A.CCOMPANY_ID " +
-                    $"AND B.CCASH_FLOW_CODE = A.CSalesman_CODE " +
-                    $"AND B.CCASH_FLOW_GROUP_CODE  = A.CSalesman_GROUP_CODE)";
+                          $"FROM #SALESMAN A WHERE EXISTS " +
+                          $"(SELECT TOP 1 1 FROM LMM_SALESMAN B " +
+                          $"WHERE B.CCOMPANY_ID = A.CCOMPANY_ID " +
+                          $"AND B.CSALESMAN_ID = A.CSALESMAN_ID " +
 
 
-                loDb.SqlExecNonQuery(lcQuery, loConn, false);
+                          loDb.SqlExecNonQuery(lcQuery, loConn, false);
 
-                lcQuery = $"SELECT * FROM #Salesman";
+                lcQuery = $"SELECT * FROM #SALESMAN";
 
                 DbCommand loCmd = loDb.GetCommand();
                 loCmd.CommandText = lcQuery;
@@ -145,43 +153,50 @@ namespace LMM02000Back
                     {
                         NO = count,
                         CCOMPANY_ID = poAttachFile.Key.COMPANY_ID,
-                        CSEQ = item.CSEQ,
-                        CSalesman_CODE = item.CSalesman_CODE,
-                        CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
-                        CSalesman_TYPE = item.CSalesman_TYPE,
-                        CSalesman_GROUP_CODE = item.CSalesman_GROUP_CODE,
+                        //CSEQ = item.CSEQ,
+                        //CSalesman_CODE = item.CSalesman_CODE,
+                        //CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
+                        //CSalesman_TYPE = item.CSalesman_TYPE,
+                        //CSalesman_GROUP_CODE = item.CSalesman_GROUP_CODE,
                         LEXIST = item.LEXIST
                     });
                     count++;
                 };
 
 
-
                 using (var TransScope = new TransactionScope(TransactionScopeOption.Required))
                 {
 
-                    lcQuery = "CREATE TABLE #Salesman ( " +
-                              "    NO INT, " +
-                              "    CCOMPANY_ID VARCHAR(8), " +
-                              "    CSalesman_GROUP_CODE VARCHAR(100), " +
-                              "    CSEQ VARCHAR(3), " +
-                              "    CSalesman_CODE VARCHAR(100), " +
-                              "    CCASH_FLOW_NAME NVARCHAR(100), " +
-                              "    CSalesman_TYPE VARCHAR(10), " +
-                              "    LEXIST BIT " +
+                    lcQuery = "CREATE TABLE #SALESMAN ( " +
+                              "NO INT, " +
+                              "SalesmanId  VARCHAR(8)," +
+                              "SalesmanName NVARCHAR(100)," +
+                              "Active BIT," +
+                              "NonActiveDate    VARCHAR(8)," +
+                              "Address NVARCHAR(255)," +
+                              "EmailAddress VARCHAR(100)," +
+                              "MobileNo1 VARCHAR(30)," +
+                              "MobileNo2 VARCHAR(30)," +
+                              "NIK NVARCHAR(40)," +
+                              "Gender VARCHAR(2)," +
+                              "SalesmanType VARCHAR(2)," +
+                              "CompanyName VARCHAR(20)," +
+                              "LEXIST BIT " +
                               ")";
 
 
                     loDb.SqlExecNonQuery(lcQuery, loConn, false);
 
-                    loDb.R_BulkInsert<LMM02000UploadSalesmanSaveDTO>((SqlConnection)loConn, "#Salesman", loParam);
+                    loDb.R_BulkInsert<LMM02000UploadSalesmanSaveDTO>((SqlConnection)loConn, "#SALESMAN", loParam);
 
-                    lcQuery = $"EXEC RSP_GS_VALIDATE_UPLOAD_Salesman " +
+                    lcQuery = $"EXEC RSP_LM_UPLOAD_SALESMAN " +
                         $"@CCOMPANY_ID, " +
                         $"@CUSER_ID, " +
+                        $"@CPROPERTY_ID," +
                         $"@KEY_GUID";
 
                     loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poAttachFile.Key.COMPANY_ID);
+                    loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 50, poAttachFile.Key.CPROPERTY_ID);
                     loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 50, poAttachFile.Key.USER_ID);
                     loDb.R_AddCommandParameter(loCmd, "@KEY_GUID", DbType.String, 50, poAttachFile.Key.KEY_GUID);
 
@@ -236,8 +251,8 @@ namespace LMM02000Back
         public void R_BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
             var loDb = new R_Db();
-            var loConn = loDb.GetConnection();
-            var loCmd = loDb.GetCommand();
+            DbConnection loConn = null;
+            DbCommand loCmd = null;
             var loEx = new R_Exception();
             var lcQuery = "";
             int count = 1;
@@ -246,11 +261,13 @@ namespace LMM02000Back
             {
                 using (var transScope = new TransactionScope(TransactionScopeOption.Required))
                 {
+                    loConn = loDb.GetConnection(); // UNTUK CONNECTION TRASCOPE GUNAKAN DISINI 
+                    loCmd = loDb.GetCommand();
                     var liFinishFlag = 1; //0=Process, 1=Success, 9=Fail
                     var loObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<LMM02000UploadSalesmanDTO>>(poBatchProcessPar.BigObject);
 
 
-                    var loVar1 = poBatchProcessPar.UserParameters.Where((x) => x.Key.Equals(ContextConstantGSM00700.IS_OVERWRITE_CONTEXT)).FirstOrDefault().Value;
+                    var loVar1 = poBatchProcessPar.UserParameters.Where((x) => x.Key.Equals(ContextConstantLMM02000.IS_OVERWRITE_CONTEXT)).FirstOrDefault().Value;
                     bool IsOverwrite = ((System.Text.Json.JsonElement)loVar1).GetBoolean();
 
                     List<LMM02000UploadSalesmanSaveDTO> loParam = new List<LMM02000UploadSalesmanSaveDTO>();
@@ -261,11 +278,11 @@ namespace LMM02000Back
                         {
                             NO = count,
                             CCOMPANY_ID = poBatchProcessPar.Key.COMPANY_ID,
-                            CSEQ = item.CSEQ,
-                            CSalesman_CODE = item.CSalesman_CODE,
-                            CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
-                            CSalesman_TYPE = item.CSalesman_TYPE,
-                            CSalesman_GROUP_CODE = item.CSalesman_GROUP_CODE,
+                            //CSEQ = item.CSEQ,
+                            //CSalesman_CODE = item.CSalesman_CODE,
+                            //CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
+                            //CSalesman_TYPE = item.CSalesman_TYPE,
+                            //CSalesman_GROUP_CODE = item.CSalesman_GROUP_CODE,
                             LEXIST = item.LEXIST
                         });
                         count++;
@@ -300,7 +317,7 @@ namespace LMM02000Back
                     loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poBatchProcessPar.Key.COMPANY_ID);
                     loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 50, poBatchProcessPar.Key.USER_ID);
                     loDb.R_AddCommandParameter(loCmd, "@CKEY_GUID", DbType.String, 50, poBatchProcessPar.Key.KEY_GUID);
-                    loDb.R_AddCommandParameter(loCmd, "@LOVERWRITE", DbType.Boolean, 50, IsOverwrite);
+                    //loDb.R_AddCommandParameter(loCmd, "@LOVERWRITE", DbType.Boolean, 50, IsOverwrite);
 
 
                     loCmd.CommandText = lcQuery;

@@ -26,28 +26,28 @@ namespace GSM00700Model.Model
         {
         }
 
-        public async Task<GSM00700ListDTO> GetAllAsync()
-        {
-            var loEx = new R_Exception();
-            GSM00700ListDTO loResult = null;
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00700ListDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM00700.GetAllCashFlowGroupList), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //public async Task<GSM00700ListDTO> GetAllAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    GSM00700ListDTO loResult = null;
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00700ListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM00700.GetAllCashFlowGroupList), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loResult;
-        }
+        //    return loResult;
+        //}
 
         public async Task<GSM00700CashFlowGroupTypeListDTO> GetCashFlowGroupTypeAsync()
         {
@@ -71,15 +71,44 @@ namespace GSM00700Model.Model
 
             return loResult;
         }
+
+        public async Task<GSM00700ListDTO> GetAllCashFlowGroupStreamAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00700ListDTO loResult = new GSM00700ListDTO();
+
+            try
+            {
+
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM00700DTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00700.GetAllCashFlowGroupStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        //Not Used
         public IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream()
         {
             throw new NotImplementedException();
         }
 
-        public GSM00700ListDTO GetAllCashFlowGroupList()
-        {
-            throw new NotImplementedException();
-        }
+        //public GSM00700ListDTO GetAllCashFlowGroupList()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType()
         {

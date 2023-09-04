@@ -51,6 +51,32 @@ namespace GSM00700Service
             return loRtn;
         }
         [HttpPost]
+        public IAsyncEnumerable<GSM00720UploadCashFlowPlanErrorDTO> GetErrorListGSM00720()
+        {
+            R_Exception loException = new R_Exception();
+            IAsyncEnumerable<GSM00720UploadCashFlowPlanErrorDTO> loRtn = null;
+            GSM00720UploadCashFlowPlanValidateCls loCls = new GSM00720UploadCashFlowPlanValidateCls();
+            List<GSM00720UploadCashFlowPlanErrorDTO> loTempRtn = null;
+
+            try
+            {
+                string lcKeyGuid = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.UPLOAD_CENTER_ERROR_GUID_STREAMING_CONTEXT);
+
+                loTempRtn = loCls.GetErrorProcess(R_BackGlobalVar.COMPANY_ID, R_BackGlobalVar.USER_ID, lcKeyGuid);
+
+                loRtn = GetErrorProcessStream(loTempRtn);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
+        [HttpPost]
         public GSM00720UploadCashFlowPlanCheckResultDTO CheckUploadGSM00720()
         {
             R_Exception loException = new R_Exception();
@@ -78,6 +104,13 @@ namespace GSM00700Service
         private async IAsyncEnumerable<GSM00720UploadCashFlowPlanDTO> GetUploadFloorStream(List<GSM00720UploadCashFlowPlanDTO> poParameter)
         {
             foreach (GSM00720UploadCashFlowPlanDTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+        private async IAsyncEnumerable<GSM00720UploadCashFlowPlanErrorDTO> GetErrorProcessStream(List<GSM00720UploadCashFlowPlanErrorDTO> poParameter)
+        {
+            foreach (GSM00720UploadCashFlowPlanErrorDTO item in poParameter)
             {
                 yield return item;
             }

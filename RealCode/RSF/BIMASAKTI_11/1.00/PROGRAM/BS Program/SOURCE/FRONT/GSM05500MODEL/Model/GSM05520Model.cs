@@ -25,81 +25,81 @@ namespace GSM05500Model.Model
         {
         }
 
-        public async Task<List<GSM05520DTO>> GetAllStreamAsync()
-        {
+        //public async Task<List<GSM05520DTO>> GetAllStreamAsync()
+        //{
 
-            var loEx = new R_Exception();
-            List<GSM05520DTO> loResult = null;
+        //    var loEx = new R_Exception();
+        //    List<GSM05520DTO> loResult = null;
 
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = _HttpClientName;
-                loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05520DTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM05520.GetAllRateStream), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken,
-                    null);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-            loEx.ThrowExceptionIfErrors();
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = _HttpClientName;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05520DTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM05520.GetAllRateStream), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken,
+        //            null);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+        //    loEx.ThrowExceptionIfErrors();
 
-            return loResult;
-        }
+        //    return loResult;
+        //}
 
 
-        public async Task<GSM05520ListDTO> GetAllAsync(string RateTypeCode, string CrateDate)
-        {
+        //public async Task<GSM05520ListDTO> GetAllAsync(string RateTypeCode, string CrateDate)
+        //{
 
-            var loEx = new R_Exception();
-            GSM05520ListDTO loResult = null;
+        //    var loEx = new R_Exception();
+        //    GSM05520ListDTO loResult = null;
 
-            try
-            {
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATETYPE_CODE, RateTypeCode);
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATE_DATE, CrateDate);
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05520ListDTO>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM05520.GetAllRateList), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //    try
+        //    {
+        //        R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATETYPE_CODE, RateTypeCode);
+        //        R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATE_DATE, CrateDate);
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05520ListDTO>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM05520.GetAllRateList), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
-            return loResult;
-        }
+        //    loEx.ThrowExceptionIfErrors();
+        //    return loResult;
+        //}
 
-        public async Task<GSM05520ListDTOGetRateType> GetRateList()
-        {
+        //public async Task<GSM05520ListDTOGetRateType> GetRateList()
+        //{
 
-            var loEx = new R_Exception();
-            GSM05520ListDTOGetRateType loResult = null;
+        //    var loEx = new R_Exception();
+        //    GSM05520ListDTOGetRateType loResult = null;
 
-            try
-            {
-                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
-                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05520ListDTOGetRateType>(
-                    _RequestServiceEndPoint,
-                    nameof(IGSM05520.GetListRateType), DEFAULT_MODULE,
-                    _SendWithContext,
-                    _SendWithToken);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+        //    try
+        //    {
+        //        R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+        //        loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM05520ListDTOGetRateType>(
+        //            _RequestServiceEndPoint,
+        //            nameof(IGSM05520.GetListRateType), DEFAULT_MODULE,
+        //            _SendWithContext,
+        //            _SendWithToken);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
 
-            loEx.ThrowExceptionIfErrors();
-            return loResult;
-        }
+        //    loEx.ThrowExceptionIfErrors();
+        //    return loResult;
+        //}
 
         public async Task<GSM05520DTOLocalBaseCurrency> GetLccCurrency()
         {
@@ -125,12 +125,94 @@ namespace GSM05500Model.Model
             return loResult;
         }
 
+        public async Task<GSM05520ListDTO> GetAllStreamingAsync(string RateTypeCode, string CrateDate)
+        {
+            var loEx = new R_Exception();
+            GSM05520ListDTO loResult = new GSM05520ListDTO();
+            try
+            {
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATETYPE_CODE, RateTypeCode);
+                R_FrontContext.R_SetStreamingContext(ContextConstantGSM05500.CRATE_DATE, CrateDate);
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05520DTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM05520.GetAllRateStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
 
+            loEx.ThrowExceptionIfErrors();
 
+            return loResult;
+        }
 
+        public async Task<GSM05520ListDTOGetRateType> GetRateTypeStreamingAsync()
+        {
+            var loEx = new R_Exception();
+            GSM05520ListDTOGetRateType loResult = new GSM05520ListDTOGetRateType();
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05520DTOGetRateType>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM05520.GetAllRateTypeStream),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+                loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
 
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00520DTOLocalBaseListCurrency> GetLcCurrencyStreamingAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00520DTOLocalBaseListCurrency loResult = null;
+            try
+            {
+                //R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                //var loTemp = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSM05520DTOLocalBaseCurrency>(
+                //    _RequestServiceEndPoint,
+                //    nameof(IGSM0552),
+                //    DEFAULT_MODULE,
+                //    _SendWithContext,
+                //    _SendWithToken);
+                //loResult.Data = loTemp;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
 
         public IAsyncEnumerable<GSM05520DTO> GetAllRateStream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM05520DTOGetRateType> GetAllRateTypeStream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> GwtAllLcCurrencyStream()
         {
             throw new NotImplementedException();
         }

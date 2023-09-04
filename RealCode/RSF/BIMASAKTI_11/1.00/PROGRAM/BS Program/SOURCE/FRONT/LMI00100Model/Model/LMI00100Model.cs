@@ -1,5 +1,6 @@
 ﻿using R_BusinessObjectFront;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using LMI00100Common;
 using LMI00100Common.DTO;
@@ -80,6 +81,16 @@ namespace LMI00100Model.Model
         }
 
         public LMI00100ListPropertyDTO GetLMI00100Property()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<LMI00100DTO> GetAllLMI00100Stream()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<LMI00100PropertyDTO> GetLMI00100PropertyStream()
         {
             throw new NotImplementedException();
         }

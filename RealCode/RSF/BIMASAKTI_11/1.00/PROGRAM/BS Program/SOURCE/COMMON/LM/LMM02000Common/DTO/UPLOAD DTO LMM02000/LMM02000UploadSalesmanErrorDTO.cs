@@ -1,4 +1,5 @@
-﻿using System;
+﻿using R_APICommonDTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -23,5 +24,9 @@ namespace LMM02000Common.DTO.UPLOAD_DTO_LMM02000
         public bool LEXIST { get; set; }
         public bool LOVERWRITE { get; set; }
         public string ErrorMessage { get; set; }
+    }
+    public class LMM02000UploadSalesmanErrorResultDTO : R_APIResultBaseDTO
+    {
+        public List<LMM02000UploadSalesmanErrorDTO> Data { get; set; }
     }
 }

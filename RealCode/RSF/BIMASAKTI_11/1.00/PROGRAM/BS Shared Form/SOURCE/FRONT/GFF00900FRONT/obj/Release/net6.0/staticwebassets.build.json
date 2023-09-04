@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X3WssRk1ett2/lirEAcpsHlRjEJi5/E2IxrteOUD8sE=",
+  "Hash": "JJLfNlQOmWq/dPgvkxfaA4T7o635tIN2ORSEWDa3qMs=",
   "Source": "GFF00900FRONT",
   "BasePath": "_content/GFF00900FRONT",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "GFF00900FRONT\\wwwroot",
       "Source": "GFF00900FRONT",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
+      "ContentRoot": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
       "BasePath": "_content/GFF00900FRONT",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\GFF00900FRONT.styles.css",
+      "Identity": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\GFF00900FRONT.styles.css",
       "SourceId": "GFF00900FRONT",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/GFF00900FRONT",
       "RelativePath": "GFF00900FRONT.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\GFF00900FRONT.styles.css"
+      "OriginalItemSpec": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\bundle\\GFF00900FRONT.styles.css"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\GFF00900FRONT.bundle.scp.css",
+      "Identity": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\GFF00900FRONT.bundle.scp.css",
       "SourceId": "GFF00900FRONT",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/GFF00900FRONT",
       "RelativePath": "GFF00900FRONT.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\GFF00900FRONT.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\GFF00900FRONT.bundle.scp.css"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\background.png",
+      "Identity": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\background.png",
       "SourceId": "GFF00900FRONT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
+      "ContentRoot": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
       "BasePath": "_content/GFF00900FRONT",
       "RelativePath": "background.png",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\background.png"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\exampleJsInterop.js",
+      "Identity": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\exampleJsInterop.js",
       "SourceId": "GFF00900FRONT",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
+      "ContentRoot": "D:\\Fake\\Future1\\BIMASAKTI_11\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\wwwroot\\",
       "BasePath": "_content/GFF00900FRONT",
       "RelativePath": "exampleJsInterop.js",
       "AssetKind": "All",
