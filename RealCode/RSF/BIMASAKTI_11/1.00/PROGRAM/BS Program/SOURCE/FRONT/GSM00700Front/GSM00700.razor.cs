@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using GSM00700Common.DTO;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
 using GSM00700Model;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
@@ -199,6 +200,38 @@ namespace GSM00700Front
             }
 
             loEx.ThrowExceptionIfErrors();
+        }
+
+        private void R_BeforeOpenPrint(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+
+            eventArgs.TargetPageType = typeof(GSM00700Print);
+            var param = new GSM00700PrintCashFlowDTO()
+            {
+                CCASH_FLOW_GROUP_CODE = GSM00700ViewModel.CashFlowTyp,
+                CCASH_FLOW_GROUP_NAME = GSM00700ViewModel.CashFlowTyp,
+                CCASH_FLOW_GROUP_TYPE = GSM00700ViewModel.CashFlowTyp,
+
+            };
+            eventArgs.Parameter = param;
+
+        }
+
+        private async Task R_AfterOpenPrint(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            R_Exception loException = new R_Exception();
+            try
+            {
+                await _gridRef00700.R_RefreshGrid(null);
+
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+            loException.ThrowExceptionIfErrors();
+
+
         }
     }
 }

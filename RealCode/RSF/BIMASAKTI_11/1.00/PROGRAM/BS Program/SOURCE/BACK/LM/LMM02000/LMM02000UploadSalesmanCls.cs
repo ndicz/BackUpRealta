@@ -92,7 +92,7 @@ namespace LMM02000Back
                           $"Gender VARCHAR(2)," +
                           $"SalesmanType VARCHAR(2)," +
                           $"CompanyName VARCHAR(20)," +
-                          $"LEXIST BIT " + 
+                          $"LEXIST BIT " +
                           $")";
 
 
@@ -143,7 +143,10 @@ namespace LMM02000Back
             try
             {
                 var loTempObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<LMM02000UploadSalesmanDTO>>(poAttachFile.BigObject);
-
+                var loVar = poAttachFile.UserParameters.Where((x) => x.Key.Equals(ContextConstantLMM02000.UPLOAD_UNIT_PROMOTION_PROPERTY_ID_CONTEXT)).FirstOrDefault().Value;
+                string PropertyId = ((System.Text.Json.JsonElement)loVar).GetString();
+                var loVar1 = poAttachFile.UserParameters.Where((x) => x.Key.Equals(ContextConstantLMM02000.UPLOAD_UNIT_PROMOTION_IS_OVERWRITE_CONTEXT)).FirstOrDefault().Value;
+                bool IsOverwrite = ((System.Text.Json.JsonElement)loVar1).GetBoolean();
 
                 List<LMM02000UploadSalesmanSaveDTO> loParam = new List<LMM02000UploadSalesmanSaveDTO>();
 
@@ -153,11 +156,19 @@ namespace LMM02000Back
                     {
                         NO = count,
                         CCOMPANY_ID = poAttachFile.Key.COMPANY_ID,
-                        //CSEQ = item.CSEQ,
-                        //CSalesman_CODE = item.CSalesman_CODE,
-                        //CCASH_FLOW_NAME = item.CCASH_FLOW_NAME,
-                        //CSalesman_TYPE = item.CSalesman_TYPE,
-                        //CSalesman_GROUP_CODE = item.CSalesman_GROUP_CODE,
+                        CPROPERTY_ID = item.CPROPERTY_ID,
+                        SalesmanId = item.SalesmanId,
+                        SalesmanName = item.SalesmanName,
+                        Active = item.Active,
+                        NonActiveDate = item.NonActiveDate,
+                        Address = item.Address,
+                        EmailAddress = item.EmailAddress,
+                        MobileNo1 = item.MobileNo1,
+                        MobileNo2 = item.MobileNo2,
+                        NIK = item.NIK,
+                        Gender = item.Gender,
+                        SalesmanType = item.SalesmanType,
+                        CompanyName = item.CompanyName,
                         LEXIST = item.LEXIST
                     });
                     count++;
@@ -180,8 +191,7 @@ namespace LMM02000Back
                               "NIK NVARCHAR(40)," +
                               "Gender VARCHAR(2)," +
                               "SalesmanType VARCHAR(2)," +
-                              "CompanyName VARCHAR(20)," +
-                              "LEXIST BIT " +
+                              "CompanyName VARCHAR(20)" +
                               ")";
 
 
@@ -193,12 +203,14 @@ namespace LMM02000Back
                         $"@CCOMPANY_ID, " +
                         $"@CUSER_ID, " +
                         $"@CPROPERTY_ID," +
-                        $"@KEY_GUID";
+                        $"@KEY_GUID," +
+                        $"@Var_Overwrite";
 
                     loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 50, poAttachFile.Key.COMPANY_ID);
-                    loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 50, poAttachFile.Key.CPROPERTY_ID);
+                    loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 50, PropertyId);
                     loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 50, poAttachFile.Key.USER_ID);
                     loDb.R_AddCommandParameter(loCmd, "@KEY_GUID", DbType.String, 50, poAttachFile.Key.KEY_GUID);
+                    loDb.R_AddCommandParameter(loCmd, "@Var_Overwrite", DbType.Boolean, 50, IsOverwrite);
 
                     loCmd.CommandText = lcQuery;
 

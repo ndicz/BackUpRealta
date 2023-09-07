@@ -2274,6 +2274,16 @@
           }
         }
       },
+      "BaseHeaderReportCommon/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+        }
+      },
       "GFF00900COMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -2341,6 +2351,9 @@
       "GSM00700Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "BaseHeaderReportCommon": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
         },
@@ -4853,6 +4866,16 @@
           }
         }
       },
+      "BaseHeaderReportCommon/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+        }
+      },
       "GFF00900COMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -4920,6 +4943,9 @@
       "GSM00700Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "BaseHeaderReportCommon": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
         },
@@ -10466,6 +10492,11 @@
         "telerik.zip.2023.2.519.nupkg.sha512",
         "telerik.zip.nuspec"
       ]
+    },
+    "BaseHeaderReportCommon/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCommon/BaseHeaderReportCommon.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCommon/BaseHeaderReportCommon.csproj"
     },
     "GFF00900COMMON/1.0.0": {
       "type": "project",

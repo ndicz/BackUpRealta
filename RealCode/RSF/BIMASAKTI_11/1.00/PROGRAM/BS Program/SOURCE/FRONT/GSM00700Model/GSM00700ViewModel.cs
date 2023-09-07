@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using GSM00700Common.DTO;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Enums;
 using R_CommonFrontBackAPI;
@@ -15,6 +16,7 @@ namespace GSM00700Model
         private Model.GSM00700Model _GSM00700Model = new Model.GSM00700Model();
         public ObservableCollection<GSM00700DTO> loGridList = new ObservableCollection<GSM00700DTO>();
         public GSM00700DTO loEntity = new GSM00700DTO();
+        public GSM00700PrintCashFlowParameterDTo loPrint = new GSM00700PrintCashFlowParameterDTo();
 
         public List<GSM00700CashFlowGroupTypeDTO> loCashFlowGroupType { get; set; } = new List<GSM00700CashFlowGroupTypeDTO>();
         //{
@@ -22,12 +24,27 @@ namespace GSM00700Model
         //    new GSM00700CashFlowGroupTypeDTO() { CCODE = "O", CDESCRIPTION = "Operating"},
         //    new GSM00700CashFlowGroupTypeDTO() { CCODE = "F", CDESCRIPTION = "Financing"}
         // };
-
+        public List<GSM00700PrintCashFlowParameterDTo> Period { get; set; } = new List<GSM00700PrintCashFlowParameterDTo>()
+        {
+            new GSM00700PrintCashFlowParameterDTo() {Period = "00"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "01"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "02"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "03"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "04"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "05"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "06"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "07"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "08"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "09"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "10"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "11"},
+            new GSM00700PrintCashFlowParameterDTo() {Period = "12"}
+        };
         //COMBO BOX
         public string CashFlowTyp = ""; // for filter
 
 
-    public async Task GetCashFlowGroupTypeList()
+        public async Task GetCashFlowGroupTypeList()
         {
             var loEx = new R_Exception();
             try

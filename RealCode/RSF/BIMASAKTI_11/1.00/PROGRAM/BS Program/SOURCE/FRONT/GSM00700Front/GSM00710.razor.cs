@@ -343,7 +343,7 @@ namespace GSM00700Front
 
         private void R_BeforeOpenCopyFromYear(R_BeforeOpenPopupEventArgs eventArgs)
         {
-
+                
             eventArgs.TargetPageType = typeof(GSM00720CopyFrom);
             GSM00720ViewModel.GetYearForCopyFrom();
             var param = new GSM00720CopyFromYearDTO

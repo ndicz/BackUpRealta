@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GSM00700Common.DTO.Report_DTO_GSM00700
+{
+    public class GSM00700PrintCashFlowParameterDTo
+    {
+        public string CCASH_FLOW_GROUP_FROM { get; set; }
+        public string CCASH_FLOW_GROUP_FROM_NAME { get; set; }
+        public string CCASH_FLOW_GROUP_TO { get; set; }
+        public string CCASH_FLOW_GROUP_TO_NAME { get; set; }
+        public string CYEAR_FROM { get; set; }
+        public string CYEAR_TO { get; set; }
+        public string CPERIOD_FROM {get; set; }
+        public string CPERIOD_TO { get; set; }
+        public string CSHORT_BY { get; set; }
+        public string LPRINT_LOCAL { get; set; }
+        public string LPRINT_BASE { get; set; }
+        public string CCOMPANY_ID { get; set; }
+        public string Period { get; set; }
+    }
+}
