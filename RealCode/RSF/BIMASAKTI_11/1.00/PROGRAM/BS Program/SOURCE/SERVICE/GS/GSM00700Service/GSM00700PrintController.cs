@@ -89,15 +89,15 @@ namespace GSM00700Service
         {
             var loEx = new R_Exception();
             GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO loRtn = new GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO();
+            var loParam = new BaseHeaderDTO();
 
             try
             {
-                var loParam = new BaseHeaderDTO()
                 {
-                    CCOMPANY_NAME = "PT Realta Chakradarma",
-                    CPRINT_CODE = "001",
-                    CPRINT_NAME = "Unit Charges",
-                    CUSER_LOGIN_ID = R_BackGlobalVar.USER_ID
+                  loParam.CCOMPANY_NAME = "PT Realta Chakradarma";
+                  loParam.CPRINT_CODE = "001";
+                  loParam.CPRINT_NAME = "Cash Flow Parameter";
+                  loParam.CUSER_ID = poParam.CUSER_LOGIN_ID;
                 };
                 GSM00700PrintCashFlowResultDTo loData = new GSM00700PrintCashFlowResultDTo()
                 {
@@ -153,11 +153,11 @@ namespace GSM00700Service
                         }).ToList()
                     }).ToList()
                 }).ToList();
-                loRtn.BaseHeaderData = loParam;
 
-                loData.Data = loTempData;
 
                 loRtn.CenterData = loData;
+                loRtn.BaseHeaderData = loParam;
+                loData.Data = loTempData;
             }
             catch (Exception ex)
             {

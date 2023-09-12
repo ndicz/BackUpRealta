@@ -27,7 +27,7 @@ namespace GSM00700Model
         // };
         public List<GSM00700PrintCashFlowParameterDTo> Period { get; set; } = new List<GSM00700PrintCashFlowParameterDTo>()
         {
-            new GSM00700PrintCashFlowParameterDTo() {Period = "00"},
+           //new GSM00700PrintCashFlowParameterDTo() {Period = "00"}, 
             new GSM00700PrintCashFlowParameterDTo() {Period = "01"},
             new GSM00700PrintCashFlowParameterDTo() {Period = "02"},
             new GSM00700PrintCashFlowParameterDTo() {Period = "03"},
