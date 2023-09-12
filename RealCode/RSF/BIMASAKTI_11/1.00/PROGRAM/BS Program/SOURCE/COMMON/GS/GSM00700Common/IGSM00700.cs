@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using GSM00700Common.DTO;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
 using R_CommonFrontBackAPI;
 
 namespace GSM00700Common
@@ -12,5 +13,6 @@ namespace GSM00700Common
 
         //GSM00700ListDTO GetAllCashFlowGroupList();
         GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType();
+        IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter);
     }
 }

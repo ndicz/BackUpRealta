@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using GSM00700Back;
 using GSM00700Common;
 using GSM00700Common.DTO;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using R_BackEnd;
 using R_Common;
@@ -123,7 +125,7 @@ namespace GSM00700Service
                 loException.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loRtn;
@@ -189,8 +191,40 @@ namespace GSM00700Service
 
             return loRtn;
         }
+        [HttpPost]  
+        public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
+        {
+            R_Exception loEx = new R_Exception();
+            GSM00700PrintCashFlowParameterDTo loDbPar;
+            List<GSM00700DTO> loRtnTmp;
+            GSM00700Cls loCls;
+            IAsyncEnumerable<GSM00700DTO> loRtn = null;
+            try
+            {
+                loDbPar = poParameter;
+
+                loCls = new GSM00700Cls();
+                loRtnTmp = loCls.GetPrintParam(loDbPar);
+                loRtn = GetCashFlowPrint(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+            return loRtn;
+        }
 
         private async IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream(List<GSM00700DTO> poParameter)
+        {
+            foreach (GSM00700DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<GSM00700DTO> GetCashFlowPrint(List<GSM00700DTO> poParameter)
         {
             foreach (GSM00700DTO item in poParameter)
             {

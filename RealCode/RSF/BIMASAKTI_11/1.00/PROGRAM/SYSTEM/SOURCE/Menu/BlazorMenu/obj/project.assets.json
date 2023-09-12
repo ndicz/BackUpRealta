@@ -14,6 +14,58 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "BlazorPrettyCode/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "BlazorStyled": "3.1.0",
+          "CSHTMLTokenizer": "0.8.1",
+          "Microsoft.AspNetCore.Components": "5.0.0",
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/BlazorPrettyCode.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BlazorPrettyCode.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net5.0/Properties/launchSettings.json": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "buildTransitive/BlazorPrettyCode.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/BlazorPrettyCode.props": {}
+        }
+      },
+      "BlazorStyled/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/BlazorStyled.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BlazorStyled.dll": {}
+        }
+      },
+      "CSHTMLTokenizer/0.8.1": {
+        "type": "package",
+        "dependencies": {
+          "Stateless": "4.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CSHTMLTokenizer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CSHTMLTokenizer.dll": {}
+        }
+      },
       "EPPlus/6.2.4": {
         "type": "package",
         "dependencies": {
@@ -871,6 +923,22 @@
           "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so": {
             "assetType": "native",
             "rid": "ubuntu.16.10-x64"
+          }
+        }
+      },
+      "Stateless/4.2.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Stateless.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.0/Stateless.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -2616,6 +2684,58 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
+      "BlazorPrettyCode/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "BlazorStyled": "3.1.0",
+          "CSHTMLTokenizer": "0.8.1",
+          "Microsoft.AspNetCore.Components": "5.0.0",
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/BlazorPrettyCode.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BlazorPrettyCode.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net5.0/Properties/launchSettings.json": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "buildTransitive/BlazorPrettyCode.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/BlazorPrettyCode.props": {}
+        }
+      },
+      "BlazorStyled/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/BlazorStyled.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BlazorStyled.dll": {}
+        }
+      },
+      "CSHTMLTokenizer/0.8.1": {
+        "type": "package",
+        "dependencies": {
+          "Stateless": "4.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/CSHTMLTokenizer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CSHTMLTokenizer.dll": {}
+        }
+      },
       "EPPlus/6.2.4": {
         "type": "package",
         "dependencies": {
@@ -3562,6 +3682,22 @@
       },
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
         "type": "package"
+      },
+      "Stateless/4.2.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Stateless.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.0/Stateless.dll": {
+            "related": ".xml"
+          }
+        }
       },
       "System.AppContext/4.3.0": {
         "type": "package",
@@ -5210,6 +5346,55 @@
         "lib/net5.0/Blazored.LocalStorage.dll",
         "lib/net6.0/Blazored.LocalStorage.dll",
         "lib/netstandard2.1/Blazored.LocalStorage.dll"
+      ]
+    },
+    "BlazorPrettyCode/1.6.0": {
+      "sha512": "ylNxJtCgmhV4wd1mVBTSVmSVWaTDRS24KCeXNPdLJWtr+cIP8Wxf814hUgoWZot2ifD0EDKHr9a4ViEChy+fYg==",
+      "type": "package",
+      "path": "blazorprettycode/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorprettycode.1.6.0.nupkg.sha512",
+        "blazorprettycode.nuspec",
+        "build/BlazorPrettyCode.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/BlazorPrettyCode.props",
+        "buildTransitive/BlazorPrettyCode.props",
+        "content/Properties/launchSettings.json",
+        "contentFiles/any/net5.0/Properties/launchSettings.json",
+        "lib/net5.0/BlazorPrettyCode.dll",
+        "staticwebassets/GithubPlus.json",
+        "staticwebassets/Material.json",
+        "staticwebassets/PrettyCodeDefault.json",
+        "staticwebassets/SolarizedDark.json",
+        "staticwebassets/SolarizedLight.json",
+        "staticwebassets/WinterIsComingDark.json",
+        "staticwebassets/WinterIsComingLight.json"
+      ]
+    },
+    "BlazorStyled/3.1.0": {
+      "sha512": "S6GQREciGtytQrE1KGexw4gjjKzT2UPIX7KBolzkuRIdkUGTi3YWaYZIkYuE81q8VwA8WU1jgmJ6lg2V4dY15Q==",
+      "type": "package",
+      "path": "blazorstyled/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazorstyled.3.1.0.nupkg.sha512",
+        "blazorstyled.nuspec",
+        "lib/net5.0/BlazorStyled.dll"
+      ]
+    },
+    "CSHTMLTokenizer/0.8.1": {
+      "sha512": "6uf+ee0tznEjKkdxwQYvZx0XzOCnuBgapOSVNGQHnVk3/BXm0W3PKNc0IBYTb1wWaEXSH4L2lCRPXDTmavmG7Q==",
+      "type": "package",
+      "path": "cshtmltokenizer/0.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "cshtmltokenizer.0.8.1.nupkg.sha512",
+        "cshtmltokenizer.nuspec",
+        "lib/netstandard2.0/CSHTMLTokenizer.dll"
       ]
     },
     "EPPlus/6.2.4": {
@@ -6951,6 +7136,23 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "Stateless/4.2.1": {
+      "sha512": "Eu6YOVCKmXWL34UJ3Z51Jlc4MUmqBx7csCiIdyARVooTPHZYf8ktVc+F2j7yQSV8u3eEQUuQvxzu+1ZVSKZ0bA==",
+      "type": "package",
+      "path": "stateless/4.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Stateless.dll",
+        "lib/net40/Stateless.xml",
+        "lib/net45/Stateless.dll",
+        "lib/net45/Stateless.xml",
+        "lib/netstandard1.0/Stateless.dll",
+        "lib/netstandard1.0/Stateless.xml",
+        "stateless.4.2.1.nupkg.sha512",
+        "stateless.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -10621,6 +10823,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BlazorPrettyCode >= 1.6.0",
       "Blazored.LocalStorage >= 4.2.0",
       "EPPlus >= 6.2.4",
       "GFF00900FRONT >= 1.0.0",
@@ -10714,6 +10917,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "BlazorPrettyCode": {
+            "target": "Package",
+            "version": "[1.6.0, )"
+          },
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[4.2.0, )"

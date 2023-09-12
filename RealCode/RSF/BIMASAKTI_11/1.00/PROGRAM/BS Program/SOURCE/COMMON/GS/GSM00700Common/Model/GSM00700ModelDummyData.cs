@@ -112,7 +112,7 @@ namespace GSM00700Common.Model
     {
         var loParam = new BaseHeaderDTO()
         {
-            CCOMPANY_NAME = "PT Realta Chackradarma",
+            CCOMPANY_NAME = "PT Realta ssss",
             CPRINT_CODE = "001",
             CPRINT_NAME = "Unit Charges",
             CUSER_ID = "HPC"

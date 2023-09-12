@@ -107,12 +107,12 @@ namespace GSM00700Service
             IAsyncEnumerable<GSM00720DTO> loRtn = null;
             try
             {
-                loDbPar = new GSM00700DBParameter();
-                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-                loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
-                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
-                loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
+                    loDbPar = new GSM00700DBParameter();
+                    loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                    loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+                    loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
+                    loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+                    loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
 
                 loCls = new GSM00720Cls();
                 loRtnTmp = loCls.GetCashFlowPlan(loDbPar);
@@ -166,7 +166,7 @@ namespace GSM00700Service
             GSM00720Cls loCls;
             try
             {
-                loDbPar = new GSM00700DBParameter();
+                loDbPar = new GSM00700DBParameter();    
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loDbPar.CFROM_CASH_FOW_FLAG = poParamDto.CFROM_CASH_FOW_FLAG;

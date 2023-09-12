@@ -50,30 +50,3 @@ D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSS
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\refint\Lookup_GSSERVICES.dll
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.pdb
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\ref\Lookup_GSSERVICES.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSSERVICES.deps.json
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSSERVICES.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSSERVICES.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSBACK.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSCOMMON.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APIBackEnd.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APICommon.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APICommonDTO.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_ContextBackEnd.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_StorageCommon.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_Security.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSBACK.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\Lookup_GSCOMMON.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.csproj.AssemblyReference.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.GeneratedMSBuildEditorConfig.editorconfig
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.AssemblyInfoInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.AssemblyInfo.cs
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.csproj.CoreCompileInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.csproj.CopyComplete
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\refint\Lookup_GSSERVICES.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\ref\Lookup_GSSERVICES.dll

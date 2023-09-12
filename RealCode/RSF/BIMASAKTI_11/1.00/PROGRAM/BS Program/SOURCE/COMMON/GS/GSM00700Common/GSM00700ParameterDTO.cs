@@ -26,5 +26,31 @@ namespace GSM00700Common
         public string CCURRENCY_RATE { get; set; }
         public Int32 INO_PERIOD_FROM { get; set; }
         public Int32 INO_PERIOD_TO { get; set; }
+
+
+        public string CCASH_FLOW_GROUP_FROM { get; set; }
+        public string CCASH_FLOW_GROUP_TO { get; set; }
+        public string CYEAR_FROM { get; set; }
+        public string CYEAR_TO { get; set; }
+        public string CPERIOD_FROM { get; set; }
+        public string CPERIOD_TO { get; set; }
+        public string CSHORT_BY { get; set; }
+        public bool LPRINT_LOCAL { get; set; }
+        public bool LPRINT_BASE { get; set; }
+
+
+    }
+
+    public class GSM00700PrintDTO
+    {
+        public string CCASH_FLOW_GROUP_FROM { get; set; }
+        public string CCASH_FLOW_GROUP_TO { get; set; }
+        public string CYEAR_FROM { get; set; }
+        public string CYEAR_TO { get; set; }
+        public string CPERIOD_FROM { get; set; }
+        public string CPERIOD_TO { get; set; }
+        public string CSHORT_BY { get; set; } = "01";
+        public bool LPRINT_LOCAL { get; set; } = true;
+        public bool LPRINT_BASE { get; set; } = true;
     }
 }

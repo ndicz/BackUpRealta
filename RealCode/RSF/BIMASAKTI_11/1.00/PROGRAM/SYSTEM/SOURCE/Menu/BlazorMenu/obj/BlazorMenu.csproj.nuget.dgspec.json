@@ -1742,6 +1742,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "BlazorPrettyCode": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Blazored.LocalStorage": {
               "target": "Package",
               "version": "[4.2.0, )"

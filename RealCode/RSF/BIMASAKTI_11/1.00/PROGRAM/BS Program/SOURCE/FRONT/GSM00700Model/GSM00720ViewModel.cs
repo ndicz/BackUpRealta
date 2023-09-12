@@ -159,7 +159,7 @@ namespace GSM00700Model
                 poParam.CTO_YEAR = Year;
                 var loReturn = await _GSM00720Model.GetCopyFromYearListAsync(poParam);
 
-                loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
+                    loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
             }
             catch (Exception ex)
             {

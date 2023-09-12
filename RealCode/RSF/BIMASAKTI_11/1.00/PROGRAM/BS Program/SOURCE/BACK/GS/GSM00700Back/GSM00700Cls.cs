@@ -5,6 +5,8 @@ using R_Common;
 using System.Data.Common;
 using System.Data;
 using System.Reflection.Metadata;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
+using System.Windows.Input;
 
 namespace GSM00700Back
 {
@@ -208,6 +210,49 @@ namespace GSM00700Back
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
+        }
+
+        public List<GSM00700DTO> GetPrintParam(GSM00700PrintCashFlowParameterDTo poParameter)
+        {
+            R_Exception loEx = new R_Exception();
+            List<GSM00700DTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuery = @"RSP_GS_PRINT_CASHFLOW";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_LOGIN_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_FROM", DbType.String, 10, poParameter.CCASH_FLOW_GROUP_FROM);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_TO", DbType.String, 10, poParameter.CCASH_FLOW_GROUP_TO);
+                loDb.R_AddCommandParameter(loCmd, "@CYEAR_FROM", DbType.String, 10, poParameter.CYEAR_FROM);
+                loDb.R_AddCommandParameter(loCmd, "@CYEAR_TO", DbType.String, 10, poParameter.CYEAR_TO);
+                loDb.R_AddCommandParameter(loCmd, "@CPERIOD_FROM", DbType.String, 10, poParameter.CPERIOD_FROM);
+                loDb.R_AddCommandParameter(loCmd, "@CPERIOD_TO", DbType.String, 10, poParameter.CPERIOD_TO);
+                loDb.R_AddCommandParameter(loCmd, "@CSHORT_BY", DbType.String, 10, "01");
+                loDb.R_AddCommandParameter(loCmd, "@LPRINT_LOCAL", DbType.String, 10, "1");
+                loDb.R_AddCommandParameter(loCmd, "@LPRINT_BASE", DbType.String, 10, "1");
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loReturnTemp).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loReturn;
         }
     }
 }

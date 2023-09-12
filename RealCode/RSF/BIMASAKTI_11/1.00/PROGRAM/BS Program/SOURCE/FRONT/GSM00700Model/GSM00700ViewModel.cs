@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using GSM00700Common;
 using GSM00700Common.DTO;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 using R_BlazorFrontEnd.Exceptions;
@@ -42,8 +43,6 @@ namespace GSM00700Model
         };
         //COMBO BOX
         public string CashFlowTyp = ""; // for filter
-
-
         public async Task GetCashFlowGroupTypeList()
         {
             var loEx = new R_Exception();
@@ -60,7 +59,7 @@ namespace GSM00700Model
             loEx.ThrowExceptionIfErrors();
         }
 
-
+       
         //CRUD ALL
 
         public async Task GetCashFlowGroupList()

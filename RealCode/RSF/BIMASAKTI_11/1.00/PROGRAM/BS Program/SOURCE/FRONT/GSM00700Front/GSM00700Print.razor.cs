@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlazorClientHelper;
+using GSM00700Common;
 using GSM00700Common.DTO;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
 using GSM00700Model;
 using Lookup_GSCOMMON.DTOs;
 using Lookup_GSFRONT;
+using Microsoft.AspNetCore.Components;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Exceptions;
+using R_BlazorFrontEnd.Interfaces;
 
 namespace GSM00700Front
 {
@@ -19,6 +24,7 @@ namespace GSM00700Front
         private GSM00720ViewModel _GSM00720ViewModel = new();
         private GSM00700ViewModel _GSM00700ViewModel = new();
         private R_Conductor _conductorRef;
+        [Inject] private R_IReport _reportService { get; set; }
         public R_Lookup CashFlowGroup { get; set; }
         protected override async Task R_Init_From_Master(object poParameter)
         {
@@ -84,7 +90,7 @@ namespace GSM00700Front
         }
 
 
-         private Task R_BeforeOpenLookUpTo(R_BeforeOpenLookupEventArgs eventArgs)
+        private Task R_BeforeOpenLookUpTo(R_BeforeOpenLookupEventArgs eventArgs)
         {
             var loEx = new R_Exception();
 
@@ -155,37 +161,77 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
-        public async Task Button_OnClickProcessAsync()
+        //public async Task Button_OnClickProcessAsync()
+        //{
+        //    var loEx = new R_Exception();
+        //    var loData = _GSM00720ViewModel.loCopyFromEntity;
+        //    try
+        //    {
+
+        //        _GSM00720ViewModel.CFromCashFlowFlag = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
+        //        _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
+
+
+        //        await _GSM00700ViewModel.GetPrint();
+        //        //await this.Close(true, loData);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+
+
+
+        //    await this.Close(true, loData);
+        //}
+
+        [Inject] private IClientHelper _clientHelper { get; set; }
+
+        private async Task Button_OnClickProcessAsync()
         {
             var loEx = new R_Exception();
-            var loData = _GSM00720ViewModel.loCopyFromEntity;
+            GSM00700PrintCashFlowParameterDTo loParam;
+
             try
             {
+                loParam = new GSM00700PrintCashFlowParameterDTo()
+                { 
+                    CCOMPANY_ID = _clientHelper.CompanyId,
+                    CUSER_LOGIN_ID = _clientHelper.UserId,
+                    CCASH_FLOW_GROUP_FROM = _GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM,
+                    CCASH_FLOW_GROUP_TO = _GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO,
+                    CYEAR_FROM = _GSM00700ViewModel.loPrint.CYEAR_FROM,
+                    CYEAR_TO = _GSM00700ViewModel.loPrint.CYEAR_TO,
+                    CPERIOD_FROM = _GSM00700ViewModel.loPrint.CPERIOD_FROM,
+                    CPERIOD_TO = _GSM00700ViewModel.loPrint.CPERIOD_TO,
+                    CSHORT_BY = "01",
+                    LPRINT_LOCAL = _GSM00700ViewModel.loPrint.LPRINT_LOCAL,
+                    LPRINT_BASE = _GSM00700ViewModel.loPrint.LPRINT_BASE
 
-                _GSM00720ViewModel.CFromCashFlowFlag = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
-                _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
+            };
 
-
-                await _GSM00720ViewModel.CopyFrom();
-                //await this.Close(true, loData);
-            }
+            await _reportService.GetReport(
+                "R_DefaultServiceUrl",
+                "GS",
+                "api/GSM00700Print/CashFlowPost",
+                "api/GSM00700Print/CashFlowGet",
+                loParam);
+        }
             catch (Exception ex)
             {
                 loEx.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
-
-
-
-            await this.Close(true, loData);
+    loEx.ThrowExceptionIfErrors();
         }
 
 
-        public async Task Button_OnClickCloseAsync()
-        {
-            await this.Close(true, null);
-        }
+public async Task Button_OnClickCloseAsync()
+{
+    await this.Close(true, null);
+}
     }
 
 }

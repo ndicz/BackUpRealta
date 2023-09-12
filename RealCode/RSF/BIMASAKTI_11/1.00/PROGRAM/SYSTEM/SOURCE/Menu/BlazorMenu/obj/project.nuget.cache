@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QmOsGJQuZPdfKKM3UsxdjzsR371pTk/oLrP/D65mI7Vo4VJjPK59xtLUvYbjg1NmPYysMDPwuOUql6VZ57DMYg==",
+  "dgSpecHash": "PKh2MptaoZouEooil9jcY5g8LjKnwIjEGPrxVJIleErwMWHx6ZUZ2zgCNIRYKZeyfgDk1mNG9ya+9ftcVQXk8A==",
   "success": true,
   "projectFilePath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\BlazorMenu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\blazored.localstorage\\4.2.0\\blazored.localstorage.4.2.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\blazorprettycode\\1.6.0\\blazorprettycode.1.6.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\blazorstyled\\3.1.0\\blazorstyled.3.1.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\cshtmltokenizer\\0.8.1\\cshtmltokenizer.0.8.1.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\epplus\\6.2.4\\epplus.6.2.4.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
@@ -79,6 +82,7 @@
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\stateless\\4.2.1\\stateless.4.2.1.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

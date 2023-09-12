@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using R_BlazorFrontEnd.Exceptions;
 using R_APIClient;
+using GSM00700Common.DTO.Report_DTO_GSM00700;
 
 namespace GSM00700Model.Model
 {
@@ -99,6 +100,35 @@ namespace GSM00700Model.Model
             return loResult;
         }
 
+        public async Task<GSM00700ListDTO> GetPrint(GSM00700PrintCashFlowParameterDTo poParamDto)
+        {
+            var loEx = new R_Exception();
+            GSM00700ListDTO loResult = new GSM00700ListDTO();
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00700ListDTO, GSM00700PrintCashFlowParameterDTo>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00700.GetPrintCashFlow), 
+                    poParamDto, 
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+
+
+
+
         //Not Used
         public IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream()
         {
@@ -111,6 +141,11 @@ namespace GSM00700Model.Model
         //}
 
         public GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
         {
             throw new NotImplementedException();
         }

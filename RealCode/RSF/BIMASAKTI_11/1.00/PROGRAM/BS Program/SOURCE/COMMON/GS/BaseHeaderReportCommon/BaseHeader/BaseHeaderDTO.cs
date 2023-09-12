@@ -10,7 +10,7 @@ namespace BaseHeaderReportCommon.BaseHeader
         public string CPRINT_CODE { get; set; }
         public string CCOMPANY_NAME { get; set; }
         public string CPRINT_NAME { get; set; }
-        public string CUSER_ID { get; set; }
+        public string CUSER_LOGIN_ID { get; set; }
 
     }
 }

@@ -21,6 +21,24 @@ namespace GSM00700Common.DTO
         public string CCASH_FLOW_GROUP_TYPE_DESCR { get; set; }
         public string CCASH_FLOW_GROUP_TYPE { get; set; } = "I";
 
+        public string CCASH_FLOW_GROUP_FROM { get; set;}
+        public string CCASH_FLOW_GROUP_TO { get; set; }
+        public string CYEAR_FROM { get; set; }
+        public string CYEAR_TO { get; set; }
+        public string CPERIOD_FROM { get; set; }
+        public string CPERIOD_TO { get; set; }
+        public string CSHORT_BY { get; set; }
+        public bool LPRINT_LOCAL { get; set; }
+        public bool LPRINT_BASE { get; set; }
+        public string CUSER_LOGIN_ID { get; set; }
+        public string CYEAR { get; set; }
+        public string CCASH_FLOW_CODE { get; set; }
+        public string CCASH_FLOW_NAME { get; set; }
+        public string CCASH_FLOW_TYPE { get; set; }
+        public string CCASH_FLOW_TYPE_DESCR { get; set; }
+        public string CPERIOD_NO { get; set; }
+        public decimal NLOCAL_AMOUNT { get; set; }
+        public decimal NBASE_AMOUNT { get; set; }
     }
     public class GSM00700ListDTO : R_APIResultBaseDTO
     {
