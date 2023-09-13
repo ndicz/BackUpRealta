@@ -206,7 +206,7 @@ namespace GSM00700Front
                     CYEAR_TO = _GSM00700ViewModel.loPrint.CYEAR_TO,
                     CPERIOD_FROM = _GSM00700ViewModel.loPrint.CPERIOD_FROM,
                     CPERIOD_TO = _GSM00700ViewModel.loPrint.CPERIOD_TO,
-                    CSHORT_BY = "01",
+                    CSHORT_BY = _GSM00700ViewModel.loPrint.CSHORT_BY,
                     LPRINT_LOCAL = _GSM00700ViewModel.loPrint.LPRINT_LOCAL,
                     LPRINT_BASE = _GSM00700ViewModel.loPrint.LPRINT_BASE
 

@@ -108,29 +108,44 @@
         </R_DropDownList>
     </R_ItemLayout>
 </R_StackLayout>
-    
 
 
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="4">
+            <R_Label>Sort By</R_Label>
+        </R_ItemLayout>
+
+        <R_ItemLayout col="3">
+            <R_RadioGroup Data="@_GSM00700ViewModel.SortBy"
+                            @bind-Value="@_GSM00700ViewModel.loPrint.CSHORT_BY"
+                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.CSHORT_BY)"
+                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.SortBy)"
+                            R_ConductorSource="@_conductorRef">
+            </R_RadioGroup>
+        </R_ItemLayout>
+
+    </R_StackLayout>
+  
 
 
 <R_StackLayout Row="true">
-    <R_ItemLayout col="2">
+    <R_ItemLayout col="0">
         <R_CheckBox @bind-Value="@_GSM00700ViewModel.loPrint.LPRINT_LOCAL"
                     R_ConductorSource="@_conductorRef"/>
     </R_ItemLayout>
-    <R_ItemLayout col="4">
-        <R_Label>Local</R_Label>
+    <R_ItemLayout col="3">
+        <R_Label>Print Local Amount</R_Label>
     </R_ItemLayout>
 
 </R_StackLayout>
 
     <R_StackLayout Row="true">
-        <R_ItemLayout col="2">
+        <R_ItemLayout col="0">
             <R_CheckBox @bind-Value="@_GSM00700ViewModel.loPrint.LPRINT_BASE"
                         R_ConductorSource="@_conductorRef" />
         </R_ItemLayout>
-        <R_ItemLayout col="4">
-            <R_Label>Base</R_Label>
+        <R_ItemLayout col="3">
+            <R_Label>Print Base Amount</R_Label>
         </R_ItemLayout>
 
     </R_StackLayout>
