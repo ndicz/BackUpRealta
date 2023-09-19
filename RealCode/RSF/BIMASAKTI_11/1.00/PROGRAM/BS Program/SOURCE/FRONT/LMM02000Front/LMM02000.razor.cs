@@ -77,7 +77,7 @@ namespace LMM02000Front
         //    await _gridRef.R_RefreshGrid(null);
 
         //}
-
+        
         private async Task R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         {
             R_Exception loException = new R_Exception();
@@ -132,6 +132,11 @@ namespace LMM02000Front
                 loException.Add(ex);
             }
             loException.ThrowExceptionIfErrors();
+        }
+
+        private async Task R_Before_Open_Upload(R_BeforeOpenPopupEventArgs eventArgs)
+        {
+
         }
 
         private async Task GenderList()

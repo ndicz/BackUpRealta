@@ -12,7 +12,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Transactions;
 using GSM00700Common;
-using GSM00700Common.DTO.Upload_DTO;
 using GSM00710Common.DTO.Upload_DTO_GSM00710;
 
 namespace GSM00700Back
@@ -375,7 +374,7 @@ namespace GSM00700Back
                 loException.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
 
             loException.ThrowExceptionIfErrors();
         }
@@ -387,11 +386,49 @@ namespace GSM00700Back
             DbCommand loCmd = null;
             DbConnection loConn = null;
             var lcQuery = "";
-           
+            List<GSM00710UploadErrorValidateDTO> loTempObject = new();
+            IList<GSM00710UploadRequestDTO> loObject = new List<GSM00710UploadRequestDTO>();
+            object loVar = "";
+            //object loTempVar = "";
+            var LcGroupCode = "";
+
+
             try
             {
-                var loTempObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00710UploadErrorValidateDTO>>(poBatchProcessPar.BigObject);
                 await Task.Delay(1000);
+
+                loTempObject = R_NetCoreUtility.R_DeserializeObjectFromByte<List<GSM00710UploadErrorValidateDTO>>(poBatchProcessPar.BigObject);
+                loObject = R_Utility.R_ConvertCollectionToCollection<GSM00710UploadErrorValidateDTO, GSM00710UploadRequestDTO>(loTempObject);
+
+                loVar = poBatchProcessPar.UserParameters.Where((x) => x.Key.Equals(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE)).FirstOrDefault().Value;
+                var lcCodeGroup = ((System.Text.Json.JsonElement)loVar).GetString();
+
+                loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                lcQuery += "CREATE TABLE #CASHFLOW (" +
+                           "NO INT, " +
+                           "CCOMPANY_ID VARCHAR(8)," +
+                           "CCASHFLOW_GROUP_CODE VARCHAR(100)," +
+                           "CSEQ VARCHAR(3)," +
+                           "CCASHFLOW_CODE VARCHAR(100)," +
+                           "CCASH_FLOW_NAME NVARCHAR(100)," +
+                           "CCASHFLOW_TYPE VARCHAR(10),)";
+
+
+                loDb.SqlExecNonQuery(lcQuery, loConn, false);
+                loDb.R_BulkInsert<GSM00710UploadRequestDTO>((SqlConnection)loConn, "#CASHFLOW", loObject);
+
+
+                lcQuery = "EXECUTE RSP_GS_UPLOAD_CASHFLOW @CCOMPANY_ID, @CUSER_ID, @CKEY_GUID";
+                loCmd.CommandText = lcQuery;
+
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 8, poBatchProcessPar.Key.COMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 20, poBatchProcessPar.Key.USER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASHFLOW_GROUP_CODE", DbType.String, 20, lcCodeGroup);
+                loDb.R_AddCommandParameter(loCmd, "@CKEY_GUID", DbType.String, 50, poBatchProcessPar.Key.KEY_GUID);
+
+                loDb.SqlExecNonQuery(loConn, loCmd, false);
 
             }
             catch (Exception ex)

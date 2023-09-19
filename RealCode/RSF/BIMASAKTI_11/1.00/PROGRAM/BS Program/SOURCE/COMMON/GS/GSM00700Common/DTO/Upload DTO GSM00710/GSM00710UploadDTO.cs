@@ -10,10 +10,11 @@ namespace GSM00710Common.DTO.Upload_DTO_GSM00710
         public int NO { get; set; }
         public string CCOMPANY_ID { get; set; }
         public string CCASHFLOW_GROUP_CODE { get; set; }
+        public string CCASHFLOW_GROUP_NAME { get; set; }
         public string CSEQ { get; set; }
         public string CCASHFLOW_CODE { get; set; }
         public string CCASH_FLOW_NAME { get; set; }
-        public string CCASHFLOW_TYPE { get; set; }
+        public string CCASHFLOW_TYPE { get; set; }  
         public string ErrorMessage { get; set; }
         public bool Var_Exists { get; set; }
         public bool Var_Overwrite { get; set; }

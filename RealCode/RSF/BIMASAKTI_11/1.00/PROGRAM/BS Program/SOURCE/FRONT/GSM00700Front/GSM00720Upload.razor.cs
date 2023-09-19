@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using BlazorClientHelper;
 using GSM00700Common.DTO;
-using GSM00700Common.DTO.Upload_DTO;
 using GSM00700Common.DTO.Upload_DTO_GSM00720;
 using GSM00700Model;
 using Microsoft.AspNetCore.Components;
@@ -25,259 +24,172 @@ namespace GSM00700Front
 {
     public partial class GSM00720Upload : R_Page
     {
-        [Inject] public R_IExcel Excel { get; set; }
-        [Inject] private IClientHelper loClientHelper { get; set; }
-        [Inject] IJSRuntime JS { get; set; }
-
-        private GSM00720UploadViewModel _ViewModelUpload = new GSM00720UploadViewModel();
-        private GSM00720ViewModel _GSM00720ViewModel = new GSM00720ViewModel();
-        private R_Grid<GSM00720UploadCashFlowPlanDTO> _ConGriedRef;
-        private R_Conductor R_conduct;
-        private R_ConductorGrid R_ConductorGrid;
-        private R_Grid<GSM00720DTO> _gridRef00720;
+        private GSM00720UploadViewModel _viewModel = new GSM00720UploadViewModel();
+        private GSM00720ViewModel _gsm00720ViewModel = new GSM00720ViewModel();
+        private R_Grid<GSM00720UploadErrorValidateDTO> _CashFlowPlanMoveDetail_gridRef;
 
         private R_eFileSelectAccept[] accepts = { R_eFileSelectAccept.Excel };
 
-        private bool IsUploadSuccesful = true;
+        [Inject] R_IExcel ExcelInject { get; set; }
+        [Inject] IJSRuntime JSRuntime { get; set; }
+        [Inject] private IClientHelper ClientHelper { get; set; }
 
-        private bool IsFileExist = false;
+        private bool FileHasData = false;
 
+        private void StateChangeInvoke()
+        {
+            StateHasChanged();
+        }
+
+        #region HandleError
+        private void DisplayErrorInvoke(R_Exception poException)
+        {
+            this.R_DisplayException(poException);
+        }
+        #endregion
 
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
-            var param = (GSM00720UploadCashFlowPlanDTO)poParameter;
+
             try
             {
-                _ViewModelUpload.CashFlowPlanGroupCode = param.CCASHFLOW_GROUP_CODE;
-                _ViewModelUpload.CashFlowPlanGroupName = param.CCASHFLOW_GROUP_NAME;
-                _ViewModelUpload.CashFlowPlanCode = param.CCASH_FLOW_CODE;
-                _ViewModelUpload.CashFlowPlanName = param.CCASH_FLOW_NAME;
-                _ViewModelUpload.CashFlowPlanYear = param.CCYEAR;
-                _ViewModelUpload.SelectedCompanyId = loClientHelper.CompanyId;
-                _ViewModelUpload.SelectedUserId = loClientHelper.UserId;
+                //var Param = (GSM00720UploadErrorValidateParamDTO)poParameter;
+
+                ////Assign Company, User and others value for Parameters
+                var poParam = (GSM00720UploadDTO)poParameter;
+
+                _viewModel.CashFlowGroupCode = poParam.CCASHFLOW_GROUP_CODE;
+                _viewModel.CashFlowGroupName = poParam.CCASHFLOW_GROUP_NAME;
+                _viewModel.CashFlowCode = poParam.CCASH_FLOW_CODE;
+                _viewModel.CashFlowName = poParam.CCASH_FLOW_NAME;
+                _viewModel.Year = poParam.CCYEAR;
+
+
+                _viewModel.CompanyId = ClientHelper.CompanyId;
+                _viewModel.UserId = ClientHelper.UserId;
+                //_viewModel.PropertyValue = Param.CPROPERTY_ID;
+                //_viewModel.PropertyName = Param.CPROPERTY_NAME;
+                //_viewModel.JournalGroupTypeValue = Param.CJRNGRP_TYPE;
+
+                _viewModel.StateChangeAction = StateChangeInvoke;
+                _viewModel.ActionDataSetExcel = ActionFuncDataSetExcel;
+                _viewModel.DisplayErrorAction = DisplayErrorInvoke;
+                await Task.CompletedTask;
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            R_DisplayException(loEx);
         }
-        private void R_RowRender(R_GridRowRenderEventArgs eventArgs)
-        {
-            var loData = (GSM00720UploadCashFlowPlanDTO)eventArgs.Data;
-
-            if (loData.LEXIST)
-            {
-                eventArgs.RowStyle = new R_GridRowRenderStyle
-                {
-                    FontColor = "red"
-                };
-            }
-        }
-
-        private async Task OnSaveToExcel()
+        private async Task SourceUpload_OnChange(InputFileChangeEventArgs eventArgs)
         {
             var loEx = new R_Exception();
 
             try
             {
-                List<GSM00720UploadCashFlowPlanExcelDTO> loExcelList = new List<GSM00720UploadCashFlowPlanExcelDTO>();
+                //get file name
+                // _viewModel.SourceFileName = eventArgs.File.Name;
 
-                loExcelList = _ViewModelUpload.loUploadCashFlowPlanDisplayList.Select(x => new GSM00720UploadCashFlowPlanExcelDTO()
-                {
-                    PeriodNo = x.CPERIOD_NO,
-                    LocalAmount = x.NLOCAL_AMOUNT,
-                    BaseAmount = x.NBASE_AMOUNT,
-                    Notes = x.CNOTES,
-                }).ToList();
-
-                var loDataTable = R_FrontUtility.R_ConvertTo(loExcelList);
-                loDataTable.TableName = "CashFlowPlan";
-
-                //export to excel
-                var loByteFile = Excel.R_WriteToExcel(loDataTable);
-                var saveFileName = $"Upload Error CashFlowPlan.xlsx";
-
-                await JS.downloadFileFromStreamHandler(saveFileName, loByteFile);
-                await this.Close(true, true);
-
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-        B:
-            loEx.ThrowExceptionIfErrors();
-        }
-        public void ReadExcelFile()
-        {
-            var loEx = new R_Exception();
-            List<GSM00720UploadCashFlowPlanExcelDTO> loExtract = new List<GSM00720UploadCashFlowPlanExcelDTO>();
-            try
-            {
-                var loDataSet = Excel.R_ReadFromExcel(_ViewModelUpload.fileByte, new string[] { "CashFlowPlan" });
-
-                var loResult = R_FrontUtility.R_ConvertTo<GSM00720UploadCashFlowPlanExcelDTO>(loDataSet.Tables[0]);
-
-                loExtract = new List<GSM00720UploadCashFlowPlanExcelDTO>(loResult);
-
-                _ViewModelUpload.loUploadCashFlowPlanList = loExtract.Select(x => new GSM00720UploadCashFlowPlanDTO
-                {
-                    CPERIOD_NO = x.PeriodNo,
-                    NLOCAL_AMOUNT = x.LocalAmount,
-                    NBASE_AMOUNT = x.BaseAmount,
-                    CCASHFLOW_GROUP_CODE = _ViewModelUpload.CashFlowPlanGroupCode,
-                    CCASH_FLOW_CODE = _ViewModelUpload.CashFlowPlanCode,
-                    CCYEAR = _ViewModelUpload.CashFlowPlanYear,
-                    CNOTES = "",
-                    LEXIST = false,
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-                var MatchingError = loEx.ErrorList.FirstOrDefault(x => x.ErrDescp == "SkipNumberOfRowsStart was out of range: 0");
-                _ViewModelUpload.IsErrorEmptyFile = MatchingError != null;
-            }
-            loEx.ThrowExceptionIfErrors();
-        }
-
-        private async Task OnChangeInputFile(InputFileChangeEventArgs eventArgs)
-        {
-            var loEx = new R_Exception();
-
-            try
-            {
+                //import excel from user
                 var loMS = new MemoryStream();
                 await eventArgs.File.OpenReadStream().CopyToAsync(loMS);
-                _ViewModelUpload.fileByte = loMS.ToArray();
+                var fileByte = loMS.ToArray();
 
-               ReadExcelFile();
+                //READ EXCEL
+                var loExcel = ExcelInject;
 
-                if (eventArgs.File.Name.Contains(".xlsx") == false)
-                {
-                    await R_MessageBox.Show("", "File Type must Microsoft Excel .xlsx", R_eMessageBoxButtonType.OK);
-                }
-                if (eventArgs.File.Name.Length > 0)
-                {
-                    IsFileExist = true;
-                }
-                else
-                {
-                    IsFileExist = false;
-                }
-                await _ConGriedRef.R_RefreshGrid(null);
+                var loDataSet = loExcel.R_ReadFromExcel(fileByte, new[] { "CashFlowPlan" });
+                var loResult = R_FrontUtility.R_ConvertTo<GSM00720UploadExcelDTO>(loDataSet.Tables[0]);
+
+                FileHasData = loResult.Count > 0 ? true : false;
+
+                await _CashFlowPlanMoveDetail_gridRef.R_RefreshGrid(loResult);
             }
             catch (Exception ex)
             {
-                if (_ViewModelUpload.IsErrorEmptyFile)
-                {
-                    await R_MessageBox.Show("", "File is Empty", R_eMessageBoxButtonType.OK);
-                }
-                else
-                {
-                    loEx.Add(ex);
-                }
+                loEx.Add(ex);
             }
-
-            //loEx.ThrowExceptionIfErrors();
+            loEx.ThrowExceptionIfErrors();
         }
 
-        private async Task Grid_R_ServiceGetListRecord(R_ServiceGetListRecordEventArgs eventArgs)
+        private async Task Upload_ServiceGetListRecord(R_ServiceGetListRecordEventArgs eventArgs)
         {
-            var loEx = new R_Exception();
-
+            R_Exception loEx = new R_Exception();
             try
             {
-                await _ViewModelUpload.AttachFile();
-                await _ViewModelUpload.ValidateUpload();
-                await _ViewModelUpload.GetUploadCashFlowPlanListStreamAsync();
-                IsUploadSuccesful = !_ViewModelUpload.VisibleError;
-                eventArgs.ListEntityResult = _ViewModelUpload.loUploadCashFlowPlanDisplayList;
+                List<GSM00720UploadExcelDTO> loData = (List<GSM00720UploadExcelDTO>)eventArgs.Parameter;
+
+                await _viewModel.ConvertGrid(loData);
+                eventArgs.ListEntityResult = _viewModel.CashFlowPlanValidateUploadError;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            R_DisplayException(loEx);
+        }
+
+        public async Task Button_OnClickOkAsync()
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                var loValidate = await R_MessageBox.Show("", "Are you sure want to import data?", R_eMessageBoxButtonType.YesNo);
+
+                if (loValidate == R_eMessageBoxResult.Yes)
+                {
+                    await _viewModel.SaveBulkFile();
+
+                    if (_viewModel.VisibleError)
+                    {
+                        await R_MessageBox.Show("", "Journal Group uploaded successfully!", R_eMessageBoxButtonType.OK);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
             }
 
-            //loEx.ThrowExceptionIfErrors();
+            loEx.ThrowExceptionIfErrors();
         }
 
-        private async Task OnProcess()
+        public async Task Button_OnClickSaveAsync()
         {
-            R_Exception loException = new R_Exception();
+            var loEx = new R_Exception();
             try
             {
-                await R_ConductorGrid.R_SaveBatch();
+                var loValidate = await R_MessageBox.Show("", "Are you sure want to save to excel again?", R_eMessageBoxButtonType.YesNo);
+
+                if (loValidate == R_eMessageBoxResult.Yes)
+                {
+                    await ActionFuncDataSetExcel();
+                }
             }
             catch (Exception ex)
             {
-
-                loException.Add(ex);
+                loEx.Add(ex);
             }
-            loException.ThrowExceptionIfErrors();
+
+            loEx.ThrowExceptionIfErrors();
         }
-        private async Task OnCancel()
+
+        // Create Method Action For Download Excel if Has Error
+        private async Task ActionFuncDataSetExcel()
+        {
+            var loByte = ExcelInject.R_WriteToExcel(_viewModel.ExcelDataSet);
+            var lcName = $"Cash Flow Plan{_viewModel.CashFlowGroupCode}" + ".xlsx";
+
+            await JSRuntime.downloadFileFromStreamHandler(lcName, loByte);
+        }
+
+        public async Task Button_OnClickCloseAsync()
         {
             await this.Close(true, false);
         }
-        private async Task R_BeforeSaveBatch(R_BeforeSaveBatchEventArgs events)
-        {
-            var loEx = new R_Exception();
-            try
-            {
 
-                var loTemp = await R_MessageBox.Show("", "Are You sure want process these records? ", R_eMessageBoxButtonType.YesNo);
-
-                if (loTemp == R_eMessageBoxResult.No)
-                {
-                    events.Cancel = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-            loEx.ThrowExceptionIfErrors();
-        }
-
-        private async Task R_ServiceSaveBatch(R_ServiceSaveBatchEventArgs eventArgs)
-        {
-            var loEx = new R_Exception();
-
-            try
-            {
-                _ViewModelUpload.loUploadCashFlowPlanList = (List<GSM00720UploadCashFlowPlanDTO>)eventArgs.Data;
-                await _ViewModelUpload.SaveUploadCashFlowPlanAsync();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-
-            loEx.ThrowExceptionIfErrors();
-        }
-
-        private async Task R_AfterSaveBatch(R_AfterSaveBatchEventArgs eventArgs)
-        {
-            var loEx = new R_Exception();
-
-            try
-            {
-                await this.Close(true, true);
-
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
-
-            loEx.ThrowExceptionIfErrors();
-        }
     }
 }

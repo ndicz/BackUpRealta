@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using GSM00700Common.DTO.Upload_DTO;
 using GSM00710Common.DTO.Upload_DTO_GSM00710;
 
 namespace GSM00700Common

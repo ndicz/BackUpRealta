@@ -10,8 +10,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using BlazorClientHelper;
-using GSM00700Common.DTO.Upload_DTO;
 using GSM00700Common.DTO.Upload_DTO_GSM00720;
+using GSM00710Common.DTO.Upload_DTO_GSM00710;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
@@ -378,7 +378,7 @@ namespace GSM00700Front
         private void R_BeforeOpenUpload(R_BeforeOpenPopupEventArgs evenaArgs)
         {
             evenaArgs.TargetPageType = typeof(GSM00710Upload);
-            var param = new GSM00710UploadCashFlowDTO
+            var param = new GSM00710UploadDTO
             {
                 CCASHFLOW_GROUP_CODE = GSM00710ViewModel.CashFlowGroupCode,
                 CCASHFLOW_GROUP_NAME = GSM00710ViewModel.CashFlowGroupName
@@ -390,18 +390,18 @@ namespace GSM00700Front
         private void R_BeforeOpenUpload720(R_BeforeOpenPopupEventArgs eventArgs)
         {
             eventArgs.TargetPageType = typeof(GSM00720Upload);
-            var param = new GSM00720UploadCashFlowPlanDTO
+            var param = new GSM00720UploadDTO
             {
                 CCASH_FLOW_CODE = GSM00720ViewModel.CashFlowPlanCode,
                 CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
                 CCASHFLOW_GROUP_CODE = GSM00710ViewModel.CashFlowGroupCode,
                 CCASHFLOW_GROUP_NAME = GSM00710ViewModel.CashFlowGroupName,
-
                 CCYEAR = GSM00720ViewModel.Year,
                 //CCASH_FLOW_NAME = GSM00720ViewModel.CashFlowPlanName,
             };
             eventArgs.Parameter = param;
         }
+
 
         private async Task R_AfterOpenUpload(R_AfterOpenPopupEventArgs eventArgs)
         {
