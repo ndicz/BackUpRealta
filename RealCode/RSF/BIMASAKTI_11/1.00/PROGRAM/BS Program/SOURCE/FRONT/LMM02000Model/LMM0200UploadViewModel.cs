@@ -20,6 +20,8 @@ namespace LMM02000Model
     {
         public string Message = "";
         public int Percentage = 0;
+
+        public Action ShowSuccessAction { get; set; }
         public Action StateChangeAction { get; set; }
         public DataSet ExcelDataSet { get; set; }
         public Func<Task> ActionDataSetExcel { get; set; }
@@ -82,8 +84,6 @@ namespace LMM02000Model
 
         public async Task SaveBulkFile()
         {
-
-
             var loEx = new R_Exception();
             R_BatchParameter loBatchPar;
             R_ProcessAndUploadClient loCls;
@@ -120,7 +120,7 @@ namespace LMM02000Model
                 loBatchPar.ClassName = "LMM02000Back.LMM02000UploadSalesmanCls";
                 loBatchPar.BigObject = ListFromExcel;
 
-                await loCls.R_BatchProcess<List<LMM02000UploadErrorValidateDTO>>(loBatchPar, 5);
+                await loCls.R_BatchProcess<List<LMM02000UploadErrorValidateDTO>>(loBatchPar, 10);
             }
             catch (Exception ex)
             {
@@ -140,6 +140,7 @@ namespace LMM02000Model
                 {
                     Message = string.Format("Process Complete and success with GUID {0}", pcKeyGuid);
                     VisibleError = false;
+                    ShowSuccessAction();    
                 }
 
                 if (poProcessResultMode == eProcessResultMode.Fail)
@@ -195,7 +196,7 @@ namespace LMM02000Model
                     COMPANY_ID = CompanyId,
                     USER_ID = UserId,
                     KEY_GUID = pcKeyGuid,
-                    RESOURCE_NAME = "RSP_GS_UPLOAD_SalesmanResources"
+                    RESOURCE_NAME = "RSP_LM_UPLOAD_SALESMANResources"
                 };
 
                 loCls = new R_ProcessAndUploadClient(pcModuleName: "LM",

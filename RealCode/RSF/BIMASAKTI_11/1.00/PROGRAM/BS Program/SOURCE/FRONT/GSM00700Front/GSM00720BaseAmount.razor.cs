@@ -52,9 +52,10 @@ namespace GSM00700Front
 
                 {
 
-                    CCOMPANY_ID = _GSM00720ViewModel.loCopyBaseAmountEntity.CCOMPANY_ID,
-                    CUSER_ID = _GSM00720ViewModel.loCopyBaseAmountEntity.CUSER_ID,
-                    CRATETYPE_CODE = _GSM00720ViewModel.loCurrency.CBASE_CURRENCY,
+                    CCOMPANY_ID = "RCD",
+                    CUSER_ID = "HPC",
+                    CRATETYPE_CODE = "IDR",
+                    //CRATE_DATE = "20230921"
 
                 };
                 eventArgs.TargetPageType = typeof(GSL01700);

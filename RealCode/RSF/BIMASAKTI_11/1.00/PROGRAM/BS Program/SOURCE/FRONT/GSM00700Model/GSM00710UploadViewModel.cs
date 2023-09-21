@@ -26,6 +26,7 @@ namespace GSM00700Model
     {
         public string Message = "";
         public int Percentage = 0;
+        public Action ShowSuccessAction { get; set; }
         public Action StateChangeAction { get; set; }
         public DataSet ExcelDataSet { get; set; }
         public Func<Task> ActionDataSetExcel { get; set; }
@@ -140,6 +141,7 @@ namespace GSM00700Model
                 {
                     Message = string.Format("Process Complete and success with GUID {0}", pcKeyGuid);
                     VisibleError = false;
+                    ShowSuccessAction();
                 }
 
                 if (poProcessResultMode == eProcessResultMode.Fail)

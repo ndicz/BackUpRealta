@@ -31,8 +31,8 @@ namespace GSM00700Front
                 _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
                 _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
                 _GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
-              await  _GSM00720ViewModel.GetYearForCopyFrom();
-                  
+                await _GSM00720ViewModel.GetYearForCopyFrom();
+
 
             }
             catch (Exception ex)
@@ -71,18 +71,25 @@ namespace GSM00700Front
 
         private Task R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
         {
-            if (eventArgs.Result == null)
+            var loEx = new R_Exception();
+
+            try
             {
-                return Task.CompletedTask;
+                var loData = (GSL01500ResultDetailDTO)eventArgs.Result;
+                _GSM00720ViewModel.loCopyFromEntity.CFROMGOUP = loData.CCASH_FLOW_GROUP_CODE;
+                _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
+                _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
             }
 
-
-            var loData = (GSL01500DTO)eventArgs.Result;
-            _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
-            _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;
-
-
+            loEx.ThrowExceptionIfErrors();
             return Task.CompletedTask;
+
+
+
         }
 
 

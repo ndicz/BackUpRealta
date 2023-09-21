@@ -32,7 +32,7 @@
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
-                    AllowEditRow="true"
+                    AllowEditRow="true" 
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
@@ -54,10 +54,10 @@
                 </R_GridColumns>
             </R_Grid>
             <R_StackLayout Row="true">
-                <R_ItemLayout col="2">
+                <R_ItemLayout>
                     <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">Template</R_Button>
                 </R_ItemLayout>
-                <R_ItemLayout col="2">
+                <R_ItemLayout>
                     <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">Upload</R_Popup>
                 </R_ItemLayout>
 

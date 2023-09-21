@@ -45,6 +45,14 @@ namespace LMM02000Front
         }
         #endregion
 
+        public async Task ShowSuccessInvoke()
+        {
+            var loValidate = await R_MessageBox.Show("", "Upload Successfully", R_eMessageBoxButtonType.OK);
+            if (loValidate == R_eMessageBoxResult.OK)
+            {
+                await this.Close(true, true);
+            }
+        }
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
@@ -68,6 +76,10 @@ namespace LMM02000Front
                 _viewModel.StateChangeAction = StateChangeInvoke;
                 _viewModel.ActionDataSetExcel = ActionFuncDataSetExcel;
                 _viewModel.DisplayErrorAction = DisplayErrorInvoke;
+                _viewModel.ShowSuccessAction = async () =>
+                {
+                    await ShowSuccessInvoke();
+                };
                 await Task.CompletedTask;
             }
             catch (Exception ex)
@@ -132,13 +144,14 @@ namespace LMM02000Front
             {
                 var loValidate = await R_MessageBox.Show("", "Are you sure want to import data?", R_eMessageBoxButtonType.YesNo);
 
-                if (loValidate == R_eMessageBoxResult.Yes)
+                if (loValidate == R_eMessageBoxResult.Yes)  
                 {
                     await _viewModel.SaveBulkFile();
 
                     if (_viewModel.VisibleError)
                     {
-                        await R_MessageBox.Show("", "Journal Group uploaded successfully!", R_eMessageBoxButtonType.OK);
+                        await R_MessageBox.Show("", " Salesman uploaded successfully!", R_eMessageBoxButtonType.OK);
+                        await this.Close(true, false);
                     }
                 }
             }
@@ -174,7 +187,7 @@ namespace LMM02000Front
         private async Task ActionFuncDataSetExcel()
         {
             var loByte = ExcelInject.R_WriteToExcel(_viewModel.ExcelDataSet);
-            var lcName = $"Cash Flow Plan" + ".xlsx";
+            var lcName = $"Salesman" + ".xlsx";
 
             await JSRuntime.downloadFileFromStreamHandler(lcName, loByte);
         }

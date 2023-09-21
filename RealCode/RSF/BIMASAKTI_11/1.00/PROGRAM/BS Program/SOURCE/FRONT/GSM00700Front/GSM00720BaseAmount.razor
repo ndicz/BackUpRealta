@@ -6,63 +6,63 @@
 
 
 
-<R_StackLayout Row="true">
+<R_StackLayout Row="true" Style="width: 550px" Class="mt-2">
 
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2" >
         <R_Label>Cash Flow </R_Label>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanCode"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
-    <R_ItemLayout xs="3">
+    <R_ItemLayout col="7">
         <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanName"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
 </R_StackLayout>
 
-<R_StackLayout Row="true">
+<R_StackLayout Row="true" Class="mt-2">
 
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_Label>Year</R_Label>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.Year"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
 
 </R_StackLayout>
-<R_StackLayout Row="true">
-    <R_ItemLayout xs="1">
+<R_StackLayout Row="true" Class="mb-2">
+    <R_ItemLayout col="1">
         <R_Label Class="fw-bold"> </R_Label>
     </R_ItemLayout>
 </R_StackLayout>
 
 <R_StackLayout Row="true">
 
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_Label>Rate</R_Label>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURRENCY_CODE"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
     <R_ItemLayout>
-        <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp"> </R_Lookup>
+        <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp"> ... </R_Lookup>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="6">
         <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURENCY_RATE"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
 
 </R_StackLayout>
 
-<R_StackLayout Row="true">
+<R_StackLayout Row="true" Class="mt-2">
 
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_Label>Period</R_Label>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
@@ -71,7 +71,7 @@
         </R_DropDownList>
     </R_ItemLayout>
 
-    <R_ItemLayout xs="2">
+    <R_ItemLayout col="2">
         <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
@@ -79,18 +79,26 @@
                         R_ConductorSource="@_conductorRef">
         </R_DropDownList>
     </R_ItemLayout>
+</R_StackLayout>
 
-    <R_StackLayout Row Class="justify-content-end">
-        <R_ItemLayout xs="4">
+<R_StackLayout Row="true" Class="mt-4">
+    <R_ItemLayout col="6">
+        <R_Label Class="fw-bold" FontColor="R_eFontColor.Danger"> this process will overwrite exiting value </R_Label>
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+<R_StackLayout Row Class="justify-content-end">
+        <R_ItemLayout>
             <R_Button OnClick="Button_OnClickProcessAsync">
                 Process
             </R_Button>
         </R_ItemLayout>
-        <R_ItemLayout xs="4">
+        <R_ItemLayout>
             <R_Button OnClick="Button_OnClickCloseAsync">
                 Cancel
             </R_Button>
         </R_ItemLayout>
     </R_StackLayout>
-    </R_StackLayout>
+
 

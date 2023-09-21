@@ -5,8 +5,7 @@
 @attribute [R_BlazorFrontEnd.Controls.Attributes.R_Page(Title = "Update Local Amount")]
 
 
-
-<R_StackLayout Row="true">
+<R_StackLayout Row="true" Style="width: 550px" Class="mt-2">
 
     <R_ItemLayout xs="2">
         <R_Label>Cash Flow </R_Label>
@@ -15,7 +14,7 @@
         <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanCode"
                    R_ConductorSource="@R_conduct" Enabled="false"/>
     </R_ItemLayout>
-    <R_ItemLayout xs="3">
+    <R_ItemLayout xs="7">
         <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanName"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
@@ -50,7 +49,7 @@
     <R_ItemLayout>
         <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp"> </R_Lookup>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
+    <R_ItemLayout xs="6">
         <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURENCY_RATE"
                    R_ConductorSource="@R_conduct" Enabled="false" />
     </R_ItemLayout>
@@ -79,18 +78,24 @@
                         R_ConductorSource="@_conductorRef">
         </R_DropDownList>
     </R_ItemLayout>
-    
-    <R_StackLayout Row Class="justify-content-end">
-        <R_ItemLayout xs="4">
-            <R_Button OnClick="Button_OnClickProcessAsync">
-                Process
-            </R_Button>
-        </R_ItemLayout>
-        <R_ItemLayout xs="4">
-            <R_Button OnClick="Button_OnClickCloseAsync">
-                Cancel
-            </R_Button>
-        </R_ItemLayout>
-    </R_StackLayout>
 </R_StackLayout>
 
+<R_StackLayout Row="true" Class="mt-4">
+    <R_ItemLayout col="6">
+        <R_Label Class="fw-bold" FontColor="R_eFontColor.Danger"> this process will overwrite exiting value </R_Label>
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+<R_StackLayout Row Class="justify-content-end">
+    <R_ItemLayout>
+        <R_Button OnClick="Button_OnClickProcessAsync">
+            Process
+        </R_Button>
+    </R_ItemLayout>
+    <R_ItemLayout>
+        <R_Button OnClick="Button_OnClickCloseAsync">
+            Cancel
+        </R_Button>
+    </R_ItemLayout>
+</R_StackLayout>

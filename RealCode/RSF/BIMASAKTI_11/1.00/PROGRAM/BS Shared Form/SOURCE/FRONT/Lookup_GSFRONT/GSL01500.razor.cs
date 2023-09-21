@@ -3,13 +3,6 @@ using Lookup_GSModel.ViewModel;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Lookup_GSFRONT
 {
@@ -34,12 +27,14 @@ namespace Lookup_GSFRONT
             loEx.ThrowExceptionIfErrors();
         }
 
-        public async Task PropertyDropdown_OnChange(object poParam)
+        public async Task PropertyDropdown_OnChange(string poParam)
         {
             var loEx = new R_Exception();
 
             try
             {
+                _viewModel.Data.CCASH_FLOW_GROUP_CODE = poParam;
+
                 await GridRef.R_RefreshGrid(poParam);
             }
             catch (Exception ex)
@@ -94,14 +89,14 @@ namespace Lookup_GSFRONT
 
         public async Task Button_OnClickOkAsync()
         {
-            var loTempData = (GSL01500ResultDetailDTO)GridRef.GetCurrentData();
+            var loTempData = GridRef.CurrentSelectedData;
             var loData = new GSL01500DTO()
             {
                 CCASH_FLOW_GROUP_CODE = loTempData.CCASH_FLOW_GROUP_CODE,
                 CCASH_FLOW_CODE = loTempData.CCASH_FLOW_CODE,
                 CCASH_FLOW_NAME = loTempData.CCASH_FLOW_NAME
             };
-            await this.Close(true, loData);
+            await this.Close(true, loTempData);
         }
         public async Task Button_OnClickCloseAsync()
         {

@@ -18,6 +18,7 @@ namespace GSM00700Common.DTO
         public Int32 INO_PERIOD_TO { get; set; }
         public string CCASH_FLOW_NAME { get; set; }
         public Int32 Code { get; set; }
+        public string Desc { get; set; }
     }
 
     public class GSM00720CopyBaseAmountListDTO : R_APIResultBaseDTO

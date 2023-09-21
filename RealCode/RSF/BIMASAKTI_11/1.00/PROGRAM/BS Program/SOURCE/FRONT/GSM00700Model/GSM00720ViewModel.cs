@@ -42,18 +42,18 @@ namespace GSM00700Model
 
         public List<GSM00720CopyBaseLocalAmountDTO> YearDropDown { get; set; } = new List<GSM00720CopyBaseLocalAmountDTO>()
         {
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 01},
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 02 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 03 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 04 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 05 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 06 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 07 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 08 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 09 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 10 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 11 },
-            new GSM00720CopyBaseLocalAmountDTO() {  Code = 12 }
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 01 , Desc = "01"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 02 , Desc = "02"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 03 , Desc = "03"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 04 , Desc = "04"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 05 , Desc = "05"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 06 , Desc = "06"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 07 , Desc = "07"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 08 , Desc = "08"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 09 , Desc = "09"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 10 , Desc = "10"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 11 , Desc = "11"},
+            new GSM00720CopyBaseLocalAmountDTO() {  Code = 12 , Desc = "12"}
         };
 
         public string CashFlowPlanCode = ""; // for filter

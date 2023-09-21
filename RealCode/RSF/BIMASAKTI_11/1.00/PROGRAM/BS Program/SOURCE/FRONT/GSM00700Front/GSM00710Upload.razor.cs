@@ -49,7 +49,14 @@ namespace GSM00700Front
             this.R_DisplayException(poException);
         }
         #endregion
-
+        public async Task ShowSuccessInvoke()
+        {
+            var loValidate = await R_MessageBox.Show("", "Upload Successfully", R_eMessageBoxButtonType.OK);
+            if (loValidate == R_eMessageBoxResult.OK)
+            {
+                await this.Close(true, true);
+            }
+        }
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
@@ -74,6 +81,10 @@ namespace GSM00700Front
                 _viewModel.StateChangeAction = StateChangeInvoke;
                 _viewModel.ActionDataSetExcel = ActionFuncDataSetExcel;
                 _viewModel.DisplayErrorAction = DisplayErrorInvoke;
+                _viewModel.ShowSuccessAction = async () =>
+                {
+                    await ShowSuccessInvoke();
+                };
                 await Task.CompletedTask;
             }
             catch (Exception ex)

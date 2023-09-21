@@ -87,20 +87,20 @@ namespace LMM02000Back
                 loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                lcQuery += "  CREATE TABLE #SALESMAN(" +
-                           "  NO INT" +
-                           ", SalesmanId VARCHAR(8)" +
+                lcQuery += "  CREATE TABLE #SALESMAN" +
+                           "  (NO INT" +
+                           ", SalesmanId VARCHAR(100)" +
                            ", SalesmanName NVARCHAR(100)" +
                            ", Active BIT" +
                            ", Address  NVARCHAR(255)" +
                            ", EmailAddress VARCHAR(100)" +
-                           ", MobileNo1 VARCHAR(30)" +
-                           ", MobileNo2 VARCHAR(30)" +
-                           ", NIK NVARCHAR(40)" +
-                           ", Gender VARCHAR(2)" +
-                           ", SalesmanType VARCHAR(2)" +
-                           ", CompanyName VARCHAR(20)" +
-                           ", NonActiveDate VARCHAR(8),)";
+                           ", MobileNo1 VARCHAR(100)" +
+                           ", MobileNo2 VARCHAR(100)" +
+                           ", NIK NVARCHAR(100)" +
+                           ", Gender VARCHAR(10)" +
+                           ", SalesmanType VARCHAR(100)" +
+                           ", CompanyName VARCHAR(100)" +
+                           ", NonActiveDate VARCHAR(100))";
 
 
                 loDb.SqlExecNonQuery(lcQuery, loConn, false);

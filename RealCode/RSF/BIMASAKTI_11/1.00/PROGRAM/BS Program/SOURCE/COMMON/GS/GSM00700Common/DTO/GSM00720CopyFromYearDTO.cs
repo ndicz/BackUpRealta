@@ -12,6 +12,7 @@ namespace GSM00700Common.DTO
         public string CUSER_ID { get; set; }
         public string CFROM_CASH_FLOW_FLAG { get; set; } = "00";
         public string CFROM_CASH_FLOW_CODE { get; set; } 
+        public string CFROMGOUP { get; set; }
         public string CFROM_YEAR { get; set; }
         public string CTO_CASH_FLOW_CODE { get; set; }
         public string CTO_YEAR { get; set; }

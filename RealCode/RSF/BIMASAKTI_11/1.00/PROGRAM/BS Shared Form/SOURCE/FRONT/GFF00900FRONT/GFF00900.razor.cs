@@ -15,7 +15,7 @@ using System.Linq;
 using R_BlazorFrontEnd.Controls.MessageBox;
 
 namespace GFF00900FRONT
-{
+{   
     public partial class GFF00900 : R_Page
     {
         private GFF00900ViewModel loViewModel = new();
@@ -41,7 +41,7 @@ namespace GFF00900FRONT
                 loViewModel.loRspActivityValidityList = loParam.Data;
 
                 IsReasonHidden = false;
-            }
+    }
             catch (Exception ex)
             {
                 loEx.Add(ex);

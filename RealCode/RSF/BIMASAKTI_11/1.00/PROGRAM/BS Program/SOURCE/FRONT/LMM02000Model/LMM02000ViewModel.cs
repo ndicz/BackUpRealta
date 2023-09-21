@@ -31,7 +31,7 @@ namespace LMM02000Model
         //    new LMM02000GenderSalesmanTypeDTO() {CCODE = "I", CDESCRIPTION = "Internal"},
         //    new LMM02000GenderSalesmanTypeDTO() {CCODE = "E", CDESCRIPTION = "Eksternal"}
         //};
-
+        public string propertyCode = "";
         public string propertyValue = "";
         public bool SelectedActiveInactiveLACTIVE;
 
@@ -117,7 +117,9 @@ namespace LMM02000Model
                 var loResult = await _LMM02000Model.GetPropertyStreamAsync();
 
                 PropertyList = loResult.Data;
+          
                 propertyValue = PropertyList[0].CPROPERTY_ID;
+
             }
             catch (Exception ex)
             {

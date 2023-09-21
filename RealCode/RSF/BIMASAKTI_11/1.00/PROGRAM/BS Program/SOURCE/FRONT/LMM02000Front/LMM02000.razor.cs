@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BlazorClientHelper;
 using GFF00900COMMON.DTOs;
 using LMM02000Common.DTO;
+using LMM02000Common.DTO.UPLOAD_DTO_LMM02000;
 using LMM02000Model;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -136,7 +137,30 @@ namespace LMM02000Front
 
         private async Task R_Before_Open_Upload(R_BeforeOpenPopupEventArgs eventArgs)
         {
+            string propertyid = _viewModel.propertyValue;
+            LMM02000PropertyDTO loParam = (_viewModel.PropertyList).Find(x => x.CPROPERTY_ID == propertyid);
 
+            eventArgs.TargetPageType = typeof(LMM02000Upload);
+            var param = new LMM02000UploadDTO()
+            {
+                CPROPERTY_ID = loParam.CPROPERTY_ID,
+                CPROPERTY_NAME = loParam.CPROPERTY_NAME,
+            };
+            eventArgs.Parameter = param;
+        }
+        
+        private async Task R_After_Open_Upload(R_AfterOpenPopupEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                await _gridRef.R_RefreshGrid(null);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+            R_DisplayException(loEx);
         }
 
         private async Task GenderList()

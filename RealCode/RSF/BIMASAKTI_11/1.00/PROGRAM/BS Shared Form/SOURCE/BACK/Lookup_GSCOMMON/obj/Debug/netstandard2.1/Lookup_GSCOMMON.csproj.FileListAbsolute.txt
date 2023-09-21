@@ -24,6 +24,32 @@ D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMO
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CopyComplete
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.dll
 D:\BIMASAKTI\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.deps.json
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.dll
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.AssemblyReference.cache
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.AssemblyInfoInputs.cache
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.AssemblyInfo.cs
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CoreCompileInputs.cache
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CopyComplete
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.dll
+C:\Users\fadel.codeid\Downloads\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.deps.json
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.AssemblyReference.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.AssemblyInfoInputs.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.AssemblyInfo.cs
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CoreCompileInputs.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CopyComplete
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.deps.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\Lookup_GSCOMMON.pdb

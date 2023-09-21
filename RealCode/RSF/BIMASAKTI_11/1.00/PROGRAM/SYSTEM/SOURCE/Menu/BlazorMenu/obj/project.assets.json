@@ -2623,7 +2623,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "LMM02000Common": "1.0.0"
+          "LMM02000Common": "1.0.0",
+          "System.Text.Json": "6.0.0"
         },
         "compile": {
           "bin/placeholder/LMM02000Model.dll": {}
@@ -5283,7 +5284,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "LMM02000Common": "1.0.0"
+          "LMM02000Common": "1.0.0",
+          "System.Text.Json": "6.0.0"
         },
         "compile": {
           "bin/placeholder/LMM02000Model.dll": {}
