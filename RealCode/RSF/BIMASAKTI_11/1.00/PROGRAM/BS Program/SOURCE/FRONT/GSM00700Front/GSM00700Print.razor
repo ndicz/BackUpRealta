@@ -6,108 +6,112 @@
 
 
 <R_StackLayout>
-<R_StackLayout Row="true">
-    <R_ItemLayout col="3">
-        <R_Label Class="fw-bold">Print Cash Flow</R_Label>
-    </R_ItemLayout>
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="3">
+            <R_Label Class="fw-bold">Print Cash Flow</R_Label>
+        </R_ItemLayout>
 
-</R_StackLayout>
-    
-    
-<R_StackLayout Row="true">
-
-    <R_ItemLayout col="4">
-        <R_Label>From Cash Flow Group</R_Label>
-    </R_ItemLayout>
-    <R_ItemLayout col="2">
-        <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM"
-                   R_ConductorSource="@_conductorRef"
-                   Enabled="false" />
-    </R_ItemLayout>
-    <R_ItemLayout>
-        <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpFrom" R_After_Open_Lookup="R_AfterOpenLookUpFrom" @ref="CashFlowGroup"> ... </R_Lookup>
-    </R_ItemLayout>
-    <R_ItemLayout col="3">
-        <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM_NAME"
-                   R_ConductorSource="@_conductorRef"
-                   Enabled="false" />
-    </R_ItemLayout>
-
-</R_StackLayout>
-    
-<R_StackLayout Row="true">
-    <R_ItemLayout col="4">
-        <R_Label>To  Cash  Flow  Group</R_Label>
-    </R_ItemLayout>
-    <R_ItemLayout col="2">
-        <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO"
-                   R_ConductorSource="@_conductorRef"
-                   Enabled="false" />
-    </R_ItemLayout>
-    <R_ItemLayout>
-        <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpTo" R_After_Open_Lookup="R_AfterOpenLookUpTo" @ref="CashFlowGroup"> ... </R_Lookup>
-    </R_ItemLayout>
-    <R_ItemLayout col="3">
-        <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO_NAME"
-                   R_ConductorSource="@_conductorRef"
-                   Enabled="false" />
-    </R_ItemLayout>
-</R_StackLayout>
+    </R_StackLayout>
 
 
-<R_StackLayout Row="true">
-    <R_ItemLayout col="4">
-        <R_Label>Year</R_Label>
-    </R_ItemLayout>
-       
-    <R_ItemLayout col="3">
-        <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
-                        @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_FROM"
-                        ValueField="@nameof(GSM00720YearDTO.CYEAR)"
-                        TextField="@nameof(GSM00720YearDTO.CYEAR)"
-                        R_ConductorSource="@_conductorRef">
-        </R_DropDownList>
-    </R_ItemLayout>
+    <R_StackLayout Row="true">
 
-    <R_Label>-</R_Label>
+        <R_ItemLayout col="4">
+            <R_Label>From Cash Flow Group</R_Label>
+        </R_ItemLayout>
+        <R_ItemLayout col="2">
+            <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false" />
+        </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpFrom" R_After_Open_Lookup="R_AfterOpenLookUpFrom" @ref="CashFlowGroup"> ... </R_Lookup>
+        </R_ItemLayout>
+        <R_ItemLayout col="3">
+            <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM_NAME"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false" />
+        </R_ItemLayout>
 
-    <R_ItemLayout col="3">
-        <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
-                        @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_TO"
-                        ValueField="@nameof(GSM00720YearDTO.CYEAR)"
-                        TextField="@nameof(GSM00720YearDTO.CYEAR)"
-                        R_ConductorSource="@_conductorRef">
-        </R_DropDownList>
-    </R_ItemLayout>
-</R_StackLayout>
+    </R_StackLayout>
+
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="4">
+            <R_Label>To  Cash  Flow  Group</R_Label>
+        </R_ItemLayout>
+        <R_ItemLayout col="2">
+            <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false" />
+        </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpTo" R_After_Open_Lookup="R_AfterOpenLookUpTo" @ref="CashFlowGroup"> ... </R_Lookup>
+        </R_ItemLayout>
+        <R_ItemLayout col="3">
+            <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO_NAME"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="false" />
+        </R_ItemLayout>
+    </R_StackLayout>
+
+
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="4">
+            <R_Label>Year</R_Label>
+        </R_ItemLayout>
+
+        <R_ItemLayout col="3">
+            <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
+                            @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_FROM"
+                            ValueField="@nameof(GSM00720YearDTO.CYEAR)"
+                            TextField="@nameof(GSM00720YearDTO.CYEAR)"
+                            R_ConductorSource="@_conductorRef"
+                            OnChanged="OnChangedYear">
+            </R_DropDownList>
+        </R_ItemLayout> 
+
+        <R_Label>-</R_Label>
+
+        <R_ItemLayout col="3">
+            <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
+                            @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_TO"
+                            ValueField="@nameof(GSM00720YearDTO.CYEAR)"
+                            TextField="@nameof(GSM00720YearDTO.CYEAR)"
+                            R_ConductorSource="@_conductorRef"
+                            OnChanged="OnChangedYear">
+            </R_DropDownList>
+        </R_ItemLayout>
+    </R_StackLayout>
 
 
 
-<R_StackLayout Row="true">
-    <R_ItemLayout col="4">
-        <R_Label>Period</R_Label>
-    </R_ItemLayout>
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="4">
+            <R_Label>Period</R_Label>
+        </R_ItemLayout>
 
-    <R_ItemLayout col="3">
-        <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                        @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
-                        ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                        TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                        R_ConductorSource="@_conductorRef">
-        </R_DropDownList>
-    </R_ItemLayout>
+        <R_ItemLayout col="3">
+            <R_DropDownList Data="@_GSM00700ViewModel.Period"
+                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
+                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+                            R_ConductorSource="@_conductorRef"
+                            OnChanged="OnChangedPeriod">
+            </R_DropDownList>
+        </R_ItemLayout>
 
-    <R_Label>-</R_Label>
+        <R_Label>-</R_Label>
 
-    <R_ItemLayout col="3">
-        <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                        @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
-                        ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                        TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                        R_ConductorSource="@_conductorRef">
-        </R_DropDownList>
-    </R_ItemLayout>
-</R_StackLayout>
+        <R_ItemLayout col="3">
+            <R_DropDownList Data="@_GSM00700ViewModel.Period"
+                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
+                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+                            R_ConductorSource="@_conductorRef"
+                            OnChanged="OnChangedPeriod">
+            </R_DropDownList>
+        </R_ItemLayout>
+    </R_StackLayout>
 
 
     <R_StackLayout Row="true">
@@ -117,27 +121,27 @@
 
         <R_ItemLayout col="3">
             <R_RadioGroup Data="@_GSM00700ViewModel.SortBy"
-                            @bind-Value="@_GSM00700ViewModel.loPrint.CSHORT_BY"
-                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.CSHORT_BY)"
-                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.SortBy)"
-                            R_ConductorSource="@_conductorRef">
+                          @bind-Value="@_GSM00700ViewModel.loPrint.CSHORT_BY"
+                          ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.CSHORT_BY)"
+                          TextField="@nameof(GSM00700PrintCashFlowParameterDTo.SortBy)"
+                          R_ConductorSource="@_conductorRef">
             </R_RadioGroup>
         </R_ItemLayout>
 
     </R_StackLayout>
-  
 
 
-<R_StackLayout Row="true">
-    <R_ItemLayout col="0">
-        <R_CheckBox @bind-Value="@_GSM00700ViewModel.loPrint.LPRINT_LOCAL"
-                    R_ConductorSource="@_conductorRef"/>
-    </R_ItemLayout>
-    <R_ItemLayout col="3">
-        <R_Label>Print Local Amount</R_Label>
-    </R_ItemLayout>
 
-</R_StackLayout>
+    <R_StackLayout Row="true">
+        <R_ItemLayout col="0">
+            <R_CheckBox @bind-Value="@_GSM00700ViewModel.loPrint.LPRINT_LOCAL"
+                        R_ConductorSource="@_conductorRef" />
+        </R_ItemLayout>
+        <R_ItemLayout col="3">
+            <R_Label>Print Local Amount</R_Label>
+        </R_ItemLayout>
+
+    </R_StackLayout>
 
     <R_StackLayout Row="true">
         <R_ItemLayout col="0">
@@ -149,36 +153,36 @@
         </R_ItemLayout>
 
     </R_StackLayout>
-@*
-    
+    @*
+
     <R_StackLayout Row="true">
 
 
-        <R_StackLayout Row="true">
-            <R_ItemLayout col="4">
-                <R_Label>Year</R_Label>
-            </R_ItemLayout>
+    <R_StackLayout Row="true">
+    <R_ItemLayout col="4">
+    <R_Label>Year</R_Label>
+    </R_ItemLayout>
 
-            <R_ItemLayout>
-                <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
-                                @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_FROM"
-                                ValueField="@nameof(GSM00720YearDTO.CYEAR)"
-                                TextField="@nameof(GSM00720YearDTO.CYEAR)"
-                                R_ConductorSource="@_conductorRef">
-                </R_DropDownList>
-            </R_ItemLayout>
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_FROM"
+    ValueField="@nameof(GSM00720YearDTO.CYEAR)"
+    TextField="@nameof(GSM00720YearDTO.CYEAR)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
 
-            <R_Label>-</R_Label>
+    <R_Label>-</R_Label>
 
-            <R_ItemLayout>
-                <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
-                                @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_TO"
-                                ValueField="@nameof(GSM00720YearDTO.CYEAR)"
-                                TextField="@nameof(GSM00720YearDTO.CYEAR)"
-                                R_ConductorSource="@_conductorRef">
-                </R_DropDownList>
-            </R_ItemLayout>
-        </R_StackLayout>
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CYEAR_TO"
+    ValueField="@nameof(GSM00720YearDTO.CYEAR)"
+    TextField="@nameof(GSM00720YearDTO.CYEAR)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
+    </R_StackLayout>
 
 
     </R_StackLayout>
@@ -186,117 +190,117 @@
 
 
 
-</R_StackLayout>
+    </R_StackLayout>
 
-<R_StackLayout Row="true">
+    <R_StackLayout Row="true">
 
 
     <R_StackLayout Row="true">
-        <R_ItemLayout col="4">
-            <R_Label>Year</R_Label>
+    <R_ItemLayout col="4">
+    <R_Label>Year</R_Label>
 
 
-        </R_ItemLayout>
+    </R_ItemLayout>
 
-        <R_ItemLayout>
-            <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
-                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            R_ConductorSource="@_conductorRef">
-            </R_DropDownList>
-        </R_ItemLayout>
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00700ViewModel.Period"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
+    ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
 
-        <R_Label>-</R_Label>
+    <R_Label>-</R_Label>
 
-        <R_ItemLayout>
-            <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
-                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            R_ConductorSource="@_conductorRef">
-            </R_DropDownList>
-        </R_ItemLayout>
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00700ViewModel.Period"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
+    ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
     </R_StackLayout>
 
 
-</R_StackLayout>
-
-
-<R_StackLayout Row="true">
-
-
-    <R_StackLayout Row="true">
-        <R_ItemLayout col="4">
-            <R_Label>Year</R_Label>
-
-
-        </R_ItemLayout>
-
-        <R_ItemLayout>
-            <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
-                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            R_ConductorSource="@_conductorRef">
-            </R_DropDownList>
-        </R_ItemLayout>
-
-        <R_Label>-</R_Label>
-
-        <R_ItemLayout>
-            <R_DropDownList Data="@_GSM00700ViewModel.Period"
-                            @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
-                            ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
-                            R_ConductorSource="@_conductorRef">
-            </R_DropDownList>
-        </R_ItemLayout>
     </R_StackLayout>
 
 
-</R_StackLayout>*@
-@*
-*@
-@*
-<R_StackLayout Row="true">
+    <R_StackLayout Row="true">
 
 
     <R_StackLayout Row="true">
-        <R_ItemLayout>
-            <R_Label>Cash Flow</R_Label>
+    <R_ItemLayout col="4">
+    <R_Label>Year</R_Label>
 
 
-        </R_ItemLayout>
-        <R_ItemLayout col="2">
-            <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanCode"
-                       R_ConductorSource="@_conductorRef"
-                       Enabled="false" />
-        </R_ItemLayout>
+    </R_ItemLayout>
 
-        <R_ItemLayout col="3">
-            <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanName"
-                       R_ConductorSource="@_conductorRef"
-                       Enabled="false" />
-        </R_ItemLayout>
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00700ViewModel.Period"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_FROM"
+    ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
+
+    <R_Label>-</R_Label>
+
+    <R_ItemLayout>
+    <R_DropDownList Data="@_GSM00700ViewModel.Period"
+    @bind-Value="@_GSM00700ViewModel.loPrint.CPERIOD_TO"
+    ValueField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    TextField="@nameof(GSM00700PrintCashFlowParameterDTo.Period)"
+    R_ConductorSource="@_conductorRef">
+    </R_DropDownList>
+    </R_ItemLayout>
+    </R_StackLayout>
+
+
+    </R_StackLayout>*@
+    @*
+    *@
+    @*
+    <R_StackLayout Row="true">
+
+
+    <R_StackLayout Row="true">
+    <R_ItemLayout>
+    <R_Label>Cash Flow</R_Label>
+
+
+    </R_ItemLayout>
+    <R_ItemLayout col="2">
+    <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanCode"
+    R_ConductorSource="@_conductorRef"
+    Enabled="false" />
+    </R_ItemLayout>
+
+    <R_ItemLayout col="3">
+    <R_TextBox @bind-Value="@_GSM00720ViewModel.CashFlowPlanName"
+    R_ConductorSource="@_conductorRef"
+    Enabled="false" />
+    </R_ItemLayout>
 
 
     </R_StackLayout>
-</R_StackLayout>
+    </R_StackLayout>
 
-<R_StackLayout Row="true">
+    <R_StackLayout Row="true">
 
 
     <R_StackLayout Row="true">
-        <R_ItemLayout>
-            <R_Label>Year</R_Label>
+    <R_ItemLayout>
+    <R_Label>Year</R_Label>
 
 
-        </R_ItemLayout>
-        <R_ItemLayout col="4">
-            <R_TextBox @bind-Value="@_GSM00720ViewModel.Year"
-                       R_ConductorSource="@_conductorRef" Enabled="false" />
-        </R_ItemLayout>
+    </R_ItemLayout>
+    <R_ItemLayout col="4">
+    <R_TextBox @bind-Value="@_GSM00720ViewModel.Year"
+    R_ConductorSource="@_conductorRef" Enabled="false" />
+    </R_ItemLayout>
 
 
 
@@ -306,7 +310,8 @@
 
 <R_StackLayout Row Class="justify-content-end">
     <R_ItemLayout col="6">
-        <R_Button OnClick="Button_OnClickProcessAsync">
+        <R_Button OnClick="Button_OnClickProcessAsync"
+                  @ref="ProcessButton">
             Process
         </R_Button>
     </R_ItemLayout>

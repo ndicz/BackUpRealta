@@ -130,6 +130,7 @@ namespace GSM02300Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
 
 
                 lcQuery = "RSP_GS_MAINTAIN_PROPERTY_TYPE";
@@ -143,13 +144,34 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
             }
 
+            finally
+            {
+                if (loConn != null)
+                {
+                    if (loConn.State != ConnectionState.Closed)
+                    {
+                        loConn.Close();
+                    }
+                    loConn.Dispose();
+                }
+            }
+            EndBlock:
             loException.ThrowExceptionIfErrors();
         }
 
@@ -167,6 +189,9 @@ namespace GSM02300Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
+
+
 
                 if (poCRUDMode == eCRUDMode.AddMode)
                 {
@@ -188,7 +213,16 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
@@ -206,7 +240,7 @@ namespace GSM02300Back
                     loConn.Dispose();
                 }
             }
-        EndBlock:
+            EndBlock:
             loException.ThrowExceptionIfErrors();
         }
     }

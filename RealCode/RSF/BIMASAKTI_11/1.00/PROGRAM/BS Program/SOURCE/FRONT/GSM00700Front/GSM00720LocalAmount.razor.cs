@@ -37,7 +37,7 @@ namespace GSM00700Front
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);   
+                loEx.Add(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
@@ -112,19 +112,21 @@ namespace GSM00700Front
             await this.Close(true, null);
         }
 
-        public async Task OnChanged()
+        public async Task OnChangedTo()
         {
             var loEx = new R_Exception();
 
             try
             {
-                var loData = _GSM00720ViewModel.loCopyBaseAmountEntity;
-                if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM < _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
+
+
+                if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM > _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
                 {
 
-                    R_MessageBox.Show("asdasd", "asdasd", R_eMessageBoxButtonType.OK);
+                    await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+
                 }
-               
+
 
             }
             catch (Exception ex)
@@ -134,6 +136,36 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
+        public async Task OnChangedFrom()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loData = _GSM00720ViewModel.loCopyBaseAmountEntity;
+                if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM != null && _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO <= 1)
+                {
+                    // "from" sudah memiliki angka sedangkan "to" belum, maka tidak ada validasi yang dilakukan
+                }
+                else if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM != null && _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO != null)
+                {
+                    if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM > _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
+                    {
+                        await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
 
 
 

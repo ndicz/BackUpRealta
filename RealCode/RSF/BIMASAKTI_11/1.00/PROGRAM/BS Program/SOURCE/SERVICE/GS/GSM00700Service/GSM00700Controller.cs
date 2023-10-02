@@ -215,6 +215,78 @@ namespace GSM00700Service
             loEx.ThrowExceptionIfErrors();
             return loRtn;
         }
+        [HttpPost]
+        public IAsyncEnumerable<GSM00700DTO> GetYearFromPrint()
+        {
+            R_Exception loException = new R_Exception();
+            GSM00700DBParameter loDbPar;
+            List<GSM00700DTO> loRtnTmp;
+            GSM00700Cls loCls;
+            IAsyncEnumerable<GSM00700DTO> loRtn = null;
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loCls = new GSM00700Cls();
+
+                loRtnTmp = loCls.YearFromComboBoxPrint(loDbPar);
+                loRtn = GetYearFromPrintStream(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+        [HttpPost]
+        public IAsyncEnumerable<GSM00700DTO> GetYearToPrint()
+        {
+            R_Exception loException = new R_Exception();
+            GSM00700DBParameter loDbPar;
+            List<GSM00700DTO> loRtnTmp;
+            GSM00700Cls loCls;
+            IAsyncEnumerable<GSM00700DTO> loRtn = null;
+            try
+            {
+                loDbPar = new GSM00700DBParameter();
+                loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loCls = new GSM00700Cls();
+
+                loRtnTmp = loCls.YearToComboBoxPrint(loDbPar);
+                loRtn = GetYearToPrintStream(loRtnTmp);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
+        }
+
+
+
+        private async IAsyncEnumerable<GSM00700DTO> GetYearFromPrintStream(List<GSM00700DTO> poParameter)
+        {
+            foreach (GSM00700DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
+
+        private async IAsyncEnumerable<GSM00700DTO> GetYearToPrintStream(List<GSM00700DTO> poParameter)
+        {
+            foreach (GSM00700DTO item in poParameter)
+            {
+                yield return item;
+            }
+        }
 
         private async IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream(List<GSM00700DTO> poParameter)
         {

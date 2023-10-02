@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="09/07/2023 11:05:00" ReportInfo.CreatorVersion="2023.2.21.0">
+<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="09/29/2023 14:53:08" ReportInfo.CreatorVersion="2023.2.21.0">
   <Dictionary>
     <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
       <Column Name="CenterData" DataType="GSM00700Common.DTO.Report_DTO_GSM00700.GSM00700PrintCashFlowResultDTo, GSM00700Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -37,12 +37,17 @@
         </BusinessObjectDataSource>
       </Column>
       <Column Name="BaseHeaderData" DataType="BaseHeaderReportCommon.BaseHeader.BaseHeaderDTO, BaseHeaderReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <Column Name="BLOGO_COMPANY" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="BLOGO_COMPANY" DataType="System.String" BindableControl="Picture"/>
         <Column Name="CPRINT_CODE" DataType="System.String"/>
         <Column Name="CCOMPANY_NAME" DataType="System.String"/>
         <Column Name="CPRINT_NAME" DataType="System.String"/>
         <Column Name="CUSER_ID" DataType="System.String"/>
       </Column>
+      <Column Name="BLOGO_COMPANY" DataType="System.String"/>
+      <Column Name="CPRINT_CODE" DataType="System.String"/>
+      <Column Name="CCOMPANY_NAME" DataType="System.String"/>
+      <Column Name="CPRINT_NAME" DataType="System.String"/>
+      <Column Name="CUSER_LOGIN_ID" DataType="System.String"/>
     </BusinessObjectDataSource>
   </Dictionary>
   <inherited Name="Page1" Guides="160.65">
@@ -68,7 +73,7 @@
       <inherited Name="Text39"/>
       <inherited Name="Text42"/>
     </inherited>
-    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="98.5" Width="1047.06" Height="56.7" Border.Lines="All" Fill.Color="DodgerBlue">
+    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="79.6" Width="1047.06" Height="56.7" Border.Lines="All" Fill.Color="DodgerBlue">
       <TextObject Name="Text43" Left="37.8" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_CODE]" Font="Arial, 10pt"/>
       <TextObject Name="Text44" Left="189" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_NAME]" Font="Arial, 10pt"/>
       <TextObject Name="Text45" Left="340.2" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_TYPE]" Font="Arial, 10pt"/>
@@ -85,16 +90,16 @@
       <LineObject Name="Line8" Left="680.4" Top="18.9" Height="37.8"/>
       <LineObject Name="Line9" Left="576.45" Top="18.9" Height="37.8"/>
     </ColumnHeaderBand>
-    <DataBand Name="Data1" ZOrder="0" Top="159.2" Width="1047.06" Height="37.8" DataSource="Data">
+    <DataBand Name="Data1" ZOrder="0" Top="140.3" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
       <TextObject Name="Text51" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_CODE]" Font="Arial, 10pt"/>
       <TextObject Name="Text52" Left="132.3" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_NAME]" Font="Arial, 10pt"/>
       <TextObject Name="Text54" Left="292.95" Top="9.45" Width="226.8" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_TYPE_DESCR]" Font="Arial, 10pt"/>
-      <DataBand Name="Data2" Top="201" Width="1047.06" Height="28.35" DataSource="BusinessObjectDataSource1" KeepTogether="true">
+      <DataBand Name="Data2" Top="182.1" Width="1047.06" Height="28.35" DataSource="BusinessObjectDataSource1" KeepTogether="true">
         <TextObject Name="Text57" Left="160.65" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_NAME]" Font="Arial, 10pt"/>
         <TextObject Name="Text56" Left="9.45" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_CODE]" Font="Arial, 10pt"/>
         <TextObject Name="Text58" Left="321.3" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_TYPE_DESCR]" Font="Arial, 10pt"/>
         <TextObject Name="Text55" Left="491.4" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CYEAR]" Font="Arial, 10pt"/>
-        <DataBand Name="Data3" Top="233.35" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
+        <DataBand Name="Data3" Top="214.45" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
           <TextObject Name="Text60" Left="727.65" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NLOCAL_AMOUNT]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.CurrencySymbol="IDR." Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
           <TextObject Name="Text61" Left="888.3" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NBASE_AMOUNT]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.CurrencySymbol="IDR." Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
           <TextObject Name="Text59" Left="614.25" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.CPERIOD_NO]" Font="Arial, 10pt"/>

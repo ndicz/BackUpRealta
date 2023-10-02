@@ -8,7 +8,7 @@
 
 <R_StackLayout Row="true" Style="width: 550px" Class="mt-2">
 
-    <R_ItemLayout col="2" >
+    <R_ItemLayout col="2">
         <R_Label>Cash Flow </R_Label>
     </R_ItemLayout>
     <R_ItemLayout col="2">
@@ -67,7 +67,8 @@
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
-                        R_ConductorSource="@_conductorRef">
+                        R_ConductorSource="@R_conduct"
+                        OnChanged="OnChangedFrom">
         </R_DropDownList>
     </R_ItemLayout>
 
@@ -76,7 +77,8 @@
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
-                        R_ConductorSource="@_conductorRef">
+                        R_ConductorSource="@R_conduct"
+                        OnChanged="OnChangedTo">
         </R_DropDownList>
     </R_ItemLayout>
 </R_StackLayout>
@@ -89,16 +91,22 @@
 
 
 <R_StackLayout Row Class="justify-content-end">
-        <R_ItemLayout>
-            <R_Button OnClick="Button_OnClickProcessAsync">
-                Process
-            </R_Button>
-        </R_ItemLayout>
-        <R_ItemLayout>
-            <R_Button OnClick="Button_OnClickCloseAsync">
-                Cancel
-            </R_Button>
-        </R_ItemLayout>
-    </R_StackLayout>
+    <R_ItemLayout>
+        <R_Button Enabled="@(_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM <= _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)"
+                  OnClick="Button_OnClickProcessAsync">
+            Process
+        </R_Button>
+    </R_ItemLayout>
+    <R_ItemLayout>
+        <R_Button OnClick="Button_OnClickCloseAsync">
+            Cancel
+        </R_Button>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_Conductor @ref="@R_conduct"
+                 R_ViewModel="@_GSM00720ViewModel"
+                 R_IsHeader="true"/>
+
 
 

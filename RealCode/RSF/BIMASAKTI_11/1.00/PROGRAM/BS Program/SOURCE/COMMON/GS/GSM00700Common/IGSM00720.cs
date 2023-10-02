@@ -19,6 +19,7 @@ namespace GSM00700Common
         GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParamDto);
         GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto);
         GSM00720CurrencyDTO GetCurrencyList();
+
         GSM00720InitialProsesListDTO GetInitialProses();
 
         GSM00710TemplateCashFlowUserInterface GetTemplate();

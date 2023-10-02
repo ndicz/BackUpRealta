@@ -46,11 +46,11 @@ namespace GSM00700Back
                 loException.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
             return loReturn;
         }
-        
+
         public List<GSM00710CashFlowTypeDTO> CashFlowType(GSM00700DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -64,7 +64,8 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
+                var lcQuerry =
+                    @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10,
@@ -77,47 +78,48 @@ namespace GSM00700Back
                 loException.Add(ex);
             }
 
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
 
             return loReturn;
         }
 
 
-        protected override GSM00710DTO R_Display(GSM00710DTO poEntity)
-        {
-            R_Exception loException = new R_Exception();
-            GSM00710DTO loReturn = null;
-            R_Db loDb;
-            DbCommand loCommand;
-
-            try
+            protected override GSM00710DTO R_Display(GSM00710DTO poEntity)
             {
-                loDb = new R_Db();
-                var loConn = loDb.GetConnection();
+                R_Exception loException = new R_Exception();
+                GSM00710DTO loReturn = null;
+                R_Db loDb;
+                DbCommand loCommand;
 
-                loCommand = loDb.GetCommand();
-                var lcQuery = @"RSP_GS_GET_CASHFLOW_DT";
-                loCommand.CommandType = CommandType.StoredProcedure;
-                loCommand.CommandText = lcQuery;
-                loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
-                var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb = new R_Db();
+                    var loConn = loDb.GetConnection();
 
-                loReturn = R_Utility.R_ConvertTo<GSM00710DTO>(loDataTable).FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
+                    loCommand = loDb.GetCommand();
+                    var lcQuery = @"RSP_GS_GET_CASHFLOW_DT";
+                    loCommand.CommandType = CommandType.StoredProcedure;
+                    loCommand.CommandText = lcQuery;
+                    loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
+                    loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
+                    loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20,
+                        poEntity.CCASH_FLOW_GROUP_CODE);
+                    loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
+                    var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
-                loException.Add(ex);
-            }
+                    loReturn = R_Utility.R_ConvertTo<GSM00710DTO>(loDataTable).FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+
+                    loException.Add(ex);
+                }
 
             EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return loReturn;
-        }
+                loException.ThrowExceptionIfErrors();
+                return loReturn;
+            }
 
         protected override void R_Saving(GSM00710DTO poNewEntity, eCRUDMode poCRUDMode)
         {
@@ -135,6 +137,7 @@ namespace GSM00700Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
 
                 if (poCRUDMode == eCRUDMode.AddMode)
                 {
@@ -157,7 +160,16 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CSEQUENCE", DbType.String, 60, poNewEntity.CSEQUENCE);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
@@ -192,18 +204,33 @@ namespace GSM00700Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
+
                 lcQuery = "RSP_GS_MAINTAIN_CASHFLOW";
                 loCommand.CommandType = CommandType.StoredProcedure;
                 loCommand.CommandText = lcQuery;
+
+
                 loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE);
+                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20,
+                    poEntity.CCASH_FLOW_GROUP_CODE);
                 loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
                 loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_NAME", DbType.String, 100, poEntity.CCASH_FLOW_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_TYPE", DbType.String, 60, poEntity.CCASH_FLOW_TYPE);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CSEQUENCE", DbType.String, 10, poEntity.CSEQUENCE);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
+
             }
             catch (Exception ex)
             {

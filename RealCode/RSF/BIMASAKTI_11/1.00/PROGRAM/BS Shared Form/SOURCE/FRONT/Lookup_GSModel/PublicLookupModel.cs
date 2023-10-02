@@ -625,7 +625,7 @@ namespace Lookup_GSModel
             throw new NotImplementedException();
         }
 
-        public async Task<List<GSL01500ResultDetailDTO>> GSL01500GetCashDetailListAsync(GSL01500ParameterDetailDTO poParameter)
+        public async Task<List<GSL01500ResultDetailDTO>> GSL01500GetCashDetailListAsync(string poCashFlowGrpCode)
         {
             var loEx = new R_Exception();
             List<GSL01500ResultDetailDTO> loResult = null;
@@ -633,7 +633,7 @@ namespace Lookup_GSModel
             try
             {
                 //Set Context
-                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CCASH_FLOW_GROUP_CODE, poParameter.CCASH_FLOW_GROUP_CODE);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CCASH_FLOW_GROUP_CODE, poCashFlowGrpCode);
 
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<GSL01500ResultDetailDTO>(

@@ -65,6 +65,7 @@
         </R_StackLayout>
 
         <R_ConductorGrid @ref="@_conGridGSM00710Ref"
+                         R_Validation="@Grid_ValidationCashFlowG"
                          R_ViewModel="@GSM00710ViewModel"
                          R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlow"
                          R_ServiceSave="@Grid_ServiceSaveRecordCashFlow"
@@ -122,7 +123,9 @@
                         Width="100%"
                         R_ConductorGridSource="@_conGridGSM00720Ref"
                         R_GridType="@R_eGridType.Original"
-                        AllowAddNewRow="false">
+                        AllowAddNewRow="false"
+                        AllowEditRow="false"
+                        AllowDeleteRow="false">
 
                     <R_GridColumns>
                         <R_GridTextColumn Width="125px" FieldName="CYEAR" HeaderText="Year Period"></R_GridTextColumn>
@@ -138,11 +141,15 @@
                              R_ViewModel="@GSM00720ViewModel"
                              R_Display="@Grid_R_Display_Year"
                              R_IsHeader="true" />
+            
+
             <R_StackLayout col="10">
 
                 <R_Grid @ref="@_gridRef00720"
                         DataSource="@GSM00720ViewModel.loGridList"
                         Pageable="true"
+                        AllowEditRow="true" 
+                        AllowAddNewRow="true"
                         R_ConductorSource="@R_conduct"
                         R_GridType="@R_eGridType.Original"
                         Width="745px"
@@ -223,6 +230,8 @@
 
         <R_ConductorGrid @ref="@_conGridGSM00720Ref"
                          R_ViewModel="@GSM00720ViewModel"
+                         R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlow"
+                         R_Display="@Grid_R_DisplaytListCashFlowPlan"
                          R_IsHeader="true" />
     </R_TabStripTab>
 </R_TabStrip>

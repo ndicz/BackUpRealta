@@ -22,12 +22,60 @@ namespace GSM00700Service
         [HttpPost]
         public R_ServiceGetRecordResultDTO<GSM00720DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00720DTO> poParameter)
         {
-            throw new NotImplementedException();
+            var loEx = new R_Exception();
+            var loRtn = new R_ServiceGetRecordResultDTO<GSM00720DTO>();
+            GSM00700DBParameter loDbPar = new GSM00700DBParameter();
+            try
+            {
+                var loCls = new GSM00720Cls();
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+                loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
+                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
+                loDbPar.CPERIOD_NO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CPERIOD_NO);
+                //poParameter.Entity.CCOMPANY_ID = "RCD";
+                //poParameter.Entity.CUSER_ID = "Admin";
+
+                loRtn.data = loCls.R_GetRecord(poParameter.Entity);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loRtn;
         }
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM00720DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM00720DTO> poParameter)
         {
-            throw new NotImplementedException();
+            R_Exception loException = new R_Exception();
+            R_ServiceSaveResultDTO<GSM00720DTO> loRtn = null;
+            GSM00720Cls loCls;
+
+
+            try
+            {
+                loCls = new GSM00720Cls();
+                loRtn = new R_ServiceSaveResultDTO<GSM00720DTO>();
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+
+                //poParameter.Entity.CCOMPANY_ID = "RCD";
+                //poParameter.Entity.CUSER_ID = "HPC";
+
+                loRtn.data = loCls.R_Save(poParameter.Entity, poParameter.CRUDMode);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            };
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
+
+            return loRtn;
         }
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM00720DTO> poParameter)

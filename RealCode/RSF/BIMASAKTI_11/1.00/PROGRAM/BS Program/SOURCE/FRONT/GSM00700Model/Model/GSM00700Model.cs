@@ -125,7 +125,53 @@ namespace GSM00700Model.Model
             return loResult;
         }
 
+        public async Task<GSM00700ListDTO> GetYearFromPrintAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00700ListDTO loResult = new GSM00700ListDTO();
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00700ListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00700.GetYearFromPrint),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
 
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        public async Task<GSM00700ListDTO> GetYearToPrintAsync()
+        {
+            var loEx = new R_Exception();
+            GSM00700ListDTO loResult = new GSM00700ListDTO();
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = DEFAULT_HTTP_NAME;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<GSM00700ListDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IGSM00700.GetYearToPrint),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
 
 
 
@@ -146,6 +192,16 @@ namespace GSM00700Model.Model
         }
 
         public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00700DTO> GetYearFromPrint()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<GSM00700DTO> GetYearToPrint()
         {
             throw new NotImplementedException();
         }

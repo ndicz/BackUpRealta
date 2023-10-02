@@ -10,6 +10,7 @@ using Lookup_GSFRONT;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
+using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Exceptions;
 
 namespace GSM00700Front
@@ -19,7 +20,6 @@ namespace GSM00700Front
         private GSM00720ViewModel _GSM00720ViewModel = new();
         private GSM00710ViewModel _GSM00710ViewModel = new();
         private R_Grid<GSM00710DTO> _gridRef00710;
-        private R_Conductor _conductorRef;
         private R_Conductor R_conduct;
         protected override async Task R_Init_From_Master(object poParameter)
         {
@@ -31,7 +31,7 @@ namespace GSM00700Front
                 _GSM00720ViewModel.CashFlowGroupCode = _GSM00720ViewModel.loCopyBaseAmountEntity.CCASH_FLOW_GROUP;
                 _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyBaseAmountEntity.CCASH_FLOW_NAME;
                 _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyBaseAmountEntity.CYEAR;
-
+               
                 //await _gridRef00710.R_RefreshGrid(null);
             }
             catch (Exception ex)
@@ -107,6 +107,62 @@ namespace GSM00700Front
         {
             await this.Close(true, null);
         }
+
+        public async Task OnChangedTo()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+
+
+                if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM > _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
+                {
+
+                    await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task OnChangedFrom()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loData = _GSM00720ViewModel.loCopyBaseAmountEntity;
+                if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM != null && _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO <= 1)
+                {
+                    // "from" sudah memiliki angka sedangkan "to" belum, maka tidak ada validasi yang dilakukan
+                }
+                else if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM != null && _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO != null)
+                {
+                    if (_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM > _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)
+                    {
+                        await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+
 
     }
 }

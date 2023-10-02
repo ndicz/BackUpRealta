@@ -9,21 +9,21 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = GFF00900FRONT
 build_property.RootNamespace = GFF00900FRONT
-build_property.ProjectDir = D:\Fake\Future1\BIMASAKTI_11\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\
+build_property.ProjectDir = D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Fake\Future1\BIMASAKTI_11\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\GFF00900FRONT
+build_property.MSBuildProjectDirectory = D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\GFF00900FRONT
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Fake/Future1/BIMASAKTI_11/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/GFF00900.razor]
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/GFF00900.razor]
 build_metadata.AdditionalFiles.TargetPath = R0ZGMDA5MDAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Fake/Future1/BIMASAKTI_11/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/_Imports.razor]
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Fake/Future1/BIMASAKTI_11/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/Component1.razor]
+[D:/REALTA/RealCode Lokasl/RealCode/RSF/BIMASAKTI_11/1.00/PROGRAM/BS Shared Form/SOURCE/FRONT/GFF00900FRONT/Component1.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50MS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-b7s8vubfow

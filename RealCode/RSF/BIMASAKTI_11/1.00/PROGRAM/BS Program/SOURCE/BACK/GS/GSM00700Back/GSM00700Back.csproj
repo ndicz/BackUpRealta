@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\COMMON\GS\GSM00700Common\GSM00700Common.csproj" />
+    <ProjectReference Include="..\GS_SPR\RSP_GS_MAINTAIN_CASHFLOWResources\RSP_GS_MAINTAIN_CASHFLOWResources.csproj" />
   </ItemGroup>
 
   <ItemGroup>

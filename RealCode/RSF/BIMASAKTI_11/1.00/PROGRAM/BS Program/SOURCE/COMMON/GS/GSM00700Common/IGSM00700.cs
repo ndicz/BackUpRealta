@@ -14,5 +14,8 @@ namespace GSM00700Common
         //GSM00700ListDTO GetAllCashFlowGroupList();
         GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType();
         IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter);
+
+        IAsyncEnumerable<GSM00700DTO> GetYearFromPrint();
+        IAsyncEnumerable<GSM00700DTO> GetYearToPrint();
     }
 }

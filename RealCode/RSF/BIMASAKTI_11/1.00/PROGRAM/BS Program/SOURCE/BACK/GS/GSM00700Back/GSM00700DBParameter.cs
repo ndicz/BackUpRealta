@@ -20,7 +20,7 @@ namespace GSM00700Back
         public string CTO_CASH_FLOW_CODE { get; set; }
         public string CTO_YEAR { get; set; }
         public string CUSER_LOGIN_ID { get; set; }
-
+        public string CPERIOD_NO { get; set; }
 
         public string CCASH_FLOW_GROUP { get; set; }
         public string CYEAR { get; set; }

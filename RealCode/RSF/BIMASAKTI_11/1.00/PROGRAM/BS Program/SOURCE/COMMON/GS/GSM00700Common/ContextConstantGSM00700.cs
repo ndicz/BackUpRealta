@@ -10,6 +10,7 @@ namespace GSM00700Common
         public const string CCASH_FLOW_CODE = "CCASH_FLOW_CODE";
         public const string CYEAR = "CYEAR";
         public const string COPY_FROM = "COPY_FROM";
+        public const string CPERIOD_NO = "CPERIOD_NO";
 
         public const string CFROM_CASH_FOW_FLAG = "CFROM_CASH_FOW_FLAG";
         public const string CFROM_CASH_FLOW_CODE = "CFROM_CASH_FLOW_CODE";

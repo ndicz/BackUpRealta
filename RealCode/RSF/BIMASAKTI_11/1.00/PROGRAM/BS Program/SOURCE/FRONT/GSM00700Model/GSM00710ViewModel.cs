@@ -100,7 +100,8 @@ namespace GSM00700Model
             try
             {
 
-                R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, cashFlowCode);
+                //R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, cashFlowCode);  
+
                 var loParam = new GSM00710DTO() { CCASH_FLOW_CODE = cashFlowCode, CCASH_FLOW_GROUP_CODE = cashFlowGroupCode};
                 var loResult = await _GSM00710Model.R_ServiceGetRecordAsync(loParam);
                 loEntity = loResult;

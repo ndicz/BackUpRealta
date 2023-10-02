@@ -472,5 +472,30 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
+        private void Grid_ValidationCashFlowG(R_ValidationEventArgs eventArgs)
+        {
+            var loException = new R_Exception();
+            try
+            {
+                var loData = (GSM00710DTO)eventArgs.Data;
+
+                if (string.IsNullOrEmpty(loData.CCASH_FLOW_CODE))
+                    loException.Add("001", "Cash Flow Code cannot be Empty.");
+
+                if (string.IsNullOrEmpty(loData.CCASH_FLOW_NAME))
+                    loException.Add("002", "Cash Flow Name cannot be Empty");
+
+
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            eventArgs.Cancel = loException.HasError;
+
+            loException.ThrowExceptionIfErrors();
+        }
     }
 }

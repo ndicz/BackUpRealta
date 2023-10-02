@@ -19,7 +19,15 @@
           "GSM05500Service.dll": {}
         }
       },
+      "BaseHeaderReportCommon/1.0.0": {
+        "runtime": {
+          "BaseHeaderReportCommon.dll": {}
+        }
+      },
       "GSM00700Common/1.0.0": {
+        "dependencies": {
+          "BaseHeaderReportCommon": "1.0.0"
+        },
         "runtime": {
           "GSM00700Common.dll": {}
         }
@@ -134,6 +142,11 @@
   },
   "libraries": {
     "GSM05500Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BaseHeaderReportCommon/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

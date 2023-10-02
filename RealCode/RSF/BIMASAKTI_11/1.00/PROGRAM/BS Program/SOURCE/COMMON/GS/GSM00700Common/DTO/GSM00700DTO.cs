@@ -31,6 +31,7 @@ namespace GSM00700Common.DTO
         public bool LPRINT_LOCAL { get; set; }
         public bool LPRINT_BASE { get; set; }
         public string CUSER_LOGIN_ID { get; set; }
+        public string CCYEAR { get; set; }
         public string CYEAR { get; set; }
         public string CCASH_FLOW_CODE { get; set; }
         public string CCASH_FLOW_NAME { get; set; }

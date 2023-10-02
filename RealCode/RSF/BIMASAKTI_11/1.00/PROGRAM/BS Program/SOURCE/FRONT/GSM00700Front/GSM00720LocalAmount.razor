@@ -66,7 +66,8 @@
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
-                        R_ConductorSource="@_conductorRef">
+                        R_ConductorSource="@_conductorRef"
+                        OnChanged="OnChangedFrom">
         </R_DropDownList>
     </R_ItemLayout>
     
@@ -75,7 +76,8 @@
                         @bind-Value="@_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO"
                         ValueField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
                         TextField="@nameof(GSM00720CopyBaseLocalAmountDTO.Code)"
-                        R_ConductorSource="@_conductorRef">
+                        R_ConductorSource="@_conductorRef"
+                        OnChanged="OnChangedTo">
         </R_DropDownList>
     </R_ItemLayout>
 </R_StackLayout>
@@ -89,7 +91,7 @@
 
 <R_StackLayout Row Class="justify-content-end">
     <R_ItemLayout>
-        <R_Button OnClick="Button_OnClickProcessAsync">
+        <R_Button Enabled="@(_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM <= _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)">
             Process
         </R_Button>
     </R_ItemLayout>

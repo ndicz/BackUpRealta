@@ -19,6 +19,9 @@ namespace GSM00700Model
         public GSM00700DTO loEntity = new GSM00700DTO();
         public GSM00700PrintCashFlowParameterDTo loPrint = new GSM00700PrintCashFlowParameterDTo();
 
+       
+        public int yearFrom = 0;
+        public int yearTo = 0;
         public List<GSM00700CashFlowGroupTypeDTO> loCashFlowGroupType { get; set; } = new List<GSM00700CashFlowGroupTypeDTO>();
         //{
         //    new GSM00700CashFlowGroupTypeDTO() { CCODE = "I", CDESCRIPTION = "Investing"},
@@ -138,5 +141,21 @@ namespace GSM00700Model
             }
             loEx.ThrowExceptionIfErrors();
         }
+
+        //public async Task GetYearFromPrint()
+        //{
+        //    var loEx = new R_Exception();
+
+        //    try
+        //    {
+        //        var loReturn = await _GSM00700Model.GetYearFromPrintAsync();
+        //        loGridList = new ObservableCollection<GSM00700DTO>(loReturn.Data);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+        //    loEx.ThrowExceptionIfErrors();
+        //}
     }
 }

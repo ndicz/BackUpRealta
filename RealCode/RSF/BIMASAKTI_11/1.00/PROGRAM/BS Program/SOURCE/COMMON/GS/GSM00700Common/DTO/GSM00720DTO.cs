@@ -9,8 +9,10 @@ namespace GSM00700Common.DTO
     {
         public string CCOMPANY_ID { get; set; }
         public string CUSER_ID { get; set; }
-
+        public string CCASH_FLOW_GROUP_CODE { get; set; }
+        
         public string CCYEAR { get; set; }
+        public string CYEAR { get; set; }
         public string CPERIOD_NO { get; set; }
         public Decimal NBASE_AMOUNT { get; set; }
         public Decimal NLOCAL_AMOUNT { get; set; }

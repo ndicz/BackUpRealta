@@ -123,6 +123,7 @@ namespace GSM00700Back
             R_Db loDb;
             DbCommand loCommand;
             DbConnection loConn = null;
+            string lcAction = "";
 
 
             try
@@ -130,6 +131,7 @@ namespace GSM00700Back
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
+                R_ExternalException.R_SP_Init_Exception(loConn);
 
 
                 lcQuery = "RSP_GS_MAINTAIN_CASHFLOW_GROUP";
@@ -143,7 +145,17 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
+
             }
             catch (Exception ex)
             {
@@ -169,6 +181,8 @@ namespace GSM00700Back
                 loConn = loDb.GetConnection();
                 loCommand = loDb.GetCommand();
 
+                R_ExternalException.R_SP_Init_Exception(loConn);
+
                 if (poCRUDMode == eCRUDMode.AddMode)
                 {
                     lcAction = "ADD";
@@ -190,7 +204,16 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
 
-                loDb.SqlExecNonQuery(loConn, loCommand, true);
+                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                try
+                {
+                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                }
+                catch (Exception ex)
+                {
+                    loException.Add(ex);
+                }
+                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
             }
             catch (Exception ex)
             {
@@ -208,9 +231,75 @@ namespace GSM00700Back
                     loConn.Dispose();
                 }
             }
-        EndBlock:
+            EndBlock:
             loException.ThrowExceptionIfErrors();
         }
+
+        public List<GSM00700DTO> YearFromComboBoxPrint(GSM00700DBParameter poParameter)
+        {
+            R_Exception loEx = new R_Exception();
+            List<GSM00700DTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuery = @"RSP_GS_GET_PERIOD_YEAR_LIST";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loReturnTemp).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
+
+        public List<GSM00700DTO> YearToComboBoxPrint(GSM00700DBParameter poParameter)
+        {
+            R_Exception loEx = new R_Exception();
+            List<GSM00700DTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuery = @"RSP_GS_GET_PERIOD_YEAR_LIST";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loReturnTemp).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
+
+
 
         public List<GSM00700DTO> GetPrintParam(GSM00700PrintCashFlowParameterDTo poParameter)
         {
@@ -236,9 +325,9 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CYEAR_TO", DbType.String, 10, poParameter.CYEAR_TO);
                 loDb.R_AddCommandParameter(loCmd, "@CPERIOD_FROM", DbType.String, 10, poParameter.CPERIOD_FROM);
                 loDb.R_AddCommandParameter(loCmd, "@CPERIOD_TO", DbType.String, 10, poParameter.CPERIOD_TO);
-                loDb.R_AddCommandParameter(loCmd, "@CSHORT_BY", DbType.String, 10, "01");
-                loDb.R_AddCommandParameter(loCmd, "@LPRINT_LOCAL", DbType.String, 10, "1");
-                loDb.R_AddCommandParameter(loCmd, "@LPRINT_BASE", DbType.String, 10, "1");
+                loDb.R_AddCommandParameter(loCmd, "@CSHORT_BY", DbType.String, 10, poParameter.CSHORT_BY);
+                loDb.R_AddCommandParameter(loCmd, "@LPRINT_LOCAL", DbType.String, 10, poParameter.LPRINT_LOCAL);
+                loDb.R_AddCommandParameter(loCmd, "@LPRINT_BASE", DbType.String, 10, poParameter.LPRINT_BASE);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 

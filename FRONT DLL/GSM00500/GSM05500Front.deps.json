@@ -152,6 +152,11 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "BaseHeaderReportCommon/1.0.0": {
+        "runtime": {
+          "BaseHeaderReportCommon.dll": {}
+        }
+      },
       "GFF00900COMMON/1.0.0": {
         "runtime": {
           "GFF00900COMMON.dll": {}
@@ -176,6 +181,9 @@
         }
       },
       "GSM00700Common/1.0.0": {
+        "dependencies": {
+          "BaseHeaderReportCommon": "1.0.0"
+        },
         "runtime": {
           "GSM00700Common.dll": {}
         }
@@ -417,6 +425,11 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "BaseHeaderReportCommon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "GFF00900COMMON/1.0.0": {
       "type": "project",

@@ -20,9 +20,9 @@ using BaseHeaderReportCommon.BaseHeader;
 
 namespace GSM00700Service
 {
-    [ApiController]
-    [Route("api/[controller]/[action]")]
-    public class GSM00700PrintController : ControllerBase
+    //[ApiController]
+    //[Route("api/[controller]/[action]")]
+    public class GSM00700PrintController : R_ReportControllerBase
     {
         private R_ReportFastReportBackClass _ReportCls;
         private GSM00700PrintCashFlowParameterDTo _poParam;
@@ -36,7 +36,9 @@ namespace GSM00700Service
 
         private void _ReportCls_R_InstantiateMainReportWithFileName(ref string pcFileTemplate)
         {
-            pcFileTemplate = "Reports\\GSM00700Report.frx";
+            //pcFileTemplate = "Reports\\GSM00700Report.frx";
+
+            pcFileTemplate = System.IO.Path.Combine("Reports", "GSM00700Report.frx");
         }
 
         private void _ReportCls_R_GetMainDataAndName(ref ArrayList poData, ref string pcDataSourceName)
@@ -124,7 +126,7 @@ namespace GSM00700Service
 
                     GSM00710Data = data1b.GroupBy(data2a => new
                     {
-                        data2a.CYEAR,
+                        data2a.CCYEAR,
                         data2a.CCASH_FLOW_CODE,
                         data2a.CCASH_FLOW_NAME,
                         data2a.CCASH_FLOW_TYPE,
@@ -132,7 +134,7 @@ namespace GSM00700Service
 
                     }).Select(data2b => new GSM00710Data()
                     {
-                        CYEAR = data2b.Key.CYEAR,
+                        CYEAR = data2b.Key.CCYEAR,
                         CCASH_FLOW_CODE = data2b.Key.CCASH_FLOW_CODE,
                         CCASH_FLOW_NAME = data2b.Key.CCASH_FLOW_NAME,
                         CCASH_FLOW_TYPE = data2b.Key.CCASH_FLOW_TYPE,
@@ -142,14 +144,14 @@ namespace GSM00700Service
                             data3a.CPERIOD_NO,
                             data3a.NLOCAL_AMOUNT,
                             data3a.NBASE_AMOUNT,
-                            data3a.CYEAR,
+                            data3a.CCYEAR,
 
                         }).Select(data3b => new GSM00720Data()
                         {
                             CPERIOD_NO = data3b.Key.CPERIOD_NO,
                             NLOCAL_AMOUNT = data3b.Key.NLOCAL_AMOUNT,
                             NBASE_AMOUNT = data3b.Key.NBASE_AMOUNT,
-                            CYEAR = data3b.Key.CYEAR,
+                            CYEAR = data3b.Key.CCYEAR,
                         }).ToList()
                     }).ToList()
                 }).ToList();

@@ -21,5 +21,10 @@ namespace GSM00700Common.DTO.Report_DTO_GSM00700
         public string CCOMPANY_ID { get; set; }
         public string Period { get; set; }
         public string SortBy { get; set; }
+
+        public int YearFrom { get; set; } = 0;
+        public int YearTo { get; set; } = 0;
+        public int PeriodFrom { get; set; } = 0;
+        public int PeriodTo { get; set; } = 0;
     }
 }

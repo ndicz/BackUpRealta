@@ -152,7 +152,7 @@ namespace GSM05500Back
                 }
             }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();   
         }
 
         protected override void R_Deleting(GSM05500DTO poEntity)

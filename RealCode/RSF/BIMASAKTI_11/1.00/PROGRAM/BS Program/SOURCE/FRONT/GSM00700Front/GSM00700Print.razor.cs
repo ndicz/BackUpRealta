@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Components;
 using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
+using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Interfaces;
 
@@ -26,6 +27,8 @@ namespace GSM00700Front
         private R_Conductor _conductorRef;
         [Inject] private R_IReport _reportService { get; set; }
         public R_Lookup CashFlowGroup { get; set; }
+
+
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
@@ -35,7 +38,9 @@ namespace GSM00700Front
                 _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
                 _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
                 _GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
+
                 await _GSM00720ViewModel.GetYearForCopyFrom();
+                //await _GSM00700ViewModel.GetYearFromPrint();
 
 
             }
@@ -188,6 +193,7 @@ namespace GSM00700Front
         //}
 
         [Inject] private IClientHelper _clientHelper { get; set; }
+        public R_Button ProcessButton { get; set; }
 
         private async Task Button_OnClickProcessAsync()
         {
@@ -197,7 +203,7 @@ namespace GSM00700Front
             try
             {
                 loParam = new GSM00700PrintCashFlowParameterDTo()
-                { 
+                {
                     CCOMPANY_ID = _clientHelper.CompanyId,
                     CUSER_LOGIN_ID = _clientHelper.UserId,
                     CCASH_FLOW_GROUP_FROM = _GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM,
@@ -210,28 +216,187 @@ namespace GSM00700Front
                     LPRINT_LOCAL = _GSM00700ViewModel.loPrint.LPRINT_LOCAL,
                     LPRINT_BASE = _GSM00700ViewModel.loPrint.LPRINT_BASE
 
-            };
+                };
 
-            await _reportService.GetReport(
-                "R_DefaultServiceUrl",
-                "GS",
-                "api/GSM00700Print/CashFlowPost",
-                "api/GSM00700Print/CashFlowGet",
-                loParam);
-        }
+                await _reportService.GetReport(
+                    "R_DefaultServiceUrl",
+                    "GS",
+                    "rpt/GSM00700Print/CashFlowPost",
+                    "rpt/GSM00700Print/CashFlowGet",
+                    loParam);
+            }
             catch (Exception ex)
             {
                 loEx.Add(ex);
             }
 
-    loEx.ThrowExceptionIfErrors();
+            loEx.ThrowExceptionIfErrors();
         }
 
 
-public async Task Button_OnClickCloseAsync()
-{
-    await this.Close(true, null);
-}
+        public async Task Button_OnClickCloseAsync()
+        {
+            await this.Close(true, null);
+        }
+
+        //public async Task OnChangedToYear()
+        //{
+        //    var loEx = new R_Exception();
+
+        //    try
+        //    {
+
+
+        //        if (int.TryParse(_GSM00700ViewModel.loPrint.CYEAR_FROM, out int yearFrom) &&
+        //            int.TryParse(_GSM00700ViewModel.loPrint.CYEAR_TO, out int yearTo))
+
+        //        {
+        //            if (yearFrom > yearTo)
+        //            {
+        //                await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+        //                ProcessButton.Enabled = false;
+        //            }
+        //            _GSM00700ViewModel.loPrint.YearFrom = yearFrom;
+        //            _GSM00700ViewModel.loPrint.YearTo = yearTo;
+
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+        //}
+
+        public async Task OnChangedYear()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loData = _GSM00700ViewModel.loPrint;
+
+                if (!string.IsNullOrEmpty(_GSM00700ViewModel.loPrint.CYEAR_FROM) && !string.IsNullOrEmpty(_GSM00700ViewModel.loPrint.CYEAR_TO))
+                {
+                    if (int.TryParse(_GSM00700ViewModel.loPrint.CYEAR_FROM, out int yearFrom) &&
+                        int.TryParse(_GSM00700ViewModel.loPrint.CYEAR_TO, out int yearTo))
+                    {
+                        if (yearFrom > yearTo)
+                        {
+                            await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+                            ProcessButton.Enabled = false;
+                        }
+                        else
+                        {
+                            ProcessButton.Enabled = true;
+                        }
+                        _GSM00700ViewModel.loPrint.YearFrom = yearFrom;
+                        _GSM00700ViewModel.loPrint.YearTo = yearTo;
+                    }
+                    else
+                    {
+                      
+                    }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task OnChangedPeriod()
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+
+
+                if (int.TryParse(_GSM00700ViewModel.loPrint.CPERIOD_FROM, out int periodFrom) &&
+                    int.TryParse(_GSM00700ViewModel.loPrint.CPERIOD_TO, out int periodTo))
+                {
+                    if (periodFrom > periodTo)
+                    {
+                        await R_MessageBox.Show("", "Year To Must be Greater Than Year From", R_eMessageBoxButtonType.OK);
+                        ProcessButton.Enabled = false;
+                    }
+                    else
+                    {
+                        ProcessButton.Enabled = true;
+                    }
+                    _GSM00700ViewModel.loPrint.PeriodFrom = periodFrom;
+                    _GSM00700ViewModel.loPrint.PeriodFrom = periodTo;
+
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        //public async Task OnChangedFromPeriod()
+        //{
+        //    var loEx = new R_Exception();
+
+        //    try
+        //    {
+        //        var loData = _GSM00700ViewModel.loPrint;
+
+        //        if (!string.IsNullOrEmpty(_GSM00700ViewModel.loPrint.CPERIOD_FROM) && !string.IsNullOrEmpty(_GSM00700ViewModel.loPrint.CPERIOD_TO))
+        //        {
+        //            if (int.TryParse(_GSM00700ViewModel.loPrint.CPERIOD_FROM, out int periodFrom) &&
+        //                int.TryParse(_GSM00700ViewModel.loPrint.CPERIOD_TO, out int periodTo))
+        //            {
+        //                if (periodFrom > periodTo)
+        //                {
+        //                    await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
+        //                    ProcessButton.Enabled = false;
+        //                }
+
+        //                _GSM00700ViewModel.loPrint.PeriodFrom = periodFrom;
+        //                _GSM00700ViewModel.loPrint.PeriodFrom = periodTo;
+        //            }
+        //            else
+        //            {
+        //                // Handle the case where the conversion from string to int fails for CYEAR_FROM or CYEAR_TO
+        //                // This could be due to invalid input in those fields
+        //            }
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        loEx.Add(ex);
+        //    }
+
+        //    loEx.ThrowExceptionIfErrors();
+        //}
+
+        public async Task ProcessEnables()
+        {
+
+        }
+
+
     }
 
 }

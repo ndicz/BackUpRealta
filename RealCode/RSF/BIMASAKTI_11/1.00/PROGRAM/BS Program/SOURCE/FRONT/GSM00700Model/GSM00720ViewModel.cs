@@ -159,7 +159,7 @@ namespace GSM00700Model
                 poParam.CTO_YEAR = Year;
                 var loReturn = await _GSM00720Model.GetCopyFromYearListAsync(poParam);
 
-                    loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
+                loCopyFromList = new ObservableCollection<GSM00720CopyFromYearDTO>(loReturn.Data);
             }
             catch (Exception ex)
             {
@@ -270,6 +270,27 @@ namespace GSM00700Model
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
+        }
+
+        public async Task GetCashFlowPlanId(string cashFlowCode, string cashFlowGroupCode, string cYear, string periodNo)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+
+                //R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, cashFlowCode);  
+
+                var loParam = new GSM00720DTO() { CCASH_FLOW_CODE = cashFlowCode, CCASH_FLOW_GROUP_CODE = cashFlowGroupCode, CYEAR = cYear, CPERIOD_NO = periodNo};
+                var loResult = await _GSM00720Model.R_ServiceGetRecordAsync(loParam);
+                loEntity = loResult;
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
         }
     }
 }
