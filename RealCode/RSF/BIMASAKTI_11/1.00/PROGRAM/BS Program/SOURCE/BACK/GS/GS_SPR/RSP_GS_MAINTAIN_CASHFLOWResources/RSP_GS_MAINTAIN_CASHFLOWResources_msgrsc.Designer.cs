@@ -63,9 +63,9 @@ namespace RSP_GS_MAINTAIN_CASHFLOWResources {
         /// <summary>
         ///   Looks up a localized string similar to Error process, please contact your administrator!.
         /// </summary>
-        internal static string _7001 {
+        internal static string _7101 {
             get {
-                return ResourceManager.GetString("7001", resourceCulture);
+                return ResourceManager.GetString("7101", resourceCulture);
             }
         }
         

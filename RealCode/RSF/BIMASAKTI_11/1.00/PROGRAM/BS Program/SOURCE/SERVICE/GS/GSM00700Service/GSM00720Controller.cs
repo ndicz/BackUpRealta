@@ -30,10 +30,10 @@ namespace GSM00700Service
                 var loCls = new GSM00720Cls();
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
-                loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
-                loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
-                loDbPar.CYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
-                loDbPar.CPERIOD_NO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CPERIOD_NO);
+                loDbPar.CCASH_FLOW_GROUP_CODE = poParameter.Entity.CCASH_FLOW_GROUP_CODE;
+                loDbPar.CYEAR = poParameter.Entity.CCYEAR;
+                //loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
+                //loDbPar.CPERIOD_NO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CPERIOD_NO);
                 //poParameter.Entity.CCOMPANY_ID = "RCD";
                 //poParameter.Entity.CUSER_ID = "Admin";
 

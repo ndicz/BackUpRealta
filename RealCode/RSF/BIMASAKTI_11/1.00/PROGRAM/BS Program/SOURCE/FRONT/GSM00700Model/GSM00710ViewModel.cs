@@ -33,7 +33,9 @@ namespace GSM00700Model
             try
             {
                 var loResult = await _GSM00710Model.GetListCashFlowTypeAsync();
+                loResult.Data.OrderByDescending(x => x.CCODE);
                 loCashFlowType = loResult.Data;
+                
             }
             catch (Exception ex)
             {

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using R_BlazorFrontEnd.Exceptions;
 using GSM00700Common;
+using R_BlazorFrontEnd.Enums;
+using R_CommonFrontBackAPI;
 
 namespace GSM00700Model
 {
@@ -280,7 +282,7 @@ namespace GSM00700Model
 
                 //R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CCASH_FLOW_CODE, cashFlowCode);  
 
-                var loParam = new GSM00720DTO() { CCASH_FLOW_CODE = cashFlowCode, CCASH_FLOW_GROUP_CODE = cashFlowGroupCode, CYEAR = cYear, CPERIOD_NO = periodNo};
+                var loParam = new GSM00720DTO() { CCASH_FLOW_CODE = cashFlowCode, CCASH_FLOW_GROUP_CODE = cashFlowGroupCode, CCYEAR = cYear, CPERIOD_NO = periodNo};
                 var loResult = await _GSM00720Model.R_ServiceGetRecordAsync(loParam);
                 loEntity = loResult;
 
@@ -290,6 +292,22 @@ namespace GSM00700Model
                 loEx.Add(ex);
             }
 
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task SaveCashFlowPlan(GSM00720DTO poNewEntity, R_eConductorMode peConductorMode)
+        {
+            var loEx = new R_Exception();
+            GSM00720DTO loResult = null;
+            try
+            {
+                loResult = await _GSM00720Model.R_ServiceSaveAsync(poNewEntity, (eCRUDMode)peConductorMode);
+                loEntity = loResult;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
             loEx.ThrowExceptionIfErrors();
         }
     }

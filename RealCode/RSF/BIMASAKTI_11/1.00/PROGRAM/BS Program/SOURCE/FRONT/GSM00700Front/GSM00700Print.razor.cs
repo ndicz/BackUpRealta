@@ -35,11 +35,11 @@ namespace GSM00700Front
             try
             {
                 //_GSM00720ViewModel.loCopyFromEntity = (GSM00720CopyFromYearDTO)poParameter;
-                _GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
-                _GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
-                _GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
+                //_GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
+                //_GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
+                //_GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
 
-                await _GSM00720ViewModel.GetYearForCopyFrom();
+                //await _GSM00720ViewModel.GetYearForCopyFrom();
                 //await _GSM00700ViewModel.GetYearFromPrint();
 
 
@@ -191,6 +191,8 @@ namespace GSM00700Front
 
         //    await this.Close(true, loData);
         //}
+
+
 
         [Inject] private IClientHelper _clientHelper { get; set; }
         public R_Button ProcessButton { get; set; }

@@ -9,6 +9,7 @@ using GSM00700Common.DTO.Report_DTO_GSM00700;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Enums;
 using R_CommonFrontBackAPI;
+using System.Linq;
 
 namespace GSM00700Model
 {
@@ -59,7 +60,7 @@ namespace GSM00700Model
             try
             {
                 var loResult = await _GSM00700Model.GetCashFlowGroupTypeAsync();
-                loCashFlowGroupType = loResult.Data;
+                loCashFlowGroupType = loResult.Data.OrderByDescending(x => x.CCODE).ToList(); // Urutkan dan simpan ke dalam list
                 CashFlowTyp = loCashFlowGroupType[0].CCODE;
             }
             catch (Exception ex)
@@ -69,7 +70,8 @@ namespace GSM00700Model
             loEx.ThrowExceptionIfErrors();
         }
 
-       
+
+
         //CRUD ALL
 
         public async Task GetCashFlowGroupList()

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
-using BaseHeaderReportCommon.BaseHeader;
-using BaseHeaderReportCommon.Model;
+using BaseHeaderReportCOMMON;
+using BaseHeaderReportCOMMON.Models;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 
 namespace GSM00700Common.Model
@@ -15,8 +15,8 @@ namespace GSM00700Common.Model
         {
             GSM00700PrintCashFlowResultDTo loData = new GSM00700PrintCashFlowResultDTo()
             {
-                Title = "Cash Flow",
-                Header = "Uhuy",
+                Title = "Cash Flow",    
+                Header = "UHUY",
                 Column = new GSM00700PrintCashFlowColoumnDTO()
             };
 
@@ -61,7 +61,7 @@ namespace GSM00700Common.Model
                     data1a.CCASH_FLOW_GROUP_CODE,
                     data1a.CCASH_FLOW_GROUP_NAME,
                     data1a.CCASH_FLOW_GROUP_TYPE,
-                    data1a.CCASH_FLOW_GROUP_TYPE_DESCR,
+                    data1a.CCASH_FLOW_GROUP_TYPE_DESCR, 
                 })
                 .Select(data1b => new GSM00700Data()
                 {
@@ -115,10 +115,10 @@ namespace GSM00700Common.Model
             CCOMPANY_NAME = "PT Realta ssss",
             CPRINT_CODE = "001",
             CPRINT_NAME = "Unit Charges",
-            CUSER_ID = "HPC"
+            CUSER_ID = "KIWKIW"
         };
         GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO loRtn = new GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO();
-        loRtn.BaseHeaderData = GenerateDataModelHeader.DefaultData(loParam).BaseHeaderData;
+        loRtn.BaseHeaderData = loParam;
         loRtn.CenterData = DefaultData();
         return loRtn;
 

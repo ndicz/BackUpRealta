@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using BaseHeaderReportCOMMON;
 using GSM00700Back;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 using Microsoft.AspNetCore.Authorization;
@@ -16,7 +17,6 @@ using R_Cache;
 using R_CommonFrontBackAPI;
 using R_ReportFastReportBack;
 using GSM00700Common;
-using BaseHeaderReportCommon.BaseHeader;
 
 namespace GSM00700Service
 {
@@ -107,7 +107,7 @@ namespace GSM00700Service
                     Header = "Cash Flow",
                     Column = new GSM00700PrintCashFlowColoumnDTO(),
                     Data = new List<GSM00700Data>()
-                };
+                };  
                 var loCls = new GSM00700Cls();
                 var loCollection = loCls.GetPrintParam(poParam);
                 var loTempData = loCollection.GroupBy(data1a => new
@@ -157,9 +157,9 @@ namespace GSM00700Service
                 }).ToList();
 
 
-                loRtn.CenterData = loData;
-                loRtn.BaseHeaderData = loParam;
                 loData.Data = loTempData;
+                loRtn.BaseHeaderData = loParam;
+                loRtn.CenterData = loData;
             }
             catch (Exception ex)
             {

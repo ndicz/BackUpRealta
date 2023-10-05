@@ -46,10 +46,6 @@ namespace GSM05500Back
 
             return loReturn;
         }
-
-
-
-
         protected override GSM05500DTO R_Display(GSM05500DTO poEntity)
         {
             R_Exception loException = new R_Exception();

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseHeaderReportCommon\BaseHeaderReportCommon.csproj" />
+    <ProjectReference Include="..\BaseHeaderReportCOMMON\BaseHeaderReportCOMMON.csproj" />
   </ItemGroup>
 
   <ItemGroup>

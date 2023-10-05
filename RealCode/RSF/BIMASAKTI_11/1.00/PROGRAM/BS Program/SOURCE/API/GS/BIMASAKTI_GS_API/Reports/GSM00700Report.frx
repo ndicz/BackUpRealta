@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="09/29/2023 14:53:08" ReportInfo.CreatorVersion="2023.2.21.0">
+<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="10/04/2023 14:43:14" ReportInfo.CreatorVersion="2023.2.21.0">
   <Dictionary>
     <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
       <Column Name="CenterData" DataType="GSM00700Common.DTO.Report_DTO_GSM00700.GSM00700PrintCashFlowResultDTo, GSM00700Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         <Column Name="Title" DataType="System.String"/>
         <Column Name="Header" DataType="System.String"/>
-        <Column Name="PrintDept" DataType="System.Boolean" BindableControl="CheckBox"/>
         <Column Name="Column" DataType="GSM00700Common.DTO.Report_DTO_GSM00700.GSM00700PrintCashFlowColoumnDTO, GSM00700Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <Column Name="COLOUMN_CODE" DataType="System.String"/>
           <Column Name="COLOUMN_NAME" DataType="System.String"/>
@@ -36,8 +35,8 @@
           </BusinessObjectDataSource>
         </BusinessObjectDataSource>
       </Column>
-      <Column Name="BaseHeaderData" DataType="BaseHeaderReportCommon.BaseHeader.BaseHeaderDTO, BaseHeaderReportCommon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <Column Name="BLOGO_COMPANY" DataType="System.String" BindableControl="Picture"/>
+      <Column Name="BaseHeaderData" DataType="BaseHeaderReportCOMMON.BaseHeaderDTO, BaseHeaderReportCOMMON, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <Column Name="BLOGO_COMPANY" DataType="System.Byte[]" BindableControl="Picture"/>
         <Column Name="CPRINT_CODE" DataType="System.String"/>
         <Column Name="CCOMPANY_NAME" DataType="System.String"/>
         <Column Name="CPRINT_NAME" DataType="System.String"/>
@@ -100,9 +99,9 @@
         <TextObject Name="Text58" Left="321.3" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_TYPE_DESCR]" Font="Arial, 10pt"/>
         <TextObject Name="Text55" Left="491.4" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CYEAR]" Font="Arial, 10pt"/>
         <DataBand Name="Data3" Top="214.45" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
-          <TextObject Name="Text60" Left="727.65" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NLOCAL_AMOUNT]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.CurrencySymbol="IDR." Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
-          <TextObject Name="Text61" Left="888.3" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NBASE_AMOUNT]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.CurrencySymbol="IDR." Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
-          <TextObject Name="Text59" Left="614.25" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.CPERIOD_NO]" Font="Arial, 10pt"/>
+          <TextObject Name="Text60" Left="680.4" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NLOCAL_AMOUNT]&#13;&#10;" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text61" Left="869.4" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NBASE_AMOUNT]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator=" " Format.CurrencySymbol="IDR." Format.PositivePattern="0" Format.NegativePattern="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text59" Left="604.8" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.CPERIOD_NO]" Font="Arial, 10pt"/>
         </DataBand>
       </DataBand>
     </DataBand>

@@ -32,7 +32,7 @@
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
-                    AllowEditRow="true" 
+                    AllowEditRow="true"
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
@@ -141,26 +141,27 @@
                              R_ViewModel="@GSM00720ViewModel"
                              R_Display="@Grid_R_Display_Year"
                              R_IsHeader="true" />
-            
+
 
             <R_StackLayout col="10">
 
                 <R_Grid @ref="@_gridRef00720"
                         DataSource="@GSM00720ViewModel.loGridList"
                         Pageable="true"
-                        AllowEditRow="true" 
-                        AllowAddNewRow="true"
-                        R_ConductorSource="@R_conduct"
-                        R_GridType="@R_eGridType.Original"
-                        Width="745px"
                         Height="380px"
+                        Width="745px"
+                        R_ConductorGridSource="@_conGridGSM00700Ref"
+                        R_GridType="@R_eGridType.Original"
+                        AllowAddNewRow="false"
+                        AllowEditRow="true"
+                        AllowDeleteRow="false"
                         PageSize="12"
                         R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                     <R_GridColumns>
-                        <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="Period No"></R_GridTextColumn>
-                        <R_GridTextColumn Width="145px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount"></R_GridTextColumn>
-                        <R_GridTextColumn Width="145px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount"></R_GridTextColumn>
+                        <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="Period No" ></R_GridTextColumn>
+                        <R_GridNumericColumn Width="145px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
+                        <R_GridNumericColumn Width="145px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
                         <R_GridTextColumn Width="132px" FieldName="CUPDATE_BY" HeaderText="Updated By"></R_GridTextColumn>
                         <R_GridTextColumn Width="146px" FieldName="DUPDATE_DATE" HeaderText="Updated Date"></R_GridTextColumn>
                         <R_GridTextColumn Width="132px" FieldName="CCREATE_BY" HeaderText="Created By"></R_GridTextColumn>
@@ -228,10 +229,10 @@
         </R_StackLayout>
 
 
-        <R_ConductorGrid @ref="@_conGridGSM00720Ref"
+        <R_ConductorGrid @ref="@_conGridGSM00700Ref"
                          R_ViewModel="@GSM00720ViewModel"
-                         R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlow"
-                         R_Display="@Grid_R_DisplaytListCashFlowPlan"
+                         R_ServiceGetRecord="GetRrecordCashFlowPlan"
+                         R_ServiceSave="@Grid_ServiceSaveRecordCashFlowPlan"
                          R_IsHeader="true" />
     </R_TabStripTab>
 </R_TabStrip>

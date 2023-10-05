@@ -326,7 +326,7 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE);
                 loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
-                loDb.R_AddCommandParameter(loCommand, "CYEAR", DbType.String, 20, poEntity.CYEAR);
+                loDb.R_AddCommandParameter(loCommand, "CYEAR", DbType.String, 20, poEntity.CCYEAR);
                 loDb.R_AddCommandParameter(loCommand, "CPERIOD_NO", DbType.String, 20, poEntity.CPERIOD_NO);
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
@@ -376,12 +376,12 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poNewEntity.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20,poNewEntity.CCASH_FLOW_GROUP_CODE);
                 loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CYEAR", DbType.String, 100,poNewEntity.CYEAR);
+                loDb.R_AddCommandParameter(loCommand, "@CYEAR", DbType.String, 100,poNewEntity.CCYEAR);
                 loDb.R_AddCommandParameter(loCommand, "@CPERIOD_NO", DbType.String, 60, poNewEntity.CPERIOD_NO);
                 loDb.R_AddCommandParameter(loCommand, "@NBASE_AMOUNT", DbType.String, 60, poNewEntity.NBASE_AMOUNT);
                 loDb.R_AddCommandParameter(loCommand, "@NLOCAL_AMOUNT", DbType.String, 60, poNewEntity.NLOCAL_AMOUNT);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
+                //loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {

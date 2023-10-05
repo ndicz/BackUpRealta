@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BaseHeaderReportCommon.BaseHeader
+namespace BaseHeaderReportCOMMON
 {
     public class BaseHeaderResult
     {

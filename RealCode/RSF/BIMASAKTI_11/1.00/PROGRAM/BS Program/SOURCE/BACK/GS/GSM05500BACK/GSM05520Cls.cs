@@ -29,8 +29,8 @@ namespace GSM05500Back
 
                 loCmd = loDb.GetCommand();
 
-                var lcQuery = @"SELECT CRATETYPE_CODE, CRATETYPE_DESCRIPTION FROM GSM_RATETYPE (NOLOCK) WHERE CCOMPANY_ID = @CCOMPANY_ID";
-                loCmd.CommandType = CommandType.Text;
+                var lcQuery = @"RSP_GS_GET_RATETYPE_LIST ";
+                loCmd.CommandType = CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
 
@@ -65,12 +65,8 @@ namespace GSM05500Back
 
                 loCmd = loDb.GetCommand();
 
-                var lcQuery = @"SELECT A.CLOCAL_CURRENCY, B.CCURRENCY_NAME AS CLOCAL_CURRENCY_NAME,  A.CBASE_CURRENCY, 
-                                C.CCURRENCY_NAME AS CBASE_CURRENCY_NAME FROM SAM_COMPANIES A (NOLOCK)
-                                LEFT JOIN GSM_CURRENCY B (NOLOCK) ON  A.CLOCAL_CURRENCY = B.CCURRENCY_CODE
-                                LEFT JOIN GSM_CURRENCY C (NOLOCK) ON A.CBASE_CURRENCY = C.CCURRENCY_CODE
-                                WHERE A.CCOMPANY_ID = @CCOMPANY_ID";
-                loCmd.CommandType = CommandType.Text;
+                var lcQuery = @"RSP_GS_GET_COMPANY_INFO";
+                loCmd.CommandType = CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
 

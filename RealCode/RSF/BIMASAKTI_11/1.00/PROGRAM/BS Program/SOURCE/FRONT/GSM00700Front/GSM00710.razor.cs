@@ -497,5 +497,43 @@ namespace GSM00700Front
 
             loException.ThrowExceptionIfErrors();
         }
+
+        private async Task GetRrecordCashFlowPlan(R_ServiceGetRecordEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                var loParam = (GSM00720DTO)eventArgs.Data;
+                await GSM00720ViewModel.GetCashFlowPlanId(loParam.CCASH_FLOW_CODE, loParam.CCASH_FLOW_GROUP_CODE,loParam.CCYEAR, loParam.CPERIOD_NO);
+                eventArgs.Result = GSM00720ViewModel.loEntity;
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        public async Task Grid_ServiceSaveRecordCashFlowPlan(R_ServiceSaveEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                var loParam = (GSM00720DTO)eventArgs.Data;
+                await GSM00720ViewModel.SaveCashFlowPlan(loParam, eventArgs.ConductorMode);
+
+                eventArgs.Result = GSM00720ViewModel.loEntity;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
     }
 }

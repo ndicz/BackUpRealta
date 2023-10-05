@@ -1,21 +1,20 @@
-﻿using BaseHeaderReportCommon.BaseHeader;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using System.IO;
+using System.Reflection;
 
-namespace BaseHeaderReportCommon.Model
+namespace BaseHeaderReportCOMMON.Models
 {
     public static class GenerateDataModelHeader
     {
-        public static BaseHeaderResult DefaultData(BaseHeaderDTO poParam)
+        public static BaseHeaderResult DefaultData()
         {
             BaseHeaderResult loRtn = new BaseHeaderResult();
             var loParam = new BaseHeaderDTO()
             {
                 CCOMPANY_NAME = "PT Realta Chackradarma",
                 CPRINT_CODE = "010",
-                CPRINT_NAME = "GSM Cash Flow Parameter",
-                CUSER_ID = "HPC",
+                CPRINT_NAME = "GL ACCOUNT LEDGER",
+                CUSER_ID = "FMC",
             };
             loRtn.BaseHeaderData = loParam;
 

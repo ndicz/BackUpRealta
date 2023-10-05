@@ -2342,14 +2342,14 @@
           }
         }
       },
-      "BaseHeaderReportCommon/1.0.0": {
+      "BaseHeaderReportCOMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
         }
       },
       "GFF00900COMMON/1.0.0": {
@@ -2420,7 +2420,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "BaseHeaderReportCommon": "1.0.0"
+          "BaseHeaderReportCOMMON": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
@@ -5003,14 +5003,14 @@
           }
         }
       },
-      "BaseHeaderReportCommon/1.0.0": {
+      "BaseHeaderReportCOMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BaseHeaderReportCommon.dll": {}
+          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
         }
       },
       "GFF00900COMMON/1.0.0": {
@@ -5081,7 +5081,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "BaseHeaderReportCommon": "1.0.0"
+          "BaseHeaderReportCOMMON": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
@@ -10697,10 +10697,10 @@
         "telerik.zip.nuspec"
       ]
     },
-    "BaseHeaderReportCommon/1.0.0": {
+    "BaseHeaderReportCOMMON/1.0.0": {
       "type": "project",
-      "path": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCommon/BaseHeaderReportCommon.csproj",
-      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCommon/BaseHeaderReportCommon.csproj"
+      "path": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCOMMON/BaseHeaderReportCOMMON.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCOMMON/BaseHeaderReportCOMMON.csproj"
     },
     "GFF00900COMMON/1.0.0": {
       "type": "project",

@@ -87,4 +87,16 @@
     </Reference>
   </ItemGroup>
 
+	<ItemGroup>
+		<None Update="Reports\BaseHeaderCommon.frx">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Reports\BaseHeaderLandscapeCommon.frx">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Reports\GSM00700Report.frx">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
 </Project>

@@ -27,7 +27,7 @@ namespace GSDesign
         private void BaseHeader_Click(object sender, EventArgs e)
         {
             ArrayList loData = new ArrayList();
-            loData.Add(BaseHeaderReportCommon.Model.GenerateDataModelHeader.DefaultData);
+            loData.Add(BaseHeaderReportCOMMON.Models.GenerateDataModelHeader.DefaultData);
             loReport.RegisterData(loData, "ResponseDataModel");
             loReport.Design();
         }
@@ -35,9 +35,11 @@ namespace GSDesign
         private void BaseHeaderLanscape_Click(object sender, EventArgs e)
         {
             ArrayList loData = new ArrayList();
-            loData.Add(BaseHeaderReportCommon.Model.GenerateDataModelHeader.DefaultData);
+            loData.Add(BaseHeaderReportCOMMON.Models.GenerateDataModelHeader.DefaultData);
             loReport.RegisterData(loData, "ResponseDataModel");
             loReport.Design();
         }
+
+        
     }
 }

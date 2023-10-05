@@ -8,12 +8,11 @@ namespace GSM00700Common.DTO.Report_DTO_GSM00700
     {
         public string Title { get; set; }
         public string Header { get; set; }
-        public bool PrintDept { get; set; }
         public GSM00700PrintCashFlowColoumnDTO Column { get; set; }
         public List<GSM00700Data> Data { get; set; }
     }
 
-    public class GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO : BaseHeaderReportCommon.BaseHeader.BaseHeaderResult
+    public class GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO : BaseHeaderReportCOMMON.BaseHeaderResult
     {
         public string BLOGO_COMPANY { get; set; }
         public string CPRINT_CODE { get; set; }
