@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\COMMON\GS\GSM00100Common\GSM00100Common.vbproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="R_APIBackEnd">
       <HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APIBackEnd.dll</HintPath>
     </Reference>

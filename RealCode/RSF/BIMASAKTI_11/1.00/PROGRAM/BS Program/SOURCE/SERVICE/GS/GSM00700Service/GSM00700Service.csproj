@@ -20,6 +20,9 @@
 
 
   <ItemGroup>
+	  <Reference Include="BaseHeaderReportCOMMON">
+	    <HintPath>..\..\..\COMMON\GS\BaseHeaderReportCOMMON\BaseHeaderReportCOMMON.dll</HintPath>
+	  </Reference>
 	  <Reference Include="R_Cache">
 		  <HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_Cache.dll</HintPath>
 	  </Reference>

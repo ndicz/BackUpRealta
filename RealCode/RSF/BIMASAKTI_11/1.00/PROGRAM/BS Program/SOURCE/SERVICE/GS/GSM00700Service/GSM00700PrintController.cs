@@ -92,6 +92,7 @@ namespace GSM00700Service
             var loEx = new R_Exception();
             GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO loRtn = new GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO();
             var loParam = new BaseHeaderDTO();
+            List<GSM00700Data>? loTempData = null;
 
             try
             {
@@ -103,18 +104,22 @@ namespace GSM00700Service
                 };
                 GSM00700PrintCashFlowResultDTo loData = new GSM00700PrintCashFlowResultDTo()
                 {
-                    Title = "Cash Flow",
+                    Title = "Cash Flow", //dipanggil dari fadel
                     Header = "Cash Flow",
-                    Column = new GSM00700PrintCashFlowColoumnDTO(),
-                    Data = new List<GSM00700Data>()
+                    Column = new GSM00700PrintCashFlowColoumnDTO()
                 };  
                 var loCls = new GSM00700Cls();
                 var loCollection = loCls.GetPrintParam(poParam);
-                var loTempData = loCollection.GroupBy(data1a => new
+                if (loCollection.Count() != 0)
+                {
+                    
+                
+
+                 loTempData = loCollection.GroupBy(data1a => new
                 {
                     data1a.CCASH_FLOW_GROUP_CODE,
                     data1a.CCASH_FLOW_GROUP_NAME,
-                    data1a.CCASH_FLOW_GROUP_TYPE,
+                    data1a.CCASH_FLOW_GROUP_TYPE,  //ikut format, agar funsgsi sesuai harus ada grouping berdasarkan dari parent data agar tidak keluar
                     data1a.CCASH_FLOW_GROUP_TYPE_DESCR,
                 })
                 .Select(data1b => new GSM00700Data()
@@ -156,7 +161,11 @@ namespace GSM00700Service
                     }).ToList()
                 }).ToList();
 
-
+                }
+                else
+                {
+                    loTempData = new List<GSM00700Data>();
+                }
                 loData.Data = loTempData;
                 loRtn.BaseHeaderData = loParam;
                 loRtn.CenterData = loData;

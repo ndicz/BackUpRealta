@@ -21,4 +21,5 @@ namespace GSM00700Common.DTO.Report_DTO_GSM00700
         public string CUSER_LOGIN_ID { get; set; }
         public GSM00700PrintCashFlowResultDTo CenterData { get; set; }
     }
+
 }

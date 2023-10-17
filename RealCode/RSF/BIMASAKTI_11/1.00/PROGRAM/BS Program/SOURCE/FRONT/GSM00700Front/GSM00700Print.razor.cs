@@ -39,7 +39,7 @@ namespace GSM00700Front
                 //_GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
                 //_GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
 
-                //await _GSM00720ViewModel.GetYearForCopyFrom();
+                await _GSM00720ViewModel.GetYearForCopyFrom();
                 //await _GSM00700ViewModel.GetYearFromPrint();
 
 

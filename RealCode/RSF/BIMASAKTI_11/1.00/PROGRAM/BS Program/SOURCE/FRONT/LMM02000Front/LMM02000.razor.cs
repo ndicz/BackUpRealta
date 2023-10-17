@@ -231,6 +231,37 @@ namespace LMM02000Front
             R_DisplayException(loEx);
         }
 
+        private bool enableSalesmanType;
+        
+        private async Task OnChangedSalesmanType(string poParam)
+        {
+            var loEx = new R_Exception();
+            string lsProperty = (string)poParam;
+            try
+            {
+                _viewModel.Data.CSALESMAN_TYPE = poParam;
+                //enableSalesmanType = lsProperty == "I" ? false : true;
+                if (enableSalesmanType = lsProperty == "I")
+                {
+                    enableSalesmanType = false;
+                    _viewModel.Data.CEXT_COMPANY_NAME = ClientHelper.CompanyId;
+                }
+                else
+                {
+                    enableSalesmanType = true;
+                    _viewModel.Data.CEXT_COMPANY_NAME = "";
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+
+            R_DisplayException(loEx);
+        }
+
         private async Task Grid_R_ServiceGetListRecord(R_ServiceGetListRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -251,6 +282,15 @@ namespace LMM02000Front
             R_DisplayException(loEx);
         }
 
+        private void R_AfterSave(R_AfterSaveEventArgs eventArgs)
+        {
+            enableSalesmanType = false;
+        }
+
+        private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)
+        {
+            enableSalesmanType = false;
+        }
         private async Task Conductor_ServiceGetRecord(R_ServiceGetRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();

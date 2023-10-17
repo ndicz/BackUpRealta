@@ -102,8 +102,8 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CYEAR FROM GSM_PERIOD WHERE CCOMPANY_ID = @CCOMPANY_ID";
-                loCmd.CommandType = System.Data.CommandType.Text;
+                var lcQuerry = @"RSP_GS_GET_PERIOD_YEAR_LIST";
+                loCmd.CommandType = System.Data.CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10,
                     poParameter.CCOMPANY_ID);
@@ -251,8 +251,8 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CLOCAL_CURRENCY, CBASE_CURRENCY FROM SAM_COMPANIES (NOLOCK) WHERE CCOMPANY_ID = @CCOMPANY_ID";
-                loCmd.CommandType = System.Data.CommandType.Text;
+                var lcQuerry = @"RSP_GS_GET_COMPANY_INFO";
+                loCmd.CommandType = System.Data.CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
 

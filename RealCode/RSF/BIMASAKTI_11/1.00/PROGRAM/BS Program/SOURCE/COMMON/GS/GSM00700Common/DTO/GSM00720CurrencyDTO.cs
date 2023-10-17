@@ -7,8 +7,8 @@ namespace GSM00700Common.DTO
 {
     public class GSM00720CurrencyDTO : R_APIResultBaseDTO
     {
-        public string CLOCAL_CURRENCY { get; set; }
-        public string CBASE_CURRENCY { get; set; }
+        public string CLOCAL_CURRENCY_CODE { get; set; }
+        public string CBASE_CURRENCY_CODE { get; set; }
     }
 
     public class GSM00720CurrencyListDTO : R_APIResultBaseDTO

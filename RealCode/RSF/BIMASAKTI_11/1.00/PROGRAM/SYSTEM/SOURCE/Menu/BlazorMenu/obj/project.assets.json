@@ -2342,16 +2342,6 @@
           }
         }
       },
-      "BaseHeaderReportCOMMON/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
-        }
-      },
       "GFF00900COMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -2419,9 +2409,6 @@
       "GSM00700Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "BaseHeaderReportCOMMON": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
         },
@@ -5003,16 +4990,6 @@
           }
         }
       },
-      "BaseHeaderReportCOMMON/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "compile": {
-          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BaseHeaderReportCOMMON.dll": {}
-        }
-      },
       "GFF00900COMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -5080,9 +5057,6 @@
       "GSM00700Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "BaseHeaderReportCOMMON": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/GSM00700Common.dll": {}
         },
@@ -10697,11 +10671,6 @@
         "telerik.zip.nuspec"
       ]
     },
-    "BaseHeaderReportCOMMON/1.0.0": {
-      "type": "project",
-      "path": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCOMMON/BaseHeaderReportCOMMON.csproj",
-      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/BaseHeaderReportCOMMON/BaseHeaderReportCOMMON.csproj"
-    },
     "GFF00900COMMON/1.0.0": {
       "type": "project",
       "path": "../../../../BS Shared Form/SOURCE/BACK/GFF00900COMMON/GFF00900COMMON.csproj",
@@ -10779,8 +10748,8 @@
     },
     "LMI00100Common/1.0.0": {
       "type": "project",
-      "path": "../../../../BS Program/SOURCE/COMMON/LM/LMI00100/LMI00100Common.csproj",
-      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/LM/LMI00100/LMI00100Common.csproj"
+      "path": "../../../../BS Program/SOURCE/COMMON/LM/LMI00100COMMON/LMI00100Common.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/LM/LMI00100COMMON/LMI00100Common.csproj"
     },
     "LMI00100Front/1.0.0": {
       "type": "project",

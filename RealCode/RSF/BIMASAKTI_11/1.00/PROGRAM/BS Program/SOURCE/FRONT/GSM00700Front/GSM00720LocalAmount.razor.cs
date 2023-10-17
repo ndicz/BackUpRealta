@@ -55,14 +55,14 @@ namespace GSM00700Front
 
                     CCOMPANY_ID = _GSM00720ViewModel.loCopyBaseAmountEntity.CCOMPANY_ID,
                     CUSER_ID = _GSM00720ViewModel.loCopyBaseAmountEntity.CUSER_ID,
-                    CRATETYPE_CODE = _GSM00720ViewModel.loCurrency.CBASE_CURRENCY,
+                    CRATETYPE_CODE = _GSM00720ViewModel.loCurrency.CBASE_CURRENCY_CODE,
 
                 };
                 eventArgs.TargetPageType = typeof(GSL01700);
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loEx.Add(ex);   
             }
 
             loEx.ThrowExceptionIfErrors();

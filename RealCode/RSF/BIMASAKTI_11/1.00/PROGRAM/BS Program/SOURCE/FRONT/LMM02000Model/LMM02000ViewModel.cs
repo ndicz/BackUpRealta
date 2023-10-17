@@ -33,8 +33,8 @@ namespace LMM02000Model
         //};
         public string propertyCode = "";
         public string propertyValue = "";
+        public bool salesmanTypeCode = false;
         public bool SelectedActiveInactiveLACTIVE;
-
 
 
 

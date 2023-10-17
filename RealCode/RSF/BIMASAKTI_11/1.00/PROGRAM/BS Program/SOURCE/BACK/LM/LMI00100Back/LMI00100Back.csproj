@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\COMMON\LM\LMI00100\LMI00100Common.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\COMMON\LM\LMI00100COMMON\LMI00100Common.csproj" />
+	</ItemGroup>
 
   <ItemGroup>
     <Reference Include="R_APIBackEnd">

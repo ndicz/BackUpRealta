@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using BaseHeaderReportCOMMON;
-using BaseHeaderReportCOMMON.Models;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 
 namespace GSM00700Common.Model
@@ -110,6 +109,7 @@ namespace GSM00700Common.Model
 
     public static GSM00700PrintCashFlowResultWithBaseHeaderPrintDTO DefaultDataWithHeader()
     {
+        
         var loParam = new BaseHeaderDTO()
         {
             CCOMPANY_NAME = "PT Realta ssss",

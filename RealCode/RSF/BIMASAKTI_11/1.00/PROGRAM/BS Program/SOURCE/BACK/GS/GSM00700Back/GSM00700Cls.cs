@@ -7,11 +7,20 @@ using System.Data;
 using System.Reflection.Metadata;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 using System.Windows.Input;
+using GSM00700Common;
 
 namespace GSM00700Back
 {
     public class GSM00700Cls : R_BusinessObject<GSM00700DTO>
     {
+
+        private LogGSM00700Common _logger;
+        public GSM00700Cls()
+        {
+            _logger = LogGSM00700Common.R_GetInstanceLogger();
+        }
+
+
         public List<GSM00700DTO> GetCashFlowGroupList(GSM00700DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -31,6 +40,9 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
 
+                _logger.R_LogDebug("EXEC RSP_GS_GET_CASHFLOW_GRP_LIST {@Parameters} || GetCashFlowGroup(Cls) ", poParameter);
+
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loReturnTemp).ToList();
@@ -39,6 +51,8 @@ namespace GSM00700Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
+
             }
 
         EndBlock:
@@ -97,10 +111,13 @@ namespace GSM00700Back
                 var lcQuery = @"RSP_GS_GET_CASHFLOW_GRP_DT";
                 loCommand.CommandType = CommandType.StoredProcedure;
                 loCommand.CommandText = lcQuery;
-                loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCommand, "CCsMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE
-                );
+                loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE);
+
+
+                _logger.R_LogDebug("EXEC RSP_GS_GET_CASHFLOW_GRP_DT {@Parameters} || GetCenterList(Cls) ", poEntity);
+
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loDataTable).FirstOrDefault();
@@ -109,6 +126,7 @@ namespace GSM00700Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
         EndBlock:
