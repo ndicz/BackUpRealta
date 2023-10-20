@@ -48,7 +48,7 @@ namespace GSM00700Service
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                _logger.LogInfo("Run GetCashFlowCls || GetRecordCashFlowGroup(Controller)");
+                _logger.LogInfo("Run GetRecordCashFlowGroupCls || GetRecordCashFlowGroup(Controller)");
 
                 loRtn.data = loCls.R_GetRecord(poParameter.Entity);
             }

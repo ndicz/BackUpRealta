@@ -45,6 +45,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+        
         [HttpPost]
         public R_ServiceSaveResultDTO<LMM02000DTO> R_ServiceSave(R_ServiceSaveParameterDTO<LMM02000DTO> poParameter)
         {
@@ -74,6 +75,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+       
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<LMM02000DTO> poParameter)
         {
@@ -100,6 +102,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+        
         [HttpPost]
         public IAsyncEnumerable<LMM02000DTO> GetAllLMM02000Stream()
         {
@@ -134,6 +137,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+
         [HttpPost]
         public LMM02000ListDTO GetAllLMM02000List()
         {
@@ -201,6 +205,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+       
         [HttpPost]
         public LMM02000ListPropertyDTO GetLMM02000Property()
         {
@@ -232,6 +237,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+       
         [HttpPost]
         public IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream()
         {
@@ -295,6 +301,7 @@ namespace LMM02000Services
 
             return loRtn;
         }
+        
         [HttpPost]
         public LMM02000ListSalesmanTypeDTO GetSalesmanType()
         {
@@ -323,8 +330,9 @@ namespace LMM02000Services
 
             return loRtn;
         }
+       
         [HttpPost]
-        public LMM02000ActiveInactiveDTO GetActiveInactive()
+        public LMM02000ActiveInactiveDTO GetActiveInactive(LMM02000ActiveInactiveParam poParamDto)
         {
             R_Exception loException = new R_Exception();
             LMM02000DBParameter loParam = new LMM02000DBParameter();
@@ -334,9 +342,9 @@ namespace LMM02000Services
             try
             {
                 loParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loParam.CPROPERTY_ID = R_Utility.R_GetContext<string>(ContextConstantLMM02000.CPROPERTY_ID);
-                loParam.CSALESMAN_ID = R_Utility.R_GetContext<string>(ContextConstantLMM02000.CSALESMAN_ID);
-                loParam.LACTIVE = R_Utility.R_GetContext<bool>(ContextConstantLMM02000.LACTIVE);
+                loParam.CPROPERTY_ID = poParamDto.CPROPERTY_ID;
+                loParam.CSALESMAN_ID = poParamDto.CSALESMAN_ID;
+                loParam.LACTIVE = poParamDto.LACTIVE;
                 loParam.CUSER_ID = R_BackGlobalVar.USER_ID;
 
                 //loParam.CCOMPANY_ID = "RCD";
@@ -357,6 +365,7 @@ namespace LMM02000Services
             return loRtn;
 
         }
+       
         [HttpPost]
         public LMM02000Template GetTemplate()
         {

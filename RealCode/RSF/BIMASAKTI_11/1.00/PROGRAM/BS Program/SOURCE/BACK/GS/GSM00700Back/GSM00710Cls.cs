@@ -9,34 +9,49 @@ using R_CommonFrontBackAPI;
 using R_Common;
 using System.Data.Common;
 using System.Data;
+using GSM00700Common;
 
 namespace GSM00700Back
 {
     public class GSM00710Cls : R_BusinessObject<GSM00710DTO>
     {
+        private LogGSM00700Common _logger;
+        public GSM00710Cls()
+        {
+            _logger = LogGSM00700Common.R_GetInstanceLogger();
+        }
 
         public List<GSM00710DTO> GetCashFlowList(GSM00700DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
             List<GSM00710DTO> loReturn = null;
             R_Db loDb;
-            DbCommand loCommand;
+            DbCommand loCmd;
 
             try
             {
                 loDb = new R_Db();
                 var loConn = loDb.GetConnection();
 
-                loCommand = loDb.GetCommand();
+                loCmd = loDb.GetCommand();
                 var lcQuery = @"RSP_GS_GET_CASHFLOW_LIST";
-                loCommand.CommandType = CommandType.StoredProcedure;
-                loCommand.CommandText = lcQuery;
-                loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20,
-                    poParameter.CCASH_FLOW_GROUP_CODE);
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poParameter.CCASH_FLOW_GROUP_CODE);
 
-                var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CCASH_FLOW_GROUP_CODE").
+                    Select(x => x.Value);
+
+
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poParameter);
+
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM00710DTO>(loReturnTemp).ToList();
             }
@@ -44,6 +59,7 @@ namespace GSM00700Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
         EndBlock:
@@ -64,18 +80,24 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry =
-                    @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
+                var lcQuerry = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuerry;
-                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10,
-                    poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID").
+                    Select(x => x.Value);
+
+
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuerry, poParameter);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00710CashFlowTypeDTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
         EndBlock:
@@ -85,41 +107,51 @@ namespace GSM00700Back
         }
 
 
-            protected override GSM00710DTO R_Display(GSM00710DTO poEntity)
+        protected override GSM00710DTO R_Display(GSM00710DTO poEntity)
+        {
+            R_Exception loException = new R_Exception();
+            GSM00710DTO loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
             {
-                R_Exception loException = new R_Exception();
-                GSM00710DTO loReturn = null;
-                R_Db loDb;
-                DbCommand loCommand;
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
 
-                try
-                {
-                    loDb = new R_Db();
-                    var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+                var lcQuery = @"RSP_GS_GET_CASHFLOW_DT";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poEntity.CCASH_FLOW_GROUP_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CCASH_FLOW_GROUP_CODE" ||
+                        x.ParameterName == "@CCASH_FLOW_CODE").
+                    Select(x => x.Value);
 
-                    loCommand = loDb.GetCommand();
-                    var lcQuery = @"RSP_GS_GET_CASHFLOW_DT";
-                    loCommand.CommandType = CommandType.StoredProcedure;
-                    loCommand.CommandText = lcQuery;
-                    loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
-                    loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                    loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_GROUP_CODE", DbType.String, 20,
-                        poEntity.CCASH_FLOW_GROUP_CODE);
-                    loDb.R_AddCommandParameter(loCommand, "CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
-                    var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
-                    loReturn = R_Utility.R_ConvertTo<GSM00710DTO>(loDataTable).FirstOrDefault();
-                }
-                catch (Exception ex)
-                {
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poEntity);
 
-                    loException.Add(ex);
-                }
+                var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
 
-            EndBlock:
-                loException.ThrowExceptionIfErrors();
-                return loReturn;
+                loReturn = R_Utility.R_ConvertTo<GSM00710DTO>(loDataTable).FirstOrDefault();
             }
+            catch (Exception ex)
+            {
+
+                loException.Add(ex);
+                _logger.LogError(ex);
+            }
+
+        EndBlock:
+            loException.ThrowExceptionIfErrors();
+            return loReturn;
+        }
 
         protected override void R_Saving(GSM00710DTO poNewEntity, eCRUDMode poCRUDMode)
         {
@@ -127,7 +159,7 @@ namespace GSM00700Back
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
-            DbCommand loCommand;
+            DbCommand loCmd;
             DbConnection loConn = null;
             string lcAction = "";
 
@@ -136,7 +168,7 @@ namespace GSM00700Back
             {
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
-                loCommand = loDb.GetCommand();
+                loCmd = loDb.GetCommand();
                 R_ExternalException.R_SP_Init_Exception(loConn);
 
                 if (poCRUDMode == eCRUDMode.AddMode)
@@ -149,21 +181,37 @@ namespace GSM00700Back
                 }
 
                 lcQuery = "RSP_GS_MAINTAIN_CASHFLOW";
-                loCommand.CommandType = CommandType.StoredProcedure;
-                loCommand.CommandText = lcQuery;
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
 
-                loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poNewEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_NAME", DbType.String, 100, poNewEntity.CCASH_FLOW_NAME);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_TYPE", DbType.String, 60, poNewEntity.CCASH_FLOW_TYPE);
-                loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CSEQUENCE", DbType.String, 60, poNewEntity.CSEQUENCE);
-                loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
-                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poNewEntity.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_GROUP_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_NAME", DbType.String, 100, poNewEntity.CCASH_FLOW_NAME);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_TYPE", DbType.String, 60, poNewEntity.CCASH_FLOW_TYPE);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CSEQUENCE", DbType.String, 60, poNewEntity.CSEQUENCE);
+                loDb.R_AddCommandParameter(loCmd, "@CACTION", DbType.String, 10, lcAction);
+
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CCASH_FLOW_GROUP_CODE" ||
+                        x.ParameterName == "@CCASH_FLOW_CODE" ||
+                        x.ParameterName == "@CCASH_FLOW_NAME" ||
+                        x.ParameterName == "@CCASH_FLOW_TYPE" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CSEQUENCE" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+
+
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, lcAction, poNewEntity);
+                //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
                 {
-                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                    loDb.SqlExecNonQuery(loConn, loCmd, false);
                 }
                 catch (Exception ex)
                 {
@@ -174,6 +222,7 @@ namespace GSM00700Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally
@@ -187,7 +236,7 @@ namespace GSM00700Back
                     loConn.Dispose();
                 }
             }
-            EndBlock:
+        EndBlock:
             loException.ThrowExceptionIfErrors();
         }
 
@@ -196,34 +245,50 @@ namespace GSM00700Back
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
-            DbCommand loCommand;
+            DbCommand loCmd;
             DbConnection loConn = null;
 
             try
             {
                 loDb = new R_Db();
                 loConn = loDb.GetConnection();
-                loCommand = loDb.GetCommand();
+                loCmd = loDb.GetCommand();
                 R_ExternalException.R_SP_Init_Exception(loConn);
 
                 lcQuery = "RSP_GS_MAINTAIN_CASHFLOW";
-                loCommand.CommandType = CommandType.StoredProcedure;
-                loCommand.CommandText = lcQuery;
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
 
 
-                loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20,
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20,
                     poEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_NAME", DbType.String, 100, poEntity.CCASH_FLOW_NAME);
-                loDb.R_AddCommandParameter(loCommand, "@CCASH_FLOW_TYPE", DbType.String, 60, poEntity.CCASH_FLOW_TYPE);
-                loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "@CSEQUENCE", DbType.String, 10, poEntity.CSEQUENCE);
-                loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
-                //loDb.SqlExecNonQuery(loConn, loCommand, true);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_CODE", DbType.String, 20, poEntity.CCASH_FLOW_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_NAME", DbType.String, 100, poEntity.CCASH_FLOW_NAME);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_TYPE", DbType.String, 60, poEntity.CCASH_FLOW_TYPE);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CSEQUENCE", DbType.String, 10, poEntity.CSEQUENCE);
+                loDb.R_AddCommandParameter(loCmd, "@CACTION", DbType.String, 10, "DELETE");
+
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CCASH_FLOW_GROUP_CODE" ||
+                        x.ParameterName == "@CCASH_FLOW_CODE" ||
+                        x.ParameterName == "@CCASH_FLOW_NAME" ||
+                        x.ParameterName == "@CCASH_FLOW_TYPE" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CSEQUENCE" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+
+
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poEntity);
+                //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
                 {
-                    loDb.SqlExecNonQuery(loConn, loCommand, false);
+                    loDb.SqlExecNonQuery(loConn, loCmd, false);
                 }
                 catch (Exception ex)
                 {

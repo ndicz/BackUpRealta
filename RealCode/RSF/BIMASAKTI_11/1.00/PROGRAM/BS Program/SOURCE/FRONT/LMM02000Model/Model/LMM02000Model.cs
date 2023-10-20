@@ -196,19 +196,19 @@ namespace LMM02000Model.Model
         }
 
 
-        public async Task GetActiveInactiveS()
+        public async Task<LMM02000ActiveInactiveDTO> GetActiveInactiveS(LMM02000ActiveInactiveParam poParamDto)
         {
             var loEx = new R_Exception();
-            LMM02000ActiveInactiveDTO loRtn = new LMM02000ActiveInactiveDTO();
+            LMM02000ActiveInactiveDTO loRtn = null;
             //R_ContextHeader loContextHeader = new R_ContextHeader();
 
             try
             {
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
 
-                loRtn = await R_HTTPClientWrapper.R_APIRequestObject<LMM02000ActiveInactiveDTO>(
+                loRtn = await R_HTTPClientWrapper.R_APIRequestObject<LMM02000ActiveInactiveDTO, LMM02000ActiveInactiveParam>(
                     _RequestServiceEndPoint,
-                    nameof(ILMM02000.GetActiveInactive), DEFAULT_MODULE,
+                    nameof(ILMM02000.GetActiveInactive), poParamDto, DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
             }
@@ -220,6 +220,7 @@ namespace LMM02000Model.Model
         EndBlock:
             loEx.ThrowExceptionIfErrors();
 
+            return loRtn;
         }
 
         public async Task<LMM02000Template> GetTemplateAsync()
@@ -289,7 +290,7 @@ namespace LMM02000Model.Model
             throw new NotImplementedException();
         }
 
-        public LMM02000ActiveInactiveDTO GetActiveInactive()
+        public LMM02000ActiveInactiveDTO GetActiveInactive(LMM02000ActiveInactiveParam poParamDto)
         {
             throw new NotImplementedException();
         }

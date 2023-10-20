@@ -13,7 +13,7 @@ namespace LMM02000Common.DTO
         public string CRATETYPE_CODE { get; set; }
 
 
-        public bool LACTIVE { get; set; }
+        public bool LACTIVE { get; set; } = true;
         public string CSALESMAN_ID { get; set; }
         public string CSALESMAN_NAME { get; set; }
         public string CGENDER_DESCR { get; set; }

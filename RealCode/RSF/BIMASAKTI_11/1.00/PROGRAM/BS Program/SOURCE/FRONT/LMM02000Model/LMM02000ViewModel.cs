@@ -44,14 +44,21 @@ namespace LMM02000Model
 
             try
             {
-                R_FrontContext.R_SetContext(ContextConstantLMM02000.CPROPERTY_ID, loEntity.CPROPERTY_ID);
+                var poParam = new LMM02000ActiveInactiveParam();
+                poParam.CSALESMAN_ID = loEntity.CSALESMAN_ID;
+                poParam.LACTIVE = !loEntity.LACTIVE;
+                poParam.CPROPERTY_ID = loEntity.CPROPERTY_ID;
 
-                R_FrontContext.R_SetContext(ContextConstantLMM02000.CSALESMAN_ID, loEntity.CSALESMAN_ID);
+                var loreturn = await _LMM02000Model.GetActiveInactiveS(poParam);
 
-                R_FrontContext.R_SetContext(ContextConstantLMM02000.LACTIVE, !loEntity.LACTIVE);
+                //R_FrontContext.R_SetContext(ContextConstantLMM02000.CPROPERTY_ID, loEntity.CPROPERTY_ID);
+
+                //R_FrontContext.R_SetContext(ContextConstantLMM02000.CSALESMAN_ID, loEntity.CSALESMAN_ID);
+
+                //R_FrontContext.R_SetContext(ContextConstantLMM02000.LACTIVE, !loEntity.LACTIVE);
 
 
-                await _LMM02000Model.GetActiveInactiveS();
+               
             }
             catch (Exception ex)
             {

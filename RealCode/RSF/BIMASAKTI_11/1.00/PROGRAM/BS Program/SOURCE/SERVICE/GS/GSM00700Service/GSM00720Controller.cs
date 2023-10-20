@@ -11,6 +11,7 @@ using GSM00700Back;
 using R_BackEnd;
 using R_Common;
 using System.Reflection;
+using Microsoft.Extensions.Logging;
 
 namespace GSM00700Service
 {
@@ -19,38 +20,46 @@ namespace GSM00700Service
     [ApiController]
     public class GSM00720Controller : ControllerBase, IGSM00720
     {
+        private LogGSM00700Common _logger;
+
+        public GSM00720Controller(ILogger<GSM00720Controller> logger)
+        {
+            LogGSM00700Common.R_InitializeLogger(logger);
+            _logger = LogGSM00700Common.R_GetInstanceLogger();
+        }
         [HttpPost]
         public R_ServiceGetRecordResultDTO<GSM00720DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00720DTO> poParameter)
         {
+            _logger.LogInfo("Begin || GetRecordCashFlowPlan(Controller)");
             var loEx = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00720DTO>();
             GSM00700DBParameter loDbPar = new GSM00700DBParameter();
             try
             {
                 var loCls = new GSM00720Cls();
+                _logger.LogInfo("Set Parameter || GetRecordCashFlowPlan(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loDbPar.CCASH_FLOW_GROUP_CODE = poParameter.Entity.CCASH_FLOW_GROUP_CODE;
                 loDbPar.CYEAR = poParameter.Entity.CCYEAR;
-                //loDbPar.CCASH_FLOW_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_CODE);
-                //loDbPar.CPERIOD_NO = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CPERIOD_NO);
-                //poParameter.Entity.CCOMPANY_ID = "RCD";
-                //poParameter.Entity.CUSER_ID = "Admin";
-
+           
+                _logger.LogInfo("Run GetRecordCashFlowCls || GetRecordCashFlowPlan(Controller)");
                 loRtn.data = loCls.R_GetRecord(poParameter.Entity);
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetRecordCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM00720DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM00720DTO> poParameter)
          {
+             _logger.LogInfo("Begin || SaveCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM00720DTO> loRtn = null;
             GSM00720Cls loCls;
@@ -60,21 +69,23 @@ namespace GSM00700Service
             {
                 loCls = new GSM00720Cls();
                 loRtn = new R_ServiceSaveResultDTO<GSM00720DTO>();
+                _logger.LogInfo("Set Parameter || SaveCashFlowPlan(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
 
                 //poParameter.Entity.CCOMPANY_ID = "RCD";
                 //poParameter.Entity.CUSER_ID = "HPC";
-
+                _logger.LogInfo("Run SaveCashFlowCls || SaveCashFlowPlan(Controller)");
                 loRtn.data = loCls.R_Save(poParameter.Entity, poParameter.CRUDMode);
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || SaveCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
@@ -148,6 +159,7 @@ namespace GSM00700Service
         [HttpPost]
         public IAsyncEnumerable<GSM00720DTO> GetAllCashFlowPlanStream()
         {
+            _logger.LogInfo("Begin || GetAllCashFlowPlanStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
             List<GSM00720DTO> loRtnTmp;
@@ -156,6 +168,7 @@ namespace GSM00700Service
             try
             {
                     loDbPar = new GSM00700DBParameter();
+                    _logger.LogInfo("Set Parameter || GetAllCashFlowPlanStream(Controller)");
                     loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                     loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                     loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
@@ -163,22 +176,25 @@ namespace GSM00700Service
                     loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetAllCashFlowPlanCls|| GetAllCashFlowPlanStream(Controller)");
                 loRtnTmp = loCls.GetCashFlowPlan(loDbPar);
                 loRtn = GetAllCashFlowPlanStream(loRtnTmp);
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetAllCashFlowPlanStream(Controller)");
             return loRtn;
         }
         [HttpPost]
         public IAsyncEnumerable<GSM00720YearDTO> GetYearStream()
         {
+            _logger.LogInfo("Begin || GetYearCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
             List<GSM00720YearDTO> loRtnTmp;
@@ -187,25 +203,29 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetYearCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetYearListCls|| GetYearCashFlowPlan(Controller)");
                 loRtnTmp = loCls.GetYearList(loDbPar);
                 loRtn = GetYearStream(loRtnTmp);
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetYearCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
+            _logger.LogInfo("Begin || GetCopyFromYearCashFlowPlan(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00720CopyFromYearListDTO loRtn = null;
             List<GSM00720CopyFromYearDTO> loResult;
@@ -214,7 +234,8 @@ namespace GSM00700Service
             GSM00720Cls loCls;
             try
             {
-                loDbPar = new GSM00700DBParameter();    
+                loDbPar = new GSM00700DBParameter();  
+                _logger.LogInfo("Set Parameter || GetCopyFromYearCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loDbPar.CFROM_CASH_FOW_FLAG = poParamDto.CFROM_CASH_FOW_FLAG;
@@ -224,19 +245,23 @@ namespace GSM00700Service
                 loDbPar.CTO_YEAR = poParamDto.CTO_YEAR;
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetCopyFromYearListCls|| GetCopyFromYearCashFlowPlan(Controller)");
                 loResult = loCls.CopyFromYear(loDbPar);
                 loRtn = new GSM00720CopyFromYearListDTO() { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
             loEx.ThrowExceptionIfErrors();
+            _logger.LogInfo("End || GetCopyFromYearCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParameter)
         {
+            _logger.LogInfo("Begin || GetCopyBaseAmountCashFlowPlan(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00720CopyBaseAmountListDTO loRtn = null;
             List<GSM00720CopyBaseLocalAmountDTO> loResult;
@@ -246,6 +271,7 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetCopyBaseAmountCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 //loDbPar.CFROM_CASH_FOW_FLAG = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CFROM_CASH_FOW_FLAG);
@@ -259,20 +285,24 @@ namespace GSM00700Service
                 loDbPar.INO_PERIOD_TO = poParameter.INO_PERIOD_TO;
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetCopyBaseAmountCashFlowPlan|| GetCopyBaseAmountCashFlowPlan(Controller)");
                 loResult = loCls.UpdateBaseAmount(loDbPar);
                 loRtn = new GSM00720CopyBaseAmountListDTO() { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
+            _logger.LogInfo("End || GetCopyBaseAmountCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto)
         {
+            _logger.LogInfo("Begin || GetCopyLocalAmountCashFlowPlan(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00720CopyLocalAmountListDTO loRtn = null;
             List<GSM00720CopyBaseLocalAmountDTO> loResult;
@@ -282,6 +312,7 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetCopyLocalAmountCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
@@ -294,21 +325,24 @@ namespace GSM00700Service
                 loDbPar.INO_PERIOD_TO = poParamDto.INO_PERIOD_TO;
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetCopyLocalAmountCashFlowPlanCls|| GetCopyLocalAmountCashFlowPlan(Controller)");
                 loResult = loCls.UpdateLocalAmount(loDbPar);
                 loRtn = new GSM00720CopyLocalAmountListDTO() { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
+            _logger.LogInfo("End || GetCopyLocalAmountCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00720CurrencyDTO GetCurrencyList()
         {
-
+            _logger.LogInfo("Begin || GetCurrencyCashFlowPlan(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00720CurrencyDTO loRtn = null;
             GSM00720CurrencyDTO loResult;
@@ -318,9 +352,11 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetCurrencyCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
 
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetCurrencyCashFlowPLanCls|| GetCurrencyCashFlowPlan(Controller)");
                 loResult = loCls.GetCurrency(loDbPar);
                 loRtn = new GSM00720CurrencyDTO();
                 loRtn = loResult;
@@ -328,14 +364,17 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
+            _logger.LogInfo("End || GetCurrencyCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00720InitialProsesListDTO GetInitialProses()
         {
+            _logger.LogInfo("Begin || GetInitialProsesCashFlowPlan(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00720InitialProsesListDTO loRtn = null;
             List<GSM00720InitialProsesDTO> loResult;
@@ -344,20 +383,23 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetInitialProsesCashFlowPlan(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
 
                 //loDbPar.CCOMPANY_ID = "RCD";
                 loCls = new GSM00720Cls();
+                _logger.LogInfo("Run GetInitialProsesCashFlowPlanCls|| GetInitialProsesCashFlowPlan(Controller)");
                 loResult = loCls.InitialProses(loDbPar);
                 loRtn = new GSM00720InitialProsesListDTO() { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetInitialProsesCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]

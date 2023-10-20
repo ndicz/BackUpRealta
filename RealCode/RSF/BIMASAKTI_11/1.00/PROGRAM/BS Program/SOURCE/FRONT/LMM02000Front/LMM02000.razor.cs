@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using BlazorClientHelper;
 using GFF00900COMMON.DTOs;
 using LMM02000Common.DTO;
@@ -15,6 +16,8 @@ using R_BlazorFrontEnd.Controls;
 using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Controls.MessageBox;
+using R_BlazorFrontEnd.Controls.Popup;
+using R_BlazorFrontEnd.Enums;
 using R_BlazorFrontEnd.Exceptions;
 using R_BlazorFrontEnd.Helpers;
 using R_CommonFrontBackAPI;
@@ -50,7 +53,7 @@ namespace LMM02000Front
 
             R_DisplayException(loEx);
         }
-
+        [Inject] public R_PopupService PopupService { get; set; }
 
         //private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         //{
@@ -64,7 +67,7 @@ namespace LMM02000Front
         //    try
         //    {
         //        bool result = (bool)eventArgs.Result;
-              
+
         //        if (result)
         //        {
         //            await _viewModel.ActiveInactiveProcessAsync();
@@ -78,7 +81,49 @@ namespace LMM02000Front
         //    await _gridRef.R_RefreshGrid(null);
 
         //}
-        
+        public async Task ActiveInactiveSaving(R_ValidationEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            GFF00900ParameterDTO loParam = null;
+            R_PopupResult loResult = null;
+            LMM02000DTO loData = null;
+
+            try
+            {
+                loData = (LMM02000DTO)eventArgs.Data;
+                if (loData.LACTIVE == true && _conductorRef.R_ConductorMode == R_eConductorMode.Add)
+                {
+
+                   var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
+                    loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
+                    await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
+
+                    //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
+                    if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
+                    {
+                        eventArgs.Cancel = false;
+                    }
+                    else //Disini Approval Code yang didapat adalah 2, yang berarti Active Inactive akan dijalankan jika User yang diinput ada di RSP_ACTIVITY_VALIDITY
+                    {
+                        loParam = new GFF00900ParameterDTO()
+                        {
+                            Data = loValidateViewModel.loRspActivityValidityList,
+                            IAPPROVAL_CODE = "LMM02001" //Uabh Approval Code sesuai Spec masing masing
+                        };
+                        loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), loParam);
+                        eventArgs.Cancel = !(bool)loResult.Result;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
         private async Task R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         {
             R_Exception loException = new R_Exception();
@@ -232,6 +277,7 @@ namespace LMM02000Front
         }
 
         private bool enableSalesmanType;
+        private bool enableActiveInactive;
         
         private async Task OnChangedSalesmanType(string poParam)
         {
@@ -285,6 +331,7 @@ namespace LMM02000Front
         private void R_AfterSave(R_AfterSaveEventArgs eventArgs)
         {
             enableSalesmanType = false;
+            enableActiveInactive = false;
         }
 
         private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)

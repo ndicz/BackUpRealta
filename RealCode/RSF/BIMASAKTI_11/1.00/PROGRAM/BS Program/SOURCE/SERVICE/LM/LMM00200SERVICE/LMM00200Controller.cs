@@ -1,6 +1,7 @@
 ﻿using LMM00200Back;
 using LMM00200Common;
 using LMM00200Common.DTO_s;
+using LMM02000Common.DTO;
 using Microsoft.AspNetCore.Mvc;
 using R_BackEnd;
 using R_Common;
@@ -35,6 +36,11 @@ namespace LMM00200Service
         EndBlock:
             loException.ThrowExceptionIfErrors();
             return LMM00200StreamListHelper(loRtnTemp);
+        }
+
+        public LMM00200ActiveInactiveParamDTO GetActiveParam(LMM02000ActiveInactiveParam poParamDto)
+        {
+            throw new NotImplementedException();
         }
 
         private async IAsyncEnumerable<LMM00200StreamDTO> LMM00200StreamListHelper(List<LMM00200StreamDTO> loRtnTemp)
