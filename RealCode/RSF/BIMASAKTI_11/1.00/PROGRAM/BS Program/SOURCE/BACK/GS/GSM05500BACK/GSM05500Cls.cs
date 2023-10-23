@@ -6,12 +6,18 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.Reflection.Metadata;
+using GSM05500Common;
 using static GSM05500Common.DTO.GSM05500ListDTO;
 
 namespace GSM05500Back
 {
     public class GSM05500Cls : R_BusinessObject<GSM05500DTO>
     {
+        private LogGSM05500Common _logger;
+        public GSM05500Cls()
+        {
+            _logger = LogGSM05500Common.R_GetInstanceLogger();
+        }
         public List<GSM05500DTO> GetAllCurrency(GSM05500DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -32,6 +38,12 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
 
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, poParameter);
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM05500DTO>(loReturnTemp).ToList();
@@ -40,6 +52,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -66,8 +79,12 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "CCURRENCY_CODE", DbType.String, 3, poEntity.CCURRENCY_CODE);
-
-
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CCURRENCY_CODE").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
@@ -77,6 +94,7 @@ namespace GSM05500Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -118,7 +136,14 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "@CCURRENCY_NAME", DbType.String, 60, poNewEntity.CCURRENCY_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
-
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CCURRENCY_CODE" ||
+                        x.ParameterName == "@CCURRENCY_NAME" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
                 try
@@ -134,6 +159,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally
@@ -177,7 +203,14 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "@CCURRENCY_NAME", DbType.String, 60, poEntity.CCURRENCY_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
-
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CCURRENCY_CODE" ||
+                        x.ParameterName == "@CCURRENCY_NAME" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {
@@ -193,6 +226,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             loException.ThrowExceptionIfErrors();

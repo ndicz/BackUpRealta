@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using GSM02300Common;
 using GSM02300Common.DTO;
 using R_BackEnd;
 using R_Common;
@@ -15,6 +16,11 @@ namespace GSM02300Back
 {
     public class GSM02300Cls : R_BusinessObject<GSM02300DTO>    
     {
+        private LogGSM02300Common _logger;
+        public GSM02300Cls()
+        {
+            _logger = LogGSM02300Common.R_GetInstanceLogger();
+        }
         public List<GSM02300DTO> GetAllProperty(GSM02300DBParaneter poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -34,6 +40,13 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
 
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
+
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM02300DTO>(loReturnTemp).ToList();
@@ -41,6 +54,7 @@ namespace GSM02300Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
@@ -62,18 +76,25 @@ namespace GSM02300Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry =
+                var lcQuery =
                     @"SELECT * FROM RFT_GET_GSB_CODE_INFO ('BIMASAKTI', @CCOMPANY_ID, '_PROPERTY_TYPE', '', @CCOMPANY_ID)";
                 loCmd.CommandType = System.Data.CommandType.Text;
-                loCmd.CommandText = lcQuerry;
-                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10,
-                    poParameter.CCOMPANY_ID);
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                                           x.ParameterName == "@CCOMPANY_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
+
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM02300PropertyTypeDTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
@@ -100,8 +121,15 @@ namespace GSM02300Back
                 loCommand.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCommand, "CCOMPANY_ID", DbType.String, 10, poEntity.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCommand, "CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
-                loDb.R_AddCommandParameter(loCommand, "CPROPERTY_TYPE_CODE", DbType.String, 20, poEntity.CPROPERTY_TYPE_CODE
-                );
+                loDb.R_AddCommandParameter(loCommand, "CPROPERTY_TYPE_CODE", DbType.String, 20, poEntity.CPROPERTY_TYPE_CODE);
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CUSER_ID" ||
+                        x.ParameterName == "CPROPERTY_TYPE_CODE").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
+
+
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM02300DTO>(loDataTable).FirstOrDefault();
@@ -110,6 +138,7 @@ namespace GSM02300Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
@@ -143,6 +172,15 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@LSINGLE_UNIT", DbType.String, 60, poEntity.LSINGLE_UNIT);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CPROPERTY_TYPE_CODE" ||
+                        x.ParameterName == "@CPROPERTY_TYPE_NAME" ||
+                        x.ParameterName == "@LSINGLE_UNIT" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
 
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
@@ -158,6 +196,7 @@ namespace GSM02300Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally
@@ -212,7 +251,15 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@LSINGLE_UNIT", DbType.String, 60, poNewEntity.LSINGLE_UNIT);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
-
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CPROPERTY_TYPE_CODE" ||
+                        x.ParameterName == "@CPROPERTY_TYPE_NAME" ||
+                        x.ParameterName == "@LSINGLE_UNIT" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poNewEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {
@@ -227,6 +274,7 @@ namespace GSM02300Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally

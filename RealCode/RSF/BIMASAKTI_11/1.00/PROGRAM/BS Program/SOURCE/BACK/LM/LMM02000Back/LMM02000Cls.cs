@@ -7,6 +7,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using LMM02000Common;
 using LMM02000Common.DTO;
 using R_BackEnd;
 using R_Common;
@@ -16,7 +17,11 @@ namespace LMM02000Back
 {
     public class LMM02000Cls : R_BusinessObject<LMM02000DTO>
     {
-
+        private LogLMM02000Common _logger;
+        public LMM02000Cls()
+        {
+            _logger = LogLMM02000Common.R_GetInstanceLogger();
+        }
         public void RSP_GS_ACTIVE_INACTIVE_LMM02000(LMM02000DBParameter poEntity)
         {
            R_Exception loex = new R_Exception();
@@ -37,6 +42,15 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCmd, "@CSALESMAN_ID", DbType.String, 20, poEntity.CSALESMAN_ID);
                 loDb.R_AddCommandParameter(loCmd, "@LACTIVE", DbType.Boolean, 2, poEntity.LACTIVE);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 8, poEntity.CUSER_ID);
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CPROPERTY_ID" ||
+                        x.ParameterName == "CSALESMAN_ID" ||
+                        x.ParameterName == "LACTIVE" ||
+                        x.ParameterName == "CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+
 
                 loDb.SqlExecNonQuery(loConn, loCmd, true);
 
@@ -44,6 +58,7 @@ namespace LMM02000Back
             catch (Exception ex)
             {
                 loex.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
@@ -70,12 +85,18 @@ namespace LMM02000Back
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000GenderTypeDTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -101,12 +122,18 @@ namespace LMM02000Back
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuerry;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000SalesmanTypeDTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -134,6 +161,13 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 50, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", System.Data.DbType.String, 10, poParameter.CUSER_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", System.Data.DbType.String, 50, poParameter.CPROPERTY_ID);
+
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CUSER_ID" ||
+                        x.ParameterName == "CPROPERTY_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000DTO>(loReturnTemp).ToList();
 
@@ -141,6 +175,7 @@ namespace LMM02000Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -169,12 +204,21 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 10, poParameter.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CPROPERTY_ID", System.Data.DbType.String, 10, poParameter.CPROPERTY_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CSALESMAN_ID", System.Data.DbType.String, 20, poParameter.CSALESMAN_ID);
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CUSER_ID" ||
+                        x.ParameterName == "CPROPERTY_ID" ||
+                        x.ParameterName == "CSALESMAN_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02010DTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -200,6 +244,11 @@ namespace LMM02000Back
 
                 loDb.R_AddCommandParameter(loCommand, "@CCOMPANY_ID", System.Data.DbType.String, 50, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 50, poParameter.CUSER_ID);
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000PropertyDTO>(loReturnTemp).ToList();
@@ -207,6 +256,7 @@ namespace LMM02000Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -231,6 +281,14 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CPROPERTY_ID", System.Data.DbType.String, 10, poEntity.CPROPERTY_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CSALESMAN_ID", System.Data.DbType.String, 20, poEntity.CSALESMAN_ID);
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CUSER_ID" ||
+                        x.ParameterName == "CPROPERTY_ID" ||
+                        x.ParameterName == "CSALESMAN_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
                 loReturn = R_Utility.R_ConvertTo<LMM02000DTO>(loDataTable).FirstOrDefault();
@@ -239,6 +297,7 @@ namespace LMM02000Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
         EndBlock:
@@ -282,8 +341,24 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CEXT_COMPANY_NAME", System.Data.DbType.String, 100, poEntity.CEXT_COMPANY_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 50, poEntity.CUSER_ID);
-
-
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CPROPERTY_ID" ||
+                        x.ParameterName == "CSALESMAN_ID" ||
+                        x.ParameterName == "CSALESMAN_NAME" ||
+                        x.ParameterName == "LACTIVE" ||
+                        x.ParameterName == "CADDRESS" ||
+                        x.ParameterName == "CEMAIL" ||
+                        x.ParameterName == "CMOBILE_PHONE1" ||
+                        x.ParameterName == "CMOBILE_PHONE2" ||
+                        x.ParameterName == "CID_NO" ||
+                        x.ParameterName == "CGENDER" ||
+                        x.ParameterName == "CSALESMAN_TYPE" ||
+                        x.ParameterName == "CEXT_COMPANY_NAME" ||
+                        x.ParameterName == "CACTION" ||
+                        x.ParameterName == "CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {
@@ -299,6 +374,7 @@ namespace LMM02000Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             loException.ThrowExceptionIfErrors();
@@ -350,6 +426,24 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCommand, "@CEXT_COMPANY_NAME", System.Data.DbType.String, 100, poEntity.CEXT_COMPANY_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", System.Data.DbType.String, 50, poEntity.CUSER_ID);
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "CCOMPANY_ID" ||
+                        x.ParameterName == "CPROPERTY_ID" ||
+                        x.ParameterName == "CSALESMAN_ID" ||
+                        x.ParameterName == "CSALESMAN_NAME" ||
+                        x.ParameterName == "LACTIVE" ||
+                        x.ParameterName == "CADDRESS" ||
+                        x.ParameterName == "CEMAIL" ||
+                        x.ParameterName == "CMOBILE_PHONE1" ||
+                        x.ParameterName == "CMOBILE_PHONE2" ||
+                        x.ParameterName == "CID_NO" ||
+                        x.ParameterName == "CGENDER" ||
+                        x.ParameterName == "CSALESMAN_TYPE" ||
+                        x.ParameterName == "CEXT_COMPANY_NAME" ||
+                        x.ParameterName == "CACTION" ||
+                        x.ParameterName == "CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
                 try
@@ -365,6 +459,7 @@ namespace LMM02000Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally

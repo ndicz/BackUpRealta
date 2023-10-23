@@ -278,6 +278,7 @@ namespace LMM02000Front
 
         private bool enableSalesmanType;
         private bool enableActiveInactive;
+        private bool enableSalesmanId;
         
         private async Task OnChangedSalesmanType(string poParam)
         {
@@ -332,6 +333,7 @@ namespace LMM02000Front
         {
             enableSalesmanType = false;
             enableActiveInactive = false;
+            enableSalesmanId = false;
         }
 
         private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)

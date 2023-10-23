@@ -46,7 +46,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
                       
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -91,7 +91,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroupType(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00700CashFlowGroupTypeDTO>(loReturnTemp).ToList();
@@ -137,7 +137,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poEntity);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup", lcQuery, poEntity);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -194,7 +194,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poEntity);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup", lcQuery, poEntity);
 
                 //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
@@ -265,7 +265,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poNewEntity,lcAction);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup(Cls)", lcQuery, poNewEntity,lcAction);
 
                 //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
@@ -320,7 +320,7 @@ namespace GSM00700Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -361,7 +361,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowGroup", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00700DTO>(loReturnTemp).ToList();

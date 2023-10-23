@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using GSM05500Common;
 using GSM05500Common.DTO;
 using R_BackEnd;
 using R_Common;
@@ -16,6 +17,11 @@ namespace GSM05500Back
 {
     public class GSM05510Cls : R_BusinessObject<GSM05510DTO>
     {
+        private LogGSM05500Common _logger;
+        public GSM05510Cls()
+        {
+            _logger = LogGSM05500Common.R_GetInstanceLogger();
+        }
         public List<GSM05510DTO> GetAllRateType(GSM05500DBParameter poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -35,7 +41,14 @@ namespace GSM05500Back
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
-             
+               
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || RateType(Cls) ", lcQuery, poParameter);
+
+
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM05510DTO>(loReturnTemp).ToList();
@@ -44,6 +57,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -71,6 +85,12 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CRATETYPE_CODE", DbType.String, 8, poEntity.CRATETYPE_CODE);
                 
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CRATETYPE_CODE").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || RateType(Cls) ", lcQuery, loDbParam);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
@@ -80,6 +100,7 @@ namespace GSM05500Back
             {
 
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -121,6 +142,14 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
 
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CRATETYPE_CODE" ||
+                        x.ParameterName == "@CRATETYPE_DESCRIPTION" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || RateType(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
                 try
@@ -136,6 +165,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             finally
@@ -181,6 +211,14 @@ namespace GSM05500Back
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
 
+                var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
+                        x.ParameterName == "@CCOMPANY_ID" ||
+                        x.ParameterName == "@CRATETYPE_CODE" ||
+                        x.ParameterName == "@CRATETYPE_DESCRIPTION" ||
+                        x.ParameterName == "@CUSER_ID" ||
+                        x.ParameterName == "@CACTION").
+                    Select(x => x.Value);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || RateType(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
 
@@ -198,6 +236,7 @@ namespace GSM05500Back
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             loException.ThrowExceptionIfErrors();

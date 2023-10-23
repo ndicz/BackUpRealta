@@ -2,6 +2,7 @@
 using LMI00100Common;
 using LMI00100Common.DTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using R_BackEnd;
 using R_Common;
 using R_CommonFrontBackAPI;
@@ -12,6 +13,14 @@ namespace LMI00100Service
     [ApiController]
     public class LMI00100Controller : ControllerBase, ILMI00100
     {
+        private LogLMI00100Common _logger;
+
+        public LMI00100Controller(ILogger<LMI00100Controller> logger)
+        {
+            LogLMI00100Common.R_InitializeLogger(logger);
+            _logger = LogLMI00100Common.R_GetInstanceLogger();
+        }
+
         [HttpPost]
         public R_ServiceGetRecordResultDTO<LMI00100DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<LMI00100DTO> poParameter)
         {
@@ -30,6 +39,7 @@ namespace LMI00100Service
         [HttpPost]
         public LMI00100ListDTO GetAllLMI00100List()
         {
+            _logger.LogInfo("Begin || GetAllVABankChannel(Controller)");
             R_Exception loEx = new R_Exception();
             LMI00100ListDTO loRtn = null;
             List<LMI00100DTO> loResult;
@@ -39,6 +49,7 @@ namespace LMI00100Service
             try
             {
                 loDbPar = new LMI00100DBParameter();
+                _logger.LogInfo("Set Parameter || GetAllVABankChannel(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMI00100.CPROPERTY_ID);
@@ -47,21 +58,24 @@ namespace LMI00100Service
                 //loDbPar.CPROPERTY_ID = "ASHMD";
 
                 loCls = new LMI00100Cls();
+                _logger.LogInfo("Get Data || GetAllVABankChannel(Controller)");
                 loResult = loCls.GetAllBankChannelList(loDbPar);
                 loRtn = new LMI00100ListDTO { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetAllVABankChannel(Controller)");
             return loRtn;
         }
         [HttpPost]
         public LMI00100ListPropertyDTO GetLMI00100Property()
         {
+            _logger.LogInfo("Begin || GetLProperyType(Controller)");
             R_Exception loEx = new R_Exception();
             LMI00100ListPropertyDTO loRtn = null;
             List<LMI00100PropertyDTO> loResult;
@@ -71,6 +85,7 @@ namespace LMI00100Service
             try
             {
                 loDbPar = new LMI00100DBParameter();
+                _logger.LogInfo("Set Parameter || GetLProperyType(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
@@ -78,21 +93,25 @@ namespace LMI00100Service
                 //loDbPar.CUSER_ID = "Admin";
 
                 loCls = new LMI00100Cls();
+                _logger.LogInfo("Get Data || GetLProperyType(Controller)");
                 loResult = loCls.GetAllPropertyList(loDbPar);
                 loRtn = new LMI00100ListPropertyDTO { Data = loResult };
             }
             catch (Exception ex)
             {
                 loEx.Add(ex);
+                _logger.LogError(ex);
             }
 
             loEx.ThrowExceptionIfErrors();
+            _logger.LogInfo("End || GetLProperyType(Controller)");
 
             return loRtn;
         }
         [HttpPost]
         public IAsyncEnumerable<LMI00100DTO> GetAllLMI00100Stream()
         {
+            _logger.LogInfo("Begin || GetAllVABankChannelStream(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100DBParameter loDbPar;
             List<LMI00100DTO> loRtnTmp;
@@ -102,23 +121,26 @@ namespace LMI00100Service
             {
 
                 loDbPar = new LMI00100DBParameter();
+                _logger.LogInfo("Set Parameter || GetAllVABankChannelStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMI00100.CPROPERTY_ID);
 
                 loCls = new LMI00100Cls();
+                _logger.LogInfo("Get GetAllVaBankChannelCli || GetAllVABankChannelStream(Controller)");
                 loRtnTmp = loCls.GetAllBankChannelList(loDbPar);
-
+                _logger.LogInfo("Set GetAllVaBankChannelStream || GetAllVABankChannelStream(Controller)");
                 loRtn = GetBankChannel(loRtnTmp);
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetAllVABankChannelStream(Controller)");
             return loRtn;
         }
 
@@ -126,6 +148,7 @@ namespace LMI00100Service
         [HttpPost]
         public IAsyncEnumerable<LMI00100PropertyDTO> GetLMI00100PropertyStream()
         {
+            _logger.LogInfo("Begin || GetLProperyTypeStream(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100DBParameter loDbPar;
             List<LMI00100PropertyDTO> loRtnTmp;
@@ -135,22 +158,25 @@ namespace LMI00100Service
             {
 
                 loDbPar = new LMI00100DBParameter();
+                _logger.LogInfo("Set Parameter || GetLProperyTypeStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
 
                 loCls = new LMI00100Cls();
+                _logger.LogInfo("Get GetLProperyTypeCli || GetLProperyTypeStream(Controller)");
                 loRtnTmp = loCls.GetAllPropertyList(loDbPar);
-
+                _logger.LogInfo("Set GetLProperyTypeStream || GetLProperyTypeStream(Controller)");
                 loRtn = GetProperty(loRtnTmp);
             }
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(ex);
             }
 
             EndBlock:
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || GetLProperyTypeStream(Controller)");
             return loRtn;
         }
 
