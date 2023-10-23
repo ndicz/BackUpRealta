@@ -41,14 +41,14 @@ namespace GSM00700Back
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poParameter.CCASH_FLOW_GROUP_CODE);
 
-                var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
-                        x.ParameterName == "@CCOMPANY_ID" ||
-                        x.ParameterName == "@CUSER_ID" ||
-                        x.ParameterName == "@CCASH_FLOW_GROUP_CODE").
-                    Select(x => x.Value);
+                    var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
+                            x.ParameterName == "@CCOMPANY_ID" ||
+                            x.ParameterName == "@CUSER_ID" ||
+                            x.ParameterName == "@CCASH_FLOW_GROUP_CODE").
+                        Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poParameter);
+                    _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -80,9 +80,9 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
+                var lcQuery = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_TYPE', '', 'Login User Language')";
                 loCmd.CommandType = System.Data.CommandType.Text;
-                loCmd.CommandText = lcQuerry;
+                loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
 
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
@@ -90,7 +90,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuerry, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlow(Cls) ", lcQuery, poParameter);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00710CashFlowTypeDTO>(loReturnTemp).ToList();
             }

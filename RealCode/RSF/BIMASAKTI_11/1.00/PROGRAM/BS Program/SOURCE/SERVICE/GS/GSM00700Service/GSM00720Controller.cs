@@ -176,8 +176,10 @@ namespace GSM00700Service
                     loDbPar.CCYEAR = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CYEAR);
 
                 loCls = new GSM00720Cls();
-                _logger.LogInfo("Run GetAllCashFlowPlanCls|| GetAllCashFlowPlanStream(Controller)");
+                _logger.LogInfo("Run GetAllCashFlowPlanCls || GetAllCashFlowPlanStream(Controller)");
                 loRtnTmp = loCls.GetCashFlowPlan(loDbPar);
+
+                _logger.LogInfo("Run GetAllCashFlowPlanStream || GetAllCashFlowPlanStream(Controller)");
                 loRtn = GetAllCashFlowPlanStream(loRtnTmp);
             }
             catch (Exception ex)
@@ -209,6 +211,7 @@ namespace GSM00700Service
                 loCls = new GSM00720Cls();
                 _logger.LogInfo("Run GetYearListCls|| GetYearCashFlowPlan(Controller)");
                 loRtnTmp = loCls.GetYearList(loDbPar);
+                _logger.LogInfo("Run GetYearStream || GetYearCashFlowPlan(Controller)");
                 loRtn = GetYearStream(loRtnTmp);
             }
             catch (Exception ex)

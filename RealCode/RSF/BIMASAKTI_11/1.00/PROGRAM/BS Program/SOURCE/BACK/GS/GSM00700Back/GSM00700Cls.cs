@@ -80,9 +80,9 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuerry = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_GROUP_TYPE', '', 'Login User Language')";
+                var lcQuery = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_GROUP_TYPE', '', 'Login User Language')";
                 loCmd.CommandType = System.Data.CommandType.Text;
-                loCmd.CommandText = lcQuerry;
+                loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
 
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
@@ -91,7 +91,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuerry, poParameter);
+                _logger.R_LogDebug("EXEC {Query} {@Parameters} || GetCashFlowGroup(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00700CashFlowGroupTypeDTO>(loReturnTemp).ToList();

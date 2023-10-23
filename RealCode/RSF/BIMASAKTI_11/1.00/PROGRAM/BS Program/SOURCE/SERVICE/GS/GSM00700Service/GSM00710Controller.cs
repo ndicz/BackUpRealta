@@ -41,7 +41,7 @@ namespace GSM00700Service
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                _logger.LogInfo("Run GetRecordCashFlowCls || GetRecordCashFlowGroup(Controller)");
+                _logger.LogInfo("Run GetRecordCashFlowCls || GetRecordCashFlow(Controller)");
                 loRtn.data = loCls.R_GetRecord(poParameter.Entity);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace GSM00700Service
             }
 
             loEx.ThrowExceptionIfErrors();
-            _logger.LogInfo("End || GetRecordCashFlowGroup(Controller)");
+            _logger.LogInfo("End || GetRecordCashFlow(Controller)");
             return loRtn;
         }
         [HttpPost]
@@ -68,11 +68,11 @@ namespace GSM00700Service
                 loCls = new GSM00710Cls();
                 loRtn = new R_ServiceSaveResultDTO<GSM00710DTO>();
 
-                _logger.LogInfo("Set Parameter || GetRecordCashFlowGroup(Controller)");
+                _logger.LogInfo("Set Parameter || GetRecordCashFlow(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
 
-                _logger.LogInfo("Run ServiceSaveCashFlowCls || GetRecordCashFlowGroup(Controller)");
+                _logger.LogInfo("Run ServiceSaveCashFlowCls || GetRecordCashFlow(Controller)");
                 loRtn.data = loCls.R_Save(poParameter.Entity, poParameter.CRUDMode);
             }
             catch (Exception ex)
@@ -82,25 +82,26 @@ namespace GSM00700Service
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
-            _logger.LogInfo("End || GetRecordCashFlowGroup(Controller)");
+            _logger.LogInfo("End || GetRecordCashFlow(Controller)");
             return loRtn;
 
         }
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM00710DTO> poParameter)
         {
-            _logger.LogInfo("Begin || ServiceDelete(Controller)");
+            _logger.LogInfo("Begin || ServiceDeleteCashFlow(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
             GSM00710Cls loCls;
             try
             {
-                _logger.LogInfo("Set Parameter || ServiceDelete(Controller)");
+                _logger.LogInfo("Set Parameter || ServiceDeleteCashFlowController)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
              
-                _logger.LogInfo("Run ServiceDeleteCls || ServiceDelete(Controller)");
                 loCls = new GSM00710Cls();
+
+                _logger.LogInfo("Run ServiceDeleteCls || ServiceDeleteCashFlow(Controller)");
                 loCls.R_Delete(poParameter.Entity);
             }
             catch (Exception ex)
@@ -110,7 +111,7 @@ namespace GSM00700Service
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
-            _logger.LogInfo("End || ServiceDelete(Controller)");
+            _logger.LogInfo("End || ServiceDeleteCashFlow(Controller)");
             return loRtn;
         }
         //[HttpPost]
@@ -158,8 +159,8 @@ namespace GSM00700Service
 
             try
             {
-                _logger.LogInfo("Set Parameter || GetListCashFlowType(Controller)");
                 loDbPar = new GSM00700DBParameter();
+                _logger.LogInfo("Set Parameter || GetListCashFlowType(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 //loDbPar.CCOMPANY_ID = "RCD";  
                 loCls = new GSM00710Cls();
@@ -196,8 +197,10 @@ namespace GSM00700Service
                 loDbPar.CCASH_FLOW_GROUP_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantGSM00700.CCASH_FLOW_GROUP_CODE);
 
                 loCls = new GSM00710Cls();
-                _logger.LogInfo("Run GetAllCashFlowStreamCls || GetAllCashFlowStream(Controller)");
+                _logger.LogInfo("Run GetAllCashFlowListCls || GetAllCashFlowStream(Controller)");
                 loRtnTmp = loCls.GetCashFlowList(loDbPar);
+
+                _logger.LogInfo("Run GetAllCashFlowStream || GetAllCashFlowStream(Controller)");
                 loRtn = GetAllCashFlowStream(loRtnTmp);
             }
             catch (Exception ex)

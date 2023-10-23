@@ -107,10 +107,10 @@ namespace GSM00700Service
                 _logger.LogInfo("Set Parameter || ServiceDeleteCashFlowGroup(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+                
+                loCls = new GSM00700Cls();
 
                 _logger.LogInfo("Run ServiceDeleteCls || ServiceDeleteCashFlowGroup(Controller)");
-
-                loCls = new GSM00700Cls();
                 loCls.R_Delete(poParameter.Entity);
             }
             catch (Exception ex)
@@ -141,8 +141,10 @@ namespace GSM00700Service
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
                 loCls = new GSM00700Cls();
 
-                _logger.LogInfo("Run GetAllCashFlowGr oupStreamCls || GetAllCashFlowGroupStream(Controller)");
+                _logger.LogInfo("Run GetAllCashFlowGroupListCls || GetAllCashFlowGroupStream(Controller)");
                 loRtnTmp = loCls.GetCashFlowGroupList(loDbPar);
+
+                _logger.LogInfo("Run GetAllCashFlowGroupStream || GetAllCashFlowGroupStream(Controller)");
                 loRtn = GetAllCashFlowGroupStream(loRtnTmp);
             }
             catch (Exception ex)
@@ -200,13 +202,13 @@ namespace GSM00700Service
 
             try
             {
-                _logger.LogInfo("Set Parameter || GetAllCashFlowGroupStream(Controller)");
+                _logger.LogInfo("Set Parameter || GetAllCashFlowGroupType(Controller)");
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 //loDbPar.CCOMPANY_ID = "RCD";
 
                 loCls = new GSM00700Cls();
-                _logger.LogInfo("Run GetCashFlowGroupTypeCls || GetAllCashFlowGroupStream(Controller)");
+                _logger.LogInfo("Run GetCashFlowGroupTypeCls || GetAllCashFlowGroupType(Controller)");
                 loResult = loCls.CashFlowGroupType(loDbPar);
                 loRtn = new GSM00700CashFlowGroupTypeListDTO() { Data = loResult };
 
@@ -218,13 +220,13 @@ namespace GSM00700Service
             }
 
             loEx.ThrowExceptionIfErrors();
-            _logger.LogInfo("End || GetAllCashFlowGroupStream(Controller)");
+            _logger.LogInfo("End || GetAllCashFlowGroupType(Controller)");
             return loRtn;
         }
         [HttpPost]  
         public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
         {
-            _logger.LogInfo("Begin || GetPrintCashFlowGroup(Controller)");
+            //_logger.LogInfo("Begin || GetPrintCashFlowGroup(Controller)");
             R_Exception loEx = new R_Exception();
             GSM00700PrintCashFlowParameterDTo loDbPar;
             List<GSM00700DTO> loRtnTmp;
@@ -232,11 +234,11 @@ namespace GSM00700Service
             IAsyncEnumerable<GSM00700DTO> loRtn = null;
             try
             {
-                _logger.LogInfo("Set Parameter || GetPrintCashFlowGroup(Controller)");
+                //_logger.LogInfo("Set Parameter || GetPrintCashFlowGroup(Controller)");
                 loDbPar = poParameter;
 
                 loCls = new GSM00700Cls();
-                _logger.LogInfo("Run GetPrintCashFlowGroup || GetPrintCashFlowGroup(Controller)");
+                //_logger.LogInfo("Run GetPrintCashFlowGroup || GetPrintCashFlowGroup(Controller)");
 
                 loRtnTmp = loCls.GetPrintParam(loDbPar);
                 loRtn = GetCashFlowPrint(loRtnTmp);
@@ -247,7 +249,7 @@ namespace GSM00700Service
                 _logger.LogError(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            //loEx.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetPrintCashFlowGroup(Controller)");
 
             return loRtn;
@@ -265,13 +267,16 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+
                 _logger.LogInfo("Set Parameter || GetYearFromPrintCashFlowGroup(Controller)");
-
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loCls = new GSM00700Cls();
-                _logger.LogInfo("Run GetYearFromPrintCls || GetYearFromPrintCashFlowGroup(Controller)");
 
+                loCls = new GSM00700Cls();
+
+                _logger.LogInfo("Run GetYearFromPrintCls || GetYearFromPrintCashFlowGroup(Controller)");
                 loRtnTmp = loCls.YearFromComboBoxPrint(loDbPar);
+
+                _logger.LogInfo("Run GetYearFromPrintStream || GetYearFromPrintCashFlowGroup(Controller)");
                 loRtn = GetYearFromPrintStream(loRtnTmp);
             }
             catch (Exception ex)
@@ -299,12 +304,16 @@ namespace GSM00700Service
             try
             {
                 loDbPar = new GSM00700DBParameter();
+
                 _logger.LogInfo("Set Parameter || GetYearToPrintCashFlowGroup(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                loCls = new GSM00700Cls();
-                _logger.LogInfo("Run GetYearFromPrintCls || GetYearToPrintCashFlowGroup(Controller)");
 
+                loCls = new GSM00700Cls();
+
+                _logger.LogInfo("Run GetYearFromPrintListCls || GetYearToPrintCashFlowGroup(Controller)");
                 loRtnTmp = loCls.YearToComboBoxPrint(loDbPar);
+
+                _logger.LogInfo("Run GetYearToPrintStream || GetYearToPrintCashFlowGroup(Controller)");
                 loRtn = GetYearToPrintStream(loRtnTmp);
             }
             catch (Exception ex)
