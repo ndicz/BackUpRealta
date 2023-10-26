@@ -49,7 +49,7 @@ namespace LMM02000Back
                         x.ParameterName == "LACTIVE" ||
                         x.ParameterName == "CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
 
 
                 loDb.SqlExecNonQuery(loConn, loCmd, true);
@@ -88,7 +88,7 @@ namespace LMM02000Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000GenderTypeDTO>(loReturnTemp).ToList();
@@ -125,7 +125,7 @@ namespace LMM02000Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuerry, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000SalesmanTypeDTO>(loReturnTemp).ToList();
@@ -167,7 +167,7 @@ namespace LMM02000Back
                         x.ParameterName == "CUSER_ID" ||
                         x.ParameterName == "CPROPERTY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000DTO>(loReturnTemp).ToList();
 
@@ -210,7 +210,7 @@ namespace LMM02000Back
                         x.ParameterName == "CPROPERTY_ID" ||
                         x.ParameterName == "CSALESMAN_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02010DTO>(loReturnTemp).ToList();
@@ -248,7 +248,7 @@ namespace LMM02000Back
                         x.ParameterName == "CCOMPANY_ID" ||
                         x.ParameterName == "CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMM02000PropertyDTO>(loReturnTemp).ToList();
@@ -287,7 +287,7 @@ namespace LMM02000Back
                         x.ParameterName == "CPROPERTY_ID" ||
                         x.ParameterName == "CSALESMAN_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
@@ -358,7 +358,7 @@ namespace LMM02000Back
                         x.ParameterName == "CACTION" ||
                         x.ParameterName == "CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {
@@ -443,7 +443,7 @@ namespace LMM02000Back
                         x.ParameterName == "CACTION" ||
                         x.ParameterName == "CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
                 try

@@ -34,7 +34,7 @@ namespace GSM02300Service
         {
             _logger.LogInfo("Begin || GetRecordPropertyType(Controller)");
 
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM02300DTO>();
             GSM02300DBParaneter loDbPar = new GSM02300DBParaneter();
 
@@ -50,11 +50,11 @@ namespace GSM02300Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordPropertyType(Controller)");
             return loRtn;
         }
@@ -82,7 +82,7 @@ namespace GSM02300Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();   
@@ -111,7 +111,7 @@ namespace GSM02300Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -121,7 +121,7 @@ namespace GSM02300Service
         //[HttpPost]
         //public GSM02300ListDTO GetAllProperty()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM02300ListDTO loRtn = null;
         //    List<GSM02300DTO> loResult;
         //    GSM02300DBParaneter loDbPar;
@@ -142,17 +142,17 @@ namespace GSM02300Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
         //[HttpPost]
         //public GSM02300ListPropertyTypeDTO GetPropertyType()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM02300ListPropertyTypeDTO loRtn = null;
         //    List<GSM02300PropertyTypeDTO> loResult;
         //    GSM02300DBParaneter loDbPar;
@@ -173,10 +173,10 @@ namespace GSM02300Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
@@ -206,7 +206,7 @@ namespace GSM02300Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -241,7 +241,7 @@ namespace GSM02300Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:

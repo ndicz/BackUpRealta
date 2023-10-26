@@ -35,7 +35,7 @@ namespace LMI00100Back
                         x.ParameterName == "@CCOMPANY_ID" ||
                         x.ParameterName == "@CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMI00100PropertyDTO>(loReturnTemp).ToList();
@@ -74,7 +74,7 @@ namespace LMI00100Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CPROPERTY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, loDbParam);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCommand, true);
                 loReturn = R_Utility.R_ConvertTo<LMI00100DTO>(loReturnTemp).ToList();
             }

@@ -43,7 +43,7 @@ namespace GSM05500Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -82,7 +82,7 @@ namespace GSM05500Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM05520DTOLocalBaseCurrency>(loReturnTemp).FirstOrDefault();
@@ -128,7 +128,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CRATETYPE_CODE" ||
                         x.ParameterName == "@CRATE_DATE").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -174,7 +174,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CRATETYPE_CODE" ||
                         x.ParameterName == "@CRATE_DATE").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
 
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
@@ -239,7 +239,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
 
@@ -318,7 +318,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CurrencyRate(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {

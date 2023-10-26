@@ -40,7 +40,7 @@ namespace LMI00100Service
         public LMI00100ListDTO GetAllLMI00100List()
         {
             _logger.LogInfo("Begin || GetAllVABankChannel(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMI00100ListDTO loRtn = null;
             List<LMI00100DTO> loResult;
             LMI00100DBParameter loDbPar;
@@ -64,11 +64,11 @@ namespace LMI00100Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllVABankChannel(Controller)");
             return loRtn;
         }
@@ -76,7 +76,7 @@ namespace LMI00100Service
         public LMI00100ListPropertyDTO GetLMI00100Property()
         {
             _logger.LogInfo("Begin || GetLProperyType(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMI00100ListPropertyDTO loRtn = null;
             List<LMI00100PropertyDTO> loResult;
             LMI00100DBParameter loDbPar;
@@ -99,11 +99,11 @@ namespace LMI00100Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetLProperyType(Controller)");
 
             return loRtn;
@@ -135,7 +135,7 @@ namespace LMI00100Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -171,7 +171,7 @@ namespace LMI00100Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:

@@ -50,7 +50,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -99,7 +99,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -140,7 +140,7 @@ namespace GSM00700Back
                         x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00720YearDTO>(loReturnTemp).ToList();
@@ -192,7 +192,7 @@ namespace GSM00700Back
                         x.ParameterName == "@CUSER_LOGIN_ID").
                     Select(x => x.Value);
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00720CopyFromYearDTO>(loReturnTemp).ToList();
@@ -245,7 +245,7 @@ namespace GSM00700Back
                         x.ParameterName == "@INO_PERIOD_TO" ||
                         x.ParameterName == "@CUSER_LOGIN_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);   
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);   
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00720CopyBaseLocalAmountDTO>(loReturnTemp).ToList();
@@ -299,7 +299,7 @@ namespace GSM00700Back
                         x.ParameterName == "@INO_PERIOD_TO" ||
                         x.ParameterName == "@CUSER_LOGIN_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00720CopyBaseLocalAmountDTO>(loReturnTemp).ToList();
@@ -336,7 +336,7 @@ namespace GSM00700Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -420,7 +420,7 @@ namespace GSM00700Back
                         x.ParameterName == "@CYEAR" ||
                         x.ParameterName == "@CPERIOD_NO").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls)", lcQuery, poEntity);
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM00720DTO>(loDataTable).FirstOrDefault();
@@ -486,7 +486,7 @@ namespace GSM00700Back
                        x.ParameterName == "@CUSER_ID").
                     Select(x => x.Value);
 
-               _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls) ", lcQuery, poNewEntity);
+               _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlowPlan(Cls) ", lcQuery, poNewEntity);
 
                 //loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);

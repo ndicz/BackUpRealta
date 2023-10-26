@@ -44,7 +44,7 @@ namespace GSM02300Back
                         x.ParameterName == "@CCOMPANY_ID" ||
                         x.ParameterName == "@CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -85,7 +85,7 @@ namespace GSM02300Back
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                                            x.ParameterName == "@CCOMPANY_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -127,9 +127,9 @@ namespace GSM02300Back
                         x.ParameterName == "CUSER_ID" ||
                         x.ParameterName == "CPROPERTY_TYPE_CODE").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
 
-
+                 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
                 loReturn = R_Utility.R_ConvertTo<GSM02300DTO>(loDataTable).FirstOrDefault();
@@ -180,7 +180,7 @@ namespace GSM02300Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poEntity);
 
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
@@ -259,7 +259,7 @@ namespace GSM02300Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poNewEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || VaBankChannel(Cls) ", lcQuery, poNewEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {

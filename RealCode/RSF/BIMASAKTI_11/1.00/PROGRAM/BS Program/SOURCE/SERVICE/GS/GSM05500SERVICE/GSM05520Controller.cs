@@ -30,7 +30,7 @@ namespace GSM05500Service
         public R_ServiceGetRecordResultDTO<GSM05520DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05520DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordCurrencyRate(Controller)");
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM05520DTO>();
 
             try
@@ -44,11 +44,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCurrencyRate(Controller)");
             return loRtn;
 
@@ -79,7 +79,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -108,7 +108,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -147,7 +147,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -196,7 +196,7 @@ namespace GSM05500Service
         public GSM05520DTOLocalBaseCurrency GetLcCurrency()
         {
             _logger.LogInfo("Begin || GetLocalCurrencyRate(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM05520DTOLocalBaseCurrency loRtn = null;
             GSM05520DTOLocalBaseCurrency loResult;
             GSM05500DBParameter loDbPar;
@@ -220,11 +220,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetLocalCurrencyRate(Controller)");
             return loRtn;
         }
@@ -256,7 +256,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:

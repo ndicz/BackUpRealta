@@ -48,7 +48,7 @@ namespace GSM00700Back
                         Select(x => x.Value);
 
 
-                    _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poParameter);
+                    _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poParameter);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -90,7 +90,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poParameter);
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
                 loReturn = R_Utility.R_ConvertTo<GSM00710CashFlowTypeDTO>(loReturnTemp).ToList();
             }
@@ -135,7 +135,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poEntity);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -207,7 +207,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, lcAction, poNewEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, lcAction, poNewEntity);
                 //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
                 {
@@ -284,7 +284,7 @@ namespace GSM00700Back
                     Select(x => x.Value);
 
 
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poEntity);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || CashFlow(Cls)", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCmd, true);
                 try
                 {

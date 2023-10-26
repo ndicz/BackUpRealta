@@ -31,7 +31,7 @@ namespace GSM00700Service
         public R_ServiceGetRecordResultDTO<GSM00720DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00720DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordCashFlowPlan(Controller)");
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00720DTO>();
             GSM00700DBParameter loDbPar = new GSM00700DBParameter();
             try
@@ -48,11 +48,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCashFlowPlan(Controller)");
             return loRtn;
         }
@@ -81,7 +81,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -96,7 +96,7 @@ namespace GSM00700Service
         //[HttpPost]
         //public GSM00720ListDTO GetAllCashFlowPlan()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM00720ListDTO loRtn = null;
         //    List<GSM00720DTO> loResult;
         //    GSM00700DBParameter loDbPar;
@@ -122,17 +122,17 @@ namespace GSM00700Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
         //[HttpPost]
         //public GSM00720YearListDTO GetYearList()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM00720YearListDTO loRtn = null;
         //    List<GSM00720YearDTO> loResult;
         //    GSM00700DBParameter loDbPar;
@@ -149,10 +149,10 @@ namespace GSM00700Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
@@ -185,7 +185,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -217,7 +217,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -229,7 +229,7 @@ namespace GSM00700Service
         public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
             _logger.LogInfo("Begin || GetCopyFromYearCashFlowPlan(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00720CopyFromYearListDTO loRtn = null;
             List<GSM00720CopyFromYearDTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -254,10 +254,10 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetCopyFromYearCashFlowPlan(Controller)");
             return loRtn;
         }
@@ -265,7 +265,7 @@ namespace GSM00700Service
         public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParameter)
         {
             _logger.LogInfo("Begin || GetCopyBaseAmountCashFlowPlan(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00720CopyBaseAmountListDTO loRtn = null;
             List<GSM00720CopyBaseLocalAmountDTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -294,11 +294,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetCopyBaseAmountCashFlowPlan(Controller)");
             return loRtn;
         }
@@ -306,7 +306,7 @@ namespace GSM00700Service
         public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto)
         {
             _logger.LogInfo("Begin || GetCopyLocalAmountCashFlowPlan(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00720CopyLocalAmountListDTO loRtn = null;
             List<GSM00720CopyBaseLocalAmountDTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -334,11 +334,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetCopyLocalAmountCashFlowPlan(Controller)");
             return loRtn;
         }
@@ -346,7 +346,7 @@ namespace GSM00700Service
         public GSM00720CurrencyDTO GetCurrencyList()
         {
             _logger.LogInfo("Begin || GetCurrencyCashFlowPlan(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00720CurrencyDTO loRtn = null;
             GSM00720CurrencyDTO loResult;
             GSM00700DBParameter loDbPar;
@@ -366,11 +366,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetCurrencyCashFlowPlan(Controller)");
             return loRtn;
         }
@@ -378,7 +378,7 @@ namespace GSM00700Service
         public GSM00720InitialProsesListDTO GetInitialProses()
         {
             _logger.LogInfo("Begin || GetInitialProsesCashFlowPlan(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00720InitialProsesListDTO loRtn = null;
             List<GSM00720InitialProsesDTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -397,18 +397,18 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetInitialProsesCashFlowPlan(Controller)");
             return loRtn;
         }
         [HttpPost]
         public GSM00710TemplateCashFlowUserInterface GetTemplate()
         {
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new GSM00710TemplateCashFlowUserInterface();
 
             try
@@ -427,10 +427,10 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
 
@@ -438,7 +438,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720TemplateCashFlowPlan GetTemplate720()
         {
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new GSM00720TemplateCashFlowPlan();
 
             try
@@ -457,10 +457,10 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
 

@@ -32,7 +32,7 @@ namespace GSM05500Service
         public R_ServiceGetRecordResultDTO<GSM05500DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05500DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordCurrency(Controller)");
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM05500DTO>();
 
             try
@@ -47,11 +47,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCurrency(Controller)");
             return loRtn;
 
@@ -63,7 +63,7 @@ namespace GSM05500Service
         public R_ServiceSaveResultDTO<GSM05500DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM05500DTO> poParameter)
         {
             _logger.LogInfo("Begin || ServiceSaveCurrency(Controller)");
-            R_Exception loException = new R_Exception();
+            R_Exception loExceptionception = new R_Exception();
             R_ServiceSaveResultDTO<GSM05500DTO> loRtn = null;
             GSM05500Cls loCls;
 
@@ -81,11 +81,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loException.Add(ex);
-                _logger.LogError(ex);
+                loExceptionception.Add(ex);
+                _logger.LogError(loExceptionception);
             };
         EndBlock:
-            loException.ThrowExceptionIfErrors();
+            loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceSaveCurrency(Controller)");
             return loRtn;
 
@@ -94,7 +94,7 @@ namespace GSM05500Service
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM05500DTO> poParameter)
         {
             _logger.LogInfo("Begin || ServiceDeleteCurrency(Controller)");
-            R_Exception loException = new R_Exception();
+            R_Exception loExceptionception = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
             GSM05500Cls loCls;
 
@@ -113,11 +113,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loException.Add(ex);
-                _logger.LogError(ex);
+                loExceptionception.Add(ex);
+                _logger.LogError(loExceptionception);
             };
         EndBlock:
-            loException.ThrowExceptionIfErrors();
+            loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceDeleteCurrency(Controller)");
             return loRtn;
         }
@@ -125,7 +125,7 @@ namespace GSM05500Service
         //[HttpPost]
         //public GSM05500ListDTO GetAllCurrencyList()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM05500ListDTO loRtn = null;
         //    List<GSM05500DTO> loResult;
         //    GSM05500DBParameter loDbPar;
@@ -146,10 +146,10 @@ namespace GSM05500Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
@@ -160,7 +160,7 @@ namespace GSM05500Service
         public IAsyncEnumerable<GSM05500DTO> GetAllCurrencyStream()
         {
             _logger.LogInfo("Begin || GetAllCurrencyStream(Controller)");
-            R_Exception loException = new R_Exception();
+            R_Exception loExceptionception = new R_Exception();
             GSM05500DBParameter loDbPar;
             List<GSM05500DTO> loRtnTmp;
             GSM05500Cls loCls;
@@ -185,12 +185,12 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loException.Add(ex);
-                _logger.LogError(ex);
+                loExceptionception.Add(ex);
+                _logger.LogError(loExceptionception);
             }
 
         EndBlock:
-            loException.ThrowExceptionIfErrors();
+            loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllCurrencyStream(Controller)");
             return loRtn;
         }

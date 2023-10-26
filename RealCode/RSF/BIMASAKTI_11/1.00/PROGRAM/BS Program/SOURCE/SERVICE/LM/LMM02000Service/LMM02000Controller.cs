@@ -33,7 +33,7 @@ namespace LMM02000Services
         public R_ServiceGetRecordResultDTO<LMM02000DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<LMM02000DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordSalesman(Controller)");
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<LMM02000DTO>();
             LMM02000DBParameter loDbPar;
             try
@@ -49,11 +49,11 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordSalesman(Controller)");
             return loRtn;
         }
@@ -83,7 +83,7 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -114,7 +114,7 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -152,7 +152,7 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -165,7 +165,7 @@ namespace LMM02000Services
         public LMM02000ListDTO GetAllLMM02000List()
         {
             _logger.LogInfo("Begin || GetAllSalesmanList(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMM02000ListDTO loRtn = null;
             List<LMM02000DTO> loResult;
             LMM02000DBParameter loDbPar;
@@ -189,11 +189,11 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllSalesmanList(Controller)");
             return loRtn;
         }
@@ -202,7 +202,7 @@ namespace LMM02000Services
         public LMM02010ListDTO GetAllLMM02010List()
         {
             _logger.LogInfo("Begin || GetAllSalesmanList(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMM02010ListDTO loRtn = null;
             List<LMM02010DTO> loResult;
             LMM02000DBParameter loDbPar;
@@ -228,12 +228,12 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllSalesmanList(Controller)");
             return loRtn;
         }
@@ -242,7 +242,7 @@ namespace LMM02000Services
         public LMM02000ListPropertyDTO GetLMM02000Property()
         {
             _logger.LogInfo("Begin || GetProperty(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMM02000ListPropertyDTO loRtn = null;
             List<LMM02000PropertyDTO> loResult;
             LMM02000DBParameter loDbPar;
@@ -265,11 +265,11 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetProperty(Controller)");
             return loRtn;
         }
@@ -304,7 +304,7 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -317,7 +317,7 @@ namespace LMM02000Services
         public LMM02000ListGenderTypeDTO GetGender()
         {
             _logger.LogInfo("Begin || GetGender(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMM02000ListGenderTypeDTO loRtn = null;
             List<LMM02000GenderTypeDTO> loResult;
             LMM02000DBParameter loDbPar;
@@ -337,11 +337,11 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetGender(Controller)");
             return loRtn;
         }
@@ -350,7 +350,7 @@ namespace LMM02000Services
         public LMM02000ListSalesmanTypeDTO GetSalesmanType()
         {
             _logger.LogInfo("Begin || GetSalesmanType(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             LMM02000ListSalesmanTypeDTO loRtn = null;
             List<LMM02000SalesmanTypeDTO> loResult;
             LMM02000DBParameter loDbPar;
@@ -370,11 +370,11 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetSalesmanType(Controller)");
             return loRtn;
         }
@@ -408,7 +408,7 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             loException.ThrowExceptionIfErrors();
@@ -420,7 +420,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000Template GetTemplate()
         {
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new LMM02000Template();
 
             try
@@ -439,10 +439,10 @@ namespace LMM02000Services
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
+                loException.Add(ex);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
 
             return loRtn;
         }

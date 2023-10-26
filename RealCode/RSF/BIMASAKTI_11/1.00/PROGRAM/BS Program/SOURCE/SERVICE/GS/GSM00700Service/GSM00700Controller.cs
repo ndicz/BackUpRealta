@@ -35,7 +35,7 @@ namespace GSM00700Service
         {
             _logger.LogInfo("Begin || GetRecordCashFlowGroup(Controller)");
 
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00700DTO>();
             GSM00700DBParameter loDbPar = new GSM00700DBParameter();
 
@@ -54,12 +54,12 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
 
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCashFlowGroup(Controller)");
             return loRtn;
         }
@@ -87,7 +87,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -116,7 +116,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
         EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -150,7 +150,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
         EndBlock:
@@ -162,7 +162,7 @@ namespace GSM00700Service
         //[HttpPost]
         //public GSM00700ListDTO GetAllCashFlowGroupList()
         //{
-        //    R_Exception loEx = new R_Exception();
+        //    R_Exception loException = new R_Exception();
         //    GSM00700ListDTO loRtn = null;
         //    List<GSM00700DTO> loResult;
         //    GSM00700DBParameter loDbPar;
@@ -183,10 +183,10 @@ namespace GSM00700Service
         //    }
         //    catch (Exception ex)
         //    {
-        //        loEx.Add(ex);
+        //        loException.Add(ex);
         //    }
 
-        //    loEx.ThrowExceptionIfErrors();
+        //    loException.ThrowExceptionIfErrors();
 
         //    return loRtn;
         //}
@@ -194,7 +194,7 @@ namespace GSM00700Service
         public GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType()
         {
             _logger.LogInfo("Begin || GetCashFlowGroupType(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00700CashFlowGroupTypeListDTO loRtn = null;
             List<GSM00700CashFlowGroupTypeDTO> loResult;
             GSM00700DBParameter loDbPar;
@@ -215,11 +215,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllCashFlowGroupType(Controller)");
             return loRtn;
         }
@@ -227,7 +227,7 @@ namespace GSM00700Service
         public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
         {
             //_logger.LogInfo("Begin || GetPrintCashFlowGroup(Controller)");
-            R_Exception loEx = new R_Exception();
+            R_Exception loException = new R_Exception();
             GSM00700PrintCashFlowParameterDTo loDbPar;
             List<GSM00700DTO> loRtnTmp;
             GSM00700Cls loCls;
@@ -245,11 +245,11 @@ namespace GSM00700Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            //loEx.ThrowExceptionIfErrors();
+            //loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetPrintCashFlowGroup(Controller)");
 
             return loRtn;
@@ -282,7 +282,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:
@@ -319,7 +319,7 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:

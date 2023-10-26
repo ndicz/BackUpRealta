@@ -31,7 +31,7 @@ namespace GSM05500Service
         public R_ServiceGetRecordResultDTO<GSM05510DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05510DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordRateType(Controller)");
-            var loEx = new R_Exception();
+            var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM05510DTO>();
 
             try
@@ -46,11 +46,11 @@ namespace GSM05500Service
             }
             catch (Exception ex)
             {
-                loEx.Add(ex);
-                _logger.LogError(ex);
+                loException.Add(ex);
+                _logger.LogError(loException);
             }
 
-            loEx.ThrowExceptionIfErrors();
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordRateType(Controller)");
             return loRtn;
 
@@ -79,7 +79,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -109,7 +109,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             };
             EndBlock:
             loException.ThrowExceptionIfErrors();
@@ -180,7 +180,7 @@ namespace GSM05500Service
             catch (Exception ex)
             {
                 loException.Add(ex);
-                _logger.LogError(ex);
+                _logger.LogError(loException);
             }
 
             EndBlock:

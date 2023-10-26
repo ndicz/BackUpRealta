@@ -42,7 +42,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CCOMPANY_ID" ||
                         x.ParameterName == "@CUSER_ID").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, poParameter);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -84,7 +84,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CCURRENCY_CODE").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
 
                 var loDataTable = loDb.SqlExecQuery(loConn, loCommand, true);
 
@@ -143,7 +143,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
 
                 try
@@ -210,7 +210,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
-                _logger.R_LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, loDbParam);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
                 try
                 {
