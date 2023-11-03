@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using GSM00700Common.DTO;
 using GSM00700Model;
+using Lookup_APCOMMON.DTOs.APL00100;
+using Lookup_APFRONT;
 using Lookup_GSCOMMON.DTOs;
 using Lookup_GSFRONT;
 using R_BlazorFrontEnd.Controls;
@@ -49,16 +51,32 @@ namespace GSM00700Front
 
             try
             {
-                eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+                //eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+
+                //{
+
+                //    CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
+                //    CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+                //    //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+
+                //};
+                //eventArgs.TargetPageType = typeof(GSL01500);
+
+
+
+                eventArgs.Parameter = new APL00100ParameterDTO()
 
                 {
 
-                    CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
-                    CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+                    CCOMPANY_ID = "001",
+                    CPROPERTY_ID = "ASHMD",
+                    CSEARCH_TEXT = "",
+                    CLANGUAGE_ID = "en",
+
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
 
                 };
-                eventArgs.TargetPageType = typeof(GSL01500);
+                eventArgs.TargetPageType = typeof(APL00100);
             }
             catch (Exception ex)
             {

@@ -275,7 +275,7 @@ namespace LMM02000Front
 
             R_DisplayException(loEx);
         }
-
+        private string loLabel;
         private bool enableSalesmanType;
         private bool enableActiveInactive;
         private bool enableSalesmanId;
@@ -350,6 +350,17 @@ namespace LMM02000Front
 
                 await _viewModel.GetEntity(loParam);
                 eventArgs.Result = _viewModel.loEntity;
+
+                if (loParam.LACTIVE)
+                {
+                    loLabel = "Inactive";
+                    _viewModel.Data.LACTIVE = false;
+                }
+                else
+                {
+                    loLabel = "Activate";
+                    _viewModel.Data.LACTIVE = true;
+                }
             }
             catch (Exception ex)
             {

@@ -11,5 +11,8 @@ namespace Lookup_APCOMMON.DTOs.APL00400
         public string CACTIVE_TYPE { get; set; }
         public string CLANGUAGE_ID { get; set; }
 
+        public string CCATEGORY_ID { get; set; }
+        public string CTAXABLE_TYPE { get; set; }
+
     }
 }

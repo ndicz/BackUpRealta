@@ -1,0 +1,5 @@
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.csproj.CoreCompileInputs.cache

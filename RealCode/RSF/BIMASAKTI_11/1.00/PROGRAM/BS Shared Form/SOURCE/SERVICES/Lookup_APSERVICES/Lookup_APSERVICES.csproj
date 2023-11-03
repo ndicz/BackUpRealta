@@ -10,6 +10,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\..\BACK\Lookup_APCOMMON\Lookup_APCOMMON.csproj" />
+	  <ProjectReference Include="..\..\BACK\Lookup_APBACK\Lookup_APBACK.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

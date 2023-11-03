@@ -2421,6 +2421,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GSM00700Model": "1.0.0",
+          "Lookup_APCOMMON": "1.0.0",
+          "Lookup_APFRONT": "1.0.0",
+          "Lookup_APModel": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Lookup_GSModel": "1.0.0",
@@ -2618,6 +2621,43 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "Lookup_APCOMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_APCOMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APCOMMON.dll": {}
+        }
+      },
+      "Lookup_APFRONT/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_APModel": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_APFRONT.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APFRONT.dll": {}
+        }
+      },
+      "Lookup_APModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Lookup_APCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_APModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APModel.dll": {}
         }
       },
       "Lookup_GSCOMMON/1.0.0": {
@@ -5069,6 +5109,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GSM00700Model": "1.0.0",
+          "Lookup_APCOMMON": "1.0.0",
+          "Lookup_APFRONT": "1.0.0",
+          "Lookup_APModel": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Lookup_GSModel": "1.0.0",
@@ -5266,6 +5309,43 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "Lookup_APCOMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_APCOMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APCOMMON.dll": {}
+        }
+      },
+      "Lookup_APFRONT/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_APModel": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_APFRONT.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APFRONT.dll": {}
+        }
+      },
+      "Lookup_APModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Lookup_APCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_APModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APModel.dll": {}
         }
       },
       "Lookup_GSCOMMON/1.0.0": {
@@ -10775,6 +10855,21 @@
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj"
+    },
+    "Lookup_APCOMMON/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/BACK/Lookup_APCOMMON/Lookup_APCOMMON.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/BACK/Lookup_APCOMMON/Lookup_APCOMMON.csproj"
+    },
+    "Lookup_APFRONT/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFRONT/Lookup_APFRONT.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFRONT/Lookup_APFRONT.csproj"
+    },
+    "Lookup_APModel/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APModel/Lookup_APModel.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APModel/Lookup_APModel.csproj"
     },
     "Lookup_GSCOMMON/1.0.0": {
       "type": "project",

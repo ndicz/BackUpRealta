@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Lookup_APBACK/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_APCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_APBACK.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APBACK.dll": {}
+        }
+      },
       "Lookup_APCOMMON/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "Lookup_APBACK/1.0.0": {
+      "type": "project",
+      "path": "../../BACK/Lookup_APBACK/Lookup_APBACK.csproj",
+      "msbuildProject": "../../BACK/Lookup_APBACK/Lookup_APBACK.csproj"
+    },
     "Lookup_APCOMMON/1.0.0": {
       "type": "project",
       "path": "../../BACK/Lookup_APCOMMON/Lookup_APCOMMON.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Lookup_APBACK >= 1.0.0",
       "Lookup_APCOMMON >= 1.0.0"
     ]
   },
@@ -59,6 +78,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\BACK\\Lookup_APBACK\\Lookup_APBACK.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\BACK\\Lookup_APBACK\\Lookup_APBACK.csproj"
+            },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\BACK\\Lookup_APCOMMON\\Lookup_APCOMMON.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\BACK\\Lookup_APCOMMON\\Lookup_APCOMMON.csproj"
             }

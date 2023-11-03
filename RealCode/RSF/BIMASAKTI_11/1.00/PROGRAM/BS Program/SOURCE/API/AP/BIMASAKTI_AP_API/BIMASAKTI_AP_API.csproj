@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\Lookup_APSERVICES.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="R_APIStartUp">
       <HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APIStartUp.dll</HintPath>
     </Reference>

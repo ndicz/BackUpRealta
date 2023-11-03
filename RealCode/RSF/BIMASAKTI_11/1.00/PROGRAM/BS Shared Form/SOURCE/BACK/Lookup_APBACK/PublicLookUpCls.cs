@@ -171,7 +171,7 @@ namespace Lookup_APBACK
             return loReturn;
         }
 
-        public List<APL00400DTO> ProductLookup(APL00400ParameterDTO poParameter)
+        public List<APL00400DTO> ProductAllocationLookup(APL00400ParameterDTO poParameter)
         {
             R_Exception loException = new R_Exception();
             List<APL00400DTO> loReturn = null;
@@ -184,13 +184,11 @@ namespace Lookup_APBACK
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuery = @"RSP_AP_LOOKUP_PRODUCT";
+                var lcQuery = @"RSP_AP_LOOKUP_PRODUCT_ALLOCATION";
                 loCmd.CommandType = CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 10, poParameter.CPROPERTY_ID);
-                //loDb.R_AddCommandParameter(loCmd, "@CCATEGORY_ID", DbType.String, 10, poParameter.CCATEGORY_ID);
-                //loDb.R_AddCommandParameter(loCmd, "@CTAXABLE_TYPE", DbType.String, 10, poParameter.CTAXABLE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CACTIVE_TYPE", DbType.String, 10, poParameter.CACTIVE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
 

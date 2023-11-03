@@ -1,0 +1,49 @@
+@inherits R_Page
+@attribute [R_Page(Title = "Supplier")])]
+<R_StackLayout Style="width: 800px">
+    <R_StackLayout Row>
+        <R_ItemLayout col="3">
+            <R_TextBox @bind-Value="@_viewModel.Data.CSEARCH_TEXT"
+                       R_ConductorSource="@_conductorRef"
+                       Enabled="true" />
+        </R_ItemLayout>
+        
+        <R_ItemLayout col="3">
+            <R_Button OnClick="Button_OnClickOkAsync">
+                Search
+            </R_Button>
+        </R_ItemLayout>
+        
+        <R_ItemLayout col="3">
+            <R_Button OnClick="Button_OnClickOkAsync">
+                Show All
+            </R_Button>
+        </R_ItemLayout>
+
+    </R_StackLayout>
+
+    <R_StackLayout Row>
+        <R_Grid @ref="@GridRef"
+                DataSource="_viewModel.SupplierGrid"
+                R_ServiceGetListRecord="R_ServiceGetListRecordAsync"
+                Pageable
+                PageSize="5">
+            <R_GridColumns>
+                <R_GridTextColumn FieldName="CSUPPLIER_ID" HeaderText="Supplier ID"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CSUPPLIER_NAME" HeaderText="Suplier Name"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CADDRESS" HeaderText="Address"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CCITY_NAME" HeaderText="City"></R_GridTextColumn>
+            </R_GridColumns>
+        </R_Grid>
+        </R_StackLayout>
+
+        <R_StackLayout Row Class="justify-content-end">
+        <R_Button OnClick="Button_OnClickOkAsync">
+            OK
+        </R_Button>
+        <R_Button OnClick="Button_OnClickCloseAsync">
+            Cancel
+        </R_Button>
+    </R_StackLayout>
+
+    </R_StackLayout>
