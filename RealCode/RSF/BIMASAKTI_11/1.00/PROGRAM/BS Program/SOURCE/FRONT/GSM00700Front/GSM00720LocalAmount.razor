@@ -91,7 +91,8 @@
 
 <R_StackLayout Row Class="justify-content-end">
     <R_ItemLayout>
-        <R_Button Enabled="@(_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM <= _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)">
+        <R_Button Enabled="@(_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM <= _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)"
+            OnClick="Button_OnClickProcessAsync">
             Process
         </R_Button>
     </R_ItemLayout>
@@ -101,3 +102,7 @@
         </R_Button>
     </R_ItemLayout>
 </R_StackLayout>
+
+<R_Conductor @ref="@R_conduct"
+             R_ViewModel="@_GSM00720ViewModel"
+             R_IsHeader="true"/>

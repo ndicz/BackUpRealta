@@ -7,6 +7,7 @@ D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_APICommonDTO.dll
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_CommonFrontBackAPI.dll
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_ContextBackEnd.dll
+D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_StorageCommon.dll
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_Security.dll
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
 D:\Work\Code\Backup 1.3 RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_LMBACK\bin\Debug\net6.0\Lookup_LMCOMMON.pdb

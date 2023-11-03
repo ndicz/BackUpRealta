@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "7eFdF9tOZi44AGbII/khgfZQ44ZdkN4q8GCsmQ/m90w=",
+  "Source": "GLF00100FRONT",
+  "BasePath": "_content/GLF00100FRONT",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "GLF00100FRONT\\wwwroot",
+      "Source": "GLF00100FRONT",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GLF00100FRONT\\wwwroot\\",
+      "BasePath": "_content/GLF00100FRONT",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GLF00100FRONT\\wwwroot\\background.png",
+      "SourceId": "GLF00100FRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GLF00100FRONT\\wwwroot\\",
+      "BasePath": "_content/GLF00100FRONT",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GLF00100FRONT\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "GLF00100FRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GLF00100FRONT\\wwwroot\\",
+      "BasePath": "_content/GLF00100FRONT",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
+}

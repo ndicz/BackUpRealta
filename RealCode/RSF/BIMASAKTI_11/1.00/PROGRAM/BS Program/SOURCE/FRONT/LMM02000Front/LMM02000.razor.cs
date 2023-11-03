@@ -291,7 +291,7 @@ namespace LMM02000Front
                 if (enableSalesmanType = lsProperty == "I")
                 {
                     enableSalesmanType = false;
-                    _viewModel.Data.CEXT_COMPANY_NAME = ClientHelper.CompanyId;
+                    _viewModel.Data.CEXT_COMPANY_NAME = null;
                 }
                 else
                 {

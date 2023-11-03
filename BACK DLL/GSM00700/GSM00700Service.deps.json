@@ -11,6 +11,7 @@
           "GSM00700Back": "1.0.0",
           "GSM00700Common": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
+          "BaseHeaderReportCOMMON": "1.0.0.0",
           "R_APIBackEnd": "1.0.0.0",
           "R_APICommon": "1.0.0.0",
           "R_APICommonDTO": "1.0.0.0",
@@ -658,11 +659,6 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
-      "BaseHeaderReportCOMMON/1.0.0": {
-        "runtime": {
-          "BaseHeaderReportCOMMON.dll": {}
-        }
-      },
       "GSM00700Back/1.0.0": {
         "dependencies": {
           "GSM00700Common": "1.0.0",
@@ -675,9 +671,6 @@
         }
       },
       "GSM00700Common/1.0.0": {
-        "dependencies": {
-          "BaseHeaderReportCOMMON": "1.0.0"
-        },
         "runtime": {
           "GSM00700Common.dll": {}
         }
@@ -690,6 +683,14 @@
       "RSP_GS_MAINTAIN_CASHFLOW_GROUPResources/1.0.0": {
         "runtime": {
           "RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.dll": {}
+        }
+      },
+      "BaseHeaderReportCOMMON/1.0.0.0": {
+        "runtime": {
+          "BaseHeaderReportCOMMON.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "R_APIBackEnd/1.0.0.0": {
@@ -1355,11 +1356,6 @@
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
     },
-    "BaseHeaderReportCOMMON/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "GSM00700Back/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1377,6 +1373,11 @@
     },
     "RSP_GS_MAINTAIN_CASHFLOW_GROUPResources/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BaseHeaderReportCOMMON/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

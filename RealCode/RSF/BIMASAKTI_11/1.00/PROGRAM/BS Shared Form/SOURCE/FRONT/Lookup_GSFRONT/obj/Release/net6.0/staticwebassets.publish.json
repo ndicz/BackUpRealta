@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "1Msc0vUip3KZwXAruzZzy2/qIKUcPKwiqos6EE1KPeU=",
+  "Hash": "bRR0c26cl+noEzOiAV5Rqk/QG657LLn++kXPz44+Tjw=",
   "Source": "Lookup_GSFRONT",
   "BasePath": "_content/Lookup_GSFRONT",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Lookup_GSFRONT\\wwwroot",
+      "Source": "Lookup_GSFRONT",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\background.png",
+      "SourceId": "Lookup_GSFRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Lookup_GSFRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\BIMASAKTI\\Bimasakti-version\\Bimasakti-version\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
 }

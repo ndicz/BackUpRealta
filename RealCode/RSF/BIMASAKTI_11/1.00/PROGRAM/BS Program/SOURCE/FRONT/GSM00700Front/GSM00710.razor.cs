@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Components;
 using R_BlazorFrontEnd.Controls.Popup;
 using R_BlazorFrontEnd.Controls.MessageBox;
 using Microsoft.JSInterop;
+using Lookup_GSCOMMON.DTOs;
 
 namespace GSM00700Front
 {
@@ -362,6 +363,10 @@ namespace GSM00700Front
             R_Exception loException = new R_Exception();
             try
             {
+                var loTempResult = (GSM00720CopyFromYearDTO)eventArgs.Result;
+                if (loTempResult == null)
+                    return;
+
                 await _gridRef00720.R_RefreshGrid(null);
 
             }

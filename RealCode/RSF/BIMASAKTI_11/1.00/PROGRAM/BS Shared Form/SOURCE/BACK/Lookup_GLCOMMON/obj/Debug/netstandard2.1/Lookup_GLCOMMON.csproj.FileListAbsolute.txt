@@ -1,0 +1,13 @@
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\bin\Debug\netstandard2.1\Lookup_GLCOMMON.deps.json
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\bin\Debug\netstandard2.1\Lookup_GLCOMMON.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\bin\Debug\netstandard2.1\Lookup_GLCOMMON.pdb
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.csproj.AssemblyReference.cache
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.AssemblyInfoInputs.cache
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.AssemblyInfo.cs
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.csproj.CoreCompileInputs.cache
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.csproj.CopyComplete
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLCOMMON\obj\Debug\netstandard2.1\Lookup_GLCOMMON.pdb

@@ -1,0 +1,9 @@
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\bin\Debug\netstandard2.1\Lookup_GLBackResources.deps.json
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\bin\Debug\netstandard2.1\Lookup_GLBackResources.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\bin\Debug\netstandard2.1\Lookup_GLBackResources.pdb
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.AssemblyInfoInputs.cache
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.AssemblyInfo.cs
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.csproj.CoreCompileInputs.cache
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.dll
+D:\WorkSheet\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GLBackResources\obj\Debug\netstandard2.1\Lookup_GLBackResources.pdb

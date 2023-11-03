@@ -19,15 +19,7 @@
           "GSM05500Service.dll": {}
         }
       },
-      "BaseHeaderReportCommon/1.0.0": {
-        "runtime": {
-          "BaseHeaderReportCommon.dll": {}
-        }
-      },
       "GSM00700Common/1.0.0": {
-        "dependencies": {
-          "BaseHeaderReportCommon": "1.0.0"
-        },
         "runtime": {
           "GSM00700Common.dll": {}
         }
@@ -106,6 +98,14 @@
           }
         }
       },
+      "BaseHeaderReportCOMMON/1.0.0.0": {
+        "runtime": {
+          "BaseHeaderReportCOMMON.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "R_ContextBackEnd/1.0.0.0": {
         "runtime": {
           "R_ContextBackEnd.dll": {
@@ -142,11 +142,6 @@
   },
   "libraries": {
     "GSM05500Service/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "BaseHeaderReportCommon/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -197,6 +192,11 @@
       "sha512": ""
     },
     "R_CommonFrontBackAPI/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BaseHeaderReportCOMMON/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

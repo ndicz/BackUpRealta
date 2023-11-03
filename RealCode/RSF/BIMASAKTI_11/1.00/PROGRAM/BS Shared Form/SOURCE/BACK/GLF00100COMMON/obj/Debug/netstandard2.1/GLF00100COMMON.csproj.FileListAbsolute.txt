@@ -1,0 +1,13 @@
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\bin\Debug\netstandard2.1\GLF00100COMMON.deps.json
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\bin\Debug\netstandard2.1\GLF00100COMMON.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\bin\Debug\netstandard2.1\GLF00100COMMON.pdb
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\bin\Debug\netstandard2.1\R_APICommonDTO.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.csproj.AssemblyReference.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.GeneratedMSBuildEditorConfig.editorconfig
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.AssemblyInfoInputs.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.AssemblyInfo.cs
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.csproj.CoreCompileInputs.cache
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.csproj.CopyComplete
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.dll
+D:\BIMASAKTI\Bimasakti-version\Bimasakti-version\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\GLF00100COMMON\obj\Debug\netstandard2.1\GLF00100COMMON.pdb

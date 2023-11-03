@@ -69,14 +69,16 @@ namespace GSM00700Front
             return Task.CompletedTask;
         }
 
-        private Task R_AfterOpenLookUp(R_AfterOpenLookupEventArgs EventArgs)
+        private void R_AfterOpenLookUp(R_AfterOpenLookupEventArgs EventArgs)
         {
             var loData = (GSL01700DTO)EventArgs.Result;
+            if (loData == null)
+                return;
             _GSM00720ViewModel.loCopyBaseAmountEntity.CCURENCY_RATE = loData.NLCURRENCY_RATE_AMOUNT.ToString();
             _GSM00720ViewModel.loCopyBaseAmountEntity.CCURRENCY_CODE = loData.CCURRENCY_CODE;
 
 
-            return Task.CompletedTask;
+            //return Task.CompletedTask;
         }
 
 
@@ -100,9 +102,6 @@ namespace GSM00700Front
             }
 
             loEx.ThrowExceptionIfErrors();
-
-
-
             await this.Close(true, loData);
         }
 

@@ -13,10 +13,8 @@ namespace Lookup_LMCOMMON.DTOs
         public string CSUPERVISOR_NAME { get; set; }
         public string CDEPT_CODE { get; set; }
         public string CDEPT_NAME { get; set; }
-        public string DEPTCODE_AND_NAME
-        {
-            get => dEPTCODE_AND_NAME;
-            set => dEPTCODE_AND_NAME = CDEPT_NAME + " (" + CDEPT_CODE + ")";
-        }
+        public string DEPTCODE_AND_NAME { 
+            get => dEPTCODE_AND_NAME; 
+            set => dEPTCODE_AND_NAME = CDEPT_NAME + " (" + CDEPT_CODE + ")"; }
     }
 }

@@ -69,13 +69,16 @@ namespace GSM00700Front
             return Task.CompletedTask;
         }
 
-        private Task R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
+        private void R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
         {
             var loEx = new R_Exception();
 
             try
             {
-                var loData = (GSL01500ResultDetailDTO)eventArgs.Result;
+                var loData = (GSL01500DTO)eventArgs.Result;
+                if (loData == null)
+                    return;
+
                 _GSM00720ViewModel.loCopyFromEntity.CFROMGOUP = loData.CCASH_FLOW_GROUP_CODE;
                 _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
                 _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;
@@ -86,7 +89,7 @@ namespace GSM00700Front
             }
 
             loEx.ThrowExceptionIfErrors();
-            return Task.CompletedTask;
+            //return Task.CompletedTask;
 
 
 
