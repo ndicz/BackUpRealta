@@ -21,8 +21,4 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModel\APL00400\" />
-  </ItemGroup>
-
 </Project>

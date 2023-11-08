@@ -12,5 +12,9 @@ namespace Lookup_APCOMMON.DTOs.APL00400
         public string CGLACCOUNT_NO { get; set; }
         public string CGLACCOUNT_NAME { get; set; }
 
+        // private string _CTRANSACTION;
+        public string GLACCOUNT { get => CGLACCOUNT_NO + " - " + CGLACCOUNT_NAME; }
     }
+
 }
+
