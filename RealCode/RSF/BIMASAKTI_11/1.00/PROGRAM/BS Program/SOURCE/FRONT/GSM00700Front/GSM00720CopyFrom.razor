@@ -31,7 +31,8 @@
                            Enabled="false" />
             </R_ItemLayout>
             <R_ItemLayout>
-                <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp" @ref="CashFlow" Enabled="@(_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG == "01")"> ...</R_Lookup>
+                <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUp" R_After_Open_Lookup="R_AfterOpenLookUp" @ref="CashFlow" 
+                          Enabled="@(_GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG == "01")"> ...</R_Lookup>
             </R_ItemLayout>
             <R_ItemLayout col="12">
                 <R_TextBox @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CashFlowName"

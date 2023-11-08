@@ -19,7 +19,7 @@ namespace Lookup_APModel
 {
     public class PublicLookupModel : R_BusinessObjectServiceClientBase<APL00100DTO>, IPublicLookup
     {
-        private const string DEFAULT_HTTP = "R_DefaultServiceUrl";
+        private const string DEFAULT_HTTP = "R_DefaultServiceUrlAP";
         private const string DEFAULT_ENDPOINT = "api/PublicLookup";
         private const string DEFAULT_MODULE = "AP";
 
@@ -83,7 +83,7 @@ namespace Lookup_APModel
             {
                 //context
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CPROPERTY_ID, poParam.CPROPERTY_ID);
-                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CSEARCH_TEXT, poParam.CSUPPLIER_ID);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CSUPPLIER_ID, poParam.CSUPPLIER_ID);
 
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00110DTO>(
@@ -123,6 +123,7 @@ namespace Lookup_APModel
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CTAXABLE_TYPE, poParam.CTAXABLE_TYPE);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CACTIVE_TYPE, poParam.CACTIVE_TYPE);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CCATEGORY_ID, poParam.CCATEGORY_ID);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CTAX_DATE, poParam.CTAX_DATE);
 
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00200DTO>(
@@ -162,6 +163,7 @@ namespace Lookup_APModel
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CTAXABLE_TYPE, poParam.CTAXABLE_TYPE);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CACTIVE_TYPE, poParam.CACTIVE_TYPE);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CCATEGORY_ID, poParam.CCATEGORY_ID);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CTAX_DATE, poParam.CTAX_DATE);
 
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00300DTO>(

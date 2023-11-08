@@ -13,14 +13,17 @@ namespace Lookup_APModel.ViewModel.APL00100
     {
         private PublicLookupModel _model = new PublicLookupModel();
         public ObservableCollection<APL00100DTO> SupplierGrid = new ObservableCollection<APL00100DTO>();
-
-        public async Task GetSupplierList(APL00100ParameterDTO poParam)
+        public string SearchText { get; set; } = "";
+        public APL00100ParameterDTO ParameterLookup { get; set; }
+        public async Task GetSupplierList()
         {
             var loEx = new R_Exception();
 
             try
             {
-                var loResult = await _model.APL00100SupplierLookUpAsync(poParam);
+                
+                ParameterLookup.CSEARCH_TEXT = SearchText;
+                var loResult = await _model.APL00100SupplierLookUpAsync(ParameterLookup);
 
                 SupplierGrid = new ObservableCollection<APL00100DTO>(loResult);
             }

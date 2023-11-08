@@ -1,5 +1,4 @@
 using BlazorMenu.Extensions;
-using BlazorPrettyCode;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using R_BlazorFrontEnd;
@@ -21,8 +20,7 @@ builder.Services.R_AddBlazorFrontEnd();
 
 builder.Services.AddTransient<R_IFileConverter, R_FileConverter>();
 builder.Services.AddTransient<R_IReport, R_ReportService>();
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddBlazorPrettyCode();
+
 var host = builder.Build();
 
 host.R_SetupBlazorService();

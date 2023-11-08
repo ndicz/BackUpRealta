@@ -2638,6 +2638,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Lookup_APModel": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {
@@ -5326,6 +5327,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Lookup_APModel": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "compile": {

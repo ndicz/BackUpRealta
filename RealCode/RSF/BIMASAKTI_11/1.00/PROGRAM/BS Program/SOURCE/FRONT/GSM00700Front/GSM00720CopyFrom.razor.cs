@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using GSM00700Common.DTO;
 using GSM00700Model;
 using Lookup_APCOMMON.DTOs.APL00100;
+using Lookup_APCOMMON.DTOs.APL00110;
+using Lookup_APCOMMON.DTOs.APL00200;
+using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APFRONT;
 using Lookup_GSCOMMON.DTOs;
 using Lookup_GSFRONT;
@@ -21,6 +24,7 @@ namespace GSM00700Front
     {
         private GSM00720ViewModel _GSM00720ViewModel = new();
         private GSM00700ViewModel _GSM00700ViewModel = new();
+
         private R_Conductor _conductorRef;
         public R_Lookup CashFlow { get; set; }
 
@@ -64,19 +68,21 @@ namespace GSM00700Front
 
 
 
-                eventArgs.Parameter = new APL00100ParameterDTO()
+                eventArgs.Parameter = new APL00300ParameterDTO()
 
                 {
 
-                    CCOMPANY_ID = "001",
+                    CCOMPANY_ID = "RCD",
                     CPROPERTY_ID = "ASHMD",
-                    CSEARCH_TEXT = "",
-                    CLANGUAGE_ID = "en",
-
+                    CCATEGORY_ID = "",
+                    CTAXABLE_TYPE = "1",
+                    CACTIVE_TYPE = "1",
+                    CLANGUAGE_ID = "EN",
+                    CTAX_DATE = "",
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
 
                 };
-                eventArgs.TargetPageType = typeof(APL00100);
+                eventArgs.TargetPageType = typeof(APL00300);
             }
             catch (Exception ex)
             {
@@ -108,9 +114,6 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
             //return Task.CompletedTask;
-
-
-
         }
 
 

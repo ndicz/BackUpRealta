@@ -1,0 +1,192 @@
+/* /Shared/MainBody.razor.rz.scp.css */
+.nav-tabs li a[b-cg252p0773] {
+    line-height: 2;
+    border-left: 1px #ddd solid;
+    border-right: 1px #ddd solid;
+    margin-right: -1px;
+    color: #999;
+    border-radius: 0;
+}
+
+    .nav-tabs li a i:first-child[b-cg252p0773] {
+        margin-right: 3px;
+    }
+
+.nav-tabs .active a[b-cg252p0773] {
+    background: #3498db !important;
+    color: #fff !important;
+}
+
+.nav-tabs li a .bi-x[b-cg252p0773] {
+    position: relative;
+    top: -10px;
+}
+
+    .nav-tabs li a .bi-x:hover[b-cg252p0773] {
+        color: red;
+        cursor: pointer;
+    }
+
+.middletab .nav-tabs[b-cg252p0773] {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.middletab-tabs[b-cg252p0773] {
+    position: relative;
+    width: 100000px;
+}
+
+.middletab .nav-tabs .nav-link[b-cg252p0773] {
+    padding: .1rem 0rem .1rem 1rem;
+}
+
+.nav-my-tab[b-cg252p0773] {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    background: #fafafa;
+    border-bottom: 2px #3498db solid;
+}
+
+    .nav-my-tab .middletab[b-cg252p0773] {
+        height: 36px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .nav-my-tab li[b-cg252p0773] {
+        list-style-type: none;
+    }
+
+        .nav-my-tab li a[b-cg252p0773] {
+            padding: 5px 10px;
+        }
+
+    .nav-my-tab .leftbackward[b-cg252p0773] {
+        float: left;
+        background: #fff;
+        padding-top: 7px;
+        height: 36px;
+        border-right: 1px #ddd solid;
+    }
+
+        .nav-my-tab .leftbackward a[b-cg252p0773] {
+            border-left-width: 0px;
+            color: #999;
+            padding-top: 9px;
+            padding-bottom: 8px;
+            margin-right: -1px;
+        }
+
+            .nav-my-tab .leftbackward a:hover[b-cg252p0773] {
+                text-decoration: none;
+                background: #ddd;
+            }
+
+    .nav-my-tab .rightforward[b-cg252p0773] {
+        float: right;
+        background: #fff;
+        padding-top: 7px;
+        height: 36px;
+        border-left: 1px #ddd solid;
+    }
+
+        .nav-my-tab .rightforward a[b-cg252p0773] {
+            border-left-width: 0px;
+            color: #999;
+            padding-top: 9px;
+            padding-bottom: 8px;
+        }
+
+            .nav-my-tab .rightforward a:hover[b-cg252p0773] {
+                text-decoration: none;
+                background: #ddd;
+            }
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-wpi9hb9hz2] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-wpi9hb9hz2] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.bottom-row[b-wpi9hb9hz2] {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px;
+    text-align: right;
+    width: 100%;
+    padding-right: 28px;
+}
+
+.icon-menu-arrow[b-wpi9hb9hz2] {
+    text-align: right;
+}
+
+.navbar-brand[b-wpi9hb9hz2] {
+    font-size: 1.1rem;
+}
+
+.oi[b-wpi9hb9hz2] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-wpi9hb9hz2] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-wpi9hb9hz2] {
+        padding-top: 0.5rem;
+    }
+
+    .nav-item:last-of-type[b-wpi9hb9hz2] {
+        padding-bottom: 0rem;
+    }
+
+    .nav-item[b-wpi9hb9hz2]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 1rem;
+        font-size: 11px;
+    }
+
+        .nav-item[b-wpi9hb9hz2]  a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .nav-item[b-wpi9hb9hz2]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-wpi9hb9hz2] {
+        display: none;
+    }
+
+    .collapse[b-wpi9hb9hz2] {
+         /*Never collapse the sidebar for wide screens*/ 
+        display: block;
+    }
+
+    /*.nav-item a.active::after {
+        content:"*";
+        margin-left:0.5em;
+    }*/
+}
+
+@media (max-width: 640px) {
+    .bottom-row[b-wpi9hb9hz2] {
+        display: block;
+    }
+}

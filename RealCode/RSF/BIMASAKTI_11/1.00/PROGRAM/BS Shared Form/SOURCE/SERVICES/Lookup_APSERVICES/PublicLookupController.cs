@@ -89,6 +89,7 @@ namespace Lookup_APSERVICES
 
                 poParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParam.CLANGUAGE_ID = R_BackGlobalVar.CULTURE;
+                poParam.CTAX_DATE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CTAX_DATE);
                 poParam.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CPROPERTY_ID);
                 poParam.CTAXABLE_TYPE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CTAXABLE_TYPE);
                 poParam.CACTIVE_TYPE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CACTIVE_TYPE);
@@ -118,6 +119,7 @@ namespace Lookup_APSERVICES
 
                 poParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParam.CLANGUAGE_ID = R_BackGlobalVar.CULTURE;
+                poParam.CTAX_DATE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CTAX_DATE);
                 poParam.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CPROPERTY_ID);
                 poParam.CTAXABLE_TYPE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CTAXABLE_TYPE);
                 poParam.CACTIVE_TYPE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CACTIVE_TYPE);

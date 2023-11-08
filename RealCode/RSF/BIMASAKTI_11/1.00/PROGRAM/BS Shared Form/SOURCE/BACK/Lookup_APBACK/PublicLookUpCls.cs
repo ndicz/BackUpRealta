@@ -106,7 +106,7 @@ namespace Lookup_APBACK
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuery = @"RSP_AP_GET_SUPPLIER_INFO_LIST";
+                var lcQuery = @"RSP_AP_LOOKUP_EXPENDITURE";
                 loCmd.CommandType = CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
@@ -115,6 +115,7 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CTAXABLE_TYPE", DbType.String,10, poParameter.CTAXABLE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CACTIVE_TYPE", DbType.String, 10, poParameter.CACTIVE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CTAX_DATE", DbType.String, 10, poParameter.CTAX_DATE);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -154,6 +155,7 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CTAXABLE_TYPE", DbType.String, 10, poParameter.CTAXABLE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CACTIVE_TYPE", DbType.String, 10, poParameter.CACTIVE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CTAX_DATE", DbType.String, 10, poParameter.CTAX_DATE);
 
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);

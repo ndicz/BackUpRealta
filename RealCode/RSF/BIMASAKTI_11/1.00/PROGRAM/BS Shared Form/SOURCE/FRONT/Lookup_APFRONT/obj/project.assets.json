@@ -247,6 +247,44 @@
         "runtime": {
           "bin/placeholder/Lookup_APModel.dll": {}
         }
+      },
+      "Lookup_GSCOMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSCOMMON.dll": {}
+        }
+      },
+      "Lookup_GSFRONT/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSModel": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSFRONT.dll": {}
+        }
+      },
+      "Lookup_GSModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Lookup_GSCOMMON": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_GSModel.dll": {}
+        }
       }
     }
   },
@@ -572,11 +610,27 @@
       "type": "project",
       "path": "../Lookup_APModel/Lookup_APModel.csproj",
       "msbuildProject": "../Lookup_APModel/Lookup_APModel.csproj"
+    },
+    "Lookup_GSCOMMON/1.0.0": {
+      "type": "project",
+      "path": "../../BACK/Lookup_GSCOMMON/Lookup_GSCOMMON.csproj",
+      "msbuildProject": "../../BACK/Lookup_GSCOMMON/Lookup_GSCOMMON.csproj"
+    },
+    "Lookup_GSFRONT/1.0.0": {
+      "type": "project",
+      "path": "../Lookup_GSFRONT/Lookup_GSFRONT.csproj",
+      "msbuildProject": "../Lookup_GSFRONT/Lookup_GSFRONT.csproj"
+    },
+    "Lookup_GSModel/1.0.0": {
+      "type": "project",
+      "path": "../Lookup_GSModel/Lookup_GSModel.csproj",
+      "msbuildProject": "../Lookup_GSModel/Lookup_GSModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Lookup_APModel >= 1.0.0",
+      "Lookup_GSFRONT >= 1.0.0",
       "Microsoft.AspNetCore.Components.Web >= 6.0.15"
     ]
   },
@@ -615,6 +669,9 @@
           "projectReferences": {
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APModel\\Lookup_APModel.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APModel\\Lookup_APModel.csproj"
+            },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\Lookup_GSFRONT.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\Lookup_GSFRONT.csproj"
             }
           }
         }
