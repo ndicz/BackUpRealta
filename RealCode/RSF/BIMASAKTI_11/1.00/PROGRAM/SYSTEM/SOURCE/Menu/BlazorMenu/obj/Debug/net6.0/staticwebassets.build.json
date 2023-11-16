@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Iv2JuuFWQDDFJEPb7A9vBrktRade3lkRInXFtRbXJ3M=",
+  "Hash": "VvPGlGvrm518+Fhm94lAf9YxmU00lX2jhRbQWU/ebBk=",
   "Source": "BlazorMenu",
   "BasePath": "/",
   "Mode": "Root",
@@ -1438,6 +1438,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00700Front\\bin\\Debug\\net6.0\\GSM00700Front.pdb"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.dll",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/GSM00700FrontResources.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00700FrontResources\\bin\\Debug\\netstandard2.1\\GSM00700FrontResources.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.pdb",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/GSM00700FrontResources.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00700FrontResources\\bin\\Debug\\netstandard2.1\\GSM00700FrontResources.pdb"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700Model.dll",
@@ -6336,6 +6370,23 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Text.Encoding.Extensions.dll"
     },
     {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\+Qp916Cg.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/GSM00700FrontResources.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.dll"
+    },
+    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\+QT5uDm4.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -10754,6 +10805,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM03000Front.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\vYg6He+4.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/GSM00700FrontResources.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\GSM00700FrontResources.pdb"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\W29k7Miv.gz",

@@ -11,7 +11,7 @@
             R_GridType="@R_eGridType.Original"
             AllowAddNewRow="true"
             Width="100%"
-            Height="420px"
+            Height="470px"
             AllowEditRow="true"
             AllowDeleteRow="true"
             R_ServiceGetListRecord="@Grid_Get_Record_GSM02300">
@@ -19,24 +19,21 @@
         <R_GridColumns>
 
 
-            <R_GridDropDownListColumn 
+            <R_GridDropDownListColumn Width="196px"
                 Data="@_GSM02300iewModel.loGridListPropertyType"
-
-                                      FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
-                                      ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
-                                      TextField="@nameof(GSM02300PropertyTypeDTO.CDESCRIPTION)"
+                FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
+                ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
+                                      TextField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
                                       HeaderText="Property Type Code*" R_EnableAdd/>
 
             @*<R_GridTextColumn FieldName="CPROPERTY_TYPE_CODE" HeaderText="Property Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>*@
-            <R_GridTextColumn FieldName="CPROPERTY_TYPE_NAME" HeaderText="Property Type Name*"></R_GridTextColumn>
-          
+            <R_GridTextColumn Width="192.06px" FieldName="CPROPERTY_TYPE_NAME" HeaderText="Property Type Name*" R_EnableAdd></R_GridTextColumn>
+            <R_GridCheckBoxColumn Width="126.06px" FieldName="LSINGLE_UNIT" HeaderText="Single Unit" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
+            <R_GridTextColumn Width="158.06px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
+            <R_GridTextColumn Width="145.06px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
 
-            <R_GridCheckBoxColumn FieldName="LSINGLE_UNIT" HeaderText="Single Unit" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
-            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-
-            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
-            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+            <R_GridTextColumn Width="120.06px" FieldName="CCREATE_BY" HeaderText="Created By" />
+            <R_GridTextColumn Width="158.13" FieldName="DCREATE_DATE" HeaderText="Created Date" />
 
         </R_GridColumns>
     </R_Grid>

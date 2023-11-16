@@ -182,6 +182,7 @@ namespace GSM00700Front
             try
             {
                 //await GSM00720ViewModel.GetYearList();
+                await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
                 eventArgs.ListEntityResult = GSM00720ViewModel.loGridList;
                 //await _gridRef00720.AutoFitAllColumnsAsync();
 
@@ -239,7 +240,7 @@ namespace GSM00700Front
 
                     if (GSM00720InitialProsesDTO.NUM == 0)
                     {
-                        BaseAmount.Enabled = true;
+                        BaseAmount.Enabled = false;
                     
                     }
                     else
@@ -250,7 +251,7 @@ namespace GSM00700Front
 
                     if (GSM00720InitialProsesDTO.NUM == 0)
                     {
-                        LocalAmount.Enabled = true;
+                        LocalAmount.Enabled = false;
                     }
                     else
                     {

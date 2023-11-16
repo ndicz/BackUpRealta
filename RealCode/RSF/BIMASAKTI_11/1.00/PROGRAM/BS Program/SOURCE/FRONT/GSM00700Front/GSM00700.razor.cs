@@ -134,7 +134,7 @@ namespace GSM00700Front
                     loException.Add("001", "Cash Flow Group Code cannot be Empty.");
 
                 if (string.IsNullOrEmpty(loData.CCASH_FLOW_GROUP_NAME))
-                    loException.Add("002", "Cash Flow Group Name cannot be Empty");
+                    loException.Add(_localizer["LABEL_CASHFLOW-GRP_CODE"], _localizer["LABEL_CASHFLOW-GRP_CODE"]);
 
 
             }

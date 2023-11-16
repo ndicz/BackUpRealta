@@ -11,16 +11,15 @@
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
                     Width="100%"
-                    Height="420px"
+                    Height="480px"
                     AllowEditRow="true"
-                    PageSize="25"
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCurrency">
 
                 <R_GridColumns>
 
-                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code*" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name*" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code*" MaxLength="3" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name*" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
                     <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
                     <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Updated Date" />
                     <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />

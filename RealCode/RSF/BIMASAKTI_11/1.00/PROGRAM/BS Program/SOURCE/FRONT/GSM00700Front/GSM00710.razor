@@ -27,7 +27,7 @@
             <R_Grid @ref="@_gridRef00710"
                     DataSource="GSM00710ViewModel.loGridList"
                     Pageable="true"
-                    Height="332px"
+                    Height="362px"
                     Width="100%"
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
@@ -38,8 +38,8 @@
                 <R_GridColumns>
 
                     <R_GridTextColumn Width="125px" FieldName="CSEQUENCE" HeaderText="Display Seq" />
-                    <R_GridTextColumn Width="150px" FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                    <R_GridTextColumn Width="150px" FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" MaxLength="20" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" MaxLength="100" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
                     <R_GridDropDownListColumn Width="160px" Data="@GSM00710ViewModel.loCashFlowType"
                                               FieldName="@nameof(GSM00710DTO.CCASH_FLOW_TYPE)"
@@ -119,8 +119,8 @@
                 <R_Grid @ref="@_gridRef00720Year"
                         DataSource="@GSM00720ViewModel.loYearList"
                         Pageable="true"
-                        Height="270px"
-                        Width="100%"
+                        Height="320px"
+                        Width="130px"
                         R_ConductorGridSource="@_conGridGSM00720Ref"
                         R_GridType="@R_eGridType.Original"
                         AllowAddNewRow="false"
@@ -148,8 +148,8 @@
                 <R_Grid @ref="@_gridRef00720"
                         DataSource="@GSM00720ViewModel.loGridList"
                         Pageable="true"
-                        Height="270px"
-                        Width="745px"
+                        Height="320px"
+                        Width="960px"
                         R_ConductorGridSource="@_conGridGSM00700Ref"
                         R_GridType="@R_eGridType.Original"
                         AllowAddNewRow="false"
@@ -160,11 +160,11 @@
 
                     <R_GridColumns>
                         <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="Period No" ></R_GridTextColumn>
-                        <R_GridNumericColumn Width="145px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
-                        <R_GridNumericColumn Width="145px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
+                        <R_GridNumericColumn Width="139px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
+                        <R_GridNumericColumn Width="128px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
                         <R_GridTextColumn Width="132px" FieldName="CUPDATE_BY" HeaderText="Updated By"></R_GridTextColumn>
-                        <R_GridTextColumn Width="146px" FieldName="DUPDATE_DATE" HeaderText="Updated Date"></R_GridTextColumn>
-                        <R_GridTextColumn Width="132px" FieldName="CCREATE_BY" HeaderText="Created By"></R_GridTextColumn>
+                        <R_GridTextColumn Width="144px" FieldName="DUPDATE_DATE" HeaderText="Updated Date"></R_GridTextColumn>
+                        <R_GridTextColumn Width="131px" FieldName="CCREATE_BY" HeaderText="Created By"></R_GridTextColumn>
                         <R_GridTextColumn Width="146px" FieldName="DCREATE_DATE" HeaderText="Created Date"></R_GridTextColumn>
                     </R_GridColumns>
 

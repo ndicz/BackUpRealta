@@ -291,7 +291,7 @@ namespace LMM02000Services
                 _logger.LogInfo("Set Parameter || GetAllPropertyStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
-                loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMM02000.CPROPERTY_ID);
+                //loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMM02000.CPROPERTY_ID);
                 //loDbPar.CCOMPANY_ID = "RCD";
                 //loDbPar.CUSER_ID = "Admin";
 

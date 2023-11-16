@@ -2420,6 +2420,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GSM00700FrontResources": "1.0.0",
           "GSM00700Model": "1.0.0",
           "Lookup_APCOMMON": "1.0.0",
           "Lookup_APFRONT": "1.0.0",
@@ -2434,6 +2435,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM00700Front.dll": {}
+        }
+      },
+      "GSM00700FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM00700FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM00700FrontResources.dll": {}
         }
       },
       "GSM00700Model/1.0.0": {
@@ -5109,6 +5120,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GSM00700FrontResources": "1.0.0",
           "GSM00700Model": "1.0.0",
           "Lookup_APCOMMON": "1.0.0",
           "Lookup_APFRONT": "1.0.0",
@@ -5123,6 +5135,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM00700Front.dll": {}
+        }
+      },
+      "GSM00700FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM00700FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM00700FrontResources.dll": {}
         }
       },
       "GSM00700Model/1.0.0": {
@@ -10787,6 +10809,11 @@
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/GSM00700Front/GSM00700Front.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM00700Front/GSM00700Front.csproj"
+    },
+    "GSM00700FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM00700FrontResources/GSM00700FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM00700FrontResources/GSM00700FrontResources.csproj"
     },
     "GSM00700Model/1.0.0": {
       "type": "project",

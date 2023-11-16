@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="10/05/2023 10:04:12" ReportInfo.CreatorVersion="2023.2.21.0">
+<inherited BaseReport="BaseHeaderLandscapeCommon.frx" BaseReportAbsolutePath="D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\API\GS\BIMASAKTI_GS_API\Reports\BaseHeaderLandscapeCommon.frx" ScriptLanguage="CSharp" ReportInfo.Created="08/04/2023 16:21:34" ReportInfo.Modified="11/13/2023 09:51:31" ReportInfo.CreatorVersion="2023.2.21.0">
   <Dictionary>
     <BusinessObjectDataSource Name="ResponseDataModel" ReferenceName="ResponseDataModel" DataType="System.Collections.ArrayList" Enabled="true">
       <Column Name="CenterData" DataType="GSM00700Common.DTO.Report_DTO_GSM00700.GSM00700PrintCashFlowResultDTo, GSM00700Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -72,15 +72,15 @@
       <inherited Name="Text39"/>
       <inherited Name="Text42"/>
     </inherited>
-    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="79.6" Width="1047.06" Height="56.7" Border.Lines="All" Fill.Color="DodgerBlue">
-      <TextObject Name="Text43" Left="37.8" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_CODE]" Font="Arial, 10pt"/>
-      <TextObject Name="Text44" Left="189" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_NAME]" Font="Arial, 10pt"/>
-      <TextObject Name="Text45" Left="340.2" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_TYPE]" Font="Arial, 10pt"/>
-      <TextObject Name="Text46" Left="737.1" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_PLAN]" Font="Arial, 10pt"/>
-      <TextObject Name="Text47" Left="500.85" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_YEAR]" Font="Arial, 10pt"/>
-      <TextObject Name="Text48" Left="604.8" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_PERIOD]" Font="Arial, 10pt"/>
-      <TextObject Name="Text49" Left="708.75" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_LOCAL_AMOUNT]" Font="Arial, 10pt"/>
-      <TextObject Name="Text50" Left="878.85" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_BASE_AMOUNT]" Font="Arial, 10pt"/>
+    <ColumnHeaderBand Name="ColumnHeader1" ZOrder="-1" Top="80.79" Width="1047.06" Height="56.7" Border.Lines="All" Fill.Color="DodgerBlue">
+      <TextObject Name="Text43" Left="37.8" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_CODE]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text44" Left="189" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_NAME]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text45" Left="340.2" Top="18.9" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_TYPE]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text46" Left="737.1" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_PLAN]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text47" Left="500.85" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_YEAR]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text48" Left="604.8" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_PERIOD]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text49" Left="708.75" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_LOCAL_AMOUNT]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text50" Left="878.85" Top="28.35" Width="94.5" Height="18.9" Fill.Color="DodgerBlue" Text="[ResponseDataModel.CenterData.Column.COLOUMN_BASE_AMOUNT]" Font="Arial Unicode MS, 10pt"/>
       <LineObject Name="Line1" Left="122.85" Height="56.7"/>
       <LineObject Name="Line2" Left="292.95" Height="56.7"/>
       <LineObject Name="Line3" Left="453.6" Height="56.7"/>
@@ -89,19 +89,19 @@
       <LineObject Name="Line8" Left="680.4" Top="18.9" Height="37.8"/>
       <LineObject Name="Line9" Left="576.45" Top="18.9" Height="37.8"/>
     </ColumnHeaderBand>
-    <DataBand Name="Data1" ZOrder="0" Top="140.3" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
-      <TextObject Name="Text51" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_CODE]" Font="Arial, 10pt"/>
-      <TextObject Name="Text52" Left="132.3" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_NAME]" Font="Arial, 10pt"/>
-      <TextObject Name="Text54" Left="292.95" Top="9.45" Width="226.8" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_TYPE_DESCR]" Font="Arial, 10pt"/>
-      <DataBand Name="Data2" Top="182.1" Width="1047.06" Height="28.35" DataSource="BusinessObjectDataSource1" KeepTogether="true">
-        <TextObject Name="Text57" Left="160.65" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_NAME]" Font="Arial, 10pt"/>
-        <TextObject Name="Text56" Left="9.45" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_CODE]" Font="Arial, 10pt"/>
-        <TextObject Name="Text58" Left="321.3" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_TYPE_DESCR]" Font="Arial, 10pt"/>
-        <TextObject Name="Text55" Left="491.4" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CYEAR]" Font="Arial, 10pt"/>
-        <DataBand Name="Data3" Top="214.45" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
-          <TextObject Name="Text60" Left="680.4" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NLOCAL_AMOUNT]&#13;&#10;" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
-          <TextObject Name="Text61" Left="859.95" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NBASE_AMOUNT]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
-          <TextObject Name="Text59" Left="604.8" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.CPERIOD_NO]" Font="Arial, 10pt"/>
+    <DataBand Name="Data1" ZOrder="0" Top="142.69" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
+      <TextObject Name="Text51" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_CODE]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text52" Left="132.3" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_NAME]" Font="Arial Unicode MS, 10pt"/>
+      <TextObject Name="Text54" Left="292.95" Top="9.45" Width="226.8" Height="18.9" Text="[ResponseDataModel.CenterData.Data.CCASH_FLOW_GROUP_TYPE_DESCR]" Font="Arial Unicode MS, 10pt"/>
+      <DataBand Name="Data2" Top="185.68" Width="1047.06" Height="28.35" DataSource="BusinessObjectDataSource1" KeepTogether="true">
+        <TextObject Name="Text57" Left="160.65" Top="9.45" Width="179.55" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_NAME]" Font="Arial Unicode MS, 10pt"/>
+        <TextObject Name="Text56" Left="9.45" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_CODE]" Font="Arial Unicode MS, 10pt"/>
+        <TextObject Name="Text58" Left="321.3" Top="9.45" Width="151.2" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CCASH_FLOW_TYPE_DESCR]" Font="Arial Unicode MS, 10pt"/>
+        <TextObject Name="Text55" Left="491.4" Top="9.45" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.CYEAR]" Font="Arial Unicode MS, 10pt"/>
+        <DataBand Name="Data3" Top="219.23" Width="1047.06" Height="37.8" DataSource="GSM00720Data">
+          <TextObject Name="Text60" Left="680.4" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NLOCAL_AMOUNT]&#13;&#10;" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial Unicode MS, 10pt" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text61" Left="859.95" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.NBASE_AMOUNT]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial Unicode MS, 10pt" Trimming="EllipsisCharacter"/>
+          <TextObject Name="Text59" Left="604.8" Width="94.5" Height="18.9" Text="[ResponseDataModel.CenterData.Data.GSM00710Data.GSM00720Data.CPERIOD_NO]" Font="Arial Unicode MS, 10pt"/>
         </DataBand>
       </DataBand>
     </DataBand>

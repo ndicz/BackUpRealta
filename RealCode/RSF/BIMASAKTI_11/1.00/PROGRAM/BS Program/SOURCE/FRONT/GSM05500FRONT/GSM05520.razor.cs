@@ -249,6 +249,7 @@ namespace GSM05500Front
                 return;
             var loGetData = (GSM05520DTO)eventArgs.ColumnData;
             loGetData.CCURRENCY_CODE = loTempResult.CCURRENCY_CODE;
+            loGetData.CCURRENCY_NAME = loTempResult.CCURRENCY_NAME;
 
         }
 
@@ -397,6 +398,7 @@ namespace GSM05500Front
             var emptyFieldCondition = loParam.NLBASE_RATE_AMOUNT == 0 || loParam.NLCURRENCY_RATE_AMOUNT == 0 ||
                                       loParam.NBBASE_RATE_AMOUNT == 0 || loParam.NBCURRENCY_RATE_AMOUNT == 0 ||
                                       loParam.CCURRENCY_CODE == null;
+
 
             if (emptyFieldCondition)
             {

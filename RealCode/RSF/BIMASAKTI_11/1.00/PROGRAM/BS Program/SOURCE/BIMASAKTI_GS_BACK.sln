@@ -97,6 +97,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lookup_APCOMMON", "..\..\BS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lookup_APSERVICES", "..\..\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\Lookup_APSERVICES.csproj", "{DE04427B-9F98-43BD-A48F-3738861B2299}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GSDesign", "DESIGN\GSDesign\GSDesign.csproj", "{D2C67A0D-9FC5-428A-9F30-87A28D090781}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -267,6 +269,10 @@ Global
 		{DE04427B-9F98-43BD-A48F-3738861B2299}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE04427B-9F98-43BD-A48F-3738861B2299}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE04427B-9F98-43BD-A48F-3738861B2299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2C67A0D-9FC5-428A-9F30-87A28D090781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C67A0D-9FC5-428A-9F30-87A28D090781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C67A0D-9FC5-428A-9F30-87A28D090781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C67A0D-9FC5-428A-9F30-87A28D090781}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

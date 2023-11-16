@@ -42,7 +42,9 @@ namespace LMM02000Front
             try
             {
 
-                await PropertyListData(null);
+                //await PropertyListData(null);
+                await _viewModel.GetProperty();
+                await Task.Delay(250);
                 await _gridRef.R_RefreshGrid(null);
                 //await _gridRef.AutoFitAllColumnsAsync();
             }
@@ -246,6 +248,7 @@ namespace LMM02000Front
 
             try
             {
+                
                 await _viewModel.GetProperty();
                 //eventArgs.ListEntityResult = _viewModel.loGridListProperty;
 

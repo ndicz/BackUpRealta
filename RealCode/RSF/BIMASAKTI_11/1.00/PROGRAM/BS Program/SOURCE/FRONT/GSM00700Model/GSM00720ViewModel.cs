@@ -121,7 +121,8 @@ namespace GSM00700Model
             try
             {
                 var loReturn = await _GSM00720Model.GetYearStreamAsync();
-                loYearList = new ObservableCollection<GSM00720YearDTO>(loReturn.Data);
+                YearComboBox = loReturn.Data.OrderByDescending(x => x.CYEAR).ToList();
+                loYearList = new ObservableCollection<GSM00720YearDTO>(YearComboBox);
             }
             catch (Exception ex)
             {

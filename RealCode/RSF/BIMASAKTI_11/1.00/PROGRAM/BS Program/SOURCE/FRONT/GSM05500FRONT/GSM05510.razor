@@ -1,43 +1,42 @@
-     @page "/GSM05510"
-     @inherits R_Page
+@page "/GSM05510"
+@inherits R_Page
 
 
 
-         <R_StackLayout>
+<R_StackLayout>
 
-                
 
-             <R_Grid @ref="@_gridRef5510"
-                     DataSource="GSM05510ViewModel.loGridList"
-                     Pageable="true"
-                     R_ConductorGridSource="@_conGridGSM05510Ref"
-                     R_GridType="@R_eGridType.Original"
-                     AllowAddNewRow="true"
-                     Width="100%"
-                     Height="420px"
-                     PageSize="25"
-                     AllowEditRow="true"
-                     AllowDeleteRow="true"
-                     R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
 
-                 <R_GridColumns>
+    <R_Grid @ref="@_gridRef5510"
+            DataSource="GSM05510ViewModel.loGridList"
+            Pageable="true"
+            R_ConductorGridSource="@_conGridGSM05510Ref"
+            R_GridType="@R_eGridType.Original"
+            AllowAddNewRow="true"
+            Width="100%"
+            Height="480px"
+            AllowEditRow="true"
+            AllowDeleteRow="true"
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
 
-                     <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="Rate Type Code*" R_EnableAdd></R_GridTextColumn>
-                     <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name*" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                     <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
-                     <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-                     <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
-                     <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+        <R_GridColumns>
 
-                 </R_GridColumns>
-             </R_Grid>
+            <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="Rate Type Code*" MaxLength="8" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name*" MaxLength="80" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
+            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
+            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
+            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
 
-         </R_StackLayout>
-         <R_ConductorGrid @ref="@_conGridGSM05510Ref"
-                          R_ViewModel="@GSM05510ViewModel"
-                          R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
-                          R_ServiceSave="@Grid_ServiceSaveRateType"
-                          R_ServiceDelete="@Grid_ServiceDeleteRateType"
-                          @*R_AfterDelete="@Grid_AfterDelete"*@
-                          R_IsHeader="true" 
-                          R_Validation="R_Validation"/>
+        </R_GridColumns>
+    </R_Grid>
+
+</R_StackLayout>
+<R_ConductorGrid @ref="@_conGridGSM05510Ref"
+                 R_ViewModel="@GSM05510ViewModel"
+                 R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
+                 R_ServiceSave="@Grid_ServiceSaveRateType"
+                 R_ServiceDelete="@Grid_ServiceDeleteRateType"
+                 @*R_AfterDelete="@Grid_AfterDelete" *@
+                 R_IsHeader="true"
+                 R_Validation="R_Validation" />

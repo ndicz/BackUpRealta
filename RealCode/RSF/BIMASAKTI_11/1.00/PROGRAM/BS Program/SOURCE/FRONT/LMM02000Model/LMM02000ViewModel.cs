@@ -58,7 +58,7 @@ namespace LMM02000Model
                 //R_FrontContext.R_SetContext(ContextConstantLMM02000.LACTIVE, !loEntity.LACTIVE);
 
 
-               
+
             }
             catch (Exception ex)
             {
@@ -122,9 +122,9 @@ namespace LMM02000Model
             try
             {
                 var loResult = await _LMM02000Model.GetPropertyStreamAsync();
-
+                
                 PropertyList = loResult.Data;
-          
+
                 propertyValue = PropertyList[0].CPROPERTY_ID;
 
             }

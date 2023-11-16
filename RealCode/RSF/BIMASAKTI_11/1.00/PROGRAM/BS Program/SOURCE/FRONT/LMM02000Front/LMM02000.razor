@@ -21,29 +21,29 @@
 
 <R_StackLayout Spacing="3" Class="mb-2 mt-2">
     <R_Grid @ref="@_gridRef"
-                Width="100%"
-                Height="205px"
-                DataSource="@_viewModel.loGridList"
-                Pageable="true"
-                R_ConductorSource="@_conductorRef"
-                R_GridType="@R_eGridType.Navigator"
-                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
+            Width="100%"
+            Height="255px"
+            DataSource="@_viewModel.loGridList"
+            Pageable="true"
+            R_ConductorSource="@_conductorRef"
+            R_GridType="@R_eGridType.Navigator"
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
 
-            <R_GridColumns>
-                <R_GridCheckBoxColumn Width="83px" FieldName="LACTIVE" HeaderText="Active" />
-                <R_GridTextColumn Width="145px" FieldName="CSALESMAN_ID" HeaderText="Salesman ID" />
-                <R_GridTextColumn Width="201px" FieldName="CSALESMAN_NAME" HeaderText="Salesman Name" />
-                <R_GridTextColumn Width="105px" FieldName="CGENDER_DESCR" HeaderText="Gender" />
-                <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE1" HeaderText="Mobile Phone 1" />
-                <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE2" HeaderText="Mobile Phone 2" />
-                <R_GridTextColumn Width="150px" FieldName="CEMAIL" HeaderText="Email" />
-                <R_GridTextColumn Width="145px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-                <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-                <R_GridTextColumn Width="145px" FieldName="CCREATE_BY" HeaderText="Created By" />
-                <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
-            </R_GridColumns>
-        </R_Grid>
- 
+        <R_GridColumns>
+            <R_GridCheckBoxColumn Width="83px" FieldName="LACTIVE" HeaderText="Active" />
+            <R_GridTextColumn Width="145px" FieldName="CSALESMAN_ID" HeaderText="Salesman ID" />
+            <R_GridTextColumn Width="201px" FieldName="CSALESMAN_NAME" HeaderText="Salesman Name" />
+            <R_GridTextColumn Width="105px" FieldName="CGENDER_DESCR" HeaderText="Gender" />
+            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE1" HeaderText="Mobile Phone 1" />
+            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE2" HeaderText="Mobile Phone 2" />
+            <R_GridTextColumn Width="150px" FieldName="CEMAIL" HeaderText="Email" />
+            <R_GridTextColumn Width="145px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
+            <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
+            <R_GridTextColumn Width="145px" FieldName="CCREATE_BY" HeaderText="Created By" />
+            <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
+        </R_GridColumns>
+    </R_Grid>
+
 </R_StackLayout>
 
 
@@ -59,12 +59,14 @@
                 <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_ID"
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
+                           MaxLength="20"
                            R_EnableEdit=@enableSalesmanId />
             </R_ItemLayout>
             <R_ItemLayout col="6">
                 <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_NAME"
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
+                           MaxLength="100"
                            R_EnableEdit="true" />
             </R_ItemLayout>
 
@@ -77,6 +79,7 @@
                 <R_TextArea @bind-Value="@_viewModel.Data.CADDRESS"
                             R_ConductorSource="@_conductorRef"
                             R_EnableAdd="true"
+                            MaxLength="255"
                             R_EnableEdit="true" />
             </R_ItemLayout>
         </R_StackLayout>
@@ -88,50 +91,34 @@
                 <R_TextBox @bind-Value="@_viewModel.Data.CEMAIL"
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
+                           MaxLength="100"
                            R_EnableEdit="true" />
             </R_ItemLayout>
         </R_StackLayout>
 
-
-
-        <R_StackLayout Row="true" Class="mt-2 mb-2">
-            <R_ItemLayout col="5">
-                <R_StackLayout Row="true" Class="mt-0">
-                    <R_ItemLayout col="5">
-                        <R_Label Class="fw-bold">Salesman Type</R_Label>
-                    </R_ItemLayout>
-
-                    <R_ItemLayout col="6">
-                        <R_RadioGroup Data="@_viewModel.SalesmanTypeList"
-                                      Value="@_viewModel.Data.CSALESMAN_TYPE"
-                                      ValueField="@nameof(LMM02000SalesmanTypeDTO.CCODE)"
-                                      TextField="@nameof(LMM02000SalesmanTypeDTO.CDESCRIPTION)"
-                                      R_ConductorSource="@_conductorRef"
-                                      R_EnableAdd="true"
-                                      R_EnableEdit="true"
-                                      ValueChanged="@((string value) => OnChangedSalesmanType(value))" />
-
-                    </R_ItemLayout>
-                </R_StackLayout>
+        <R_StackLayout Row="true" Class="mt-2">
+            <R_ItemLayout col="2">
+                <R_Label Class="fw-bold">Salesman Type*</R_Label>
             </R_ItemLayout>
-            <R_ItemLayout>
 
-                <R_StackLayout>
-                    <R_ItemLayout col="12">
-                        <R_StackLayout Row="true" Class="mt-0">
-                            <R_ItemLayout col="5">
-                                <R_Label Class="fw-bold">Company Name*</R_Label>
-                            </R_ItemLayout>
+            <R_ItemLayout col="5">
+                <R_RadioGroup Data="@_viewModel.SalesmanTypeList"
+                              Value="@_viewModel.Data.CSALESMAN_TYPE"
+                              ValueField="@nameof(LMM02000SalesmanTypeDTO.CCODE)"
+                              TextField="@nameof(LMM02000SalesmanTypeDTO.CDESCRIPTION)"
+                              R_ConductorSource="@_conductorRef"
+                              R_EnableAdd="true"
+                              R_EnableEdit="true"
+                              ValueChanged="@((string value) => OnChangedSalesmanType(value))" />
 
-                            <R_ItemLayout col="10">
-                                <R_TextBox @bind-Value="@_viewModel.Data.CEXT_COMPANY_NAME"
-                                           R_ConductorSource="@_conductorRef"
-                                           Enabled="@enableSalesmanType"
-                                           />
-                            </R_ItemLayout>
-                        </R_StackLayout>
-                    </R_ItemLayout>
-                </R_StackLayout>
+            </R_ItemLayout>
+            <R_ItemLayout col="2">
+                <R_Label Class="fw-bold">Company Name*</R_Label>
+            </R_ItemLayout>
+            <R_ItemLayout col="2">
+                <R_TextBox @bind-Value="@_viewModel.Data.CEXT_COMPANY_NAME"
+                           R_ConductorSource="@_conductorRef"
+                           Enabled="@enableSalesmanType" />
             </R_ItemLayout>
 
         </R_StackLayout>
@@ -162,6 +149,7 @@
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
                            R_EnableEdit="true"
+                           MaxLength="30"
                            Min="0"
                            Max="100"
                            Decimals="2" />
@@ -177,6 +165,7 @@
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
                            R_EnableEdit="true"
+                           MaxLength="30"
                            Min="0"
                            Max="100"
                            Decimals="2" />
@@ -190,6 +179,7 @@
                 <R_TextBox @bind-Value="@_viewModel.Data.CID_NO"
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
+                           MaxLength="40"
                            R_EnableEdit="true" />
             </R_ItemLayout>
         </R_StackLayout>
@@ -228,46 +218,50 @@
 
 
 
+<R_StackLayout Row Class="justify-content-between">
 
+    <R_StackLayout Row Class="justify-content-start">
+        <R_ItemLayout>
+            <R_AddButton R_Conductor="@_conductorRef"></R_AddButton>
+        </R_ItemLayout>
 
-<R_StackLayout Row="true" Spacing="1" Class="mt-2">
-    <R_ItemLayout>
-        <R_AddButton R_Conductor="@_conductorRef"></R_AddButton>
-    </R_ItemLayout>
+        <R_ItemLayout>
+            <R_EditButton R_Conductor="@_conductorRef"></R_EditButton>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_EditButton R_Conductor="@_conductorRef"></R_EditButton>
-    </R_ItemLayout>
+        <R_ItemLayout>
+            <R_DeleteButton R_Conductor="@_conductorRef"></R_DeleteButton>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_DeleteButton R_Conductor="@_conductorRef"></R_DeleteButton>
-    </R_ItemLayout>
+    </R_StackLayout>
+    <R_StackLayout Row Class="justify-content-between">
+        <R_ItemLayout>
+            <R_Popup R_After_Open_Popup="@R_After_Open_Upload" R_Before_Open_Popup="@R_Before_Open_Upload">Upload</R_Popup>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_Popup R_After_Open_Popup="@R_After_Open_Upload" R_Before_Open_Popup="@R_Before_Open_Upload">Upload</R_Popup>
-    </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Button R_Conductor="@_conductorGrid" OnClick="@DownloadTemplate">Template</R_Button>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_Button R_Conductor="@_conductorGrid" OnClick="@DownloadTemplate">Template</R_Button>
-    </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Popup R_After_Open_Popup="@R_After_Open_Popup_ActivateInactive" R_Before_Open_Popup="@R_Before_Open_Popup_ActivateInactive">@loLabel</R_Popup>
+        </R_ItemLayout>
+    </R_StackLayout>
 
-    <R_ItemLayout col=5>
-        <R_Popup R_After_Open_Popup="@R_After_Open_Popup_ActivateInactive" R_Before_Open_Popup="@R_Before_Open_Popup_ActivateInactive">@loLabel</R_Popup>
-    </R_ItemLayout>
+    <R_StackLayout Row Class="justify-content-end">
+        <R_ItemLayout>
+            <R_CancelButton R_Conductor="@_conductorRef"></R_CancelButton>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_SaveButton R_Conductor="@_conductorRef"></R_SaveButton>
-    </R_ItemLayout>
+        <R_ItemLayout>
+            <R_SaveButton R_Conductor="@_conductorRef"></R_SaveButton>
+        </R_ItemLayout>
 
-    <R_ItemLayout>
-        <R_CancelButton R_Conductor="@_conductorRef"></R_CancelButton>
-    </R_ItemLayout>
+    </R_StackLayout>
 
+    </R_StackLayout>
 
-</R_StackLayout>
-
-
-<R_Conductor @ref="@_conductorRef"
+    <R_Conductor @ref="@_conductorRef"
              R_ViewModel="@_viewModel"
              R_IsHeader="true"
              R_AfterSave="@R_AfterSave"

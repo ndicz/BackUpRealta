@@ -5,4 +5,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="R_CommonFrontBackAPI">
+      <HintPath>..\..\..\..\BS Program\SOURCE\SERVICE\GS\GSM05500SERVICE\bin\Debug\net6.0\R_CommonFrontBackAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

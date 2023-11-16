@@ -390,7 +390,7 @@ namespace GSM00700Back
             try
             {
                 loDb = new R_Db();
-                var loConn = loDb.GetConnection();
+                var loConn = loDb.GetConnection("R_ReportConnectionString");
                 loCmd = loDb.GetCommand();
 
                 var lcQuery = @"RSP_GS_PRINT_CASHFLOW";

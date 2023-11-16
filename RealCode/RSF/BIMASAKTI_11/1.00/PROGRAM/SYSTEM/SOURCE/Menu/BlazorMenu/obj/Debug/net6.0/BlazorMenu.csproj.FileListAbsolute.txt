@@ -1271,3 +1271,11 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\BlazorMenu.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\ref\BlazorMenu.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\appsettings.json
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700FrontResources.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700FrontResources.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700FrontResources.pdb.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM00700FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM00700FrontResources.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\+Qp916Cg.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\vYg6He+4.gz

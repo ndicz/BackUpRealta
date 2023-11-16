@@ -52,7 +52,7 @@ namespace GSM00700Model
                 new GSM00700PrintCashFlowParameterDTo() { CSHORT_BY = "01", SortBy = "Code"},
                 new GSM00700PrintCashFlowParameterDTo() { CSHORT_BY = "02", SortBy = "Name" },
             };
-        //COMBO BOX
+     
         public string CashFlowTyp = ""; // for filter
         public async Task GetCashFlowGroupTypeList()
         {

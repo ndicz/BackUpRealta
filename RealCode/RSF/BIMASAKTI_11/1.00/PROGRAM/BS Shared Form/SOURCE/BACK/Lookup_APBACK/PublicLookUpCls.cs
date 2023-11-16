@@ -10,6 +10,7 @@ using Lookup_APCOMMON.DTOs.APL00110;
 using Lookup_APCOMMON.DTOs.APL00200;
 using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APCOMMON.DTOs.APL00400;
+using Lookup_APCOMMON.Loggers;
 using R_BackEnd;
 using R_Common;
 using APL00100ParameterDTO = Lookup_APCOMMON.DTOs.APL00100.APL00100ParameterDTO;
@@ -18,6 +19,13 @@ namespace Lookup_APBACK
 {
     public class PublicLookUpCls
     {
+        private LoggerPublicLookup _Logger;
+
+        public PublicLookUpCls()
+        {
+            _Logger = LoggerPublicLookup.R_GetInstanceLogger();
+        }
+
         public List<APL00100DTO> SupplierLookup(APL00100ParameterDTO poParameter)
         {
             R_Exception loException = new R_Exception();
@@ -39,13 +47,17 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CSEARCH_TEXT", DbType.String, 10, poParameter.CSEARCH_TEXT);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
 
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_SEARCH_SUPPLIER_LOOKUP_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<APL00100DTO>(loReturnTemp).ToList();
             }
             catch (Exception ex)
-          
+
             {
                 loException.Add(ex);
             }
@@ -77,6 +89,10 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CSUPPLIER_ID", DbType.String, 10, poParameter.CSUPPLIER_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
 
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_GET_SUPPLIER_INFO_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -112,11 +128,15 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 10, poParameter.CPROPERTY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CCATEGORY_ID", DbType.String, 10, poParameter.CCATEGORY_ID);
-                loDb.R_AddCommandParameter(loCmd, "@CTAXABLE_TYPE", DbType.String,10, poParameter.CTAXABLE_TYPE);
+                loDb.R_AddCommandParameter(loCmd, "@CTAXABLE_TYPE", DbType.String, 10, poParameter.CTAXABLE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CACTIVE_TYPE", DbType.String, 10, poParameter.CACTIVE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CTAX_DATE", DbType.String, 10, poParameter.CTAX_DATE);
 
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_EXPENDITURE {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -157,6 +177,10 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CTAX_DATE", DbType.String, 10, poParameter.CTAX_DATE);
 
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -194,6 +218,10 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CACTIVE_TYPE", DbType.String, 10, poParameter.CACTIVE_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
 
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT_ALLOCATION {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
