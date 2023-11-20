@@ -47,6 +47,14 @@
           }
         }
       },
+      "R_CommonFrontBackAPI/1.0.0.0": {
+        "runtime": {
+          "R_CommonFrontBackAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "R_ContextEnumAndInterface/1.0.0.0": {
         "runtime": {
           "R_ContextEnumAndInterface.dll": {
@@ -66,14 +74,6 @@
       "R_APICommonDTO/1.0.0.0": {
         "runtime": {
           "R_APICommonDTO.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "R_CommonFrontBackAPI/1.0.0.0": {
-        "runtime": {
-          "R_CommonFrontBackAPI.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -115,6 +115,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "R_CommonFrontBackAPI/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "R_ContextEnumAndInterface/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -126,11 +131,6 @@
       "sha512": ""
     },
     "R_APICommonDTO/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "R_CommonFrontBackAPI/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

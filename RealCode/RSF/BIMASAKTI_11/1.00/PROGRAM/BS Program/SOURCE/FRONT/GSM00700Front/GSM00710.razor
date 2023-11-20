@@ -1,19 +1,22 @@
 @page "/GSM00710"
 
 @using GSM00700Common.DTO
+@using GSM00700FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 <R_StackLayout Row="true">
+    @inject R_ILocalizer<Resources_Dummy_Class> _localizer
 
     <R_ItemLayout col="2">
         <R_Label Class="fw-bold">Cash Flow Group</R_Label>
     </R_ItemLayout>
     <R_ItemLayout col="1">
         <R_TextBox @bind-value="GSM00710ViewModel.CashFlowGroupCode"
-                   R_ConductorSource="@R_conduct" Enabled="false" />
+                   R_ConductorSource="@R_conduct" Enabled="false"/>
     </R_ItemLayout>
-    <R_ItemLayout col="2">
+    <R_ItemLayout col="5">
         <R_TextBox @bind-value="GSM00710ViewModel.CashFlowGroupName"
-                   R_ConductorSource="@R_conduct" Enabled="false" />
+                   R_ConductorSource="@R_conduct" Enabled="false"/>
     </R_ItemLayout>
 </R_StackLayout>
 
@@ -37,19 +40,19 @@
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
 
-                    <R_GridTextColumn Width="125px" FieldName="CSEQUENCE" HeaderText="Display Seq" />
+                    <R_GridTextColumn Width="125px" FieldName="CSEQUENCE" HeaderText="@_localizer["SEQ"]" />
                     <R_GridTextColumn Width="150px" FieldName="CCASH_FLOW_CODE" HeaderText="Cash Flow Code" MaxLength="20" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn Width="250px" FieldName="CCASH_FLOW_NAME" HeaderText="Cash Flow Name" MaxLength="100" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                    <R_GridTextColumn Width="350px" FieldName="CCASH_FLOW_NAME" HeaderText="@_localizer["COL_FLW_NAME"]" MaxLength="100" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
                     <R_GridDropDownListColumn Width="160px" Data="@GSM00710ViewModel.loCashFlowType"
                                               FieldName="@nameof(GSM00710DTO.CCASH_FLOW_TYPE)"
                                               ValueField="@nameof(GSM00710CashFlowTypeDTO.CCODE)"
                                               TextField="@nameof(GSM00710CashFlowTypeDTO.CDESCRIPTION)"
-                                              HeaderText="Cash Flow Type" R_EnableAdd R_EnableEdit />
-                    <R_GridTextColumn Width="150px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-                    <R_GridTextColumn Width="150px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-                    <R_GridTextColumn Width="150px" FieldName="CCREATE_BY" HeaderText="Created By" />
-                    <R_GridTextColumn Width="150px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
+                                              HeaderText="@_localizer["COL_FLW_TYPE"]" R_EnableAdd R_EnableEdit />
+                    <R_GridTextColumn Width="150px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
+                    <R_GridTextColumn Width="150px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]" />
+                    <R_GridTextColumn Width="150px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
+                    <R_GridTextColumn Width="150px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]" />
 
                 </R_GridColumns>
             </R_Grid>
@@ -58,7 +61,7 @@
                     <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">Template</R_Button>
                 </R_ItemLayout>
                 <R_ItemLayout>
-                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">Upload</R_Popup>
+                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">@_localizer["UPLD"]</R_Popup>
                 </R_ItemLayout>
 
             </R_StackLayout>
@@ -70,6 +73,7 @@
                          R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlow"
                          R_ServiceSave="@Grid_ServiceSaveRecordCashFlow"
                          R_ServiceDelete="@Grid_DeleteRecordCashFlow"
+                         R_AfterAdd="@AfterAdd"
                          @*R_AfterSave="@Grid_AfterSaveCashFlow" *@
                          R_Display="@Grid_R_DisplaytListCashFlowPlan"
                          @* R_Validation="@Grid_ValidationCashFlow" *@
@@ -105,7 +109,7 @@
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"
                                R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
-                <R_ItemLayout Class="col-2">
+                <R_ItemLayout Class="col-5">
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanName"
                                R_ConductorSource="@R_conduct" Enabled="false" />
                 </R_ItemLayout>
@@ -128,7 +132,7 @@
                         AllowDeleteRow="false">
 
                     <R_GridColumns>
-                        <R_GridTextColumn Width="125px" FieldName="CYEAR" HeaderText="Year Period"></R_GridTextColumn>
+                        <R_GridTextColumn Width="125px" FieldName="CYEAR" HeaderText="@_localizer["YEAR_PRD"]"></R_GridTextColumn>
                     </R_GridColumns>
 
                 </R_Grid>
@@ -159,29 +163,34 @@
                         R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
 
                     <R_GridColumns>
-                        <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="Period No" ></R_GridTextColumn>
-                        <R_GridNumericColumn Width="139px" FieldName="NLOCAL_AMOUNT" HeaderText="Local Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
-                        <R_GridNumericColumn Width="128px" FieldName="NBASE_AMOUNT" HeaderText="Base Amount" R_EnableEdit R_EnableAdd></R_GridNumericColumn>
-                        <R_GridTextColumn Width="132px" FieldName="CUPDATE_BY" HeaderText="Updated By"></R_GridTextColumn>
-                        <R_GridTextColumn Width="144px" FieldName="DUPDATE_DATE" HeaderText="Updated Date"></R_GridTextColumn>
-                        <R_GridTextColumn Width="131px" FieldName="CCREATE_BY" HeaderText="Created By"></R_GridTextColumn>
-                        <R_GridTextColumn Width="146px" FieldName="DCREATE_DATE" HeaderText="Created Date"></R_GridTextColumn>
+                        <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="@_localizer["PRD_NO"]"></R_GridTextColumn>
+                        <R_GridNumericColumn Width="139px" FieldName="NLOCAL_AMOUNT" HeaderText="@_localizer["LC_AMNT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+                        <R_GridNumericColumn Width="128px" FieldName="NBASE_AMOUNT" HeaderText="@_localizer["BS_AMNT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+                        <R_GridTextColumn Width="132px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"></R_GridTextColumn>
+                        <R_GridTextColumn Width="144px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]"></R_GridTextColumn>
+                        <R_GridTextColumn Width="131px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"></R_GridTextColumn>
+                        <R_GridTextColumn Width="146px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]"></R_GridTextColumn>
                     </R_GridColumns>
 
                 </R_Grid>
                 <R_StackLayout Row="true">
 
-                    <R_ItemLayout col="2">
-                        <R_Label Class="fw-italic">Local Currency</R_Label>
+                    <R_ItemLayout>
+                        <R_Label Class="fw-italic">@_localizer["LC_CRNCY"]</R_Label>
                     </R_ItemLayout>
 
                     <R_ItemLayout col="2">
                         <R_TextBox @bind-value="GSM00720ViewModel.loCurrency.CLOCAL_CURRENCY_CODE"
                                    R_ConductorSource="@R_conduct" Enabled="false" />
                     </R_ItemLayout>
+                    
+                    <R_ItemLayout col="1">
+                        <R_Label Class="fw-italic"> </R_Label>
+                    </R_ItemLayout>
+                    
 
-                    <R_ItemLayout col="2">
-                        <R_Label Class="fw-italic">Base Currency</R_Label>
+                    <R_ItemLayout>
+                        <R_Label Class="fw-italic">@_localizer["BS_CRNCY"]</R_Label>
                     </R_ItemLayout>
 
 
@@ -209,21 +218,21 @@
         <R_StackLayout Row="true">
 
             <R_ItemLayout>
-                <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate720">Template</R_Button>
+                <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate720">@_localizer["TMPLT"]T</R_Button>
             </R_ItemLayout>
             <R_ItemLayout>
-                <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload720">Upload</R_Popup>
+                <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload720">@_localizer["UPLD"]</R_Popup>
             </R_ItemLayout>
             <R_ItemLayout>
-                <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">Copy From Year</R_Popup>
-            </R_ItemLayout>
-
-            <R_ItemLayout>
-                <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount" @ref="BaseAmount">Update Base Amount</R_Popup>
+                <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">@_localizer["CP_FR_YEAR"]</R_Popup>
             </R_ItemLayout>
 
             <R_ItemLayout>
-                <R_Popup R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount" @ref="LocalAmount">Update Local Amount </R_Popup>
+                <R_Popup R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount" @ref="BaseAmount">@_localizer["UPDT_BS_AMNT"]</R_Popup>
+            </R_ItemLayout>
+
+            <R_ItemLayout>
+                <R_Popup R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount" @ref="LocalAmount">@_localizer["UPDT_LC_AMNT"] </R_Popup>
             </R_ItemLayout>
 
         </R_StackLayout>

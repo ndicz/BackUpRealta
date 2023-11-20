@@ -2206,14 +2206,17 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Telerik.DataSource/2.1.4": {
+      "Telerik.DataSource/2.1.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.6.0",
           "System.Data.Common": "4.3.0",
           "System.Linq.Queryable": "4.3.0",
+          "System.Net.Http": "4.3.4",
           "System.Runtime.Loader": "4.3.0",
-          "System.Text.Json": "4.7.1"
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.7.1",
+          "System.Text.RegularExpressions": "4.3.1"
         },
         "compile": {
           "lib/netstandard2.1/Telerik.DataSource.dll": {
@@ -2226,10 +2229,10 @@
           }
         }
       },
-      "Telerik.Documents.SpreadsheetStreaming/2023.2.519": {
+      "Telerik.Documents.SpreadsheetStreaming/2023.3.1005": {
         "type": "package",
         "dependencies": {
-          "Telerik.Zip": "[2023.2.519]"
+          "Telerik.Zip": "[2023.3.1005]"
         },
         "compile": {
           "lib/netstandard2.0/Telerik.Documents.SpreadsheetStreaming.dll": {
@@ -2242,7 +2245,7 @@
           }
         }
       },
-      "Telerik.FontIcons/1.5.0": {
+      "Telerik.FontIcons/2.0.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2284,7 +2287,7 @@
           "lib/netstandard2.0/Telerik.Recurrence.dll": {}
         }
       },
-      "Telerik.SvgIcons/1.5.0": {
+      "Telerik.SvgIcons/2.0.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -2296,21 +2299,19 @@
           "lib/netstandard1.1/Telerik.SvgIcons.dll": {}
         }
       },
-      "Telerik.UI.for.Blazor/4.3.0": {
+      "Telerik.UI.for.Blazor/4.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components.Web": "3.1.32",
           "System.Data.Common": "4.3.0",
           "System.Linq.Queryable": "4.3.0",
-          "System.Net.Http": "4.3.4",
-          "System.Text.RegularExpressions": "4.3.1",
-          "Telerik.DataSource": "2.1.4",
-          "Telerik.Documents.SpreadsheetStreaming": "2023.2.519",
-          "Telerik.FontIcons": "1.5.0",
+          "Telerik.DataSource": "2.1.5",
+          "Telerik.Documents.SpreadsheetStreaming": "2023.3.1005",
+          "Telerik.FontIcons": "2.0.0",
           "Telerik.Pivot.Core": "0.1.0",
           "Telerik.Pivot.DataProviders.Xmla": "0.1.0",
           "Telerik.Recurrence": "0.2.1",
-          "Telerik.SvgIcons": "1.5.0"
+          "Telerik.SvgIcons": "2.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Telerik.Blazor.dll": {
@@ -2329,7 +2330,7 @@
           "buildMultiTargeting/Telerik.UI.for.Blazor.props": {}
         }
       },
-      "Telerik.Zip/2023.2.519": {
+      "Telerik.Zip/2023.3.1005": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Telerik.Zip.dll": {
@@ -4906,14 +4907,17 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Telerik.DataSource/2.1.4": {
+      "Telerik.DataSource/2.1.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.6.0",
           "System.Data.Common": "4.3.0",
           "System.Linq.Queryable": "4.3.0",
+          "System.Net.Http": "4.3.4",
           "System.Runtime.Loader": "4.3.0",
-          "System.Text.Json": "4.7.1"
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.7.1",
+          "System.Text.RegularExpressions": "4.3.1"
         },
         "compile": {
           "lib/netstandard2.1/Telerik.DataSource.dll": {
@@ -4926,10 +4930,10 @@
           }
         }
       },
-      "Telerik.Documents.SpreadsheetStreaming/2023.2.519": {
+      "Telerik.Documents.SpreadsheetStreaming/2023.3.1005": {
         "type": "package",
         "dependencies": {
-          "Telerik.Zip": "[2023.2.519]"
+          "Telerik.Zip": "[2023.3.1005]"
         },
         "compile": {
           "lib/netstandard2.0/Telerik.Documents.SpreadsheetStreaming.dll": {
@@ -4942,7 +4946,7 @@
           }
         }
       },
-      "Telerik.FontIcons/1.5.0": {
+      "Telerik.FontIcons/2.0.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -4984,7 +4988,7 @@
           "lib/netstandard2.0/Telerik.Recurrence.dll": {}
         }
       },
-      "Telerik.SvgIcons/1.5.0": {
+      "Telerik.SvgIcons/2.0.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -4996,21 +5000,19 @@
           "lib/netstandard1.1/Telerik.SvgIcons.dll": {}
         }
       },
-      "Telerik.UI.for.Blazor/4.3.0": {
+      "Telerik.UI.for.Blazor/4.6.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components.Web": "3.1.32",
           "System.Data.Common": "4.3.0",
           "System.Linq.Queryable": "4.3.0",
-          "System.Net.Http": "4.3.4",
-          "System.Text.RegularExpressions": "4.3.1",
-          "Telerik.DataSource": "2.1.4",
-          "Telerik.Documents.SpreadsheetStreaming": "2023.2.519",
-          "Telerik.FontIcons": "1.5.0",
+          "Telerik.DataSource": "2.1.5",
+          "Telerik.Documents.SpreadsheetStreaming": "2023.3.1005",
+          "Telerik.FontIcons": "2.0.0",
           "Telerik.Pivot.Core": "0.1.0",
           "Telerik.Pivot.DataProviders.Xmla": "0.1.0",
           "Telerik.Recurrence": "0.2.1",
-          "Telerik.SvgIcons": "1.5.0"
+          "Telerik.SvgIcons": "2.0.0"
         },
         "compile": {
           "lib/netstandard2.1/Telerik.Blazor.dll": {
@@ -5029,7 +5031,7 @@
           "buildMultiTargeting/Telerik.UI.for.Blazor.props": {}
         }
       },
-      "Telerik.Zip/2023.2.519": {
+      "Telerik.Zip/2023.3.1005": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Telerik.Zip.dll": {
@@ -10640,23 +10642,23 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Telerik.DataSource/2.1.4": {
-      "sha512": "/LsBfVQRoBg/2Au3V8tS+pDTr21+GoObA9u2VoKgpU7iP/YYMfnwwB8Y6JRR+flpcip9XUpMlupfkJ3k+3RQrw==",
+    "Telerik.DataSource/2.1.5": {
+      "sha512": "lBc6AG0OZH/TSdsaqf7655GcM/7YkGNpMPyeSyaknaeeIxfcJz+uJr9pJI69RgN6ANO6iRLahq888kUmugYeHg==",
       "type": "package",
-      "path": "telerik.datasource/2.1.4",
+      "path": "telerik.datasource/2.1.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.1/Telerik.DataSource.dll",
         "lib/netstandard2.1/Telerik.DataSource.xml",
-        "telerik.datasource.2.1.4.nupkg.sha512",
+        "telerik.datasource.2.1.5.nupkg.sha512",
         "telerik.datasource.nuspec"
       ]
     },
-    "Telerik.Documents.SpreadsheetStreaming/2023.2.519": {
-      "sha512": "7eN0Ig4L35njtIsClpRLzGizjz9zhPo7MNBIwt5uNRqBGCw8NCJbBqoxozN9iWVO51qeTiJAOtQKVcIe8l/gPg==",
+    "Telerik.Documents.SpreadsheetStreaming/2023.3.1005": {
+      "sha512": "Qc5Aft6r3FKoeA+TnT6kbft28sZTM99BW9JA6j7gb3V6bna6rfLRzdkUbGiKlX+oPcf/1nYiTOtrOzx+MUoRog==",
       "type": "package",
-      "path": "telerik.documents.spreadsheetstreaming/2023.2.519",
+      "path": "telerik.documents.spreadsheetstreaming/2023.3.1005",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10667,20 +10669,20 @@
         "images/tdp.png",
         "lib/netstandard2.0/Telerik.Documents.SpreadsheetStreaming.dll",
         "lib/netstandard2.0/Telerik.Documents.SpreadsheetStreaming.xml",
-        "telerik.documents.spreadsheetstreaming.2023.2.519.nupkg.sha512",
+        "telerik.documents.spreadsheetstreaming.2023.3.1005.nupkg.sha512",
         "telerik.documents.spreadsheetstreaming.nuspec"
       ]
     },
-    "Telerik.FontIcons/1.5.0": {
-      "sha512": "msFmYkcloWTXQ2Dq68PBEdizuQrGnuFC2tkK77jCps9fXk7X3OdrJ/c/MlLgyIhPIxekHNiW2cifi1rJzsbZog==",
+    "Telerik.FontIcons/2.0.0": {
+      "sha512": "QWCuRSUm9KoWx8fSDm7yPycKMykCGw8oxiEaU8TE2pv4jPbwGbJQkx0tjDSff8eK5HHLqj3CN4KO+XtwMAzIaA==",
       "type": "package",
-      "path": "telerik.fonticons/1.5.0",
+      "path": "telerik.fonticons/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "lib/netstandard1.1/Telerik.FontIcons.dll",
-        "telerik.fonticons.1.5.0.nupkg.sha512",
+        "telerik.fonticons.2.0.0.nupkg.sha512",
         "telerik.fonticons.nuspec"
       ]
     },
@@ -10720,23 +10722,23 @@
         "telerik.recurrence.nuspec"
       ]
     },
-    "Telerik.SvgIcons/1.5.0": {
-      "sha512": "Di88wSnn7rIf+RjgKj/oYgkRtowHR0FbyceWSEWwp6qflHxUY5B//vS3+huWIQtcAhpry08mN6MnruJrhBvY4w==",
+    "Telerik.SvgIcons/2.0.0": {
+      "sha512": "+2FuG+cDhlb7axf6CU95TDcL5YszbtgGZ3QesPRCyDYTWoQ8rh+ygP5v1Pr6QcOBXAWl0eVSAtlA4hu30ov1DQ==",
       "type": "package",
-      "path": "telerik.svgicons/1.5.0",
+      "path": "telerik.svgicons/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "lib/netstandard1.1/Telerik.SvgIcons.dll",
-        "telerik.svgicons.1.5.0.nupkg.sha512",
+        "telerik.svgicons.2.0.0.nupkg.sha512",
         "telerik.svgicons.nuspec"
       ]
     },
-    "Telerik.UI.for.Blazor/4.3.0": {
-      "sha512": "Syw5AwpLqObK5QRbU58EIZFLgaRROd1Kn6wMPR0L6HFzrbwHON3dwXJnnSkk+n3XQsSo4nYYIvVZ/3x5N6IsmQ==",
+    "Telerik.UI.for.Blazor/4.6.0": {
+      "sha512": "SLSncqvivOTroto0RKmKBegJDiPR9tyLj0GHH4JgatbFnrfVZYM+H4Fr/URwNHqxMG1DiA8v+AbsYtHZwBzB0A==",
       "type": "package",
-      "path": "telerik.ui.for.blazor/4.3.0",
+      "path": "telerik.ui.for.blazor/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10746,6 +10748,8 @@
         "buildTransitive/Telerik.UI.for.Blazor.props",
         "lib/netstandard2.1/Telerik.Blazor.dll",
         "lib/netstandard2.1/Telerik.Blazor.xml",
+        "staticwebassets/css/kendo-font-icons/font-icons.css",
+        "staticwebassets/css/kendo-font-icons/kendo-font-icons.ttf",
         "staticwebassets/css/kendo-theme-bootstrap/all.css",
         "staticwebassets/css/kendo-theme-default/all.css",
         "staticwebassets/css/kendo-theme-default/default-ocean-blue.css",
@@ -10753,14 +10757,14 @@
         "staticwebassets/css/kendo-theme-material/all.css",
         "staticwebassets/images/blazor.png",
         "staticwebassets/js/telerik-blazor.js",
-        "telerik.ui.for.blazor.4.3.0.nupkg.sha512",
+        "telerik.ui.for.blazor.4.6.0.nupkg.sha512",
         "telerik.ui.for.blazor.nuspec"
       ]
     },
-    "Telerik.Zip/2023.2.519": {
-      "sha512": "W4sDlSqm2MSsAOqOyEVtWNw2Gu1OR3NbnIHrfT3ntgZsaNU15/MSNE5t7amcm/QyfDQtn8Er/Wl7vo3CDorBJg==",
+    "Telerik.Zip/2023.3.1005": {
+      "sha512": "pwsopd+IUoabWns596+yYR/tAo1UF+wtnPBUp3ZhB/bMfYyb5Yyf5OZVbbWOTi6F4d8R+R+oAeHxQ2/o18LJpg==",
       "type": "package",
-      "path": "telerik.zip/2023.2.519",
+      "path": "telerik.zip/2023.3.1005",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -10771,7 +10775,7 @@
         "images/tdp.png",
         "lib/netstandard2.0/Telerik.Zip.dll",
         "lib/netstandard2.0/Telerik.Zip.xml",
-        "telerik.zip.2023.2.519.nupkg.sha512",
+        "telerik.zip.2023.3.1005.nupkg.sha512",
         "telerik.zip.nuspec"
       ]
     },
@@ -10936,7 +10940,7 @@
       "Microsoft.Extensions.Http >= 7.0.0",
       "Newtonsoft.Json >= 13.0.1",
       "System.IdentityModel.Tokens.Jwt >= 6.23.1",
-      "Telerik.UI.for.Blazor >= 4.3.0"
+      "Telerik.UI.for.Blazor >= 4.6.0"
     ]
   },
   "packageFolders": {
@@ -11051,7 +11055,7 @@
           },
           "Telerik.UI.for.Blazor": {
             "target": "Package",
-            "version": "[4.3.0, )"
+            "version": "[4.6.0, )"
           }
         },
         "imports": [

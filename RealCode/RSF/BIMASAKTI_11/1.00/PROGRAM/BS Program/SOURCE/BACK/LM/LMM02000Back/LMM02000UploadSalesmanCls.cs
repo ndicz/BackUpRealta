@@ -113,7 +113,7 @@ namespace LMM02000Back
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 8, poBatchProcessPar.Key.COMPANY_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 20, poBatchProcessPar.Key.USER_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 20, lcCodeGroup);
-                loDb.R_AddCommandParameter(loCmd, "@CKEY_GUID", DbType.String, 50, poBatchProcessPar.Key.KEY_GUID);
+                loDb.R_AddCommandParameter(loCmd, "@CKEY_GUID", DbType.String, 100, poBatchProcessPar.Key.KEY_GUID);
 
                 loDb.SqlExecNonQuery(loConn, loCmd, false);
 

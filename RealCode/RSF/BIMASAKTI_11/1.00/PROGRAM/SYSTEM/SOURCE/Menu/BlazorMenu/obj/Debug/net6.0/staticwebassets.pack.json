@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\logo-bimasakti.png"
     },
     {
+      "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\no-image.png",
+      "PackagePath": "staticwebassets\\assets\\img\\no-image.png"
+    },
+    {
       "Id": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\program.png",
       "PackagePath": "staticwebassets\\assets\\img\\program.png"
     },

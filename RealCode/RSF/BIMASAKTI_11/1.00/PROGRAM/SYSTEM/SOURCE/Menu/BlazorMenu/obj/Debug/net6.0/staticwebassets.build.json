@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VvPGlGvrm518+Fhm94lAf9YxmU00lX2jhRbQWU/ebBk=",
+  "Hash": "3nGDVvsU3Dw6lQhkm82oUPuoKgFaQFbVyJdCBSSQ61o=",
   "Source": "BlazorMenu",
   "BasePath": "/",
   "Mode": "Root",
@@ -335,10 +335,44 @@
       "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\blazorprettycode\\1.6.0\\staticwebassets\\WinterIsComingLight.json"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-bootstrap\\all.css",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-font-icons\\font-icons.css",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
+      "BasePath": "_content/Telerik.UI.for.Blazor",
+      "RelativePath": "css/kendo-font-icons/font-icons.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-font-icons\\font-icons.css"
+    },
+    {
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-font-icons\\kendo-font-icons.ttf",
+      "SourceId": "Telerik.UI.for.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
+      "BasePath": "_content/Telerik.UI.for.Blazor",
+      "RelativePath": "css/kendo-font-icons/kendo-font-icons.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-font-icons\\kendo-font-icons.ttf"
+    },
+    {
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-bootstrap\\all.css",
+      "SourceId": "Telerik.UI.for.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "css/kendo-theme-bootstrap/all.css",
       "AssetKind": "All",
@@ -349,13 +383,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-bootstrap\\all.css"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-bootstrap\\all.css"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-default\\all.css",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-default\\all.css",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "css/kendo-theme-default/all.css",
       "AssetKind": "All",
@@ -366,13 +400,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-default\\all.css"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-default\\all.css"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-default\\default-ocean-blue.css",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-default\\default-ocean-blue.css",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "css/kendo-theme-default/default-ocean-blue.css",
       "AssetKind": "All",
@@ -383,13 +417,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-default\\default-ocean-blue.css"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-default\\default-ocean-blue.css"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-fluent\\all.css",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-fluent\\all.css",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "css/kendo-theme-fluent/all.css",
       "AssetKind": "All",
@@ -400,13 +434,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-fluent\\all.css"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-fluent\\all.css"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-material\\all.css",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-material\\all.css",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "css/kendo-theme-material/all.css",
       "AssetKind": "All",
@@ -417,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\css\\kendo-theme-material\\all.css"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\css\\kendo-theme-material\\all.css"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\images\\blazor.png",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\images\\blazor.png",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "images/blazor.png",
       "AssetKind": "All",
@@ -434,13 +468,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\images\\blazor.png"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\images\\blazor.png"
     },
     {
-      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\js\\telerik-blazor.js",
+      "Identity": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\js\\telerik-blazor.js",
       "SourceId": "Telerik.UI.for.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\",
       "BasePath": "_content/Telerik.UI.for.Blazor",
       "RelativePath": "js/telerik-blazor.js",
       "AssetKind": "All",
@@ -451,7 +485,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\staticwebassets\\js\\telerik-blazor.js"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\staticwebassets\\js\\telerik-blazor.js"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM00100Front\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GSM00100Front.bundle.scp.css",
@@ -6044,7 +6078,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\lib\\netstandard2.1\\Telerik.Blazor.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\lib\\netstandard2.1\\Telerik.Blazor.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.DataSource.dll",
@@ -6061,7 +6095,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.datasource\\2.1.4\\lib\\netstandard2.1\\Telerik.DataSource.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.datasource\\2.1.5\\lib\\netstandard2.1\\Telerik.DataSource.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Documents.SpreadsheetStreaming.dll",
@@ -6078,7 +6112,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.documents.spreadsheetstreaming\\2023.2.519\\lib\\netstandard2.0\\Telerik.Documents.SpreadsheetStreaming.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.documents.spreadsheetstreaming\\2023.3.1005\\lib\\netstandard2.0\\Telerik.Documents.SpreadsheetStreaming.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.FontIcons.dll",
@@ -6095,7 +6129,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.fonticons\\1.5.0\\lib\\netstandard1.1\\Telerik.FontIcons.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.fonticons\\2.0.0\\lib\\netstandard1.1\\Telerik.FontIcons.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Pivot.Core.dll",
@@ -6163,7 +6197,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.svgicons\\1.5.0\\lib\\netstandard1.1\\Telerik.SvgIcons.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.svgicons\\2.0.0\\lib\\netstandard1.1\\Telerik.SvgIcons.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Zip.dll",
@@ -6180,7 +6214,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.zip\\2023.2.519\\lib\\netstandard2.0\\Telerik.Zip.dll"
+      "OriginalItemSpec": "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.zip\\2023.3.1005\\lib\\netstandard2.0\\Telerik.Zip.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\WindowsBase.dll",
@@ -6591,6 +6625,40 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.JSInterop.dll"
     },
     {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\2cQOVFX9.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.Documents.SpreadsheetStreaming.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Documents.SpreadsheetStreaming.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Documents.SpreadsheetStreaming.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\2dk3opsy.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.DataSource.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.DataSource.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.DataSource.dll"
+    },
+    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\2PO0mjx9.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -6778,23 +6846,6 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.Emit.ILGeneration.dll"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\4IHfE+uk.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.Zip.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Zip.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Zip.dll"
-    },
-    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\4lpFk6HY.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -6844,23 +6895,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Runtime.Handles.dll"
-    },
-    {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\57eDlpU0.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.Documents.SpreadsheetStreaming.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Documents.SpreadsheetStreaming.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Documents.SpreadsheetStreaming.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\5GoXYoQr.gz",
@@ -7082,6 +7116,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Web.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\8pecoNe4.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.Zip.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Zip.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Zip.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\8T1wNMvX.gz",
@@ -8019,23 +8070,6 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\Eg4NuWHo.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.SvgIcons.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.SvgIcons.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.SvgIcons.dll"
-    },
-    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\f5McwERn.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -8971,23 +9005,6 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Collections.dll"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\krQxAYHL.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.FontIcons.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.FontIcons.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.FontIcons.dll"
-    },
-    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\ktdnprtD.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -9481,23 +9498,6 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Reflection.TypeExtensions.dll"
     },
     {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\OEf+qbdz.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.Blazor.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Blazor.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Blazor.dll"
-    },
-    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\oGO7U3Ei.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -9651,6 +9651,23 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.IO.MemoryMappedFiles.dll"
     },
     {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\OQK8NHLI.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.Blazor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Blazor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.Blazor.dll"
+    },
+    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\OSnqFvuC.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -9785,23 +9802,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Threading.Tasks.Extensions.dll"
-    },
-    {
-      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\PMP8HLl9.gz",
-      "SourceId": "BlazorMenu",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Telerik.DataSource.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.DataSource.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.DataSource.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\PUJ5vgiF.gz",
@@ -10280,6 +10280,23 @@
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Xml.XDocument.dll"
     },
     {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\T5B9uOqs.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.FontIcons.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.FontIcons.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.FontIcons.dll"
+    },
+    {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\t8+Yt4D1.gz",
       "SourceId": "BlazorMenu",
       "SourceType": "Computed",
@@ -10329,6 +10346,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CSHTMLTokenizer.dll"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\tKjTKcEn.gz",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Telerik.SvgIcons.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.SvgIcons.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Telerik.SvgIcons.dll"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\Debug\\net6.0\\build-gz\\TojzZxMU.gz",
@@ -11672,6 +11706,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\logo-bimasakti.png"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\no-image.png",
+      "SourceId": "BlazorMenu",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/img/no-image.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\no-image.png"
     },
     {
       "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\wwwroot\\assets\\img\\program.png",

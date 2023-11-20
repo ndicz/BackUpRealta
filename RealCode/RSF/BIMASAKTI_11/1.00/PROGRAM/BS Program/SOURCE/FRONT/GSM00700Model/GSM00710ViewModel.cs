@@ -20,6 +20,7 @@ namespace GSM00700Model
         private GSM00710Model _GSM00710Model = new GSM00710Model();
 
         public ObservableCollection<GSM00710DTO> loGridList = new ObservableCollection<GSM00710DTO>();
+        public ObservableCollection<GSM00710CashFlowTypeDTO> loCashFlow = new ObservableCollection<GSM00710CashFlowTypeDTO>();
         public GSM00710DTO loEntity = new GSM00710DTO();
         public string CashFlowGroupCode = ""; // for filter
         public string CashFlowGroupName = ""; // for filter
@@ -36,6 +37,7 @@ namespace GSM00700Model
             {
                 var loResult = await _GSM00710Model.GetListCashFlowTypeAsync();
                 loCashFlowType = loResult.Data.OrderByDescending(x => x.CCODE).ToList(); // Urutkan dan simpan ke dalam list
+                loCashFlow = new ObservableCollection<GSM00710CashFlowTypeDTO>(loCashFlowType);
                 CashFlowTypGrp = loCashFlowType[0].CCODE;
 
             }

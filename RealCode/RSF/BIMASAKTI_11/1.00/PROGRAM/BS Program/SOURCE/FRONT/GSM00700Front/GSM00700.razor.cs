@@ -62,6 +62,7 @@ namespace GSM00700Front
                 loEx.Add(ex);
             }
 
+            //R_DisplayException(loEx);
             loEx.ThrowExceptionIfErrors();
         }
 
@@ -130,11 +131,11 @@ namespace GSM00700Front
             {
                 var loData = (GSM00700DTO)eventArgs.Data;
 
-                if (string.IsNullOrEmpty(loData.CCASH_FLOW_GROUP_CODE))
-                    loException.Add("001", "Cash Flow Group Code cannot be Empty.");
+                    if (string.IsNullOrEmpty(loData.CCASH_FLOW_GROUP_CODE))
+                        loException.Add("001", @_localizer["CASH_GRP_CD_EMPT"]);
 
                 if (string.IsNullOrEmpty(loData.CCASH_FLOW_GROUP_NAME))
-                    loException.Add(_localizer["LABEL_CASHFLOW-GRP_CODE"], _localizer["LABEL_CASHFLOW-GRP_CODE"]);
+                    loException.Add("002", @_localizer["CASH_GRP_NM_EMPT"]);
 
 
             }
@@ -187,12 +188,17 @@ namespace GSM00700Front
         {
             var loEx = new R_Exception();
 
+            var GridType = (GSM00700DTO)eventArgs.Data;
+
             try
             {
-                GSM00700ViewModel.loEntity.CCASH_FLOW_GROUP_TYPE = "I";
+                //GSM00700ViewModel.loEntity.CCASH_FLOW_GROUP_TYPE = "I";
                 await GSM00700ViewModel.GetCashFlowGroupTypeList();
                 await _gridRef00700.R_RefreshGrid(null);
-                await _gridRef00700.AutoFitAllColumnsAsync();
+                //await _gridRef00700.AutoFitAllColumnsAsync();
+
+
+                GridType.CCASH_FLOW_GROUP_TYPE = GSM00700ViewModel.CashFlowTyp;
             }
             catch (Exception ex)
             {
@@ -201,7 +207,14 @@ namespace GSM00700Front
 
             loEx.ThrowExceptionIfErrors();
         }
+        private void R_AfterAdd(R_AfterAddEventArgs eventArgs)
+        {
+            var GridType = (GSM00700DTO) eventArgs.Data;
 
+            GridType.CCASH_FLOW_GROUP_TYPE = GSM00700ViewModel.loGroupType.FirstOrDefault().ToString();
+
+
+        }
         private void R_BeforeOpenPrint(R_BeforeOpenPopupEventArgs eventArgs)
         {
 

@@ -20,7 +20,7 @@ namespace LMM02000Common.DTO.UPLOAD_DTO_LMM02000
         public string Gender { get; set; }
         public string SalesmanType { get; set; }
         public string CompanyName { get; set; }
-        public string NonActiveDate { get; set; }
+        public string NonActiveDate { get; set; } = "";
         public bool Var_Exists { get; set; }
         public bool Var_Overwrite { get; set; }
     }
@@ -39,7 +39,7 @@ namespace LMM02000Common.DTO.UPLOAD_DTO_LMM02000
         public string Gender { get; set; } = " ";
         public string SalesmanType { get; set; } = " ";
         public string CompanyName { get; set; } = " ";
-        public string NonActiveDate { get; set; } = " ";
+        public string NonActiveDate { get; set; } = "";
         public string Notes { get; set; } = " ";
         public string ErrorMessage { get; set; } = " ";
     }
@@ -48,19 +48,19 @@ namespace LMM02000Common.DTO.UPLOAD_DTO_LMM02000
 
     public class LMM02000UploadRequestDTO
     {
-        public int NO { get; set; }
-        public string SalesmanId { get; set; }
-        public string SalesmanName { get; set; }
-        public bool Active { get; set; }
-        public string Address { get; set; }
-        public string EmailAddress { get; set; }
-        public string MobileNo1 { get; set; }
-        public string MobileNo2 { get; set; }
-        public string NIK { get; set; }
-        public string Gender { get; set; }
-        public string SalesmanType { get; set; }
-        public string CompanyName { get; set; }
-        public string NonActiveDate { get; set; }
+        public int NO { get; set; } 
+        public string SalesmanId { get; set; } ="";
+        public string SalesmanName { get; set; } ="";
+        public bool Active { get; set; } 
+        public string Address { get; set; } ="";
+        public string EmailAddress { get; set; } ="";
+        public string MobileNo1 { get; set; } ="";
+        public string MobileNo2 { get; set; } ="";
+        public string NIK { get; set; } ="";
+        public string Gender { get; set; } ="";
+        public string SalesmanType { get; set; } ="";
+        public string CompanyName { get; set; } ="";
+        public string NonActiveDate { get; set; } = "";
     }
 
     public class LMM02000UploadErrorValidateDTO
@@ -77,8 +77,8 @@ namespace LMM02000Common.DTO.UPLOAD_DTO_LMM02000
         public string Gender { get; set; }
         public string SalesmanType { get; set; }
         public string CompanyName { get; set; }
-        public string NonActiveDate { get; set; }
-        public string ErrorMessage { get; set; }
+        public string NonActiveDate { get; set; } = "";
+        public string ErrorMessage { get; set; } = "";
         public bool ErrorFlag { get; set; }
         public bool Var_Exists { get; set; }
         public bool Var_Overwrite { get; set; }

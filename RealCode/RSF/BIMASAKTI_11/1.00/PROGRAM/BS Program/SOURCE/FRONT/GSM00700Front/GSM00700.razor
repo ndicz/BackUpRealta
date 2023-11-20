@@ -23,21 +23,21 @@
             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlowGroup">
         <R_GridColumns>
 
-            <R_GridTextColumn Width="201px" FieldName="CCASH_FLOW_GROUP_CODE" HeaderText="@_localizer["LABEL_CASHFLOW-GRP_CODE"]" MaxLength="20" R_EnableAdd></R_GridTextColumn>
-            <R_GridTextColumn Width="230px" FieldName="CCASH_FLOW_GROUP_NAME" HeaderText="Cash Flow Group Name" MaxLength="100" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridTextColumn Width="201px" FieldName="CCASH_FLOW_GROUP_CODE" HeaderText="@_localizer["COL_GRP_CODE"]" MaxLength="20" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn Width="350px" FieldName="CCASH_FLOW_GROUP_NAME" HeaderText="@_localizer["COL_GRP_NAME"]" MaxLength="100" R_EnableAdd R_EnableEdit></R_GridTextColumn>
 
 
             <R_GridDropDownListColumn Width="210px" Data="@GSM00700ViewModel.loCashFlowGroupType"
                                       FieldName="@nameof(GSM00700DTO.CCASH_FLOW_GROUP_TYPE)"
                                       ValueField="@nameof(GSM00700CashFlowGroupTypeDTO.CCODE)"
                                       TextField="@nameof(GSM00700CashFlowGroupTypeDTO.CDESCRIPTION)"
-                                      HeaderText="Cash Flow Group Type" R_EnableAdd R_EnableEdit />
+                                      HeaderText="@_localizer["COL_GRP_TYPE"]" R_EnableAdd R_EnableEdit />
 
 
-            <R_GridTextColumn Width="135px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn Width="176px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-            <R_GridTextColumn Width="135px" FieldName="CCREATE_BY" HeaderText="Created By" />
-            <R_GridTextColumn Width="176px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
+            <R_GridTextColumn Width="135px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
+            <R_GridTextColumn Width="176px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]" />
+            <R_GridTextColumn Width="135px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
+            <R_GridTextColumn Width="176px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]" />
 
 
 
@@ -46,7 +46,7 @@
     </R_Grid>
 
     <R_ItemLayout xs="1">
-        <R_Popup R_Before_Open_Popup="R_BeforeOpenPrint" R_After_Open_Popup="R_AfterOpenPrint">Print</R_Popup>
+        <R_Popup R_Before_Open_Popup="R_BeforeOpenPrint" R_After_Open_Popup="R_AfterOpenPrint">@_localizer["PRINT"]</R_Popup>
     </R_ItemLayout>
 
 </R_StackLayout>
@@ -58,7 +58,7 @@
                  R_Validation="@Grid_ValidationCashFlowGroup"
                  R_Display="@Grid_R_DisplaytListCashFlow"
                  @* R_AfterDelete="@Grid_AfterDelete" *@
-                 R_AfterAdd="AfterAdd"
+                 R_AfterAdd="@AfterAdd"
                  R_IsHeader="true" />
 
 

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GSM00700Front/1.0.0": {
         "dependencies": {
+          "GSM00700FrontResources": "1.0.0",
           "GSM00700Model": "1.0.0",
           "Lookup_APCOMMON": "1.0.0",
           "Lookup_APFRONT": "1.0.0",
@@ -169,6 +170,11 @@
       "GSM00700Common/1.0.0": {
         "runtime": {
           "GSM00700Common.dll": {}
+        }
+      },
+      "GSM00700FrontResources/1.0.0": {
+        "runtime": {
+          "GSM00700FrontResources.dll": {}
         }
       },
       "GSM00700Model/1.0.0": {
@@ -448,6 +454,11 @@
       "hashPath": "system.text.json.6.0.0.nupkg.sha512"
     },
     "GSM00700Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GSM00700FrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

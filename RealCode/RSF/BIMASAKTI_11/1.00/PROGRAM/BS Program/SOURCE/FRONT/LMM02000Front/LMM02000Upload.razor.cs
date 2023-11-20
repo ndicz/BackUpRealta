@@ -117,7 +117,7 @@ namespace LMM02000Front
             {
                 loEx.Add(ex);
             }
-            loEx.ThrowExceptionIfErrors();
+            R_DisplayException(loEx);
         }
 
         private async Task Upload_ServiceGetListRecord(R_ServiceGetListRecordEventArgs eventArgs)

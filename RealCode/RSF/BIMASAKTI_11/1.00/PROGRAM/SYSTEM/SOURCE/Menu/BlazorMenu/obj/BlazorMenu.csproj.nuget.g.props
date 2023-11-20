@@ -24,7 +24,7 @@
     </Content>
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)telerik.ui.for.blazor\4.3.0\buildTransitive\Telerik.UI.for.Blazor.props" Condition="Exists('$(NuGetPackageRoot)telerik.ui.for.blazor\4.3.0\buildTransitive\Telerik.UI.for.Blazor.props')" />
+    <Import Project="$(NuGetPackageRoot)telerik.ui.for.blazor\4.6.0\buildTransitive\Telerik.UI.for.Blazor.props" Condition="Exists('$(NuGetPackageRoot)telerik.ui.for.blazor\4.6.0\buildTransitive\Telerik.UI.for.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.14\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\6.0.14\build\net6.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)blazorprettycode\1.6.0\buildTransitive\BlazorPrettyCode.props" Condition="Exists('$(NuGetPackageRoot)blazorprettycode\1.6.0\buildTransitive\BlazorPrettyCode.props')" />
   </ImportGroup>

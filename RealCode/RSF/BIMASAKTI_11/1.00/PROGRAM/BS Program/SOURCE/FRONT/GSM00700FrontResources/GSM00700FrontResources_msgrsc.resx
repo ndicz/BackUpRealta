@@ -117,7 +117,139 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LABEL_CASHFLOW-GRP_CODE" xml:space="preserve">
-    <value>UHUY</value>
+  <data name="BS_AMNT" xml:space="preserve">
+    <value>Base Amount</value>
+  </data>
+  <data name="BS_CRNCY" xml:space="preserve">
+    <value>Base Currency</value>
+  </data>
+  <data name="CASH_GRP_CD_EMPT" xml:space="preserve">
+    <value>Cash Flow Group Code cannot be Empty</value>
+  </data>
+  <data name="CASH_GRP_NM_EMPT" xml:space="preserve">
+    <value>Cash Flow Group Name cannot be Empty</value>
+  </data>
+  <data name="CNCL" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="COL_FLW_CODE" xml:space="preserve">
+    <value>Cash FLow Code</value>
+  </data>
+  <data name="COL_FLW_NAME" xml:space="preserve">
+    <value>Cash Flow Name</value>
+  </data>
+  <data name="COL_FLW_TYPE" xml:space="preserve">
+    <value>Cash Flow Type</value>
+  </data>
+  <data name="COL_GRP_CODE" xml:space="preserve">
+    <value>Cash Flow Group Code</value>
+  </data>
+  <data name="COL_GRP_NAME" xml:space="preserve">
+    <value>Cash Flow Group Name</value>
+  </data>
+  <data name="COL_GRP_TYPE" xml:space="preserve">
+    <value>Cash Flow Group Type</value>
+  </data>
+  <data name="CP_FR_YEAR" xml:space="preserve">
+    <value>Copy From Year</value>
+  </data>
+  <data name="CRT_BY" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CRT_DATE" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="FRM_CSH_FLOW_GRP" xml:space="preserve">
+    <value>From Cash Flow Group</value>
+  </data>
+  <data name="INVLD" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="LC_AMNT" xml:space="preserve">
+    <value>Local Amount</value>
+  </data>
+  <data name="LC_CRNCY" xml:space="preserve">
+    <value>Local Currency</value>
+  </data>
+  <data name="NOTES" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="PERIOD" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="PRCS" xml:space="preserve">
+    <value>Process</value>
+  </data>
+  <data name="PRD_NO" xml:space="preserve">
+    <value>Period No</value>
+  </data>
+  <data name="PRINT" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="PRNT_BS_AMNT" xml:space="preserve">
+    <value>Print Base Amount</value>
+  </data>
+  <data name="PRNT_LC_AMNT" xml:space="preserve">
+    <value>Print Local Amount</value>
+  </data>
+  <data name="PROCESS_OVER" xml:space="preserve">
+    <value>this process will overwrite exiting value</value>
+  </data>
+  <data name="PRT_CSH_FLOW" xml:space="preserve">
+    <value>Print Cash Flow</value>
+  </data>
+  <data name="RATE" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="SEQ" xml:space="preserve">
+    <value>Display Seq</value>
+  </data>
+  <data name="SRC_FL" xml:space="preserve">
+    <value>Source File</value>
+  </data>
+  <data name="SRT_BY" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="SV_TO_EXCL" xml:space="preserve">
+    <value>Save To Excel</value>
+  </data>
+  <data name="TMPLT" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="TMPLT_CONFR" xml:space="preserve">
+    <value>Are you sure download this template?</value>
+  </data>
+  <data name="TO_CSH_FLOW_GRP" xml:space="preserve">
+    <value>To Cash Flow Group</value>
+  </data>
+  <data name="TTL_ROW" xml:space="preserve">
+    <value>Total Row(s)</value>
+  </data>
+  <data name="UPDT_BS_AMNT" xml:space="preserve">
+    <value>Update Base Amount</value>
+  </data>
+  <data name="UPDT_BY" xml:space="preserve">
+    <value>Updated By</value>
+  </data>
+  <data name="UPDT_DATE" xml:space="preserve">
+    <value>Updated Date</value>
+  </data>
+  <data name="UPDT_LC_AMNT" xml:space="preserve">
+    <value>Update Local Amount</value>
+  </data>
+  <data name="UPLD" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="VAL_DEL" xml:space="preserve">
+    <value>Delete Success</value>
+  </data>
+  <data name="VLD" xml:space="preserve">
+    <value>Valid</value>
+  </data>
+  <data name="YEAR" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="YEAR_PRD" xml:space="preserve">
+    <value>Year Period</value>
   </data>
 </root>

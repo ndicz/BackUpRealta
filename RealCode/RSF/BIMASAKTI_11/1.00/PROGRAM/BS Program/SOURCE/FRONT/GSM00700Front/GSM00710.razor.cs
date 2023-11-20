@@ -379,6 +379,12 @@ namespace GSM00700Front
 
 
         }
+
+        private void AfterAdd(R_AfterAddEventArgs eventArgs)
+        {
+            var GridType = (GSM00710DTO)eventArgs.Data;
+            GridType.CCASH_FLOW_TYPE = GSM00710ViewModel.CashFlowTypGrp;
+        }
         #endregion
         [Inject] private IJSRuntime JS { get; set; }
         private void R_BeforeOpenUpload(R_BeforeOpenPopupEventArgs evenaArgs)
@@ -434,7 +440,7 @@ namespace GSM00700Front
 
             try
             {
-                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?", R_eMessageBoxButtonType.YesNo);
+                var loValidate = await R_MessageBox.Show("", @_localizer["TMPLT_CONFR"], R_eMessageBoxButtonType.YesNo);
 
                 if (loValidate == R_eMessageBoxResult.Yes)
                 {

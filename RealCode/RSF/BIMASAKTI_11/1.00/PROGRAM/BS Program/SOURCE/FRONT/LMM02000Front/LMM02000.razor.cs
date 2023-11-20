@@ -116,6 +116,8 @@ namespace LMM02000Front
                         eventArgs.Cancel = !(bool)loResult.Result;
                     }
 
+
+                   
                 }
 
             }
@@ -337,6 +339,18 @@ namespace LMM02000Front
             enableSalesmanType = false;
             enableActiveInactive = false;
             enableSalesmanId = false;
+        }
+
+        private void R_AfterAdd(R_AfterAddEventArgs eventArgs)
+        {
+            
+            var LMMDTO = (LMM02000DTO) eventArgs.Data;
+
+            LMMDTO.CMOBILE_PHONE1 = "";
+            LMMDTO.CMOBILE_PHONE2 = "";
+            LMMDTO.CSALESMAN_TYPE = "I";
+            LMMDTO.CGENDER = "F";
+
         }
 
         private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)

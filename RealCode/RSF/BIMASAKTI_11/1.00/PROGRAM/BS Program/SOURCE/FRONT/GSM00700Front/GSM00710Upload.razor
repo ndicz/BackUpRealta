@@ -1,7 +1,9 @@
 @using GSM00710Common.DTO.Upload_DTO_GSM00710
+@using R_BlazorFrontEnd.Interfaces
+@using GSM00700FrontResources
 @inherits R_Page
 @attribute [R_Page(Title = "Upload File")]
-
+@inject R_ILocalizer<Resources_Dummy_Class> _localizer
 <R_StackLayout>
 
     <R_StackLayout Row>
@@ -23,7 +25,7 @@
 
     <R_StackLayout Row>
         <R_ItemLayout col="2" Class="d-inline">
-            <R_Label>Source File</R_Label>
+            <R_Label>@_localizer["SRC_FL"]</R_Label>
         </R_ItemLayout>
         <R_ItemLayout col="4" Class="ms-2">
             <R_InputFile OnChange="@SourceUpload_OnChange" Accepts="@accepts"></R_InputFile>
@@ -41,11 +43,11 @@
                 R_ServiceGetListRecord="@Upload_ServiceGetListRecord">
             <R_GridColumns>
                 <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.NO) HeaderText="No" Width="75px"></R_GridTextColumn>
-                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASHFLOW_CODE) Width="150px" HeaderText="Cash Flow Code"></R_GridTextColumn>
-                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASH_FLOW_NAME) Width="150px" HeaderText="Cash Flow Name"></R_GridTextColumn>
-                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASHFLOW_TYPE) Width="150px" HeaderText="Cash Flow Type"></R_GridTextColumn>
+                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASHFLOW_CODE) Width="150px" HeaderText="@_localizer["COL_FLW_CODE"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASH_FLOW_NAME) Width="150px" HeaderText="@_localizer["COL_FLW_NAME"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.CCASHFLOW_TYPE) Width="150px" HeaderText="@_localizer["COL_FLW_TYPE"]"></R_GridTextColumn>
                 <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.ErrorFlag) Width="150px" HeaderText="Valid" Visible="@_viewModel.VisibleError"></R_GridTextColumn>
-                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.ErrorMessage) Width="300px" HeaderText="Notes" Visible="@_viewModel.VisibleError"></R_GridTextColumn>
+                <R_GridTextColumn FieldName=@nameof(GSM00710UploadErrorValidateDTO.ErrorMessage) Width="300px" HeaderText="@_localizer["NOTES"]" Visible="@_viewModel.VisibleError"></R_GridTextColumn>
             </R_GridColumns>
         </R_Grid>
         </R_StackLayout>
@@ -59,7 +61,7 @@
         <R_ItemLayout col="8">
             <R_StackLayout Row>
                 <R_ItemLayout col="3">
-                    <R_Label>Total Row(s)</R_Label>
+                    <R_Label>@_localizer["TTL_ROW"]</R_Label>
                 </R_ItemLayout>
                 <R_ItemLayout col="2">
                     <R_NumericTextBox @bind-Value="@_viewModel.SumListExcel"
@@ -68,7 +70,7 @@
                     </R_NumericTextBox>
                 </R_ItemLayout>
                 <R_ItemLayout col="1">
-                    <R_Label>Valid</R_Label>
+                    <R_Label>@_localizer["VLD"]</R_Label>
                 </R_ItemLayout>
                 <R_ItemLayout col="2" Class="bg-success">
                     <R_NumericTextBox @bind-Value="@_viewModel.SumValidDataExcel"
@@ -77,7 +79,7 @@
                     </R_NumericTextBox>
                 </R_ItemLayout>
                 <R_ItemLayout col="1">
-                    <R_Label>Invalid</R_Label>
+                    <R_Label>@_localizer["INVLD"]</R_Label>
                 </R_ItemLayout>
                 <R_ItemLayout col="2" Class="badge bg-danger">
                     <R_NumericTextBox @bind-Value="@_viewModel.SumInvalidDataExcel"
@@ -91,10 +93,10 @@
             <R_StackLayout Row Class="justify-content-end">
                 <R_ItemLayout>
                     <R_Button OnClick="@Button_OnClickCloseAsync">
-                        Cancel
+                        @_localizer["CNCL"]
                     </R_Button>
                     <R_Button OnClick="Button_OnClickOkAsync" Enabled="@FileHasData">
-                        Proses
+                        @_localizer["PRCS"]
                     </R_Button>
                 </R_ItemLayout>
             </R_StackLayout>
@@ -103,10 +105,10 @@
             <R_StackLayout Row Class="justify-content-end">
                 <R_ItemLayout>
                     <R_Button OnClick="@Button_OnClickCloseAsync">
-                        Cancel
+                        @_localizer["CNCL"]
                     </R_Button>
                     <R_Button OnClick="@Button_OnClickSaveAsync">
-                        Save To Excel
+                        @_localizer["SV_TO_EXCL"]
                     </R_Button>
                 </R_ItemLayout>
             </R_StackLayout>

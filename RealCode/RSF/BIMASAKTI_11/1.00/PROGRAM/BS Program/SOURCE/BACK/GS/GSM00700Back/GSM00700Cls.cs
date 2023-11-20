@@ -250,8 +250,8 @@ namespace GSM00700Back
 
 
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poNewEntity.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 10, poNewEntity.CCASH_FLOW_GROUP_CODE);
-                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_NAME", DbType.String, 60, poNewEntity.CCASH_FLOW_GROUP_NAME);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_CODE", DbType.String, 20, poNewEntity.CCASH_FLOW_GROUP_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_NAME", DbType.String, 100, poNewEntity.CCASH_FLOW_GROUP_NAME);
                 loDb.R_AddCommandParameter(loCmd, "@CCASH_FLOW_GROUP_TYPE", DbType.String, 60, poNewEntity.CCASH_FLOW_GROUP_TYPE);
                 loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCmd, "@CACTION", DbType.String, 10, lcAction);

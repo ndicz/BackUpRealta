@@ -61,11 +61,407 @@ namespace GSM00700FrontResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UHUY.
+        ///   Looks up a localized string similar to Base Amount.
         /// </summary>
-        internal static string LABEL_CASHFLOW_GRP_CODE {
+        internal static string BS_AMNT {
             get {
-                return ResourceManager.GetString("LABEL_CASHFLOW-GRP_CODE", resourceCulture);
+                return ResourceManager.GetString("BS_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base Currency.
+        /// </summary>
+        internal static string BS_CRNCY {
+            get {
+                return ResourceManager.GetString("BS_CRNCY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Group Code cannot be Empty.
+        /// </summary>
+        internal static string CASH_GRP_CD_EMPT {
+            get {
+                return ResourceManager.GetString("CASH_GRP_CD_EMPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Group Name cannot be Empty.
+        /// </summary>
+        internal static string CASH_GRP_NM_EMPT {
+            get {
+                return ResourceManager.GetString("CASH_GRP_NM_EMPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string CNCL {
+            get {
+                return ResourceManager.GetString("CNCL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash FLow Code.
+        /// </summary>
+        internal static string COL_FLW_CODE {
+            get {
+                return ResourceManager.GetString("COL_FLW_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Name.
+        /// </summary>
+        internal static string COL_FLW_NAME {
+            get {
+                return ResourceManager.GetString("COL_FLW_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Type.
+        /// </summary>
+        internal static string COL_FLW_TYPE {
+            get {
+                return ResourceManager.GetString("COL_FLW_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Group Code.
+        /// </summary>
+        internal static string COL_GRP_CODE {
+            get {
+                return ResourceManager.GetString("COL_GRP_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Group Name.
+        /// </summary>
+        internal static string COL_GRP_NAME {
+            get {
+                return ResourceManager.GetString("COL_GRP_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cash Flow Group Type.
+        /// </summary>
+        internal static string COL_GRP_TYPE {
+            get {
+                return ResourceManager.GetString("COL_GRP_TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy From Year.
+        /// </summary>
+        internal static string CP_FR_YEAR {
+            get {
+                return ResourceManager.GetString("CP_FR_YEAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created By.
+        /// </summary>
+        internal static string CRT_BY {
+            get {
+                return ResourceManager.GetString("CRT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created Date.
+        /// </summary>
+        internal static string CRT_DATE {
+            get {
+                return ResourceManager.GetString("CRT_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Cash Flow Group.
+        /// </summary>
+        internal static string FRM_CSH_FLOW_GRP {
+            get {
+                return ResourceManager.GetString("FRM_CSH_FLOW_GRP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid.
+        /// </summary>
+        internal static string INVLD {
+            get {
+                return ResourceManager.GetString("INVLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Amount.
+        /// </summary>
+        internal static string LC_AMNT {
+            get {
+                return ResourceManager.GetString("LC_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Local Currency.
+        /// </summary>
+        internal static string LC_CRNCY {
+            get {
+                return ResourceManager.GetString("LC_CRNCY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        internal static string NOTES {
+            get {
+                return ResourceManager.GetString("NOTES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period.
+        /// </summary>
+        internal static string PERIOD {
+            get {
+                return ResourceManager.GetString("PERIOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process.
+        /// </summary>
+        internal static string PRCS {
+            get {
+                return ResourceManager.GetString("PRCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Period No.
+        /// </summary>
+        internal static string PRD_NO {
+            get {
+                return ResourceManager.GetString("PRD_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        internal static string PRINT {
+            get {
+                return ResourceManager.GetString("PRINT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Base Amount.
+        /// </summary>
+        internal static string PRNT_BS_AMNT {
+            get {
+                return ResourceManager.GetString("PRNT_BS_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Local Amount.
+        /// </summary>
+        internal static string PRNT_LC_AMNT {
+            get {
+                return ResourceManager.GetString("PRNT_LC_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to this process will overwrite exiting value.
+        /// </summary>
+        internal static string PROCESS_OVER {
+            get {
+                return ResourceManager.GetString("PROCESS_OVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Cash Flow.
+        /// </summary>
+        internal static string PRT_CSH_FLOW {
+            get {
+                return ResourceManager.GetString("PRT_CSH_FLOW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate.
+        /// </summary>
+        internal static string RATE {
+            get {
+                return ResourceManager.GetString("RATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display Seq.
+        /// </summary>
+        internal static string SEQ {
+            get {
+                return ResourceManager.GetString("SEQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source File.
+        /// </summary>
+        internal static string SRC_FL {
+            get {
+                return ResourceManager.GetString("SRC_FL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort By.
+        /// </summary>
+        internal static string SRT_BY {
+            get {
+                return ResourceManager.GetString("SRT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save To Excel.
+        /// </summary>
+        internal static string SV_TO_EXCL {
+            get {
+                return ResourceManager.GetString("SV_TO_EXCL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Template.
+        /// </summary>
+        internal static string TMPLT {
+            get {
+                return ResourceManager.GetString("TMPLT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure download this template?.
+        /// </summary>
+        internal static string TMPLT_CONFR {
+            get {
+                return ResourceManager.GetString("TMPLT_CONFR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To Cash Flow Group.
+        /// </summary>
+        internal static string TO_CSH_FLOW_GRP {
+            get {
+                return ResourceManager.GetString("TO_CSH_FLOW_GRP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Row(s).
+        /// </summary>
+        internal static string TTL_ROW {
+            get {
+                return ResourceManager.GetString("TTL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Base Amount.
+        /// </summary>
+        internal static string UPDT_BS_AMNT {
+            get {
+                return ResourceManager.GetString("UPDT_BS_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated By.
+        /// </summary>
+        internal static string UPDT_BY {
+            get {
+                return ResourceManager.GetString("UPDT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated Date.
+        /// </summary>
+        internal static string UPDT_DATE {
+            get {
+                return ResourceManager.GetString("UPDT_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update Local Amount.
+        /// </summary>
+        internal static string UPDT_LC_AMNT {
+            get {
+                return ResourceManager.GetString("UPDT_LC_AMNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        internal static string UPLD {
+            get {
+                return ResourceManager.GetString("UPLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Success.
+        /// </summary>
+        internal static string VAL_DEL {
+            get {
+                return ResourceManager.GetString("VAL_DEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid.
+        /// </summary>
+        internal static string VLD {
+            get {
+                return ResourceManager.GetString("VLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        internal static string YEAR {
+            get {
+                return ResourceManager.GetString("YEAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year Period.
+        /// </summary>
+        internal static string YEAR_PRD {
+            get {
+                return ResourceManager.GetString("YEAR_PRD", resourceCulture);
             }
         }
     }

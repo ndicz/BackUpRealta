@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VUsMPbVfq4YmnXIEVzO9zwevhKcn7CZj7G8OIGgrCYVVBslwbxW8u4o3V9R6VtbbqYOJ3cHDgsbZqfhnMIuibA==",
+  "dgSpecHash": "L0mi43xYy3BiIGJ6+/gLR7bGVHge53FPIGt+7+nNAAkEznCkrnd3Ogtj1fUmJz0j1mhlwurY+xBopB/gEBWymQ==",
   "success": true,
   "projectFilePath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\BlazorMenu.csproj",
   "expectedPackageFiles": [
@@ -149,15 +149,15 @@
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.datasource\\2.1.4\\telerik.datasource.2.1.4.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.documents.spreadsheetstreaming\\2023.2.519\\telerik.documents.spreadsheetstreaming.2023.2.519.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.fonticons\\1.5.0\\telerik.fonticons.1.5.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.datasource\\2.1.5\\telerik.datasource.2.1.5.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.documents.spreadsheetstreaming\\2023.3.1005\\telerik.documents.spreadsheetstreaming.2023.3.1005.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.fonticons\\2.0.0\\telerik.fonticons.2.0.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.pivot.core\\0.1.0\\telerik.pivot.core.0.1.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.pivot.dataproviders.xmla\\0.1.0\\telerik.pivot.dataproviders.xmla.0.1.0.nupkg.sha512",
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.recurrence\\0.2.1\\telerik.recurrence.0.2.1.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.svgicons\\1.5.0\\telerik.svgicons.1.5.0.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.3.0\\telerik.ui.for.blazor.4.3.0.nupkg.sha512",
-    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.zip\\2023.2.519\\telerik.zip.2023.2.519.nupkg.sha512"
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.svgicons\\2.0.0\\telerik.svgicons.2.0.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.ui.for.blazor\\4.6.0\\telerik.ui.for.blazor.4.6.0.nupkg.sha512",
+    "C:\\Users\\hendri.codeid\\.nuget\\packages\\telerik.zip\\2023.3.1005\\telerik.zip.2023.3.1005.nupkg.sha512"
   ],
   "logs": []
 }

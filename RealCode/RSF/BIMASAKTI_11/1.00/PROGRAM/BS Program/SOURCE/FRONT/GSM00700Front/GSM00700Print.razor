@@ -1,14 +1,17 @@
 @page "/GSM00700Print"
 @using GSM00700Common.DTO
 @using GSM00700Common.DTO.Report_DTO_GSM00700
+@using GSM00700FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 @attribute [R_BlazorFrontEnd.Controls.Attributes.R_Page(Title = "Print Cash Flow")]
+@inject R_ILocalizer<Resources_Dummy_Class> _localizer
 
 
 <R_StackLayout>
     <R_StackLayout Row="true">
         <R_ItemLayout col="3">
-            <R_Label Class="fw-bold">Print Cash Flow</R_Label>
+            <R_Label Class="fw-bold">@_localizer["PRT_CSH_FLOW"]</R_Label>
         </R_ItemLayout>
 
     </R_StackLayout>
@@ -17,7 +20,7 @@
     <R_StackLayout Row="true">
 
         <R_ItemLayout col="4">
-            <R_Label>From Cash Flow Group</R_Label>
+            <R_Label>@_localizer["FRM_CSH_FLOW_GRP"]</R_Label>
         </R_ItemLayout>
         <R_ItemLayout col="2">
             <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM"
@@ -37,7 +40,7 @@
 
     <R_StackLayout Row="true">
         <R_ItemLayout col="4">
-            <R_Label>To  Cash  Flow  Group</R_Label>
+            <R_Label>@_localizer["TO_CSH_FLOW_GRP"]</R_Label>
         </R_ItemLayout>
         <R_ItemLayout col="2">
             <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO"
@@ -57,7 +60,7 @@
 
     <R_StackLayout Row="true">
         <R_ItemLayout col="4">
-            <R_Label>Year</R_Label>
+            <R_Label>@_localizer["YEAR"]</R_Label>
         </R_ItemLayout>
 
         <R_ItemLayout col="3">
@@ -87,7 +90,7 @@
 
     <R_StackLayout Row="true">
         <R_ItemLayout col="4">
-            <R_Label>Period</R_Label>
+            <R_Label>@_localizer["PERIOD"]</R_Label>
         </R_ItemLayout>
 
         <R_ItemLayout col="3">
@@ -116,7 +119,7 @@
 
     <R_StackLayout Row="true">
         <R_ItemLayout col="4">
-            <R_Label>Sort By</R_Label>
+            <R_Label>@_localizer["SRT_BY"]</R_Label>
         </R_ItemLayout>
 
         <R_ItemLayout col="3">
@@ -138,7 +141,7 @@
                         R_ConductorSource="@_conductorRef" />
         </R_ItemLayout>
         <R_ItemLayout col="3">
-            <R_Label>Print Local Amount</R_Label>
+            <R_Label>@_localizer["PRINT_LC_AMNT"]</R_Label>
         </R_ItemLayout>
 
     </R_StackLayout>
@@ -149,7 +152,7 @@
                         R_ConductorSource="@_conductorRef" />
         </R_ItemLayout>
         <R_ItemLayout col="3">
-            <R_Label>Print Base Amount</R_Label>
+            <R_Label>@_localizer["PRINT_BS_AMNT"]</R_Label>
         </R_ItemLayout>
 
     </R_StackLayout>
@@ -312,12 +315,12 @@
     <R_ItemLayout col="6">
         <R_Button OnClick="Button_OnClickProcessAsync"
                   @ref="ProcessButton">
-            Process
+            @_localizer["PRCS"]
         </R_Button>
     </R_ItemLayout>
     <R_ItemLayout col="4">
         <R_Button OnClick="Button_OnClickCloseAsync">
-            Cancel
+            @_localizer["CNCL"]
         </R_Button>
     </R_ItemLayout>
 </R_StackLayout>

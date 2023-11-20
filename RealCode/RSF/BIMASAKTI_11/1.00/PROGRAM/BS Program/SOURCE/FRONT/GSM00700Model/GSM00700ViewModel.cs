@@ -17,6 +17,7 @@ namespace GSM00700Model
     {
         private Model.GSM00700Model _GSM00700Model = new Model.GSM00700Model();
         public ObservableCollection<GSM00700DTO> loGridList = new ObservableCollection<GSM00700DTO>();
+        public ObservableCollection<GSM00700CashFlowGroupTypeDTO> loGroupType = new ObservableCollection<GSM00700CashFlowGroupTypeDTO>();
         public GSM00700DTO loEntity = new GSM00700DTO();
         public GSM00700PrintCashFlowParameterDTo loPrint = new GSM00700PrintCashFlowParameterDTo();
 
@@ -61,6 +62,7 @@ namespace GSM00700Model
             {
                 var loResult = await _GSM00700Model.GetCashFlowGroupTypeAsync();
                 loCashFlowGroupType = loResult.Data.OrderByDescending(x => x.CCODE).ToList(); // Urutkan dan simpan ke dalam list
+                loGroupType = new ObservableCollection<GSM00700CashFlowGroupTypeDTO>(loCashFlowGroupType);
                 CashFlowTyp = loCashFlowGroupType[0].CCODE;
             }
             catch (Exception ex)

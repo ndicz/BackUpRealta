@@ -19,7 +19,7 @@ namespace GSM00700Common.DTO
 
         //this for combo box
         public string CCASH_FLOW_GROUP_TYPE_DESCR { get; set; }
-        public string CCASH_FLOW_GROUP_TYPE { get; set; } = "I";
+        public string CCASH_FLOW_GROUP_TYPE { get; set; }  
 
         public string CCASH_FLOW_GROUP_FROM { get; set;}
         public string CCASH_FLOW_GROUP_TO { get; set; }
