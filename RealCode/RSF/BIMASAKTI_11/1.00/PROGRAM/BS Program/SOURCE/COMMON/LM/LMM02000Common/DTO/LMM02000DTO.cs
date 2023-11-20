@@ -30,7 +30,7 @@ namespace LMM02000Common.DTO
         public string CID_NO { get; set; }
         public string CGENDER { get; set; }
         public string CSALESMAN_TYPE { get; set; }
-        public string CEXT_COMPANY_NAME { get; set; } = "";
+        public string CEXT_COMPANY_NAME { get; set; }
 
 
     }

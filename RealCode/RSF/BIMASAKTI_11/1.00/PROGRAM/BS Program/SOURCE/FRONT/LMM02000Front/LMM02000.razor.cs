@@ -346,9 +346,10 @@ namespace LMM02000Front
             
             var LMMDTO = (LMM02000DTO) eventArgs.Data;
 
-            LMMDTO.CMOBILE_PHONE1 = "";
             LMMDTO.CMOBILE_PHONE2 = "";
             LMMDTO.CSALESMAN_TYPE = "I";
+            LMMDTO.CEXT_COMPANY_NAME = "";
+            LMMDTO.CID_NO = "";
             LMMDTO.CGENDER = "F";
 
         }
