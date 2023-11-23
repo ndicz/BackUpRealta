@@ -34,8 +34,6 @@ namespace LMM02000Front
         private R_Grid<LMM02000DTO> _gridRef;
         private R_TextBox _salesmanIdRef;
         [Inject] private IClientHelper ClientHelper { get; set; }
-
-
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
