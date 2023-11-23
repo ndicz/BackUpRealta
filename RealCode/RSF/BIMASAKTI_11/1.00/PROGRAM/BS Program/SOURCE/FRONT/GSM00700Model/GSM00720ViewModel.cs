@@ -14,7 +14,7 @@ using R_CommonFrontBackAPI;
 
 namespace GSM00700Model
 {
-    public class GSM00720ViewModel : R_ViewModel<GSM00720DTO>
+    public class GSM00720ViewModel : R_ViewModel<GSM00720YearDTO>
     {
         private GSM00720Model _GSM00720Model = new GSM00720Model();
         public GSM00710Model _GSM00710Model = new GSM00710Model();
@@ -35,6 +35,7 @@ namespace GSM00700Model
 
 
         public List<GSM00720YearDTO> YearComboBox { get; set; } = new List<GSM00720YearDTO>();
+        public List<GSM00720DTO> loGridListCashFlowPlan { get; set; } = new List<GSM00720DTO>();
 
         public List<GSM00720CopyFromYearDTO> RadioButtonCopyFrom { get; set; } = new List<GSM00720CopyFromYearDTO>()
         {
@@ -105,7 +106,17 @@ namespace GSM00700Model
 
                 R_FrontContext.R_SetStreamingContext(ContextConstantGSM00700.CYEAR, Year);
                 var loReturn = await _GSM00720Model.GetCashFlowPlanStreamAsync();
-                loGridList = new ObservableCollection<GSM00720DTO>(loReturn.Data);
+                // Menggunakan OrderByDescending dengan int.Parse()
+                loGridListCashFlowPlan = loReturn.Data
+                    .OrderBy(x => int.Parse(x.CPERIOD_NO))
+                    .ToList();
+
+
+
+                loGridList = new ObservableCollection<GSM00720DTO>(loGridListCashFlowPlan);
+
+
+
             }
             catch (Exception ex)
             {

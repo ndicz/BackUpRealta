@@ -118,18 +118,19 @@
 
 
         <R_StackLayout Row="true" Class="col-3">
-            <R_StackLayout col="2">
+            <R_StackLayout>
 
                 <R_Grid @ref="@_gridRef00720Year"
                         DataSource="@GSM00720ViewModel.loYearList"
                         Pageable="true"
                         Height="320px"
                         Width="130px"
-                        R_ConductorGridSource="@_conGridGSM00720Ref"
-                        R_GridType="@R_eGridType.Original"
+                        R_ConductorSource="@_conGridGSM00720Ref"
+                        R_GridType="@R_eGridType.Navigator"
                         AllowAddNewRow="false"
                         AllowEditRow="false"
-                        AllowDeleteRow="false">
+                        AllowDeleteRow="false"
+                        R_ServiceGetListRecord="@GetYearList">
 
                     <R_GridColumns>
                         <R_GridTextColumn Width="125px" FieldName="CYEAR" HeaderText="@_localizer["YEAR_PRD"]"></R_GridTextColumn>
@@ -141,10 +142,11 @@
 
                 </R_StackLayout>
             </R_StackLayout>
-            <R_ConductorGrid @ref="@_conGridGSM00720Ref"
+            <R_Conductor @ref="@_conGridGSM00720Ref"
                              R_ViewModel="@GSM00720ViewModel"
                              R_Display="@Grid_R_Display_Year"
-                             R_IsHeader="true" />
+                             R_ServiceGetRecord="@Grid_ServiceGetRecord"
+                             />
 
 
             <R_StackLayout col="10">
@@ -218,7 +220,7 @@
         <R_StackLayout Row="true">
 
             <R_ItemLayout>
-                <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate720">@_localizer["TMPLT"]T</R_Button>
+                    <R_Button R_ConductorGridSource="@_conGridGSM00700Ref" OnClick="@DownloadTemplate720">@_localizer["TMPLT"]</R_Button>
             </R_ItemLayout>
             <R_ItemLayout>
                 <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload720">@_localizer["UPLD"]</R_Popup>

@@ -18,6 +18,7 @@ using R_BlazorFrontEnd.Controls.DataControls;
 using R_BlazorFrontEnd.Controls.Events;
 using R_BlazorFrontEnd.Controls.MessageBox;
 using R_BlazorFrontEnd.Exceptions;
+using R_BlazorFrontEnd.Helpers;
 
 namespace GSM00700Front
 {
@@ -100,10 +101,10 @@ namespace GSM00700Front
 
             try
             {
-                var loData = (GSL01500DTO)eventArgs.Result;
+                var loData = R_FrontUtility.ConvertObjectToObject<GSL01500DTO>(eventArgs.Result);
                 if (loData == null)
                     return;
-
+                
                 _GSM00720ViewModel.loCopyFromEntity.CFROMGOUP = loData.CCASH_FLOW_GROUP_CODE;
                 _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE = loData.CCASH_FLOW_CODE;
                 _GSM00720ViewModel.loCopyFromEntity.CashFlowName = loData.CCASH_FLOW_NAME;

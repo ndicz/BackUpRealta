@@ -36,7 +36,7 @@ namespace GSM00700Front
         private R_Conductor R_conduct;
 
         private GSM00720ViewModel GSM00720ViewModel = new();
-        private R_ConductorGrid _conGridGSM00720Ref;
+        private R_Conductor _conGridGSM00720Ref;
         private R_Grid<GSM00720YearDTO> _gridRef00720Year;
         private R_Grid<GSM00720DTO> _gridRef00720;
         [Inject] private IClientHelper ClientHelper { get; set; }
@@ -195,6 +195,27 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        private async Task GetYearList(R_ServiceGetListRecordEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+
+            try
+            {
+                await GSM00720ViewModel.GetYearList();
+                eventArgs.ListEntityResult = GSM00720ViewModel.loYearList;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
+        private void Grid_ServiceGetRecord(R_ServiceGetRecordEventArgs EventArgs)
+        {
+            EventArgs.Result = EventArgs.Data;
+        }
         private async Task Grid_R_Display_Year(R_DisplayEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -206,7 +227,6 @@ namespace GSM00700Front
                     GSM00720ViewModel.Year = loParam.CYEAR;
                     //await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode);
                     await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
-                    await GSM00720ViewModel.GetYearList();
                 }
             }
             catch (Exception ex)
@@ -228,13 +248,13 @@ namespace GSM00700Front
 
                 if (arg.Id == "tabCashFlowPlan")
                 {
-                    await GSM00720ViewModel.GetYearList();
+                    
                     await GSM00720ViewModel.GetCurrencyList();
-                    await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
+                    //await GSM00720ViewModel.GetCashFlowPlanList(GSM00710ViewModel.CashFlowGroupCode, GSM00720ViewModel.CashFlowPlanCode);
                     //await _gridRef00720.AutoFitAllColumnsAsync();
                     await GSM00720ViewModel.DownloadTemplate720();
-
-                    GSM00720ViewModel.GetYearForCopyFrom();
+                    await _gridRef00720Year.R_RefreshGrid(null);
+                    //await  GSM00720ViewModel.GetYearForCopyFrom();
                     var GSM00720InitialProsesDTO = new GSM00720InitialProsesDTO();
                     //await _gridRef00720Year.R_RefreshGrid(null);
 

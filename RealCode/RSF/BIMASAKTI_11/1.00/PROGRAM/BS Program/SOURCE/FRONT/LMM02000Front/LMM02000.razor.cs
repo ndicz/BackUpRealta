@@ -32,6 +32,7 @@ namespace LMM02000Front
         private R_AddButton R_AddBtn;
         private R_Button R_ActiveInActiveBtn;
         private R_Grid<LMM02000DTO> _gridRef;
+        private R_TextBox _salesmanIdRef;
         [Inject] private IClientHelper ClientHelper { get; set; }
 
 
@@ -116,8 +117,12 @@ namespace LMM02000Front
                         eventArgs.Cancel = !(bool)loResult.Result;
                     }
 
-
-                   
+                    if (loData.CSALESMAN_ID == null || loData.CSALESMAN_NAME == null || loData.CADDRESS == null || loData.CEMAIL == null || loData.CMOBILE_PHONE1 == null)
+                    {
+                        await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
+                        eventArgs.Cancel = true;
+                        return;
+                    }
                 }
 
             }
@@ -450,6 +455,16 @@ namespace LMM02000Front
             }
 
             loEx.ThrowExceptionIfErrors();
+        }
+
+        private async Task Display(R_DisplayEventArgs eventArgs)
+        {
+            switch (eventArgs.ConductorMode)
+            {
+                case R_eConductorMode.Add:
+                    await _salesmanIdRef.FocusAsync();
+                    break;
+            }
         }
     }
 }
