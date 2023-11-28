@@ -1,11 +1,107 @@
 {
   "Version": 1,
-  "Hash": "851Jj04/fCbz20itdX7vZyfFfYeqfC6/uzHhgr4inFs=",
+  "Hash": "QWvwVnM9uTxL5x/xQndCXGYC3TLoFKWFrBkIbYuTckE=",
   "Source": "Lookup_APFRONT",
   "BasePath": "_content/Lookup_APFRONT",
   "Mode": "Default",
   "ManifestType": "Publish",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\Lookup_GSFRONT.csproj",
+      "Version": 2,
+      "Source": "Lookup_GSFRONT",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Lookup_APFRONT\\wwwroot",
+      "Source": "Lookup_APFRONT",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_APFRONT",
+      "Pattern": "**"
+    },
+    {
+      "Name": "Lookup_GSFRONT\\wwwroot",
+      "Source": "Lookup_GSFRONT",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\wwwroot\\background.png",
+      "SourceId": "Lookup_APFRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_APFRONT",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Lookup_APFRONT",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_APFRONT",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\background.png",
+      "SourceId": "Lookup_GSFRONT",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "Lookup_GSFRONT",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_GSFRONT\\wwwroot\\",
+      "BasePath": "_content/Lookup_GSFRONT",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
 }

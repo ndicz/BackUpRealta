@@ -2476,6 +2476,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GSM00700FrontResources": "1.0.0",
           "GSM02300Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -5177,6 +5178,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GSM00700FrontResources": "1.0.0",
           "GSM02300Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },

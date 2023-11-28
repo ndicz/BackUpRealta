@@ -1,14 +1,17 @@
 @page "/GSM00720LocalAmount"
 @using GSM00700Common.DTO
+@using GSM00700FrontResources
 @using GSM00700Model
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 @attribute [R_BlazorFrontEnd.Controls.Attributes.R_Page(Title = "Update Local Amount")]
+@inject R_ILocalizer<Resources_Dummy_Class> _localizer
 
 
 <R_StackLayout Row="true" Style="width: 550px" Class="mt-2">
 
     <R_ItemLayout xs="2">
-        <R_Label>Cash Flow </R_Label>
+        <R_Label>@_localizer["CASH_FLW"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.CashFlowPlanCode"
@@ -23,7 +26,7 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout xs="2">
-        <R_Label>Year</R_Label>
+        <R_Label>@_localizer["YEAR"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.Year"
@@ -40,7 +43,7 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout xs="2">
-        <R_Label>Rate</R_Label>
+        <R_Label>@_localizer["RATE"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_TextBox @bind-value="_GSM00720ViewModel.loCopyBaseAmountEntity.CCURRENCY_CODE"
@@ -59,7 +62,7 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout xs="2">
-        <R_Label>Period</R_Label>
+        <R_Label>@_localizer["PERIOD"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout xs="2">
         <R_DropDownList Data="@_GSM00720ViewModel.YearDropDown"
@@ -84,7 +87,7 @@
 
 <R_StackLayout Row="true" Class="mt-4">
     <R_ItemLayout col="6">
-        <R_Label Class="fw-bold" FontColor="R_eFontColor.Danger"> this process will overwrite exiting value </R_Label>
+        <R_Label Class="fw-bold" FontColor="R_eFontColor.Danger"> @_localizer["OVR_EXTNG_VLUE"] </R_Label>
     </R_ItemLayout>
 </R_StackLayout>
 
@@ -93,12 +96,12 @@
     <R_ItemLayout>
         <R_Button Enabled="@(_GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_FROM <= _GSM00720ViewModel.loCopyBaseAmountEntity.INO_PERIOD_TO)"
             OnClick="Button_OnClickProcessAsync">
-            Process
+            @_localizer["PRCS"]
         </R_Button>
     </R_ItemLayout>
     <R_ItemLayout>
         <R_Button OnClick="Button_OnClickCloseAsync">
-            Cancel
+               @_localizer["CNCL"]
         </R_Button>
     </R_ItemLayout>
 </R_StackLayout>

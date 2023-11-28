@@ -32,15 +32,13 @@
                                       FieldName="@nameof(GSM00700DTO.CCASH_FLOW_GROUP_TYPE)"
                                       ValueField="@nameof(GSM00700CashFlowGroupTypeDTO.CCODE)"
                                       TextField="@nameof(GSM00700CashFlowGroupTypeDTO.CDESCRIPTION)"
-                                      HeaderText="@_localizer["COL_GRP_TYPE"]" R_EnableAdd R_EnableEdit />
+                                      HeaderText="@_localizer["COL_GRP_TYPE"]" R_EnableAdd R_EnableEdit/>
 
 
-            <R_GridTextColumn Width="135px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
-            <R_GridTextColumn Width="176px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]" />
-            <R_GridTextColumn Width="135px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
-            <R_GridTextColumn Width="176px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]" />
-
-
+            <R_GridTextColumn Width="135px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn Width="176px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]"/>
+            <R_GridTextColumn Width="135px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn Width="176px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]"/>
 
 
         </R_GridColumns>
@@ -60,7 +58,7 @@
                  R_Display="@Grid_R_DisplaytListCashFlow"
                  @* R_AfterDelete="@Grid_AfterDelete" *@
                  R_AfterAdd="@AfterAdd"
-                 R_IsHeader="true" />
+                 R_IsHeader="true"/>
 
 
 <R_PredefinedDock R_InstantiateDock="BeforeOpenTabCashFlow" Title="Cash Flow"></R_PredefinedDock>

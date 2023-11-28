@@ -26,6 +26,7 @@
             DataSource="@_viewModel.loGridList"
             Pageable="true"
             R_ConductorSource="@_conductorRef"
+            Enabled="@disableGrid"
             R_GridType="@R_eGridType.Navigator"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
 
@@ -66,6 +67,7 @@
             <R_ItemLayout col="6">
                 <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_NAME"
                            R_ConductorSource="@_conductorRef"
+                             @ref="@_salesmanNameRef"
                            R_EnableAdd="true"
                            MaxLength="100"
                            R_EnableEdit="true" />
@@ -257,6 +259,7 @@
              R_ViewModel="@_viewModel"
              R_IsHeader="true"
              R_Display="Display"
+             R_BeforeEdit="@R_Beforeedit"
              R_AfterSave="@R_AfterSave"
              R_AfterAdd="@R_AfterAdd"
              R_BeforeCancel="@R_AfterCancel"

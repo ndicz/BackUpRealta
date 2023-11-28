@@ -252,4 +252,25 @@
   <data name="YEAR_PRD" xml:space="preserve">
     <value>Year Period</value>
   </data>
+  <data name="CASH_FLW_PLN" xml:space="preserve">
+    <value>Cash Flow Plan</value>
+  </data>
+  <data name="CASH_FLW" xml:space="preserve">
+    <value>Cash Flow</value>
+  </data>
+  <data name="OVR_EXTNG_VLUE" xml:space="preserve">
+    <value>this process will overwrite exiting value</value>
+  </data>
+  <data name="CASH_FLW_GRP" xml:space="preserve">
+    <value>Cash Flow Group</value>
+  </data>
+  <data name="NUMBER" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="SAVE_EXCL" xml:space="preserve">
+    <value>Save To excel</value>
+  </data>
+  <data name="PRNT" xml:space="preserve">
+    <value>Print</value>
+  </data>
 </root>

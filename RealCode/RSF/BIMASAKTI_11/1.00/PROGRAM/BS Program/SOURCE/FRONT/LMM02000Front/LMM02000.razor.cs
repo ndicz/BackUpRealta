@@ -33,19 +33,22 @@ namespace LMM02000Front
         private R_Button R_ActiveInActiveBtn;
         private R_Grid<LMM02000DTO> _gridRef;
         private R_TextBox _salesmanIdRef;
+        private R_TextBox _salesmanNameRef;
+        private bool disableGrid;
         [Inject] private IClientHelper ClientHelper { get; set; }
+
         protected override async Task R_Init_From_Master(object poParameter)
         {
             var loEx = new R_Exception();
 
             try
             {
-
                 //await PropertyListData(null);
                 await _viewModel.GetProperty();
                 await Task.Delay(250);
                 await _gridRef.R_RefreshGrid(null);
                 //await _gridRef.AutoFitAllColumnsAsync();
+                disableGrid = true;
             }
             catch (Exception ex)
             {
@@ -54,6 +57,7 @@ namespace LMM02000Front
 
             R_DisplayException(loEx);
         }
+
         [Inject] public R_PopupService PopupService { get; set; }
 
         //private void R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
@@ -94,13 +98,15 @@ namespace LMM02000Front
                 loData = (LMM02000DTO)eventArgs.Data;
                 if (loData.LACTIVE == true && _conductorRef.R_ConductorMode == R_eConductorMode.Add)
                 {
-
-                   var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
-                    loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
-                    await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
+                    var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
+                    loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE =
+                        "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
+                    await loValidateViewModel
+                        .RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
 
                     //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
-                    if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
+                    if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" &&
+                        loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
                     {
                         eventArgs.Cancel = false;
                     }
@@ -115,14 +121,14 @@ namespace LMM02000Front
                         eventArgs.Cancel = !(bool)loResult.Result;
                     }
 
-                    if (loData.CSALESMAN_ID == null || loData.CSALESMAN_NAME == null || loData.CADDRESS == null || loData.CEMAIL == null || loData.CMOBILE_PHONE1 == null)
+                    if (loData.CSALESMAN_ID == null || loData.CSALESMAN_NAME == null || loData.CADDRESS == null ||
+                        loData.CEMAIL == null || loData.CMOBILE_PHONE1 == null)
                     {
                         await R_MessageBox.Show("Error", "You Must Fill Empty Field", R_eMessageBoxButtonType.OK);
                         eventArgs.Cancel = true;
                         return;
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -131,17 +137,21 @@ namespace LMM02000Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
         private async Task R_Before_Open_Popup_ActivateInactive(R_BeforeOpenPopupEventArgs eventArgs)
         {
             R_Exception loException = new R_Exception();
             try
             {
                 var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
-                loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE = "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
-                await loValidateViewModel.RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
+                loValidateViewModel.ACTIVATE_INACTIVE_ACTIVITY_CODE =
+                    "LMM02001"; //Uabh Approval Code sesuai Spec masing masing
+                await loValidateViewModel
+                    .RSP_ACTIVITY_VALIDITYMethodAsync(); //Jika IAPPROVAL_CODE == 3, maka akan keluar RSP_ERROR disini
 
                 //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
-                if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
+                if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" &&
+                    loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
                 {
                     await _viewModel.ActiveInactiveProcessAsync(); //Ganti jadi method ActiveInactive masing masing
                     await _gridRef.R_RefreshGrid(null);
@@ -161,6 +171,7 @@ namespace LMM02000Front
             {
                 loException.Add(ex);
             }
+
             loException.ThrowExceptionIfErrors();
         }
 
@@ -173,6 +184,7 @@ namespace LMM02000Front
                 {
                     return;
                 }
+
                 bool result = (bool)eventArgs.Result;
                 if (result == true)
                 {
@@ -184,6 +196,7 @@ namespace LMM02000Front
             {
                 loException.Add(ex);
             }
+
             loException.ThrowExceptionIfErrors();
         }
 
@@ -200,7 +213,7 @@ namespace LMM02000Front
             };
             eventArgs.Parameter = param;
         }
-        
+
         private async Task R_After_Open_Upload(R_AfterOpenPopupEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -212,6 +225,7 @@ namespace LMM02000Front
             {
                 loEx.Add(ex);
             }
+
             R_DisplayException(loEx);
         }
 
@@ -253,10 +267,8 @@ namespace LMM02000Front
 
             try
             {
-                
                 await _viewModel.GetProperty();
                 //eventArgs.ListEntityResult = _viewModel.loGridListProperty;
-
             }
             catch (Exception ex)
             {
@@ -279,15 +291,16 @@ namespace LMM02000Front
             {
                 loEx.Add(ex);
             }
-           
+
 
             R_DisplayException(loEx);
         }
+
         private string loLabel;
         private bool enableSalesmanType;
         private bool enableActiveInactive;
         private bool enableSalesmanId;
-        
+
         private async Task OnChangedSalesmanType(string poParam)
         {
             var loEx = new R_Exception();
@@ -306,7 +319,6 @@ namespace LMM02000Front
                     enableSalesmanType = true;
                     _viewModel.Data.CEXT_COMPANY_NAME = "";
                 }
-            
             }
             catch (Exception ex)
             {
@@ -342,12 +354,13 @@ namespace LMM02000Front
             enableSalesmanType = false;
             enableActiveInactive = false;
             enableSalesmanId = false;
+
+            disableGrid = true;
         }
 
         private void R_AfterAdd(R_AfterAddEventArgs eventArgs)
         {
-            
-            var LMMDTO = (LMM02000DTO) eventArgs.Data;
+            var LMMDTO = (LMM02000DTO)eventArgs.Data;
 
             LMMDTO.CMOBILE_PHONE2 = "";
             LMMDTO.CSALESMAN_TYPE = "I";
@@ -355,12 +368,15 @@ namespace LMM02000Front
             LMMDTO.CID_NO = "";
             LMMDTO.CGENDER = "F";
 
+            disableGrid = false;
         }
 
         private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)
         {
             enableSalesmanType = false;
+            disableGrid = true;
         }
+
         private async Task Conductor_ServiceGetRecord(R_ServiceGetRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -413,7 +429,23 @@ namespace LMM02000Front
 
             loEx.ThrowExceptionIfErrors();
         }
+    
+        private void R_Beforeedit(R_BeforeEditEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
 
+            try
+            {
+                disableGrid = false;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+        
         private async Task Conductor_ServiceDelete(R_ServiceDeleteEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -430,14 +462,17 @@ namespace LMM02000Front
 
             loEx.ThrowExceptionIfErrors();
         }
+
         [Inject] private IJSRuntime JS { get; set; }
+
         private async Task DownloadTemplate()
         {
             var loEx = new R_Exception();
 
             try
             {
-                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?", R_eMessageBoxButtonType.YesNo);
+                var loValidate = await R_MessageBox.Show("", "Are you sure download this template?",
+                    R_eMessageBoxButtonType.YesNo);
 
                 if (loValidate == R_eMessageBoxResult.Yes)
                 {
@@ -461,6 +496,9 @@ namespace LMM02000Front
             {
                 case R_eConductorMode.Add:
                     await _salesmanIdRef.FocusAsync();
+                    break;
+                case R_eConductorMode.Edit:
+                    await _salesmanNameRef.FocusAsync();
                     break;
             }
         }

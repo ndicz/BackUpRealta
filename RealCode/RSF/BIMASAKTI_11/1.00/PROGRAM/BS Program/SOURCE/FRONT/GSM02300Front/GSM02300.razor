@@ -1,7 +1,10 @@
 ﻿@page "/GSM02300"
 @using GSM02300Common.DTO
+@using GSM00700FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 @attribute [R_Page(Title = "Property Type")]
+@inject R_ILocalizer<Resources_Dummy_Class> _localizer
 
 <R_StackLayout>
     <R_Grid @ref="@_gridRef02300"
@@ -24,13 +27,13 @@
                 FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
                 ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
                                       TextField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
-                                      HeaderText="Property Type Code*" R_EnableAdd/>
+                                      HeaderText="@_localizer["PRTY_TYP_CD"]" R_EnableAdd/>
 
             @*<R_GridTextColumn FieldName="CPROPERTY_TYPE_CODE" HeaderText="Property Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>*@
-            <R_GridTextColumn Width="192.06px" FieldName="CPROPERTY_TYPE_NAME" HeaderText="Property Type Name*" R_EnableAdd></R_GridTextColumn>
-            <R_GridCheckBoxColumn Width="126.06px" FieldName="LSINGLE_UNIT" HeaderText="Single Unit" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
-            <R_GridTextColumn Width="158.06px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn Width="145.06px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
+            <R_GridTextColumn Width="192.06px" FieldName="CPROPERTY_TYPE_NAME" HeaderText="@_localizer["PRTY_TYP_NM"]" R_EnableAdd></R_GridTextColumn>
+            <R_GridCheckBoxColumn Width="126.06px" FieldName="LSINGLE_UNIT" HeaderText="@_localizer["SNGL_UNT"]" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
+            <R_GridTextColumn Width="158.06px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
+            <R_GridTextColumn Width="145.06px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DT"]" />
 
             <R_GridTextColumn Width="120.06px" FieldName="CCREATE_BY" HeaderText="Created By" />
             <R_GridTextColumn Width="158.13" FieldName="DCREATE_DATE" HeaderText="Created Date" />

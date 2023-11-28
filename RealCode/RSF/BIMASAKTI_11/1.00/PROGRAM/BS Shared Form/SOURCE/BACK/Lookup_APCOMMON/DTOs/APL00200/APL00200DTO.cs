@@ -15,6 +15,9 @@ namespace Lookup_APCOMMON.DTOs.APL00200
         public string CCATEGORY_ID { get; set; }
         public bool LTAXABLE { get; set; }
         public string CWITHHOLDING_TAX_NAME { get; set; }
+        public string COTHER_TAX_ID { get; set; }
+        public string COTHER_TAX_NAME { get; set; }
+        public string COTHER_TAX_PCT { get; set; }
 
         public string RadioButton { get; set; } = "";
         public string Code { get; set; }

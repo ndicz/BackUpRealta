@@ -29,7 +29,8 @@ namespace GSM05500Service
         }
 
         [HttpPost]
-        public R_ServiceGetRecordResultDTO<GSM05500DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05500DTO> poParameter)
+        public R_ServiceGetRecordResultDTO<GSM05500DTO> R_ServiceGetRecord(
+            R_ServiceGetRecordParameterDTO<GSM05500DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordCurrency(Controller)");
             var loException = new R_Exception();
@@ -54,11 +55,8 @@ namespace GSM05500Service
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCurrency(Controller)");
             return loRtn;
-
-
-
-
         }
+
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM05500DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM05500DTO> poParameter)
         {
@@ -73,6 +71,19 @@ namespace GSM05500Service
                 loRtn = new R_ServiceSaveResultDTO<GSM05500DTO>();
                 _logger.LogInfo("Set Parameter || ServiceSaveCurrency(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
                 //poParameter.Entity.CCOMPANY_ID = "RCD";
                 //poParameter.Entity.CUSER_ID = "Admin";
@@ -83,13 +94,15 @@ namespace GSM05500Service
             {
                 loExceptionception.Add(ex);
                 _logger.LogError(loExceptionception);
-            };
-        EndBlock:
+            }
+
+            ;
+            EndBlock:
             loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceSaveCurrency(Controller)");
             return loRtn;
-
         }
+
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM05500DTO> poParameter)
         {
@@ -115,8 +128,10 @@ namespace GSM05500Service
             {
                 loExceptionception.Add(ex);
                 _logger.LogError(loExceptionception);
-            };
-        EndBlock:
+            }
+
+            ;
+            EndBlock:
             loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceDeleteCurrency(Controller)");
             return loRtn;
@@ -155,7 +170,6 @@ namespace GSM05500Service
         //}
 
 
-
         [HttpPost]
         public IAsyncEnumerable<GSM05500DTO> GetAllCurrencyStream()
         {
@@ -168,7 +182,6 @@ namespace GSM05500Service
 
             try
             {
-
                 loDbPar = new GSM05500DBParameter();
                 _logger.LogInfo("Set Parameter || GetAllCurrencyStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
@@ -189,11 +202,12 @@ namespace GSM05500Service
                 _logger.LogError(loExceptionception);
             }
 
-        EndBlock:
+            EndBlock:
             loExceptionception.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllCurrencyStream(Controller)");
             return loRtn;
         }
+
         private async IAsyncEnumerable<GSM05500DTO> GetCurrencyStream(List<GSM05500DTO> poParameter)
         {
             foreach (GSM05500DTO item in poParameter)
@@ -201,7 +215,5 @@ namespace GSM05500Service
                 yield return item;
             }
         }
-
-    }   
+    }
 }
-    

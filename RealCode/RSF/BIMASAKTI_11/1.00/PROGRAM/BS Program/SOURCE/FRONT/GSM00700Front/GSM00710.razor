@@ -58,10 +58,10 @@
             </R_Grid>
             <R_StackLayout Row="true">
                 <R_ItemLayout>
-                    <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">Template</R_Button>
+                    <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">@_localizer["CRT_DATE"]"</R_Button>
                 </R_ItemLayout>
                 <R_ItemLayout>
-                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">@_localizer["UPLD"]</R_Popup>
+                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">@_localizer["TMPLT"]</R_Popup>
                 </R_ItemLayout>
 
             </R_StackLayout>
@@ -103,7 +103,7 @@
 
 
                 <R_ItemLayout Class="col-2">
-                    <R_Label Class="fw-bold">Cash Flow Plan</R_Label>
+                    <R_Label Class="fw-bold">@_localizer["CASH_FLW_PLN"]</R_Label>
                 </R_ItemLayout>
                 <R_ItemLayout Class="col-1">
                     <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"

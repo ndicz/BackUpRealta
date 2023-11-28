@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GSM00700FrontResources\GSM00700FrontResources.csproj" />
     <ProjectReference Include="..\GSM02300Model\GSM02300Model.csproj" />
   </ItemGroup>
 
