@@ -30,13 +30,14 @@
             <R_Grid @ref="@_gridRef00710"
                     DataSource="GSM00710ViewModel.loGridList"
                     Pageable="true"
-                    Height="362px"
+                    Height="500px"
                     Width="100%"
                     R_ConductorGridSource="@_conGridGSM00710Ref"
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
                     AllowEditRow="true"
                     AllowDeleteRow="true"
+                    PageSize="19"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlow">
                 <R_GridColumns>
 
@@ -58,10 +59,10 @@
             </R_Grid>
             <R_StackLayout Row="true">
                 <R_ItemLayout>
-                    <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">@_localizer["CRT_DATE"]"</R_Button>
+                    <R_Button R_Conductor="@_conGridGSM00720Ref" OnClick="@DownloadTemplate">@_localizer["TMPLT"]</R_Button>
                 </R_ItemLayout>
                 <R_ItemLayout>
-                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">@_localizer["TMPLT"]</R_Popup>
+                    <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload">@_localizer["UPLD"]</R_Popup>
                 </R_ItemLayout>
 
             </R_StackLayout>
@@ -217,7 +218,7 @@
             </R_ItemLayout>
 
         </R_StackLayout>
-        <R_StackLayout Row="true">
+        <R_StackLayout Row="true" Class="mt-3">
 
             <R_ItemLayout>
                     <R_Button R_ConductorGridSource="@_conGridGSM00700Ref" OnClick="@DownloadTemplate720">@_localizer["TMPLT"]</R_Button>

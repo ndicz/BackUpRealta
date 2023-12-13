@@ -156,4 +156,7 @@
   <data name="6513" xml:space="preserve">
     <value>Mobile Phone 1 cannot be empty!</value>
   </data>
+  <data name="6514" xml:space="preserve">
+    <value>Invalid City Code!</value>
+  </data>
 </root>

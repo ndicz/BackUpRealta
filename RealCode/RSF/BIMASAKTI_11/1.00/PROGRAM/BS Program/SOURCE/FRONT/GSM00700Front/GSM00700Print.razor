@@ -30,7 +30,7 @@
         <R_ItemLayout>
             <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpFrom" R_After_Open_Lookup="R_AfterOpenLookUpFrom" @ref="CashFlowGroup"> ... </R_Lookup>
         </R_ItemLayout>
-        <R_ItemLayout col="4">
+        <R_ItemLayout col="6">
             <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM_NAME"
                        R_ConductorSource="@_conductorRef"
                        Enabled="false" />
@@ -45,12 +45,13 @@
         <R_ItemLayout col="2">
             <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO"
                        R_ConductorSource="@_conductorRef"
-                       Enabled="false" />
+                       OnChanged="OnchangedCashFlowGroupCode"
+                       Enabled="false" />   
         </R_ItemLayout>
         <R_ItemLayout>
             <R_Lookup R_Before_Open_Lookup="@R_BeforeOpenLookUpTo" R_After_Open_Lookup="R_AfterOpenLookUpTo" @ref="CashFlowGroup"> ... </R_Lookup>
         </R_ItemLayout>
-        <R_ItemLayout col="4">
+        <R_ItemLayout col="6">
             <R_TextBox @bind-Value="@_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO_NAME"
                        R_ConductorSource="@_conductorRef"
                        Enabled="false" />

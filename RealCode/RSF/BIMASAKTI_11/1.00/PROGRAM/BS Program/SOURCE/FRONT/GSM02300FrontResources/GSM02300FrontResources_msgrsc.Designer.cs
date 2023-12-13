@@ -38,7 +38,7 @@ namespace GSM00700FrontResources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GSM00700FrontResources.GSM02300FrontResources_msgrsc", typeof(GSM02300FrontResources_msgrsc).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GSM02300FrontResources.GSM02300FrontResources_msgrsc", typeof(GSM02300FrontResources_msgrsc).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -56,6 +56,24 @@ namespace GSM00700FrontResources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created By.
+        /// </summary>
+        internal static string CRT_BY {
+            get {
+                return ResourceManager.GetString("CRT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created Date.
+        /// </summary>
+        internal static string CRT_DT {
+            get {
+                return ResourceManager.GetString("CRT_DT", resourceCulture);
             }
         }
         
@@ -96,11 +114,20 @@ namespace GSM00700FrontResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Updated Date.
         /// </summary>
         internal static string UPDT_DT {
             get {
                 return ResourceManager.GetString("UPDT_DT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Price List.
+        /// </summary>
+        internal static string USE_PRC_LIST {
+            get {
+                return ResourceManager.GetString("USE_PRC_LIST", resourceCulture);
             }
         }
     }

@@ -26,6 +26,8 @@
     <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\GFF00900FRONT.csproj" />
 
     <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900Model\GFF00900Model.csproj" />
+
+    <ProjectReference Include="..\GSM05500FrontResources\GSM05500FrontResources.csproj" />
 	
     <ProjectReference Include="..\GSM05500MODEL\GSM05500Model.csproj" />
   </ItemGroup>

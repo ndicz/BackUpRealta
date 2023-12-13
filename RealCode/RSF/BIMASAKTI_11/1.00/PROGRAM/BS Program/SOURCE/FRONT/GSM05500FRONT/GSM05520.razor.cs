@@ -30,6 +30,7 @@ namespace GSM05500Front
         private R_ConductorGrid _conGridGSM05520Ref;
         private R_Grid<GSM05520DTO> _gridRef5520;
         private R_Conductor _conductorRef;
+        private bool enableRateTime;
 
         [Inject] private IClientHelper _clientHelper { get; set; }
         protected override async Task R_Init_From_Master(object poParameter)
@@ -39,10 +40,9 @@ namespace GSM05500Front
             {
                 await GSM05520ViewModel.GetLcCurrency();
                 await GSM05520ViewModel.GetRateListP();
-
+                enableRateTime = true;
                 await RateTypeGet(null);
 
-                await GSM05520ViewModel.GetRateList();
                 await _gridRef5520.R_RefreshGrid(null);
 
             }
@@ -55,29 +55,36 @@ namespace GSM05500Front
         }
 
         #region GSM05200
-        private void R_Before_Open_Popup(R_BeforeOpenPopupEventArgs eventArgs)
-        {
-            eventArgs.Parameter = "GSM5502";
-            eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+        // private void R_Before_Open_Popup(R_BeforeOpenPopupEventArgs eventArgs)
+        // {
+        //     eventArgs.Parameter = "GSM5502";
+        //     eventArgs.TargetPageType = typeof(GFF00900FRONT.GFF00900);
+        //
+        // }
 
-        }
 
-
-        private async Task R_After_Open_Popup(R_AfterOpenPopupEventArgs eventArgs)
-        {
-            R_Exception loException = new R_Exception();
-            try
-            {
-                await _gridRef5520.R_RefreshGrid(null);
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
-            loException.ThrowExceptionIfErrors();
-            await _gridRef5520.R_RefreshGrid(null);
-
-        }
+        // private async Task R_After_Open_Popup(R_AfterOpenPopupEventArgs eventArgs)
+        // {
+        //     R_Exception loException = new R_Exception();
+        //     try
+        //     {
+        //         if (eventArgs.Success == false)
+        //         {
+        //             return;
+        //         }
+        //         bool result = (bool)eventArgs.Result;
+        //         if (result == true)
+        //
+        //         await _gridRef5520.R_RefreshGrid(null);
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         loException.Add(ex);
+        //     }
+        //     loException.ThrowExceptionIfErrors();
+        //     await _gridRef5520.R_RefreshGrid(null);
+        //
+        // }
         [Inject] public R_PopupService PopupService { get; set; }
 
 
@@ -86,7 +93,7 @@ namespace GSM05500Front
             var loEx = new R_Exception();
             GFF00900ParameterDTO loParam = null;
             R_PopupResult loResult = null;
-
+            enableRateTime = false;
             try
             {
                 var loValidateViewModel = new GFF00900Model.ViewModel.GFF00900ViewModel();
@@ -96,6 +103,7 @@ namespace GSM05500Front
                 //Jika Approval User ALL dan Approval Code 1, maka akan langsung menjalankan ActiveInactive
                 if (loValidateViewModel.loRspActivityValidityList.FirstOrDefault().CAPPROVAL_USER == "ALL" && loValidateViewModel.loRspActivityValidityResult.Data.FirstOrDefault().IAPPROVAL_MODE == 1)
                 {
+                    
                     eventArgs.Cancel = false;
                 }
                 else //Disini Approval Code yang didapat adalah 2, yang berarti Active Inactive akan dijalankan jika User yang diinput ada di RSP_ACTIVITY_VALIDITY
@@ -111,6 +119,7 @@ namespace GSM05500Front
 
                 //loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), "GSM05502");
                 //eventArgs.Cancel = !(bool)loResult.Result;
+                enableRateTime = true;
             }
             catch (Exception ex)
             {
@@ -127,6 +136,7 @@ namespace GSM05500Front
             var loEx = new R_Exception();
             GFF00900ParameterDTO loParam = null;
             R_PopupResult loResult = null;
+            enableRateTime = false;
             try
             {
                 if (GSM05520ViewModel.CrateTime < DateTime.Today)
@@ -144,8 +154,10 @@ namespace GSM05500Front
                     {
                         loParam = new GFF00900ParameterDTO()
                         {
+                            
                             Data = loValidateViewModel.loRspActivityValidityList,
                             IAPPROVAL_CODE = "GSM05501" //Uabh Approval Code sesuai Spec masing masing
+                            
                         };
                         loResult = await PopupService.Show(typeof(GFF00900FRONT.GFF00900), loParam);
                         eventArgs.Cancel = !(bool)loResult.Result;
@@ -153,7 +165,9 @@ namespace GSM05500Front
 
                 }
 
+                enableRateTime = true;
             }
+            
             catch (Exception ex)
             {
                 loEx.Add(ex);
@@ -161,7 +175,7 @@ namespace GSM05500Front
 
             loEx.ThrowExceptionIfErrors();
         }
-
+        
 
         private async Task OnChanged(object poParam)
         {
@@ -169,9 +183,8 @@ namespace GSM05500Front
             string lsCrated = (string)poParam;
             try
             {
-                GSM05520ViewModel.RateTypeCode = lsCrated;
+                GSM05520ViewModel.CreateCode = lsCrated;
 
-                await GSM05520ViewModel.GetRateList();
                 //await GSM05520ViewModel.GetLcCurrency();
                 await _gridRef5520.R_RefreshGrid(null);
             }
@@ -183,21 +196,25 @@ namespace GSM05500Front
             R_DisplayException(loEx);
         }
 
-        private async Task OnChangedDate(object poParam)
+        private async Task OnChangedDate(DateTime poParam)
         {
             var loEx = new R_Exception();
-            DateTime lsDate = (DateTime)poParam;
             try
             {
-                GSM05520ViewModel.CrateTime = lsDate;
+                GSM05520ViewModel.CrateTime = poParam;
 
-
-                DateTime dateValue = DateTime.Parse(poParam.ToString());
-                string formattedDate = dateValue.ToString("yyyyMMdd");
+                string formattedDate = poParam.ToString("yyyyMMdd");
                 GSM05520ViewModel.CrateDate = formattedDate;
-                GSM05520ViewModel.GetRateList();
 
-                await _gridRef5520.R_RefreshGrid(null);
+                if (_conGridGSM05520Ref.R_ConductorMode == R_eConductorMode.Normal)
+                {
+                    await _gridRef5520.R_RefreshGrid(null);
+                }
+                else
+                {
+                    var loData = (GSM05520DTO)_conGridGSM05520Ref.R_GetCurrentData();
+                    loData.CRATE_DATE = formattedDate;
+                }
             }
             catch (Exception ex)
             {
@@ -215,7 +232,6 @@ namespace GSM05500Front
             {
                 await GSM05520ViewModel.GetRateListP();
                 //eventArgs.ListEntityResult = _viewModel.loGridListProperty;
-
             }
             catch (Exception ex)
             {
@@ -253,17 +269,17 @@ namespace GSM05500Front
 
         }
 
-        private void R_SetAdd(R_SetEventArgs eventArgs)
-        {
-            if (R_LookupBtn != null)
-                R_LookupBtn.Enabled = eventArgs.Enable;
-        }
-
-        private void R_SetEdit(R_SetEventArgs eventArgs)
-        {
-            if (R_LookupBtn != null)
-                R_LookupBtn.Enabled = eventArgs.Enable;
-        }
+        // private void R_SetAdd(R_SetEventArgs eventArgs)
+        // {
+        //     if (R_LookupBtn != null)
+        //         R_LookupBtn.Enabled = eventArgs.Enable;
+        // }
+        //
+        // private void R_SetEdit(R_SetEventArgs eventArgs)
+        // {
+        //     if (R_LookupBtn != null)
+        //         R_LookupBtn.Enabled = eventArgs.Enable;
+        // }
 
         #endregion
 
@@ -284,10 +300,10 @@ namespace GSM05500Front
 
             loEx.ThrowExceptionIfErrors();
         }
-        public async Task Conductor_AfterDelete()
-        {
-            await R_MessageBox.Show("", "Delete Success", R_eMessageBoxButtonType.OK);
-        }
+        // public async Task Conductor_AfterDelete()
+        // {
+        //     await R_MessageBox.Show("", "Delete Success", R_eMessageBoxButtonType.OK);
+        // }
         private async Task Grid_ServiceGetRecordRate(R_ServiceGetRecordEventArgs eventArgs)
         {
             var loEx = new R_Exception();
@@ -312,7 +328,7 @@ namespace GSM05500Front
             {
 
                 var loParam = (GSM05520DTO)eventArgs.Data;
-                loParam.CRATETYPE_CODE = GSM05520ViewModel.RateTypeCode;
+                loParam.CRATETYPE_CODE = GSM05520ViewModel.CreateCode;
                 //loParam.CCURRENCY_CODE = GSM05520ViewModel.CurrencyCode;
                 loParam.CRATE_DATE = GSM05520ViewModel.CrateTime.ToString("yyyyMMdd");
                 await GSM05520ViewModel.SaveRateType(loParam, eventArgs.ConductorMode);
@@ -354,7 +370,9 @@ namespace GSM05500Front
 
         public async Task Conductor_AfterAdd(R_AfterAddEventArgs eventArgs)
         {
+            enableRateTime = false;
             var loEntity = (GSM05520DTO)eventArgs.Data;
+            loEntity.CRATE_DATE = GSM05520ViewModel.CrateDate;
             //GSM05520ViewModel.RateTypeCode = "";
             //GSM05520ViewModel.CrateTime = DateTime.Now;
 
@@ -364,6 +382,7 @@ namespace GSM05500Front
 
         private async Task Conductor_Display(R_AfterSaveEventArgs eventArgs)
         {
+            enableRateTime = true;
             if (eventArgs.ConductorMode == R_eConductorMode.Normal)
             {
                 var data = (GSM05520DTO)eventArgs.Data;
@@ -377,9 +396,14 @@ namespace GSM05500Front
         {
             ((GSM05520DTO)eventArgs.Data).CRATE_DATE = GSM05520ViewModel.CrateTime.ToString("yyyyMMdd");
         }
+        
+        public void Conductor_BeforeCancel(R_BeforeCancelEventArgs eventArgs)
+        {
+            enableRateTime = true;
+        }
 
 
-        public async Task Grid_AfterDelete5520()
+        public async Task Grid_AfterDelete()
         {
             await R_MessageBox.Show("", "Delete Success", R_eMessageBoxButtonType.OK);
         }

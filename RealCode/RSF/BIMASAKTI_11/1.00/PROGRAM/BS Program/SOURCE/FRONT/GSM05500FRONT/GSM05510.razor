@@ -1,10 +1,11 @@
 @page "/GSM05510"
+@using GSM05500FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
-
+@inject R_ILocalizer<Resources_Dummy_Class_GSM05500> _localizer
 
 
 <R_StackLayout>
-
 
 
     <R_Grid @ref="@_gridRef5510"
@@ -14,19 +15,20 @@
             R_GridType="@R_eGridType.Original"
             AllowAddNewRow="true"
             Width="100%"
-            Height="480px"
+            Height="600px"
+            PageSize="24"
             AllowEditRow="true"
             AllowDeleteRow="true"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
 
         <R_GridColumns>
 
-            <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="Rate Type Code*" MaxLength="8" R_EnableAdd></R_GridTextColumn>
-            <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="Rate Type Name*" MaxLength="80" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
-            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date" />
+            <R_GridTextColumn FieldName="CRATETYPE_CODE" HeaderText="@(_localizer["RT_TYP_CD"] + "*")" MaxLength="8" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn FieldName="CRATETYPE_DESCRIPTION" HeaderText="@(_localizer["RT_TYP_NM"] + "*")" MaxLength="80" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="@_localizer["UPDT_DT"]"/>
+            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="@_localizer["CRT_DT"]"/>
 
         </R_GridColumns>
     </R_Grid>
@@ -39,4 +41,4 @@
                  R_ServiceDelete="@Grid_ServiceDeleteRateType"
                  @*R_AfterDelete="@Grid_AfterDelete" *@
                  R_IsHeader="true"
-                 R_Validation="R_Validation" />
+                 R_Validation="R_Validation"/>

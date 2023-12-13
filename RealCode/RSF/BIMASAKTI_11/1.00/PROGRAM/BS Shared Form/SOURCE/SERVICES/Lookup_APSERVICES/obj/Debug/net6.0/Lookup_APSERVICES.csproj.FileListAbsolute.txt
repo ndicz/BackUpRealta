@@ -3,11 +3,6 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfoInputs.cache
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfo.cs
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.CoreCompileInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.AssemblyReference.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.GeneratedMSBuildEditorConfig.editorconfig
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfoInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfo.cs
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.CoreCompileInputs.cache
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\Lookup_APSERVICES.deps.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\Lookup_APSERVICES.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\Lookup_APSERVICES.pdb
@@ -24,6 +19,11 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\Lookup_APBACK.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\id\R_APIBackEnd.resources.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\bin\Debug\net6.0\ja\R_APIBackEnd.resources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.CoreCompileInputs.cache
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.csproj.CopyComplete
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\Lookup_APSERVICES.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_APSERVICES\obj\Debug\net6.0\refint\Lookup_APSERVICES.dll

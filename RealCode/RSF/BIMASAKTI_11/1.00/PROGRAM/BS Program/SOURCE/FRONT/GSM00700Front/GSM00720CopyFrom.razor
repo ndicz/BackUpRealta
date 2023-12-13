@@ -56,7 +56,7 @@
     </R_ItemLayout>
     <R_ItemLayout col="3">
         <R_DropDownList Data="@_GSM00720ViewModel.YearComboBox"
-                        @bind-Value="@_GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR"
+                        Value="_GSM00720ViewModel.CFromYear"
                         ValueField="@nameof(GSM00720YearDTO.CYEAR)"
                         TextField="@nameof(GSM00720YearDTO.CYEAR)"
                         R_ConductorSource="@_conductorRef">
@@ -105,7 +105,7 @@
 <R_StackLayout Row Class="justify-content-end">
     <R_ItemLayout>
         <R_Button OnClick="Button_OnClickProcessAsync">
-            @_localizer["YEAR"]
+            @_localizer["PRCS"]
         </R_Button>
     </R_ItemLayout>
     <R_ItemLayout>

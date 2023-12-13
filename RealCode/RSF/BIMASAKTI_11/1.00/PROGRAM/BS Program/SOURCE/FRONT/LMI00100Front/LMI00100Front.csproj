@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LMI00100FrontResources\LMI00100FrontResources.csproj" />
     <ProjectReference Include="..\LMI00100Model\LMI00100Model.csproj" />
   </ItemGroup>
 	<ItemGroup>

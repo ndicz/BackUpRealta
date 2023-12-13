@@ -14,8 +14,8 @@ namespace GSM00700Common.DTO
         public string CCYEAR { get; set; }
         public string CYEAR { get; set; }
         public string CPERIOD_NO { get; set; }
-        public Decimal NBASE_AMOUNT { get; set; }
-        public Decimal NLOCAL_AMOUNT { get; set; }
+        public decimal NBASE_AMOUNT { get; set; }
+        public decimal NLOCAL_AMOUNT { get; set; }
         public string CUPDATE_BY { get; set; }
         public DateTime DUPDATE_DATE { get; set; }
         public string CCREATE_BY { get; set; }

@@ -36,7 +36,7 @@ namespace GSM05500Model
         public DateTime CrateTime = DateTime.Now;
 
 
-
+    
         //grid
         public async Task GetRateList()
         {
@@ -46,8 +46,10 @@ namespace GSM05500Model
             try
             {
 
-                var loReturn = await _GSM05520Model.GetAllStreamingAsync(RateTypeCode, CrateDate);
+                var loReturn = await _GSM05520Model.GetAllStreamingAsync(CreateCode, CrateDate);
+                loEntity.CRATE_DATE = CrateDate;
                 loGridList = new ObservableCollection<GSM05520DTO>(loReturn.Data);
+                
 
             }
             catch (Exception ex)
@@ -67,9 +69,8 @@ namespace GSM05500Model
             try
             {
                 var loReturn = await _GSM05520Model.GetRateTypeStreamingAsync();
-                loGridListRate = new ObservableCollection<GSM05520DTOGetRateType>(loReturn.Data);
-
-                //CreateCode = loGridListRate[0].CRATETYPE_CODE;
+                loRateType = loReturn.Data;
+                CreateCode = loRateType[0].CRATETYPE_CODE;
 
             }
             catch (Exception ex)

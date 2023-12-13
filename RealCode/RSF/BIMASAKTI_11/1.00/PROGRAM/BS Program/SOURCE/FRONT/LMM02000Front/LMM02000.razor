@@ -1,20 +1,24 @@
 ﻿@using LMM02000Common.DTO
 @using LMM02000Model
 @using R_BlazorFrontEnd.Controls.Enums
+@using LMM02000FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 
 @page "/LMM02000"
+@inject R_ILocalizer<Resources_Dummy_Class_LMM02000> _localizer
 
 <R_StackLayout Row="true" Spacing="4">
     <R_ItemLayout col="1">
-        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">PROPERTY</R_Label>
+        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">@_localizer["PRTY"]</R_Label>
     </R_ItemLayout>
-    <R_ItemLayout xs="2">
-        <R_ComboBox Data="@_viewModel.PropertyList"
-                    Value="_viewModel.propertyValue"
-                    ValueField="@nameof(LMM02000PropertyDTO.CPROPERTY_ID)"
-                    TextField="@nameof(LMM02000PropertyDTO.CPROPERTY_NAME)"
-                    R_ConductorSource="@_conductorRef" ValueChanged="@((string value) => OnChanged(value))" />
+    <R_ItemLayout col="3">
+        <R_DropDownList Data="@_viewModel.PropertyList"
+                        Value="_viewModel.propertyValue"
+                        ValueField="@nameof(LMM02000PropertyDTO.CPROPERTY_ID)"
+                        TextField="@nameof(LMM02000PropertyDTO.CPROPERTY_NAME)"
+                        R_ConductorSource="@_conductorRef" ValueChanged="@((string value) => OnChanged(value))"
+                        R_EnableOther/>
     </R_ItemLayout>
 </R_StackLayout>
 
@@ -22,26 +26,27 @@
 <R_StackLayout Spacing="3" Class="mb-2 mt-2">
     <R_Grid @ref="@_gridRef"
             Width="100%"
-            Height="255px"
+            Height="340px"
+            PageSize="13"
             DataSource="@_viewModel.loGridList"
             Pageable="true"
             R_ConductorSource="@_conductorRef"
-            Enabled="@disableGrid"
+            Enabled="@enableleGrid"
             R_GridType="@R_eGridType.Navigator"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecord">
 
         <R_GridColumns>
-            <R_GridCheckBoxColumn Width="83px" FieldName="LACTIVE" HeaderText="Active" />
-            <R_GridTextColumn Width="145px" FieldName="CSALESMAN_ID" HeaderText="Salesman ID" />
-            <R_GridTextColumn Width="201px" FieldName="CSALESMAN_NAME" HeaderText="Salesman Name" />
-            <R_GridTextColumn Width="105px" FieldName="CGENDER_DESCR" HeaderText="Gender" />
-            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE1" HeaderText="Mobile Phone 1" />
-            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE2" HeaderText="Mobile Phone 2" />
-            <R_GridTextColumn Width="150px" FieldName="CEMAIL" HeaderText="Email" />
-            <R_GridTextColumn Width="145px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-            <R_GridTextColumn Width="145px" FieldName="CCREATE_BY" HeaderText="Created By" />
-            <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="Created Date" />
+            <R_GridCheckBoxColumn Width="83px" FieldName="LACTIVE" HeaderText="@_localizer["ACTIVE"]"/>
+            <R_GridTextColumn Width="145px" FieldName="CSALESMAN_ID" HeaderText="@_localizer["SLSMN_ID"]"/>
+            <R_GridTextColumn Width="201px" FieldName="CSALESMAN_NAME" HeaderText="@_localizer["SLSMN_NM"]"/>
+            <R_GridTextColumn Width="105px" FieldName="CGENDER_DESCR" HeaderText="@_localizer["GENDER"]"/>
+            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE1" HeaderText="@(_localizer["MB_PHNE"] + " 1")"/>
+            <R_GridTextColumn Width="190px" FieldName="CMOBILE_PHONE2" HeaderText="@(_localizer["MB_PHNE"] + " 2")"/>
+            <R_GridTextColumn Width="150px" FieldName="CEMAIL" HeaderText="@_localizer["EMAIL"]"/>
+            <R_GridTextColumn Width="145px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn Width="145px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DT"]"/>
+            <R_GridTextColumn Width="145px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn Width="145px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DT"]"/>
         </R_GridColumns>
     </R_Grid>
 
@@ -51,9 +56,9 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout col="8">
-        <R_StackLayout Row="true" Class="mt-2">
+        <R_StackLayout Row="true" Class="mt-4">
             <R_ItemLayout col="2">
-                <R_Label Class="fw-bold">Salesman ID*</R_Label>
+                <R_Label Class="fw-bold">@(_localizer["SLSMN_ID"] + "*")</R_Label>
             </R_ItemLayout>
 
             <R_ItemLayout col="3">
@@ -62,48 +67,48 @@
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
                            MaxLength="20"
-                           R_EnableEdit=@enableSalesmanId />
+                           R_EnableEdit=@enableSalesmanId/>
             </R_ItemLayout>
             <R_ItemLayout col="6">
                 <R_TextBox @bind-Value="@_viewModel.Data.CSALESMAN_NAME"
                            R_ConductorSource="@_conductorRef"
-                             @ref="@_salesmanNameRef"
+                           @ref="@_salesmanNameRef"
                            R_EnableAdd="true"
                            MaxLength="100"
-                           R_EnableEdit="true" />
+                           R_EnableEdit="true"/>
             </R_ItemLayout>
 
         </R_StackLayout>
         <R_StackLayout Row="true" Class="mt-2">
             <R_ItemLayout col="2">
-                <R_Label Class="fw-bold">Address*</R_Label>
+                <R_Label Class="fw-bold">@_localizer["ADDRS"]*</R_Label>
             </R_ItemLayout>
             <R_ItemLayout col="9">
                 <R_TextArea @bind-Value="@_viewModel.Data.CADDRESS"
                             R_ConductorSource="@_conductorRef"
                             R_EnableAdd="true"
                             MaxLength="255"
-                            R_EnableEdit="true" />
+                            R_EnableEdit="true"/>
             </R_ItemLayout>
         </R_StackLayout>
         <R_StackLayout Row="true" Class="mt-2">
             <R_ItemLayout col="2">
-                <R_Label Class="fw-bold">Email Address*</R_Label>
+                <R_Label Class="fw-bold">@(_localizer["EML_ADDRS"] + "*")</R_Label>
             </R_ItemLayout>
             <R_ItemLayout col="9">
                 <R_TextBox @bind-Value="@_viewModel.Data.CEMAIL"
                            R_ConductorSource="@_conductorRef"
                            R_EnableAdd="true"
                            MaxLength="100"
-                           R_EnableEdit="true" />
+                           R_EnableEdit="true"/>
             </R_ItemLayout>
         </R_StackLayout>
 
         <R_StackLayout Row="true" Class="mt-2">
             <R_ItemLayout col="2">
-                <R_Label Class="fw-bold">Salesman Type</R_Label>
+                <R_Label Class="fw-bold">@_localizer["SLSMN_TYP"]</R_Label>
             </R_ItemLayout>
-            <R_ItemLayout col="5">
+            <R_ItemLayout col="3">
                 <R_RadioGroup Data="@_viewModel.SalesmanTypeList"
                               Value="@_viewModel.Data.CSALESMAN_TYPE"
                               ValueField="@nameof(LMM02000SalesmanTypeDTO.CCODE)"
@@ -111,16 +116,16 @@
                               R_ConductorSource="@_conductorRef"
                               R_EnableAdd="true"
                               R_EnableEdit="true"
-                              ValueChanged="@((string value) => OnChangedSalesmanType(value))" />
+                              ValueChanged="@((string value) => OnChangedSalesmanType(value))"/>
 
             </R_ItemLayout>
             <R_ItemLayout col="2">
-                <R_Label Class="fw-bold">Company Name*</R_Label>
+                <R_Label Class="fw-bold">@(_localizer["CMPN_NM"] + "*")</R_Label>
             </R_ItemLayout>
-            <R_ItemLayout col="2">
+            <R_ItemLayout col="4">
                 <R_TextBox @bind-Value="@_viewModel.Data.CEXT_COMPANY_NAME"
                            R_ConductorSource="@_conductorRef"
-                           Enabled="@enableSalesmanType" />
+                           Enabled="@enableSalesmanType"/>
             </R_ItemLayout>
 
         </R_StackLayout>
@@ -128,66 +133,10 @@
     </R_ItemLayout>
 
 
-
     <R_ItemLayout col="4">
-        <R_StackLayout Row="true" Class="mt-2">
-            <R_ItemLayout col="1">
-                <R_CheckBox @bind-Value="@_viewModel.Data.LACTIVE"
-                            R_ConductorSource="@_conductorRef"
-                            Enabled="@enableActiveInactive" />
-            </R_ItemLayout>
+        <R_StackLayout Row="true" Class="mt-4">
             <R_ItemLayout col="4">
-                <R_Label Class="fw-bold">Active</R_Label>
-            </R_ItemLayout>
-        </R_StackLayout>
-        <R_StackLayout Row="true" Class="mt-2">
-
-            <R_ItemLayout col="4">
-                <R_Label Class="fw-bold">Mobile Phone (1)*</R_Label>
-            </R_ItemLayout>
-
-            <R_ItemLayout col="6">
-                <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE1"
-                           R_ConductorSource="@_conductorRef"
-                           R_EnableAdd="true"
-                           R_EnableEdit="true"
-                           MaxLength="30"
-                           Min="0"
-                           Max="100"
-                           Decimals="2" />
-            </R_ItemLayout>
-        </R_StackLayout>
-        <R_StackLayout Row="true" Class="mt-2">
-            <R_ItemLayout col="4">
-                <R_Label Class="fw-bold">Mobile Phone (2)</R_Label>
-            </R_ItemLayout>
-
-            <R_ItemLayout col="6">
-                <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE2"
-                           R_ConductorSource="@_conductorRef"
-                           R_EnableAdd="true"
-                           R_EnableEdit="true"
-                           MaxLength="30"
-                           Min="0"
-                           Max="100"
-                           Decimals="2" />
-            </R_ItemLayout>
-        </R_StackLayout>
-        <R_StackLayout Row="true" Class="mt-2">
-            <R_ItemLayout col="4">
-                <R_Label Class="fw-bold">NIK</R_Label>
-            </R_ItemLayout>
-            <R_ItemLayout col="6">
-                <R_TextBox @bind-Value="@_viewModel.Data.CID_NO"
-                           R_ConductorSource="@_conductorRef"
-                           R_EnableAdd="true"
-                           MaxLength="40"
-                           R_EnableEdit="true" />
-            </R_ItemLayout>
-        </R_StackLayout>
-        <R_StackLayout Row="true" Class="mt-2 mb-2">
-            <R_ItemLayout col="4">
-                <R_Label Class="fw-bold">Gender</R_Label>
+                <R_Label Class="fw-bold">@(_localizer["GENDER"] + "*")</R_Label>
             </R_ItemLayout>
 
             <R_ItemLayout col="4">
@@ -201,15 +150,67 @@
                 </R_RadioGroup>
             </R_ItemLayout>
         </R_StackLayout>
+        <R_StackLayout Row="true" Class="mt-2">
+            <R_ItemLayout col="0" Class="d-flex align-items-start">
+                <R_CheckBox @bind-Value="@_viewModel.Data.LACTIVE"
+                            R_ConductorSource="@_conductorRef"
+                            Enabled="@enableActiveInactive"/>
+            </R_ItemLayout>
+            <R_ItemLayout col="1">
+                <R_Label Class="fw-bold">Active</R_Label>
+            </R_ItemLayout>
+        </R_StackLayout>
+        <R_StackLayout Row="true" Class="mt-2">
+
+            <R_ItemLayout col="4">
+                <R_Label Class="fw-bold">@(_localizer["MB_PHNE"] + " (1)" + "*")</R_Label>
+            </R_ItemLayout>
+
+            <R_ItemLayout col="7">
+                <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE1"
+                           R_ConductorSource="@_conductorRef"
+                           R_EnableAdd="true"
+                           R_EnableEdit="true"
+                           MaxLength="30"
+                           Min="0"
+                           Max="100"
+                           Decimals="2"/>
+            </R_ItemLayout>
+        </R_StackLayout>
+        <R_StackLayout Row="true" Class="mt-2">
+            <R_ItemLayout col="4">
+                <R_Label Class="fw-bold">@(_localizer["MB_PHNE"] + " (2)")</R_Label>
+            </R_ItemLayout>
+
+            <R_ItemLayout col="7">
+                <R_TextBox @bind-Value="@_viewModel.Data.CMOBILE_PHONE2"
+                           R_ConductorSource="@_conductorRef"
+                           R_EnableAdd="true"
+                           R_EnableEdit="true"
+                           MaxLength="30"
+                           Min="0"
+                           Max="100"
+                           Decimals="2"/>
+            </R_ItemLayout>
+        </R_StackLayout>
+        <R_StackLayout Row="true" Class="mt-2 mb-4">
+            <R_ItemLayout col="4">
+                <R_Label Class="fw-bold">@_localizer["NIK"]</R_Label>
+            </R_ItemLayout>
+            <R_ItemLayout col="7">
+                <R_TextBox @bind-Value="@_viewModel.Data.CID_NO"
+                           R_ConductorSource="@_conductorRef"
+                           R_EnableAdd="true"
+                           MaxLength="40"
+                           R_EnableEdit="true"/>
+            </R_ItemLayout>
+        </R_StackLayout>
+
 
     </R_ItemLayout>
 
 
-
 </R_StackLayout>
-
-
-
 
 
 <R_StackLayout Row Class="justify-content-between">
@@ -230,15 +231,15 @@
     </R_StackLayout>
     <R_StackLayout Row Class="justify-content-between">
         <R_ItemLayout>
-            <R_Popup R_After_Open_Popup="@R_After_Open_Upload" R_Before_Open_Popup="@R_Before_Open_Upload">Upload</R_Popup>
+            <R_Popup R_ConductorSource="@_conductorRef" R_EnableOther R_After_Open_Popup="@R_After_Open_Upload" R_Before_Open_Popup="@R_Before_Open_Upload">@_localizer["Upload"]</R_Popup>
         </R_ItemLayout>
 
         <R_ItemLayout>
-            <R_Button R_Conductor="@_conductorGrid" OnClick="@DownloadTemplate">Template</R_Button>
+            <R_Button R_ConductorSource="@_conductorRef" R_EnableOther OnClick="@DownloadTemplate">@_localizer["TMPLT"]</R_Button>
         </R_ItemLayout>
 
         <R_ItemLayout>
-            <R_Popup R_After_Open_Popup="@R_After_Open_Popup_ActivateInactive" R_Before_Open_Popup="@R_Before_Open_Popup_ActivateInactive">@loLabel</R_Popup>
+            <R_Popup R_ConductorSource="@_conductorRef" R_EnableOther R_After_Open_Popup="@R_After_Open_Popup_ActivateInactive"R_Before_Open_Popup="@R_Before_Open_Popup_ActivateInactive">@loLabel</R_Popup>
         </R_ItemLayout>
     </R_StackLayout>
 
@@ -253,9 +254,9 @@
 
     </R_StackLayout>
 
-    </R_StackLayout>
+</R_StackLayout>
 
-    <R_Conductor @ref="@_conductorRef"
+<R_Conductor @ref="@_conductorRef"
              R_ViewModel="@_viewModel"
              R_IsHeader="true"
              R_Display="Display"
@@ -267,4 +268,4 @@
              R_ServiceSave="@Conductor_ServiceSave"
              R_ServiceDelete="@Conductor_ServiceDelete"
              R_ConvertToGridEntity="@R_ConvertToGridEntity"
-             R_Validation="@ActiveInactiveSaving" />
+             R_Validation="@ActiveInactiveSaving"/>

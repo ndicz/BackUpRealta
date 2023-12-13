@@ -104,6 +104,7 @@ namespace GSM02300Model
                     CPROPERTY_TYPE_NAME = poProperty.CPROPERTY_TYPE_NAME,
                     CPROPERTY_TYPE_CODE = poProperty.CPROPERTY_TYPE_CODE,
                     LSINGLE_UNIT = poProperty.LSINGLE_UNIT,
+                    LUSE_PRICE_LIST = poProperty.LUSE_PRICE_LIST,
                     CUSER_ID = poProperty.CUSER_ID,
 
                 };

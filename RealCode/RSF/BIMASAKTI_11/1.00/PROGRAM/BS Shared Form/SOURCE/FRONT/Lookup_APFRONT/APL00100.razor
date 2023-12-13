@@ -1,5 +1,7 @@
+@using LookupAPFrontResources
 @inherits R_Page
 @attribute [R_Page(Title = "Supplier Lookup")]
+@inject R_ILocalizer<Resources_Dummy_Class_LookupAP> _localizer
 <R_StackLayout Style="width: 800px">
     <R_StackLayout Row>
         <R_ItemLayout col="2">
@@ -9,13 +11,13 @@
         </R_ItemLayout>
         <R_ItemLayout>
             <R_Button OnClick="Search_Button">
-                Search
+                @_localizer["SRCH"]
             </R_Button>
         </R_ItemLayout>
         
         <R_ItemLayout>
             <R_Button OnClick="ShowAll_Button">
-                Show All
+                @_localizer["SHW_ALL"]
             </R_Button>
         </R_ItemLayout>
 
@@ -28,10 +30,10 @@
                 Pageable
                 PageSize="5">
             <R_GridColumns>
-                <R_GridTextColumn FieldName="CSUPPLIER_ID" HeaderText="Supplier ID"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CSUPPLIER_NAME" HeaderText="Suplier Name"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CADDRESS" HeaderText="Address"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CCITY_NAME" HeaderText="City"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CSUPPLIER_ID" HeaderText="@_localizer["SPR_ID"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CSUPPLIER_NAME" HeaderText="@_localizer["SPR_NM"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CADDRESS" HeaderText="@_localizer["ADDRS"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CCITY_NAME" HeaderText="@_localizer["CITY"]"></R_GridTextColumn>
             </R_GridColumns>
         </R_Grid>
         </R_StackLayout>
@@ -39,10 +41,10 @@
         <R_StackLayout Row Class="justify-content-end">
             <R_Button Enabled="@(_viewModel.SupplierGrid.Count != 0)"
                 OnClick="Button_OnClickOkAsync" >
-            OK
+          @_localizer["OK"]
         </R_Button>
         <R_Button OnClick="Button_OnClickCloseAsync">
-            Cancel
+          @_localizer["CNCL"]
         </R_Button>
     </R_StackLayout>
 

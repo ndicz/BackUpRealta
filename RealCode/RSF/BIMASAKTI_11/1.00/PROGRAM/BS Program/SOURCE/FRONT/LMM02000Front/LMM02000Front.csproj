@@ -23,6 +23,8 @@
 
 		<ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900Model\GFF00900Model.csproj" />
 
+		<ProjectReference Include="..\LMM02000FrontResources\LMM02000FrontResources.csproj" />
+
 		<ProjectReference Include="..\LMM02000Model\LMM02000Model.csproj" />
 
 	</ItemGroup>

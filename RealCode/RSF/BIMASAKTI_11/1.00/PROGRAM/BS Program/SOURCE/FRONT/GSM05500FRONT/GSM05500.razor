@@ -1,7 +1,10 @@
 ﻿@page "/GSM05500"
 @using GSM05500Common.DTO
+@using GSM05500FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
 @attribute [R_Page(Title = "Currency")]
+@inject R_ILocalizer<Resources_Dummy_Class_GSM05500> _localizer
  
         <R_StackLayout>
             <R_Grid @ref="@_gridRef5500"
@@ -11,19 +14,20 @@
                     R_GridType="@R_eGridType.Original"
                     AllowAddNewRow="true"
                     Width="100%"
-                    Height="480px"
+                    Height="600px"
+                    PageSize="24"
                     AllowEditRow="true"
                     AllowDeleteRow="true"
                     R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCurrency">
 
                 <R_GridColumns>
 
-                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="Currency Code*" MaxLength="3" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="Currency Name*" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By" />
-                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Updated Date" />
-                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By" />
-                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Created Date" />
+                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="@(_localizer["CRNC_CD"]+"*")" MaxLength="3" R_EnableAdd></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="@(_localizer["CRNC_NM"]+"*")" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
+                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="@_localizer["UPDT_DT"]" />
+                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
+                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="@_localizer["CRT_DT"]" />
 
                 </R_GridColumns>
             </R_Grid>
@@ -39,8 +43,8 @@
                  R_Validation="@R_Validation" />
 
 
-<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailRateType" Title="Rate Type"></R_PredefinedDock>
-<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailCurrencyRate" Title="Currency Rate"></R_PredefinedDock>
+<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailRateType" Title="@_localizer["RATE_TYP"]"></R_PredefinedDock>
+<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailCurrencyRate" Title="@_localizer["CRNC_RT"]"></R_PredefinedDock>
  
 @*
     @*Tab Rate Type*@

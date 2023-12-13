@@ -6,8 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="R_APICommonDTO">
+      <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APICommonDTO.dll</HintPath>
+    </Reference>
     <Reference Include="R_CommonFrontBackAPI">
-      <HintPath>..\..\..\..\BS Program\SOURCE\SERVICE\GS\GSM05500SERVICE\bin\Debug\net6.0\R_CommonFrontBackAPI.dll</HintPath>
+      <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_CommonFrontBackAPI.dll</HintPath>
     </Reference>
   </ItemGroup>
 

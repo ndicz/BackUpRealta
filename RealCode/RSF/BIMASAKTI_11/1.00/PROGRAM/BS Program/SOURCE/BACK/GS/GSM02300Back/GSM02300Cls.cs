@@ -171,12 +171,14 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@CPROPERTY_TYPE_NAME", DbType.String, 60, poEntity.CPROPERTY_TYPE_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@LSINGLE_UNIT", DbType.String, 60, poEntity.LSINGLE_UNIT);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poEntity.CUSER_ID);
+                loDb.R_AddCommandParameter(loCommand, "@LUSE_PRICE_LIST", DbType.String, 10, poEntity.LUSE_PRICE_LIST);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, "DELETE");
                 var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID" ||
                         x.ParameterName == "@CPROPERTY_TYPE_CODE" ||
                         x.ParameterName == "@CPROPERTY_TYPE_NAME" ||
                         x.ParameterName == "@LSINGLE_UNIT" ||
+                        x.ParameterName == "@LUSE_PRICE_LIST" ||
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);
@@ -249,6 +251,7 @@ namespace GSM02300Back
                 loDb.R_AddCommandParameter(loCommand, "@CPROPERTY_TYPE_CODE", DbType.String, 10, poNewEntity.CPROPERTY_TYPE_CODE);
                 loDb.R_AddCommandParameter(loCommand, "@CPROPERTY_TYPE_NAME", DbType.String, 60, poNewEntity.CPROPERTY_TYPE_NAME);
                 loDb.R_AddCommandParameter(loCommand, "@LSINGLE_UNIT", DbType.String, 60, poNewEntity.LSINGLE_UNIT);
+                loDb.R_AddCommandParameter(loCommand, "@LUSE_PRICE_LIST", DbType.String, 10, poNewEntity.LUSE_PRICE_LIST);
                 loDb.R_AddCommandParameter(loCommand, "@CUSER_ID", DbType.String, 10, poNewEntity.CUSER_ID);
                 loDb.R_AddCommandParameter(loCommand, "@CACTION", DbType.String, 10, lcAction);
                 var loDbParam = loCommand.Parameters.Cast<DbParameter>().Where(x =>
@@ -256,6 +259,7 @@ namespace GSM02300Back
                         x.ParameterName == "@CPROPERTY_TYPE_CODE" ||
                         x.ParameterName == "@CPROPERTY_TYPE_NAME" ||
                         x.ParameterName == "@LSINGLE_UNIT" ||
+                        x.ParameterName == "@LUSE_PRICE_LIST" ||
                         x.ParameterName == "@CUSER_ID" ||
                         x.ParameterName == "@CACTION").
                     Select(x => x.Value);

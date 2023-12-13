@@ -149,7 +149,12 @@ namespace GSM00700Model
             try
             {
                 var loResult = await _GSM00720Model.GetYearStreamAsync();
-                YearComboBox = loResult.Data;
+                // loYearList = new ObservableCollection<GSM00720YearDTO>(YearComboBox);
+                //
+                // YearComboBox = loYearList[0].CYEAR;
+                YearComboBox = loResult.Data.OrderByDescending(x => x.CYEAR).ToList(); // Urutkan dan simpan ke dalam list
+                loYearList = new ObservableCollection<GSM00720YearDTO>(YearComboBox);
+                CFromYear = YearComboBox[0].CYEAR;
             }
             catch (Exception ex)
             {
@@ -168,7 +173,7 @@ namespace GSM00700Model
                 var poParam = new GSM00700ParameterDTO();
                 poParam.CFROM_CASH_FOW_FLAG = loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
                 poParam.CFROM_CASH_FLOW_CODE = loCopyFromEntity.CFROM_CASH_FLOW_CODE;
-                poParam.CFROM_YEAR = loCopyFromEntity.CFROM_YEAR;
+                poParam.CFROM_YEAR = CFromYear;
                 poParam.CTO_CASH_FLOW_CODE = CashFlowPlanCode;
                 poParam.CTO_YEAR = Year;
                 var loReturn = await _GSM00720Model.GetCopyFromYearListAsync(poParam);

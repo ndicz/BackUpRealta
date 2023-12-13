@@ -17,7 +17,9 @@ namespace Lookup_APCOMMON.DTOs.APL00200
         public string CWITHHOLDING_TAX_NAME { get; set; }
         public string COTHER_TAX_ID { get; set; }
         public string COTHER_TAX_NAME { get; set; }
+        public decimal NOTHER_TAX_PCT { get; set; }
         public string COTHER_TAX_PCT { get; set; }
+        public string CUNIT { get; set; }
 
         public string RadioButton { get; set; } = "";
         public string Code { get; set; }

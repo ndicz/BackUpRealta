@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "LMI00100Front/1.0.0": {
         "dependencies": {
+          "LMI00100FrontResources": "1.0.0",
           "LMI00100Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15",
           "BlazorClientHelper": "1.0.0.0",
@@ -154,6 +155,11 @@
       "LMI00100Common/1.0.0": {
         "runtime": {
           "LMI00100Common.dll": {}
+        }
+      },
+      "LMI00100FrontResources/1.0.0": {
+        "runtime": {
+          "LMI00100FrontResources.dll": {}
         }
       },
       "LMI00100Model/1.0.0": {
@@ -356,6 +362,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "LMI00100Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LMI00100FrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

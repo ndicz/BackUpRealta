@@ -11,6 +11,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "LMM02000FrontResources": "1.0.0",
           "LMM02000Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15",
           "BlazorClientHelper": "1.0.0.0",
@@ -191,6 +192,11 @@
       "LMM02000Common/1.0.0": {
         "runtime": {
           "LMM02000Common.dll": {}
+        }
+      },
+      "LMM02000FrontResources/1.0.0": {
+        "runtime": {
+          "LMM02000FrontResources.dll": {}
         }
       },
       "LMM02000Model/1.0.0": {
@@ -439,6 +445,11 @@
       "sha512": ""
     },
     "LMM02000Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LMM02000FrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

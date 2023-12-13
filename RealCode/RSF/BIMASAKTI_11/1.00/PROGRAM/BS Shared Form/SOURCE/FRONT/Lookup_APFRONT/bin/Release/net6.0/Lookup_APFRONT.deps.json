@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Lookup_APFRONT/1.0.0": {
         "dependencies": {
+          "Lookup_APFrontResources": "1.0.0",
           "Lookup_APModel": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15",
@@ -152,6 +153,11 @@
       "Lookup_APCOMMON/1.0.0": {
         "runtime": {
           "Lookup_APCOMMON.dll": {}
+        }
+      },
+      "Lookup_APFrontResources/1.0.0": {
+        "runtime": {
+          "Lookup_APFrontResources.dll": {}
         }
       },
       "Lookup_APModel/1.0.0": {
@@ -377,6 +383,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "Lookup_APCOMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lookup_APFrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -121,37 +121,37 @@
     <value>Error process, please contact your administrator!</value>
   </data>
   <data name="3502" xml:space="preserve">
-    <value>Duplicate Tenant Id!</value>
+    <value>{0}</value>
   </data>
   <data name="3503" xml:space="preserve">
-    <value>Cannot Delete, Tenant already in used</value>
+    <value>{0}</value>
   </data>
   <data name="3504" xml:space="preserve">
-    <value>Tenant Id cannot be empty!</value>
+    <value>{0}</value>
   </data>
   <data name="3505" xml:space="preserve">
-    <value>Tenant Name cannot be empty!</value>
+    <value>{0}</value>
   </data>
   <data name="3506" xml:space="preserve">
-    <value>Tenant Id cannot be greater than 20 character!</value>
+    <value>{0}</value>
   </data>
   <data name="3507" xml:space="preserve">
-    <value>Tenant Name cannot be greater than 100 character!</value>
+    <value>{0}</value>
   </data>
   <data name="3508" xml:space="preserve">
     <value>Address cannot be empty!</value>
   </data>
   <data name="3509" xml:space="preserve">
-    <value>Tenant Group cannot be empty!</value>
+    <value>{0}</value>
   </data>
   <data name="3510" xml:space="preserve">
-    <value>Invalid Tenant Group!</value>
+    <value>{0}</value>
   </data>
   <data name="3511" xml:space="preserve">
-    <value>Tenant Category cannot be empty!</value>
+    <value>{0}</value>
   </data>
   <data name="3512" xml:space="preserve">
-    <value>Invalid Tenant Type!</value>
+    <value>{0}</value>
   </data>
   <data name="3513" xml:space="preserve">
     <value>Journal Group cannot be empty!</value>
@@ -182,11 +182,5 @@
   </data>
   <data name="3522" xml:space="preserve">
     <value>Invalid Line of Business!</value>
-  </data>
-  <data name="3523" xml:space="preserve">
-    <value>Invalid Tenant Category!</value>
-  </data>
-  <data name="3524" xml:space="preserve">
-    <value>Tenant Type cannot be empty!</value>
   </data>
 </root>

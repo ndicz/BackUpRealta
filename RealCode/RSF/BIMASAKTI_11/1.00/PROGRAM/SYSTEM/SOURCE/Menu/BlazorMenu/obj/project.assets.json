@@ -2476,7 +2476,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "GSM00700FrontResources": "1.0.0",
+          "GSM02300FrontResources": "1.0.0",
           "GSM02300Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -2485,6 +2485,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM02300Front.dll": {}
+        }
+      },
+      "GSM02300FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM02300FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300FrontResources.dll": {}
         }
       },
       "GSM02300Model/1.0.0": {
@@ -2533,6 +2543,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "GSM05500FrontResources": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -2543,6 +2554,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM05500Front.dll": {}
+        }
+      },
+      "GSM05500FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM05500FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM05500FrontResources.dll": {}
         }
       },
       "GSM05500Model/1.0.0": {
@@ -2572,6 +2593,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "LMI00100FrontResources": "1.0.0",
           "LMI00100Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -2580,6 +2602,16 @@
         },
         "runtime": {
           "bin/placeholder/LMI00100Front.dll": {}
+        }
+      },
+      "LMI00100FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMI00100FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMI00100FrontResources.dll": {}
         }
       },
       "LMI00100Model/1.0.0": {
@@ -2612,6 +2644,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "LMM02000FrontResources": "1.0.0",
           "LMM02000Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -2620,6 +2653,16 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Front.dll": {}
+        }
+      },
+      "LMM02000FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMM02000FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02000FrontResources.dll": {}
         }
       },
       "LMM02000Model/1.0.0": {
@@ -2650,6 +2693,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Lookup_APFrontResources": "1.0.0",
           "Lookup_APModel": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
@@ -2659,6 +2703,16 @@
         },
         "runtime": {
           "bin/placeholder/Lookup_APFRONT.dll": {}
+        }
+      },
+      "Lookup_APFrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
         }
       },
       "Lookup_APModel/1.0.0": {
@@ -5178,7 +5232,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "GSM00700FrontResources": "1.0.0",
+          "GSM02300FrontResources": "1.0.0",
           "GSM02300Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -5187,6 +5241,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM02300Front.dll": {}
+        }
+      },
+      "GSM02300FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM02300FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM02300FrontResources.dll": {}
         }
       },
       "GSM02300Model/1.0.0": {
@@ -5235,6 +5299,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "GSM05500FrontResources": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -5245,6 +5310,16 @@
         },
         "runtime": {
           "bin/placeholder/GSM05500Front.dll": {}
+        }
+      },
+      "GSM05500FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM05500FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM05500FrontResources.dll": {}
         }
       },
       "GSM05500Model/1.0.0": {
@@ -5274,6 +5349,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "LMI00100FrontResources": "1.0.0",
           "LMI00100Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -5282,6 +5358,16 @@
         },
         "runtime": {
           "bin/placeholder/LMI00100Front.dll": {}
+        }
+      },
+      "LMI00100FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMI00100FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMI00100FrontResources.dll": {}
         }
       },
       "LMI00100Model/1.0.0": {
@@ -5314,6 +5400,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "LMM02000FrontResources": "1.0.0",
           "LMM02000Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
@@ -5322,6 +5409,16 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Front.dll": {}
+        }
+      },
+      "LMM02000FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMM02000FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02000FrontResources.dll": {}
         }
       },
       "LMM02000Model/1.0.0": {
@@ -5352,6 +5449,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Lookup_APFrontResources": "1.0.0",
           "Lookup_APModel": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
@@ -5361,6 +5459,16 @@
         },
         "runtime": {
           "bin/placeholder/Lookup_APFRONT.dll": {}
+        }
+      },
+      "Lookup_APFrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
         }
       },
       "Lookup_APModel/1.0.0": {
@@ -10836,6 +10944,11 @@
       "path": "../../../../BS Program/SOURCE/FRONT/GSM02300Front/GSM02300Front.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM02300Front/GSM02300Front.csproj"
     },
+    "GSM02300FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM02300FrontResources/GSM02300FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM02300FrontResources/GSM02300FrontResources.csproj"
+    },
     "GSM02300Model/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/GSM02300Model/GSM02300Model.csproj",
@@ -10856,6 +10969,11 @@
       "path": "../../../../BS Program/SOURCE/FRONT/GSM05500FRONT/GSM05500Front.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM05500FRONT/GSM05500Front.csproj"
     },
+    "GSM05500FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM05500FrontResources/GSM05500FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM05500FrontResources/GSM05500FrontResources.csproj"
+    },
     "GSM05500Model/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/GSM05500MODEL/GSM05500Model.csproj",
@@ -10870,6 +10988,11 @@
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/LMI00100Front/LMI00100Front.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMI00100Front/LMI00100Front.csproj"
+    },
+    "LMI00100FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMI00100FrontResources/LMI00100FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMI00100FrontResources/LMI00100FrontResources.csproj"
     },
     "LMI00100Model/1.0.0": {
       "type": "project",
@@ -10886,6 +11009,11 @@
       "path": "../../../../BS Program/SOURCE/FRONT/LMM02000Front/LMM02000Front.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02000Front/LMM02000Front.csproj"
     },
+    "LMM02000FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMM02000FrontResources/LMM02000FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02000FrontResources/LMM02000FrontResources.csproj"
+    },
     "LMM02000Model/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj",
@@ -10900,6 +11028,11 @@
       "type": "project",
       "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFRONT/Lookup_APFRONT.csproj",
       "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFRONT/Lookup_APFRONT.csproj"
+    },
+    "Lookup_APFrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFrontResources/Lookup_APFrontResources.csproj",
+      "msbuildProject": "../../../../BS Shared Form/SOURCE/FRONT/Lookup_APFrontResources/Lookup_APFrontResources.csproj"
     },
     "Lookup_APModel/1.0.0": {
       "type": "project",
@@ -10947,7 +11080,8 @@
   },
   "packageFolders": {
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10959,7 +11093,8 @@
       "outputPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\SYSTEM\\SOURCE\\Menu\\BlazorMenu\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\hendri.codeid\\AppData\\Roaming\\NuGet\\NuGet.Config",

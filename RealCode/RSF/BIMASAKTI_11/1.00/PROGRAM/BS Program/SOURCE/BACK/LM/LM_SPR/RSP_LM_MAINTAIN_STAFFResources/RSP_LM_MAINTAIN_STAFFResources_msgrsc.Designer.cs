@@ -176,5 +176,14 @@ namespace RSP_LM_MAINTAIN_STAFFResources {
                 return ResourceManager.GetString("6513", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid City Code!.
+        /// </summary>
+        internal static string _6514 {
+            get {
+                return ResourceManager.GetString("6514", resourceCulture);
+            }
+        }
     }
 }

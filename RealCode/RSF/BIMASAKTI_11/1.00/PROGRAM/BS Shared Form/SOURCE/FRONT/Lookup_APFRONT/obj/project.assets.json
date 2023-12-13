@@ -235,6 +235,16 @@
           "bin/placeholder/Lookup_APCOMMON.dll": {}
         }
       },
+      "Lookup_APFrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lookup_APFrontResources.dll": {}
+        }
+      },
       "Lookup_APModel/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -606,6 +616,11 @@
       "path": "../../BACK/Lookup_APCOMMON/Lookup_APCOMMON.csproj",
       "msbuildProject": "../../BACK/Lookup_APCOMMON/Lookup_APCOMMON.csproj"
     },
+    "Lookup_APFrontResources/1.0.0": {
+      "type": "project",
+      "path": "../Lookup_APFrontResources/Lookup_APFrontResources.csproj",
+      "msbuildProject": "../Lookup_APFrontResources/Lookup_APFrontResources.csproj"
+    },
     "Lookup_APModel/1.0.0": {
       "type": "project",
       "path": "../Lookup_APModel/Lookup_APModel.csproj",
@@ -629,6 +644,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Lookup_APFrontResources >= 1.0.0",
       "Lookup_APModel >= 1.0.0",
       "Lookup_GSFRONT >= 1.0.0",
       "Microsoft.AspNetCore.Components.Web >= 6.0.15"
@@ -636,7 +652,8 @@
   },
   "packageFolders": {
     "C:\\Users\\hendri.codeid\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -648,7 +665,8 @@
       "outputPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFRONT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\hendri.codeid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -667,6 +685,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFrontResources\\Lookup_APFrontResources.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APFrontResources\\Lookup_APFrontResources.csproj"
+            },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APModel\\Lookup_APModel.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\Lookup_APModel\\Lookup_APModel.csproj"
             },

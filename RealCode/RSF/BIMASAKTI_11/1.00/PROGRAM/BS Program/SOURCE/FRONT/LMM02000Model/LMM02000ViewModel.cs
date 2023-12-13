@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LMM02000Common;
@@ -33,6 +34,7 @@ namespace LMM02000Model
         //};
         public string propertyCode = "";
         public string propertyValue = "";
+        public string genderTypeValue = "";
         public bool salesmanTypeCode = false;
         public bool SelectedActiveInactiveLACTIVE;
 
@@ -83,8 +85,8 @@ namespace LMM02000Model
                 {
                     VARIABLE.CCODE = VARIABLE.CCODE.Trim();
                 }
+                GenderList = loResult.Data.OrderByDescending(x => x.CCODE).ToList(); // Urutkan dan simpan ke dalam list
 
-                GenderList = loResult.Data;
 
 
             }
@@ -104,7 +106,7 @@ namespace LMM02000Model
             try
             {
                 var loResult = await _LMM02000Model.GetSalesmanTypeAll();
-                SalesmanTypeList = loResult.Data;
+                SalesmanTypeList = loResult.Data.OrderByDescending(x => x.CCODE).ToList();
             }
             catch (Exception ex)
             {
@@ -121,10 +123,8 @@ namespace LMM02000Model
 
             try
             {
-                var loResult = await _LMM02000Model.GetPropertyStreamAsync();
-                
+                var loResult = await _LMM02000Model.GetPropertyStreamAsync();   
                 PropertyList = loResult.Data;
-
                 propertyValue = PropertyList[0].CPROPERTY_ID;
 
             }

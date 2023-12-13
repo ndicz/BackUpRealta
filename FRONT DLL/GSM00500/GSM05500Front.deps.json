@@ -11,6 +11,7 @@
           "GFF00900COMMON": "1.0.0",
           "GFF00900FRONT": "1.0.0",
           "GFF00900Model": "1.0.0",
+          "GSM05500FrontResources": "1.0.0",
           "GSM05500Model": "1.0.0",
           "Lookup_GSCOMMON": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
@@ -186,6 +187,11 @@
         },
         "runtime": {
           "GSM05500Common.dll": {}
+        }
+      },
+      "GSM05500FrontResources/1.0.0": {
+        "runtime": {
+          "GSM05500FrontResources.dll": {}
         }
       },
       "GSM05500Model/1.0.0": {
@@ -447,6 +453,11 @@
       "sha512": ""
     },
     "GSM05500Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GSM05500FrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

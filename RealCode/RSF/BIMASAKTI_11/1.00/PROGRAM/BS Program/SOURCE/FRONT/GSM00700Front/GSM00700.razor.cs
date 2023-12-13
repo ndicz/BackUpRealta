@@ -98,7 +98,7 @@ namespace GSM00700Front
                 var loParam = (GSM00700DTO)eventArgs.Data;
                 await GSM00700ViewModel.SaveCashFlowGroup(loParam, eventArgs.ConductorMode);
                 eventArgs.Result = GSM00700ViewModel.loEntity;
-                await _gridRef00700.R_RefreshGrid(null);
+                // await _gridRef00700.R_RefreshGrid(null);
             }
             catch (Exception ex)
             {

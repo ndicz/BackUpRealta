@@ -58,33 +58,33 @@ namespace GSM00700Front
             try
             {
                 eventArgs.Parameter = new GSL01500ParameterGroupDTO()
-
+                
                 {
-
+                
                     CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
                     CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
-
+                
                 };
                 eventArgs.TargetPageType = typeof(GSL01500);
 
 
 
-                //eventArgs.Parameter = new APL00400ParameterDTO()
-
-                //{
-
-                //    CCOMPANY_ID = "RCD",
-                //    CPROPERTY_ID = "JBMPC",
-                //    //CCATEGORY_ID = "",
-                //    //CTAXABLE_TYPE = "1",
-                //    CACTIVE_TYPE = "1",
-                //    CLANGUAGE_ID = "EN",
-                //    //CTAX_DATE = "",
-                //    //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
-
-                //};
-                //eventArgs.TargetPageType = typeof(APL00400);
+                // eventArgs.Parameter = new APL00400ParameterDTO()
+                //
+                // {
+                //
+                //     CCOMPANY_ID = "RCD",
+                //     CPROPERTY_ID = "JBMPC",
+                //     //CCATEGORY_ID = "",
+                //     //CTAXABLE_TYPE = "1",
+                //     CACTIVE_TYPE = "1",
+                //     CLANGUAGE_ID = "EN",
+                //     //CTAX_DATE = "",
+                //     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+                //
+                // };
+                // eventArgs.TargetPageType = typeof(APL00400);
             }
             catch (Exception ex)
             {
@@ -156,7 +156,7 @@ namespace GSM00700Front
             {
 
                 _GSM00720ViewModel.CFromCashFlowFlag = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_FLAG;
-                _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.loCopyFromEntity.CFROM_YEAR;
+                _GSM00720ViewModel.CFromYear = _GSM00720ViewModel.CFromYear;
 
 
                 await _GSM00720ViewModel.CopyFrom();

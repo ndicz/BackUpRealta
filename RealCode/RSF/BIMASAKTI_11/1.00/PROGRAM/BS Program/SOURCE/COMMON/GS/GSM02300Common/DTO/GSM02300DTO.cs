@@ -9,7 +9,7 @@ namespace GSM02300Common.DTO
     {
         public string CCOMPANY_ID { get; set; }
         public string CUSER_ID { get; set; }
-
+        public bool LUSE_PRICE_LIST { get; set; }
         public string CPROPERTY_TYPE_NAME { get; set; }
         public string CPROPERTY_TYPE_CODE { get; set; }
         public bool LSINGLE_UNIT { get; set; }
@@ -17,7 +17,5 @@ namespace GSM02300Common.DTO
         public DateTime DUPDATE_DATE { get; set; }
         public string CCREATE_BY { get; set; }
         public DateTime DCREATE_DATE { get; set; }
-
-        
     }
 }

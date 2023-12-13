@@ -1,6 +1,8 @@
 @using Lookup_APCOMMON.DTOs.APL00200
+@using LookupAPFrontResources
 @inherits R_Page
 @attribute [R_Page(Title = "Product Lookup")]
+@inject R_ILocalizer<Resources_Dummy_Class_LookupAP> _localizer
 <R_StackLayout Style="width: 900px">
     <R_StackLayout Row>
 
@@ -32,7 +34,7 @@
         </R_ItemLayout>
         <R_ItemLayout>
             <R_Button OnClick="Refresh_Button">
-                Refresh
+                @_localizer["RFSH"]
             </R_Button>
         </R_ItemLayout>
 
@@ -45,12 +47,12 @@
                 Pageable
                 PageSize="5">
             <R_GridColumns>
-                <R_GridTextColumn FieldName="CPRODUCT_ID" HeaderText="Product ID"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CPRODUCT_NAME" HeaderText="Product Name"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CALIAS_NAME" HeaderText="Alias Name"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CUNIT1" HeaderText="Unit"></R_GridTextColumn>
-                <R_GridTextColumn FieldName="CCATEGORY_NAME" HeaderText="Category"></R_GridTextColumn>
-                <R_GridCheckBoxColumn FieldName="LTAXABLE" HeaderText="Taxable"></R_GridCheckBoxColumn>
+                <R_GridTextColumn FieldName="CPRODUCT_ID" HeaderText="@_localizer["PRDCT_ID"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CPRODUCT_NAME" HeaderText="@_localizer["PRDCT_NM"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CALIAS_NAME" HeaderText="@_localizer["ALS_NM"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CUNIT1" HeaderText="@_localizer["UNIT"]"></R_GridTextColumn>
+                <R_GridTextColumn FieldName="CCATEGORY_NAME" HeaderText="@_localizer["CTGRY"]"></R_GridTextColumn>
+                <R_GridCheckBoxColumn FieldName="LTAXABLE" HeaderText="@_localizer["TXBLE"]"></R_GridCheckBoxColumn>
             </R_GridColumns>
         </R_Grid>
         </R_StackLayout>
@@ -58,10 +60,10 @@
         <R_StackLayout Row Class="justify-content-end">
         <R_Button Enabled="@(_viewModel.ProductLookupGrid.Count != 0 && _viewModel.ProductLookupEntity.RadioButton != "")"
                   OnClick="Button_OnClickOkAsync">
-            OK
+            @_localizer["OK"]
         </R_Button>
         <R_Button OnClick="Button_OnClickCloseAsync">
-            Cancel
+          @_localizer["CNCL"]
         </R_Button>
     </R_StackLayout>
 

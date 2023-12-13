@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Lookup_APFrontResources\Lookup_APFrontResources.csproj" />
     <ProjectReference Include="..\Lookup_APModel\Lookup_APModel.csproj" />
     <ProjectReference Include="..\Lookup_GSFRONT\Lookup_GSFRONT.csproj" />
   </ItemGroup>

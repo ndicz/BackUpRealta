@@ -34,7 +34,7 @@ namespace LMM02000Front
         private R_Grid<LMM02000DTO> _gridRef;
         private R_TextBox _salesmanIdRef;
         private R_TextBox _salesmanNameRef;
-        private bool disableGrid;
+        private bool enableleGrid;
         [Inject] private IClientHelper ClientHelper { get; set; }
 
         protected override async Task R_Init_From_Master(object poParameter)
@@ -48,7 +48,8 @@ namespace LMM02000Front
                 await Task.Delay(250);
                 await _gridRef.R_RefreshGrid(null);
                 //await _gridRef.AutoFitAllColumnsAsync();
-                disableGrid = true;
+                enableleGrid = true;
+                // enableProperty = true;
             }
             catch (Exception ex)
             {
@@ -355,26 +356,27 @@ namespace LMM02000Front
             enableActiveInactive = false;
             enableSalesmanId = false;
 
-            disableGrid = true;
-        }
+            enableleGrid = true;
+                    }
 
         private void R_AfterAdd(R_AfterAddEventArgs eventArgs)
         {
+           
             var LMMDTO = (LMM02000DTO)eventArgs.Data;
 
-            LMMDTO.CMOBILE_PHONE2 = "";
+            // LMMDTO.CMOBILE_PHONE2 = "";
             LMMDTO.CSALESMAN_TYPE = "I";
-            LMMDTO.CEXT_COMPANY_NAME = "";
-            LMMDTO.CID_NO = "";
-            LMMDTO.CGENDER = "F";
+            // LMMDTO.CEXT_COMPANY_NAME = "";
+            // LMMDTO.CID_NO = "";
+            LMMDTO.CGENDER = "M";
 
-            disableGrid = false;
+            enableleGrid = false;
         }
 
         private void R_AfterCancel(R_BeforeCancelEventArgs eventArgs)
         {
             enableSalesmanType = false;
-            disableGrid = true;
+            enableleGrid = true;
         }
 
         private async Task Conductor_ServiceGetRecord(R_ServiceGetRecordEventArgs eventArgs)
@@ -433,10 +435,10 @@ namespace LMM02000Front
         private void R_Beforeedit(R_BeforeEditEventArgs eventArgs)
         {
             var loEx = new R_Exception();
-
             try
             {
-                disableGrid = false;
+            
+                enableleGrid = false;
             }
             catch (Exception ex)
             {
@@ -445,6 +447,22 @@ namespace LMM02000Front
 
             loEx.ThrowExceptionIfErrors();
         }
+        
+        private void R_BeforeAdd(R_BeforeAddEventArgs eventArgs)
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                // enableProperty = false;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
+
         
         private async Task Conductor_ServiceDelete(R_ServiceDeleteEventArgs eventArgs)
         {

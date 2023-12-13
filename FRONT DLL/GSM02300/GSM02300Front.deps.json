@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GSM02300Front/1.0.0": {
         "dependencies": {
+          "GSM02300FrontResources": "1.0.0",
           "GSM02300Model": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15",
           "BlazorClientHelper": "1.0.0.0",
@@ -150,6 +151,11 @@
       "GSM02300Common/1.0.0": {
         "runtime": {
           "GSM02300Common.dll": {}
+        }
+      },
+      "GSM02300FrontResources/1.0.0": {
+        "runtime": {
+          "GSM02300FrontResources.dll": {}
         }
       },
       "GSM02300Model/1.0.0": {
@@ -352,6 +358,11 @@
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "GSM02300Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GSM02300FrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

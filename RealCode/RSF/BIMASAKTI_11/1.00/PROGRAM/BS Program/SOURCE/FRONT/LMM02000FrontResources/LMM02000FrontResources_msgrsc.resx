@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="PRTY" xml:space="preserve">
+        <value>PROPERTY</value>
+    </data>
+    <data name="ACTIVE" xml:space="preserve">
+        <value>Active</value>
+    </data>
+    <data name="SLSMN_ID" xml:space="preserve">
+        <value>Salesman ID</value>
+    </data>
+    <data name="SLSMN_NM" xml:space="preserve">
+        <value>Salesman Name</value>
+    </data>
+    <data name="GENDER" xml:space="preserve">
+        <value>Gender</value>
+    </data>
+    <data name="MB_PHNE" xml:space="preserve">
+        <value>Mobile Phone</value>
+    </data>
+    <data name="EMAIL" xml:space="preserve">
+        <value>Email</value>
+    </data>
+    <data name="UPDT_BY" xml:space="preserve">
+        <value>Updated By</value>
+    </data>
+    <data name="UPDT_DT" xml:space="preserve">
+        <value>Updated Date</value>
+    </data>
+    <data name="CRT_BY" xml:space="preserve">
+        <value>Create By</value>
+    </data>
+    <data name="CRT_DT" xml:space="preserve">
+        <value>Created Date</value>
+    </data>
+    <data name="ADDRS" xml:space="preserve">
+        <value>Address</value>
+    </data>
+    <data name="EML_ADDRS" xml:space="preserve">
+        <value>Email Address</value>
+    </data>
+    <data name="SLSMN_TYP" xml:space="preserve">
+        <value>Salesman Type</value>
+    </data>
+    <data name="CMPN_NM" xml:space="preserve">
+        <value>Company Name</value>
+    </data>
+    <data name="NIK" xml:space="preserve">
+        <value>NIK</value>
+    </data>
+    <data name="UPLD" xml:space="preserve">
+        <value>Upload</value>
+    </data>
+    <data name="TMPLT" xml:space="preserve">
+        <value>Template</value>
+    </data>
+</root>

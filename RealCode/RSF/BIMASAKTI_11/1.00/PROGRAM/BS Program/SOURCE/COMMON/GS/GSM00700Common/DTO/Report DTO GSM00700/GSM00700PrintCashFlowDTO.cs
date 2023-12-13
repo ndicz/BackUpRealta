@@ -16,7 +16,7 @@ namespace GSM00700Common.DTO.Report_DTO_GSM00700
         public string CCASH_FLOW_TYPE_DESCR { get; set; }
         public string CCYEAR { get; set; }
         public string CPERIOD_NO { get; set; }
-        public Decimal NLOCAL_AMOUNT { get; set; }
-        public Decimal NBASE_AMOUNT { get; set; }
+        public decimal NLOCAL_AMOUNT { get; set; }
+        public decimal NBASE_AMOUNT { get; set; }
     }
 }

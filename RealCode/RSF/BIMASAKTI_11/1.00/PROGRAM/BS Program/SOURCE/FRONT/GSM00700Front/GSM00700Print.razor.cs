@@ -34,12 +34,27 @@ namespace GSM00700Front
             var loEx = new R_Exception();
             try
             {
+
+               
+                await _GSM00720ViewModel.GetYearForCopyFrom();
+
+                if (_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM == "" ||
+                    _GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO == "" || _GSM00700ViewModel.loPrint.CYEAR_FROM == "" || _GSM00700ViewModel.loPrint.CYEAR_TO == "" || _GSM00700ViewModel.loPrint.CPERIOD_FROM == "" || _GSM00700ViewModel.loPrint.CPERIOD_TO == "")
+                {
+                    ProcessButton.Enabled = false;
+                }
+                
+                else
+                {
+                    ProcessButton.Enabled = true;
+                }
+              
+              
                 //_GSM00720ViewModel.loCopyFromEntity = (GSM00720CopyFromYearDTO)poParameter;
                 //_GSM00720ViewModel.Year = _GSM00720ViewModel.loCopyFromEntity.CTO_YEAR;
                 //_GSM00720ViewModel.CashFlowPlanName = _GSM00720ViewModel.loCopyFromEntity.CashFlowName;
                 //_GSM00720ViewModel.CashFlowPlanCode = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE;
 
-                await _GSM00720ViewModel.GetYearForCopyFrom();
                 //await _GSM00700ViewModel.GetYearFromPrint();
 
 
@@ -292,6 +307,11 @@ namespace GSM00700Front
                             await R_MessageBox.Show("", "Period To Must be Greater Than Period From", R_eMessageBoxButtonType.OK);
                             ProcessButton.Enabled = false;
                         }
+
+                        if (_GSM00700ViewModel.loPrint.CPERIOD_TO == "" || _GSM00700ViewModel.loPrint.CPERIOD_FROM == "")
+                        {
+                            ProcessButton.Enabled = false;
+                        }
                         else
                         {
                             ProcessButton.Enabled = true;
@@ -299,10 +319,9 @@ namespace GSM00700Front
                         _GSM00700ViewModel.loPrint.YearFrom = yearFrom;
                         _GSM00700ViewModel.loPrint.YearTo = yearTo;
                     }
-                    else
-                    {
-                      
-                    }
+                    
+                    
+                   
                 }
 
 
@@ -332,6 +351,15 @@ namespace GSM00700Front
                         await R_MessageBox.Show("", "Year To Must be Greater Than Year From", R_eMessageBoxButtonType.OK);
                         ProcessButton.Enabled = false;
                     }
+
+                    if (_GSM00700ViewModel.loPrint.CPERIOD_FROM == "" || _GSM00700ViewModel.loPrint.CPERIOD_TO == "")
+                    {
+                     ProcessButton.Enabled = false;   
+                    }
+                    if (_GSM00700ViewModel.loPrint.CYEAR_FROM == "" || _GSM00700ViewModel.loPrint.CYEAR_TO == "")
+                    {
+                        ProcessButton.Enabled = false;
+                    }
                     else
                     {
                         ProcessButton.Enabled = true;
@@ -353,6 +381,41 @@ namespace GSM00700Front
             loEx.ThrowExceptionIfErrors();
         }
 
+        public async Task OnchangedCashFlowGroupCode()
+        {
+            var loEx = new R_Exception();
+            try
+            {
+                if (int.TryParse(_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_FROM, out int cashFlowGroupFrom) &&
+                    int.TryParse(_GSM00700ViewModel.loPrint.CCASH_FLOW_GROUP_TO, out int cashFlowGroupTo))
+                {
+                    if (cashFlowGroupFrom == null)
+                    {
+                        await R_MessageBox.Show("", "Fill Empty From Cash Flow Group", R_eMessageBoxButtonType.OK);
+                        ProcessButton.Enabled = false;
+                    }
+                    if (cashFlowGroupTo == null)
+                    {
+                        await R_MessageBox.Show("", "Fill Empty To Cash Flow Group", R_eMessageBoxButtonType.OK);
+                        ProcessButton.Enabled = false;
+                    }
+                    else
+                    {
+                        ProcessButton.Enabled = true;
+                    }
+                    _GSM00700ViewModel.loPrint.PeriodFrom = cashFlowGroupFrom;
+                    _GSM00700ViewModel.loPrint.PeriodFrom = cashFlowGroupTo;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+        }
         //public async Task OnChangedFromPeriod()
         //{
         //    var loEx = new R_Exception();

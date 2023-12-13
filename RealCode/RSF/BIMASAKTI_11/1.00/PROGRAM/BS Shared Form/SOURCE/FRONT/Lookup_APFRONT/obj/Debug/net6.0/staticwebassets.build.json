@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LIU2jy/kpdi63YNj26uk0EBizcNoJSLEEJTPA6bqRWk=",
+  "Hash": "kl3cKxdMTTkSkmX+jhnLHfLyIRdf6hVg8y/YlLvdE6o=",
   "Source": "Lookup_APFRONT",
   "BasePath": "_content/Lookup_APFRONT",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "Lookup_GSFRONT",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

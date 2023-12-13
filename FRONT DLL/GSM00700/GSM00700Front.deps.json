@@ -193,12 +193,18 @@
       },
       "Lookup_APFRONT/1.0.0": {
         "dependencies": {
+          "Lookup_APFrontResources": "1.0.0",
           "Lookup_APModel": "1.0.0",
           "Lookup_GSFRONT": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "6.0.15"
         },
         "runtime": {
           "Lookup_APFRONT.dll": {}
+        }
+      },
+      "Lookup_APFrontResources/1.0.0": {
+        "runtime": {
+          "Lookup_APFrontResources.dll": {}
         }
       },
       "Lookup_APModel/1.0.0": {
@@ -474,6 +480,11 @@
       "sha512": ""
     },
     "Lookup_APFRONT/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lookup_APFrontResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

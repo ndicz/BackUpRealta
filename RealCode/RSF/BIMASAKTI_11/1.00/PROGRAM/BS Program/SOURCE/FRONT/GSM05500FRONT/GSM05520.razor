@@ -1,17 +1,21 @@
 @page "/GSM05520"
 @using GSM05500Common.DTO
+@using GSM05500FrontResources
+@using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
+@inject R_ILocalizer<Resources_Dummy_Class_GSM05500> _localizer
 
 <R_StackLayout Row="true">
 
     <R_ItemLayout col="1">
-        <R_Label Class="fw-bold">Rate date</R_Label>
+        <R_Label Class="fw-bold">@_localizer["RT_DT"]</R_Label>
     </R_ItemLayout>
 
     <R_ItemLayout col="2">
         <R_DatePicker Value="GSM05520ViewModel.CrateTime"
                       R_ConductorSource="@_conductorRef"
-                      ValueChanged="@((DateTime value) => OnChangedDate(value))" />
+                      ValueChanged="@((DateTime value) => OnChangedDate(value))"
+                      Enabled="enableRateTime"/>
     </R_ItemLayout>
 
     <R_ItemLayout col="3">
@@ -20,7 +24,7 @@
 
 
     <R_ItemLayout col="2">
-        <R_Label Class="fw-bold">Local Currency</R_Label>
+        <R_Label Class="fw-bold">@_localizer["LC_CRNC"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout col="1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY_CODE"
@@ -35,12 +39,12 @@
 <R_StackLayout Row="true">
 
     <R_ItemLayout col="1">
-        <R_Label Class="fw-bold">Rate Type</R_Label>
+        <R_Label Class="fw-bold">@_localizer["RT_TYP"]</R_Label>
     </R_ItemLayout>
 
     <R_ItemLayout col="2">
-        <R_ComboBox Data="@GSM05520ViewModel.loGridListRate"
-                    Value="GSM05520ViewModel.RateTypeCode"
+        <R_DropDownList Data="@GSM05520ViewModel.loRateType"
+                    Value="GSM05520ViewModel.CreateCode"
                     ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
                     TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
                     R_ConductorSource="@_conductorRef" ValueChanged="@((string value) => OnChanged(value))"/>
@@ -54,7 +58,7 @@
 
 
     <R_ItemLayout col="2">
-        <R_Label Class="fw-bold">Base Currency</R_Label>
+        <R_Label Class="fw-bold">@_localizer["BS_CRNC"]</R_Label>
     </R_ItemLayout>
     <R_ItemLayout col="1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY_CODE"
@@ -70,7 +74,6 @@
 
 <R_StackLayout>
 
-
     <R_Grid @ref="@_gridRef5520"
             DataSource="GSM05520ViewModel.loGridList"
             Pageable="true"
@@ -79,23 +82,24 @@
             AllowAddNewRow="true"
             AllowEditRow="true"
             Width="100%"
-            Height="430px"
+            Height="550px"
+            PageSize="22"
             AllowDeleteRow="true"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate"
             R_Before_Open_Grid_Lookup="Before_Open_Lookup"
             R_After_Open_Grid_Lookup="After_Open_Lookup">
         <R_GridColumns>
 
-            <R_GridLookupColumn Width="250px" FieldName="CCURRENCY_CODE" HeaderText="Currency Code" R_EnableAdd></R_GridLookupColumn>
-            <R_GridTextColumn Width="150px" FieldName="CCURRENCY_NAME" HeaderText="Currency Name" />
-            <R_GridNumericColumn Width="190px" FieldName="NLBASE_RATE_AMOUNT" HeaderText="Local Curr. Base Rate" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
-            <R_GridNumericColumn Width="175px" FieldName="NLCURRENCY_RATE_AMOUNT" HeaderText="Local Currency Rate" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
-            <R_GridNumericColumn Width="184px" FieldName="NBBASE_RATE_AMOUNT" HeaderText="Base Curr. Base Rate" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
-            <R_GridNumericColumn Width="171px" FieldName="NBCURRENCY_RATE_AMOUNT" HeaderText="Base Currency Rate" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
-            <R_GridTextColumn Width="200px" FieldName="CUPDATE_BY" HeaderText="Updated By" />
-            <R_GridTextColumn Width="200px" FieldName="DUPDATE_DATE" HeaderText="Updated Date" />
-            <R_GridTextColumn Width="170px" FieldName="CCREATE_BY" HeaderText="Created By" />
-            <R_GridTextColumn Width="170px" FieldName="CRATE_DATE" HeaderText="Created Date"></R_GridTextColumn>
+            <R_GridLookupColumn Width="250px" FieldName="CCURRENCY_CODE" HeaderText="@_localizer["CRNC_CD"]" R_EnableAdd></R_GridLookupColumn>
+            <R_GridTextColumn Width="150px" FieldName="CCURRENCY_NAME" HeaderText="@_localizer["CRNC_NM"]"/>
+            <R_GridNumericColumn Width="190px" FieldName="NLBASE_RATE_AMOUNT" HeaderText="@_localizer["LC_CRNC_BS_RT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+            <R_GridNumericColumn Width="175px" FieldName="NLCURRENCY_RATE_AMOUNT" HeaderText="@_localizer["LC_CRNC_RT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+            <R_GridNumericColumn Width="184px" FieldName="NBBASE_RATE_AMOUNT" HeaderText="@_localizer["BS_CRNC_BS_RT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+            <R_GridNumericColumn Width="171px" FieldName="NBCURRENCY_RATE_AMOUNT" HeaderText="@_localizer["BS_CRNC_RT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+            <R_GridTextColumn Width="200px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn Width="200px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DT"]"/>
+            <R_GridTextColumn Width="170px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn Width="170px" FieldName="CRATE_DATE" HeaderText="@_localizer["CRT_DT"]"></R_GridTextColumn>
         </R_GridColumns>
     </R_Grid>
 
@@ -108,7 +112,8 @@
                  R_AfterAdd="@Conductor_AfterAdd"
                  R_AfterSave="@Conductor_Display"
                  R_Saving="@Conductor_Saving"
-                 @*R_AfterDelete="@Grid_AfterDelete"*@
+                 R_BeforeCancel="@Conductor_BeforeCancel"
+                 R_AfterDelete="@Grid_AfterDelete"
                  R_BeforeEdit="@Conductor_BeforeEdit"
                  R_BeforeAdd="@Conductor_BeforeAdd"
                  R_IsHeader="true"

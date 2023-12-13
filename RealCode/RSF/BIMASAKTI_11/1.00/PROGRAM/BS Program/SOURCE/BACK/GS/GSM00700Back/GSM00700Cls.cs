@@ -150,9 +150,9 @@ namespace GSM00700Back
                 _logger.LogError(ex);
             }
 
-        EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return loReturn;
+            EndBlock:
+                loException.ThrowExceptionIfErrors();
+                return loReturn;
         }
 
         protected override void R_Deleting(GSM00700DTO poEntity)

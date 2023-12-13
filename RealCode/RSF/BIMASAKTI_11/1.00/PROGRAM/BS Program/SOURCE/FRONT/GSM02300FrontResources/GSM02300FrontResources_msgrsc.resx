@@ -31,6 +31,15 @@
         <value>Updated By</value>
     </data>
     <data name="UPDT_DT" xml:space="preserve">
-        <value />
+        <value>Updated Date</value>
+    </data>
+    <data name="CRT_BY" xml:space="preserve">
+        <value>Created By</value>
+    </data>
+    <data name="USE_PRC_LIST" xml:space="preserve">
+        <value>Use Price List</value>
+    </data>
+    <data name="CRT_DT" xml:space="preserve">
+        <value>Created Date</value>
     </data>
 </root>
