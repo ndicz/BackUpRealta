@@ -1,0 +1,79 @@
+﻿@page "/GSM04500"
+@using R_BlazorFrontEnd.Interfaces
+@using GSM04500Common.DTOs
+@attribute [R_Page(Title = "Journal Group")]
+@inherits R_Page
+
+
+<R_StackLayout Row="true" Spacing="4">
+    <R_ItemLayout col="1">
+        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">Property</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout col="3">
+        <R_DropDownList Data="@_GSM4500ViewModel.PropertyList"
+                        Value="_GSM4500ViewModel.propertyValue"
+                        ValueField="@nameof(GSM04500PropertyDTO.CPROPERTY_ID)"
+                        TextField="@nameof(GSM04500PropertyDTO.CPROPERTY_NAME)"
+                        ValueChanged="@((string value) => OnChangeParam(value, "property"))"
+                        R_ConductorSource="@_conductorRef"
+                        Enabled="_enableFlag"/>
+    </R_ItemLayout>
+
+    <R_ItemLayout col="1">
+        <R_Label FontColor="R_eFontColor.Danger" Class="fw-bold">Journal Group Type</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout col="3">
+        <R_DropDownList Data="@_GSM4500ViewModel.JournalTypeList"
+                        Value="_GSM4500ViewModel.journalTypeValue"
+                        ValueField="@nameof(GSM04500JournalGroupTypeDTO.CCODE)"
+                        TextField="@nameof(GSM04500JournalGroupTypeDTO.CDESCRIPTION)"
+                        ValueChanged="@((string value) => OnChangeParam(value, "type"))"
+                        R_ConductorSource="@_conductorRef"
+                        Enabled="_enableFlag"/>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_TabStrip @ref="_tab" OnActiveTabIndexChanging="@OnChangeTab">
+    <R_TabStripTab Title="Journal Group" Id="JournalGroup">
+<R_StackLayout>
+    <R_ItemLayout>
+    <R_Grid @ref="@_gridRefGSM04500"
+            DataSource="_GSM4500ViewModel.loGridList"
+            Pageable="true"
+            R_ConductorGridSource="@_conGridGSM04500Ref"
+            R_GridType="@R_eGridType.Original"
+            Width="100%"
+            Height="600px"
+            AllowAddNewRow
+            AllowDeleteRow
+            AllowEditRow
+            R_ServiceGetListRecord="@GetListRecordJournal">
+
+        <R_GridColumns>
+
+            <R_GridTextColumn FieldName="CJRNGRP_CODE" HeaderText="Journal Group" MaxLength="8" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn FieldName="CJRNGRP_NAME" HeaderText="Journal Group Name" MaxLength="80" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridCheckBoxColumn FieldName="LACCRUAL" HeaderText="Enable Accrual" Visible="@(_GSM4500ViewModel.journalTypeValue is "10" or "11" or "40")" R_EnableAdd R_EnableEdit/>
+            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By"/>
+            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated   Date"/>
+            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By"/>
+            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+
+        </R_GridColumns>
+    </R_Grid>
+     </R_ItemLayout>
+</R_StackLayout>
+    <R_ConductorGrid @ref="@_conGridGSM04500Ref"
+                     R_ViewModel="_GSM4500ViewModel"
+                     R_IsHeader
+                     R_Display="@JournalGroupGetEntity"
+                     R_ServiceGetRecord="@JournalGroupGetRecord"
+                     R_AfterAdd="@AfterAdd"
+                     R_ServiceSave="@JournalGroupSave"
+                     R_ServiceDelete="@JournalGroupdelete"/>
+                     
+    </R_TabStripTab>
+    <R_TabStripTab @ref="@_tabAccountSetting" Title="Account Setting">
+        <R_TabPage R_Before_Open_TabPage="@BeforeOpenAccSetting"/>
+    </R_TabStripTab>
+</R_TabStrip>

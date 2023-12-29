@@ -83,9 +83,9 @@ namespace GSM05500Model.Model
             throw new NotImplementedException();
         }
 
-        public GSM05510ListDTO GetAllRateTypeList()
-        {
-            throw new NotImplementedException();
-        }
+        // public GSM05510ListDTO GetAllRateTypeList()
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }

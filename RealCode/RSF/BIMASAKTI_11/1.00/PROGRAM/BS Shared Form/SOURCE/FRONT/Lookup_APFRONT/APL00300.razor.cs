@@ -35,8 +35,8 @@ namespace Lookup_APFRONT
 
 
                 _viewModel.ParameterLookup = (APL00300ParameterDTO)poParameter;
-
-                GridRef.R_RefreshGrid(null);
+                await _viewModel.GetProductLookup();
+                // GridRef.R_RefreshGrid(null);
 
             }
             catch (Exception ex)

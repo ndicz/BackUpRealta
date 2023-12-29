@@ -8,13 +8,3 @@ D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBa
 D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.csproj.CoreCompileInputs.cache
 D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.dll
 D:\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\bin\Debug\netstandard2.1\Lookup_GSBackResources.deps.json
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\bin\Debug\netstandard2.1\Lookup_GSBackResources.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\bin\Debug\netstandard2.1\Lookup_GSBackResources.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.csproj.AssemblyReference.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.GeneratedMSBuildEditorConfig.editorconfig
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.AssemblyInfoInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.AssemblyInfo.cs
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.csproj.CoreCompileInputs.cache
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSBackResources\obj\Debug\netstandard2.1\Lookup_GSBackResources.pdb

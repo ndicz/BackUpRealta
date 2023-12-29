@@ -11,6 +11,7 @@
         "dependencies": {
           "Lookup_APCOMMON": "1.0.0",
           "R_APIClient": "1.0.0.0",
+          "R_APICommonDTO": "1.0.0.0",
           "R_BlazorFrontEnd": "1.0.0.0",
           "R_BusinessObjectFront": "1.0.0.0"
         },
@@ -26,6 +27,14 @@
       "R_APIClient/1.0.0.0": {
         "runtime": {
           "R_APIClient.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "R_APICommonDTO/1.0.0.0": {
+        "runtime": {
+          "R_APICommonDTO.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -71,14 +80,6 @@
           }
         }
       },
-      "R_APICommonDTO/1.0.0.0": {
-        "runtime": {
-          "R_APICommonDTO.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "R_ContextFrontEnd/1.0.0.0": {
         "runtime": {
           "R_ContextFrontEnd.dll": {
@@ -105,6 +106,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "R_APICommonDTO/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "R_BlazorFrontEnd/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -126,11 +132,6 @@
       "sha512": ""
     },
     "R_AuthenticationEnumAndInterface/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "R_APICommonDTO/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

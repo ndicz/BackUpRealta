@@ -84,9 +84,9 @@ namespace GSM05500Model.Model
             throw new NotImplementedException();
         }
 
-        public GSM05500ListDTO GetAllCurrencyList()
-        {
-            throw new NotImplementedException();
-        }
+        // public GSM05500ListDTO GetAllCurrencyList()
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }

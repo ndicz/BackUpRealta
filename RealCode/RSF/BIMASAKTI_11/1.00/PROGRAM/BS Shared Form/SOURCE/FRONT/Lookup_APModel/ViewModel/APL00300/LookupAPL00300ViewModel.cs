@@ -26,8 +26,8 @@ namespace Lookup_APModel.ViewModel.APL00300
             var loEx = new R_Exception();
             try
             {
+                ParameterLookup.CCATEGORY_ID = ProductLookupEntity.CCATEGORY_ID;
                 var loResult = await _model.APL00300ProductLookUpAsync(ParameterLookup);
-
                 ProductLookupGrid = new ObservableCollection<APL00300DTO>(loResult);
             }
             catch (Exception ex)

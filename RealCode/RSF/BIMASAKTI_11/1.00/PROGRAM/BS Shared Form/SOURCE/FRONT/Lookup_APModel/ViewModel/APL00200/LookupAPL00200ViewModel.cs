@@ -27,8 +27,8 @@ namespace Lookup_APModel.ViewModel.APL00200
             var loEx = new R_Exception();
             try
             {
+                ParameterLookup.CCATEGORY_ID = loExpenditureEntity.CCATEGORY_ID;
                 var loResult = await _model.APL00200ExpenditureLookUpAsync(ParameterLookup);
-
                 ExpenditureGrid = new ObservableCollection<APL00200DTO>(loResult);
             }
             catch (Exception ex)

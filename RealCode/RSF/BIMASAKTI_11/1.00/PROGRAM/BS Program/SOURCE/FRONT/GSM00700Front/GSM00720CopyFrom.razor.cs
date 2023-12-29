@@ -10,6 +10,7 @@ using Lookup_APCOMMON.DTOs.APL00110;
 using Lookup_APCOMMON.DTOs.APL00200;
 using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APCOMMON.DTOs.APL00400;
+using Lookup_APCOMMON.DTOs.APL00500;
 using Lookup_APFRONT;
 using Lookup_GSCOMMON.DTOs;
 using Lookup_GSFRONT;
@@ -57,34 +58,58 @@ namespace GSM00700Front
 
             try
             {
-                eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+            //     eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+            //     
+            //     {
+            //     
+            //         CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
+            //         CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+            //         //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+            //     
+            //     };
+            //     eventArgs.TargetPageType = typeof(GSL01500);
+
+
+
+                eventArgs.Parameter = new APL00300ParameterDTO()
                 
                 {
-                
-                    CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
-                    CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+                //APL00300
+                    CCOMPANY_ID = "RCD",
+                    CPROPERTY_ID = "ASHMD",
+                    CCATEGORY_ID = "ASHMD",
+                    CTAXABLE_TYPE = "1",
+                    CACTIVE_TYPE = "1", 
+                    CLANGUAGE_ID = "en",
+                    CTAX_DATE = "1"
+                    
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+                    //APL0500
+                    // CCOMPANY_ID = "RCD",
+                    // CPROPERTY_ID =  "ASHMD",
+                    // CUSER_ID =  "HPC",
+                    // CTRANS_CODE =  "110010",
+                    // CSUPPLIER_ID = "",
+                    // CPERIOD = "",
+                    // CDEPT_CODE = "ACC",
+                    // CTRANS_NAME = "JAN",
+                    // LHAS_REMAINING = true,
+                    // LNO_REMAINING = true,
+                    // CLANGUAGE_ID = "EN"
+                    
+                    
+                    //APL200
+                    // CCOMPANY_ID = "RCD",
+                    // CPROPERTY_ID = "ASHMD",
+                    // CCATEGORY_ID = "",
+                    // CTAXABLE_TYPE = "1",
+                    // CACTIVE_TYPE = "1",
+                    // CLANGUAGE_ID = "en",
+                    // CTAX_DATE = "20230101"
+                    
                 
                 };
-                eventArgs.TargetPageType = typeof(GSL01500);
-
-
-
-                // eventArgs.Parameter = new APL00400ParameterDTO()
-                //
-                // {
-                //
-                //     CCOMPANY_ID = "RCD",
-                //     CPROPERTY_ID = "JBMPC",
-                //     //CCATEGORY_ID = "",
-                //     //CTAXABLE_TYPE = "1",
-                //     CACTIVE_TYPE = "1",
-                //     CLANGUAGE_ID = "EN",
-                //     //CTAX_DATE = "",
-                //     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
-                //
-                // };
-                // eventArgs.TargetPageType = typeof(APL00400);
+                eventArgs.TargetPageType = typeof(APL00300);
             }
             catch (Exception ex)
             {

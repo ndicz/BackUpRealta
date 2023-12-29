@@ -26,12 +26,13 @@ namespace GSM00700Back
             R_Exception loException = new R_Exception();
             List<GSM00700DTO> loReturn = null;
             R_Db loDb;
+            DbConnection loConn;
             DbCommand loCmd;
 
             try
             {
                 loDb = new R_Db();
-                var loConn = loDb.GetConnection();
+                loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
                 var lcQuery = @"RSP_GS_GET_CASHFLOW_GRP_LIST";

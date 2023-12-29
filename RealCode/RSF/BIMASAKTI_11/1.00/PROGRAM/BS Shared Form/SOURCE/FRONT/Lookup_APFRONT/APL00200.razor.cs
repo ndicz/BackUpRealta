@@ -35,8 +35,7 @@ namespace Lookup_APFRONT
 
 
                 _viewModel.ParameterLookup = (APL00200ParameterDTO)poParameter;
-
-                GridRef.R_RefreshGrid(null);
+                _viewModel.GetExpenditureList();
 
             }
             catch (Exception ex)
@@ -56,8 +55,6 @@ namespace Lookup_APFRONT
             {
 
                 await _viewModel.GetExpenditureList();
-
-
                 eventArgs.ListEntityResult = _viewModel.ExpenditureGrid;
 
 
@@ -71,7 +68,7 @@ namespace Lookup_APFRONT
         }
 
         private Task R_BeforeOpenLookUp(R_BeforeOpenLookupEventArgs eventArgs)
-        {
+            {
             var loEx = new R_Exception();
 
             try

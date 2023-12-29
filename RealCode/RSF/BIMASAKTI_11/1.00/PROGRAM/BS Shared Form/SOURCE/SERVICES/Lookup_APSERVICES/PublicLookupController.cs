@@ -7,6 +7,7 @@ using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APCOMMON.DTOs.APL00400;
 using Lookup_APBACK;
 using Lookup_APCOMMON.DTOs;
+using Lookup_APCOMMON.DTOs.APL00500;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -195,6 +196,75 @@ namespace Lookup_APSERVICES
 
                 _Logger.LogInfo("Call Stream Method Data APL00400ProductAllocationLookUp");
                 loRtn = GetStream<APL00400DTO>(loResult);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            _Logger.LogInfo("End APL00400ProductAllocationLookUp");
+            return loRtn;
+        }
+        [HttpPost]
+        public IAsyncEnumerable<APL00500DTO> APL00500TransactionLookup()
+        {
+            var loException = new R_Exception();
+            IAsyncEnumerable<APL00500DTO> loRtn = null;
+            _Logger.LogInfo("Start APL00400ProductAllocationLookUp");
+            try
+            {
+                var loCls = new PublicLookUpCls();
+                var poParam = new APL00500ParameterDTO();
+
+                _Logger.LogInfo("Set Param APL00400ProductAllocationLookUp");
+                poParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                poParam.CUSER_ID = R_BackGlobalVar.USER_ID;
+                poParam.CLANGUAGE_ID = R_BackGlobalVar.CULTURE;
+                poParam.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CPROPERTY_ID);
+                poParam.CTRANS_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CTRANS_CODE);
+                poParam.CDEPT_CODE = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CDEPT_CODE);
+                poParam.CSUPPLIER_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CSUPPLIER_ID);
+                poParam.CPERIOD = R_Utility.R_GetStreamingContext<string>(ContextConstantPublicLookup.CPERIOD);
+                poParam.LHAS_REMAINING = R_Utility.R_GetStreamingContext<bool>(ContextConstantPublicLookup.LHAS_REMAINING); 
+                poParam.LNO_REMAINING = R_Utility.R_GetStreamingContext<bool>(ContextConstantPublicLookup.LNO_REMAINING);
+                
+
+                _Logger.LogInfo("Call Back Method GetProductAllocationLookup");
+                var loResult = loCls.TransactionLookup(poParam);
+
+                _Logger.LogInfo("Call Stream Method Data APL00400ProductAllocationLookUp");
+                loRtn = GetStream<APL00500DTO>(loResult);
+            }
+            catch (Exception ex)
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            _Logger.LogInfo("End APL00400ProductAllocationLookUp");
+            return loRtn;
+        }
+        [HttpPost]
+        public APL00500PeriodDTO APLInitiateTransactionLookup()
+        {
+            var loException = new R_Exception(); 
+            APL00500PeriodDTO loRtn = null;
+            _Logger.LogInfo("Start APL00400ProductAllocationLookUp");
+            try
+            {
+                var loCls = new PublicLookUpCls();
+                var poParam = new APL00500ParameterDTO();
+
+                _Logger.LogInfo("Set Param APL00400ProductAllocationLookUp");
+                poParam.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                
+
+                _Logger.LogInfo("Call Back Method GetProductAllocationLookup");
+                loRtn = loCls.InitialProcessApl00500(poParam);
+
             }
             catch (Exception ex)
             {

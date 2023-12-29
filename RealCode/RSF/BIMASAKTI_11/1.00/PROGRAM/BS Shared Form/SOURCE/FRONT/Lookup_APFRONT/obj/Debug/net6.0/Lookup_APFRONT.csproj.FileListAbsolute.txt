@@ -6,6 +6,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APFRONT.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\BlazorClientHelper.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APCOMMON.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APFrontResources.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APModel.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_GSCOMMON.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_GSFRONT.dll
@@ -19,6 +20,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\R_APICommonDTO.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\R_ContextEnumAndInterface.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\R_AuthenticationEnumAndInterface.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APFrontResources.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APModel.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_GSFRONT.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APCOMMON.pdb
@@ -43,5 +45,3 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\refint\Lookup_APFRONT.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\Lookup_APFRONT.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\obj\Debug\net6.0\ref\Lookup_APFRONT.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APFrontResources.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\FRONT\Lookup_APFRONT\bin\Debug\net6.0\Lookup_APFrontResources.pdb

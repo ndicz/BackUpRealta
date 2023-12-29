@@ -10,6 +10,7 @@ using Lookup_APCOMMON.DTOs.APL00110;
 using Lookup_APCOMMON.DTOs.APL00200;
 using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APCOMMON.DTOs.APL00400;
+using Lookup_APCOMMON.DTOs.APL00500;
 using Lookup_APCOMMON.Loggers;
 using R_BackEnd;
 using R_Common;
@@ -49,7 +50,9 @@ namespace Lookup_APBACK
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
-                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
                 _Logger.LogDebug("EXEC RSP_AP_SEARCH_SUPPLIER_LOOKUP_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -91,7 +94,9 @@ namespace Lookup_APBACK
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
-                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
                 _Logger.LogDebug("EXEC RSP_AP_GET_SUPPLIER_INFO_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -135,7 +140,9 @@ namespace Lookup_APBACK
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
-                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
                 _Logger.LogDebug("EXEC RSP_AP_LOOKUP_EXPENDITURE {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -179,7 +186,9 @@ namespace Lookup_APBACK
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
-                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
                 _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
@@ -220,12 +229,105 @@ namespace Lookup_APBACK
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
-                    .Where(x => x.ParameterName == "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name).Select(x => x.Value);
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
                 _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT_ALLOCATION {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
                 loReturn = R_Utility.R_ConvertTo<APL00400DTO>(loReturnTemp).ToList();
+            }
+            catch (Exception ex)
+
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
+
+        public List<APL00500DTO> TransactionLookup(APL00500ParameterDTO poParameter)
+        {
+            R_Exception loException = new R_Exception();
+            List<APL00500DTO> loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuery = @"RSP_AP_LOOKUP_TRX_REF_NO";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CUSER_ID", DbType.String, 10, poParameter.CUSER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CPROPERTY_ID", DbType.String, 10, poParameter.CPROPERTY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CDEPT_CODE", DbType.String, 10, poParameter.CDEPT_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CTRANS_CODE", DbType.String, 10, poParameter.CTRANS_CODE);
+                loDb.R_AddCommandParameter(loCmd, "@CSUPPLIER_ID", DbType.String, 10, poParameter.CSUPPLIER_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CPERIOD", DbType.String, 10, poParameter.CPERIOD);
+                loDb.R_AddCommandParameter(loCmd, "@LHAS_REMAINING", DbType.Boolean, 10, poParameter.LHAS_REMAINING);
+                loDb.R_AddCommandParameter(loCmd, "@LNO_REMAINING", DbType.Boolean, 10, poParameter.LNO_REMAINING);
+                loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
+
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<APL00500DTO>(loReturnTemp).ToList();
+            }
+            catch (Exception ex)
+
+            {
+                loException.Add(ex);
+            }
+
+            loException.ThrowExceptionIfErrors();
+
+            return loReturn;
+        }
+
+        public APL00500PeriodDTO InitialProcessApl00500(APL00500ParameterDTO poParameter)
+        {
+            R_Exception loException = new R_Exception();
+            APL00500PeriodDTO loReturn = null;
+            R_Db loDb;
+            DbCommand loCmd;
+            try
+            {
+                loDb = new R_Db();
+                var loConn = loDb.GetConnection();
+                loCmd = loDb.GetCommand();
+
+                var lcQuery = @"RSP_GS_GET_PERIOD_YEAR_RANGE";
+                loCmd.CommandType = CommandType.StoredProcedure;
+                loCmd.CommandText = lcQuery;
+                loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CYEAR", DbType.String, 10, "");
+                loDb.R_AddCommandParameter(loCmd, "@CMODE", DbType.String, 10, "");
+
+
+                //Debug Logs
+                var loDbParam = loCmd.Parameters.Cast<DbParameter>()
+                    .Where(x => x.ParameterName ==
+                                "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
+                    .Select(x => x.Value);
+                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
+
+                var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
+
+                loReturn = R_Utility.R_ConvertTo<APL00500PeriodDTO>(loReturnTemp).FirstOrDefault();
             }
             catch (Exception ex)
 

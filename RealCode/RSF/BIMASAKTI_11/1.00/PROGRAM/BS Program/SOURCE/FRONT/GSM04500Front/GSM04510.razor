@@ -1,0 +1,103 @@
+﻿@page "/GSM04510"
+@using R_BlazorFrontEnd.Interfaces
+@attribute [R_Page(Title = "Account Setting")]
+@inherits R_Page
+
+<R_StackLayout Row Class="mb-2">
+    <R_ItemLayout Class="pe-3">
+        <R_Label>Journal Group</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout col="1">
+        <R_TextBox @bind-Value="@_GSM4510ViewModel.loParentEntity.CJRNGRP_CODE" Enabled="false"/>
+    </R_ItemLayout>
+    <R_ItemLayout col="4">
+        <R_TextBox @bind-Value="@_GSM4510ViewModel.loParentEntity.CJRNGRP_NAME" Enabled="false"/>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout Class="mb-4">
+    <R_ItemLayout>
+        <R_Grid @ref="@_gridRefGSM04510"
+                DataSource="@_GSM4510ViewModel.loGridList"
+                Pageable
+                PageSize="6"
+                R_ConductorGridSource="@_conGridGSM04510Ref"
+                R_GridType="R_eGridType.Original"
+                R_ServiceGetListRecord="@GetListRecordAccount"
+                R_Before_Open_Grid_Lookup="@BeforeOpenLookup"
+                R_After_Open_Grid_Lookup="@AfterOpenLookup"
+                AllowEditRow="@_enableFlagAcc"
+                AllowAddNewRow="false"
+                AllowDeleteRow="false"
+                Enabled="@_enableFlagAcc"
+                Height="200px">
+            <R_GridColumns>
+                <R_GridTextColumn FieldName="CGOA" HeaderText="Group Of Account" Width="150px"/>
+                <R_GridCheckBoxColumn FieldName="LDEPARTMENT_MODE" HeaderText="By Dept" Width="150px" R_EnableEdit/>
+                <R_GridLookupColumn FieldName="CGLACCOUNT_NO" HeaderText="GL Account No" Width="150px" R_EnableEdit/>
+                <R_GridTextColumn FieldName="CGLACCOUNT_NAME" HeaderText="GL Account Name" Width="250px"/>
+                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By"/>
+                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated   Date"/>
+                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By"/>
+                <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+            </R_GridColumns>
+        </R_Grid>
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+<R_ConductorGrid @ref="@_conGridGSM04510Ref"
+                 R_ViewModel="_GSM4510ViewModel"
+                 R_IsHeader
+                 R_SetOther="@SetOther"
+                 R_Display="@R_Display"
+                 R_ServiceGetRecord="@ServiceGetRecord"
+                 R_ServiceSave="@ServiceSave"/>
+
+
+<R_StackLayout Row Class="mb-2">
+    <R_ItemLayout Class="pe-3">
+        <R_Label>Group Of Account</R_Label>
+    </R_ItemLayout>
+    <R_ItemLayout col=5>
+        <R_TextBox @bind-Value="_GSM4520ViewModel.loParentEntity.CGOA" Enabled="false"/>
+    </R_ItemLayout>
+</R_StackLayout>
+
+<R_StackLayout>
+    <R_ItemLayout>
+        <R_Grid @ref="@_gridRefGSM04520"
+                DataSource="@_GSM4520ViewModel.loGridList"
+                Pageable
+                PageSize="6"
+                R_ConductorGridSource="@_conGridGSM04520Ref"
+                R_GridType="R_eGridType.Original"
+                R_ServiceGetListRecord="@GetListRecordDept"
+                R_Before_Open_Grid_Lookup="BeforeLookupDept"
+                R_After_Open_Grid_Lookup="AfterLookupDept"
+                AllowEditRow="_enableFlagDept"
+                AllowAddNewRow="_enableFlagDept"
+                AllowDeleteRow="_enableFlagDept"
+                Enabled="_enableFlagDept"
+                Height="250px">
+            <R_GridColumns>
+                <R_GridLookupColumn FieldName="CDEPT_CODE" HeaderText="Department Code" Width="200px" R_EnableAdd/>
+                <R_GridTextColumn FieldName="CDEPT_NAME" HeaderText="Department Name" Width="250px"/>
+                <R_GridLookupColumn FieldName="CGL_ACCOUNT_NO" HeaderText="GL Account No" Width="150px" R_EnableAdd R_EnableEdit/>
+                <R_GridTextColumn FieldName="CGLACCOUNT_NAME" HeaderText="GL Account No" Width="250px"/>
+                <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="Updated By"/>
+                <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="Updated   Date"/>
+                <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="Created By"/>
+                <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="Created Date"/>
+            </R_GridColumns>
+        </R_Grid>
+    </R_ItemLayout>
+</R_StackLayout>
+
+
+<R_ConductorGrid @ref="@_conGridGSM04520Ref"
+                 R_ViewModel="_GSM4520ViewModel"
+                 R_SetOther="SetOtherDept"
+                 R_ServiceGetRecord="@ServiceGetRecordDept"
+                 R_ServiceSave="ServiceSaveDept"
+                 R_ServiceDelete="ServiceDelete"/>

@@ -212,20 +212,20 @@ namespace GSM05500Model.Model
             throw new NotImplementedException();
         }
 
-        public IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> GwtAllLcCurrencyStream()
-        {
-            throw new NotImplementedException();
-        }
-
-        public GSM05520ListDTO GetAllRateList()
-        {
-            throw new NotImplementedException();
-        }
-
-        public GSM05520ListDTOGetRateType GetListRateType()
-        {
-            throw new NotImplementedException();
-        }
+        // public IAsyncEnumerable<GSM05520DTOLocalBaseCurrency> GwtAllLcCurrencyStream()
+        // {
+        //     throw new NotImplementedException();
+        // }
+        //
+        // public GSM05520ListDTO GetAllRateList()
+        // {
+        //     throw new NotImplementedException();
+        // }
+        //
+        // public GSM05520ListDTOGetRateType GetListRateType()
+        // {
+        //     throw new NotImplementedException();
+        // }
 
         public GSM05520DTOLocalBaseCurrency GetLcCurrency()
         {

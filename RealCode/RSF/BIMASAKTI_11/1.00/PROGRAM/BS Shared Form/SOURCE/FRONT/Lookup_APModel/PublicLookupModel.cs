@@ -10,6 +10,7 @@ using Lookup_APCOMMON.DTOs.APL00110;
 using Lookup_APCOMMON.DTOs.APL00200;
 using Lookup_APCOMMON.DTOs.APL00300;
 using Lookup_APCOMMON.DTOs.APL00400;
+using Lookup_APCOMMON.DTOs.APL00500;
 using R_APIClient;
 using R_BlazorFrontEnd;
 using R_BlazorFrontEnd.Exceptions;
@@ -33,10 +34,12 @@ namespace Lookup_APModel
         }
 
         #region APL00100
+
         public IAsyncEnumerable<APL00100DTO> APL00100SupplierLookUp()
         {
             throw new NotImplementedException();
         }
+
         public async Task<List<APL00100DTO>> APL00100SupplierLookUpAsync(APL00100ParameterDTO poParam)
         {
             var loEx = new R_Exception();
@@ -55,7 +58,6 @@ namespace Lookup_APModel
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
-
             }
             catch (Exception ex)
             {
@@ -65,15 +67,17 @@ namespace Lookup_APModel
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
-
         }
+
         #endregion
-        
+
         #region APL00110
+
         public IAsyncEnumerable<APL00110DTO> APL00110SupplierInfoLookUp()
         {
             throw new NotImplementedException();
         }
+
         public async Task<List<APL00110DTO>> APL00110SupplierInfoLookUpAsync(APL00110ParameterDTO poParam)
         {
             var loEx = new R_Exception();
@@ -92,7 +96,6 @@ namespace Lookup_APModel
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
-
             }
             catch (Exception ex)
             {
@@ -102,15 +105,17 @@ namespace Lookup_APModel
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
-
         }
+
         #endregion
 
         #region APL00200
+
         public IAsyncEnumerable<APL00200DTO> APL00200ExpenditureLookUp()
         {
             throw new NotImplementedException();
         }
+
         public async Task<List<APL00200DTO>> APL00200ExpenditureLookUpAsync(APL00200ParameterDTO poParam)
         {
             var loEx = new R_Exception();
@@ -132,7 +137,6 @@ namespace Lookup_APModel
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
-
             }
             catch (Exception ex)
             {
@@ -142,15 +146,17 @@ namespace Lookup_APModel
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
-
         }
+
         #endregion
 
         #region APL00300
+
         public IAsyncEnumerable<APL00300DTO> APL00300ProductLookUp()
         {
             throw new NotImplementedException();
         }
+
         public async Task<List<APL00300DTO>> APL00300ProductLookUpAsync(APL00300ParameterDTO poParam)
         {
             var loEx = new R_Exception();
@@ -172,7 +178,6 @@ namespace Lookup_APModel
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
-
             }
             catch (Exception ex)
             {
@@ -182,15 +187,17 @@ namespace Lookup_APModel
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
-
         }
 
         #endregion
+
         #region APL00400
+
         public IAsyncEnumerable<APL00400DTO> APL00400ProductAllocationLookUp()
         {
             throw new NotImplementedException();
         }
+
         public async Task<List<APL00400DTO>> APL00400ProductAllocationLookUpAsync(APL00400ParameterDTO poParam)
         {
             var loEx = new R_Exception();
@@ -209,7 +216,6 @@ namespace Lookup_APModel
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
-
             }
             catch (Exception ex)
             {
@@ -219,8 +225,86 @@ namespace Lookup_APModel
             loEx.ThrowExceptionIfErrors();
 
             return loResult;
-
         }
+
+        #endregion
+
+        #region APL00500
+
+        public IAsyncEnumerable<APL00500DTO> APL00500TransactionLookup()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<APL00500DTO>> APL00500TransactionLookupAsync(APL00500ParameterDTO poParam)
+        {
+            var loEx = new R_Exception();
+            List<APL00500DTO> loResult = null;
+
+            try
+            {
+                //context
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CPROPERTY_ID, poParam.CPROPERTY_ID);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CACTIVE_TYPE, poParam.CTRANS_CODE);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CDEPT_CODE, poParam.CDEPT_CODE);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CSUPPLIER_ID, poParam.CSUPPLIER_ID);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CTRANS_CODE, poParam.CTRANS_CODE);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CPERIOD, poParam.CPERIOD);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.LHAS_REMAINING, poParam.LHAS_REMAINING);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.LNO_REMAINING, poParam.LNO_REMAINING);
+
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;   
+                loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00500DTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IPublicLookup.APL00500TransactionLookup),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
+        #endregion
+
+        #region APL00500Init
+
+        public APL00500PeriodDTO APLInitiateTransactionLookup()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task <APL00500PeriodDTO> APLInitiateTransactionLookupAsync()
+        {
+            var loEx = new R_Exception();
+            APL00500PeriodDTO loResult = null;
+
+            try
+            {
+                R_HTTPClientWrapper.httpClientName = _HttpClientName;
+                loResult = await R_HTTPClientWrapper.R_APIRequestObject<APL00500PeriodDTO>(
+                    _RequestServiceEndPoint,
+                    nameof(IPublicLookup.APLInitiateTransactionLookup),
+                    DEFAULT_MODULE,
+                    _SendWithContext,
+                    _SendWithToken);
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+
+            loEx.ThrowExceptionIfErrors();
+
+            return loResult;
+        }
+
         #endregion
     }
 }

@@ -360,17 +360,17 @@ namespace LMM02000Back
                     Select(x => x.Value);
                 _logger.LogDebug("EXEC {Query} {@Parameters} || Salesman(Cls) ", lcQuery, poEntity);
                 //loDb.SqlExecNonQuery(loConn, loCommand, true);
-                try
-                {
-                    loDb.SqlExecNonQuery(loConn, loCommand, false);
-                }
-                catch (Exception ex)
-                {
-                    loException.Add(ex);
-                }
+                    try
+                    {
+                        loDb.SqlExecNonQuery(loConn, loCommand, false);
+                    }
+                    catch (Exception ex)
+                    {
+                        loException.Add(ex);
+                    }
 
-                loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
-            }
+                    loException.Add(R_ExternalException.R_SP_Get_Exception(loConn));
+                }
             catch (Exception ex)
             {
                 loException.Add(ex);
