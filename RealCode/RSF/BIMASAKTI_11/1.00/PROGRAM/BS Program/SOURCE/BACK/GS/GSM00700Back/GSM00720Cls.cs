@@ -17,6 +17,8 @@ namespace GSM00700Back
 {
     public class GSM00720Cls : R_BusinessObject<GSM00720DTO>
     {
+        RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
+        RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
         private LogGSM00700Common _logger;
         public GSM00720Cls()
         {

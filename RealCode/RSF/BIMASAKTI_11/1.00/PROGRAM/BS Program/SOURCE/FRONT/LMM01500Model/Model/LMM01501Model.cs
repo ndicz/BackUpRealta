@@ -7,7 +7,7 @@ using LMM01500Common.DTOs;
 using R_APIClient;
 using R_BlazorFrontEnd.Exceptions;
 
-namespace LMM01500Model.Model
+namespace LMM01500Model
 {
     public class LMM01501Model : R_BusinessObjectServiceClientBase<LMM01500TemplateBankAccountDTO>, ILMM01501
     {

@@ -17,6 +17,7 @@ namespace LMM02000Back
 {
     public class LMM02000Cls : R_BusinessObject<LMM02000DTO>
     {
+        RSP_LM_MAINTAIN_SALESMANResources.Resources_Dummy_Class ResourcesDummyClass = new();
         private LogLMM02000Common _logger;
         public LMM02000Cls()
         {

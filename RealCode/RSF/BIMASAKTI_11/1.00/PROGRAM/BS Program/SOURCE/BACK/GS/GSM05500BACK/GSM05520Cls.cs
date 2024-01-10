@@ -16,6 +16,9 @@ namespace GSM05500Back
 {
     public class GSM05520Cls : R_BusinessObject<GSM05520DTO>
     {
+        RSP_GS_MAINTAIN_CURRENCYResources.Resources_Dummy_Class ResourcesDummyClass = new();
+        RSP_GS_MAINTAIN_RATE_TYPEResources.Resources_Dummy_Class ResourcesDummyClass2 = new();
+        RSP_GS_MAINTAIN_CURRENCY_RATEResources.Resources_Dummy_Class ResourcesDummyClass3 = new();
         private LogGSM05500Common _logger;
         public GSM05520Cls()
         {

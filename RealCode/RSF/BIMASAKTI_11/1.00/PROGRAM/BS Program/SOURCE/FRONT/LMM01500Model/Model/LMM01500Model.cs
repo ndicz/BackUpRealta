@@ -8,7 +8,7 @@ using R_APIClient;
 using R_BlazorFrontEnd.Exceptions;
 
 
-namespace LMM01500Model.Model
+namespace LMM01500Model
 {
     public class LMM01500Model : R_BusinessObjectServiceClientBase<LMM01500GeneralInfoDTO>, ILMM01500
     {

@@ -71,31 +71,31 @@ namespace GSM00700Front
 
 
 
-                eventArgs.Parameter = new APL00300ParameterDTO()
+                eventArgs.Parameter = new APL00500ParameterDTO()
                 
                 {
                 //APL00300
-                    CCOMPANY_ID = "RCD",
-                    CPROPERTY_ID = "ASHMD",
-                    CCATEGORY_ID = "ASHMD",
-                    CTAXABLE_TYPE = "1",
-                    CACTIVE_TYPE = "1", 
-                    CLANGUAGE_ID = "en",
-                    CTAX_DATE = "1"
+                    // CCOMPANY_ID = "RCD",
+                    // CPROPERTY_ID = "ASHMD",
+                    // CCATEGORY_ID = "ASHMD",
+                    // CTAXABLE_TYPE = "1",
+                    // CACTIVE_TYPE = "1", 
+                    // CLANGUAGE_ID = "en",
+                    // CTAX_DATE = "1"
                     
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
                     //APL0500
-                    // CCOMPANY_ID = "RCD",
-                    // CPROPERTY_ID =  "ASHMD",
-                    // CUSER_ID =  "HPC",
-                    // CTRANS_CODE =  "110010",
-                    // CSUPPLIER_ID = "",
+                    CCOMPANY_ID = "RCD",
+                    CPROPERTY_ID =  "ASHMD",
+                    CUSER_ID =  "HPC",
+                    CTRANS_CODE =  "110010",
+                    CSUPPLIER_ID = "",
                     // CPERIOD = "",
-                    // CDEPT_CODE = "ACC",
-                    // CTRANS_NAME = "JAN",
-                    // LHAS_REMAINING = true,
-                    // LNO_REMAINING = true,
-                    // CLANGUAGE_ID = "EN"
+                    CDEPT_CODE = "ACC",
+                    CTRANS_NAME = "JAN",
+                    LHAS_REMAINING = true,
+                    LNO_REMAINING = true,
+                    CLANGUAGE_ID = "EN"
                     
                     
                     //APL200
@@ -109,7 +109,7 @@ namespace GSM00700Front
                     
                 
                 };
-                eventArgs.TargetPageType = typeof(APL00300);
+                eventArgs.TargetPageType = typeof(APL00500);
             }
             catch (Exception ex)
             {

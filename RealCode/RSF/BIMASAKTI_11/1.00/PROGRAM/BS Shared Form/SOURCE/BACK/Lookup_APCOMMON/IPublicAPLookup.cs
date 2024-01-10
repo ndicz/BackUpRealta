@@ -10,7 +10,7 @@ using Lookup_APCOMMON.DTOs.APL00500;
 
 namespace Lookup_APCOMMON
 {
-    public interface IPublicLookup
+    public interface IPublicAPLookup
     {
         IAsyncEnumerable<APL00100DTO> APL00100SupplierLookUp();
         IAsyncEnumerable<APL00110DTO> APL00110SupplierInfoLookUp();

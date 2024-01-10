@@ -18,6 +18,8 @@ namespace GSM00700Back
 {
     public class GSM00710UploadCashFlowCls : R_IBatchProcess
     {
+        RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
+        RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
         //    public GSM00710UploadCashFlowCheckUsedDTO CheckIsCashFlowUsed(GSM00710UploadCashFlowCheckUsedParameterDTO poEntity)
         //    {
         //        R_Exception loException = new R_Exception();

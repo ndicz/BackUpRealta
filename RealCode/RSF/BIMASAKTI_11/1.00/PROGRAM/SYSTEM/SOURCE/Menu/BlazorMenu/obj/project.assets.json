@@ -2677,6 +2677,36 @@
           "bin/placeholder/LMM01500Common.dll": {}
         }
       },
+      "LMM01500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LMM01500Common": "1.0.0",
+          "LMM01500Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/LMM01500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM01500Front.dll": {}
+        }
+      },
+      "LMM01500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LMM01500Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LMM01500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM01500Model.dll": {}
+        }
+      },
       "LMM02000Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -5481,6 +5511,36 @@
         },
         "runtime": {
           "bin/placeholder/LMM01500Common.dll": {}
+        }
+      },
+      "LMM01500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LMM01500Common": "1.0.0",
+          "LMM01500Model": "1.0.0",
+          "Lookup_GSCOMMON": "1.0.0",
+          "Lookup_GSFRONT": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/LMM01500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM01500Front.dll": {}
+        }
+      },
+      "LMM01500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LMM01500Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LMM01500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM01500Model.dll": {}
         }
       },
       "LMM02000Common/1.0.0": {
@@ -11119,6 +11179,16 @@
       "path": "../../../../BS Program/SOURCE/COMMON/LM/LMM01500Common/LMM01500Common.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/COMMON/LM/LMM01500Common/LMM01500Common.csproj"
     },
+    "LMM01500Front/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMM01500Front/LMM01500Front.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM01500Front/LMM01500Front.csproj"
+    },
+    "LMM01500Model/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMM01500Model/LMM01500Model.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM01500Model/LMM01500Model.csproj"
+    },
     "LMM02000Common/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/COMMON/LM/LMM02000Common/LMM02000Common.csproj",
@@ -11191,6 +11261,7 @@
       "GSM04500Model >= 1.0.0",
       "GSM05500Front >= 1.0.0",
       "LMI00100Front >= 1.0.0",
+      "LMM01500Front >= 1.0.0",
       "LMM02000Front >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 6.0.14",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.14",
@@ -11265,6 +11336,9 @@
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMI00100Front\\LMI00100Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMI00100Front\\LMI00100Front.csproj"
+            },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM01500Front\\LMM01500Front.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM01500Front\\LMM01500Front.csproj"
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02000Front\\LMM02000Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02000Front\\LMM02000Front.csproj"

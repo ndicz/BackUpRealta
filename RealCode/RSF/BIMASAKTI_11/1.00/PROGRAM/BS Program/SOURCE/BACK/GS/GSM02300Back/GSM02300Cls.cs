@@ -16,6 +16,8 @@ namespace GSM02300Back
 {
     public class GSM02300Cls : R_BusinessObject<GSM02300DTO>    
     {
+        RSP_GS_MAINTAIN_PROPERTY_TYPEResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
+       
         private LogGSM02300Common _logger;
         public GSM02300Cls()
         {

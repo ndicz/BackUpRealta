@@ -60,50 +60,50 @@ public partial class APL00500 : R_Page
 
         R_DisplayException(loEx);
     }
-    private Task R_BeforeOpenLookUp(R_BeforeOpenLookupEventArgs eventArgs)
-    {
-        var loEx = new R_Exception();
-
-        try
-        {
-            eventArgs.Parameter = new APL00100ParameterDTO()
-            {
-                CCOMPANY_ID = ClientHelper.CompanyId,
-                CLANGUAGE_ID = ClientHelper.Culture.ToString(),
-                CPROPERTY_ID = _viewModel.ParameterLookup.CPROPERTY_ID,
-            };
-            eventArgs.TargetPageType = typeof(APL00100);
-        }
-        catch (Exception ex)
-        {
-            loEx.Add(ex);
-        }
-
-        loEx.ThrowExceptionIfErrors();
-        return Task.CompletedTask;
-    }
-
-    private void R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
-    {
-        var loEx = new R_Exception();
-
-        try
-        {
-            var loData = (APL00100DTO)eventArgs.Result;
-            if (loData == null)
-                return;
-
-            _viewModel.TransactionLookupEntity.CSUPPLIER_ID = loData.CSUPPLIER_ID;
-            _viewModel.TransactionLookupEntity.CSUPPLIER_NAME = loData.CSUPPLIER_NAME;
-        }
-        catch (Exception ex)
-        {
-            loEx.Add(ex);
-        }
-
-        loEx.ThrowExceptionIfErrors();
-        //return Task.CompletedTask;
-    }
+    // private Task R_BeforeOpenLookUp(R_BeforeOpenLookupEventArgs eventArgs)
+    // {
+    //     var loEx = new R_Exception();
+    //
+    //     try
+    //     {
+    //         eventArgs.Parameter = new APL00100ParameterDTO()
+    //         {
+    //             CCOMPANY_ID = ClientHelper.CompanyId,
+    //             CLANGUAGE_ID = ClientHelper.Culture.ToString(),
+    //             CPROPERTY_ID = _viewModel.ParameterLookup.CPROPERTY_ID,
+    //         };
+    //         eventArgs.TargetPageType = typeof(APL00100);
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         loEx.Add(ex);
+    //     }
+    //
+    //     loEx.ThrowExceptionIfErrors();
+    //     return Task.CompletedTask;
+    // }
+    //
+    // private void R_AfterOpenLookUp(R_AfterOpenLookupEventArgs eventArgs)
+    // {
+    //     var loEx = new R_Exception();
+    //
+    //     try
+    //     {
+    //         var loData = (APL00100DTO)eventArgs.Result;
+    //         if (loData == null)
+    //             return;
+    //
+    //         _viewModel.TransactionLookupEntity.CSUPPLIER_ID = loData.CSUPPLIER_ID;
+    //         _viewModel.TransactionLookupEntity.CSUPPLIER_NAME = loData.CSUPPLIER_NAME;
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         loEx.Add(ex);
+    //     }
+    //
+    //     loEx.ThrowExceptionIfErrors();
+    //     //return Task.CompletedTask;
+    // }
     
     public async Task OnchangedPeriod()
     {
@@ -161,7 +161,13 @@ public partial class APL00500 : R_Page
                 return;
             }
 
-            await _viewModel.GetTransactionLookup();
+            
+            if (GridRef != null)
+            {
+                await R_MessageBox.Show("Error", "Period Month is required!!", R_eMessageBoxButtonType.OK);
+            }
+        
+            _viewModel.GetTransactionLookup();
             await ButtonEnable();
            
         }

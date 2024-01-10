@@ -1,150 +1,173 @@
 ﻿using LMM03700Back;
 using LMM03700Common;
-using LMM03700Common.DTO_s;
+using LMM03700Common.DTO;
 using Microsoft.AspNetCore.Mvc;
 using R_BackEnd;
 using R_Common;
 using R_CommonFrontBackAPI;
 
-namespace LMM03700Service
+namespace LMM03700Controller;
+
+[Route("api/[controller]/[action]")]
+[ApiController]
+public class LMM03700Controller : ControllerBase, ILMM03700
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class LMM03700Controller : ControllerBase, ILMM03700
+    [HttpPost]
+    public R_ServiceGetRecordResultDTO<LMM03700DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<LMM03700DTO> poParameter)
     {
-        [HttpPost]
-        public IAsyncEnumerable<TenantClassificationGroupDTO> GetTenantClassGroupList()
+        var loException = new R_Exception();
+        var loReturn = new R_ServiceGetRecordResultDTO<LMM03700DTO>();
+        var loCls = new LMM03700Cls();
+
+        try
         {
-            R_Exception loException = new R_Exception();
-            List<TenantClassificationGroupDTO> loRtnTemp = null;
-            LMM03700Cls loCls;
-            try
-            {
-                loCls = new LMM03700Cls();
-                loRtnTemp = loCls.GetTCGList(new TenantClassificationGroupDTO()
-                {
-                    CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID,
-                    CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(LMM03700ContextConstant.CPROPERTY_ID),
-                    CUSER_ID = R_BackGlobalVar.USER_ID
-                });
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
+            poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+            poParameter.Entity.CPROPERTY_ID= R_Utility.R_GetStreamingContext<string>(ContextConstantLMM03700.CPROPERTY_ID);
+            loReturn.data = loCls.R_GetRecord(poParameter.Entity);
+        }
+        catch (Exception ex)
+        {
+            loException.Add(ex);
+            
+        }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return TCGStreamListHelper(loRtnTemp);
-        }
+        loException.ThrowExceptionIfErrors();
+        return loReturn;
 
-        private async IAsyncEnumerable<TenantClassificationGroupDTO> TCGStreamListHelper(List<TenantClassificationGroupDTO> poList)
-        {
-            foreach(TenantClassificationGroupDTO loEntity in poList)
-            {
-                yield return loEntity;
-            }
-        }
+    }
 
-        [HttpPost]
-        public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<TenantClassificationGroupDTO> poParameter)
+    [HttpPost]
+    public R_ServiceSaveResultDTO<LMM03700DTO> R_ServiceSave(R_ServiceSaveParameterDTO<LMM03700DTO> poParameter)
+    {
+        var loException = new R_Exception();
+        var loReturn = new R_ServiceSaveResultDTO<LMM03700DTO>();
+        var loCls = new LMM03700Cls();
+
+        try
         {
-            R_ServiceDeleteResultDTO loRtn = null;
-            R_Exception loException = new R_Exception();
-            LMM03700Cls loCls;
-            try
-            {
-                loRtn = new R_ServiceDeleteResultDTO();
-                loCls = new LMM03700Cls(); //create cls class instance
-                poParameter.Entity.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(LMM03700ContextConstant.CPROPERTY_ID);
-                loCls.R_Delete(poParameter.Entity);
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
+            poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+            poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+            poParameter.Entity.CPROPERTY_ID= R_Utility.R_GetStreamingContext<string>(ContextConstantLMM03700.CPROPERTY_ID);
+            loReturn.data = loCls.R_Save(poParameter.Entity, poParameter.CRUDMode);
+        }
+        catch (Exception ex)
+        {
+            loException.Add(ex);
+            
+        }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return loRtn;
-        }
+        loException.ThrowExceptionIfErrors();
+        return loReturn;
 
-        [HttpPost]
-        public R_ServiceGetRecordResultDTO<TenantClassificationGroupDTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<TenantClassificationGroupDTO> poParameter)
+    }
+
+    [HttpPost]
+    public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<LMM03700DTO> poParameter)
+    {
+        var loException = new R_Exception();
+        var loReturn = new R_ServiceDeleteResultDTO();
+        var loCls = new LMM03700Cls();
+
+        try
         {
-            R_ServiceGetRecordResultDTO<TenantClassificationGroupDTO> loRtn = null;
-            R_Exception loException = new R_Exception();
-            LMM03700Cls loCls;
-            try
-            {
-                loCls = new LMM03700Cls(); //create cls class instance
-                poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
-                poParameter.Entity.CPROPERTY_ID= R_Utility.R_GetStreamingContext<string>(LMM03700ContextConstant.CPROPERTY_ID);
-                loRtn = new R_ServiceGetRecordResultDTO<TenantClassificationGroupDTO>();
-                loRtn.data = loCls.R_GetRecord(poParameter.Entity);
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
+            poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
+            loCls.R_Delete(poParameter.Entity);
+        }
+        catch (Exception ex)
+        {
+            loException.Add(ex);
+            
+        }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return loRtn;
+        loException.ThrowExceptionIfErrors();
+        return loReturn;
+    }
 
+    [HttpPost]
+    public IAsyncEnumerable<LMM03700DTO> GetTenantClasificationGroupStream()
+    {
+     
+        R_Exception loException = new R_Exception();
+        LMM03700DBPamater loDbPar;
+        List<LMM03700DTO> loRtnTmp;
+        LMM03700Cls loCls;
+        IAsyncEnumerable<LMM03700DTO> loRtn = null;
+        try
+        {
+       
+            loDbPar = new LMM03700DBPamater();
+            loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+            loDbPar.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(ContextConstantLMM03700.CPROPERTY_ID);
+            loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+            loCls = new LMM03700Cls();
+
+         
+            loRtnTmp = loCls.GetTenanClasificationList(loDbPar);
+
+        
+            loRtn = TenantHelperStream(loRtnTmp);
+        }
+        catch (Exception ex)
+        {
+            loException.Add(ex);
+        
         }
 
-        [HttpPost]
-        public R_ServiceSaveResultDTO<TenantClassificationGroupDTO> R_ServiceSave(R_ServiceSaveParameterDTO<TenantClassificationGroupDTO> poParameter)
-        {
-            R_ServiceSaveResultDTO<TenantClassificationGroupDTO> loRtn = null;
-            R_Exception loException = new R_Exception();
-            LMM03700Cls loCls;
-            try
-            {
-                loCls = new LMM03700Cls();
-                loRtn = new R_ServiceSaveResultDTO<TenantClassificationGroupDTO>();
-                poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
-                poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
-                poParameter.Entity.CPROPERTY_ID = R_Utility.R_GetStreamingContext<string>(LMM03700ContextConstant.CPROPERTY_ID);
-                loRtn.data = loCls.R_Save(poParameter.Entity, poParameter.CRUDMode);
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return loRtn;
+        loException.ThrowExceptionIfErrors();
+ 
+        return loRtn;
+    }
+
+    [HttpPost]
+    public IAsyncEnumerable<LMM03700InitialProcessDTO> GetInitialProcessStream()
+    {
+        R_Exception loException = new R_Exception();
+        LMM03700DBPamater loDbPar;
+        List<LMM03700InitialProcessDTO> loRtnTmp;
+        LMM03700Cls loCls;
+        IAsyncEnumerable<LMM03700InitialProcessDTO> loRtn = null;
+        try
+        {
+       
+            loDbPar = new LMM03700DBPamater();
+            loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+            loDbPar.CUSER_ID = R_BackGlobalVar.USER_ID;
+            loCls = new LMM03700Cls();
+
+         
+            loRtnTmp = loCls.GetInitialPropertyList(loDbPar);
+
+        
+            loRtn = InitialHelperStream(loRtnTmp);
+        }
+        catch (Exception ex)
+        {
+            loException.Add(ex);
+        
         }
 
-        [HttpPost]
-        public IAsyncEnumerable<PropertyDTO> LMM03700GetPropertyData()
-        {
-            R_Exception loException = new R_Exception();
-            List<PropertyDTO> loRtnTemp = null;
-            LMM03700Cls loCls;
-            try
-            {
-                loCls = new LMM03700Cls();
-                loRtnTemp = loCls.GetPropertyList(new PropertyDTO()
-                {
-                    CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID,
-                    CUSER_ID = R_BackGlobalVar.USER_ID
-                });
-            }
-            catch (Exception ex)
-            {
-                loException.Add(ex);
-            }
         EndBlock:
-            loException.ThrowExceptionIfErrors();
-            return PropertyStreamListHelper(loRtnTemp);
-        }
-
-        private async IAsyncEnumerable<PropertyDTO> PropertyStreamListHelper(List<PropertyDTO> poList)
+        loException.ThrowExceptionIfErrors();
+ 
+        return loRtn;
+    }
+    
+    
+    
+    private async IAsyncEnumerable<LMM03700DTO> TenantHelperStream(List<LMM03700DTO> poParameter)
+    {
+        foreach (LMM03700DTO item in poParameter)
         {
-            foreach (PropertyDTO loEntity in poList)
-            {
-                yield return loEntity;
-            }
+            yield return item;
+        }
+    }
+    
+    private async IAsyncEnumerable<LMM03700InitialProcessDTO> InitialHelperStream(List<LMM03700InitialProcessDTO> poParameter)
+    {
+        foreach (LMM03700InitialProcessDTO item in poParameter)
+        {
+            yield return item;
         }
     }
 }

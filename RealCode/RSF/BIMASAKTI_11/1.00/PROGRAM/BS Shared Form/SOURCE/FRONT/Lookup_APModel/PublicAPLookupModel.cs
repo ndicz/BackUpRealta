@@ -18,13 +18,13 @@ using R_BusinessObjectFront;
 
 namespace Lookup_APModel
 {
-    public class PublicLookupModel : R_BusinessObjectServiceClientBase<APL00100DTO>, IPublicLookup
+    public class PublicAPLookupModel : R_BusinessObjectServiceClientBase<APL00100DTO>, IPublicAPLookup
     {
         private const string DEFAULT_HTTP = "R_DefaultServiceUrlAP";
-        private const string DEFAULT_ENDPOINT = "api/PublicLookup";
+        private const string DEFAULT_ENDPOINT = "api/PublicAPLookup";
         private const string DEFAULT_MODULE = "AP";
 
-        public PublicLookupModel(
+        public PublicAPLookupModel(
             string pcHttpClientName = DEFAULT_HTTP,
             string pcRequestServiceEndPoint = DEFAULT_ENDPOINT,
             bool plSendWithContext = true,
@@ -54,7 +54,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00100DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00100SupplierLookUp),
+                    nameof(IPublicAPLookup.APL00100SupplierLookUp),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -92,7 +92,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00110DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00110SupplierInfoLookUp),
+                    nameof(IPublicAPLookup.APL00110SupplierInfoLookUp),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -133,7 +133,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00200DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00200ExpenditureLookUp),
+                    nameof(IPublicAPLookup.APL00200ExpenditureLookUp),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -174,7 +174,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00300DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00300ProductLookUp),
+                    nameof(IPublicAPLookup.APL00300ProductLookUp),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -212,7 +212,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00400DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00400ProductAllocationLookUp),
+                    nameof(IPublicAPLookup.APL00400ProductAllocationLookUp),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -256,7 +256,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;   
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00500DTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APL00500TransactionLookup),
+                    nameof(IPublicAPLookup.APL00500TransactionLookup),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);
@@ -290,7 +290,7 @@ namespace Lookup_APModel
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;
                 loResult = await R_HTTPClientWrapper.R_APIRequestObject<APL00500PeriodDTO>(
                     _RequestServiceEndPoint,
-                    nameof(IPublicLookup.APLInitiateTransactionLookup),
+                    nameof(IPublicAPLookup.APLInitiateTransactionLookup),
                     DEFAULT_MODULE,
                     _SendWithContext,
                     _SendWithToken);

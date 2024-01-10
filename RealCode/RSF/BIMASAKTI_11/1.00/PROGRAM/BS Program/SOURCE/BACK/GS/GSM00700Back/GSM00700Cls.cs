@@ -8,11 +8,14 @@ using System.Reflection.Metadata;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 using System.Windows.Input;
 using GSM00700Common;
+using RSP_GS_MAINTAIN_CASHFLOWResources;
 
 namespace GSM00700Back
 {
     public class GSM00700Cls : R_BusinessObject<GSM00700DTO>
     {
+        RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
+        RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
 
         private LogGSM00700Common _logger;
         public GSM00700Cls()

@@ -11,7 +11,7 @@ namespace Lookup_APModel.ViewModel.APL00500
 {
     public class LookupAPL00500ViewModel : R_ViewModel<APL00500DTO>
     {
-        private PublicLookupModel _model = new PublicLookupModel();
+        private PublicAPLookupModel _model = new PublicAPLookupModel();
         public ObservableCollection<APL00500DTO> TransactionLookupGrid = new ObservableCollection<APL00500DTO>();
         public APL00500DTO TransactionLookupEntity = new APL00500DTO();
         public APL00500PeriodDTO PeriodLookup = new APL00500PeriodDTO();
@@ -74,19 +74,19 @@ namespace Lookup_APModel.ViewModel.APL00500
             loEx.ThrowExceptionIfErrors();
         }
 
-        // public void GetPeriod()
-        // {
-        //     var loEx = new R_Exception();
-        //     try
-        //     {
-        //        TransactionLookupEntity.CPERIOD = TransactionLookupEntity.Month + "/" + TransactionLookupEntity.VAR_GSM_PERIOD;
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         loEx.Add(ex);
-        //     }
-        //
-        //     loEx.ThrowExceptionIfErrors();
-        // }
+        public void GetPeriod()
+        {
+            var loEx = new R_Exception();
+            try
+            {
+               TransactionLookupEntity.CPERIOD = TransactionLookupEntity.Month + "/" + TransactionLookupEntity.VAR_GSM_PERIOD;
+            }
+            catch (Exception ex)
+            {
+                loEx.Add(ex);
+            }
+        
+            loEx.ThrowExceptionIfErrors();
+        }
     }
 }

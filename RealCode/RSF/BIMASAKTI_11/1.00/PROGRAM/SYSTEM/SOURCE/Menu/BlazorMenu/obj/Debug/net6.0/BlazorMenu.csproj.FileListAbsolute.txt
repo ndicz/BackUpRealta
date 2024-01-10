@@ -71,6 +71,12 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMI00100FrontResources.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMI00100Model.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMI00100Model.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Front.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Front.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Model.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Model.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM02000Common.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM02000Common.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM02000Front.dll
@@ -399,6 +405,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM05500Model.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700Common.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Options.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Model.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.Serialization.Xml.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Data.dll.gz
@@ -475,6 +482,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\R_BlazorFrontEnd.Report.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00100Front.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Front.pdb.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.TypeConverter.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Net.ServicePoint.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.dll.gz
@@ -593,6 +601,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Globalization.Calendars.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.ValueTuple.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Lookup_APModel.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Model.pdb.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.IO.RecyclableMemoryStream.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Globalization.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.IO.Compression.ZipFile.dll.gz
@@ -609,6 +618,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\icudt_no_CJK.dat.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\R_ProcessAndUploadFront.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM03000Front.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.pdb.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM00700FrontResources.pdb.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.CSharp.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.FileExtensions.dll.gz
@@ -616,6 +626,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Net.WebHeaderCollection.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\R_Security.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Pkcs.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM04500Front.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Reflection.Primitives.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Cng.dll.gz
@@ -635,6 +646,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\GSM04500Model.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.ServiceProcess.dll.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Front.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\icudt_CJK.dat.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\System.Net.Ping.dll.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\Lookup_APModel.pdb.gz
@@ -664,6 +676,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\Lookup_APFRONT.staticwebassets.runtime.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM00700Front.staticwebassets.runtime.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Front.staticwebassets.runtime.json
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Front.staticwebassets.runtime.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Front.staticwebassets.runtime.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM00100Front.staticwebassets.runtime.json
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\appsettings.json
@@ -923,6 +936,9 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Front.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100FrontResources.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Model.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Common.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Front.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Model.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Common.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Front.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000FrontResources.dll
@@ -966,6 +982,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM05500Front.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GSM00700Front.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Front.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Front.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Front.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GFF00900FRONT.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\GFF00900COMMON.pdb
@@ -982,6 +999,8 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Common.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100FrontResources.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMI00100Model.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Common.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Model.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Common.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000FrontResources.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM02000Model.pdb
@@ -1253,6 +1272,9 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\zbQlbltE.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\+4NBuTOv.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\hdyKy61H.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\X++O1hej.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\ynMhLQ0y.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\b+f7aWIW.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\3YzSX3s0.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\FgMROuEh.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\2+Iu4HsU.gz
@@ -1296,6 +1318,7 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\Agyn5Mpy.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\clBijbLW.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\SR1+wdja.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\ImBS++ir.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\R5J61BxP.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\F711b51I.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\SG+GepS4.gz
@@ -1312,6 +1335,8 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\8T1wNMvX.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\0S41aXxE.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\txGCqDhh.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\vuqk79s4.gz
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\usRIjR+k.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\u+W9VS8h.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\mG29UzXN.gz
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\4lpFk6HY.gz
@@ -1344,11 +1369,3 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\M
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\refint\BlazorMenu.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\BlazorMenu.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\ref\BlazorMenu.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.pdb.gz
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\wwwroot\_framework\LMM01500Common.dll.gz
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Common.dll
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\bin\Debug\net6.0\LMM01500Common.pdb
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\X++O1hej.gz
-D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\SYSTEM\SOURCE\Menu\BlazorMenu\obj\Debug\net6.0\build-gz\vuqk79s4.gz

@@ -18,6 +18,7 @@ namespace LMM02000Back
 {
     public class LMM02000UploadSalesmanCls : R_IBatchProcess
     {
+        RSP_LM_MAINTAIN_SALESMANResources.Resources_Dummy_Class ResourcesDummyClass = new();
         public void R_BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
             R_Exception loException = new R_Exception();

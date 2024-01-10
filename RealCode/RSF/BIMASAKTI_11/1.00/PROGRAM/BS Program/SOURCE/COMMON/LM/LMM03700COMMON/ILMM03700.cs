@@ -1,12 +1,12 @@
-﻿using LMM03700Common.DTO_s;
+﻿using System.Collections.Generic;
+using LMM03700Common.DTO;
 using R_CommonFrontBackAPI;
-using System.Collections.Generic;
 
 namespace LMM03700Common
 {
-    public interface ILMM03700 : R_IServiceCRUDBase<TenantClassificationGroupDTO>
+    public interface ILMM03700 : R_IServiceCRUDBase<LMM03700DTO>
     {
-        IAsyncEnumerable<TenantClassificationGroupDTO> GetTenantClassGroupList();
-        IAsyncEnumerable<PropertyDTO> LMM03700GetPropertyData();
+        IAsyncEnumerable<LMM03700DTO> GetTenantClasificationGroupStream();
+        IAsyncEnumerable<LMM03700InitialProcessDTO> GetInitialProcessStream();
     }
 }

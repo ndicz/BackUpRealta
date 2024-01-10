@@ -18,13 +18,13 @@ using APL00100ParameterDTO = Lookup_APCOMMON.DTOs.APL00100.APL00100ParameterDTO;
 
 namespace Lookup_APBACK
 {
-    public class PublicLookUpCls
+    public class PublicAPLookUpCls
     {
-        private LoggerPublicLookup _Logger;
+        private LoggerAPPublicLookup _loggerAp;
 
-        public PublicLookUpCls()
+        public PublicAPLookUpCls()
         {
-            _Logger = LoggerPublicLookup.R_GetInstanceLogger();
+            _loggerAp = LoggerAPPublicLookup.R_GetInstanceLogger();
         }
 
         public List<APL00100DTO> SupplierLookup(APL00100ParameterDTO poParameter)
@@ -53,7 +53,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_SEARCH_SUPPLIER_LOOKUP_LIST {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_SEARCH_SUPPLIER_LOOKUP_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -97,7 +97,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_GET_SUPPLIER_INFO_LIST {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_GET_SUPPLIER_INFO_LIST {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -143,7 +143,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_EXPENDITURE {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_EXPENDITURE {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -189,7 +189,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -232,7 +232,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT_ALLOCATION {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_PRODUCT_ALLOCATION {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -281,7 +281,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
@@ -323,7 +323,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _Logger.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
