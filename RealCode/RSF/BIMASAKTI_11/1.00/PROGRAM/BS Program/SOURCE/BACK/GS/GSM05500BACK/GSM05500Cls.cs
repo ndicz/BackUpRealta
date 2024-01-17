@@ -3,10 +3,13 @@ using R_BackEnd;
 using R_Common;
 using R_CommonFrontBackAPI;
 using System;
+using System.Diagnostics;
 using System.Data;
 using System.Data.Common;
 using System.Reflection.Metadata;
+using GSM05500Back.Activity;
 using GSM05500Common;
+using R_OpenTelemetry;
 using static GSM05500Common.DTO.GSM05500ListDTO;
 
 namespace GSM05500Back
@@ -18,12 +21,15 @@ namespace GSM05500Back
         RSP_GS_MAINTAIN_CURRENCY_RATEResources.Resources_Dummy_Class ResourcesDummyClass3 = new();
         
         private LogGSM05500Common _logger;
+        private readonly ActivitySource _activitySource;
         public GSM05500Cls()
         {
             _logger = LogGSM05500Common.R_GetInstanceLogger();
+            _activitySource= GSM05500Activity.R_GetInstanceActivitySource();
         }
         public List<GSM05500DTO> GetAllCurrency(GSM05500DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetAllCurrency));
             R_Exception loException = new R_Exception();
             List<GSM05500DTO> loReturn = null;
             R_Db loDb;

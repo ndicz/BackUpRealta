@@ -63,3 +63,5 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.csproj.CopyComplete
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\obj\Debug\netstandard2.1\Lookup_GSCOMMON.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_GSCOMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.pdb

@@ -26,7 +26,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\..\..\BS Shared Form\SOURCE\SERVICES\GFF00900SERVICES\GFF00900SERVICES.csproj" />
 		<ProjectReference Include="..\..\..\SERVICE\LM\LMI00100Service\LMI00100Service.csproj" />
-		<ProjectReference Include="..\..\..\SERVICE\LM\LMM01500Service\LMM01500Service.csproj" />
 		<ProjectReference Include="..\..\..\SERVICE\LM\LMM02000Service\LMM02000Service.csproj" />
 	</ItemGroup>
 

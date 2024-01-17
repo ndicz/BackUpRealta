@@ -131,3 +131,12 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\refint\Lookup_GSSERVICES.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\Lookup_GSSERVICES.pdb
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\obj\Debug\net6.0\ref\Lookup_GSSERVICES.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_AuthorizationBack.Abstract.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APIBackEnd.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APICommon.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_CommonFrontBackAPI.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_ContextBackEnd.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_AuthorizationBack.Abstract.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_Security.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\SERVICES\Lookup_GSSERVICES\bin\Debug\net6.0\R_ContextEnumAndInterface.pdb

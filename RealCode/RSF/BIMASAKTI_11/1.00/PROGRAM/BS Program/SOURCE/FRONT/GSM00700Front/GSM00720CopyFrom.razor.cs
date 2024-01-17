@@ -71,7 +71,7 @@ namespace GSM00700Front
 
 
 
-                eventArgs.Parameter = new APL00500ParameterDTO()
+                eventArgs.Parameter = new APL00200ParameterDTO()
                 
                 {
                 //APL00300
@@ -85,31 +85,31 @@ namespace GSM00700Front
                     
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
                     //APL0500
-                    CCOMPANY_ID = "RCD",
-                    CPROPERTY_ID =  "ASHMD",
-                    CUSER_ID =  "HPC",
-                    CTRANS_CODE =  "110010",
-                    CSUPPLIER_ID = "",
-                    // CPERIOD = "",
-                    CDEPT_CODE = "ACC",
-                    CTRANS_NAME = "JAN",
-                    LHAS_REMAINING = true,
-                    LNO_REMAINING = true,
-                    CLANGUAGE_ID = "EN"
-                    
+                    // CCOMPANY_ID = "RCD",
+                    // CPROPERTY_ID =  "ASHMD",
+                    // CUSER_ID =  "HPC",
+                    // CTRANS_CODE =  "110010",
+                    // CSUPPLIER_ID = "",
+                    // // CPERIOD = "",
+                    // CDEPT_CODE = "ACC",
+                    // CTRANS_NAME = "JAN",
+                    // LHAS_REMAINING = true,
+                    // LNO_REMAINING = true,
+                    // CLANGUAGE_ID = "EN"
+                    //
                     
                     //APL200
-                    // CCOMPANY_ID = "RCD",
-                    // CPROPERTY_ID = "ASHMD",
-                    // CCATEGORY_ID = "",
-                    // CTAXABLE_TYPE = "1",
-                    // CACTIVE_TYPE = "1",
-                    // CLANGUAGE_ID = "en",
-                    // CTAX_DATE = "20230101"
+                    CCOMPANY_ID = "RCD",
+                    CPROPERTY_ID = "ASHMD",
+                    CCATEGORY_ID = "",
+                    CTAXABLE_TYPE = "1",
+                    CACTIVE_TYPE = "1",
+                    CLANGUAGE_ID = "en",
+                    CTAX_DATE = "20230101"
                     
                 
                 };
-                eventArgs.TargetPageType = typeof(APL00500);
+                eventArgs.TargetPageType = typeof(APL00200);
             }
             catch (Exception ex)
             {

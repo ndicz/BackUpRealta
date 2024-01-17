@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using GSM05500Back;
+using GSM05500Back.Activity;
 using GSM05500Common;
 using GSM05500Common.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using R_BackEnd;
+using R_OpenTelemetry;
 using R_Common;
 using R_CommonFrontBackAPI;
 using static GSM05500Common.DTO.GSM05500ListDTO;
@@ -20,18 +23,20 @@ namespace GSM05500Service
     [ApiController]
     public class GSM05500Controller : ControllerBase, IGSM05500
     {
+        private readonly ActivitySource _activitySource;
         private LogGSM05500Common _logger;
 
         public GSM05500Controller(ILogger<GSM05500Controller> logger)
         {
             LogGSM05500Common.R_InitializeLogger(logger);
             _logger = LogGSM05500Common.R_GetInstanceLogger();
+            _activitySource = GSM05500Activity.R_InitializeAndGetActivitySource(nameof(GSM05500Controller));
         }
 
         [HttpPost]
-        public R_ServiceGetRecordResultDTO<GSM05500DTO> R_ServiceGetRecord(
-            R_ServiceGetRecordParameterDTO<GSM05500DTO> poParameter)
+        public R_ServiceGetRecordResultDTO<GSM05500DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05500DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
             _logger.LogInfo("Begin || GetRecordCurrency(Controller)");
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM05500DTO>();
@@ -60,6 +65,7 @@ namespace GSM05500Service
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM05500DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM05500DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
             _logger.LogInfo("Begin || ServiceSaveCurrency(Controller)");
             R_Exception loExceptionception = new R_Exception();
             R_ServiceSaveResultDTO<GSM05500DTO> loRtn = null;
@@ -94,6 +100,7 @@ namespace GSM05500Service
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM05500DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceDelete));
             _logger.LogInfo("Begin || ServiceDeleteCurrency(Controller)");
             R_Exception loExceptionception = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -161,6 +168,7 @@ namespace GSM05500Service
         [HttpPost]
         public IAsyncEnumerable<GSM05500DTO> GetAllCurrencyStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllCurrencyStream));
             _logger.LogInfo("Begin || GetAllCurrencyStream(Controller)");
             R_Exception loExceptionception = new R_Exception();
             GSM05500DBParameter loDbPar;

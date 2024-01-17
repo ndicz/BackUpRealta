@@ -4,7 +4,8 @@ using R_CrossPlatformSecurity;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.R_RegisterServices(
-//startup => { startup.R_DisableAuthentication(); }
+    startup => { startup.R_DisableAuthorization(); }
+
 );
 
 builder.Services.AddSingleton<R_ISymmetricProvider, R_SymmetricAESProvider>();

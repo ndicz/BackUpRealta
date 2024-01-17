@@ -21,3 +21,5 @@ D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_APCOMMON\obj\Debug\netstandard2.1\Lookup_APCOMMON.csproj.CopyComplete
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_APCOMMON\obj\Debug\netstandard2.1\Lookup_APCOMMON.dll
 D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_APCOMMON\obj\Debug\netstandard2.1\Lookup_APCOMMON.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_APCOMMON\bin\Debug\netstandard2.1\R_APICommonDTO.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Shared Form\SOURCE\BACK\Lookup_APCOMMON\bin\Debug\netstandard2.1\R_CommonFrontBackAPI.pdb
