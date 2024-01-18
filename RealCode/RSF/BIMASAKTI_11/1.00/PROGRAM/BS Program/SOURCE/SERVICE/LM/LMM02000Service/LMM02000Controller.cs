@@ -12,7 +12,9 @@ using R_CommonFrontBackAPI;
 using R_BackEnd;
 using R_Common;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Reflection;
+using LMM02000Back.Activity;
 using Microsoft.Extensions.Logging;
 
 namespace LMM02000Services
@@ -22,16 +24,19 @@ namespace LMM02000Services
     public class LMM02000Controller : ControllerBase, ILMM02000
     {
         private LogLMM02000Common _logger;
+        private readonly ActivitySource _activitySource;
 
         public LMM02000Controller(ILogger<LMM02000Controller> logger)
         {
             LogLMM02000Common.R_InitializeLogger(logger);
             _logger = LogLMM02000Common.R_GetInstanceLogger();
+            _activitySource = LMM02000Activity.R_InitializeAndGetActivitySource(nameof(LMM02000Controller));
         }
 
         [HttpPost]
         public R_ServiceGetRecordResultDTO<LMM02000DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<LMM02000DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity("R_ServiceGetRecord");
             _logger.LogInfo("Begin || GetRecordSalesman(Controller)");
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<LMM02000DTO>();
@@ -61,6 +66,7 @@ namespace LMM02000Services
         [HttpPost]
         public R_ServiceSaveResultDTO<LMM02000DTO> R_ServiceSave(R_ServiceSaveParameterDTO<LMM02000DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity("R_ServiceSave");
             _logger.LogInfo("Begin || ServiceSaveSalesman(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<LMM02000DTO> loRtn = null;
@@ -94,6 +100,7 @@ namespace LMM02000Services
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<LMM02000DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity("R_ServiceDelete");
             _logger.LogInfo("Begin || ServiceDeleteSalesman(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -125,6 +132,7 @@ namespace LMM02000Services
         [HttpPost]
         public IAsyncEnumerable<LMM02000DTO> GetAllLMM02000Stream()
         {
+            using Activity activity = _activitySource.StartActivity("GetAllSalesmanStream");
             _logger.LogInfo("Begin || GetAllSalesmanStream(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000DBParameter loDbPar;
@@ -164,6 +172,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000ListDTO GetAllLMM02000List()
         {
+            using Activity activity = _activitySource.StartActivity("GetAllSalesmanList");
             _logger.LogInfo("Begin || GetAllSalesmanList(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000ListDTO loRtn = null;
@@ -201,6 +210,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02010ListDTO GetAllLMM02010List()
         {
+            using Activity activity = _activitySource.StartActivity("GetAllSalesmanList");
             _logger.LogInfo("Begin || GetAllSalesmanList(Controller)");
             R_Exception loException = new R_Exception();
             LMM02010ListDTO loRtn = null;
@@ -241,6 +251,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000ListPropertyDTO GetLMM02000Property()
         {
+            using Activity activity = _activitySource.StartActivity("GetAllProperty");
             _logger.LogInfo("Begin || GetProperty(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000ListPropertyDTO loRtn = null;
@@ -277,6 +288,7 @@ namespace LMM02000Services
         [HttpPost]
         public IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream()
         {
+            using Activity activity = _activitySource.StartActivity("GetAllPropertyStream");
             _logger.LogInfo("Begin || GetAllPropertyStream(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000DBParameter loDbPar;
@@ -316,6 +328,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000ListGenderTypeDTO GetGender()
         {
+            using Activity activity = _activitySource.StartActivity("GetGender");
             _logger.LogInfo("Begin || GetGender(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000ListGenderTypeDTO loRtn = null;
@@ -349,6 +362,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000ListSalesmanTypeDTO GetSalesmanType()
         {
+            using Activity activity = _activitySource.StartActivity("GetSalesmanType");
             _logger.LogInfo("Begin || GetSalesmanType(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000ListSalesmanTypeDTO loRtn = null;
@@ -382,6 +396,7 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000ActiveInactiveDTO GetActiveInactive(LMM02000ActiveInactiveParam poParamDto)
         {
+            using Activity activity = _activitySource.StartActivity("GetActiveInactive");
             _logger.LogInfo("Begin || GetActiveInactive(Controller)");
             R_Exception loException = new R_Exception();
             LMM02000DBParameter loParam = new LMM02000DBParameter();
@@ -420,6 +435,8 @@ namespace LMM02000Services
         [HttpPost]
         public LMM02000Template GetTemplate()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetTemplate));
+            _logger.LogInfo("Start DownloadTemplateFile");
             var loException = new R_Exception();
             var loRtn = new LMM02000Template();
 
@@ -440,10 +457,12 @@ namespace LMM02000Services
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(loException);
+                
             }
 
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || End DownloadTemplateFile(Controller)");
             return loRtn;
         }
 

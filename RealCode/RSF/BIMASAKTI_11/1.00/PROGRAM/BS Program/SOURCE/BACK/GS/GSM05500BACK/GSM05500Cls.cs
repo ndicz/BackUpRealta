@@ -71,6 +71,7 @@ namespace GSM05500Back
         }
         protected override GSM05500DTO R_Display(GSM05500DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Display));
             R_Exception loException = new R_Exception();
             GSM05500DTO loReturn = null;
             R_Db loDb;
@@ -113,6 +114,7 @@ namespace GSM05500Back
 
         protected override void R_Saving(GSM05500DTO poNewEntity, eCRUDMode poCRUDMode)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Saving));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
@@ -189,6 +191,7 @@ namespace GSM05500Back
 
         protected override void R_Deleting(GSM05500DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Deleting));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;

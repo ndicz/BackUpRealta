@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using GSM02300Back;
+using GSM02300Back.Activity;
 using GSM02300Common;
 using GSM02300Common.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -15,24 +17,26 @@ using R_CommonFrontBackAPI;
 
 namespace GSM02300Service
 {
-
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class GSM02300Controller : ControllerBase, IGSM02300
     {
-
         private LogGSM02300Common _logger;
+        private readonly ActivitySource _activitySource;
 
         public GSM02300Controller(ILogger<GSM02300Controller> logger)
         {
             LogGSM02300Common.R_InitializeLogger(logger);
             _logger = LogGSM02300Common.R_GetInstanceLogger();
+            _activitySource = GSM02300Activity.R_InitializeAndGetActivitySource(nameof(GSM02300Controller));
         }
 
         [HttpPost]
-        public R_ServiceGetRecordResultDTO<GSM02300DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM02300DTO> poParameter)
+        public R_ServiceGetRecordResultDTO<GSM02300DTO> R_ServiceGetRecord(
+            R_ServiceGetRecordParameterDTO<GSM02300DTO> poParameter)
         {
             _logger.LogInfo("Begin || GetRecordPropertyType(Controller)");
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
 
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM02300DTO>();
@@ -58,9 +62,11 @@ namespace GSM02300Service
             _logger.LogInfo("End || GetRecordPropertyType(Controller)");
             return loRtn;
         }
+
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM02300DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM02300DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
             _logger.LogInfo("Begin || ServiceSavePropertyType(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM02300DTO> loRtn = null;
@@ -83,15 +89,19 @@ namespace GSM02300Service
             {
                 loException.Add(ex);
                 _logger.LogError(loException);
-            };
-        EndBlock:
-            loException.ThrowExceptionIfErrors();   
+            }
+
+            ;
+            EndBlock:
+            loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceSavePropertyType(Controller)");
             return loRtn;
         }
+
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM02300DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceDelete));
             _logger.LogInfo("Begin || ServiceDeletePropertyType(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -112,7 +122,9 @@ namespace GSM02300Service
             {
                 loException.Add(ex);
                 _logger.LogError(loException);
-            };
+            }
+
+            ;
             EndBlock:
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceDeletePropertyType(Controller)");
@@ -183,6 +195,7 @@ namespace GSM02300Service
         [HttpPost]
         public IAsyncEnumerable<GSM02300DTO> GetAllPropertyStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllPropertyStream));
             _logger.LogInfo("Begin || GetAllPropertyStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM02300DBParaneter loDbPar;
@@ -191,7 +204,6 @@ namespace GSM02300Service
             IAsyncEnumerable<GSM02300DTO> loRtn = null;
             try
             {
-
                 loDbPar = new GSM02300DBParaneter();
                 _logger.LogInfo("Set Parameter || GetAllPropertyStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
@@ -215,9 +227,11 @@ namespace GSM02300Service
 
             return loRtn;
         }
+
         [HttpPost]
         public IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyTypeStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetPropertyTypeStream));
             _logger.LogInfo("Begin || GetPropertyTypeStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM02300DBParaneter loDbPar;
@@ -226,7 +240,6 @@ namespace GSM02300Service
             IAsyncEnumerable<GSM02300PropertyTypeDTO> loRtn = null;
             try
             {
-
                 loDbPar = new GSM02300DBParaneter();
                 _logger.LogInfo("Set Parameter || GetPropertyTypeStream(Controller)");
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
@@ -251,7 +264,6 @@ namespace GSM02300Service
         }
 
 
-
         private async IAsyncEnumerable<GSM02300DTO> GetProperty(List<GSM02300DTO> poParameter)
         {
             foreach (GSM02300DTO item in poParameter)
@@ -259,7 +271,9 @@ namespace GSM02300Service
                 yield return item;
             }
         }
-        private async IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyType(List<GSM02300PropertyTypeDTO> poParameter)
+
+        private async IAsyncEnumerable<GSM02300PropertyTypeDTO> GetPropertyType(
+            List<GSM02300PropertyTypeDTO> poParameter)
         {
             foreach (GSM02300PropertyTypeDTO item in poParameter)
             {

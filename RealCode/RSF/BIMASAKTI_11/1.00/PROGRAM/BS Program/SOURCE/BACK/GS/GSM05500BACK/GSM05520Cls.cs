@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using GSM05500Back.Activity;
 using GSM05500Common;
 using GSM05500Common.DTO;
 using R_BackEnd;
@@ -19,13 +21,17 @@ namespace GSM05500Back
         RSP_GS_MAINTAIN_CURRENCYResources.Resources_Dummy_Class ResourcesDummyClass = new();
         RSP_GS_MAINTAIN_RATE_TYPEResources.Resources_Dummy_Class ResourcesDummyClass2 = new();
         RSP_GS_MAINTAIN_CURRENCY_RATEResources.Resources_Dummy_Class ResourcesDummyClass3 = new();
+        
         private LogGSM05500Common _logger;
+        private readonly ActivitySource _activitySource;
         public GSM05520Cls()
         {
             _logger = LogGSM05500Common.R_GetInstanceLogger();
+            _activitySource= GSM05520Activity.R_GetInstanceActivitySource();
         }
         public List<GSM05520DTOGetRateType> GetRateType(GSM05500DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetRateType));
             R_Exception loException = new R_Exception();
             List<GSM05520DTOGetRateType> loReturn = null;
             R_Db loDb;
@@ -65,6 +71,7 @@ namespace GSM05500Back
 
         public GSM05520DTOLocalBaseCurrency GetLocalCurrency(GSM05500DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetLocalCurrency));
             R_Exception loException = new R_Exception();
             GSM05520DTOLocalBaseCurrency loReturn = null;
             R_Db loDb;
@@ -105,6 +112,7 @@ namespace GSM05500Back
 
         public List<GSM05520DTO> GetAllCurrencyRate(GSM05500DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetAllCurrencyRate));
             R_Exception loException = new R_Exception();
             List<GSM05520DTO> loReturn = null;
             R_Db loDb;
@@ -149,6 +157,7 @@ namespace GSM05500Back
         }
         protected override GSM05520DTO R_Display(GSM05520DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Display));
             R_Exception loException = new R_Exception();
             GSM05520DTO loReturn = null;
             R_Db loDb;
@@ -196,6 +205,7 @@ namespace GSM05500Back
 
         protected override void R_Saving(GSM05520DTO poNewEntity, eCRUDMode poCRUDMode)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Saving));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
@@ -280,6 +290,7 @@ namespace GSM05500Back
 
         protected override void R_Deleting(GSM05520DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Deleting));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;

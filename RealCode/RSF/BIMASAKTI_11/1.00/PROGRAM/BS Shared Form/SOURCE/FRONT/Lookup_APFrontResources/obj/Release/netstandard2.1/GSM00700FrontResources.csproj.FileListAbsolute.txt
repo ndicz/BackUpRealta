@@ -1,0 +1,12 @@
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\bin\Release\netstandard2.1\GSM00700FrontResources.deps.json
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\bin\Release\netstandard2.1\GSM00700FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\bin\Release\netstandard2.1\GSM00700FrontResources.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.GSM00700FrontResources_msgrsc.resources
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.csproj.GenerateResource.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM00700FrontResources\obj\Release\netstandard2.1\GSM00700FrontResources.pdb

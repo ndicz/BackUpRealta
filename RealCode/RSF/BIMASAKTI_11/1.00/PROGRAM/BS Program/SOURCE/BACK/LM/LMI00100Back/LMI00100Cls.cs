@@ -1,4 +1,6 @@
 ﻿using System.Data.Common;
+using System.Diagnostics;
+using LMI00100Back.Activity;
 using LMI00100Common;
 using LMI00100Common.DTO;
 using R_BackEnd;
@@ -10,12 +12,15 @@ namespace LMI00100Back
     public class LMI00100Cls : R_BusinessObject<LMI00100Cls>
     {
         private LogLMI00100Common _logger;
+        private readonly ActivitySource _activitySource;
         public LMI00100Cls()
         {
             _logger = LogLMI00100Common.R_GetInstanceLogger();
+            _activitySource = LMI00100Activity.R_GetInstanceActivitySource();
         }
         public List<LMI00100PropertyDTO> GetAllPropertyList(LMI00100DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetAllPropertyList));
             R_Exception loException = new R_Exception();
             List<LMI00100PropertyDTO> loReturn = null;
             R_Db loDb;
@@ -52,6 +57,7 @@ namespace LMI00100Back
 
         public List<LMI00100DTO> GetAllBankChannelList(LMI00100DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(GetAllBankChannelList));
             R_Exception loException = new R_Exception();
             List<LMI00100DTO> loReturn = null;
             R_Db loDb;

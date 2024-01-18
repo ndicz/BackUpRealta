@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GSM00700Back;
+using GSM00700Back.Activity;
 using GSM00700Common;
 using GSM00700Common.DTO;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
@@ -20,28 +22,29 @@ namespace GSM00700Service
     [ApiController]
     public class GSM00700Controller : ControllerBase, IGSM00700
     {
-
+        private readonly ActivitySource _activitySource;
         private LogGSM00700Common _logger;
 
         public GSM00700Controller(ILogger<GSM00700Controller> logger)
         {
             LogGSM00700Common.R_InitializeLogger(logger);
             _logger = LogGSM00700Common.R_GetInstanceLogger();
+            _activitySource = GSM00700Activity.R_InitializeAndGetActivitySource(nameof(GSM00700Controller));
         }
 
 
         [HttpPost]
-        public R_ServiceGetRecordResultDTO<GSM00700DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00700DTO> poParameter)
+        public R_ServiceGetRecordResultDTO<GSM00700DTO> R_ServiceGetRecord(
+            R_ServiceGetRecordParameterDTO<GSM00700DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
             _logger.LogInfo("Begin || GetRecordCashFlowGroup(Controller)");
-
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00700DTO>();
             GSM00700DBParameter loDbPar = new GSM00700DBParameter();
 
             try
             {
-
                 var loCls = new GSM00700Cls();
 
                 _logger.LogInfo("Set Parameter || GetRecordCashFlowGroup(Controller)");
@@ -56,16 +59,17 @@ namespace GSM00700Service
             {
                 loException.Add(ex);
                 _logger.LogError(loException);
-
             }
 
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetRecordCashFlowGroup(Controller)");
             return loRtn;
         }
+
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM00700DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM00700DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
             _logger.LogInfo("Begin || ServiceSaveCashFlowGroup(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM00700DTO> loRtn = null;
@@ -88,16 +92,19 @@ namespace GSM00700Service
             {
                 loException.Add(ex);
                 _logger.LogError(loException);
-            };
-        EndBlock:
+            }
+
+            ;
+            EndBlock:
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceSaveCashFlowGroup(Controller)");
             return loRtn;
-
         }
+
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM00700DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceDelete));
             _logger.LogInfo("Begin || ServiceDeleteCashFlowGroup(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -107,7 +114,7 @@ namespace GSM00700Service
                 _logger.LogInfo("Set Parameter || ServiceDeleteCashFlowGroup(Controller)");
                 poParameter.Entity.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
                 poParameter.Entity.CUSER_ID = R_BackGlobalVar.USER_ID;
-                
+
                 loCls = new GSM00700Cls();
 
                 _logger.LogInfo("Run ServiceDeleteCls || ServiceDeleteCashFlowGroup(Controller)");
@@ -117,16 +124,20 @@ namespace GSM00700Service
             {
                 loException.Add(ex);
                 _logger.LogError(loException);
-            };
-        EndBlock:
+            }
+
+            ;
+            EndBlock:
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || ServiceDeleteCashFlowGroup(Controller)");
             return loRtn;
         }
+
         //streaming
         [HttpPost]
         public IAsyncEnumerable<GSM00700DTO> GetAllCashFlowGroupStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllCashFlowGroupStream));
             _logger.LogInfo("Begin || GetAllCashFlowGroupStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
@@ -153,7 +164,7 @@ namespace GSM00700Service
                 _logger.LogError(loException);
             }
 
-        EndBlock:
+            EndBlock:
             loException.ThrowExceptionIfErrors();
             _logger.LogInfo("End || GetAllCashFlowGroupStream(Controller)");
             return loRtn;
@@ -193,6 +204,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00700CashFlowGroupTypeListDTO GetListCashFlowGroupType()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetListCashFlowGroupType));
             _logger.LogInfo("Begin || GetCashFlowGroupType(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700CashFlowGroupTypeListDTO loRtn = null;
@@ -211,7 +223,6 @@ namespace GSM00700Service
                 _logger.LogInfo("Run GetCashFlowGroupTypeCls || GetAllCashFlowGroupType(Controller)");
                 loResult = loCls.CashFlowGroupType(loDbPar);
                 loRtn = new GSM00700CashFlowGroupTypeListDTO() { Data = loResult };
-
             }
             catch (Exception ex)
             {
@@ -223,9 +234,11 @@ namespace GSM00700Service
             _logger.LogInfo("End || GetAllCashFlowGroupType(Controller)");
             return loRtn;
         }
-        [HttpPost]  
+
+        [HttpPost]
         public IAsyncEnumerable<GSM00700DTO> GetPrintCashFlow(GSM00700PrintCashFlowParameterDTo poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetPrintCashFlow));
             //_logger.LogInfo("Begin || GetPrintCashFlowGroup(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700PrintCashFlowParameterDTo loDbPar;
@@ -254,9 +267,11 @@ namespace GSM00700Service
 
             return loRtn;
         }
+
         [HttpPost]
         public IAsyncEnumerable<GSM00700DTO> GetYearFromPrint()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetYearFromPrint));
             _logger.LogInfo("Begin || GetYearFromPrintCashFlowGroup(Controller)");
 
             R_Exception loException = new R_Exception();
@@ -291,9 +306,11 @@ namespace GSM00700Service
 
             return loRtn;
         }
+
         [HttpPost]
         public IAsyncEnumerable<GSM00700DTO> GetYearToPrint()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetYearToPrint));
             _logger.LogInfo("Begin || GetYearToPrintCashFlowGroup(Controller)");
 
             R_Exception loException = new R_Exception();
@@ -328,7 +345,6 @@ namespace GSM00700Service
 
             return loRtn;
         }
-
 
 
         private async IAsyncEnumerable<GSM00700DTO> GetYearFromPrintStream(List<GSM00700DTO> poParameter)

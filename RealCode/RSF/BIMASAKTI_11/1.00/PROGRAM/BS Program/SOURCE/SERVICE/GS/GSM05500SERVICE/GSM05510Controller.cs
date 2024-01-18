@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GSM05500Back;
+using GSM05500Back.Activity;
 using GSM05500Common;
 using GSM05500Common.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -19,17 +21,19 @@ namespace GSM05500Service
     [ApiController]
     public class GSM05510Controller : ControllerBase, IGSM05510
     {
-
+        private readonly ActivitySource _activitySource;
         private LogGSM05500Common _logger;
 
         public GSM05510Controller(ILogger<GSM05510Controller> logger)
         {
             LogGSM05500Common.R_InitializeLogger(logger);
             _logger = LogGSM05500Common.R_GetInstanceLogger();
+            _activitySource = GSM05510Activity.R_InitializeAndGetActivitySource(nameof(GSM05510Controller));
         }
         [HttpPost]
         public R_ServiceGetRecordResultDTO<GSM05510DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM05510DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
             _logger.LogInfo("Begin || GetRecordRateType(Controller)");
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM05510DTO>();
@@ -58,6 +62,7 @@ namespace GSM05500Service
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM05510DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM05510DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
             _logger.LogInfo("Begin || ServiceSaveRateType(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM05510DTO> loRtn = null;
@@ -89,6 +94,7 @@ namespace GSM05500Service
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM05510DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceDelete));
             _logger.LogInfo("Begin || ServiceDeleteRateType(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -153,6 +159,7 @@ namespace GSM05500Service
         [HttpPost]
         public IAsyncEnumerable<GSM05510DTO> GetAllRateTypeStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllRateTypeStream));
             _logger.LogInfo("Begin || GetAllRateTypeStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM05500DBParameter loDbPar;

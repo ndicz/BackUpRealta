@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using GSM00700Common;
 using GSM00700Common.DTO;
 using R_CommonFrontBackAPI;
 using GSM00700Back;
+using GSM00700Back.Activity;
 using R_BackEnd;
 using R_Common;
 using Microsoft.Extensions.Logging;
@@ -18,17 +20,20 @@ namespace GSM00700Service
     [ApiController]
     public class GSM00710Controller : ControllerBase, IGSM00710
     {
+        private readonly ActivitySource _activitySource;
         private LogGSM00700Common _logger;
 
         public GSM00710Controller(ILogger<GSM00710Controller> logger)
         {
             LogGSM00700Common.R_InitializeLogger(logger);
             _logger = LogGSM00700Common.R_GetInstanceLogger();
+            _activitySource = GSM00710Activity.R_InitializeAndGetActivitySource(nameof(GSM00710Controller));
         }
 
         [HttpPost]
         public R_ServiceGetRecordResultDTO<GSM00710DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00710DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
             _logger.LogInfo("Begin || GetRecordCashFlow(Controller)");
             var loException = new R_Exception();
             GSM00700DBParameter loDbPar = new GSM00700DBParameter();
@@ -57,6 +62,7 @@ namespace GSM00700Service
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM00710DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM00710DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
             _logger.LogInfo("Begin || ServiceSaveCashFlow(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM00710DTO> loRtn = null;
@@ -89,6 +95,7 @@ namespace GSM00700Service
         [HttpPost]
         public R_ServiceDeleteResultDTO R_ServiceDelete(R_ServiceDeleteParameterDTO<GSM00710DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceDelete));
             _logger.LogInfo("Begin || ServiceDeleteCashFlow(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceDeleteResultDTO loRtn = new R_ServiceDeleteResultDTO();
@@ -150,6 +157,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00710CashFlowTypeListDTO GetListCashFlowType()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetListCashFlowType));
             _logger.LogInfo("Begin || GetListCashFlowType(Controller)");
             R_Exception loException = new R_Exception();
             GSM00710CashFlowTypeListDTO loRtn = null;
@@ -182,6 +190,7 @@ namespace GSM00700Service
         [HttpPost]
         public IAsyncEnumerable<GSM00710DTO> GetAllCashFlowStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllCashFlowStream));
             _logger.LogInfo("Begin || GetAllCashFlowStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;

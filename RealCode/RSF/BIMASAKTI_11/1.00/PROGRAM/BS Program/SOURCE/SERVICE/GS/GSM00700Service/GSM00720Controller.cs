@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using GSM00700Back;
 using R_BackEnd;
 using R_Common;
 using System.Reflection;
+using GSM00700Back.Activity;
 using Microsoft.Extensions.Logging;
 
 namespace GSM00700Service
@@ -20,16 +22,19 @@ namespace GSM00700Service
     [ApiController]
     public class GSM00720Controller : ControllerBase, IGSM00720
     {
+        private readonly ActivitySource _activitySource;
         private LogGSM00700Common _logger;
-
+        
         public GSM00720Controller(ILogger<GSM00720Controller> logger)
         {
             LogGSM00700Common.R_InitializeLogger(logger);
             _logger = LogGSM00700Common.R_GetInstanceLogger();
+            _activitySource = GSM00720Activity.R_InitializeAndGetActivitySource(nameof(GSM00720Controller));
         }
         [HttpPost]
         public R_ServiceGetRecordResultDTO<GSM00720DTO> R_ServiceGetRecord(R_ServiceGetRecordParameterDTO<GSM00720DTO> poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(R_ServiceGetRecord));
             _logger.LogInfo("Begin || GetRecordCashFlowPlan(Controller)");
             var loException = new R_Exception();
             var loRtn = new R_ServiceGetRecordResultDTO<GSM00720DTO>();
@@ -59,6 +64,7 @@ namespace GSM00700Service
         [HttpPost]
         public R_ServiceSaveResultDTO<GSM00720DTO> R_ServiceSave(R_ServiceSaveParameterDTO<GSM00720DTO> poParameter)
          {
+             using Activity activity = _activitySource.StartActivity(nameof(R_ServiceSave));
              _logger.LogInfo("Begin || SaveCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             R_ServiceSaveResultDTO<GSM00720DTO> loRtn = null;
@@ -159,6 +165,7 @@ namespace GSM00700Service
         [HttpPost]
         public IAsyncEnumerable<GSM00720DTO> GetAllCashFlowPlanStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllCashFlowPlanStream));
             _logger.LogInfo("Begin || GetAllCashFlowPlanStream(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
@@ -196,6 +203,7 @@ namespace GSM00700Service
         [HttpPost]
         public IAsyncEnumerable<GSM00720YearDTO> GetYearStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetYearStream));
             _logger.LogInfo("Begin || GetYearCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00700DBParameter loDbPar;
@@ -228,6 +236,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720CopyFromYearListDTO GetCopyFromYearList(GSM00700ParameterDTO poParamDto)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetCopyFromYearList));
             _logger.LogInfo("Begin || GetCopyFromYearCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00720CopyFromYearListDTO loRtn = null;
@@ -264,6 +273,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720CopyBaseAmountListDTO GetCopyBaseAmountList(GSM00700ParameterDTO poParameter)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetCopyBaseAmountList));
             _logger.LogInfo("Begin || GetCopyBaseAmountCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00720CopyBaseAmountListDTO loRtn = null;
@@ -305,6 +315,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720CopyLocalAmountListDTO GetCopyLocalAmountList(GSM00700ParameterDTO poParamDto)
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetCopyLocalAmountList));
             _logger.LogInfo("Begin || GetCopyLocalAmountCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00720CopyLocalAmountListDTO loRtn = null;
@@ -345,6 +356,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720CurrencyDTO GetCurrencyList()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetCurrencyList));
             _logger.LogInfo("Begin || GetCurrencyCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00720CurrencyDTO loRtn = null;
@@ -377,6 +389,7 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00720InitialProsesListDTO GetInitialProses()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetInitialProses));
             _logger.LogInfo("Begin || GetInitialProsesCashFlowPlan(Controller)");
             R_Exception loException = new R_Exception();
             GSM00720InitialProsesListDTO loRtn = null;
@@ -408,6 +421,8 @@ namespace GSM00700Service
         [HttpPost]
         public GSM00710TemplateCashFlowUserInterface GetTemplate()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetTemplate));
+            _logger.LogInfo("Start DownloadTemplateFile");
             var loException = new R_Exception();
             var loRtn = new GSM00710TemplateCashFlowUserInterface();
 
@@ -428,16 +443,19 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(loException);
             }
 
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || End DownloadTemplateFile(Controller)");
             return loRtn;
 
         }
         [HttpPost]
         public GSM00720TemplateCashFlowPlan GetTemplate720()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetTemplate720));
+            _logger.LogInfo("Start DownloadTemplate720File");
             var loException = new R_Exception();
             var loRtn = new GSM00720TemplateCashFlowPlan();
 
@@ -458,10 +476,11 @@ namespace GSM00700Service
             catch (Exception ex)
             {
                 loException.Add(ex);
+                _logger.LogError(loException);
             }
 
             loException.ThrowExceptionIfErrors();
-
+            _logger.LogInfo("End || End DownloadTemplate720File(Controller)");
             return loRtn;
 
         }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using GSM05500Back.Activity;
 using GSM05500Common;
 using GSM05500Common.DTO;
 using R_BackEnd;
@@ -20,13 +22,17 @@ namespace GSM05500Back
         RSP_GS_MAINTAIN_CURRENCYResources.Resources_Dummy_Class ResourcesDummyClass = new();
         RSP_GS_MAINTAIN_RATE_TYPEResources.Resources_Dummy_Class ResourcesDummyClass2 = new();
         RSP_GS_MAINTAIN_CURRENCY_RATEResources.Resources_Dummy_Class ResourcesDummyClass3 = new();
+        
         private LogGSM05500Common _logger;
+        private readonly ActivitySource _activitySource;
         public GSM05510Cls()
         {
             _logger = LogGSM05500Common.R_GetInstanceLogger();
+            _activitySource= GSM05510Activity.R_GetInstanceActivitySource();
         }
         public List<GSM05510DTO> GetAllRateType(GSM05500DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetAllRateType));
             R_Exception loException = new R_Exception();
             List<GSM05510DTO> loReturn = null;
             R_Db loDb;

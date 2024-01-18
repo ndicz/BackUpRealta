@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using LMM02000Back.Activity;
 using LMM02000Common;
 using LMM02000Common.DTO;
 using R_BackEnd;
@@ -19,12 +21,16 @@ namespace LMM02000Back
     {
         RSP_LM_MAINTAIN_SALESMANResources.Resources_Dummy_Class ResourcesDummyClass = new();
         private LogLMM02000Common _logger;
+        private readonly ActivitySource _activitySource;
         public LMM02000Cls()
         {
             _logger = LogLMM02000Common.R_GetInstanceLogger();
+            _activitySource = LMM02000Activity.R_GetInstanceActivitySource();
+            
         }
         public void RSP_GS_ACTIVE_INACTIVE_LMM02000(LMM02000DBParameter poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(RSP_GS_ACTIVE_INACTIVE_LMM02000));
            R_Exception loex = new R_Exception();
            R_Db loDb;
            DbCommand loCmd;
@@ -71,6 +77,7 @@ namespace LMM02000Back
 
         public List<LMM02000GenderTypeDTO> GetGender(LMM02000DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetGender));
             R_Exception loException = new R_Exception();
             List<LMM02000GenderTypeDTO> loReturn = null;
             R_Db loDb;
@@ -108,6 +115,7 @@ namespace LMM02000Back
 
         public List<LMM02000SalesmanTypeDTO> GetSalesmanType(LMM02000DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetSalesmanType));
             R_Exception loException = new R_Exception();
             List<LMM02000SalesmanTypeDTO> loReturn = null;
             R_Db loDb;
@@ -145,6 +153,7 @@ namespace LMM02000Back
 
         public List<LMM02000DTO> GetListSalesman(LMM02000DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetListSalesman));
             R_Exception loException = new R_Exception();
             List<LMM02000DTO> loReturn = null;
             R_Db loDb;
@@ -187,6 +196,7 @@ namespace LMM02000Back
 
         public List<LMM02010DTO> GetListSalesmenDetail(LMM02000DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetListSalesmenDetail));
             R_Exception loException = new R_Exception();
             List<LMM02010DTO> loReturn = null;
             R_Db loDb;
@@ -230,6 +240,7 @@ namespace LMM02000Back
 
         public List<LMM02000PropertyDTO> GetAllPropertyList(LMM02000DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetAllPropertyList));
             R_Exception loException = new R_Exception();
             List<LMM02000PropertyDTO> loReturn = null;
             R_Db loDb;
@@ -266,6 +277,7 @@ namespace LMM02000Back
 
         protected override LMM02000DTO R_Display(LMM02000DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Display));
             R_Exception loException = new R_Exception();
             LMM02000DTO loReturn = null;
             R_Db loDb;
@@ -308,6 +320,7 @@ namespace LMM02000Back
 
         protected override void R_Deleting(LMM02000DTO poEntity)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Deleting));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
@@ -386,6 +399,7 @@ namespace LMM02000Back
 
         protected override void R_Saving(LMM02000DTO poEntity, eCRUDMode poCRUDMode)
         {
+            using var activity = _activitySource.StartActivity(nameof(R_Saving));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;

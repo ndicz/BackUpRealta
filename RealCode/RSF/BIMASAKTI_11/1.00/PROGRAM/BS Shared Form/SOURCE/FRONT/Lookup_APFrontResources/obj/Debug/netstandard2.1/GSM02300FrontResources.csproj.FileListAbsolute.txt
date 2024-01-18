@@ -1,0 +1,12 @@
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\bin\Debug\netstandard2.1\GSM02300FrontResources.deps.json
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\bin\Debug\netstandard2.1\GSM02300FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\bin\Debug\netstandard2.1\GSM02300FrontResources.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.csproj.AssemblyReference.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.csproj.GenerateResource.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.GeneratedMSBuildEditorConfig.editorconfig
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.AssemblyInfoInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.AssemblyInfo.cs
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.csproj.CoreCompileInputs.cache
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.dll
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.pdb
+D:\REALTA\RealCode Lokasl\RealCode\RSF\BIMASAKTI_11\1.00\PROGRAM\BS Program\SOURCE\FRONT\GSM02300FrontResources\obj\Debug\netstandard2.1\GSM02300FrontResources.GSM02300FrontResources_msgrsc.resources

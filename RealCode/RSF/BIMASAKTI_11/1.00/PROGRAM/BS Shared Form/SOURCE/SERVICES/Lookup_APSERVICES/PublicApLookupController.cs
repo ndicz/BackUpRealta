@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Lookup_APCOMMON;
 using Lookup_APCOMMON.DTOs.APL00100;
 using Lookup_APCOMMON.DTOs.APL00110;
@@ -22,21 +23,24 @@ namespace Lookup_APSERVICES
     public class PublicApLookupController : ControllerBase, IPublicAPLookup
     {
         private LoggerAPPublicLookup _loggerAp;
+        public readonly ActivitySource _activitySource;
 
         public PublicApLookupController(ILogger<LoggerAPPublicLookup> logger)
         {
             //Initial and Get Logger
             LoggerAPPublicLookup.R_InitializeLogger(logger);
             _loggerAp = LoggerAPPublicLookup.R_GetInstanceLogger();
+            _activitySource = Lookup_APBACKActivity.R_InitializeAndGetActivitySource(nameof(PublicApLookupController));
         }
 
 
         [HttpPost]
         public IAsyncEnumerable<APL00100DTO> APL00100SupplierLookUp()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00100SupplierLookUp));
+            _loggerAp.LogInfo("Start APL00100SupplierLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00100DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00100SupplierLookUp");
 
             try
             {
@@ -69,9 +73,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public IAsyncEnumerable<APL00110DTO> APL00110SupplierInfoLookUp()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00110SupplierInfoLookUp));
+            _loggerAp.LogInfo("Start APL00110SupplierInfoLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00110DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00110SupplierInfoLookUp");
 
             try
             {
@@ -104,9 +109,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public IAsyncEnumerable<APL00200DTO> APL00200ExpenditureLookUp()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00200ExpenditureLookUp));
+            _loggerAp.LogInfo("Start APL00200ExpenditureLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00200DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00200ExpenditureLookUp");
 
             try
             {
@@ -141,9 +147,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public IAsyncEnumerable<APL00300DTO> APL00300ProductLookUp()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00300ProductLookUp));
+            _loggerAp.LogInfo("Start APL00300ProductLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00300DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00300ProductLookUp");
             try
             {
                 var loCls = new PublicAPLookUpCls();
@@ -177,9 +184,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public IAsyncEnumerable<APL00400DTO> APL00400ProductAllocationLookUp()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00400ProductAllocationLookUp));
+            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00400DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             try
             {
                 var loCls = new PublicAPLookUpCls();
@@ -210,9 +218,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public IAsyncEnumerable<APL00500DTO> APL00500TransactionLookup()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APL00500TransactionLookup));
+            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             var loException = new R_Exception();
             IAsyncEnumerable<APL00500DTO> loRtn = null;
-            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             try
             {
                 var loCls = new PublicAPLookUpCls();
@@ -250,9 +259,10 @@ namespace Lookup_APSERVICES
         [HttpPost]
         public APL00500PeriodDTO APLInitiateTransactionLookup()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(APLInitiateTransactionLookup));
+            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             var loException = new R_Exception(); 
             APL00500PeriodDTO loRtn = null;
-            _loggerAp.LogInfo("Start APL00400ProductAllocationLookUp");
             try
             {
                 var loCls = new PublicAPLookUpCls();

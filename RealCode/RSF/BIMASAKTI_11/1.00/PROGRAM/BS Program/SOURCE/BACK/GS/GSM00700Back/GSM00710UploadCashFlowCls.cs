@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -20,6 +21,18 @@ namespace GSM00700Back
     {
         RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
         RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
+        private readonly ActivitySource _activitySource;
+
+        public GSM00710UploadCashFlowCls()
+        {
+            _activitySource = R_OpenTelemetry.R_LibraryActivity.R_GetInstanceActivitySource();
+        }
+
+        #region NoteUse
+
+        
+
+       
         //    public GSM00710UploadCashFlowCheckUsedDTO CheckIsCashFlowUsed(GSM00710UploadCashFlowCheckUsedParameterDTO poEntity)
         //    {
         //        R_Exception loException = new R_Exception();
@@ -339,8 +352,10 @@ namespace GSM00700Back
         //        loEx.ThrowExceptionIfErrors();
         //    }
         //}
+        #endregion
         public void R_BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_BatchProcess));
             R_Exception loException = new R_Exception();
             var loDb = new R_Db();
 
@@ -383,6 +398,7 @@ namespace GSM00700Back
 
         public async Task _BatchProcess(R_BatchProcessPar poBatchProcessPar)
         {
+            using var Activity = _activitySource.StartActivity(nameof(_BatchProcess));
             R_Exception loException = new R_Exception();
             R_Db loDb = new R_Db();
             DbCommand loCmd = null;

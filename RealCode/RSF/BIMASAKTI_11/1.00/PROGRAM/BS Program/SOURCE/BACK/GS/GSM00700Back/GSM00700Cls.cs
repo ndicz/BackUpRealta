@@ -4,9 +4,11 @@ using GSM00700Common.DTO;
 using R_Common;
 using System.Data.Common;
 using System.Data;
+using System.Diagnostics;
 using System.Reflection.Metadata;
 using GSM00700Common.DTO.Report_DTO_GSM00700;
 using System.Windows.Input;
+using GSM00700Back.Activity;
 using GSM00700Common;
 using RSP_GS_MAINTAIN_CASHFLOWResources;
 
@@ -18,14 +20,17 @@ namespace GSM00700Back
         RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
 
         private LogGSM00700Common _logger;
+        private readonly ActivitySource _activitySource;
         public GSM00700Cls()
         {
             _logger = LogGSM00700Common.R_GetInstanceLogger();
+            _activitySource = GSM00700Activity.R_GetInstanceActivitySource();
         }
 
 
         public List<GSM00700DTO> GetCashFlowGroupList(GSM00700DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetCashFlowGroupList));
             R_Exception loException = new R_Exception();
             List<GSM00700DTO> loReturn = null;
             R_Db loDb;
@@ -73,6 +78,7 @@ namespace GSM00700Back
 
         public List<GSM00700CashFlowGroupTypeDTO> CashFlowGroupType(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(CashFlowGroupType));
             R_Exception loException = new R_Exception();
             List<GSM00700CashFlowGroupTypeDTO> loReturn = null;
             R_Db loDb;
@@ -115,6 +121,7 @@ namespace GSM00700Back
 
         protected override GSM00700DTO R_Display(GSM00700DTO poEntity)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_Display));
             R_Exception loException = new R_Exception();
             GSM00700DTO loReturn = null;
             R_Db loDb;
@@ -161,6 +168,7 @@ namespace GSM00700Back
 
         protected override void R_Deleting(GSM00700DTO poEntity)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_Deleting));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
@@ -224,6 +232,7 @@ namespace GSM00700Back
 
         protected override void R_Saving(GSM00700DTO poNewEntity, eCRUDMode poCRUDMode)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_Saving));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
@@ -305,6 +314,7 @@ namespace GSM00700Back
 
         public List<GSM00700DTO> YearFromComboBoxPrint(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(YearFromComboBoxPrint));
             R_Exception loEx = new R_Exception();
             List<GSM00700DTO> loReturn = null;
             R_Db loDb;
@@ -344,6 +354,7 @@ namespace GSM00700Back
 
         public List<GSM00700DTO> YearToComboBoxPrint(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(YearToComboBoxPrint));
             R_Exception loEx = new R_Exception();
             List<GSM00700DTO> loReturn = null;
             R_Db loDb;
@@ -386,6 +397,7 @@ namespace GSM00700Back
 
         public List<GSM00700DTO> GetPrintParam(GSM00700PrintCashFlowParameterDTo poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(GetPrintParam));
             R_Exception loEx = new R_Exception();
             List<GSM00700DTO> loReturn = null;
             R_Db loDb;

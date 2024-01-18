@@ -1,4 +1,6 @@
-﻿using LMI00100Back;
+﻿using System.Diagnostics;
+using LMI00100Back;
+using LMI00100Back.Activity;
 using LMI00100Common;
 using LMI00100Common.DTO;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +16,13 @@ namespace LMI00100Service
     public class LMI00100Controller : ControllerBase, ILMI00100
     {
         private LogLMI00100Common _logger;
+        private readonly ActivitySource _activitySource;
 
         public LMI00100Controller(ILogger<LMI00100Controller> logger)
         {
             LogLMI00100Common.R_InitializeLogger(logger);
             _logger = LogLMI00100Common.R_GetInstanceLogger();
+            _activitySource = LMI00100Activity.R_InitializeAndGetActivitySource(nameof(LMI00100Controller));
         }
 
         [HttpPost]
@@ -39,6 +43,7 @@ namespace LMI00100Service
         [HttpPost]
         public LMI00100ListDTO GetAllLMI00100List()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllLMI00100List));
             _logger.LogInfo("Begin || GetAllVABankChannel(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100ListDTO loRtn = null;
@@ -75,6 +80,7 @@ namespace LMI00100Service
         [HttpPost]
         public LMI00100ListPropertyDTO GetLMI00100Property()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetLMI00100Property));
             _logger.LogInfo("Begin || GetLProperyType(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100ListPropertyDTO loRtn = null;
@@ -111,6 +117,7 @@ namespace LMI00100Service
         [HttpPost]
         public IAsyncEnumerable<LMI00100DTO> GetAllLMI00100Stream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetAllLMI00100Stream));
             _logger.LogInfo("Begin || GetAllVABankChannelStream(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100DBParameter loDbPar;
@@ -148,6 +155,7 @@ namespace LMI00100Service
         [HttpPost]
         public IAsyncEnumerable<LMI00100PropertyDTO> GetLMI00100PropertyStream()
         {
+            using Activity activity = _activitySource.StartActivity(nameof(GetLMI00100PropertyStream));
             _logger.LogInfo("Begin || GetLProperyTypeStream(Controller)");
             R_Exception loException = new R_Exception();
             LMI00100DBParameter loDbPar;

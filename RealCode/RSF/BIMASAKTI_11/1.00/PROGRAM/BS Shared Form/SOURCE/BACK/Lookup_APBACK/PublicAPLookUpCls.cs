@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,18 @@ namespace Lookup_APBACK
     public class PublicAPLookUpCls
     {
         private LoggerAPPublicLookup _loggerAp;
+        private readonly ActivitySource _activitySource;
 
         public PublicAPLookUpCls()
         {
             _loggerAp = LoggerAPPublicLookup.R_GetInstanceLogger();
+            _activitySource = Lookup_APBACKActivity.R_GetInstanceActivitySource();
+
         }
 
         public List<APL00100DTO> SupplierLookup(APL00100ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(SupplierLookup));
             R_Exception loException = new R_Exception();
             List<APL00100DTO> loReturn = null;
             R_Db loDb;
@@ -73,6 +78,7 @@ namespace Lookup_APBACK
 
         public List<APL00110DTO> SupplierInfoLookup(APL00110ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(SupplierInfoLookup));
             R_Exception loException = new R_Exception();
             List<APL00110DTO> loReturn = null;
             R_Db loDb;
@@ -116,6 +122,7 @@ namespace Lookup_APBACK
 
         public List<APL00200DTO> ExpenditureLookup(APL00200ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(ExpenditureLookup));
             R_Exception loException = new R_Exception();
             List<APL00200DTO> loReturn = null;
             R_Db loDb;
@@ -162,6 +169,7 @@ namespace Lookup_APBACK
 
         public List<APL00300DTO> ProductLookup(APL00300ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(ProductLookup));
             R_Exception loException = new R_Exception();
             List<APL00300DTO> loReturn = null;
             R_Db loDb;
@@ -208,6 +216,7 @@ namespace Lookup_APBACK
 
         public List<APL00400DTO> ProductAllocationLookup(APL00400ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(ProductAllocationLookup));
             R_Exception loException = new R_Exception();
             List<APL00400DTO> loReturn = null;
             R_Db loDb;
@@ -251,6 +260,7 @@ namespace Lookup_APBACK
 
         public List<APL00500DTO> TransactionLookup(APL00500ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(TransactionLookup));
             R_Exception loException = new R_Exception();
             List<APL00500DTO> loReturn = null;
             R_Db loDb;
@@ -300,6 +310,7 @@ namespace Lookup_APBACK
 
         public APL00500PeriodDTO InitialProcessApl00500(APL00500ParameterDTO poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(InitialProcessApl00500));
             R_Exception loException = new R_Exception();
             APL00500PeriodDTO loReturn = null;
             R_Db loDb;

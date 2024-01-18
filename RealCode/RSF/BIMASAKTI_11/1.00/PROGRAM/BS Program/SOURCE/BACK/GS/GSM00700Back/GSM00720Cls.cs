@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using R_Common;
 using R_CommonFrontBackAPI;
 using System.Data;
+using System.Diagnostics;
 using System.Reflection.Metadata;
 using System.Windows.Input;
+using GSM00700Back.Activity;
 using GSM00700Common;
 
 namespace GSM00700Back
@@ -20,13 +22,16 @@ namespace GSM00700Back
         RSP_GS_MAINTAIN_CASHFLOW_GROUPResources.Resources_Dummy_Class ResourceDummyClasCashFlowGroup = new();
         RSP_GS_MAINTAIN_CASHFLOWResources.Resources_Dummy_Class ResourcesDummyClassCashFlow = new();
         private LogGSM00700Common _logger;
+        private readonly ActivitySource _activitySource;
         public GSM00720Cls()
         {
             _logger = LogGSM00700Common.R_GetInstanceLogger();
+            _activitySource = GSM00720Activity.R_GetInstanceActivitySource();
         }
 
         public List<GSM00720InitialProsesDTO> InitialProses(GSM00700DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(InitialProses));
             R_Exception loException = new R_Exception();
             List<GSM00720InitialProsesDTO> loReturn = null;
             R_Db loDb;
@@ -72,6 +77,7 @@ namespace GSM00700Back
 
         public List<GSM00720DTO> GetCashFlowPlan(GSM00700DBParameter poParameter)
         {
+            using var activity = _activitySource.StartActivity(nameof(GetCashFlowPlan));
             R_Exception loException = new R_Exception();
             List<GSM00720DTO> loReturn = null;
             R_Db loDb;
@@ -121,6 +127,7 @@ namespace GSM00700Back
 
         public List<GSM00720YearDTO> GetYearList(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(GetYearList));
             R_Exception loException = new R_Exception();
             List<GSM00720YearDTO> loReturn = null;
             R_Db loDb;
@@ -161,6 +168,7 @@ namespace GSM00700Back
 
         public List<GSM00720CopyFromYearDTO> CopyFromYear(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(CopyFromYear));
             R_Exception loException = new R_Exception();
             List<GSM00720CopyFromYearDTO> loReturn = null;
             R_Db loDb;
@@ -212,6 +220,7 @@ namespace GSM00700Back
 
         public List<GSM00720CopyBaseLocalAmountDTO> UpdateBaseAmount(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(UpdateBaseAmount));
             R_Exception loException = new R_Exception();
             List<GSM00720CopyBaseLocalAmountDTO> loReturn = null;
             R_Db loDb;
@@ -266,6 +275,7 @@ namespace GSM00700Back
 
         public List<GSM00720CopyBaseLocalAmountDTO> UpdateLocalAmount(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(UpdateLocalAmount));
             R_Exception loException = new R_Exception();
             List<GSM00720CopyBaseLocalAmountDTO> loReturn = null;
             R_Db loDb;
@@ -320,6 +330,7 @@ namespace GSM00700Back
         }
         public GSM00720CurrencyDTO GetCurrency(GSM00700DBParameter poParameter)
         {
+            using var Activity = _activitySource.StartActivity(nameof(GetCurrency));
             R_Exception loException = new R_Exception();
             GSM00720CurrencyDTO loReturn = null;
             R_Db loDb;
@@ -393,6 +404,7 @@ namespace GSM00700Back
         //}
         protected override GSM00720DTO R_Display(GSM00720DTO poEntity)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_Display));
             R_Exception loException = new R_Exception();
             GSM00720DTO loReturn = null;
             R_Db loDb;
@@ -440,6 +452,7 @@ namespace GSM00700Back
 
         protected override void R_Saving(GSM00720DTO poNewEntity, eCRUDMode poCRUDMode)
         {
+            using var Activity = _activitySource.StartActivity(nameof(R_Saving));
             R_Exception loException = new R_Exception();
             string lcQuery = null;
             R_Db loDb;
