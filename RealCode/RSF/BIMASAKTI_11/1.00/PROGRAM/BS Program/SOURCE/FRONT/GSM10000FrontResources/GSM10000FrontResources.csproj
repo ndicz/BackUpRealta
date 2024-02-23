@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="GSM10000FrontResources_msgrsc.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>GSM10000FrontResources_msgrsc.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="GSM10000FrontResources_msgrsc.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>GSM10000FrontResources_msgrsc.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>

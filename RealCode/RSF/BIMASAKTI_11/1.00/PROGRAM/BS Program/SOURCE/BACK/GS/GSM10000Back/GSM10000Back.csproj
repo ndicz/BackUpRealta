@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\COMMON\GS\GSM05500Common\GSM05500Common.csproj" />
+        <ProjectReference Include="..\GS_SPR\RSP_GS_MAINTAIN_CURRENCYResources\RSP_GS_MAINTAIN_CURRENCYResources.csproj" />
+        <ProjectReference Include="..\GS_SPR\RSP_GS_MAINTAIN_CURRENCY_RATEResources\RSP_GS_MAINTAIN_CURRENCY_RATEResources.csproj" />
+        <ProjectReference Include="..\GS_SPR\RSP_GS_MAINTAIN_RATE_TYPEResources\RSP_GS_MAINTAIN_RATE_TYPEResources.csproj" />
+    </ItemGroup>
+</Project>
