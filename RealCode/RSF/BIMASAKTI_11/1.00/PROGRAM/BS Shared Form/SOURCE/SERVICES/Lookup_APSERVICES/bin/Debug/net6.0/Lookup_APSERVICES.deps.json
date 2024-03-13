@@ -12,7 +12,8 @@
           "Lookup_APCOMMON": "1.0.0",
           "R_APIBackEnd": "1.0.0.0",
           "R_APICommon": "1.0.0.0",
-          "R_CommonFrontBackAPI": "1.0.0.0"
+          "R_CommonFrontBackAPI": "1.0.0.0",
+          "R_OpenTelemetry": "1.0.0.0"
         },
         "runtime": {
           "Lookup_APSERVICES.dll": {}
@@ -58,6 +59,14 @@
       "R_CommonFrontBackAPI/1.0.0.0": {
         "runtime": {
           "R_CommonFrontBackAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "R_OpenTelemetry/1.0.0.0": {
+        "runtime": {
+          "R_OpenTelemetry.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -132,6 +141,11 @@
       "sha512": ""
     },
     "R_CommonFrontBackAPI/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "R_OpenTelemetry/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

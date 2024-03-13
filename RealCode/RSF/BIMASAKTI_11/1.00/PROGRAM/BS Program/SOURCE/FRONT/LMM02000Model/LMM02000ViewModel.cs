@@ -176,6 +176,7 @@ namespace LMM02000Model
             {
                 poEntity.CPROPERTY_ID = propertyValue;
                 poEntity.CEXT_COMPANY_NAME = "";
+                poEntity.CID_NO = "";
                 loEntity = await _LMM02000Model.R_ServiceSaveAsync(poEntity, peCRUDMode);
             }
             catch (Exception ex)

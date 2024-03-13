@@ -31,6 +31,7 @@ namespace GSM00700Model
         public GSM00720CurrencyDTO loCurrency = new GSM00720CurrencyDTO();
         public GSM00720DTO loEntity = new GSM00720DTO();
         public GSM00720CopyFromYearDTO loCopyFromEntity = new GSM00720CopyFromYearDTO();
+        public GSM00720InitialProsesDTO loInitialProsesEntity = new GSM00720InitialProsesDTO();
         public GSM00720CopyBaseLocalAmountDTO loCopyBaseAmountEntity = new GSM00720CopyBaseLocalAmountDTO();
 
 
@@ -58,6 +59,9 @@ namespace GSM00700Model
             new GSM00720CopyBaseLocalAmountDTO() {  Code = 11 , Desc = "11"},
             new GSM00720CopyBaseLocalAmountDTO() {  Code = 12 , Desc = "12"}
         };
+        
+        public string CashFlowGroupCode = ""; // for filter
+        public string CashFlowGroupName = ""; // for filter
 
         public string CashFlowPlanCode = ""; // for filter
         public string CashFlowPlanName = ""; // for filter  
@@ -76,8 +80,6 @@ namespace GSM00700Model
         public Int32 PeriodTo;
         //currency
 
-        public string CashFlowGroupCode = ""; // for filter
-
 
         public async Task InitialProcess()
         {
@@ -94,7 +96,7 @@ namespace GSM00700Model
             }
             loEx.ThrowExceptionIfErrors();
         }
-        public async Task GetCashFlowPlanList(string CashFlowGroupCode, string CashFlowPlanCode)
+        public async Task GetCashFlowPlanList()
         {
             var loEx = new R_Exception();
 

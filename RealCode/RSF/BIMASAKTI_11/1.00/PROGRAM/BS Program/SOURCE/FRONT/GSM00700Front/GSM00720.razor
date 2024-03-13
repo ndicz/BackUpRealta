@@ -1,5 +1,148 @@
-﻿<h3>GSM0720</h3>
+﻿@page "/GSM00720"
 
-@code {
-    
-}
+@using GSM00700Common.DTO
+@using GSM00700FrontResources
+@using R_BlazorFrontEnd.Interfaces
+@inherits R_Page
+
+<R_TabStrip OnActiveTabIndexChanged="@ChangeTab">
+    <R_StackLayout>
+        <R_StackLayout Row="true" Class="mb-2">
+            @inject R_ILocalizer<Resources_Dummy_Class> _localizer
+
+            <R_ItemLayout Class="col-2">
+                <R_Label Class="fw-bold">@_localizer["CASH_FLW_PLN"]</R_Label>
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-1">
+                <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanCode"
+                           Enabled="false"/>
+            </R_ItemLayout>
+            <R_ItemLayout Class="col-5">
+                <R_TextBox @bind-value="GSM00720ViewModel.CashFlowPlanName"
+                           Enabled="false"/>
+            </R_ItemLayout>
+        </R_StackLayout>
+    </R_StackLayout>
+
+
+    <R_StackLayout Row="true" Class="col-3">
+        <R_StackLayout>
+
+            <R_Grid @ref="@_gridRef00720Year"
+                    DataSource="@GSM00720ViewModel.loYearList"
+                    Pageable="true"
+                    Height="320px"
+                    Width="130px"
+                    R_ConductorGridSource="@_conGSM00720YearRef"
+                    R_ServiceGetListRecord="@GetYearList">
+                <R_GridColumns>
+                    <R_GridTextColumn Width="125px" FieldName="CYEAR" HeaderText="@_localizer["YEAR_PRD"]"></R_GridTextColumn>
+                </R_GridColumns>
+            </R_Grid>
+
+            <R_StackLayout Row="true" Class="col-4">
+
+
+            </R_StackLayout>
+        </R_StackLayout>
+
+
+        <R_StackLayout col="10">
+
+            <R_Grid @ref="@_gridRef00720"
+                    DataSource="@GSM00720ViewModel.loGridList"
+                    Pageable="true"
+                    Height="320px"
+                    Width="960px"
+                    AllowAddNewRow="false"
+                    R_ConductorGridSource="@_conGridGSM00720Ref"
+                    R_GridType="@R_eGridType.Original"
+                    PageSize="12"
+                    AllowEditRow="true"
+                    R_ServiceGetRecord="GetRrecordCashFlowPlan"
+                    R_ServiceSave="@Grid_ServiceSaveRecordCashFlowPlan"
+                    R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCashFlowPlan">
+
+                <R_GridColumns>
+                    <R_GridTextColumn Width="112px" FieldName="CPERIOD_NO" HeaderText="@_localizer["PRD_NO"]"></R_GridTextColumn>
+                    <R_GridNumericColumn Width="139px" FieldName="NLOCAL_AMOUNT" HeaderText="@_localizer["LC_AMNT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+                    <R_GridNumericColumn Width="128px" FieldName="NBASE_AMOUNT" HeaderText="@_localizer["BS_AMNT"]" R_EnableEdit R_EnableAdd Arrows="false"></R_GridNumericColumn>
+                    <R_GridTextColumn Width="132px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"></R_GridTextColumn>
+                    <R_GridTextColumn Width="144px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DATE"]"></R_GridTextColumn>
+                    <R_GridTextColumn Width="131px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"></R_GridTextColumn>
+                    <R_GridTextColumn Width="146px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DATE"]"></R_GridTextColumn>
+                </R_GridColumns>
+
+            </R_Grid>
+
+            <R_StackLayout Row="true">
+
+                <R_ItemLayout>
+                    <R_Label Class="fw-italic">@_localizer["LC_CRNCY"]</R_Label>
+                </R_ItemLayout>
+
+                <R_ItemLayout col="2">
+                    <R_TextBox @bind-value="GSM00720ViewModel.loCurrency.CLOCAL_CURRENCY_CODE"
+                               Enabled="false"/>
+                </R_ItemLayout>
+
+                <R_ItemLayout col="1">
+                    <R_Label Class="fw-italic"> </R_Label>
+                </R_ItemLayout>
+
+
+                <R_ItemLayout>
+                    <R_Label Class="fw-italic">@_localizer["BS_CRNCY"]</R_Label>
+                </R_ItemLayout>
+
+
+                <R_ItemLayout col="2">
+                    <R_TextBox @bind-value="GSM00720ViewModel.loCurrency.CBASE_CURRENCY_CODE"
+                               Enabled="false"/>
+                </R_ItemLayout>
+            </R_StackLayout>
+
+            <R_StackLayout Row="true">
+
+
+            </R_StackLayout>
+
+
+        </R_StackLayout>
+    </R_StackLayout>
+    <R_StackLayout Row="true">
+
+        <R_ItemLayout col="2">
+        </R_ItemLayout>
+
+    </R_StackLayout>
+    <R_StackLayout Row="true" Class="mt-3">
+
+        <R_ItemLayout>
+            <R_Button OnClick="@DownloadTemplate720">@_localizer["TMPLT"]</R_Button>
+        </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Popup R_After_Open_Popup="@R_AfterOpenUpload" R_Before_Open_Popup="@R_BeforeOpenUpload720">@_localizer["UPLD"]</R_Popup>
+        </R_ItemLayout>
+        <R_ItemLayout>
+            <R_Popup R_After_Open_Popup="@R_AfterCOpyFromYear" R_Before_Open_Popup="@R_BeforeOpenCopyFromYear">@_localizer["CP_FR_YEAR"]</R_Popup>
+        </R_ItemLayout>
+
+        <R_ItemLayout>
+            <R_Popup Enabled="@(GSM00720ViewModel.loInitialProsesList.Count != 0)" R_After_Open_Popup="@R_AfterBaseAmount" R_Before_Open_Popup="@R_BeforeBaseMount">@_localizer["UPDT_BS_AMNT"]</R_Popup>
+        </R_ItemLayout>
+
+        <R_ItemLayout>
+            <R_Popup Enabled="@(GSM00720ViewModel.loInitialProsesList.Count != 0)" R_After_Open_Popup="@R_AfterLocalAmount" R_Before_Open_Popup="@R_BeforeLocalMount" @ref="LocalAmount">@_localizer["UPDT_LC_AMNT"] </R_Popup>
+        </R_ItemLayout>
+
+    </R_StackLayout>
+
+    <R_ConductorGrid @ref="@_conGSM00720YearRef"
+                     R_ViewModel="@GSM00720ViewModel"
+                     R_Display="@Grid_R_Display_Year"/>
+
+    <R_ConductorGrid @ref="@_conGridGSM00720Ref"
+                     R_IsHeader="true"
+                     R_SetOther="SetOther"/>
+</R_TabStrip>

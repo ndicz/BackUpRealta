@@ -20,6 +20,7 @@ namespace GSM02300Model
         //public List<GSM00710CashFlowTypeDTO> loCashFlowType { get; set; } = new List<GSM00710CashFlowTypeDTO>();
 
         public GSM02300DTO loEntity = new GSM02300DTO();
+        public GSM02300PropertyTypeDTO loEntityPropertyType = new GSM02300PropertyTypeDTO();
 
 
         public async Task GetAllProperty()

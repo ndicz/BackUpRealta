@@ -45,7 +45,7 @@ namespace Lookup_APModel.ViewModel.APL00500
             var loEx = new R_Exception();
             try
             {
-                ParameterLookup.CSUPPLIER_ID = TransactionLookupEntity.CSUPPLIER_ID;
+                // ParameterLookup.CSUPPLIER_ID = TransactionLookupEntity.CSUPPLIER_ID;
                 ParameterLookup.CPERIOD = TransactionLookupEntity.CPERIOD;
                 var loResult = await _model.APL00500TransactionLookupAsync(ParameterLookup);
                 TransactionLookupGrid = new ObservableCollection<APL00500DTO>(loResult);

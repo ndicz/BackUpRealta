@@ -9,5 +9,6 @@ namespace GSM02300Common.DTO
     {
         public string CCODE { get; set; }
         public string CDESCRIPTION { get; set; }
+        
     }
 }

@@ -157,6 +157,7 @@ namespace GSM00700Model
             try
             {
                 poNewEntity.CCASH_FLOW_GROUP_CODE = CashFlowGroupCode;
+                poNewEntity.CCASH_FLOW_TYPE = "I";
 
                 // Mendapatkan nilai paling terbesar dari loGridList berdasarkan CSEQUENCE
                 var maxDto = loGridList.OrderByDescending(dto => int.Parse(dto.CSEQUENCE)).FirstOrDefault();

@@ -52,7 +52,7 @@ namespace GSM05500Back
                         x.ParameterName == "@CCOMPANY_ID" ||
                         x.ParameterName == "@CUSER_ID").
                     Select(x => x.Value);
-                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, poParameter);
+                _logger.LogDebug("EXEC {Query} {@Parameters} || Currency(Cls) ", lcQuery, poParameter, loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 

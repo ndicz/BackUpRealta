@@ -19,14 +19,19 @@
 		  
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
 		<PackageReference Include="Realta.BackCollectionNuGet" Version="1.0.0" />
 		<PackageReference Include="Realta.CommonCollectionNuGet" Version="1.0.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\..\..\BS Shared Form\SOURCE\SERVICES\GFF00900SERVICES\GFF00900SERVICES.csproj" />
 		<ProjectReference Include="..\..\..\SERVICE\LM\LMI00100Service\LMI00100Service.csproj" />
 		<ProjectReference Include="..\..\..\SERVICE\LM\LMM02000Service\LMM02000Service.csproj" />
+		<ProjectReference Include="..\..\..\SERVICE\LM\LMM02500Service\LMM02500Service.csproj" />
 	</ItemGroup>
 
 

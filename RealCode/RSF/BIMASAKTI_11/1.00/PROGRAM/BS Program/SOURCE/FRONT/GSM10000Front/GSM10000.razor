@@ -1,47 +1,46 @@
-﻿@page "/GSM05500"
-@using GSM05500Common.DTO
-@using GSM05500FrontResources
+﻿@page "/GSM10000"
+@using GSM10000FrontResources
 @using R_BlazorFrontEnd.Interfaces
 @inherits R_Page
-@attribute [R_Page(Title = "Currency")]
-@inject R_ILocalizer<Resources_Dummy_Class> _localizer
- 
-        <R_StackLayout>
-            <R_Grid @ref="@_gridRef5500"
-                    DataSource="GSM05500ViewModel.loGridList"
-                    Pageable="true"
-                    R_ConductorGridSource="@_conGridGSM05500Ref"
-                    R_GridType="@R_eGridType.Original"
-                    AllowAddNewRow="true"d
-                    Width="100%"
-                    Height="600px"
-                    PageSize="24"
-                    AllowEditRow="true"
-                    AllowDeleteRow="true"
-                    R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordCurrency">
+@attribute [R_Page(Title = "Holiday")]
+@inject R_ILocalizer<Resource_Dummy_Class_GSM10000> _localizer
 
-                <R_GridColumns>
+<R_StackLayout>
+    
+    <R_Grid @ref="@_gridRef10000"
+            DataSource="@_viewModel.loGridList"
+            Pageable="true"
+            R_ConductorGridSource="@_conGridGSM10000Ref"
+            R_GridType="@R_eGridType.Original"
+            Width="100%"
+            Height="550px"
+            PageSize="24"
+            R_ServiceGetRecord="@Grid_ServiceGetRecordHoliday"
+            R_ServiceSave="@Grid_ServiceSaveHoliday"
+            R_AfterSave="@Grid_AfterSaveHoliday"
+            R_Display="@Grid_R_DisplaytListCashFlow"
+            AllowAddNewRow="true"
+            AllowEditRow="true"
+            AllowDeleteRow="true"
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordHoliday">
 
-                    <R_GridTextColumn FieldName="CCURRENCY_CODE" HeaderText="@(_localizer["CRNC_CD"]+"*")" MaxLength="3" R_EnableAdd></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CCURRENCY_NAME" HeaderText="@(_localizer["CRNC_NM"]+"*")" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
-                    <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
-                    <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="@_localizer["UPDT_DT"]" />
-                    <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
-                    <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="@_localizer["CRT_DT"]" />
+        <R_GridColumns>
+            <R_GridDatePickerColumn FieldName="DHOLIDAY_DATE" HeaderText="@(_localizer["HLDY_DT"])"R_EnableAdd></R_GridDatePickerColumn>
+            <R_GridTextColumn FieldName="CHOLIDAY_NAME" HeaderText="@(_localizer["HLDY_NM"])" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridCheckBoxColumn FieldName="LACTIVE" HeaderText="@(_localizer["ACTV"])"></R_GridCheckBoxColumn>
+            <R_GridTextColumn FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn FieldName="DCREATE_DATE" HeaderText="@_localizer["UPDT_DT"]"/>
+            <R_GridTextColumn FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn FieldName="DUPDATE_DATE" HeaderText="@_localizer["CRT_DT"]"/>
 
-                </R_GridColumns>
-            </R_Grid>
+        </R_GridColumns>
+    </R_Grid>
 
-        </R_StackLayout>
-<R_ConductorGrid @ref="@_conGridGSM05500Ref"
-                 R_ViewModel="@GSM05500ViewModel"
-                 R_ServiceGetRecord="@Grid_ServiceGetRecordCurrency"
-                 R_ServiceSave="@Grid_ServiceSaveCurrency"
-                 R_ServiceDelete="@Grid_ServiceDeleteCurrency"
-                 R_AfterDelete="@Grid_AfterDelete"
-                 R_IsHeader="true" 
-                 R_Validation="@R_Validation" />
-
-
-<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailRateType" Title="@_localizer["RATE_TYP"]"></R_PredefinedDock>
-<R_PredefinedDock R_InstantiateDock="BeforeOpenTabDetailCurrencyRate" Title="@_localizer["CRNC_RT"]"></R_PredefinedDoc
+    <R_ItemLayout xs="1">
+        <R_Popup R_Before_Open_Popup="R_Before_Open_Popup_ActivateInactive" R_After_Open_Popup="R_After_Open_Popup_ActivateInactive">@loLabel</R_Popup>
+    </R_ItemLayout>
+</R_StackLayout>
+<R_ConductorGrid @ref="@_conGridGSM10000Ref"
+                 @* R_ViewModel="@_viewModel" *@
+                 R_IsHeader="true"
+                 @* R_Validation="@R_Validation" /> *@/>

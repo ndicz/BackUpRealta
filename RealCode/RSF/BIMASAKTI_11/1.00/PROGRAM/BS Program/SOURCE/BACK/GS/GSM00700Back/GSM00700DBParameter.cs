@@ -39,7 +39,6 @@ namespace GSM00700Back
         public string CSHORT_BY { get; set; }
         public bool LPRINT_LOCAL { get; set; }
         public bool LPRINT_BASE { get; set; }
-
-
+        public string CULTURE { get; set; }
     }
 }

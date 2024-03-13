@@ -22,6 +22,7 @@
     <R_StackLayout Row>
         <R_Grid @ref="@GridRef"
                 DataSource="_viewModel.CashFlowDetailGrid"
+                R_GridType="R_eGridType.Navigator"
                 R_ServiceGetListRecord="R_ServiceGetListRecordAsync"
                 Pageable
                 PageSize="5">

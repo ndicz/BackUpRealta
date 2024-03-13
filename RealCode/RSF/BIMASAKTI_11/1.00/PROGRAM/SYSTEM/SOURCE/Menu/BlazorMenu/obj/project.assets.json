@@ -2513,9 +2513,6 @@
       "GSM05500Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "GSM00700Common": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/GSM05500Common.dll": {}
         },
@@ -2564,6 +2561,105 @@
         },
         "runtime": {
           "bin/placeholder/GSM05500Model.dll": {}
+        }
+      },
+      "GSM10000Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10000Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Common.dll": {}
+        }
+      },
+      "GSM10000Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900FRONT": "1.0.0",
+          "GFF00900Model": "1.0.0",
+          "GSM10000FrontResources": "1.0.0",
+          "GSM10000Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM10000Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Front.dll": {}
+        }
+      },
+      "GSM10000FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10000FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000FrontResources.dll": {}
+        }
+      },
+      "GSM10000Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM10000Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM10000Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Model.dll": {}
+        }
+      },
+      "GSM10500Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10500Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Common.dll": {}
+        }
+      },
+      "GSM10500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GSM10500FrontResources": "1.0.0",
+          "GSM10500Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM10500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Front.dll": {}
+        }
+      },
+      "GSM10500FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10500FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500FrontResources.dll": {}
+        }
+      },
+      "GSM10500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM10500Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM10500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Model.dll": {}
         }
       },
       "LMI00100Common/1.0.0": {
@@ -2664,6 +2760,45 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "LMM02500Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMM02500Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Common.dll": {}
+        }
+      },
+      "LMM02500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LMM02500Common": "1.0.0",
+          "LMM02500Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/LMM02500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Front.dll": {}
+        }
+      },
+      "LMM02500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LMM02500Common": "1.0.0",
+          "System.Text.Json": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LMM02500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Model.dll": {}
         }
       },
       "Lookup_APCOMMON/1.0.0": {
@@ -5256,9 +5391,6 @@
       "GSM05500Common/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "GSM00700Common": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/GSM05500Common.dll": {}
         },
@@ -5307,6 +5439,105 @@
         },
         "runtime": {
           "bin/placeholder/GSM05500Model.dll": {}
+        }
+      },
+      "GSM10000Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10000Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Common.dll": {}
+        }
+      },
+      "GSM10000Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GFF00900COMMON": "1.0.0",
+          "GFF00900FRONT": "1.0.0",
+          "GFF00900Model": "1.0.0",
+          "GSM10000FrontResources": "1.0.0",
+          "GSM10000Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM10000Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Front.dll": {}
+        }
+      },
+      "GSM10000FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10000FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000FrontResources.dll": {}
+        }
+      },
+      "GSM10000Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM10000Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM10000Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10000Model.dll": {}
+        }
+      },
+      "GSM10500Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10500Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Common.dll": {}
+        }
+      },
+      "GSM10500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GSM10500FrontResources": "1.0.0",
+          "GSM10500Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/GSM10500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Front.dll": {}
+        }
+      },
+      "GSM10500FrontResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/GSM10500FrontResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500FrontResources.dll": {}
+        }
+      },
+      "GSM10500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "GSM10500Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GSM10500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GSM10500Model.dll": {}
         }
       },
       "LMI00100Common/1.0.0": {
@@ -5407,6 +5638,45 @@
         },
         "runtime": {
           "bin/placeholder/LMM02000Model.dll": {}
+        }
+      },
+      "LMM02500Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/LMM02500Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Common.dll": {}
+        }
+      },
+      "LMM02500Front/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LMM02500Common": "1.0.0",
+          "LMM02500Model": "1.0.0",
+          "Microsoft.AspNetCore.Components.Web": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/LMM02500Front.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Front.dll": {}
+        }
+      },
+      "LMM02500Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "LMM02500Common": "1.0.0",
+          "System.Text.Json": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LMM02500Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LMM02500Model.dll": {}
         }
       },
       "Lookup_APCOMMON/1.0.0": {
@@ -10948,6 +11218,46 @@
       "path": "../../../../BS Program/SOURCE/FRONT/GSM05500MODEL/GSM05500Model.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM05500MODEL/GSM05500Model.csproj"
     },
+    "GSM10000Common/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/COMMON/GS/GSM10000Common/GSM10000Common.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/GSM10000Common/GSM10000Common.csproj"
+    },
+    "GSM10000Front/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10000Front/GSM10000Front.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10000Front/GSM10000Front.csproj"
+    },
+    "GSM10000FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10000FrontResources/GSM10000FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10000FrontResources/GSM10000FrontResources.csproj"
+    },
+    "GSM10000Model/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10000Model/GSM10000Model.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10000Model/GSM10000Model.csproj"
+    },
+    "GSM10500Common/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/COMMON/GS/GSM10500Common/GSM10500Common.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/GS/GSM10500Common/GSM10500Common.csproj"
+    },
+    "GSM10500Front/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10500Front/GSM10500Front.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10500Front/GSM10500Front.csproj"
+    },
+    "GSM10500FrontResources/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10500FrontResources/GSM10500FrontResources.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10500FrontResources/GSM10500FrontResources.csproj"
+    },
+    "GSM10500Model/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/GSM10500Model/GSM10500Model.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/GSM10500Model/GSM10500Model.csproj"
+    },
     "LMI00100Common/1.0.0": {
       "type": "project",
       "path": "../../../../BS Program/SOURCE/COMMON/LM/LMI00100COMMON/LMI00100Common.csproj",
@@ -10987,6 +11297,21 @@
       "type": "project",
       "path": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj",
       "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02000Model/LMM02000Model.csproj"
+    },
+    "LMM02500Common/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/COMMON/LM/LMM02500Common/LMM02500Common.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/COMMON/LM/LMM02500Common/LMM02500Common.csproj"
+    },
+    "LMM02500Front/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMM02500Front/LMM02500Front.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02500Front/LMM02500Front.csproj"
+    },
+    "LMM02500Model/1.0.0": {
+      "type": "project",
+      "path": "../../../../BS Program/SOURCE/FRONT/LMM02500Model/LMM02500Model.csproj",
+      "msbuildProject": "../../../../BS Program/SOURCE/FRONT/LMM02500Model/LMM02500Model.csproj"
     },
     "Lookup_APCOMMON/1.0.0": {
       "type": "project",
@@ -11035,8 +11360,11 @@
       "GSM02300Front >= 1.0.0",
       "GSM03000Front >= 1.0.0",
       "GSM05500Front >= 1.0.0",
+      "GSM10000Front >= 1.0.0",
+      "GSM10500Front >= 1.0.0",
       "LMI00100Front >= 1.0.0",
       "LMM02000Front >= 1.0.0",
+      "LMM02500Front >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 6.0.14",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.14",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.14",
@@ -11096,11 +11424,20 @@
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM05500FRONT\\GSM05500Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM05500FRONT\\GSM05500Front.csproj"
             },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM10000Front\\GSM10000Front.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM10000Front\\GSM10000Front.csproj"
+            },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM10500Front\\GSM10500Front.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\GSM10500Front\\GSM10500Front.csproj"
+            },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMI00100Front\\LMI00100Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMI00100Front\\LMI00100Front.csproj"
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02000Front\\LMM02000Front.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02000Front\\LMM02000Front.csproj"
+            },
+            "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02500Front\\LMM02500Front.csproj": {
+              "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Program\\SOURCE\\FRONT\\LMM02500Front\\LMM02500Front.csproj"
             },
             "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\GFF00900FRONT.csproj": {
               "projectPath": "D:\\REALTA\\RealCode Lokasl\\RealCode\\RSF\\BIMASAKTI_11\\1.00\\PROGRAM\\BS Shared Form\\SOURCE\\FRONT\\GFF00900FRONT\\GFF00900FRONT.csproj"

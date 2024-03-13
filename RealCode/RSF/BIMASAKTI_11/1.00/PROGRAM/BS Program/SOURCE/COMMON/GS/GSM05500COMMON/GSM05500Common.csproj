@@ -4,11 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\GSM00700Common\GSM00700Common.csproj" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <Reference Include="R_APICommonDTO">
       <HintPath>..\..\..\..\..\SYSTEM\SOURCE\LIBRARY\Back\R_APICommonDTO.dll</HintPath>

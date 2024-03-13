@@ -3,6 +3,7 @@
     public class APL00500ParameterDTO 
     {
         public string CCOMPANY_ID { get; set; } = "";
+        public string CCURRENCY_CODE { get; set; } = "";
         public string CPROPERTY_ID { get; set; } = "";
         public string CDEPT_CODE { get; set; } = "";
         public string CUSER_ID { get; set; } = "";
@@ -14,5 +15,8 @@
         public bool LHAS_REMAINING { get; set; } = false;
         public bool LNO_REMAINING { get; set; } = false;
         public string CLANGUAGE_ID { get; set; } = "";
+        
+        public string CYEAR { get; set; } = "";
+        public string CMODE { get; set; } = "";
     }
 }

@@ -217,6 +217,7 @@ namespace GSM00700Service
                 _logger.LogInfo("Set Parameter || GetAllCashFlowGroupType(Controller)");
                 loDbPar = new GSM00700DBParameter();
                 loDbPar.CCOMPANY_ID = R_BackGlobalVar.COMPANY_ID;
+                loDbPar.CULTURE = R_BackGlobalVar.CULTURE;
                 //loDbPar.CCOMPANY_ID = "RCD";
 
                 loCls = new GSM00700Cls();

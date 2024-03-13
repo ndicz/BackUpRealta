@@ -1,6 +1,10 @@
 ﻿namespace LMM02500Back;
 
-public class Lmm02500DBParameter
+public class LMM02500DBParameter
 {
-    
+    public string CCOMPANY_ID { get; set; }
+
+    public string CUSER_ID { get; set; }
+    public string CPROPERTY_ID { get; set; }
+    public string CTENANT_GROUP_ID { get; set; }
 }

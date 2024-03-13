@@ -58,5 +58,68 @@ namespace GSM10000FrontResources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        internal static string ACTV {
+            get {
+                return ResourceManager.GetString("ACTV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created By.
+        /// </summary>
+        internal static string CRT_BY {
+            get {
+                return ResourceManager.GetString("CRT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created Date.
+        /// </summary>
+        internal static string CRT_DT {
+            get {
+                return ResourceManager.GetString("CRT_DT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holiday Date.
+        /// </summary>
+        internal static string HLDY_DT {
+            get {
+                return ResourceManager.GetString("HLDY_DT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Holiday Name.
+        /// </summary>
+        internal static string HLDY_NM {
+            get {
+                return ResourceManager.GetString("HLDY_NM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated By.
+        /// </summary>
+        internal static string UPDT_BY {
+            get {
+                return ResourceManager.GetString("UPDT_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated Date.
+        /// </summary>
+        internal static string UPDT_DT {
+            get {
+                return ResourceManager.GetString("UPDT_DT", resourceCulture);
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace LMM02500Common
+﻿using R_CommonFrontBackAPI;
+
+namespace LMM02500Common
 {
-    public class ILMM02510
+    public interface ILMM02510 : R_IServiceCRUDBase<LMM02510DTO>
     {
         
     }

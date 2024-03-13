@@ -252,6 +252,7 @@ namespace Lookup_APModel
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CPERIOD, poParam.CPERIOD);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.LHAS_REMAINING, poParam.LHAS_REMAINING);
                 R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.LNO_REMAINING, poParam.LNO_REMAINING);
+                R_FrontContext.R_SetStreamingContext(ContextConstantPublicLookup.CCURRENCY_CODE, poParam.CCURRENCY_CODE);
 
                 R_HTTPClientWrapper.httpClientName = _HttpClientName;   
                 loResult = await R_HTTPClientWrapper.R_APIRequestStreamingObject<APL00500DTO>(

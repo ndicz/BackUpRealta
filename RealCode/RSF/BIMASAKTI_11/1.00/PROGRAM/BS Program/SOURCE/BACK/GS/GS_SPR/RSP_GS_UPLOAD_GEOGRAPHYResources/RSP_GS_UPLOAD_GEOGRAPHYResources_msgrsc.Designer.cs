@@ -59,5 +59,77 @@ namespace RSP_GS_UPLOAD_GEOGRAPHYResources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geography Code cannot be empty.
+        /// </summary>
+        internal static string EMPTY_GEOGRAPHY_CODE {
+            get {
+                return ResourceManager.GetString("EMPTY_GEOGRAPHY_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geography Name cannot be empty.
+        /// </summary>
+        internal static string EMPTY_GEOGRAPHY_NAME {
+            get {
+                return ResourceManager.GetString("EMPTY_GEOGRAPHY_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent Code cannot be empty.
+        /// </summary>
+        internal static string EMPTY_PARENT_CODE {
+            get {
+                return ResourceManager.GetString("EMPTY_PARENT_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geography Code is bigger than 20 character.
+        /// </summary>
+        internal static string EXCESS_GEOGRAPHY_CODE {
+            get {
+                return ResourceManager.GetString("EXCESS_GEOGRAPHY_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geography Name is bigger than 100 character.
+        /// </summary>
+        internal static string EXCESS_GEOGRAPHY_NAME {
+            get {
+                return ResourceManager.GetString("EXCESS_GEOGRAPHY_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent Code is bigger than 20 character.
+        /// </summary>
+        internal static string EXCESS_PARENT_CODE {
+            get {
+                return ResourceManager.GetString("EXCESS_PARENT_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Active Flag, Active Flag value is not 1 / 0.
+        /// </summary>
+        internal static string INVALID_ACTIVE_FLAG {
+            get {
+                return ResourceManager.GetString("INVALID_ACTIVE_FLAG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Parent Code.
+        /// </summary>
+        internal static string INVALID_PARENT_CODE {
+            get {
+                return ResourceManager.GetString("INVALID_PARENT_CODE", resourceCulture);
+            }
+        }
     }
 }

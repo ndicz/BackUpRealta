@@ -21,6 +21,12 @@
             AllowEditRow="true"
             AllowDeleteRow="true"
             PageSize="24"
+            R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlowGroup"
+            R_ServiceSave="@Grid_ServiceSaveRecordCashFlowGroup"
+            R_ServiceDelete="@Grid_DeleteRecordCashFlowGroup"
+            R_Validation="@Grid_ValidationCashFlowGroup"
+            R_Display="@Grid_R_DisplaytListCashFlow"
+            R_AfterAdd="@AfterAdd"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListCashFlowGroup">
         <R_GridColumns>
 
@@ -50,14 +56,6 @@
 
 </R_StackLayout>
 <R_ConductorGrid @ref="@_conGridGSM00700Ref"
-                 R_ViewModel="@GSM00700ViewModel"
-                 R_ServiceGetRecord="@Grid_ServiceGetRecordCashFlowGroup"
-                 R_ServiceSave="@Grid_ServiceSaveRecordCashFlowGroup"
-                 R_ServiceDelete="@Grid_DeleteRecordCashFlowGroup"
-                 R_Validation="@Grid_ValidationCashFlowGroup"
-                 R_Display="@Grid_R_DisplaytListCashFlow"
-                 @* R_AfterDelete="@Grid_AfterDelete" *@
-                 R_AfterAdd="@AfterAdd"
                  R_IsHeader="true"/>
 
 

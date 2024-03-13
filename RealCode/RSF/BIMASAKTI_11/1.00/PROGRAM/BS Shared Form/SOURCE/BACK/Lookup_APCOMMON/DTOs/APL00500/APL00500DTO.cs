@@ -3,7 +3,7 @@ using R_APICommonDTO;
 
 namespace Lookup_APCOMMON.DTOs.APL00500
 {
-    public class APL00500DTO : R_APIResultBaseDTO
+    public class APL00500DTO
     {
         public string CPROPERTY_NAME { get; set; }
         public string CDEPT_CODE { get; set; }
@@ -24,6 +24,22 @@ namespace Lookup_APCOMMON.DTOs.APL00500
         public string CTRANS_STATUS_NAME { get; set; }
         public string CTRANS_DESC { get; set; }
         public string CDUE_DATE { get; set; }
+
+        public decimal NLTOTAL_REMAINING { get; set; }
+        public decimal NBTOTAL_REMAINING { get; set; }
+        public decimal NAP_REMAINING { get; set; }
+        public decimal NLAP_REMAINING { get; set; }
+        public decimal NBAP_REMAINING { get; set; }
+        public decimal NTAX_REMAINING { get; set; }
+        public decimal NLTAX_REMAINING { get; set; }
+        public decimal NBTAX_REMAINING { get; set; }
+        public decimal NLBASE_RATE { get; set; }
+        public decimal NLCURRENCY_RATE { get; set; }
+        public decimal NBBASE_RATE { get; set; }
+        public decimal NBCURRENCY_RATE { get; set; }
+        public decimal NTAX_BASE_RATE { get; set; }
+        public decimal NTAX_CURRENCY_RATE { get; set; }
+
 
         public string CSUPPLIER
         {

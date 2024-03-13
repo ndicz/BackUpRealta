@@ -27,31 +27,27 @@ public partial class APL00500 : R_Page
 
         try
         {
-            
             _viewModel.ParameterLookup = (APL00500ParameterDTO)poParameter;
             _viewModel.GetInitialTransactionLookup();
-            ButtonEnable();
+            // ButtonEnable();
         }
         catch (Exception ex)
         {
-            loEx.Add(ex);   
+            loEx.Add(ex);
         }
 
         loEx.ThrowExceptionIfErrors();
         await Task.CompletedTask;
     }
-    
+
     public async Task R_ServiceGetListRecordAsync(R_ServiceGetListRecordEventArgs eventArgs)
     {
         var loEx = new R_Exception();
 
         try
         {
-
             await _viewModel.GetTransactionLookup();
             eventArgs.ListEntityResult = _viewModel.TransactionLookupGrid;
-
-
         }
         catch (Exception ex)
         {
@@ -104,15 +100,13 @@ public partial class APL00500 : R_Page
     //     loEx.ThrowExceptionIfErrors();
     //     //return Task.CompletedTask;
     // }
-    
+
     public async Task OnchangedPeriod()
     {
         var loEx = new R_Exception();
 
         try
         {
-
-
             if (_viewModel.TransactionLookupEntity.RadioButton == "A")
             {
                 _viewModel.TransactionLookupEntity.CPERIOD = "";
@@ -122,7 +116,6 @@ public partial class APL00500 : R_Page
                 _viewModel.TransactionLookupEntity.VAR_GSM_PERIOD = DateTime.Now.Year;
                 _viewModel.TransactionLookupEntity.Month = DateTime.Now.ToString("MM");
             }
-
         }
         catch (Exception ex)
         {
@@ -132,44 +125,47 @@ public partial class APL00500 : R_Page
         loEx.ThrowExceptionIfErrors();
     }
 
-    
+
     public async Task Refresh_Button()
     {
         var loEx = new R_Exception();
 
         try
         {
-
             if (_viewModel.TransactionLookupEntity.RadioButton != "A")
             {
-                _viewModel.TransactionLookupEntity.CPERIOD = _viewModel.TransactionLookupEntity.VAR_GSM_PERIOD.ToString() + _viewModel.TransactionLookupEntity.Month;
+                _viewModel.TransactionLookupEntity.CPERIOD =
+                    _viewModel.TransactionLookupEntity.VAR_GSM_PERIOD.ToString() +
+                    _viewModel.TransactionLookupEntity.Month;
             }
             else
             {
                 _viewModel.TransactionLookupEntity.CPERIOD = "";
             }
-            
-            
-            if (_viewModel.TransactionLookupEntity.RadioButton == "P" && _viewModel.TransactionLookupEntity.VAR_GSM_PERIOD == null)
+
+
+            if (_viewModel.TransactionLookupEntity.RadioButton == "P" &&
+                _viewModel.TransactionLookupEntity.VAR_GSM_PERIOD == null)
             {
                 await R_MessageBox.Show("Error", "Period Year is required!!", R_eMessageBoxButtonType.OK);
-                return;
             }
-            if (_viewModel.TransactionLookupEntity.RadioButton == "P" && _viewModel.TransactionLookupEntity.Month == null)
+
+            if (_viewModel.TransactionLookupEntity.RadioButton == "P" &&
+                _viewModel.TransactionLookupEntity.Month == null)
             {
                 await R_MessageBox.Show("Error", "Period Month is required!!", R_eMessageBoxButtonType.OK);
+            }
+
+            await _viewModel.GetTransactionLookup();
+
+
+            if (_viewModel.TransactionLookupGrid.Count == 0)
+                {
+                await R_MessageBox.Show("Error", "No data found!", R_eMessageBoxButtonType.OK);
                 return;
             }
 
-            
-            if (GridRef != null)
-            {
-                await R_MessageBox.Show("Error", "Period Month is required!!", R_eMessageBoxButtonType.OK);
-            }
-        
-            _viewModel.GetTransactionLookup();
-            await ButtonEnable();
-           
+            // await ButtonEnable();
         }
         catch (Exception ex)
         {
@@ -178,6 +174,7 @@ public partial class APL00500 : R_Page
 
         loEx.ThrowExceptionIfErrors();
     }
+
     public async Task Button_OnClickOkAsync()
     {
         if (_viewModel.TransactionLookupGrid.Count == 0)
@@ -187,17 +184,16 @@ public partial class APL00500 : R_Page
         }
         else
         {
-        var loData = GridRef.GetCurrentData();
-        await this.Close(true, loData);
-            
+            var loData = GridRef.GetCurrentData();
+            await this.Close(true, loData);
         }
-        
     }
 
     public async Task ButtonEnable()
     {
         ButtonOk.Enabled = _viewModel.TransactionLookupGrid.Count != 0;
-        ButtonOk.Enabled = _viewModel.TransactionLookupEntity.CSUPPLIER_ID != "";
+            // || _viewModel.TransactionLookupEntity.CSUPPLIER_ID != "";
+        // ButtonOk.Enabled = _viewModel.TransactionLookupEntity.CSUPPLIER_ID != "";
 
         // if (_viewModel.TransactionLookupEntity.CSUPPLIER_ID == "")
         // {
@@ -207,10 +203,10 @@ public partial class APL00500 : R_Page
         // {
         //     ButtonOk.Enabled = true;
         // }
-    } 
+    }
+
     public async Task Button_OnClickCloseAsync()
     {
         await this.Close(true, null);
     }
 }
-

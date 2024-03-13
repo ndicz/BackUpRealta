@@ -19,7 +19,7 @@ namespace LMM02000Common
         IAsyncEnumerable<LMM02000PropertyDTO> GetAllLMM02000PropertyStream();
 
         LMM02000ListGenderTypeDTO GetGender();
-
+    
         LMM02000ListSalesmanTypeDTO GetSalesmanType();
 
         LMM02000ActiveInactiveDTO GetActiveInactive(LMM02000ActiveInactiveParam poParamDto);

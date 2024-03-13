@@ -58,30 +58,30 @@ namespace GSM00700Front
 
             try
             {
-            //     eventArgs.Parameter = new GSL01500ParameterGroupDTO()
-            //     
-            //     {
-            //     
-            //         CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
-            //         CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
-            //         //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
-            //     
-            //     };
-            //     eventArgs.TargetPageType = typeof(GSL01500);
+            eventArgs.Parameter = new GSL01500ParameterGroupDTO()
+            
+            {
+            
+                CCOMPANY_ID = _GSM00720ViewModel.loCopyFromEntity.CCOMPANY_ID,
+                CUSER_ID = _GSM00720ViewModel.loCopyFromEntity.CUSER_ID,
+                //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
+            
+            };
+            eventArgs.TargetPageType = typeof(GSL01500);
 
 
 
-                eventArgs.Parameter = new APL00200ParameterDTO()
-                
-                {
-                //APL00300
-                    // CCOMPANY_ID = "RCD",
-                    // CPROPERTY_ID = "ASHMD",
-                    // CCATEGORY_ID = "ASHMD",
-                    // CTAXABLE_TYPE = "1",
-                    // CACTIVE_TYPE = "1", 
-                    // CLANGUAGE_ID = "en",
-                    // CTAX_DATE = "1"
+                // eventArgs.Parameter = new APL00300ParameterDTO()
+                //
+                // {
+                // // APL00300
+                //      CCOMPANY_ID = "RCD",
+                //      CPROPERTY_ID = "ASHMD",
+                //      CCATEGORY_ID = "ASHMD",
+                //      CTAXABLE_TYPE = "1",
+                //      CACTIVE_TYPE = "1", 
+                //      CLANGUAGE_ID = "en",
+                //      CTAX_DATE = "1"
                     
                     //CCASH_FLOW_GROUP_CODE = _GSM00720ViewModel.loCopyFromEntity.CFROM_CASH_FLOW_CODE,
                     //APL0500
@@ -90,26 +90,39 @@ namespace GSM00700Front
                     // CUSER_ID =  "HPC",
                     // CTRANS_CODE =  "110010",
                     // CSUPPLIER_ID = "",
-                    // // CPERIOD = "",
+                    // CPERIOD = "",
                     // CDEPT_CODE = "ACC",
                     // CTRANS_NAME = "JAN",
                     // LHAS_REMAINING = true,
                     // LNO_REMAINING = true,
-                    // CLANGUAGE_ID = "EN"
+                    // CLANGUAGE_ID = "EN",
+                    // CCURRENCY_CODE = "",
+                    
+                    // CPROPERTY_ID = "ASHMD",
+                    // CDEPT_CODE = "ACC",
+                    // CSUPPLIER_ID = "S0001",
+                    // CTRANS_CODE = "110010",
+                    // CTRANS_NAME = "Purchase Invoice",
+                    // LHAS_REMAINING = true,
+                    // LNO_REMAINING = false
                     //
                     
-                    //APL200
-                    CCOMPANY_ID = "RCD",
-                    CPROPERTY_ID = "ASHMD",
-                    CCATEGORY_ID = "",
-                    CTAXABLE_TYPE = "1",
-                    CACTIVE_TYPE = "1",
-                    CLANGUAGE_ID = "en",
-                    CTAX_DATE = "20230101"
-                    
-                
-                };
-                eventArgs.TargetPageType = typeof(APL00200);
+                    // //APL200
+                    // CCOMPANY_ID = "RCD",
+                    // CPROPERTY_ID = "ASHMD",
+                    // CCATEGORY_ID = "",
+                    // CTAXABLE_TYPE = "1",
+                    // CACTIVE_TYPE = "1",
+                    // CLANGUAGE_ID = "en",
+                    // CTAX_DATE = "20230101"
+                    //
+                //APL400
+                // CCOMPANY_ID = "RCD",
+                // CPROPERTY_ID = "ASHMD",
+                // CACTIVE_TYPE = "1",
+                // CLANGUAGE_ID = "en",
+                // };
+                // eventArgs.TargetPageType = typeof(APL00300);
             }
             catch (Exception ex)
             {

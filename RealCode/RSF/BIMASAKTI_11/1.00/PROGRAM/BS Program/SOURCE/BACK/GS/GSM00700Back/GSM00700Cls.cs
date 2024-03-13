@@ -90,10 +90,11 @@ namespace GSM00700Back
                 var loConn = loDb.GetConnection();
                 loCmd = loDb.GetCommand();
 
-                var lcQuery = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_GROUP_TYPE', '', 'Login User Language')";
+                var lcQuery = @"SELECT CCODE, CDESCRIPTION FROM RFT_GET_GSB_CODE_INFO  ('BIMASAKTI', @CCOMPANY_ID, '_CASH_FLOW_GROUP_TYPE', '', @CULTURE)";
                 loCmd.CommandType = System.Data.CommandType.Text;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", System.Data.DbType.String, 10, poParameter.CCOMPANY_ID);
+                loDb.R_AddCommandParameter(loCmd, "@CULTURE", System.Data.DbType.String, 10, poParameter.CULTURE);
 
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>().Where(x =>
                         x.ParameterName == "@CCOMPANY_ID" ||

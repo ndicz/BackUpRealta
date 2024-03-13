@@ -1,6 +1,8 @@
-﻿namespace GSM10000Back.Activity;
+﻿using R_OpenTelemetry;
 
-public class GSM10000Activity
+namespace GSM10000Back.Activity;
+
+public class GSM10000Activity : R_ActivitySourceBase
 {
     
 }

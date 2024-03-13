@@ -19,6 +19,10 @@
             PageSize="24"
             AllowEditRow="true"
             AllowDeleteRow="true"
+                R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
+                             R_ServiceSave="@Grid_ServiceSaveRateType"
+            R_ServiceDelete="@Grid_ServiceDeleteRateType"
+             R_Validation="R_Validation"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRateType">
 
         <R_GridColumns>
@@ -35,10 +39,5 @@
 
 </R_StackLayout>
 <R_ConductorGrid @ref="@_conGridGSM05510Ref"
-                 R_ViewModel="@GSM05510ViewModel"
-                 R_ServiceGetRecord="@Grid_ServiceGetRecordRateType"
-                 R_ServiceSave="@Grid_ServiceSaveRateType"
-                 R_ServiceDelete="@Grid_ServiceDeleteRateType"
-                 @*R_AfterDelete="@Grid_AfterDelete" *@
                  R_IsHeader="true"
-                 R_Validation="R_Validation"/>
+                />

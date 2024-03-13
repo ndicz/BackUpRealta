@@ -16,30 +16,35 @@
             Width="100%"
             Height="600px"
             PageSize="17"
+            R_ServiceGetRecord="@Grid_Service_Get_Record_GSM02300"
+            R_ServiceSave="@Grid_SaveGSM02300"
+            R_ServiceDelete="@Grid_DeleteProperty"
             AllowEditRow="true"
             AllowDeleteRow="true"
+            R_CellValueChanged="@R_CellValueChanged"
             R_ServiceGetListRecord="@Grid_Get_Record_GSM02300">
 
         <R_GridColumns>
 
 
             <R_GridDropDownListColumn Width="196px"
-                Data="@_GSM02300iewModel.loGridListPropertyType"
-                FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
-                ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
-                TextField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
-                HeaderText="@_localizer["PRTY_TYP_CD"]"
-                R_EnableAdd/>
+                                      Data="@_GSM02300iewModel.loGridListPropertyType"
+                                      FieldName="@nameof(GSM02300DTO.CPROPERTY_TYPE_CODE)"
+                                      ValueField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
+                                      TextField="@nameof(GSM02300PropertyTypeDTO.CCODE)"
+                                      HeaderText="@_localizer["PRTY_TYP_CD"]"
+                                      R_EnableAdd
+                                      R_EnableEdit/>
 
             @*<R_GridTextColumn FieldName="CPROPERTY_TYPE_CODE" HeaderText="Property Type Name" R_EnableAdd R_EnableEdit></R_GridTextColumn>*@
             <R_GridTextColumn Width="192.06px" FieldName="CPROPERTY_TYPE_NAME" HeaderText="@_localizer["PRTY_TYP_NM"]" R_EnableAdd R_EnableEdit></R_GridTextColumn>
             <R_GridCheckBoxColumn Width="215px" FieldName="LSINGLE_UNIT" HeaderText="@_localizer["SNGL_UNT"]" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
             <R_GridCheckBoxColumn Width="150px" FieldName="LUSE_PRICE_LIST" HeaderText="@_localizer["USE_PRC_LIST"]" R_EnableAdd R_EnableEdit></R_GridCheckBoxColumn>
-            <R_GridTextColumn Width="158.06px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]" />
-            <R_GridTextColumn Width="145.06px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DT"]" />
+            <R_GridTextColumn Width="158.06px" FieldName="CUPDATE_BY" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn Width="145.06px" FieldName="DUPDATE_DATE" HeaderText="@_localizer["UPDT_DT"]"/>
 
-            <R_GridTextColumn Width="120.06px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]" />
-            <R_GridTextColumn Width="158.13px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DT"]" />
+            <R_GridTextColumn Width="120.06px" FieldName="CCREATE_BY" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn Width="158.13px" FieldName="DCREATE_DATE" HeaderText="@_localizer["CRT_DT"]"/>
 
         </R_GridColumns>
     </R_Grid>
@@ -47,8 +52,4 @@
 </R_StackLayout>
 <R_ConductorGrid @ref="@_conGridGSM02300Ref"
                  R_ViewModel="@_GSM02300iewModel"
-                 R_ServiceGetRecord="@Grid_Service_Get_Record_GSM02300"
-                 R_ServiceSave="@Grid_SaveGSM02300"
-                  R_ServiceDelete="@Grid_DeleteProperty"
-                 @*R_AfterDelete="@Grid_AfterDelete" *@
-                 R_IsHeader="true" />
+                 R_IsHeader="true"/>

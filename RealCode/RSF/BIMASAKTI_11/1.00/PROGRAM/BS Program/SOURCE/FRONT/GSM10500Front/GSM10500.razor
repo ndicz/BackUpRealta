@@ -1,0 +1,92 @@
+﻿@page "/GSM10500"
+@using GSM10500FrontResources
+@using R_BlazorFrontEnd.Interfaces
+@using GSM10500Common.DTO
+@inherits R_Page
+@attribute [R_Page(Title = "Ageing")]
+@inject R_ILocalizer<Resource_Dummy_Class_GSM10500> _localizer
+<R_StackLayout Spacing="3" Class="mb-2 mt-2">
+
+    <R_Grid @ref="@_gridRef10500"
+            DataSource="@_viewModelGSM10500.loGridList"
+            Pageable="true"
+            R_GridType="@R_eGridType.Original"
+            R_ConductorGridSource="@_conGridGSM10500Ref"
+            Width="100%"
+            Height="200px"
+            PageSize="24"
+            AllowAddNewRow="true"
+            AllowEditRow="true"
+            AllowDeleteRow="true"
+            R_AfterAdd="@AfterAdd"
+            R_ServiceGetRecord="@Grid_ServiceGetRecordAgeingHD"
+            R_ServiceSave="@Grid_ServiceSaveAgeingHD"
+            R_ServiceDelete="@Grid_ServiceDeleteAgeingHD"
+            R_Display="@Grid_R_DisplaytAgeingHD"
+            R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordAgeingHD">
+
+        <R_GridColumns>
+            <R_GridTextColumn Width="185px" FieldName="@nameof(GSM10500DTO.CAGEING_CODE)" HeaderText="@(_localizer["AGN_CD"])" R_EnableAdd></R_GridTextColumn>
+            <R_GridTextColumn Width="171px" FieldName="@nameof(GSM10500DTO.CAGEING_NAME)" HeaderText="@(_localizer["AGN_NM"])" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+            <R_GridDropDownListColumn Width="171px" Data="@_viewModelGSM10500.loRoundingMode"
+                                      FieldName="@nameof(GSM10500DTO.CROUNDING_MODE)"
+                                      ValueField="@nameof(GSM10500RoundingModeDTO.CCODE)"
+                                      TextField="@nameof(GSM10500RoundingModeDTO.CDESCRIPTION)"
+                                      HeaderText="@_localizer["RND_MD"]" R_EnableAdd R_EnableEdit/>
+            
+            <R_GridNumericColumn Width="171px" FieldName="@nameof(GSM10500DTO.IROUNDING)" HeaderText="@(_localizer["RND_UNT"])" R_EnableAdd R_EnableEdit></R_GridNumericColumn>
+            <R_GridNumericColumn Width="145px" FieldName="@nameof(GSM10500DTO.IDIGIT_LENGTH)" HeaderText="@(_localizer["DGT_LNGHT"])" R_EnableAdd R_EnableEdit></R_GridNumericColumn>
+            <R_GridNumericColumn Width="158px" FieldName="@nameof(GSM10500DTO.IDECIMAL_POINT)" HeaderText="@(_localizer["DCML_PNT"])" R_EnableAdd R_EnableEdit></R_GridNumericColumn>
+            <R_GridTextColumn Width="156px" FieldName="@nameof(GSM10500DTO.CUPDATE_BY)" HeaderText="@_localizer["UPDT_BY"]"/>
+            <R_GridTextColumn Width="153px" FieldName="@nameof(GSM10500DTO.DUPDATE_DATE)" HeaderText="@_localizer["UPDT_DT"]"/>
+            <R_GridTextColumn Width="143px" FieldName="@nameof(GSM10500DTO.CCREATE_BY)" HeaderText="@_localizer["CRT_BY"]"/>
+            <R_GridTextColumn Width="147px" FieldName="@nameof(GSM10500DTO.DCREATE_DATE)" HeaderText="@_localizer["CRT_DT"]"/>
+
+        </R_GridColumns>
+    </R_Grid>
+</R_StackLayout>
+
+
+<R_GroupBox Title="@(_localizer["AGNG_CLMN_DT"])">
+    <R_StackLayout Row="true">
+
+
+        <R_Grid @ref="@_gridRef10510"
+                DataSource="@_viewModelGSM10510.loGridList"
+                Pageable="true"
+                R_GridType="@R_eGridType.Original"
+                R_ConductorGridSource="@_conGridGSM10510Ref"
+                Width="100%"
+                Height="300px"
+                PageSize="24"
+                AllowAddNewRow="true"
+                AllowEditRow="true"
+                AllowDeleteRow="true"
+                R_ServiceGetRecord="@Grid_ServiceGetRecordAgeingDT"
+                R_ServiceSave="@Grid_ServiceSaveAgeingDT"
+                R_ServiceDelete="@Grid_ServiceDeleteAgeingDT"
+                R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordAgeingDT">
+
+            <R_GridColumns>
+                <R_GridNumericColumn Width="147px" FieldName="@nameof(GSM10510DTO.ICOLUMN_NO)" HeaderText="@(_localizer["CLMN_NO"])"></R_GridNumericColumn>
+                <R_GridTextColumn Width="137px" FieldName="@nameof(GSM10510DTO.CDESCRIPTION)" HeaderText="@(_localizer["DESC"])" MaxLength="60" R_EnableAdd R_EnableEdit></R_GridTextColumn>
+                <R_GridNumericColumn Width="137px" FieldName="@nameof(GSM10510DTO.IFROM_DAYS)" HeaderText="@(_localizer["FRM_DYS"])"R_EnableAdd R_EnableEdit></R_GridNumericColumn>
+                <R_GridNumericColumn Width="137px" FieldName="@nameof(GSM10510DTO.ITO_DAYS)" HeaderText="@(_localizer["TO_DYS"])"R_EnableAdd R_EnableEdit></R_GridNumericColumn>
+                <R_GridTextColumn Width="132px" FieldName="@nameof(GSM10510DTO.CUPDATE_BY)" HeaderText="@_localizer["UPDT_BY"]"/>
+                <R_GridTextColumn Width="137px" FieldName="@nameof(GSM10510DTO.DUPDATE_DATE)" HeaderText="@_localizer["UPDT_DT"]"/>
+                <R_GridTextColumn Width="132px" FieldName="@nameof(GSM10510DTO.CCREATE_BY)" HeaderText="@_localizer["CRT_BY"]"/>
+                <R_GridTextColumn Width="137px" FieldName="@nameof(GSM10510DTO.DCREATE_DATE)" HeaderText="@_localizer["CRT_DT"]"/>
+
+            </R_GridColumns>
+        </R_Grid>
+
+    </R_StackLayout>
+</R_GroupBox>
+
+<R_ConductorGrid @ref="@_conGridGSM10500Ref"
+                 @* R_ViewModel="@_viewModel" *@
+                 R_IsHeader="true"
+                 @* R_Validation="@R_Validation" /> *@/>
+
+<R_ConductorGrid @ref="@_conGridGSM10510Ref"
+                 R_ConductorParent="@_conGridGSM10500Ref"/>

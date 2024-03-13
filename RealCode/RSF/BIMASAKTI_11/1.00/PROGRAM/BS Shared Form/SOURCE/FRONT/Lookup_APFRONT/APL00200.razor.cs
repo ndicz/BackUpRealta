@@ -120,7 +120,11 @@ namespace Lookup_APFRONT
             try
             {
                 await GridRef.R_RefreshGrid(null);
-
+                if (_viewModel.ExpenditureGrid.Count == 0)
+                {
+                    await R_MessageBox.Show("Error", "Data not found!", R_eMessageBoxButtonType.OK);
+                    return;
+                }
             }
             catch (Exception ex)
             {
@@ -169,6 +173,11 @@ namespace Lookup_APFRONT
             if (_viewModel.loExpenditureEntity.RadioButton == null && _viewModel.loExpenditureEntity.CCATEGORY_NAME == null)
             {
                 await R_MessageBox.Show("Error", "Please select Category!", R_eMessageBoxButtonType.OK);
+                return;
+            }
+            if (_viewModel.ExpenditureGrid.Count == 0)
+            {
+                await R_MessageBox.Show("Error", "Data not found!", R_eMessageBoxButtonType.OK);
                 return;
             }
             var loData = GridRef.GetCurrentData();

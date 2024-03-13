@@ -9,7 +9,7 @@
             AdditionalAssemblies="@lazyLoadedAssemblies"
             OnNavigateAsync="@OnNavigateAsync">
         <Found Context="routeData">
-            <MenuTabsRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <MenuTabsRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
         </Found>
         <NotFound>
             <LayoutView Layout="@typeof(MainLayout)">
@@ -20,6 +20,7 @@
 </CascadingAuthenticationState>
 
 @code {
+
     private List<Assembly> lazyLoadedAssemblies = new()
     {
     //typeof(GSM00100Front.GSM00100).Assembly,
@@ -30,7 +31,9 @@
         typeof(LMI00100Front.LMI00100).Assembly,
         typeof(LMM02000Front.LMM02000).Assembly,
         typeof(GSM02300Front.GSM02300).Assembly,
-
+        typeof(LMM02500Front.LMM02500).Assembly,
+    typeof(GSM10000Front.GSM10000).Assembly,
+    typeof(GSM10500Front.GSM10500).Assembly,
     };
 
     private async Task OnNavigateAsync(NavigationContext args)
@@ -60,20 +63,20 @@
                     ((R_IFormAccess)loPage).R_SetAccess(loFormAccess);
                 }
 
-                //var loAssembly = loAssemblies.FirstOrDefault();
-                //if (loAssembly != null)
-                //{
-                //    var loTypes = loAssembly.GetTypes();
-                //    var loType = loTypes.Where(t => typeof(R_Page).IsAssignableFrom(t)).FirstOrDefault();
-                //    if (loType != null)
-                //    {
-                //        var lcName = loType.Name;
-                //        var loProperty = loType.GetProperty("R_FormAccess");
+    //var loAssembly = loAssemblies.FirstOrDefault();
+    //if (loAssembly != null)
+    //{
+    //    var loTypes = loAssembly.GetTypes();
+    //    var loType = loTypes.Where(t => typeof(R_Page).IsAssignableFrom(t)).FirstOrDefault();
+    //    if (loType != null)
+    //    {
+    //        var lcName = loType.Name;
+    //        var loProperty = loType.GetProperty("R_FormAccess");
 
-                //        var loObject = Activator.CreateInstance(loType);
-                //        loProperty.SetMethod.Invoke(loObject, new object[] { loFormAccess });
-                //    }
-                //}
+    //        var loObject = Activator.CreateInstance(loType);
+    //        loProperty.SetMethod.Invoke(loObject, new object[] { loFormAccess });
+    //    }
+    //}
 
                 lazyLoadedAssemblies.AddRange(loAssemblies);
             }
@@ -83,4 +86,5 @@
             Console.WriteLine(ex.Message);
         }
     }
+
 }

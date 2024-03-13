@@ -27,8 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Realta.BackCollectionNuGet" Version="1.0.0" />
     <PackageReference Include="Realta.CommonCollectionNuGet" Version="1.0.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="7.0.0" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -38,6 +42,8 @@
     <ProjectReference Include="..\..\..\SERVICE\GS\GSM00700Service\GSM00700Service.csproj" />
     <ProjectReference Include="..\..\..\SERVICE\GS\GSM02300Service\GSM02300Service.csproj" />
     <ProjectReference Include="..\..\..\SERVICE\GS\GSM05500SERVICE\GSM05500Service.csproj" />
+    <ProjectReference Include="..\..\..\SERVICE\GS\GSM10000Service\GSM10000Service.csproj" />
+    <ProjectReference Include="..\..\..\SERVICE\GS\GSM10500Service\GSM10500Service.csproj" />
 <!--    <ProjectReference Include="..\..\..\SERVICE\LM\LMM02000Services\LMM02000Services.csproj" />-->
   </ItemGroup>
 

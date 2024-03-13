@@ -28,6 +28,21 @@
         <Reference Include="R_CommonFrontBackAPI">
             <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_CommonFrontBackAPI.dll</HintPath>
         </Reference>
+        <Reference Include="R_APICommonDTO">
+            <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_APICommonDTO.dll</HintPath>
+        </Reference>
+        <Reference Include="R_LockingFront">
+          <HintPath>..\..\..\..\SYSTEM\SOURCE\LIBRARY\Front\R_LockingFront.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900Model\GFF00900Model.csproj" />
+      <ProjectReference Include="..\GSM10000FrontResources\GSM10000FrontResources.csproj" />
+      <ProjectReference Include="..\GSM10000Model\GSM10000Model.csproj" />
+        <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\BACK\GFF00900COMMON\GFF00900COMMON.csproj" />
+        <ProjectReference Include="..\..\..\..\BS Shared Form\SOURCE\FRONT\GFF00900FRONT\GFF00900FRONT.csproj" />
+        
     </ItemGroup>
 
 

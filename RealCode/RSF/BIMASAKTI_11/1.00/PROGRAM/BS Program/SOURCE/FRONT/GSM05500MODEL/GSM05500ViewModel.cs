@@ -63,24 +63,24 @@ namespace GSM05500Model.ViewModel
         {
             var loEx = new R_Exception();
 
-            try
-            {
-                var loParam = new GSM05500DTO
+                try
                 {
-                    CCOMPANY_ID = poProperty.CCOMPANY_ID,
-                    CCURRENCY_CODE = poProperty.CCURRENCY_CODE,
-                    CCURRENCY_NAME = poProperty.CCURRENCY_NAME,
-                    CUSER_ID = poProperty.CUSER_ID,
-                   
-                };
-                await _GSM05500Model.R_ServiceDeleteAsync(loParam);
-            }
-            catch (Exception ex)
-            {
-                loEx.Add(ex);
-            }
+                    var loParam = new GSM05500DTO
+                    {
+                        CCOMPANY_ID = poProperty.CCOMPANY_ID,
+                        CCURRENCY_CODE = poProperty.CCURRENCY_CODE,
+                        CCURRENCY_NAME = poProperty.CCURRENCY_NAME,
+                        CUSER_ID = poProperty.CUSER_ID,
+                       
+                    };
+                    await _GSM05500Model.R_ServiceDeleteAsync(loParam);
+                }
+                catch (Exception ex)
+                {
+                    loEx.Add(ex);
+                }
 
-            loEx.ThrowExceptionIfErrors();
+                loEx.ThrowExceptionIfErrors();
         }
 
         public async Task<GSM05500DTO> SaveCurrency(GSM05500DTO poNewEntity, R_eConductorMode peConductorMode)

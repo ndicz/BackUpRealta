@@ -28,11 +28,11 @@
     </R_ItemLayout>
     <R_ItemLayout col="1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY_CODE"
-                   R_ConductorSource="@_conductorRef" Enabled="false" />
+                   R_ConductorSource="@_conductorRef" Enabled="false"/>
     </R_ItemLayout>
     <R_ItemLayout col="2">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CLOCAL_CURRENCY_NAME"
-                   R_ConductorSource="@_conductorRef" Enabled="false" />
+                   R_ConductorSource="@_conductorRef" Enabled="false"/>
     </R_ItemLayout>
 </R_StackLayout>
 
@@ -44,10 +44,10 @@
 
     <R_ItemLayout col="2">
         <R_DropDownList Data="@GSM05520ViewModel.loRateType"
-                    Value="GSM05520ViewModel.CreateCode"
-                    ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
-                    TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
-                    R_ConductorSource="@_conductorRef" ValueChanged="@((string value) => OnChanged(value))"/>
+                        Value="GSM05520ViewModel.CreateCode"
+                        ValueField="@nameof(GSM05520DTOGetRateType.CRATETYPE_CODE)"
+                        TextField="@nameof(GSM05520DTOGetRateType.CRATETYPE_DESCRIPTION)"
+                        R_ConductorSource="@_conductorRef" ValueChanged="@((string value) => OnChanged(value))"/>
 
     </R_ItemLayout>
 
@@ -62,14 +62,13 @@
     </R_ItemLayout>
     <R_ItemLayout col="1">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY_CODE"
-                   R_ConductorSource="@_conductorRef" Enabled="false" />
+                   R_ConductorSource="@_conductorRef" Enabled="false"/>
     </R_ItemLayout>
     <R_ItemLayout Class="col-2">
         <R_TextBox @bind-value="GSM05520ViewModel.loGridListLc.CBASE_CURRENCY_NAME"
-                   R_ConductorSource="@_conductorRef" Enabled="false" />
+                   R_ConductorSource="@_conductorRef" Enabled="false"/>
     </R_ItemLayout>
 </R_StackLayout>
-
 
 
 <R_StackLayout>
@@ -85,6 +84,17 @@
             Height="550px"
             PageSize="22"
             AllowDeleteRow="true"
+            R_ServiceGetRecord="@Grid_ServiceGetRecordRate"
+            R_ServiceSave="@Grid_ServiceSaveRate"
+            R_ServiceDelete="@Grid_ServiceDeleteRate"
+            R_AfterAdd="@Conductor_AfterAdd"
+            R_AfterSave="@Conductor_Display"
+            R_Saving="@Conductor_Saving"
+            R_BeforeCancel="@Conductor_BeforeCancel"
+            R_AfterDelete="@Grid_AfterDelete"
+            R_BeforeEdit="@Conductor_BeforeEdit"
+            R_BeforeAdd="@Conductor_BeforeAdd"
+            R_Validation="R_Validation"
             R_ServiceGetListRecord="@Grid_R_ServiceGetListRecordRate"
             R_Before_Open_Grid_Lookup="Before_Open_Lookup"
             R_After_Open_Grid_Lookup="After_Open_Lookup">
@@ -105,16 +115,4 @@
 
 </R_StackLayout>
 <R_ConductorGrid @ref="@_conGridGSM05520Ref"
-                 R_ViewModel="@GSM05520ViewModel"
-                 R_ServiceGetRecord="@Grid_ServiceGetRecordRate"
-                 R_ServiceSave="@Grid_ServiceSaveRate"
-                 R_ServiceDelete="@Grid_ServiceDeleteRate"
-                 R_AfterAdd="@Conductor_AfterAdd"
-                 R_AfterSave="@Conductor_Display"
-                 R_Saving="@Conductor_Saving"
-                 R_BeforeCancel="@Conductor_BeforeCancel"
-                 R_AfterDelete="@Grid_AfterDelete"
-                 R_BeforeEdit="@Conductor_BeforeEdit"
-                 R_BeforeAdd="@Conductor_BeforeAdd"
-                 R_IsHeader="true"
-                 R_Validation="R_Validation"/>
+                 R_IsHeader="true"/>

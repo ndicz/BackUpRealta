@@ -14,7 +14,7 @@ namespace Lookup_APCOMMON.DTOs
         public const string CTAXABLE_TYPE = "CTAXABLE_TYPE";
         public const string CACTIVE_TYPE = "CACTIVE_TYPE ";
         public const string CCATEGORY_ID = "CCATEGORY_ID ";
-        
+        public const string CCURRENCY_CODE = "CCURRENCY_CODE";
         public const string CTRANS_CODE = "CTRANS_CODE";
         public const string CPERIOD = "CPERIOD";
         public const string LHAS_REMAINING = "LHAS_REMAINING";

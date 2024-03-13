@@ -12,7 +12,6 @@ using R_BlazorFrontEnd.Exceptions;
 using R_CommonFrontBackAPI;
 
 
-
 namespace GSM05500Model
 {
     public class GSM05510ViewModel : R_ViewModel<GSM05510DTO>

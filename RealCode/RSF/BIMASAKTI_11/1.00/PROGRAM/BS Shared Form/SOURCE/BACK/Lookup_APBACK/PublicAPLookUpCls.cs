@@ -284,7 +284,9 @@ namespace Lookup_APBACK
                 loDb.R_AddCommandParameter(loCmd, "@CPERIOD", DbType.String, 10, poParameter.CPERIOD);
                 loDb.R_AddCommandParameter(loCmd, "@LHAS_REMAINING", DbType.Boolean, 10, poParameter.LHAS_REMAINING);
                 loDb.R_AddCommandParameter(loCmd, "@LNO_REMAINING", DbType.Boolean, 10, poParameter.LNO_REMAINING);
+                loDb.R_AddCommandParameter(loCmd, "@CCURRENCY_CODE", DbType.String, 10, poParameter.CCURRENCY_CODE);
                 loDb.R_AddCommandParameter(loCmd, "@CLANGUAGE_ID", DbType.String, 10, poParameter.CLANGUAGE_ID);
+                
 
                 //Debug Logs
                 var loDbParam = loCmd.Parameters.Cast<DbParameter>()
@@ -325,8 +327,8 @@ namespace Lookup_APBACK
                 loCmd.CommandType = CommandType.StoredProcedure;
                 loCmd.CommandText = lcQuery;
                 loDb.R_AddCommandParameter(loCmd, "@CCOMPANY_ID", DbType.String, 10, poParameter.CCOMPANY_ID);
-                loDb.R_AddCommandParameter(loCmd, "@CYEAR", DbType.String, 10, "");
-                loDb.R_AddCommandParameter(loCmd, "@CMODE", DbType.String, 10, "");
+                loDb.R_AddCommandParameter(loCmd, "@CYEAR", DbType.String, 10, poParameter.CYEAR);
+                loDb.R_AddCommandParameter(loCmd, "@CMODE", DbType.String, 10, poParameter.CMODE);
 
 
                 //Debug Logs
@@ -334,7 +336,7 @@ namespace Lookup_APBACK
                     .Where(x => x.ParameterName ==
                                 "@" + poParameter.GetType().GetProperty(x.ParameterName.Replace("@", "")).Name)
                     .Select(x => x.Value);
-                _loggerAp.LogDebug("EXEC RSP_AP_LOOKUP_TRX_REF_NO  {@poParameter}", loDbParam);
+                _loggerAp.LogDebug("EXEC RSP_GS_GET_PERIOD_YEAR_RANGE  {@poParameter}", loDbParam);
 
                 var loReturnTemp = loDb.SqlExecQuery(loConn, loCmd, true);
 
