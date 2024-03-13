@@ -1,0 +1,9 @@
+1001 = Error process, please contact your administrator!
+1002 = Duplicate Holiday Date!
+1003 = Holiday Date cannot be empty!
+1004 = Holiday Name cannot be empty!
+1005 = Holiday Name cannot be greater than 100 character!
+1006 = Cannot Delete, Holiday Already in used!
+
+
+

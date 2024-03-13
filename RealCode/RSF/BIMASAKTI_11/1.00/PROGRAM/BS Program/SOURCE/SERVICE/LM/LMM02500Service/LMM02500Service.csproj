@@ -31,6 +31,5 @@
     
     <ItemGroup>
       <ProjectReference Include="..\..\..\BACK\LM\LMM02500Back\LMM02500Back.csproj" />
-      <ProjectReference Include="..\..\..\COMMON\LM\LMM02500Common\LMM02500Common.csproj" />
     </ItemGroup>
 </Project>
